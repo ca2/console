@@ -1,8 +1,11 @@
 #include "aura/console.h"
 #include "aura/_defer.h"
 
-void main()
+
+int main(int argc, wchar_t * argv[])
 {
+
+   console console(argc, argv);
 
    ::file::path path;
 
@@ -34,6 +37,8 @@ void main()
       printf("%s\n", str.c_str());
 
    }
+
+   return console.result();
 
 }
 
