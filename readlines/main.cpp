@@ -1,4 +1,4 @@
-#include "aura/console.h"
+#include "aura/console_slim.h"
 #include "aura/_defer.h"
 
 

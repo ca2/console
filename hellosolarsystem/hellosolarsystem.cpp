@@ -1,5 +1,5 @@
-#include "aura/console.h"
-#include "aura/xml/_.h"
+#include "axis/console_slim.h"
+#include "axis/xml/_.h"
 
 #include "tutor.cpp"
 
