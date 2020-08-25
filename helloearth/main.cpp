@@ -1,3 +1,5 @@
+#define NO_DRAW2D
+#define NO_IMAGING
 #include "aura/console_slim.h"
 
 
