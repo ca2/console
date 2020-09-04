@@ -2,7 +2,7 @@
 #include "aura/_defer.h"
 
 
-int main(int argc, wchar_t * argv[])
+int main(int argc, char * argv[])
 {
 
    console console(argc, argv);
@@ -37,6 +37,8 @@ int main(int argc, wchar_t * argv[])
       printf("%s\n", str.c_str());
 
    }
+
+   press_any_key_to_exit();
 
    return console.result();
 

@@ -125,7 +125,7 @@ inline string _009Explode(const CONTAINER& container, string strSeparator, strin
 //   {
 //
 
-void main(int argc, wchar_t ** argv)
+int main(int argc, char ** argv)
 {
 
    console console(argc, argv);
@@ -347,6 +347,8 @@ void main(int argc, wchar_t ** argv)
    }
 
    printf("\n");
+
+   press_any_key_to_exit();
 
 }
 

@@ -10,7 +10,9 @@ int main(int argc, wchar_t * argv[])
 
    string strHelloEarth = "Hello Earth!!";
 
-   printf(strHelloEarth);
+   printf("%s\n", strHelloEarth.c_str());
+
+   press_any_key_to_exit();
 
    return 0;
 
