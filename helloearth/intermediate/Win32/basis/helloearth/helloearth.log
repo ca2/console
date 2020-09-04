@@ -1,1 +1,0 @@
-﻿C:\basis\console-app\helloearth\helloearth.vcxproj(122,5): error MSB4019: The imported project "C:\platform-windows\Common.props" was not found. Confirm that the expression in the Import declaration "..\..\platform-windows\Common.props" is correct, and that the file exists on disk.
