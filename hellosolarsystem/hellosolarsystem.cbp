@@ -12,8 +12,9 @@
 				<Option object_output="$(#time_dir)/intermediate/$(TARGET_NAME)/$(PROJECT_NAME)" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option parameters=": debug1=1" />
 				<Option host_application="$(#time_dir)/x64/$(TARGET_NAME)/$(PROJECT_NAME)" />
-				<Option run_host_application_in_terminal="0" />
+				<Option run_host_application_in_terminal="1" />
 				<Compiler>
 					<Add option="-fPIC" />
 					<Add option="-m64" />
