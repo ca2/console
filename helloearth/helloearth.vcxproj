@@ -1204,7 +1204,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\app\acme\acme.vcxproj">
-      <Project>{e000ffaf-392f-4e32-bf51-fd7ed638991f}</Project>
+      <Project>{638b242f-0f21-41c3-9f66-724660046133}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
