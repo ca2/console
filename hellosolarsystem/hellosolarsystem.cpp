@@ -128,7 +128,7 @@ inline string _009Explode(const CONTAINER& container, string strSeparator, strin
 int main(int argc, TCHAR ** argv)
 {
 
-   console console(argc, argv);
+   ::aura::console console(argc, argv);
 
    cjsteel_0001_ca2_rev();
 
