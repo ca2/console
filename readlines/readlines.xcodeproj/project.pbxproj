@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A90EEE22512F6E40060868A /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A90EEE12512F6E40060868A /* libacme.dylib */; };
+		9A90EEE62512F7120060868A /* libidn.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A90EEE42512F6F40060868A /* libidn.dylib */; };
+		9A90EEE72512F7130060868A /* libacme.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A90EEE12512F6E40060868A /* libacme.dylib */; };
+		9A90EEE82512F7150060868A /* libapex.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A90EEE32512F6E90060868A /* libapex.dylib */; };
+		9A90EEE92512F71C0060868A /* libapex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A90EEE32512F6E90060868A /* libapex.dylib */; };
+		9A90EEF02512F7D30060868A /* libssl.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A90EEEE2512F7D30060868A /* libssl.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		9A90EEF12512F7D30060868A /* libcrypto.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A90EEEF2512F7D30060868A /* libcrypto.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9AD19ACF2512D2FA00B4C44A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AD19ACD2512D2FA00B4C44A /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -14,9 +21,14 @@
 		9A68A39C25112AFD008DABD2 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			dstPath = "";
+			dstSubfolderSpec = 6;
 			files = (
+				9A90EEE62512F7120060868A /* libidn.dylib in CopyFiles */,
+				9A90EEE72512F7130060868A /* libacme.dylib in CopyFiles */,
+				9A90EEE82512F7150060868A /* libapex.dylib in CopyFiles */,
+				9A90EEF12512F7D30060868A /* libcrypto.dylib in CopyFiles */,
+				9A90EEF02512F7D30060868A /* libssl.dylib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -24,6 +36,11 @@
 
 /* Begin PBXFileReference section */
 		9A68A39E25112AFD008DABD2 /* readlines */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = readlines; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A90EEE12512F6E40060868A /* libacme.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libacme.dylib; path = ../../../time/build/product/Debug/libacme.dylib; sourceTree = "<group>"; };
+		9A90EEE32512F6E90060868A /* libapex.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libapex.dylib; path = ../../../time/build/product/Debug/libapex.dylib; sourceTree = "<group>"; };
+		9A90EEE42512F6F40060868A /* libidn.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libidn.dylib; path = ../../../time/macos/libidn.dylib; sourceTree = "<group>"; };
+		9A90EEEE2512F7D30060868A /* libssl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.dylib; path = ../../../time/macos/libssl.dylib; sourceTree = "<group>"; };
+		9A90EEEF2512F7D30060868A /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = ../../../time/macos/libcrypto.dylib; sourceTree = "<group>"; };
 		9AD19ACD2512D2FA00B4C44A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -32,6 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A90EEE22512F6E40060868A /* libacme.dylib in Frameworks */,
+				9A90EEE92512F71C0060868A /* libapex.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +62,7 @@
 			children = (
 				9AD19AC52512D2FA00B4C44A /* readlines */,
 				9A68A39F25112AFD008DABD2 /* Products */,
+				9A90EEE02512F6AF0060868A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,6 +72,18 @@
 				9A68A39E25112AFD008DABD2 /* readlines */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		9A90EEE02512F6AF0060868A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9A90EEE42512F6F40060868A /* libidn.dylib */,
+				9A90EEEF2512F7D30060868A /* libcrypto.dylib */,
+				9A90EEEE2512F7D30060868A /* libssl.dylib */,
+				9A90EEE12512F6E40060868A /* libacme.dylib */,
+				9A90EEE32512F6E90060868A /* libapex.dylib */,
+			);
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 		9AD19AC52512D2FA00B4C44A /* readlines */ = {
@@ -205,6 +237,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-all_load";
+				PLATFORM_MODIFIER = macos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUN_CLANG_STATIC_ANALYZER = NO;
 				SDKROOT = macosx;
@@ -309,6 +342,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_LDFLAGS = "-all_load";
+				PLATFORM_MODIFIER = macos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUN_CLANG_STATIC_ANALYZER = NO;
 				SDKROOT = macosx;
