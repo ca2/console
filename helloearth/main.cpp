@@ -1,7 +1,7 @@
 #include "acme/console.h"
 
 
-int main(int argc, wchar_t * argv[])
+int main(int argc, TCHAR ** argv)
 {
 
    string strHelloEarth = "Hello Earth!!";

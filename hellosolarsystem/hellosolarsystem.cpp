@@ -125,7 +125,7 @@ inline string _009Explode(const CONTAINER& container, string strSeparator, strin
 //   {
 //
 
-int main(int argc, char ** argv)
+int main(int argc, TCHAR ** argv)
 {
 
    console console(argc, argv);
