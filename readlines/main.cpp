@@ -5,7 +5,7 @@
 int main(int argc, char * argv[])
 {
 
-   console console(argc, argv);
+   ::apex::console console(argc, argv);
 
    ::file::path path;
 
