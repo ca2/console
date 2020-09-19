@@ -43,6 +43,7 @@ int main(int argc, TCHAR ** argv)
 
    property_set set;
 
+
    auto & library = set["user1"];
 
    library["book1"]["title"] = "First C++ Book";
@@ -84,7 +85,7 @@ int main(int argc, TCHAR ** argv)
 
    os_message_box("Hello Earth!!", "helloearth");
 
-   press_any_key_to_exit();
+   Sleep(5000);
 
    return 0;
 

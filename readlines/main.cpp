@@ -38,7 +38,9 @@ int main(int argc, char * argv[])
 
    }
 
-   press_any_key_to_exit();
+   os_message_box(str, "hellosolarsystem");
+
+   Sleep(5000);
 
    return console.result();
 

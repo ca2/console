@@ -3,6 +3,128 @@
 // 2020-04-29 CJsteel@Twitch.tv Present
 
 
+::estatus somecode()
+{
+
+
+   // done something and it failed
+   // ....
+   // ....
+
+   return ::error_failed;
+
+
+}
+
+
+CLASS_DECL_AURA void debug_debug_reference();
+
+template < typename RESULT_CONTAINER, typename CONTAINER >
+inline void in_odd_count(RESULT_CONTAINER& result_container, const CONTAINER& container)
+{
+
+   for (auto& item : container)
+   {
+
+      if (container.get_count(item) % 2 == 1)
+      {
+
+         result_container.add_unique(item);
+
+      }
+
+   }
+
+}
+
+template < typename CONTAINER >
+inline auto in_odd_count(const CONTAINER& container)
+{
+
+   CONTAINER containerResult;
+
+   in_odd_count(containerResult, container);
+
+   return containerResult;
+
+}
+
+
+
+template < typename CONTAINER >
+inline string _009Explode(const CONTAINER& container, string strSeparator, string strLastSeparator)
+{
+
+   string str;
+
+   ::index i = container.get_count();
+
+   for (auto& item : container)
+   {
+
+      str += __str(item);
+
+      if (i > 2)
+      {
+
+         str += strSeparator;
+
+      }
+      else if (i == 2)
+      {
+
+         str += strLastSeparator;
+
+      }
+
+      i--;
+
+   }
+
+   return str;
+
+}
+
+
+
+
+//namespace helloworld
+//{
+//
+//
+//   application::application()
+//   {
+//
+//      m_strAppName = "consolelab";
+//      m_strBaseSupportId = "ca2_flag";
+//      m_bLicense = false;
+//
+//   }
+//
+//
+//   application::~application()
+//   {
+//
+//
+//   }
+//
+//
+//
+//   void application::on_request(::create* pcreate)
+//   {
+//
+//      helloworld();
+//
+//      set_finish();
+//
+//   }
+//
+//
+//   void application::helloworld()
+//   {
+//
+
+
 void find_maximum_value_in_list()
 {
 
