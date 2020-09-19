@@ -229,7 +229,7 @@ int main(int argc, TCHAR ** argv)
 
    os_message_box("Hello Solar System!!", "hellosolarsystem");
 
-   Sleep(5000);
+   2.5_s.sleep();
 
 }
 

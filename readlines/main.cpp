@@ -40,7 +40,7 @@ int main(int argc, char * argv[])
 
    os_message_box(str, "hellosolarsystem");
 
-   Sleep(5000);
+   4_s.sleep();
 
    return console.result();
 

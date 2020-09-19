@@ -85,7 +85,7 @@ int main(int argc, TCHAR ** argv)
 
    os_message_box("Hello Earth!!", "helloearth");
 
-   Sleep(5000);
+   2.5_s.sleep();
 
    return 0;
 
