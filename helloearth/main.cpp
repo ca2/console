@@ -82,6 +82,8 @@ int main(int argc, TCHAR ** argv)
 
    printf("%s\n", strJson.c_str());
 
+   os_message_box("Hello Earth!!", "helloearth");
+
    press_any_key_to_exit();
 
    return 0;
