@@ -8,7 +8,7 @@
 int main(int argc, TCHAR ** argv)
 {
 
-   ::aura::console console(argc, argv);
+   ::console console(argc, argv);
 
    cjsteel_0001_ca2_rev();
 
@@ -229,7 +229,7 @@ int main(int argc, TCHAR ** argv)
 
    os_message_box("Hello Solar System!!", "hellosolarsystem");
 
-   2.5_s.sleep();
+   ::sleep(2.5_s);
 
 }
 

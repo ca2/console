@@ -5,7 +5,7 @@
 int main(int argc, char * argv[])
 {
 
-   ::apex::console console(argc, argv);
+   ::console console(argc, argv);
 
    ::file::path path;
 
@@ -38,9 +38,9 @@ int main(int argc, char * argv[])
 
    }
 
-   os_message_box(str, "hellosolarsystem");
+   os_message_box(str, "readlines");
 
-   4_s.sleep();
+   ::sleep(4_s);
 
    return console.result();
 

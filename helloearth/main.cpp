@@ -85,7 +85,7 @@ int main(int argc, TCHAR ** argv)
 
    os_message_box("Hello Earth!!", "helloearth");
 
-   2.5_s.sleep();
+   ::sleep(2.5_s);
 
    return 0;
 

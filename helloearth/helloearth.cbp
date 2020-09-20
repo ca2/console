@@ -74,8 +74,8 @@
 				<Option host_application="$(#time_dir)/x64/$(TARGET_NAME)/$(PROJECT_NAME)" />
 				<Option run_host_application_in_terminal="1" />
 				<Compiler>
-					<Add option="-g" />
 					<Add option="-fPIC" />
+					<Add option="-g" />
 					<Add option="-D_DEBUG" />
 					<Add directory="$(WORKSPACE_DIR)/../../platform-raspbian" />
 					<Add directory="$(WORKSPACE_DIR)/../../platform-raspbian/_include" />
