@@ -31,6 +31,37 @@ int main(int argc, TCHAR ** argv)
 
    }
 
+   string_array stra2;
+
+   stra2.add("apP");
+   stra2.add("ap1");
+   stra2.add("oRa");
+   stra2.add("or2");
+   stra2.add("Str");
+   stra2.add("st3");
+
+   for (auto& str2 : stra2)
+   {
+      
+      int iFind = stra.find_first_begins_ci(str2);
+      
+      if(iFind < 0)
+      {
+
+         printf("find first starts with: %s - %d\n", str2.c_str(), iFind);
+
+         
+      }
+      else
+      {
+         
+         printf("find first starts with: %s - %d - %s\n", str2.c_str(), iFind, stra[iFind].c_str());
+
+      }
+
+   }
+
+
    ::id id;
 
    id = 1;
@@ -85,7 +116,7 @@ int main(int argc, TCHAR ** argv)
 
    os_message_box("Hello Earth!!", "helloearth");
 
-   ::sleep(2.5_s);
+   ::sleep(7.5_s);
 
    return 0;
 
