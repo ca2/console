@@ -1,5 +1,5 @@
-#include "aura/console_slim.h"
-#include "aura/xml/_.h"
+#include "aqua/console.h"
+#include "aqua/xml.h"
 
 
 #include "tutor.cpp"
