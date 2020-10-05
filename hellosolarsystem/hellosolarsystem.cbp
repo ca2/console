@@ -93,7 +93,7 @@
 			<Add option="-Wl,-rpath=\\$$$ORIGIN" />
 			<Add option="-lacme" />
 			<Add option="-lapex" />
-			<Add option="-laura" />
+			<Add option="-laqua" />
 			<Add option="-Wl,-z,defs" />
 			<Add directory="$(WORKSPACEDIR)/../../time-$(#platform_modifier)/x64/$(TARGET_NAME)" />
 		</Linker>
