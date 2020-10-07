@@ -20,5 +20,8 @@
     <ClCompile Include="tutor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="asterisk_ampersand_naked_type.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

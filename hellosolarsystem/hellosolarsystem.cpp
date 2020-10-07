@@ -1,8 +1,9 @@
 #include "aqua/console.h"
 #include "aqua/xml.h"
-
+#include <stdio.h>
 
 #include "tutor.cpp"
+#include "asterisk_ampersand_naked_type.cpp"
 
 
 int main(int argc, TCHAR ** argv)
@@ -17,6 +18,26 @@ int main(int argc, TCHAR ** argv)
    tick.Now();
 
    sleep(10_ms);
+
+   {
+
+      int iAsteriskAmpersandNakedType = 1;
+
+      printf("iAsteriskAmpersandNakedType (init) %d\n", iAsteriskAmpersandNakedType);
+
+      asterisk(&iAsteriskAmpersandNakedType);
+
+      printf("iAsteriskAmpersandNakedType (after Asterisk) %d\n", iAsteriskAmpersandNakedType);
+
+      ampersand(iAsteriskAmpersandNakedType);
+
+      printf("iAsteriskAmpersandNakedType (after Ampersand) %d\n", iAsteriskAmpersandNakedType);
+
+      naked_type(iAsteriskAmpersandNakedType);
+
+      printf("iAsteriskAmpersandNakedType (after Naked Type) %d\n", iAsteriskAmpersandNakedType);
+
+   }
 
    auto elapsed = tick.elapsed();
 
