@@ -43,19 +43,19 @@ int main(int argc, TCHAR ** argv)
    for (auto& str2 : stra2)
    {
       
-      int iFind = stra.find_first_begins_ci(str2);
+      auto iFind = stra.find_first_begins_ci(str2);
       
       if(iFind < 0)
       {
 
-         printf("find first starts with: %s - %d\n", str2.c_str(), iFind);
+         printf("find first starts with: %s - %" __priindex "\n", str2.c_str(), iFind);
 
          
       }
       else
       {
          
-         printf("find first starts with: %s - %d - %s\n", str2.c_str(), iFind, stra[iFind].c_str());
+         printf("find first starts with: %s - %" __priindex " - %s\n", str2.c_str(), iFind, stra[iFind].c_str());
 
       }
 
