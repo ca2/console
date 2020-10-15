@@ -38,7 +38,12 @@ int main(int argc, char * argv[])
 
    }
 
-   os_message_box(str, "readlines");
+   auto future = __future([](const ::var& var)
+      {
+
+      });
+
+   os_message_box(str, "readlines", message_box_ok, future);
 
    ::sleep(4_s);
 
