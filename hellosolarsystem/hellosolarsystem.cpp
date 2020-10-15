@@ -248,12 +248,7 @@ int main(int argc, TCHAR ** argv)
 
    printf("\n");
 
-   auto future = __future([](const ::var& var)
-      {
-
-      });
-
-   os_message_box("Hello Solar System!!", "hellosolarsystem", message_box_ok, future);
+   os_message_box("Hello Solar System!!", "hellosolarsystem", message_box_ok, __async_future());
 
    ::sleep(2.5_s);
 

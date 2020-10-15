@@ -110,12 +110,7 @@ void process_main()
 
    printf("%s\n", strJson.c_str());
 
-   auto future = __future([](const ::var & var)
-      {
-
-      });
-
-   os_message_box("Hello Earth!!", "helloearth", message_box_ok, future);
+   os_message_box("Hello Earth!!", "helloearth", message_box_ok, __async_future());
 
    ::sleep(7.5_s);
 
