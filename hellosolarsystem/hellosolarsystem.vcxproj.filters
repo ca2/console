@@ -23,5 +23,16 @@
     <ClCompile Include="asterisk_ampersand_naked_type.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="double_to_int.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="loop_get_char.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="brushing_bit_per_bit.cpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

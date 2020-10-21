@@ -1212,7 +1212,13 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='basis|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='stage|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="double_to_int.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='basis|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="hellosolarsystem.cpp" />
+    <ClCompile Include="loop_get_char.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='basis|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="tutor.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='cover|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='cube_basis|Win32'">true</ExcludedFromBuild>
@@ -1236,6 +1242,11 @@
     <ProjectReference Include="..\..\app\aqua\aqua.vcxproj">
       <Project>{1b06fe5f-f783-41a1-ac68-0e02880dbbac}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="brushing_bit_per_bit.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='basis|x64'">true</ExcludedFromBuild>
+    </ClInclude>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

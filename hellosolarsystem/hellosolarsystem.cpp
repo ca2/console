@@ -4,12 +4,21 @@
 
 #include "tutor.cpp"
 #include "asterisk_ampersand_naked_type.cpp"
+#include "double_to_int.cpp"
+#include "brushing_bit_per_bit.cpp"
+#include "loop_get_char.cpp"
 
 
 int main(int argc, TCHAR ** argv)
 {
 
    ::console console(argc, argv);
+
+   brushing_bit_per_bit();
+
+   double_to_int();
+
+   loop_get_char();
 
    cjsteel_0001_ca2_rev();
 
