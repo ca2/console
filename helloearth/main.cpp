@@ -1,5 +1,6 @@
 #include "acme/console.h"
 
+CLASS_DECL_ACME string message_box_result_to_string(int iResult);
 
 void process_main()
 {
@@ -110,9 +111,28 @@ void process_main()
 
    printf("%s\n", strJson.c_str());
 
-   os_message_box("Hello Earth!!", "helloearth", message_box_ok, __async_future());
+repeat_message_box:
 
-   ::sleep(7.5_s);
+   sync_future sync;
+
+   os_message_box("Hello Earth!! Yes, No or Cancel?!?", "helloearth!!", message_box_yes_no_cancel | message_box_icon_information, sync);
+
+   //sync.m_event.lock(75_min);
+
+   sync.m_event.lock(7.5_s);
+
+   int iResult = sync.m_var.i32();
+
+   printf("helloearth response \"%s\"\n", message_box_result_to_string(iResult).c_str());
+
+   if (iResult != 0 && iResult != IDYES)
+   {
+
+      goto repeat_message_box;
+
+   }
+
+   printf("Exiting main...\n");
 
 }
 

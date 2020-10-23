@@ -38,9 +38,11 @@ int main(int argc, char * argv[])
 
    }
 
-   os_message_box(str, "readlines", message_box_ok, __async_future());
+   sync_future sync;
 
-   ::sleep(4_s);
+   os_message_box(str, "readlines", message_box_ok, sync);
+
+   sync.m_event.wait(4_s);
 
    return console.result();
 

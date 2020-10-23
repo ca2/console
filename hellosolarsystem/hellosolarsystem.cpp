@@ -257,9 +257,11 @@ int main(int argc, TCHAR ** argv)
 
    printf("\n");
 
-   os_message_box("Hello Solar System!!", "hellosolarsystem", message_box_ok, __async_future());
+   sync_future sync;
 
-   ::sleep(2.5_s);
+   os_message_box("Hello Solar System!!", "hellosolarsystem", message_box_ok, sync);
+
+   sync.m_event.wait(2.5_s);
 
 }
 
