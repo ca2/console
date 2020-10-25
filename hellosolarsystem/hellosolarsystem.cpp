@@ -257,11 +257,11 @@ int main(int argc, TCHAR ** argv)
 
    printf("\n");
 
-   sync_future sync;
+   auto pfuture = __sync_future();
 
-   os_message_box("Hello Solar System!!", "hellosolarsystem", message_box_ok, sync);
+   os_message_box("Hello Solar System!!", "hellosolarsystem", message_box_ok, pfuture);
 
-   sync.m_event.wait(2.5_s);
+   pfuture->wait(2.5_s);
 
 }
 

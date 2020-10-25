@@ -38,11 +38,11 @@ int main(int argc, char * argv[])
 
    }
 
-   sync_future sync;
+   auto pfuture = __sync_future();
 
-   os_message_box(str, "readlines", message_box_ok, sync);
+   os_message_box(str, "readlines", message_box_ok, pfuture);
 
-   sync.m_event.wait(4_s);
+   pfuture->wait(8_s);
 
    return console.result();
 

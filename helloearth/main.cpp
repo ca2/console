@@ -113,15 +113,15 @@ void process_main()
 
 repeat_message_box:
 
-   sync_future sync;
+   auto pfuture = __sync_future();
 
-   os_message_box("Hello Earth!! Yes, No or Cancel?!?", "helloearth!!", message_box_yes_no_cancel | message_box_icon_information, sync);
+   os_message_box("Hello Earth!! Yes, No or Cancel?!?", "helloearth!!", message_box_yes_no_cancel | message_box_icon_information, pfuture);
 
-   //sync.m_event.lock(75_min);
+   //pfuture->m_event.lock(75_min);
 
-   sync.m_event.lock(7.5_s);
+   pfuture->wait(7.5_s);
 
-   int iResult = sync.m_var.i32();
+   int iResult = pfuture->m_var.i32();
 
    printf("helloearth response \"%s\"\n", message_box_result_to_string(iResult).c_str());
 
