@@ -29,7 +29,7 @@ void double_to_int()
 
    double d = strtod(psz, &pStoppedHere);
 
-   if (pStoppedHere != '\0')
+   if (pStoppedHere != nullptr)
    {
 
       printf("there is a error in line %d", iLine );
