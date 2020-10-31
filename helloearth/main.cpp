@@ -2,7 +2,7 @@
 
 CLASS_DECL_ACME string message_box_result_to_string(int iResult);
 
-void process_main()
+void stage()
 {
 
    string strHelloEarth = "Hello Earth!!";
@@ -119,7 +119,7 @@ repeat_message_box:
 
    //pfuture->m_event.lock(75_min);
 
-   pfuture->wait(7.5_s);
+   pfuture->wait(75_s);
 
    int iResult = pfuture->m_var.i32();
 
