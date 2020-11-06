@@ -1,5 +1,9 @@
 
 
+#include <ctype.h>
+#include <stdio.h>
+#include <stdlib.h>
+
 
 void double_to_int()
 {
