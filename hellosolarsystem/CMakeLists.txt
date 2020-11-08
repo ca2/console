@@ -31,8 +31,12 @@ if (MSVC)
 endif()
 
 
-target_link_directories(hellosolarsystem PRIVATE ${LIBRARY_OUTPUT_PATH})
 target_link_libraries(hellosolarsystem PRIVATE acme apex aqua)
+
+
+target_link_directories(hellosolarsystem PRIVATE ${LIBRARY_OUTPUT_PATH})
+target_link_directories(hellosolarsystem PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../archive/storage-${PLATFORM_NAME}/library/x64/basis)
+target_link_directories(hellosolarsystem PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../archive/storage-${PLATFORM_NAME}/third/library/x64/basis)
 
 
 target_include_directories(hellosolarsystem PRIVATE $ENV{HOME}/__config)

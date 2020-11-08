@@ -31,8 +31,11 @@ if (MSVC)
 endif()
 
 
-target_link_directories(helloearth PRIVATE ${LIBRARY_OUTPUT_PATH})
 target_link_libraries(helloearth PRIVATE acme)
+
+target_link_directories(helloearth PRIVATE ${LIBRARY_OUTPUT_PATH})
+target_link_directories(helloearth PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../archive/storage-${PLATFORM_NAME}/library/x64/basis)
+target_link_directories(helloearth PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../archive/storage-${PLATFORM_NAME}/third/library/x64/basis)
 
 
 target_include_directories(helloearth PRIVATE $ENV{HOME}/__config)
