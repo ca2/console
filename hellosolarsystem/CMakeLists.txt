@@ -55,7 +55,7 @@ target_include_directories(hellosolarsystem PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 
 
 
-target_compile_definitions(hellosolarsystem PRIVATE _ACME_LIBRARY)
+target_compile_definitions(hellosolarsystem PRIVATE _CONSOLE_HELLOSOLARSYSTEM_LIBRARY)
 target_compile_definitions(hellosolarsystem PRIVATE UNICODE)
 target_compile_definitions(hellosolarsystem PRIVATE _UNICODE)
 

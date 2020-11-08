@@ -54,7 +54,7 @@ target_include_directories(readlines PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 
 
 
-target_compile_definitions(readlines PRIVATE _ACME_LIBRARY)
+target_compile_definitions(readlines PRIVATE _CONSOLE_READLINES_LIBRARY)
 target_compile_definitions(readlines PRIVATE UNICODE)
 target_compile_definitions(readlines PRIVATE _UNICODE)
 

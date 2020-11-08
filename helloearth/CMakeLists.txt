@@ -53,7 +53,7 @@ target_include_directories(helloearth PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 
 
 
-target_compile_definitions(helloearth PRIVATE _ACME_LIBRARY)
+target_compile_definitions(helloearth PRIVATE _CONSOLE_HELLOEARTH_LIBRARY)
 target_compile_definitions(helloearth PRIVATE UNICODE)
 target_compile_definitions(helloearth PRIVATE _UNICODE)
 
