@@ -115,7 +115,7 @@ repeat_message_box:
 
    auto pfuture = __sync_future();
 
-   os_message_box("Hello Earth!! Yes, No or Cancel?!?", "helloearth!!", message_box_yes_no_cancel | message_box_icon_information, pfuture);
+   os_message_box("Hello Earth!! Yes, No or Cancel?!?", "helloearth!!", e_message_box_yes_no_cancel | e_message_box_icon_information, pfuture);
 
    //pfuture->m_event.lock(75_min);
 

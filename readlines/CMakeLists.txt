@@ -39,6 +39,7 @@ target_link_directories(readlines PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../a
 
 
 
+target_include_directories(apex PRIVATE .)
 target_include_directories(readlines PRIVATE $ENV{HOME}/__config)
 target_include_directories(readlines PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../..)
 target_include_directories(readlines PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/..)

@@ -259,7 +259,7 @@ int main(int argc, TCHAR ** argv)
 
    auto pfuture = __sync_future();
 
-   os_message_box("Hello Solar System!!", "hellosolarsystem", message_box_ok, pfuture);
+   os_message_box("Hello Solar System!!", "hellosolarsystem", e_message_box_ok, pfuture);
 
    pfuture->wait(2.5_s);
 
