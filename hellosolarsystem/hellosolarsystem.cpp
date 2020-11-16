@@ -22,7 +22,7 @@ int main(int argc, TCHAR ** argv)
 
    cjsteel_0001_ca2_rev();
 
-   tick tick;
+   millis tick;
 
    tick.Now();
 
@@ -52,7 +52,7 @@ int main(int argc, TCHAR ** argv)
 
    string strElapsed;
 
-   strElapsed = " Elapsed: " + __str(elapsed.m_i);
+   strElapsed = " Elapsed: " + __str(elapsed.m_iMilliseconds);
 
    output_debug_string(strElapsed);
 
