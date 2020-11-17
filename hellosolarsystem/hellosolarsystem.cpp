@@ -22,9 +22,9 @@ int main(int argc, TCHAR ** argv)
 
    cjsteel_0001_ca2_rev();
 
-   millis tick;
+   millis millis;
 
-   tick.Now();
+   millis.Now();
 
    sleep(10_ms);
 
@@ -48,7 +48,7 @@ int main(int argc, TCHAR ** argv)
 
    }
 
-   auto elapsed = tick.elapsed();
+   auto elapsed = millis.elapsed();
 
    string strElapsed;
 
