@@ -27,6 +27,9 @@
     <ClCompile Include="loop_get_char.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="printf_format_flags.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="brushing_bit_per_bit.cpp">

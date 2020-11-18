@@ -7,12 +7,15 @@
 #include "double_to_int.cpp"
 #include "brushing_bit_per_bit.cpp"
 #include "loop_get_char.cpp"
+#include "printf_format_flags.cpp"
 
 
 int main(int argc, TCHAR ** argv)
 {
 
    ::console console(argc, argv);
+
+   printf_format_flags();
 
    brushing_bit_per_bit();
 
@@ -261,7 +264,9 @@ int main(int argc, TCHAR ** argv)
 
    os_message_box("Hello Solar System!!", "hellosolarsystem", e_message_box_ok, pfuture);
 
-   pfuture->wait(2.5_s);
+   //pfuture->wait(2.5_s);
+
+   pfuture->wait(125_s);
 
 }
 
