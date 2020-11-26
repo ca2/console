@@ -1,6 +1,8 @@
 #include "acme/console.h"
 
-CLASS_DECL_ACME string message_box_result_to_string(int iResult);
+
+CLASS_DECL_ACME string message_box_result_to_string(enum_dialog_result edialogresult);
+
 
 void stage()
 {
@@ -119,13 +121,15 @@ repeat_message_box:
 
    //pfuture->m_event.lock(75_min);
 
-   pfuture->wait(75_s);
+   //pfuture->wait(75_s);
 
-   int iResult = pfuture->m_var.i32();
+   pfuture->wait(7.5_s);
 
-   printf("helloearth response \"%s\"\n", message_box_result_to_string(iResult).c_str());
+   enum_dialog_result edialogresult = (enum_dialog_result) pfuture->m_var.i32();
 
-   if (iResult != 0 && iResult != IDYES)
+   printf("helloearth response \"%s\"\n", message_box_result_to_string(edialogresult).c_str());
+
+   if (edialogresult != 0 && edialogresult != e_dialog_result_yes)
    {
 
       goto repeat_message_box;
