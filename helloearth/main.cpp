@@ -1,8 +1,44 @@
 #include "acme/console.h"
+//template<typename T>
+//inline const auto oddProduct(T n)  noexcept
+//-> std::enable_if_t<std::is_unsigned<T>::value, unsigned long long> {
+//   return n < T{ 2 }
+//      ? n
+//      : (n % T{ 2 })
+//      ? oddProduct<T>(n - T{ 2 }) * n
+//      : oddProduct(--n);
+//}
+//
+//template<typename T>
+//inline const auto oddProduct(T n)
+//-> std::enable_if_t<std::is_signed<T>::value, unsigned long long> {
+//   if (n < 0) throw std::domain_error("Negative value passed");
+//   return n < T{ 2 }
+//      ? n
+//      : (n % T{ 2 })
+//      ? oddProduct<std::make_unsigned_t<T>>(n - T{ 2 }) * n
+//      : oddProduct<std::make_unsigned_t<T>>(--n);
+//}
+
 
 
 CLASS_DECL_ACME string message_box_result_to_string(enum_dialog_result edialogresult);
+//// if a == b, min returns first argument
+template < typename A, typename B >
+constexpr const auto min_test(const A & a, const B & b)
+{
 
+   return a < (A) b ? a : (A)b;
+
+}
+template <  >
+constexpr const auto min_test(const ::u32 & u, const ::i32 & i)
+{
+
+   return i < 0 ? 0 : (u < (::u32)i ? u : (::u32)i);
+
+}
+#define min min_test
 
 void stage()
 {
@@ -113,6 +149,45 @@ void stage()
 
    printf("%s\n", strJson.c_str());
 
+
+   unsigned int uAllOne = 0xffffffff;
+   int iUAllOne = uAllOne;
+   auto min1 = min(uAllOne, iUAllOne);
+   auto min2 = min(iUAllOne, uAllOne);
+   int iAllOne = -1;
+   unsigned int uIAllOne = iAllOne;
+   auto min3 = min(iAllOne, uIAllOne);
+   auto min4 = min(uIAllOne, iAllOne);
+
+   
+
+   unsigned int uAlmostAllOne = 0xfffffffe;
+   int iUAlmostAllOne = uAlmostAllOne;
+   auto min5 = min(uAlmostAllOne, iUAlmostAllOne);
+   auto min6 = min(iUAlmostAllOne, uAlmostAllOne);
+   int iAlmostAllOne = -2;
+   unsigned int uIAlmostAllOne = iAlmostAllOne;
+   auto min7 = min(iAlmostAllOne, uIAlmostAllOne);
+   auto min8 = min(uIAlmostAllOne, iAlmostAllOne);
+
+   unsigned short u1 = 0xffff;
+   int i1 = u1;
+   auto min9 = min(u1, i1);
+   auto mina = min(i1, u1);
+   short s1 = -1;
+   unsigned int i2 = s1;
+   auto minb = min(s1, i2);
+   auto minc = min(i2, s1);
+
+   unsigned int u3 = 0xffffffff;
+   short i3 = u3;
+   auto mind = min(u3, i3);
+   auto mine = min(i3, u3);
+   int s3 = -1;
+   unsigned short i4 = s3;
+   auto minf = min(s3, i4);
+   auto ming = min(i4, s3);
+
 repeat_message_box:
 
    auto pfuture = __sync_future();
@@ -135,6 +210,7 @@ repeat_message_box:
       goto repeat_message_box;
 
    }
+
 
    printf("Exiting main...\n");
 
