@@ -2,6 +2,7 @@
 #include "aqua/xml.h"
 #include <stdio.h>
 
+#include "pointer_const_pointer.cpp"
 #include "tutor.cpp"
 #include "asterisk_ampersand_naked_type.cpp"
 #include "double_to_int.cpp"
@@ -14,6 +15,10 @@ int main(int argc, TCHAR ** argv)
 {
 
    ::console console(argc, argv);
+
+   pointer_const_pointer();
+
+   pointer_const_pointer0();
 
    printf_format_flags();
 
