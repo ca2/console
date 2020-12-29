@@ -3,7 +3,7 @@
 // 2020-04-29 CJsteel@Twitch.tv Present
 
 
-::estatus somecode()
+::e_status somecode()
 {
 
 
