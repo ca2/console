@@ -60,7 +60,7 @@ int main(int argc, TCHAR ** argv)
 
    string strElapsed;
 
-   strElapsed = " Elapsed: " + __str(elapsed.m_iMilliseconds);
+   strElapsed = " Elapsed: " + __str(elapsed.m_i);
 
    output_debug_string(strElapsed);
 
