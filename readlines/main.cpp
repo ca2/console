@@ -27,6 +27,8 @@ int main(int argc, char * argv[])
 
    Application.initialize_context();
 
+   //path -= ::file::e_flag_bypass_cache;
+
    string str = Application.file().as_string(path);
 
    stra.add_lines(str);
