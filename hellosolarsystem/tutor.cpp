@@ -131,11 +131,11 @@ void find_maximum_value_in_list()
    using LIST_TYPE = double;
    ::list<LIST_TYPE> list;
 
-   auto min = ::numeric_info<LIST_TYPE >::get_minimum_value();
+   auto minimum = ::numeric_info<LIST_TYPE >::get_minimum_value();
 
-   list.add_tail(min);
-   list.add_tail(min + 1);
-   list.add_tail(min);
+   list.add_tail(minimum);
+   list.add_tail(minimum + 1);
+   list.add_tail(minimum);
    list.add_tail(0);
    list.add_tail(9);
    list.add_tail(2);
@@ -170,21 +170,21 @@ void find_maximum_value_in_list()
 
       //}
 
-      auto max = min;
+      auto maximum = minimum;
 
       for (auto& item : list)
       {
 
-         if (item > max)
+         if (item > maximum)
          {
 
-            max = item;
+            maximum = item;
 
          }
 
       }
 
-      printf("maximum = %s\n\n", __str(max).c_str());
+      printf("maximum = %s\n\n", __str(maximum).c_str());
 
    }
 

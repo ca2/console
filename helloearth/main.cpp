@@ -23,7 +23,7 @@
 
 
 CLASS_DECL_ACME string message_box_result_to_string(enum_dialog_result edialogresult);
-//// if a == b, min returns first argument
+//// if a == b, minimum returns first argument
 template < typename A, typename B >
 constexpr const auto min_test(const A & a, const B & b)
 {
@@ -38,7 +38,7 @@ constexpr const auto min_test(const ::u32 & u, const ::i32 & i)
    return i < 0 ? 0 : (u < (::u32)i ? u : (::u32)i);
 
 }
-#define min min_test
+#define minimum min_test
 
 void stage()
 {
@@ -152,41 +152,41 @@ void stage()
 
    unsigned int uAllOne = 0xffffffff;
    int iUAllOne = uAllOne;
-   auto min1 = min(uAllOne, iUAllOne);
-   auto min2 = min(iUAllOne, uAllOne);
+   auto min1 = minimum(uAllOne, iUAllOne);
+   auto min2 = minimum(iUAllOne, uAllOne);
    int iAllOne = -1;
    unsigned int uIAllOne = iAllOne;
-   auto min3 = min(iAllOne, uIAllOne);
-   auto min4 = min(uIAllOne, iAllOne);
+   auto min3 = minimum(iAllOne, uIAllOne);
+   auto min4 = minimum(uIAllOne, iAllOne);
 
    
 
    unsigned int uAlmostAllOne = 0xfffffffe;
    int iUAlmostAllOne = uAlmostAllOne;
-   auto min5 = min(uAlmostAllOne, iUAlmostAllOne);
-   auto min6 = min(iUAlmostAllOne, uAlmostAllOne);
+   auto min5 = minimum(uAlmostAllOne, iUAlmostAllOne);
+   auto min6 = minimum(iUAlmostAllOne, uAlmostAllOne);
    int iAlmostAllOne = -2;
    unsigned int uIAlmostAllOne = iAlmostAllOne;
-   auto min7 = min(iAlmostAllOne, uIAlmostAllOne);
-   auto min8 = min(uIAlmostAllOne, iAlmostAllOne);
+   auto min7 = minimum(iAlmostAllOne, uIAlmostAllOne);
+   auto min8 = minimum(uIAlmostAllOne, iAlmostAllOne);
 
    unsigned short u1 = 0xffff;
    int i1 = u1;
-   auto min9 = min(u1, i1);
-   auto mina = min(i1, u1);
+   auto min9 = minimum(u1, i1);
+   auto mina = minimum(i1, u1);
    short s1 = -1;
    unsigned int i2 = s1;
-   auto minb = min(s1, i2);
-   auto minc = min(i2, s1);
+   auto minb = minimum(s1, i2);
+   auto minc = minimum(i2, s1);
 
    unsigned int u3 = 0xffffffff;
    short i3 = u3;
-   auto mind = min(u3, i3);
-   auto mine = min(i3, u3);
+   auto mind = minimum(u3, i3);
+   auto mine = minimum(i3, u3);
    int s3 = -1;
    unsigned short i4 = s3;
-   auto minf = min(s3, i4);
-   auto ming = min(i4, s3);
+   auto minf = minimum(s3, i4);
+   auto ming = minimum(i4, s3);
 
 repeat_message_box:
 
