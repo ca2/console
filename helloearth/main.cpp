@@ -200,7 +200,7 @@ repeat_message_box:
 
    pfuture->wait(7.5_s);
 
-   enum_dialog_result edialogresult = (enum_dialog_result) pfuture->m_var.i32();
+   auto edialogresult = pfuture->m_var.e<enum_dialog_result>();
 
    printf("helloearth response \"%s\"\n", message_box_result_to_string(edialogresult).c_str());
 
