@@ -11,7 +11,7 @@
 #include "printf_format_flags.cpp"
 
 
-int main(int argc, TCHAR ** argv)
+int main(int argc, platform_char ** argv)
 {
 
    ::console console(argc, argv);
@@ -267,7 +267,7 @@ int main(int argc, TCHAR ** argv)
 
    auto pfuture = __sync_future();
 
-   os_message_box("Hello Solar System!!", "hellosolarsystem", e_message_box_ok, pfuture);
+   System.message_box("Hello Solar System!!", "hellosolarsystem", e_message_box_ok, pfuture);
 
    //pfuture->wait(2.5_s);
 

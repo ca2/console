@@ -131,7 +131,7 @@ void find_maximum_value_in_list()
    using LIST_TYPE = double;
    ::list<LIST_TYPE> list;
 
-   auto minimum = ::numeric_info<LIST_TYPE >::get_minimum_value();
+   auto minimum = ::numeric_info<LIST_TYPE >::minimum();
 
    list.add_tail(minimum);
    list.add_tail(minimum + 1);

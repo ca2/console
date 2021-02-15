@@ -42,7 +42,7 @@ int main(int argc, char * argv[])
 
    auto pfuture = __sync_future();
 
-   os_message_box(str, "readlines", e_message_box_ok, pfuture);
+   System.message_box(str, "readlines", e_message_box_ok, pfuture);
 
    pfuture->wait(8_s);
 
