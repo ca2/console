@@ -2,10 +2,10 @@
 #include "apex/_defer.h"
 
 
-int main(int argc, char * argv[])
+int main(int argc, char * argv[], char ** envp)
 {
 
-   ::console console(argc, argv);
+   ::console console(argc, argv, envp);
 
    ::file::path path;
 

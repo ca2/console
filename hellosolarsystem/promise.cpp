@@ -2,7 +2,7 @@
 
 
 //class doer :
-//   public promise::handler
+//   public promise::manager
 //{
 //
 //   void process(id);

@@ -11,10 +11,10 @@
 #include "printf_format_flags.cpp"
 
 
-int main(int argc, platform_char ** argv)
+int main(int argc, platform_char ** argv, platform_char ** envp)
 {
 
-   ::console console(argc, argv);
+   ::console console(argc, argv, envp);
 
    pointer_const_pointer();
 
