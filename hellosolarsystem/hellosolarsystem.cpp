@@ -265,13 +265,9 @@ int main(int argc, platform_char ** argv, platform_char ** envp)
 
    printf("\n");
 
-   auto pfuture = __sync_future();
 
-   System.message_box("Hello Solar System!!", "hellosolarsystem", e_message_box_ok, pfuture);
-
-   //pfuture->wait(2.5_s);
-
-   pfuture->wait(125_s);
+   System.message_box("Hello Solar System!!", "hellosolarsystem", e_message_box_ok
+   )->wait(15_s);
 
 }
 

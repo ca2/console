@@ -202,7 +202,7 @@ void find_maximum_value_in_list()
 //   output_debug_string("exception::exception &");
 
 //}
-//catch (::exception_pointer e)
+//catch const ::exception::exception & e
 //{
 
 //   output_debug_string("exception_pointer &");
@@ -238,7 +238,7 @@ void find_maximum_value_in_list()
 //   output_debug_string("exception::exception &");
 
 //}
-//catch (::exception_pointer e)
+//catch const ::exception::exception & e
 //{
 
 //   output_debug_string("exception_pointer &");

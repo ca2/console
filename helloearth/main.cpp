@@ -188,31 +188,40 @@ void stage()
    auto minf = minimum(s3, i4);
    auto ming = minimum(i4, s3);
 
-repeat_message_box:
+   printf("\n");
 
-   auto pfuture = __sync_future();
+   printf("\n");
 
-   System.message_box("Hello Earth!! Yes, No or Cancel?!?", "helloearth!!", e_message_box_yes_no_cancel | e_message_box_icon_information, pfuture);
-
-   //pfuture->m_event.lock(75_min);
-
-   //pfuture->wait(75_s);
-
-   pfuture->wait(7.5_s);
-
-   auto edialogresult = pfuture->m_var.e<enum_dialog_result>();
-
-   printf("helloearth response \"%s\"\n", message_box_result_to_string(edialogresult).c_str());
-
-   if (edialogresult != 0 && edialogresult != e_dialog_result_yes)
+   while (true)
    {
 
-      goto repeat_message_box;
+      auto result = message_box_for_console("Hello Earth!! Yes, No or Cancel?!?", "helloearth!!", e_message_box_yes_no_cancel | e_message_box_icon_information);
+
+      printf("\n");
+
+      printf("\n");
+
+      printf("helloearth response \"%s\"", message_box_result_to_string(result).c_str());
+
+      printf("\n");
+
+      printf("\n");
+
+      if (result == e_dialog_result_yes)
+      {
+
+         break;
+
+      }
 
    }
 
 
-   printf("Exiting main...\n");
+   printf("Exiting main...");
+
+   printf("\n");
+
+   printf("\n");
 
 }
 

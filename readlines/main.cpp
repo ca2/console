@@ -40,11 +40,7 @@ int main(int argc, char * argv[], char ** envp)
 
    }
 
-   auto pfuture = __sync_future();
-
-   System.message_box(str, "readlines", e_message_box_ok, pfuture);
-
-   pfuture->wait(8_s);
+   message_box_for_console(str, "readlines", e_message_box_ok);
 
    return console.result();
 
