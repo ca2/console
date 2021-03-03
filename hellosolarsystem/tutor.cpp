@@ -281,7 +281,7 @@ void cjsteel_0001_ca2_rev()
    for (int i = 0; i < PARTICLE_COUNT; i++)
    {
 
-      int j = System.math().gen_rand() % 100;
+      int j = System->math().gen_rand() % 100;
 
       vecaParticle[i].w = j;
       vecaParticle[i].x = j + 1;

@@ -9,10 +9,10 @@ int main(int argc, char * argv[], char ** envp)
 
    ::file::path path;
 
-   if (System.m_argc >= 2)
+   if (System->m_argc >= 2)
    {
 
-      path = System.m_argv[1];
+      path = System->m_argv[1];
 
    }
 

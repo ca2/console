@@ -265,9 +265,9 @@ int main(int argc, platform_char ** argv, platform_char ** envp)
 
    printf("\n");
 
+   
+   message_box_for_console("Hello Solar System!!", "hellosolarsystem", e_message_box_ok);
 
-   System.message_box("Hello Solar System!!", "hellosolarsystem", e_message_box_ok
-   )->wait(15_s);
 
 }
 
