@@ -64,7 +64,7 @@ int main(int argc, platform_char ** argv, platform_char ** envp)
 
    output_debug_string(strElapsed);
 
-   if (Application.is_true("debug"))
+   if (console.m_psystem->get_main_application()->is_true("debug"))
    {
 
       printf("\n");
@@ -88,7 +88,7 @@ int main(int argc, platform_char ** argv, platform_char ** envp)
    {
 
       printf("\n");
-      printf("Application.type_name() == \"%s\"\n", Application.type_name());
+      printf("papplication->type_name() == \"%s\"\n", console.m_psystem->get_main_application()->type_name());
       printf("\n");
 
    }
@@ -99,7 +99,7 @@ int main(int argc, platform_char ** argv, platform_char ** envp)
 
       {
 
-         auto pdocument = __new(xml::document);
+         auto pdocument = console.__create_new <xml::document >();
 
          pdocument->set_name("xml");
 
@@ -123,7 +123,7 @@ int main(int argc, platform_char ** argv, platform_char ** envp)
 
       {
 
-         auto pdocument = __new(xml::document);
+         auto pdocument = console.__create_new< xml::document>();
 
          pdocument->set_name("xml");
 

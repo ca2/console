@@ -278,10 +278,12 @@ void cjsteel_0001_ca2_rev()
 
    vec vecaParticle[PARTICLE_COUNT];
 
+   auto pmathematics = ::mathematics::mathematics();
+
    for (int i = 0; i < PARTICLE_COUNT; i++)
    {
 
-      int j = System->math().gen_rand() % 100;
+      int j = pmathematics->gen_rand() % 100;
 
       vecaParticle[i].w = j;
       vecaParticle[i].x = j + 1;

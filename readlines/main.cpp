@@ -9,10 +9,10 @@ int main(int argc, char * argv[], char ** envp)
 
    ::file::path path;
 
-   if (System->m_argc >= 2)
+   if (console.m_psystem->m_argc >= 2)
    {
 
-      path = System->m_argv[1];
+      path = console.m_psystem->m_argv[1];
 
    }
 
@@ -25,11 +25,11 @@ int main(int argc, char * argv[], char ** envp)
 
    string_array stra;
 
-   Application.initialize_context();
+   console.m_psystem->get_main_application()->initialize_context();
 
    //path -= ::file::e_flag_bypass_cache;
 
-   string str = Application.file().as_string(path);
+   string str = console.m_psystem->get_main_application()->file().as_string(path);
 
    stra.add_lines(str);
 
