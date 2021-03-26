@@ -1,5 +1,9 @@
-#include "apex/console_slim.h"
-#include "apex/_defer.h"
+#include "aqua/console.h"
+#include "aqua/_defer.h"
+#include "aqua/xml.h"
+
+
+#include "xml.cpp"
 
 
 int main(int argc, char * argv[], char ** envp)
@@ -22,6 +26,8 @@ int main(int argc, char * argv[], char ** envp)
       path = "dropbox://readlines.txt";
 
    }
+
+   do_xml_test(console);
 
    string_array stra;
 

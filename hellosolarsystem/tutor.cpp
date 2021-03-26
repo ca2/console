@@ -17,7 +17,7 @@
 }
 
 
-CLASS_DECL_AQUA void debug_debug_reference();
+//CLASS_DECL_AQUA void debug_debug_reference();
 
 template < typename RESULT_CONTAINER, typename CONTAINER >
 inline void in_odd_count(RESULT_CONTAINER& result_container, const CONTAINER& container)
