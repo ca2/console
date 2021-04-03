@@ -40,7 +40,7 @@ constexpr const auto min_test(const ::u32 & u, const ::i32 & i)
 }
 #define minimum min_test
 
-void stage()
+::e_status implement(int argc, platform_char ** argv, platform_char ** envp)
 {
 
    string strHelloEarth = "Hello Earth!!";
@@ -222,6 +222,8 @@ void stage()
    printf("\n");
 
    printf("\n");
+
+   return ::success;
 
 }
 

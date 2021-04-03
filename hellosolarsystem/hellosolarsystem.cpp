@@ -11,7 +11,7 @@
 #include "printf_format_flags.cpp"
 
 
-int main(int argc, platform_char ** argv, platform_char ** envp)
+::e_status implement(int argc, platform_char** argv, platform_char** envp)
 {
 
    ::console console(argc, argv, envp);
@@ -146,6 +146,7 @@ int main(int argc, platform_char ** argv, platform_char ** envp)
    
    message_box_for_console("Hello Solar System!!", "hellosolarsystem", e_message_box_ok);
 
+   return ::success;
 
 }
 
