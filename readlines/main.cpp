@@ -6,7 +6,7 @@
 #include "xml.cpp"
 
 
-int main(int argc, char * argv[], char ** envp)
+::e_status implement(int argc, platform_char ** argv, platform_char** envp)
 {
 
    ::console console(argc, argv, envp);
