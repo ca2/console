@@ -9,7 +9,7 @@ void do_xml_test(::console& console)
 
       {
 
-         auto pdocument = console.__create_new <xml::document >();
+         auto pdocument = console.m_psystem->__create_new < xml::document >();
 
          pdocument->set_name("xml");
 
@@ -31,7 +31,7 @@ void do_xml_test(::console& console)
 
       {
 
-         auto pdocument = console.__create_new< xml::document>();
+         auto pdocument = console.m_psystem->__create_new< xml::document>();
 
          pdocument->set_name("xml");
 

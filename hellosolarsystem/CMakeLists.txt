@@ -28,6 +28,11 @@ if (MSVC)
 endif()
 
 
+if(LINUX)
+    add_dependencies(hellosolarsystem acme_linux apex_linux)
+endif()
+
+
 target_link_libraries(hellosolarsystem PRIVATE acme apex aqua)
 
 

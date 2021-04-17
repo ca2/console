@@ -31,11 +31,11 @@
 
    string_array stra;
 
-   console.m_psystem->get_main_application()->initialize_context();
+   //console.m_psystem->get_main_application()->initialize_context();
 
    //path -= ::file::e_flag_bypass_cache;
 
-   string str = console.m_psystem->get_main_application()->file().as_string(path);
+   string str = console.m_psystem->file().as_string(path);
 
    stra.add_lines(str);
 

@@ -1,10 +1,9 @@
 cmake_minimum_required(VERSION 3.17)
 project(helloearth CXX)
 
-set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_EXTENSIONS OFF)
-set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_EXTENSIONS OFF)
+
+#set(CMAKE_CXX_STANDARD 20)
+#set(CMAKE_CXX_EXTENSIONS OFF)
 add_compile_options("$<$<CONFIG:DEBUG>:-DDEBUG>")
 
 
@@ -28,6 +27,11 @@ if (MSVC)
     target_compile_options(helloearth PRIVATE "/MD$<$<CONFIG:Debug>:d>")
     target_link_options(helloearth PRIVATE "/DEFAULTLIB:msvcrt$<$<CONFIG:Debug>:d>")
     target_link_options(helloearth PRIVATE "/SUBSYSTEM:CONSOLE")
+endif()
+
+
+if(LINUX)
+    add_dependencies(helloearth acme_linux)
 endif()
 
 

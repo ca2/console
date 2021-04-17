@@ -64,7 +64,7 @@
 
    output_debug_string(strElapsed);
 
-   if (console.m_psystem->get_main_application()->is_true("debug"))
+   if (console.m_psystem->is_true("debug"))
    {
 
       printf("\n");
@@ -88,7 +88,7 @@
    {
 
       printf("\n");
-      printf("papplication->type_name() == \"%s\"\n", console.m_psystem->get_main_application()->type_name());
+      printf("papplication->m_strAppId == \"%s\"\n", console.m_psystem->m_strAppId.c_str());
       printf("\n");
 
    }
