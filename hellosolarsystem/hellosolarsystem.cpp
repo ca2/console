@@ -88,7 +88,7 @@
    {
 
       printf("\n");
-      printf("papplication->m_strAppId == \"%s\"\n", console.m_psystem->m_strAppId.c_str());
+      printf("papplication->m_strAppId == \"%s\"\n", console.m_psystem->m_papexsystem->m_strAppId.c_str());
       printf("\n");
 
    }

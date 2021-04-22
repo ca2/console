@@ -35,7 +35,7 @@
 
    //path -= ::file::e_flag_bypass_cache;
 
-   string str = console.m_psystem->file().as_string(path);
+   string str = console.m_psystem->m_papexsystem->file().as_string(path);
 
    stra.add_lines(str);
 
