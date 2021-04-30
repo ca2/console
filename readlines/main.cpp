@@ -6,17 +6,24 @@
 #include "xml.cpp"
 
 
-::e_status implement(int argc, platform_char ** argv, platform_char** envp)
+void implement(class ::system * psystem)
 {
 
-   ::console console(argc, argv, envp);
+   //::console console(argc, argv, envp);
 
    ::file::path path;
 
-   if (console.m_psystem->m_argc >= 2)
+   //if (console.m_psystem->m_argc >= 2)
+   //{
+
+   //   path = console.m_psystem->m_argv[1];
+
+   //}
+
+   if (psystem->m_argc >= 2)
    {
 
-      path = console.m_psystem->m_argv[1];
+      path = psystem->m_argv[1];
 
    }
 
@@ -27,7 +34,7 @@
 
    }
 
-   do_xml_test(console);
+   do_xml_test(psystem);
 
    string_array stra;
 
@@ -35,7 +42,7 @@
 
    //path -= ::file::e_flag_bypass_cache;
 
-   string str = console.m_psystem->m_papexsystem->file().as_string(path);
+   string str = psystem->m_papexsystem->file().as_string(path);
 
    stra.add_lines(str);
 
@@ -48,7 +55,7 @@
 
    message_box_for_console(str, "readlines", e_message_box_ok);
 
-   return console.result();
+   //return console.result();
 
 }
 

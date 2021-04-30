@@ -38,9 +38,12 @@ constexpr const auto min_test(const ::u32 & u, const ::i32 & i)
    return i < 0 ? 0 : (u < (::u32)i ? u : (::u32)i);
 
 }
+
+
 #define minimum min_test
 
-::e_status implement(int argc, platform_char ** argv, platform_char ** envp)
+
+void implement(class ::system * psystem)
 {
 
    string strHelloEarth = "Hello Earth!!";
@@ -222,8 +225,6 @@ constexpr const auto min_test(const ::u32 & u, const ::i32 & i)
    printf("\n");
 
    printf("\n");
-
-   return ::success;
 
 }
 

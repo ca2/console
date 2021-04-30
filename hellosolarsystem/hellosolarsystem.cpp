@@ -11,10 +11,10 @@
 #include "printf_format_flags.cpp"
 
 
-::e_status implement(int argc, platform_char** argv, platform_char** envp)
+void implement(class ::system * psystem)
 {
 
-   ::console console(argc, argv, envp);
+   //::console console(argc, argv, envp);
 
    pointer_const_pointer();
 
@@ -64,7 +64,7 @@
 
    output_debug_string(strElapsed);
 
-   if (console.m_psystem->is_true("debug"))
+   if (psystem->is_true("debug"))
    {
 
       printf("\n");
@@ -88,7 +88,7 @@
    {
 
       printf("\n");
-      printf("papplication->m_strAppId == \"%s\"\n", console.m_psystem->m_papexsystem->m_strAppId.c_str());
+      printf("papplication->m_strAppId == \"%s\"\n", psystem->m_papexsystem->m_strAppId.c_str());
       printf("\n");
 
    }
@@ -146,7 +146,7 @@
    
    message_box_for_console("Hello Solar System!!", "hellosolarsystem", e_message_box_ok);
 
-   return ::success;
+   // return ::success;
 
 }
 
