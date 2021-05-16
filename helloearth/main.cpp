@@ -90,14 +90,14 @@ void implement(class ::system * psystem)
       if(iFind < 0)
       {
 
-         printf("find first starts with: %s - %" __priindex "\n", str2.c_str(), iFind);
+         printf("find first starts with: %s - %" PRIi64 "\n", str2.c_str(), iFind);
 
 
       }
       else
       {
 
-         printf("find first starts with: %s - %" __priindex " - %s\n", str2.c_str(), iFind, stra[iFind].c_str());
+         printf("find first starts with: %s - %" PRIi64 " - %s\n", str2.c_str(), iFind, stra[iFind].c_str());
 
       }
 
@@ -156,40 +156,55 @@ void implement(class ::system * psystem)
    unsigned int uAllOne = 0xffffffff;
    int iUAllOne = uAllOne;
    auto min1 = minimum(uAllOne, iUAllOne);
+   printf("%d\n", min1);
    auto min2 = minimum(iUAllOne, uAllOne);
+   printf("%d\n", min2);
    int iAllOne = -1;
    unsigned int uIAllOne = iAllOne;
    auto min3 = minimum(iAllOne, uIAllOne);
+   printf("%u\n", min3);
    auto min4 = minimum(uIAllOne, iAllOne);
+   printf("%u\n", min4);
 
-   
 
    unsigned int uAlmostAllOne = 0xfffffffe;
    int iUAlmostAllOne = uAlmostAllOne;
    auto min5 = minimum(uAlmostAllOne, iUAlmostAllOne);
+   printf("%i\n", min5);
    auto min6 = minimum(iUAlmostAllOne, uAlmostAllOne);
+   printf("%i\n", min6);
    int iAlmostAllOne = -2;
    unsigned int uIAlmostAllOne = iAlmostAllOne;
    auto min7 = minimum(iAlmostAllOne, uIAlmostAllOne);
+   printf("%i\n", min7);
    auto min8 = minimum(uIAlmostAllOne, iAlmostAllOne);
+   printf("%i\n", min8);
 
    unsigned short u1 = 0xffff;
    int i1 = u1;
    auto min9 = minimum(u1, i1);
+   printf("%i\n", min9);
    auto mina = minimum(i1, u1);
+   printf("%i\n", mina);
    short s1 = -1;
    unsigned int i2 = s1;
    auto minb = minimum(s1, i2);
+   printf("%i\n", minb);
    auto minc = minimum(i2, s1);
+   printf("%i\n", minc);
 
    unsigned int u3 = 0xffffffff;
    short i3 = u3;
    auto mind = minimum(u3, i3);
+   printf("%i\n", mind);
    auto mine = minimum(i3, u3);
+   printf("%i\n", mine);
    int s3 = -1;
    unsigned short i4 = s3;
    auto minf = minimum(s3, i4);
+   printf("%i\n", minf);
    auto ming = minimum(i4, s3);
+   printf("%i\n", ming);
 
    printf("\n");
 
