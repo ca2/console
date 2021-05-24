@@ -6,7 +6,7 @@
 #include "xml.cpp"
 
 
-void implement(class ::system * psystem)
+void implement(::acme::system * psystem)
 {
 
    //::console console(argc, argv, envp);
