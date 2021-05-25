@@ -43,7 +43,7 @@ constexpr const auto min_test(const ::u32 & u, const ::i32 & i)
 #define minimum min_test
 
 
-void implement(::acme::system * psystem)
+void implement(class ::system * psystem)
 {
 
    string strHelloEarth = "Hello Earth!!";
