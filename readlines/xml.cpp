@@ -1,6 +1,6 @@
 
 
-void do_xml_test(::system * psystem)
+void do_xml_test(class ::system * psystem)
 {
 
    {
