@@ -202,7 +202,7 @@
 		9A413CE0266EC48700C3FF0E /* printf_format_flags.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = printf_format_flags.cpp; sourceTree = "<group>"; };
 		9A413CE5266ED9D100C3FF0E /* libcrypto.1.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.1.1.dylib; path = "../../../archive/storage-macos/library/libcrypto.1.1.dylib"; sourceTree = "<group>"; };
 		9A413CE6266ED9D100C3FF0E /* libssl.1.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.1.1.dylib; path = "../../../archive/storage-macos/library/libssl.1.1.dylib"; sourceTree = "<group>"; };
-		9A68A38B25112AED008DABD2 /* _hellosolarsystem */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = _hellosolarsystem; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A68A38B25112AED008DABD2 /* hellosolarsystem */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = hellosolarsystem; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A83B7A6265160A200B39AB9 /* acme.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = acme.xcodeproj; path = ../../app/acme/acme.xcodeproj; sourceTree = "<group>"; };
 		9A83B7AF265160A200B39AB9 /* acme_apple.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = acme_apple.xcodeproj; path = "../../../archive/platform-apple/acme_apple/acme_apple.xcodeproj"; sourceTree = "<group>"; };
 		9A83B7B5265160A300B39AB9 /* acme_macos.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = acme_macos.xcodeproj; path = "../../../archive/platform-macos/acme_macos/acme_macos.xcodeproj"; sourceTree = "<group>"; };
@@ -251,7 +251,7 @@
 		9A68A38C25112AED008DABD2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9A68A38B25112AED008DABD2 /* _hellosolarsystem */,
+				9A68A38B25112AED008DABD2 /* hellosolarsystem */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -353,9 +353,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9A68A38A25112AED008DABD2 /* _hellosolarsystem */ = {
+		9A68A38A25112AED008DABD2 /* hellosolarsystem */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9A68A39225112AED008DABD2 /* Build configuration list for PBXNativeTarget "_hellosolarsystem" */;
+			buildConfigurationList = 9A68A39225112AED008DABD2 /* Build configuration list for PBXNativeTarget "hellosolarsystem" */;
 			buildPhases = (
 				9A68A38725112AED008DABD2 /* Sources */,
 				9A68A38825112AED008DABD2 /* Frameworks */,
@@ -374,9 +374,9 @@
 				9A83B85D2651618C00B39AB9 /* PBXTargetDependency */,
 				9A83B8512651617C00B39AB9 /* PBXTargetDependency */,
 			);
-			name = _hellosolarsystem;
+			name = hellosolarsystem;
 			productName = hellosolarsystem;
-			productReference = 9A68A38B25112AED008DABD2 /* _hellosolarsystem */;
+			productReference = 9A68A38B25112AED008DABD2 /* hellosolarsystem */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -393,7 +393,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9A68A38625112AED008DABD2 /* Build configuration list for PBXProject "_hellosolarsystem" */;
+			buildConfigurationList = 9A68A38625112AED008DABD2 /* Build configuration list for PBXProject "hellosolarsystem" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -444,7 +444,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				9A68A38A25112AED008DABD2 /* _hellosolarsystem */,
+				9A68A38A25112AED008DABD2 /* hellosolarsystem */,
 			);
 		};
 /* End PBXProject section */
@@ -835,7 +835,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9A68A38625112AED008DABD2 /* Build configuration list for PBXProject "_hellosolarsystem" */ = {
+		9A68A38625112AED008DABD2 /* Build configuration list for PBXProject "hellosolarsystem" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9A68A39025112AED008DABD2 /* Debug */,
@@ -844,7 +844,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9A68A39225112AED008DABD2 /* Build configuration list for PBXNativeTarget "_hellosolarsystem" */ = {
+		9A68A39225112AED008DABD2 /* Build configuration list for PBXNativeTarget "hellosolarsystem" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9A68A39325112AED008DABD2 /* Debug */,

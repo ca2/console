@@ -122,7 +122,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		9A5EE4912650D105009F25F0 /* _helloearth */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = _helloearth; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A5EE4912650D105009F25F0 /* helloearth */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = helloearth; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A5EE4A32650D168009F25F0 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		9A5EE4AC2650D1BB009F25F0 /* acme_macos.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = acme_macos.xcodeproj; path = "../../../archive/platform-macos/acme_macos/acme_macos.xcodeproj"; sourceTree = "<group>"; };
 		9A5EE4BA2650D1F8009F25F0 /* acme_apple.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = acme_apple.xcodeproj; path = "../../../archive/platform-apple/acme_apple/acme_apple.xcodeproj"; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 		9A5EE4922650D105009F25F0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9A5EE4912650D105009F25F0 /* _helloearth */,
+				9A5EE4912650D105009F25F0 /* helloearth */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -225,9 +225,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9A5EE4902650D105009F25F0 /* _helloearth */ = {
+		9A5EE4902650D105009F25F0 /* helloearth */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9A5EE4982650D105009F25F0 /* Build configuration list for PBXNativeTarget "_helloearth" */;
+			buildConfigurationList = 9A5EE4982650D105009F25F0 /* Build configuration list for PBXNativeTarget "helloearth" */;
 			buildPhases = (
 				9A5EE48D2650D105009F25F0 /* Sources */,
 				9A5EE48E2650D105009F25F0 /* Frameworks */,
@@ -242,9 +242,9 @@
 				9A5EE4DF2650D252009F25F0 /* PBXTargetDependency */,
 				9A5EE4E12650D252009F25F0 /* PBXTargetDependency */,
 			);
-			name = _helloearth;
+			name = helloearth;
 			productName = helloearth;
-			productReference = 9A5EE4912650D105009F25F0 /* _helloearth */;
+			productReference = 9A5EE4912650D105009F25F0 /* helloearth */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -260,7 +260,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9A5EE48C2650D105009F25F0 /* Build configuration list for PBXProject "_helloearth" */;
+			buildConfigurationList = 9A5EE48C2650D105009F25F0 /* Build configuration list for PBXProject "helloearth" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -295,7 +295,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				9A5EE4902650D105009F25F0 /* _helloearth */,
+				9A5EE4902650D105009F25F0 /* helloearth */,
 			);
 		};
 /* End PBXProject section */
@@ -579,7 +579,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9A5EE48C2650D105009F25F0 /* Build configuration list for PBXProject "_helloearth" */ = {
+		9A5EE48C2650D105009F25F0 /* Build configuration list for PBXProject "helloearth" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9A5EE4962650D105009F25F0 /* Debug */,
@@ -588,7 +588,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9A5EE4982650D105009F25F0 /* Build configuration list for PBXNativeTarget "_helloearth" */ = {
+		9A5EE4982650D105009F25F0 /* Build configuration list for PBXNativeTarget "helloearth" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9A5EE4992650D105009F25F0 /* Debug */,

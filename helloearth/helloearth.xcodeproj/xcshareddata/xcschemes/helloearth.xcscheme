@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9A5EE4902650D105009F25F0"
-               BuildableName = "_helloearth"
-               BlueprintName = "_helloearth"
-               ReferencedContainer = "container:_helloearth.xcodeproj">
+               BuildableName = "helloearth"
+               BlueprintName = "helloearth"
+               ReferencedContainer = "container:helloearth.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9A5EE4902650D105009F25F0"
-            BuildableName = "_helloearth"
-            BlueprintName = "_helloearth"
-            ReferencedContainer = "container:_helloearth.xcodeproj">
+            BuildableName = "helloearth"
+            BlueprintName = "helloearth"
+            ReferencedContainer = "container:helloearth.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9A5EE4902650D105009F25F0"
-            BuildableName = "_helloearth"
-            BlueprintName = "_helloearth"
-            ReferencedContainer = "container:_helloearth.xcodeproj">
+            BuildableName = "helloearth"
+            BlueprintName = "helloearth"
+            ReferencedContainer = "container:helloearth.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

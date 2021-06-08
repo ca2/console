@@ -90,14 +90,14 @@ void implement(class ::system * psystem)
       if(iFind < 0)
       {
 
-         printf("find first starts with: %s - %" PRIi64 "\n", str2.c_str(), iFind);
+         printf("find first starts with: %s - %" PRIiPTR "\n", str2.c_str(), iFind);
 
 
       }
       else
       {
 
-         printf("find first starts with: %s - %" PRIi64 " - %s\n", str2.c_str(), iFind, stra[iFind].c_str());
+         printf("find first starts with: %s - %" PRIiPTR " - %s\n", str2.c_str(), iFind, stra[iFind].c_str());
 
       }
 

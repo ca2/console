@@ -23,7 +23,7 @@ void printf_format_flags()
    printf("|   %%8x %8x\n", i);
    printf("|   %%08X %08X\n", i);
    printf("|   %%X %c\n", i);
-   printf("|   %%016" PRIdPTR " %016" PRIdPTR "\n", (uptr)&i);
+   printf("|   %%016" PRIuPTR " %016" PRIuPTR "\n", (uptr)&i);
    printf("|   %%f %f\n", f);
    printf("|   %%04.2f %04.2f\n", f);
    printf("|   %%s %s\n", psz);
