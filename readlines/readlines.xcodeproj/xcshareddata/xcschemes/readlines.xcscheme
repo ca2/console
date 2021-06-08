@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9A68A39D25112AFD008DABD2"
-               BuildableName = "readlines"
-               BlueprintName = "readlines"
-               ReferencedContainer = "container:readlines.xcodeproj">
+               BuildableName = "_readlines"
+               BlueprintName = "_readlines"
+               ReferencedContainer = "container:_readlines.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,9 +46,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9A68A39D25112AFD008DABD2"
-            BuildableName = "readlines"
-            BlueprintName = "readlines"
-            ReferencedContainer = "container:readlines.xcodeproj">
+            BuildableName = "_readlines"
+            BlueprintName = "_readlines"
+            ReferencedContainer = "container:_readlines.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -63,9 +63,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9A68A39D25112AFD008DABD2"
-            BuildableName = "readlines"
-            BlueprintName = "readlines"
-            ReferencedContainer = "container:readlines.xcodeproj">
+            BuildableName = "_readlines"
+            BlueprintName = "_readlines"
+            ReferencedContainer = "container:_readlines.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
