@@ -16,7 +16,7 @@ endif()
 
 target_link_libraries(readlines PRIVATE acme apex aqua)
 
-add_dependencies(readlines apex_linux)
+add_dependencies(readlines apex_${PLATFORM_NAME})
 
 
 target_include_directories(apex PRIVATE .)
