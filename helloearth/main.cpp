@@ -40,7 +40,7 @@ constexpr const auto min_test(const ::u32 & u, const ::i32 & i)
 }
 
 
-#define minimum min_test
+#define minimum_ min_test
 
 
 void implement(class ::system * psystem)
@@ -170,9 +170,9 @@ void implement(class ::system * psystem)
    unsigned int uAlmostAllOne = 0xfffffffe;
    int iUAlmostAllOne = uAlmostAllOne;
    auto min5 = minimum(uAlmostAllOne, iUAlmostAllOne);
-   printf("%i\n", min5);
+   printf("min5: %i\n", min5);
    auto min6 = minimum(iUAlmostAllOne, uAlmostAllOne);
-   printf("%i\n", min6);
+   printf("min6: %i\n", min6);
    int iAlmostAllOne = -2;
    unsigned int uIAlmostAllOne = iAlmostAllOne;
    auto min7 = minimum(iAlmostAllOne, uIAlmostAllOne);
