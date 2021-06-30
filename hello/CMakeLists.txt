@@ -12,6 +12,9 @@ if (MSVC)
 endif()
 
 
+#target_link_options(acme PRIVATE -L . -Wl,-rpath .)
+
+
 add_dependencies(hello acme_${PLATFORM_NAME})
 
 
