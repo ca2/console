@@ -146,7 +146,7 @@ void implement(class ::system * psystem)
    library2["book2"]["chapter3"] = "First C++ Book - Third Chapter";
    library2["book2"]["chapter4"] = "First C++ Book - Last Chapter";
    library2["book2"]["page_count"] = 72;
-   library2["book2"]["editions_weight"] = var_array({ 0.907, 0.856, 0.741 });
+   library2["book2"]["editions_weight"] = payload_array({ 0.907, 0.856, 0.741 });
 
    string strJson = set.get_json();
 
