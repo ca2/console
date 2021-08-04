@@ -1,7 +1,7 @@
 // polyglot_developer@Twitch Present : 2020-11-28 14:49 BRT 8.0
 
 
-void print_const_char_pointer(const char *  psz)
+void print_const_char_pointer(const char * psz)
 {
 
    //psz[0] = 'a';

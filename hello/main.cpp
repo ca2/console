@@ -1,8 +1,8 @@
 #include "acme/console.h"
 
 
-
 void print(const char * psz);
+
 
 void implement(class ::system * psystem)
 {
