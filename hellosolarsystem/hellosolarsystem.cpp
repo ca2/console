@@ -34,7 +34,7 @@ void implement(class ::system * psystem)
 
    millis.Now();
 
-   sleep(10_ms);
+   preempt(10_ms);
 
    {
 
