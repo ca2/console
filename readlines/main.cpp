@@ -1,3 +1,4 @@
+#define _APP_ID "console/readlines"
 #include "aqua/console.h"
 #include "aqua/_defer.h"
 #include "aqua/xml.h"

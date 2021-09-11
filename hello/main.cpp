@@ -120,7 +120,13 @@ void implement(class ::system * psystem)
 
    payload = "test";
 
+#ifdef _UWP
 
+   getchar();
+
+   getchar();
+
+#endif
 
 }
 
