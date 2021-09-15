@@ -150,7 +150,7 @@ void print(const char * psz)
 
    automobile * pautomobile = (automobile *) &i2;
 
-   const char * p2 = (const char *) &i2;
+   //const char * p2 = (const char *) &i2;
 
    pautomobile->m_iWheelCount = 33;
 
