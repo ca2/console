@@ -476,10 +476,10 @@
     <ProjectReference Include="..\..\..\archive\platform-windows_common\apex_windows_common\u_apex_windows_common.vcxproj">
       <Project>{bc71de03-0bcb-46ed-a9c5-d1dd8242c511}</Project>
     </ProjectReference>
-    <ProjectReference Include="R:\basis\source\app\acme\u_acme.vcxproj">
+    <ProjectReference Include="..\..\app\acme\u_acme.vcxproj">
       <Project>{74a3ea71-9358-4441-a0cc-d5771df8dfbd}</Project>
     </ProjectReference>
-    <ProjectReference Include="R:\basis\source\app\apex\u_apex.vcxproj">
+    <ProjectReference Include="..\..\app\apex\u_apex.vcxproj">
       <Project>{b86508de-6e32-42ac-b45c-08bf0932dcf8}</Project>
     </ProjectReference>
   </ItemGroup>
