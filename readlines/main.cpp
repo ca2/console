@@ -1,4 +1,3 @@
-#define _APP_ID "console/readlines"
 #include "aqua/console.h"
 #include "aqua/_defer.h"
 #include "aqua/xml.h"
@@ -10,16 +9,7 @@
 void implement(class ::system * psystem)
 {
 
-   //::console console(argc, argv, envp);
-
    ::file::path path;
-
-   //if (console.m_psystem->m_argc >= 2)
-   //{
-
-   //   path = console.m_psystem->m_argv[1];
-
-   //}
 
    if (psystem->m_argc >= 2)
    {
