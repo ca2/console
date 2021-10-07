@@ -30,9 +30,9 @@ void implement(class ::system * psystem)
 
    cjsteel_0001_ca2_rev();
 
-   millis millis;
+   ::duration duration;
 
-   millis.Now();
+   duration.Now();
 
    preempt(10_ms);
 
@@ -56,11 +56,11 @@ void implement(class ::system * psystem)
 
    }
 
-   auto elapsed = millis.elapsed();
+   auto elapsed = duration.elapsed();
 
    string strElapsed;
 
-   strElapsed = " Elapsed: " + __str(elapsed.m_i);
+   strElapsed = " Elapsed: " + __string(elapsed.integral_millisecond()) + "ms";
 
    output_debug_string(strElapsed);
 

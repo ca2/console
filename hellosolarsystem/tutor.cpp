@@ -62,7 +62,7 @@ inline string _009Explode(const CONTAINER& container, string strSeparator, strin
    for (auto& item : container)
    {
 
-      str += __str(item);
+      str += __string(item);
 
       if (i > 2)
       {
@@ -184,7 +184,7 @@ void find_maximum_value_in_list()
 
       }
 
-      printf("maximum = %s\n\n", __str(maximum).c_str());
+      printf("maximum = %s\n\n", __string(maximum).c_str());
 
    }
 
@@ -314,7 +314,7 @@ void cjsteel_0001_ca2_rev()
 
    auto dEstimatedPosition = vecaParticle[iFindMaxWParticle].x;
 
-   printf("Position: %s\n\n", __str(dEstimatedPosition).c_str());
+   printf("Position: %s\n\n", __string(dEstimatedPosition).c_str());
 
 }
 
