@@ -1,7 +1,9 @@
 #include "acme/console.h"
+#include "acme/filesystem/file/_const.h"
 
 
 void print(const char * psz);
+
 
 class automobile
 {
@@ -78,9 +80,49 @@ void call_predicate_with_random_int(PREDICATE predicate)
 
 }
 
+::payload get_var_query()
+{
+
+   {
+
+      flags < ::file::enum_flag > fileflags;
+
+      fileflags |= ::file::e_flag_folder;
+
+      {
+
+         class ::payload payload;
+
+         auto pflags = __new(flags < ::file::enum_flag >(fileflags));
+
+         payload["FileManagerItem_flags"] = pflags;
+
+         return payload;
+
+      }
+
+   }
+
+}
+
+
 
 void implement(class ::system * psystem)
 {
+
+   {
+
+      payload varQuery;
+
+      {
+
+
+         varQuery = get_var_query();
+
+
+      }
+
+   }
 
    int iLocal = 5;
 
