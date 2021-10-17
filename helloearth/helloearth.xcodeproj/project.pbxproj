@@ -141,7 +141,7 @@
 		9A5EE4892650D105009F25F0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1300;
 				TargetAttributes = {
 					9A5EE4902650D105009F25F0 = {
 						CreatedOnToolsVersion = 12.5;
@@ -371,6 +371,7 @@
 		9A5EE4992650D105009F25F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				PLATFORM_MODIFIER = macos;
 				PRODUCT_BUNDLE_IDENTIFIER = software.ca2.console.helloearth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -380,6 +381,7 @@
 		9A5EE49A2650D105009F25F0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				PLATFORM_MODIFIER = macos;
 				PRODUCT_BUNDLE_IDENTIFIER = software.ca2.console.helloearth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
