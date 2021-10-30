@@ -148,9 +148,9 @@ void implement(class ::system * psystem)
    library2["book2"]["page_count"] = 72;
    library2["book2"]["editions_weight"] = payload_array({ 0.907, 0.856, 0.741 });
 
-   string strJson = set.get_json();
+   string strNetworkPayload = set.get_network_payload();
 
-   printf("%s\n", strJson.c_str());
+   printf("%s\n", strNetworkPayload.c_str());
 
 
    unsigned int uAllOne = 0xffffffff;
