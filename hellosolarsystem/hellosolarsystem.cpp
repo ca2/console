@@ -88,7 +88,7 @@ void implement(class ::system * psystem)
    {
 
       printf("\n");
-      printf("papplication->m_strAppId == \"%s\"\n", psystem->m_papexsystem->m_strAppId.c_str());
+      printf("papplication->m_strAppId == \"%s\"\n", psystem->m_strAppId.c_str());
       printf("\n");
 
    }

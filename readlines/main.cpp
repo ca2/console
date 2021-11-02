@@ -3,7 +3,7 @@
 #include "aqua/xml.h"
 
 
-#include "xml.cpp"
+//#include "xml.cpp"
 
 
 void implement(class ::system * psystem)
@@ -25,7 +25,7 @@ void implement(class ::system * psystem)
 
    }
 
-   do_xml_test(psystem);
+   //do_xml_test(psystem);
 
    string_array stra;
 
@@ -35,14 +35,14 @@ void implement(class ::system * psystem)
 
    string str = psystem->m_papexsystem->file().as_string(path);
 
-   stra.add_lines(str);
+   //stra.add_lines(str);
 
-   for (auto& str : stra)
-   {
+   //for (auto& str : stra)
+   //{
 
-      printf("%s\n", str.c_str());
+   //   printf("%s\n", str.c_str());
 
-   }
+   //}
 
    message_box_for_console(str, "readlines", e_message_box_ok);
 
