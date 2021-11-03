@@ -1,4 +1,4 @@
-#include "acme/application.h"
+#include "acme/console.h"
 #ifdef CUBE
 #define DO_FACTORY_EXCHANGE(do) \
 do(acme_windows); \
@@ -7,6 +7,59 @@ do(acme_windows_common);
 #endif
 #include "acme/filesystem/file/_const.h"
 #include <direct.h>
+
+
+void get_root_and_item(string & strRoot, string & strItem, const char* pszFolder)
+{
+
+   ::file::path pathFolder = pszFolder;
+
+   strItem = pathFolder.name();
+
+   pathFolder.go_up();
+
+   strRoot = pathFolder.name();
+
+}
+
+
+void generate__main(class ::system * psystem, const char* pszFolder)
+{
+
+   string strRoot;
+
+   string strItem;
+
+   get_root_and_item(strRoot, strItem, pszFolder);
+
+   ::file::path pathFolder = pszFolder;
+
+   ::file::path pathMain = pathFolder / "_main.cpp";
+
+   string strMain;
+
+   string strAppId;
+
+   strAppId = strRoot + "/" + strItem;
+
+   string strApplicationCppNamespace(strAppId);
+
+   strApplicationCppNamespace.replace("/", "_");
+
+   strApplicationCppNamespace.replace("-", "_");
+
+   strMain += "#include \"framework.h\"\n";
+   strMain += "#define APPLICATION " + strApplicationCppNamespace + "\n";
+   strMain += "#define __APP_ID \"" + strAppId + "\"\n";
+   strMain += "#if defined(WINDOWS_DESKTOP) && defined(CUBE)\n";
+   strMain += "#include \"_static_factory_exchange.inl\"\n";
+   strMain += "#endif\n";
+   strMain += "#include \"acme/application.h\"\n";
+
+   psystem->m_pacmefile->put_contents(pathMain, strMain);
+
+}
+
 
 void command_system(const char* psz)
 {
@@ -69,7 +122,6 @@ void static_factory_exchange(class ::system* psystem, const ::string & strFileDs
    strOutput += "\n";
 
    psystem->m_pacmefile->put_contents(strFileDst, strOutput);
-
 
 }
 
@@ -156,6 +208,8 @@ void implement(class ::system * psystem)
       ::file::path pathDeps = pathFolder / "deps.txt";
 
       ::file::path pathInl = pathFolder / "_static_factory_exchange.inl";
+
+      generate__main(psystem, pathFolder);
 
       static_factory_exchange(psystem, pathInl, pathFolder / "deps.txt");
 

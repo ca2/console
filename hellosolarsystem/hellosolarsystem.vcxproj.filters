@@ -36,10 +36,8 @@
     <ClCompile Include="pointer_const_pointer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="brushing_bit_per_bit.cpp">
+    <ClCompile Include="brushing_bit_per_bit.cpp">
       <Filter>Source Files</Filter>
-    </ClInclude>
+    </ClCompile>
   </ItemGroup>
 </Project>

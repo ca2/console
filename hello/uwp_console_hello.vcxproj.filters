@@ -51,19 +51,10 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\archive\storage-universal_windows\third\binary\Win32\basis\bzip2.dll">
-      <Filter>Library\Win32\basis</Filter>
-    </None>
-    <None Include="..\..\..\archive\storage-universal_windows\third\binary\Win32\basis\pcre.dll">
-      <Filter>Library\Win32\basis</Filter>
-    </None>
-    <None Include="..\..\..\archive\storage-universal_windows\third\binary\Win32\basis\sqlite.dll">
-      <Filter>Library\Win32\basis</Filter>
-    </None>
-    <None Include="..\..\..\archive\storage-universal_windows\third\binary\Win32\basis\zlib.dll">
-      <Filter>Library\Win32\basis</Filter>
-    </None>
     <None Include="hello_TemporaryKey.pfx" />
+    <None Include="..\..\..\..\archive\storage-universal_windows\Win32\basis\third\binary\zlib.dll">
+      <Filter>Library\Win32\basis</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="UWP">
