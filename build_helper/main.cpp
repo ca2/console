@@ -82,6 +82,8 @@ void command_system(const char* psz)
 void static_factory_exchange(class ::system* psystem, const ::string & strFileDst, const ::string & strFileSrc)
 {
 
+   psystem->m_pacmefile->ensure_exists(strFileSrc);
+
    string strInput = psystem->m_pacmefile->as_string(strFileSrc);
 
    auto len = strInput.length();
@@ -134,6 +136,8 @@ void zip_matter(class ::system* psystem, const ::string& strFolder)
    ::file::path pathZip = pathFolder / "_matter.zip";
 
    ::file::path pathMatter = pathFolder / "matter.txt";
+
+   psystem->m_pacmefile->ensure_exists(pathMatter);
 
    string strInput = psystem->m_pacmefile->as_string(pathMatter);
 
