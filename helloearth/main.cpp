@@ -1,4 +1,4 @@
-#include "acme/console.h"
+﻿#include "acme/console.h"
 //template<typename T>
 //inline const auto oddProduct(T n)  noexcept
 //-> std::enable_if_t<std::is_unsigned<T>::value, unsigned long long> {

@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 // 2020-10-20 Oliver Pohl (but he was distracted)
 
 #pragma pack(push, pair1, 1)
