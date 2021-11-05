@@ -1,24 +1,24 @@
 cmake_minimum_required(VERSION 3.17)
-project(hello CXX)
+project(_console_build_helper CXX)
 
 
-add_executable(hello main.cpp)
+add_executable(_console_build_helper main.cpp)
 
 
 if (MSVC)
-    target_compile_options(hello PRIVATE "/MD$<$<CONFIG:Debug>:d>")
-    target_link_options(hello PRIVATE "/DEFAULTLIB:msvcrt$<$<CONFIG:Debug>:d>")
-    target_link_options(hello PRIVATE "/SUBSYSTEM:CONSOLE")
+    target_compile_options(_console_build_helper PRIVATE "/MD$<$<CONFIG:Debug>:d>")
+    target_link_options(_console_build_helper PRIVATE "/DEFAULTLIB:msvcrt$<$<CONFIG:Debug>:d>")
+    target_link_options(_console_build_helper PRIVATE "/SUBSYSTEM:CONSOLE")
 endif()
 
 
 #target_link_options(acme PRIVATE -L . -Wl,-rpath .)
 
 
-add_dependencies(hello acme_${PLATFORM_NAME})
+add_dependencies(_console_build_helper acme_${PLATFORM_NAME})
 
 
-target_link_libraries(hello PRIVATE acme)
+target_link_libraries(_console_build_helper PRIVATE acme)
 
 
 
