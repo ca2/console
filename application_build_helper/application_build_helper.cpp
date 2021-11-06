@@ -33,10 +33,6 @@ void generate__main(class ::system * psystem, const char* pszFolder)
 
    ::file::path pathFolder = pszFolder;
 
-   ::file::path pathMain = pathFolder / "_main.cpp";
-
-   string strMain;
-
    string strAppId;
 
    strAppId = strRoot + "/" + strItem;
@@ -47,15 +43,82 @@ void generate__main(class ::system * psystem, const char* pszFolder)
 
    strApplicationCppNamespace.replace("-", "_");
 
-   strMain += "#include \"framework.h\"\n";
-   strMain += "#define APPLICATION " + strApplicationCppNamespace + "\n";
-   strMain += "#define __APP_ID \"" + strAppId + "\"\n";
-   strMain += "#if defined(WINDOWS_DESKTOP) && defined(CUBE)\n";
-   strMain += "#include \"_static_factory_exchange.inl\"\n";
-   strMain += "#endif\n";
-   strMain += "#include \"acme/application.h\"\n";
+   {
 
-   psystem->m_pacmefile->put_contents(pathMain, strMain);
+      ::file::path pathMain = pathFolder / "_main.inl";
+
+      string strMain;
+
+      strMain += "#define APPLICATION " + strApplicationCppNamespace + "\n";
+      strMain += "#define __APP_ID \"" + strAppId + "\"\n";
+      strMain += "#if defined(WINDOWS_DESKTOP) && defined(CUBE)\n";
+      strMain += "#include \"_static_factory_exchange.inl\"\n";
+      strMain += "#endif\n";
+      strMain += "#include \"acme/application.h\"\n";
+
+      psystem->m_pacmefile->put_contents(pathMain, strMain);
+
+   } 
+
+   {
+
+      ::file::path pathApps = pathFolder / "_apps.txt";
+
+      string strApps = psystem->m_pacmefile->as_string(pathApps);
+
+      string_array straApps;
+
+      straApps.add_lines(strApps, false);
+
+      straApps.add("");
+
+      for (index i = 0; i < straApps.get_count(); i++)
+      {
+
+         ::string strAppAddUp = straApps[i];
+
+         strAppAddUp.trim();
+
+         string strAppName = strApplicationCppNamespace;
+
+         if (strAppAddUp.has_char())
+         {
+
+            strAppName += "_" + strAppAddUp;
+
+         }
+
+         {
+
+            ::file::path pathApplication = pathFolder / ("_" + strAppName + ".cpp");
+
+            //if (!psystem->m_pacmefile->exists(pathApplication))
+            {
+
+               string strApplication;
+
+               strApplication += "#include \"framework.h\"\n";
+
+               if (strAppAddUp.has_char())
+               {
+
+                  strAppAddUp.make_upper();
+
+                  strApplication += "#define "+strAppAddUp+"\n";
+
+               }
+
+               strApplication += "#include \"_main.inl\"\n";
+
+               psystem->m_pacmefile->put_contents(pathApplication, strApplication);
+
+            }
+
+         }
+
+      }
+
+   }
 
 }
 
@@ -125,6 +188,7 @@ void static_factory_exchange(class ::system* psystem, const ::string & strFileDs
    psystem->m_pacmefile->put_contents(strFileDst, strOutput);
 
 }
+
 
 
 void zip_matter(class ::system* psystem, const ::string& strFolder)

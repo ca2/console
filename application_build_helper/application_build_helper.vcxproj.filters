@@ -12,7 +12,7 @@
     <ResourceCompile Include="..\..\..\archive\platform-windows\version.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="application_build_helper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
