@@ -1,10 +1,9 @@
-﻿#include "acme/console.h"
-#ifdef CUBE
+﻿#ifdef CUBE
 #define DO_FACTORY_EXCHANGE(do) \
 do(acme_windows); \
 do(acme_windows_common); 
-#include "acme/inline/_static_setup.h"
 #endif
+#include "acme/console.h"
 #include "acme/filesystem/file/_const.h"
 #include <direct.h>
 
@@ -155,6 +154,10 @@ void zip_matter(class ::system* psystem, const ::string& strFolder)
 
    bool bFirst = true;
 
+   ::file::path pathZipExe(psystem->m_pacmedir->module() / "zip.exe");
+
+   string strZipExe = "\"" + pathZipExe + "\"";
+
    for (auto& strLine : stra)
    {
 
@@ -175,7 +178,7 @@ void zip_matter(class ::system* psystem, const ::string& strFolder)
             if (bFirst)
             {
 
-               command_system("zip -FSr \"" + pathZip + "\" " + strFolder + "/*");
+               command_system(strZipExe + " -FSr \"" + pathZip + "\" " + strFolder + "/*");
 
                bFirst = false;
 
@@ -183,7 +186,7 @@ void zip_matter(class ::system* psystem, const ::string& strFolder)
             else
             {
 
-               command_system("zip -r \"" + pathZip + "\" " + strFolder + "/*");
+               command_system(strZipExe + " -r \"" + pathZip + "\" " + strFolder + "/*");
 
             }
 
