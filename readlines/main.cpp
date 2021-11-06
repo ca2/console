@@ -1,4 +1,4 @@
-﻿#include "aqua/console.h"
+#include "aqua/console.h"
 #include "aqua/_defer.h"
 #include "aqua/xml.h"
 

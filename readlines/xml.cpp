@@ -1,4 +1,4 @@
-﻿
+
 
 void do_xml_test(class ::system * psystem)
 {

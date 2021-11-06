@@ -1,4 +1,4 @@
-﻿#ifdef CUBE
+#ifdef CUBE
 #define DO_FACTORY_EXCHANGE(do) \
 do(acme_windows); \
 do(acme_windows_common); 

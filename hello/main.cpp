@@ -1,5 +1,4 @@
-﻿#include "acme/console.h"
-
+#include "acme/console.h"
 
 
 void implement(class ::system * psystem)

@@ -1,4 +1,4 @@
-﻿
+
 
 void loop_get_char()
 {

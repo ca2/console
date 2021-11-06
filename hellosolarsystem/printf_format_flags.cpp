@@ -1,4 +1,4 @@
-﻿// P4ndaExpress (A.P.)
+// P4ndaExpress (A.P.)
 // : i see in your print debug functions
 // you have stuff like %d. what does %d mean and what kinds exist?
 // Present on 2020-11-08 11:25BRT
