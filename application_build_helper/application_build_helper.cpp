@@ -190,6 +190,48 @@ void static_factory_exchange(class ::system* psystem, const ::string & strFileDs
 }
 
 
+void defer_matter(class ::system* psystem, const ::string& strFolder)
+{
+
+   ::file::path pathFolder = strFolder;
+
+   ::file::path pathMatter = pathFolder / "matter.txt";
+
+   psystem->m_pacmefile->ensure_exists(pathMatter);
+
+   psystem->m_pacmefile->clear_read_only(pathMatter);
+
+   string strInput = psystem->m_pacmefile->as_string(pathMatter);
+
+   strInput.trim();
+
+   if (strInput.has_char())
+   {
+
+      return;
+
+   }
+
+   string strOutput;
+
+   strOutput += "app/main\n";
+
+   string strRoot;
+
+   string strItem;
+
+   get_root_and_item(strRoot, strItem, strFolder);
+
+   string strAppId;
+
+   strAppId = strRoot + "/" + strItem;
+
+   strOutput += strAppId + "\n";
+
+   psystem->m_pacmefile->put_contents(pathMatter, strOutput);
+
+}
+
 
 void zip_matter(class ::system* psystem, const ::string& strFolder)
 {
@@ -283,6 +325,8 @@ void implement(class ::system * psystem)
       generate__main(psystem, pathFolder);
 
       static_factory_exchange(psystem, pathInl, pathFolder / "deps.txt");
+
+      defer_matter(psystem, pathFolder);
 
       zip_matter(psystem, pathFolder);
 
