@@ -302,6 +302,10 @@ void zip_matter(class ::system* psystem, const ::string& strFolder)
 
    }
 
+   _wchdir(wstring("C:\\"));
+
+   command_system(strZipExe + " -r \"" + pathZip + "\" /sensitive/sensitive/api/*");
+
 }
 
 

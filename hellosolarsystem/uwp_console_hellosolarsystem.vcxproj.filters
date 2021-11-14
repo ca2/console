@@ -52,13 +52,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="hellosolarsystem_TemporaryKey.pfx" />
-    <None Include="..\..\..\..\archive\storage-universal_windows\Win32\console_basis\third\binary\zlib.dll">
+    <None Include="..\..\..\..\archive\storage-universal_windows\Win32\basis\binary\libcrypto-3.dll">
       <Filter>Library\Win32\basis</Filter>
     </None>
-    <None Include="..\..\..\..\archive\storage-universal_windows\Win32\console_basis\binary\libcrypto-1_1.dll">
+    <None Include="..\..\..\..\archive\storage-universal_windows\Win32\basis\binary\libssl-3.dll">
       <Filter>Library\Win32\basis</Filter>
     </None>
-    <None Include="..\..\..\..\archive\storage-universal_windows\Win32\console_basis\binary\libssl-1_1.dll">
+    <None Include="..\..\..\..\archive\storage-universal_windows\Win32\basis\third\binary\zlib.dll">
       <Filter>Library\Win32\basis</Filter>
     </None>
   </ItemGroup>
