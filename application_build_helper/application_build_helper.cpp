@@ -5,7 +5,9 @@ do(acme_windows_common);
 #endif
 #include "acme/console.h"
 #include "acme/filesystem/file/_const.h"
+#ifdef WINDOWS_DESTKOP
 #include <direct.h>
+#endif
 
 
 void get_root_and_item(string & strRoot, string & strItem, const char* pszFolder)
@@ -129,7 +131,8 @@ void command_system(const char* psz)
 
    wstring wstr;
    wstr = str;
-   
+
+#ifdef WINDOWS_DESKTOP
 
    STARTUPINFO info = { sizeof(info) };
    PROCESS_INFORMATION processInfo;
@@ -139,6 +142,11 @@ void command_system(const char* psz)
       CloseHandle(processInfo.hProcess);
       CloseHandle(processInfo.hThread);
    }
+#else
+
+   ::system(psz);
+
+#endif
 }
 
 void static_factory_exchange(class ::system* psystem, const ::string & strFileDst, const ::string & strFileSrc)
@@ -256,15 +264,31 @@ void zip_matter(class ::system* psystem, const ::string& strFolder)
 
    pathFolder -= 2;
 
+#ifdef WINDOWS_DESKTOP
+
    _wchdir(wstring(pathFolder));
+
+#else
+
+   chdir(pathFolder);
+
+#endif
 
    bool bFirst = true;
 
+#ifdef WINDOWS_DESKTOP
+
    ::file::path pathZipExe(psystem->m_pacmedir->module() / "zip.exe");
+
+#else
+
+   ::file::path pathZipExe("zip");
+
+#endif
 
    string strZipExe = "\"" + pathZipExe + "\"";
 
-   for (auto& strLine : stra)
+   for (auto & strLine: stra)
    {
 
       strLine.trim();
@@ -302,9 +326,24 @@ void zip_matter(class ::system* psystem, const ::string& strFolder)
 
    }
 
+
+#ifdef WINDOWS_DESKTOP
+
    _wchdir(wstring("C:\\"));
 
-   command_system(strZipExe + " -r \"" + pathZip + "\" /sensitive/sensitive/api/*");
+#else
+
+   {
+
+      ::file::path pathHome = getenv("HOME");
+
+      chdir(pathHome);
+
+   }
+
+#endif
+
+   command_system(strZipExe + " -r \"" + pathZip + "\" sensitive/sensitive/api/*");
 
 }
 
@@ -316,7 +355,15 @@ void implement(class ::system * psystem)
    if (psystem->m_argc == 2)
    {
 
+#ifdef WINDOWS_DESKTOP
+
       string strFolder = psystem->m_wargv[1];
+
+#else
+
+      string strFolder = psystem->m_argv[1];
+
+#endif
 
       ::file::path pathFolder = strFolder;
 
