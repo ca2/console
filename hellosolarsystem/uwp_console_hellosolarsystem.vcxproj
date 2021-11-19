@@ -7,7 +7,7 @@
     <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
     <AppContainerApplication>true</AppContainerApplication>
     <ApplicationType>Windows Store</ApplicationType>
-    <WindowsTargetPlatformVersion>10.0.22000.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
     <WindowsTargetPlatformMinVersion>10.0.18362.0</WindowsTargetPlatformMinVersion>
     <ApplicationTypeRevision>10.0</ApplicationTypeRevision>
     <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
@@ -584,7 +584,7 @@
       <Project>{b86508de-6e32-42ac-b45c-08bf0932dcf8}</Project>
     </ProjectReference>
     <ProjectReference Include="..\..\app\crypto_openssl\u_crypto_openssl.vcxproj">
-      <Project>{b3b6a9d8-7776-434e-8e3b-d2696632df39}</Project>
+      <Project>{bc919186-f67a-4ffc-b6be-0e63dc652a63}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
