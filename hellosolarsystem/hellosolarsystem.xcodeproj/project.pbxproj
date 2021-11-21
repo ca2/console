@@ -16,6 +16,8 @@
 		9A46D22F26783E2F000B22D0 /* libapex_posix.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9A46D22026783E2F000B22D0 /* libapex_posix.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9A46D23226783E55000B22D0 /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A46D21A26783E2F000B22D0 /* libacme.dylib */; };
 		9A83B87E2651620D00B39AB9 /* libapex_macos.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9A83B7DF265160C500B39AB9 /* libapex_macos.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		9AC019C42748A176006BEBCC /* libcrypto_openssl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC019402748A037006BEBCC /* libcrypto_openssl.dylib */; };
+		9AC019C52748A176006BEBCC /* libcrypto_openssl.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9AC019402748A037006BEBCC /* libcrypto_openssl.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9AD19AC32512D2A000B4C44A /* hellosolarsystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AD19ABE2512D2A000B4C44A /* hellosolarsystem.cpp */; };
 		9ADD660F26B6027200D11298 /* libssl.1.1.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9ADD660D26B6027100D11298 /* libssl.1.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9ADD661026B6027200D11298 /* libcrypto.1.1.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9ADD660E26B6027200D11298 /* libcrypto.1.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -37,6 +39,20 @@
 			remoteGlobalIDString = 9A0C1694264A2AA700B5CC33;
 			remoteInfo = apex_macos;
 		};
+		9AC0193F2748A037006BEBCC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AC0193B2748A037006BEBCC /* crypto_openssl.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9AC019342748A002006BEBCC;
+			remoteInfo = crypto_openssl;
+		};
+		9AC019C22748A159006BEBCC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AC0193B2748A037006BEBCC /* crypto_openssl.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9AC019332748A002006BEBCC;
+			remoteInfo = crypto_openssl;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -56,6 +72,7 @@
 				9A46D22B26783E2F000B22D0 /* libapex_apple.dylib in Embed Libraries */,
 				9A46D22F26783E2F000B22D0 /* libapex_posix.dylib in Embed Libraries */,
 				9A46D22526783E2F000B22D0 /* libacme_macos.dylib in Embed Libraries */,
+				9AC019C52748A176006BEBCC /* libcrypto_openssl.dylib in Embed Libraries */,
 			);
 			name = "Embed Libraries";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,6 +90,7 @@
 		9A46D22026783E2F000B22D0 /* libapex_posix.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libapex_posix.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A68A38B25112AED008DABD2 /* hellosolarsystem */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = hellosolarsystem; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A83B7CA265160C500B39AB9 /* apex_macos.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = apex_macos.xcodeproj; path = "../../../archive/platform-macos/apex_macos/apex_macos.xcodeproj"; sourceTree = "<group>"; };
+		9AC0193B2748A037006BEBCC /* crypto_openssl.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = crypto_openssl.xcodeproj; path = ../../app/crypto_openssl/crypto_openssl.xcodeproj; sourceTree = "<group>"; };
 		9AD19ABE2512D2A000B4C44A /* hellosolarsystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hellosolarsystem.cpp; sourceTree = "<group>"; };
 		9AD19ABF2512D2A000B4C44A /* tutor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tutor.cpp; sourceTree = "<group>"; };
 		9ADD660D26B6027100D11298 /* libssl.1.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.1.1.dylib; path = "../../../archive/storage-macos/library/x86_64/Debug/libssl.1.1.dylib"; sourceTree = "<group>"; };
@@ -85,6 +103,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A46D23226783E55000B22D0 /* libacme.dylib in Frameworks */,
+				9AC019C42748A176006BEBCC /* libcrypto_openssl.dylib in Frameworks */,
 				9A46D22926783E2F000B22D0 /* libapex.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				9A83B7CA265160C500B39AB9 /* apex_macos.xcodeproj */,
+				9AC0193B2748A037006BEBCC /* crypto_openssl.xcodeproj */,
 				9AD19AB92512D2A000B4C44A /* hellosolarsystem */,
 				9A68A38C25112AED008DABD2 /* Products */,
 				9AD19ADD2512D7B400B4C44A /* Frameworks */,
@@ -114,6 +134,14 @@
 			isa = PBXGroup;
 			children = (
 				9A83B7DF265160C500B39AB9 /* libapex_macos.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9AC0193C2748A037006BEBCC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9AC019402748A037006BEBCC /* libcrypto_openssl.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -158,6 +186,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				9AC019C32748A159006BEBCC /* PBXTargetDependency */,
 				9A83B8612651619700B39AB9 /* PBXTargetDependency */,
 			);
 			name = hellosolarsystem;
@@ -195,6 +224,10 @@
 					ProductGroup = 9A83B7CB265160C500B39AB9 /* Products */;
 					ProjectRef = 9A83B7CA265160C500B39AB9 /* apex_macos.xcodeproj */;
 				},
+				{
+					ProductGroup = 9AC0193C2748A037006BEBCC /* Products */;
+					ProjectRef = 9AC0193B2748A037006BEBCC /* crypto_openssl.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -209,6 +242,13 @@
 			fileType = "compiled.mach-o.dylib";
 			path = libapex_macos.dylib;
 			remoteRef = 9A83B7DE265160C500B39AB9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9AC019402748A037006BEBCC /* libcrypto_openssl.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libcrypto_openssl.dylib;
+			remoteRef = 9AC0193F2748A037006BEBCC /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -229,6 +269,11 @@
 			isa = PBXTargetDependency;
 			name = apex_macos;
 			targetProxy = 9A83B8602651619700B39AB9 /* PBXContainerItemProxy */;
+		};
+		9AC019C32748A159006BEBCC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = crypto_openssl;
+			targetProxy = 9AC019C22748A159006BEBCC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
