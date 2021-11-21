@@ -1,4 +1,4 @@
-#define DO_FACTORY_EXCHANGE(do) \
+#define DO_FACTORY(do) \
 do(acme_windows); 
 
 

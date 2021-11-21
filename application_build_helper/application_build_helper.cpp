@@ -1,5 +1,5 @@
 #ifdef CUBE
-#define DO_FACTORY_EXCHANGE(do) \
+#define DO_FACTORY(do) \
 do(acme_windows); \
 do(acme_windows_common); 
 #endif
@@ -54,7 +54,7 @@ void generate__main(class ::system * psystem, const char* pszFolder)
       strMain += "#define APPLICATION " + strApplicationCppNamespace + "\n";
       strMain += "#define __APP_ID \"" + strAppId + "\"\n";
       strMain += "#if defined(WINDOWS_DESKTOP) && defined(CUBE)\n";
-      strMain += "#include \"_static_factory_exchange.inl\"\n";
+      strMain += "#include \"([a-z0-9_]+)_factory.inl\"\n";
       strMain += "#endif\n";
       strMain += "#include \"acme/application.h\"\n";
 
@@ -149,7 +149,7 @@ void command_system(const char* psz)
 #endif
 }
 
-void static_factory_exchange(class ::system* psystem, const ::string & strFileDst, const ::string & strFileSrc)
+void static_factory(class ::system* psystem, const ::string & strFileDst, const ::string & strFileSrc)
 {
 
    psystem->m_pacmefile->ensure_exists(strFileSrc);
@@ -164,7 +164,7 @@ void static_factory_exchange(class ::system* psystem, const ::string & strFileDs
 
    string strOutput;
 
-   strOutput += "#define DO_FACTORY_EXCHANGE(do) \\\n";
+   strOutput += "#define DO_FACTORY(do) \\\n";
 
    for (index i = 0; i < stra.get_count(); i++)
    {
@@ -371,11 +371,11 @@ void implement(class ::system * psystem)
 
       ::file::path pathDeps = pathFolder / "deps.txt";
 
-      ::file::path pathInl = pathFolder / "_static_factory_exchange.inl";
+      ::file::path pathInl = pathFolder / "([a-z0-9_]+)_factory.inl";
 
       generate__main(psystem, pathFolder);
 
-      static_factory_exchange(psystem, pathInl, pathFolder / "deps.txt");
+      static_factory(psystem, pathInl, pathFolder / "deps.txt");
 
       defer_matter(psystem, pathFolder);
 
@@ -388,14 +388,14 @@ void implement(class ::system * psystem)
 
       string strOp = psystem->m_wargv[1];
 
-      if (strOp == "static_factory_exchange")
+      if (strOp == "([a-z0-9_]+)_factory")
       {
 
          string strFileDst = psystem->m_wargv[3];
 
          string strFileSrc = psystem->m_wargv[2];
 
-         static_factory_exchange(psystem, strFileDst, strFileSrc);
+         static_factory(psystem, strFileDst, strFileSrc);
 
 
       }
