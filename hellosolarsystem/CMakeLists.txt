@@ -14,8 +14,9 @@ endif()
 
 if(LINUX)
     add_dependencies(_console_hellosolarsystem acme_linux apex_linux)
+elseif(FREEBSD)
+    add_dependencies(_console_hellosolarsystem acme_freebsd apex_freebsd)
 endif()
-
 
 target_link_libraries(_console_hellosolarsystem PRIVATE acme apex)
 
