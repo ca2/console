@@ -54,7 +54,7 @@ void generate__main(class ::system * psystem, const char* pszFolder)
       strMain += "#define APPLICATION " + strApplicationCppNamespace + "\n";
       strMain += "#define __APP_ID \"" + strAppId + "\"\n";
       strMain += "#if defined(WINDOWS_DESKTOP) && defined(CUBE)\n";
-      strMain += "#include \"([a-z0-9_]+)_factory.inl\"\n";
+      strMain += "#include \"_static_factory.inl\"\n";
       strMain += "#endif\n";
       strMain += "#include \"acme/application.h\"\n";
 
@@ -156,7 +156,7 @@ void static_factory(class ::system* psystem, const ::string & strFileDst, const 
 
    string strInput = psystem->m_pacmefile->as_string(strFileSrc);
 
-   auto len = strInput.length();
+   //auto len = strInput.length();
 
    string_array stra;
 
@@ -254,7 +254,7 @@ void zip_matter(class ::system* psystem, const ::string& strFolder)
 
    string strInput = psystem->m_pacmefile->as_string(pathMatter);
 
-   auto len = strInput.length();
+   //auto len = strInput.length();
 
    string_array stra;
 
@@ -371,7 +371,7 @@ void implement(class ::system * psystem)
 
       ::file::path pathDeps = pathFolder / "deps.txt";
 
-      ::file::path pathInl = pathFolder / "([a-z0-9_]+)_factory.inl";
+      ::file::path pathInl = pathFolder / "_static_factory.inl";
 
       generate__main(psystem, pathFolder);
 

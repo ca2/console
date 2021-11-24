@@ -18,7 +18,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="_static_factory_exchange.inl">
+    <None Include="_static_factory.inl">
       <Filter>Source Files</Filter>
     </None>
   </ItemGroup>
