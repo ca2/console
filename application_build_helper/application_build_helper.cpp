@@ -1,9 +1,6 @@
-#ifdef CUBE
-#define DO_FACTORY(do) \
-do(acme_windows); \
-do(acme_windows_common); 
-#endif
-#include "acme/console.h"
+#include "framework.h"
+#include "_main.inl"
+//#include "acme/console.h"
 #include "acme/filesystem/file/_const.h"
 #ifdef WINDOWS_DESTKOP
 #include <direct.h>
@@ -20,6 +17,35 @@ void get_root_and_item(string & strRoot, string & strItem, const char* pszFolder
    pathFolder.go_up();
 
    strRoot = pathFolder.name();
+
+}
+
+
+void copy_icon_ico(class ::system* psystem, const char* pszFolder)
+{
+
+
+   string strRoot;
+
+   string strItem;
+
+   get_root_and_item(strRoot, strItem, pszFolder);
+
+   ::file::path pathFolder = pszFolder;
+
+   string strAppId;
+
+   strAppId = strRoot + "/" + strItem;
+
+   ::file::path pathRoot = pathFolder - 1;
+
+   ::file::path pathSource = pathRoot / "_matter" / strItem /"_std/_std/main";
+
+   ::file::path pathIconSource = pathSource / "icon.ico";
+
+   ::file::path pathIconTarget = pathFolder / "icon.ico";
+   
+   psystem->m_pacmefile->overwrite_if_different(pathIconTarget, pathIconSource);
 
 }
 
@@ -374,6 +400,8 @@ void implement(class ::system * psystem)
       ::file::path pathInl = pathFolder / "_static_factory.inl";
 
       generate__main(psystem, pathFolder);
+
+      copy_icon_ico(psystem, pathFolder);
 
       static_factory(psystem, pathInl, pathFolder / "deps.txt");
 

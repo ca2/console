@@ -7,6 +7,9 @@
     <Filter Include="Source Files">
       <UniqueIdentifier>{64a04574-142f-4730-9ed6-f92aecc7ccc4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{54ccd7b0-0adc-48c0-8c7d-9badfadf8965}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\..\..\archive\platform-windows\version.rc" />
@@ -21,5 +24,14 @@
     <None Include="_static_factory.inl">
       <Filter>Source Files</Filter>
     </None>
+    <None Include="_main.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="_.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
