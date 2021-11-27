@@ -10,10 +10,10 @@
 		9A7F40C2274DA92A00D914CC /* application_build_helper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A7F40C1274DA92A00D914CC /* application_build_helper.cpp */; };
 		9A7F40C3274DAA3700D914CC /* application_build_helper in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9ADD64DE26B5CBBC00D11298 /* application_build_helper */; };
 		9A7F40C4274DAD0000D914CC /* libacme.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9ADD64FB26B5CC6000D11298 /* libacme.dylib */; };
-		9A7F40C8274DAD5D00D914CC /* libidn.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A7F40C7274DAD4E00D914CC /* libidn.dylib */; };
 		9A7F40CB274DADA300D914CC /* libacme_macos.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9ADD64F726B5CC3400D11298 /* libacme_macos.dylib */; };
-		9A7F40CD274DADAD00D914CC /* libacme_apple.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A7F40CC274DADAD00D914CC /* libacme_apple.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		9A7F40CD274DADAD00D914CC /* libacme_apple.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A7F40CC274DADAD00D914CC /* libacme_apple.dylib */; };
 		9A7F40CF274DADB400D914CC /* libacme_posix.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A7F40CE274DADB400D914CC /* libacme_posix.dylib */; };
+		9A81FBD92751536C003F38EC /* libidn.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A7F40C9274DAD9A00D914CC /* libidn.dylib */; };
 		9ADD64FC26B5CC6000D11298 /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ADD64FB26B5CC6000D11298 /* libacme.dylib */; };
 /* End PBXBuildFile section */
 
@@ -41,11 +41,11 @@
 			dstPath = "$HOME/solution/basis/archive/tool-macos/bin";
 			dstSubfolderSpec = 0;
 			files = (
+				9A81FBD92751536C003F38EC /* libidn.dylib in CopyFiles */,
 				9A7F40C4274DAD0000D914CC /* libacme.dylib in CopyFiles */,
 				9A7F40CB274DADA300D914CC /* libacme_macos.dylib in CopyFiles */,
 				9A7F40CF274DADB400D914CC /* libacme_posix.dylib in CopyFiles */,
 				9A7F40CD274DADAD00D914CC /* libacme_apple.dylib in CopyFiles */,
-				9A7F40C8274DAD5D00D914CC /* libidn.dylib in CopyFiles */,
 				9A7F40C3274DAA3700D914CC /* application_build_helper in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
