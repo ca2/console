@@ -390,27 +390,7 @@ void create_matter_object(class ::system* psystem, const ::string& strFolder)
 
    ::file::path pathFolder = strFolder;
 
-   ::file::path pathZip = pathFolder / "_matter.zip";
-
-   ::file::path pathMatter = pathFolder / "matter.txt";
-
-   psystem->m_pacmefile->ensure_exists(pathMatter);
-
-   string strInput = psystem->m_pacmefile->as_string(pathMatter);
-
-   //auto len = strInput.length();
-
-   string_array stra;
-
-   stra.add_lines(strInput, false);
-
-   string strOutput;
-
    chdir(pathFolder);
-
-   ::file::path pathRoot = pathFolder - 3;
-
-   string strMatterZipO;
 
    string strRoot;
 
@@ -422,9 +402,11 @@ void create_matter_object(class ::system* psystem, const ::string& strFolder)
 
    strAppId = strRoot + "/" + strItem;
 
-   ::file::path pathMatterZipO = pathRoot / "cmake-build-basis/source/" + strAppId + "/_matter.zip.o";
+   ::file::path pathMatterZipO = pathFolder / ".link_object/_matter.zip.o";
 
    chdir(pathFolder);
+
+   psystem->m_pacmedir->create(pathFolder / ".link_object");
 
    command_system("ld -r -b binary -o "  + pathMatterZipO + " -m elf_amd64_fbsd -z noexecstack _matter.zip");
 
