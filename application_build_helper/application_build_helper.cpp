@@ -153,12 +153,19 @@ void generate__main(class ::system * psystem, const char* pszFolder)
 
 void command_system(const char* psz)
 {
+
+
+#ifdef WINDOWS_DESKTOP
+
    string str(psz);
 
    wstring wstr;
+
    wstr = str;
 
-#ifdef WINDOWS_DESKTOP
+   ::OutputDebugStringW(wstr);
+
+   ::OutputDebugStringW(L"\n");
 
    STARTUPINFO info = { sizeof(info) };
    PROCESS_INFORMATION processInfo;
@@ -170,6 +177,7 @@ void command_system(const char* psz)
    }
 #else
 
+   printf("%s\n", psz);
    ::system(psz);
 
 #endif
@@ -305,14 +313,16 @@ void zip_matter(class ::system* psystem, const ::string& strFolder)
 #ifdef WINDOWS_DESKTOP
 
    ::file::path pathZipExe(psystem->m_pacmedir->module() / "zip.exe");
+   string strZipExe = "\"" + pathZipExe + "\"";
+
 
 #else
 
    ::file::path pathZipExe("zip");
+   string strZipExe = pathZipExe;
+
 
 #endif
-
-   string strZipExe = "\"" + pathZipExe + "\"";
 
    for (auto & strLine: stra)
    {
@@ -373,7 +383,54 @@ void zip_matter(class ::system* psystem, const ::string& strFolder)
 
 }
 
+#ifdef FREEBSD
 
+void create_matter_object(class ::system* psystem, const ::string& strFolder)
+{
+
+   ::file::path pathFolder = strFolder;
+
+   ::file::path pathZip = pathFolder / "_matter.zip";
+
+   ::file::path pathMatter = pathFolder / "matter.txt";
+
+   psystem->m_pacmefile->ensure_exists(pathMatter);
+
+   string strInput = psystem->m_pacmefile->as_string(pathMatter);
+
+   //auto len = strInput.length();
+
+   string_array stra;
+
+   stra.add_lines(strInput, false);
+
+   string strOutput;
+
+   chdir(pathFolder);
+
+   ::file::path pathRoot = pathFolder - 3;
+
+   string strMatterZipO;
+
+   string strRoot;
+
+   string strItem;
+
+   get_root_and_item(strRoot, strItem, pathFolder);
+
+   string strAppId;
+
+   strAppId = strRoot + "/" + strItem;
+
+   ::file::path pathMatterZipO = pathRoot / "cmake-build-basis/source/" + strAppId + "/_matter.zip.o";
+
+   chdir(pathFolder);
+
+   command_system("ld -r -b binary -o "  + pathMatterZipO + " -m elf_amd64_fbsd -z noexecstack _matter.zip");
+
+}
+
+#endif
 
 void implement(class ::system * psystem)
 {
@@ -393,7 +450,7 @@ void implement(class ::system * psystem)
 
       ::file::path pathFolder = strFolder;
 
-      printf("build_helper \"%s\"", pathFolder.c_str());
+      printf("build_helper \"%s\"\n", pathFolder.c_str());
 
       ::file::path pathDeps = pathFolder / "deps.txt";
 
@@ -408,6 +465,13 @@ void implement(class ::system * psystem)
       defer_matter(psystem, pathFolder);
 
       zip_matter(psystem, pathFolder);
+
+#ifdef FREEBSD
+
+      create_matter_object(psystem, pathFolder);
+
+#endif
+
 
    }
 
