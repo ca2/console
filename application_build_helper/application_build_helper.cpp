@@ -383,7 +383,9 @@ void zip_matter(class ::system* psystem, const ::string& strFolder)
 
 }
 
-#ifdef FREEBSD
+
+#if defined(FREEBSD) || defined(LINUX)
+
 
 void create_matter_object(class ::system* psystem, const ::string& strFolder)
 {
@@ -408,11 +410,21 @@ void create_matter_object(class ::system* psystem, const ::string& strFolder)
 
    psystem->m_pacmedir->create(pathFolder / ".link_object");
 
+#if defined(LINUX)
+
+   command_system("ld -r -b binary -o "  + pathMatterZipO + " _matter.zip");
+
+#else
+
    command_system("ld -r -b binary -o "  + pathMatterZipO + " -m elf_amd64_fbsd -z noexecstack _matter.zip");
+
+#endif
 
 }
 
+
 #endif
+
 
 void implement(class ::system * psystem)
 {
@@ -448,7 +460,7 @@ void implement(class ::system * psystem)
 
       zip_matter(psystem, pathFolder);
 
-#ifdef FREEBSD
+#if defined(FREEBSD) || defined(LINUX)
 
       create_matter_object(psystem, pathFolder);
 
