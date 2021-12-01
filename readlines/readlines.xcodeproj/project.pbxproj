@@ -12,7 +12,6 @@
 		9A83B866265161B900B39AB9 /* libaqua.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9A83B83B2651615100B39AB9 /* libaqua.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9A83B871265161DB00B39AB9 /* libapex_macos.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9A83B82D2651612E00B39AB9 /* libapex_macos.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9AC019EE2748AB85006BEBCC /* libaqua.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A83B83B2651615100B39AB9 /* libaqua.dylib */; };
-		9AC019F72748ACA2006BEBCC /* libcrypto_openssl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC019F42748AC6C006BEBCC /* libcrypto_openssl.dylib */; };
 		9AC019F82748ACA2006BEBCC /* libcrypto_openssl.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9AC019F42748AC6C006BEBCC /* libcrypto_openssl.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9AD19ACF2512D2FA00B4C44A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AD19ACD2512D2FA00B4C44A /* main.cpp */; };
 		9AF36BDA272A67220035D52C /* libssl.1.1.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9AF36BD8272A67210035D52C /* libssl.1.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -103,7 +102,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AC019F72748ACA2006BEBCC /* libcrypto_openssl.dylib in Frameworks */,
 				9AC019EE2748AB85006BEBCC /* libaqua.dylib in Frameworks */,
 				9A46D24D26784418000B22D0 /* libapex.dylib in Frameworks */,
 				9A46D24B2678440E000B22D0 /* libacme.dylib in Frameworks */,
