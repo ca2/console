@@ -4,7 +4,7 @@
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
-      buildImplicitDependencies = "NO">
+      buildImplicitDependencies = "YES">
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9A68A38A25112AED008DABD2"
+               BlueprintIdentifier = "9AEA193227601557006437A3"
                BuildableName = "hellosolarsystem"
                BlueprintName = "hellosolarsystem"
                ReferencedContainer = "container:hellosolarsystem.xcodeproj">
@@ -39,13 +39,12 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES"
-      consoleMode = "1">
+      allowLocationSimulation = "YES">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9A68A38A25112AED008DABD2"
+            BlueprintIdentifier = "9AEA193227601557006437A3"
             BuildableName = "hellosolarsystem"
             BlueprintName = "hellosolarsystem"
             ReferencedContainer = "container:hellosolarsystem.xcodeproj">
@@ -62,7 +61,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9A68A38A25112AED008DABD2"
+            BlueprintIdentifier = "9AEA193227601557006437A3"
             BuildableName = "hellosolarsystem"
             BlueprintName = "hellosolarsystem"
             ReferencedContainer = "container:hellosolarsystem.xcodeproj">

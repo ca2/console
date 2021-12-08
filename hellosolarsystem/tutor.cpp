@@ -299,7 +299,7 @@ void cjsteel_0001_ca2_rev()
    for (int iParticle = 0; iParticle < numParticles; iParticle++)
    {
 
-      double replace = vecaParticle[iParticle].w;
+      //double replace = vecaParticle[iParticle].w;
 
       if (vecaParticle[iParticle].w > dMax)
       {
