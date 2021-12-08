@@ -469,7 +469,7 @@
 		9A68A3A625112AFD008DABD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++2a";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L8N5V6TZE5;
@@ -480,7 +480,7 @@
 		9A68A3A725112AFD008DABD2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++2a";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L8N5V6TZE5;
