@@ -10,29 +10,11 @@
 		9A7F40C2274DA92A00D914CC /* application_build_helper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A7F40C1274DA92A00D914CC /* application_build_helper.cpp */; };
 		9A7F40C3274DAA3700D914CC /* application_build_helper in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9ADD64DE26B5CBBC00D11298 /* application_build_helper */; };
 		9A7F40C4274DAD0000D914CC /* libacme.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9ADD64FB26B5CC6000D11298 /* libacme.dylib */; };
-		9A7F40CB274DADA300D914CC /* libacme_macos.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9ADD64F726B5CC3400D11298 /* libacme_macos.dylib */; };
 		9A7F40CD274DADAD00D914CC /* libacme_apple.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A7F40CC274DADAD00D914CC /* libacme_apple.dylib */; };
 		9A7F40CF274DADB400D914CC /* libacme_posix.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A7F40CE274DADB400D914CC /* libacme_posix.dylib */; };
 		9A81FBD92751536C003F38EC /* libidn.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A7F40C9274DAD9A00D914CC /* libidn.dylib */; };
 		9ADD64FC26B5CC6000D11298 /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ADD64FB26B5CC6000D11298 /* libacme.dylib */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		9ADD64F626B5CC3400D11298 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9ADD64F226B5CC3400D11298 /* acme_macos.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9A0C165F264A290E00B5CC33;
-			remoteInfo = acme_macos;
-		};
-		9ADD64F826B5CC4500D11298 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9ADD64F226B5CC3400D11298 /* acme_macos.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 9A0C165E264A290E00B5CC33;
-			remoteInfo = acme_macos;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		9ADD64DC26B5CBBC00D11298 /* CopyFiles */ = {
@@ -43,7 +25,6 @@
 			files = (
 				9A81FBD92751536C003F38EC /* libidn.dylib in CopyFiles */,
 				9A7F40C4274DAD0000D914CC /* libacme.dylib in CopyFiles */,
-				9A7F40CB274DADA300D914CC /* libacme_macos.dylib in CopyFiles */,
 				9A7F40CF274DADB400D914CC /* libacme_posix.dylib in CopyFiles */,
 				9A7F40CD274DADAD00D914CC /* libacme_apple.dylib in CopyFiles */,
 				9A7F40C3274DAA3700D914CC /* application_build_helper in CopyFiles */,
@@ -59,7 +40,6 @@
 		9A7F40CC274DADAD00D914CC /* libacme_apple.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme_apple.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A7F40CE274DADB400D914CC /* libacme_posix.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme_posix.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ADD64DE26B5CBBC00D11298 /* application_build_helper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = application_build_helper; sourceTree = BUILT_PRODUCTS_DIR; };
-		9ADD64F226B5CC3400D11298 /* acme_macos.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = acme_macos.xcodeproj; path = "../../../archive/platform-macos/acme_macos/acme_macos.xcodeproj"; sourceTree = "<group>"; };
 		9ADD64FB26B5CC6000D11298 /* libacme.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -78,7 +58,6 @@
 		9ADD64D526B5CBBC00D11298 = {
 			isa = PBXGroup;
 			children = (
-				9ADD64F226B5CC3400D11298 /* acme_macos.xcodeproj */,
 				9ADD64E826B5CC0B00D11298 /* hello */,
 				9ADD64DF26B5CBBC00D11298 /* Products */,
 				9ADD64FA26B5CC6000D11298 /* Frameworks */,
@@ -99,14 +78,6 @@
 				9A7F40C1274DA92A00D914CC /* application_build_helper.cpp */,
 			);
 			name = hello;
-			sourceTree = "<group>";
-		};
-		9ADD64F326B5CC3400D11298 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9ADD64F726B5CC3400D11298 /* libacme_macos.dylib */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		9ADD64FA26B5CC6000D11298 /* Frameworks */ = {
@@ -135,7 +106,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				9ADD64F926B5CC4500D11298 /* PBXTargetDependency */,
 			);
 			name = application_build_helper;
 			productName = hello;
@@ -166,28 +136,12 @@
 			mainGroup = 9ADD64D526B5CBBC00D11298;
 			productRefGroup = 9ADD64DF26B5CBBC00D11298 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 9ADD64F326B5CC3400D11298 /* Products */;
-					ProjectRef = 9ADD64F226B5CC3400D11298 /* acme_macos.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				9ADD64DD26B5CBBC00D11298 /* application_build_helper */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		9ADD64F726B5CC3400D11298 /* libacme_macos.dylib */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.dylib";
-			path = libacme_macos.dylib;
-			remoteRef = 9ADD64F626B5CC3400D11298 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9ADD64DA26B5CBBC00D11298 /* Sources */ = {
@@ -199,14 +153,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		9ADD64F926B5CC4500D11298 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = acme_macos;
-			targetProxy = 9ADD64F826B5CC4500D11298 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		9ADD64E326B5CBBC00D11298 /* Debug */ = {
@@ -264,7 +210,8 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(WorkspaceDir)/archive",
-					"$(WorkspaceDir)/archive/storage-$(PLATFORM_MODIFIER)/library/$(ARCHS)/$(CONFIGURATION)",
+					"$(WorkspaceDir)/archive $(WorkspaceDir)/archive/storage-$(PLATFORM_MODIFIER)/library/$(CONFIGURATION)",
+					"$(WorkspaceDir)/time-$(PLATFORM_MODIFIER)/$(ARCHS)/$(CONFIGURATION)",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -340,7 +287,8 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(WorkspaceDir)/archive",
-					"$(WorkspaceDir)/archive/storage-$(PLATFORM_MODIFIER)/library/$(ARCHS)/$(CONFIGURATION)",
+					"$(WorkspaceDir)/archive $(WorkspaceDir)/archive/storage-$(PLATFORM_MODIFIER)/library/$(CONFIGURATION)",
+					"$(WorkspaceDir)/time-$(PLATFORM_MODIFIER)/$(ARCHS)/$(CONFIGURATION)",
 					"$(WorkspaceDir)/archive",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.3;
