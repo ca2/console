@@ -4,7 +4,7 @@
 #pragma once
 
 
-namespace app_core_build
+namespace app_build
 {
 
 
@@ -15,7 +15,7 @@ namespace app_core_build
    public:
 
 
-      __pointer(::user::interaction)      m_puserinteraction;
+      bool m_bStdout;
 
 
       build();
