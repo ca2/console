@@ -6,6 +6,16 @@
 #include <direct.h>
 #endif
 
+class application_build_helper
+{
+public:
+
+   string m_strPlatform;
+
+
+};
+
+application_build_helper * g_phelper;
 
 void get_root_and_item(string & strRoot, string & strItem, const char* pszFolder)
 {
@@ -73,14 +83,14 @@ void generate__main(class ::system * psystem, const char* pszFolder)
 
    {
 
-      ::file::path pathMain = pathFolder / "_main.inl";
+      ::file::path pathMain = pathFolder / "_main_"+g_phelper->m_strPlatform+".inl";
 
       string strMain;
 
       strMain += "#define APPLICATION " + strApplicationCppNamespace + "\n";
       strMain += "#define __APP_ID \"" + strAppId + "\"\n";
       strMain += "#if defined(WINDOWS_DESKTOP) && defined(CUBE)\n";
-      strMain += "#include \"_static_factory.inl\"\n";
+      strMain += "#include \"_static_factory_"+g_phelper->m_strPlatform+".inl\"\n";
       strMain += "#endif\n";
       strMain += "#include \"acme/application.h\"\n";
 
@@ -118,7 +128,7 @@ void generate__main(class ::system * psystem, const char* pszFolder)
 
          {
 
-            ::file::path pathApplication = pathFolder / ("_" + strAppName + ".cpp");
+            ::file::path pathApplication = pathFolder / ("_" + strAppName + "_"+g_phelper->m_strPlatform+".cpp");
 
             //if (!psystem->m_pacmefile->exists(pathApplication))
             {
@@ -136,7 +146,7 @@ void generate__main(class ::system * psystem, const char* pszFolder)
 
                }
 
-               strApplication += "#include \"_main.inl\"\n";
+               strApplication += "#include \"_main_"+g_phelper->m_strPlatform+".inl\"\n";
 
                psystem->m_pacmefile->put_contents(pathApplication, strApplication);
 
@@ -183,7 +193,91 @@ void command_system(const char* psz)
 #endif
 }
 
-void static_factory(class ::system* psystem, const ::string & strFileDst, const ::string & strFileSrc)
+
+string defer_translate_dependency(string strDependency)
+{
+
+   strDependency.trim();
+
+   strDependency.make_lower();
+
+   if(strDependency == "default_draw2d")
+   {
+
+#ifdef WINDOWS_DESKTOP
+
+      return "draw2d_gdiplus";
+
+#else
+
+      return "draw2d_cairo";
+
+#endif
+
+   }
+   else if(strDependency == "default_node")
+   {
+
+#ifdef WINDOWS_DESKTOP
+
+      return "node_windows";
+
+#else
+
+      return "node_linux";
+
+#endif
+
+   }
+   else if(strDependency == "default_windowing")
+   {
+
+#ifdef WINDOWS_DESKTOP
+
+      return "windowing_win32";
+
+#else
+
+      return "";
+
+#endif
+
+   }
+   else if(strDependency == "default_imaging")
+   {
+
+#ifdef WINDOWS_DESKTOP
+
+      return "imaging_wic";
+
+#else
+
+      return "imaging_freeimage";
+
+#endif
+
+   }
+   else if(strDependency == "default_write_text")
+   {
+
+#ifdef WINDOWS_DESKTOP
+
+      return "write_text_win32";
+
+#else
+
+      return "write_text_pango_cairo";
+
+#endif
+
+   }
+
+   return strDependency;
+
+}
+
+
+void static_factory(class ::system* psystem, const ::string & strFileDst, const ::string & strTranslateFile, const ::string & strFileSrc)
 {
 
    psystem->m_pacmefile->ensure_exists(strFileSrc);
@@ -200,6 +294,8 @@ void static_factory(class ::system* psystem, const ::string & strFileDst, const 
 
    strOutput += "#define DO_FACTORY(do) \\\n";
 
+   string strTranslate;
+
    for (index i = 0; i < stra.get_count(); i++)
    {
 
@@ -210,16 +306,32 @@ void static_factory(class ::system* psystem, const ::string & strFileDst, const 
       if (strLine.has_char())
       {
 
-         strOutput += "do(" + strLine + ");";
+         string strDependency = defer_translate_dependency(strLine);
 
-         if (i < stra.get_upper_bound())
+         if(strDependency.has_char())
          {
 
-            strOutput += " \\";
+            strOutput += "do(" + strLine + ");";
+
+            if (i < stra.get_upper_bound())
+            {
+
+               strOutput += " \\";
+
+            }
+
+            strOutput += "\n";
+
+            if(strTranslate.has_char())
+            {
+
+               strTranslate += "\n";
+
+            }
+
+            strTranslate += strDependency;
 
          }
-
-         strOutput += "\n";
 
       }
 
@@ -228,6 +340,8 @@ void static_factory(class ::system* psystem, const ::string & strFileDst, const 
    strOutput += "\n";
 
    psystem->m_pacmefile->put_contents(strFileDst, strOutput);
+
+   psystem->m_pacmefile->put_contents(strTranslateFile, strTranslate);
 
 }
 
@@ -442,19 +556,56 @@ void implement(class ::system * psystem)
 
 #endif
 
+      g_phelper = new application_build_helper;
+
       ::file::path pathFolder = strFolder;
 
       printf("build_helper \"%s\"\n", pathFolder.c_str());
 
+#ifdef WINDOWS
+
+      g_phelper->m_strPlatform = "windows";
+
+#elif defined(LINUX)
+
+      string strPlatform;
+
+      strPlatform = getenv("UNDERSCORE_PLATFORM");
+
+      if(strPlatform.is_empty())
+      {
+
+         printf("%s", "Did you set UNDERSCORE_PLATFORM environment variables?\n");
+         printf("%s", "(They can be set \"automatically\" with patch_bashrc)\n");
+
+         psystem->m_estatus = error_wrong_state;
+
+         return;
+
+      }
+
+      g_phelper->m_strPlatform = strPlatform;
+
+#endif
+
+
+      g_phelper->m_strPlatform.trim();
+
+      printf("platform: \"%s\"\n", g_phelper->m_strPlatform.c_str());
+
       ::file::path pathDeps = pathFolder / "deps.txt";
 
-      ::file::path pathInl = pathFolder / "_static_factory.inl";
+      ::file::path pathInl = pathFolder / "_static_factory_"+g_phelper->m_strPlatform+".inl";
 
       generate__main(psystem, pathFolder);
 
       copy_icon_ico(psystem, pathFolder);
 
-      static_factory(psystem, pathInl, pathFolder / "deps.txt");
+      ::file::path pathTranslate;
+
+      pathTranslate = pathFolder / ("_"+g_phelper->m_strPlatform+"_deps.txt");
+
+      static_factory(psystem, pathInl, pathTranslate, pathFolder / "deps.txt");
 
       defer_matter(psystem, pathFolder);
 
@@ -467,6 +618,7 @@ void implement(class ::system * psystem)
 #endif
 
 
+      delete g_phelper;
    }
 
    if (psystem->m_argc == 4)
@@ -481,8 +633,20 @@ void implement(class ::system * psystem)
 
          string strFileSrc = psystem->m_wargv[2];
 
-         static_factory(psystem, strFileDst, strFileSrc);
-
+//         ::file::path pathPlatform;
+//
+//         ::file::path pathFolder = strFolder;
+//
+//         pathPlatform = (pathFolder - 2) / "platform.txt";
+//
+//         string strPlatform = psystem->m_pacmefile->as_string(pathPlatform);
+//
+//         ::file::path pathTranslate;
+//
+//         pathTranslate = (pathFolder - 2) / (strPlatform + "_deps.txt");
+//
+//         static_factory(psystem, strFileDst, strFileSrc);
+//
 
       }
       else if (strOp == "zip_matter")
