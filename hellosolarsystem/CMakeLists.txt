@@ -23,9 +23,12 @@ add_dependencies(_console_hellosolarsystem crypto_openssl)
 target_link_libraries(_console_hellosolarsystem PRIVATE acme apex)
 
 
-target_include_directories(_console_hellosolarsystem PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../..)
-target_include_directories(_console_hellosolarsystem PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/..)
-target_include_directories(_console_hellosolarsystem PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+list(APPEND library_include_directories ${CMAKE_CURRENT_SOURCE_DIR}/../..)
+list(APPEND library_include_directories ${CMAKE_CURRENT_SOURCE_DIR}/..)
+list(APPEND library_include_directories ${CMAKE_CURRENT_SOURCE_DIR})
+
+
+target_include_directories(${PROJECT_NAME} PRIVATE ${library_include_directories})
 
 
 

@@ -6,16 +6,21 @@
 #include <direct.h>
 #endif
 
+
 class application_build_helper
 {
 public:
 
-   string m_strPlatform;
+
+   string m_strPlatform2;
+   string m_strSlashedPlatform;
 
 
 };
 
+
 application_build_helper * g_phelper;
+
 
 void get_root_and_item(string & strRoot, string & strItem, const char* pszFolder)
 {
@@ -83,14 +88,14 @@ void generate__main(class ::system * psystem, const char* pszFolder)
 
    {
 
-      ::file::path pathMain = pathFolder / "_main_"+g_phelper->m_strPlatform+".inl";
+      ::file::path pathMain = pathFolder / "platform" / g_phelper->m_strSlashedPlatform / "_main.inl";
 
       string strMain;
 
       strMain += "#define APPLICATION " + strApplicationCppNamespace + "\n";
       strMain += "#define __APP_ID \"" + strAppId + "\"\n";
       strMain += "#if defined(WINDOWS_DESKTOP) && defined(CUBE)\n";
-      strMain += "#include \"_static_factory_"+g_phelper->m_strPlatform+".inl\"\n";
+      strMain += "#include \"_static_factory.inl\"\n";
       strMain += "#endif\n";
       strMain += "#include \"acme/application.h\"\n";
 
@@ -128,7 +133,7 @@ void generate__main(class ::system * psystem, const char* pszFolder)
 
          {
 
-            ::file::path pathApplication = pathFolder / ("_" + strAppName + "_"+g_phelper->m_strPlatform+".cpp");
+            ::file::path pathApplication = pathFolder / "platform" / g_phelper->m_strSlashedPlatform / ("_" + strAppName + ".cpp");
 
             //if (!psystem->m_pacmefile->exists(pathApplication))
             {
@@ -146,7 +151,7 @@ void generate__main(class ::system * psystem, const char* pszFolder)
 
                }
 
-               strApplication += "#include \"_main_"+g_phelper->m_strPlatform+".inl\"\n";
+               strApplication += "#include \"_main.inl\"\n";
 
                psystem->m_pacmefile->put_contents(pathApplication, strApplication);
 
@@ -311,7 +316,7 @@ void static_factory(class ::system* psystem, const ::string & strFileDst, const 
          if(strDependency.has_char())
          {
 
-            strOutput += "do(" + strLine + ");";
+            strOutput += "do(" + strDependency + ");";
 
             if (i < stra.get_upper_bound())
             {
@@ -433,8 +438,8 @@ void zip_matter(class ::system* psystem, const ::string& strFolder)
 #else
 
    ::file::path pathZipExe("zip");
-   string strZipExe = pathZipExe;
 
+   string strZipExe = pathZipExe;
 
 #endif
 
@@ -572,10 +577,14 @@ void implement(class ::system * psystem)
 
       strPlatform = getenv("UNDERSCORE_PLATFORM");
 
-      if(strPlatform.is_empty())
+      string strSlashedPlatform;
+
+      strSlashedPlatform = getenv("SLASHED_PLATFORM");
+
+      if(strPlatform.is_empty() || strSlashedPlatform.is_empty())
       {
 
-         printf("%s", "Did you set UNDERSCORE_PLATFORM environment variables?\n");
+         printf("%s", "Did you set UNDERSCORE_PLATFORM and UNDERSCORE_PLATFORM environment variables?\n");
          printf("%s", "(They can be set \"automatically\" with patch_bashrc)\n");
 
          psystem->m_estatus = error_wrong_state;
@@ -584,18 +593,22 @@ void implement(class ::system * psystem)
 
       }
 
-      g_phelper->m_strPlatform = strPlatform;
+      g_phelper->m_strPlatform2 = strPlatform;
+
+      g_phelper->m_strSlashedPlatform = strSlashedPlatform;
 
 #endif
 
 
-      g_phelper->m_strPlatform.trim();
+      g_phelper->m_strPlatform2.trim();
 
-      printf("platform: \"%s\"\n", g_phelper->m_strPlatform.c_str());
+      g_phelper->m_strSlashedPlatform.trim();
+
+      printf("platform: \"%s\"\n", g_phelper->m_strPlatform2.c_str());
 
       ::file::path pathDeps = pathFolder / "deps.txt";
 
-      ::file::path pathInl = pathFolder / "_static_factory_"+g_phelper->m_strPlatform+".inl";
+      ::file::path pathInl = pathFolder / "platform" / g_phelper->m_strSlashedPlatform / "_static_factory.inl";
 
       generate__main(psystem, pathFolder);
 
@@ -603,7 +616,7 @@ void implement(class ::system * psystem)
 
       ::file::path pathTranslate;
 
-      pathTranslate = pathFolder / ("_"+g_phelper->m_strPlatform+"_deps.txt");
+      pathTranslate = pathFolder / "platform" / g_phelper->m_strSlashedPlatform / "deps.txt";
 
       static_factory(psystem, pathInl, pathTranslate, pathFolder / "deps.txt");
 

@@ -18,9 +18,12 @@ add_dependencies(_console_helloearth acme_${PLATFORM_NAME})
 target_link_libraries(_console_helloearth PRIVATE acme)
 
 
-target_include_directories(_console_helloearth PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../..)
-target_include_directories(_console_helloearth PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/..)
-target_include_directories(_console_helloearth PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+list(APPEND library_include_directories ${CMAKE_CURRENT_SOURCE_DIR}/../..)
+list(APPEND library_include_directories ${CMAKE_CURRENT_SOURCE_DIR}/..)
+list(APPEND library_include_directories ${CMAKE_CURRENT_SOURCE_DIR})
+
+
+target_include_directories(${PROJECT_NAME} PRIVATE ${library_include_directories})
 
 
 target_compile_definitions(_console_helloearth PRIVATE _CONSOLE__console_helloearth_LIBRARY)
