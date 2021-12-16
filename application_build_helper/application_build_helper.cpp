@@ -271,7 +271,7 @@ string defer_translate_dependency(string strDependency)
 
 #else
 
-      return "write_text_pango_cairo";
+      return "write_text_pango";
 
 #endif
 
@@ -327,14 +327,9 @@ void static_factory(class ::system* psystem, const ::string & strFileDst, const 
 
             strOutput += "\n";
 
-            if(strTranslate.has_char())
-            {
-
-               strTranslate += "\n";
-
-            }
-
             strTranslate += strDependency;
+
+            strTranslate += "\n";
 
          }
 
