@@ -21,7 +21,6 @@ target_link_libraries(_console_application_build_helper PRIVATE acme)
 add_custom_command(
    TARGET _console_application_build_helper
    POST_BUILD
-   COMMAND __write_platform_to_cmake_binary_dir
    COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/_console_application_build_helper ${APPLICATION_BUILD_HELPER}
 )
 
