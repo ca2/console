@@ -1,3 +1,8 @@
+#include "acme/_start.h"
+#include "aqua/_.h"
+#if defined(WINDOWS_DESKTOP) && defined(CUBE)
+#include "_static_factory.inl"
+#endif
 #include "aqua/console.h"
 #include "aqua/_defer.h"
 #include "aqua/xml.h"

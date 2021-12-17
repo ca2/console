@@ -569,7 +569,9 @@ void implement(class ::system * psystem)
 
 #ifdef WINDOWS
 
-      g_phelper->m_strPlatform = "windows";
+      g_phelper->m_strPlatform2 = "windows";
+
+      g_phelper->m_strSlashedPlatform = "windows";
 
 #elif defined(LINUX)
 

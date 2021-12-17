@@ -1,3 +1,8 @@
+#include "acme/_start.h"
+#include "acme/_.h"
+#if defined(WINDOWS_DESKTOP) && defined(CUBE)
+#include "_static_factory.inl"
+#endif
 #include "acme/console.h"
 //template<typename T>
 //inline const auto oddProduct(T n)  noexcept

@@ -1,3 +1,8 @@
+#include "acme/_start.h"
+#include "apex/_.h"
+#if defined(WINDOWS_DESKTOP) && defined(CUBE)
+#include "_static_factory.inl"
+#endif
 #include "apex/console.h"
 //#include "aqua/xml.h"
 #include <stdio.h>
