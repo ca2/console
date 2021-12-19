@@ -306,7 +306,13 @@ void application_build_helper::translate_package_list()
 
          }
 
-         m_packagereferencea.add(packagereference);
+         package_reference packagereferenceNew;
+
+         packagereferenceNew = packagereference;
+
+         packagereferenceNew.m_strPackage = defer_rename_package(packagereferenceNew.m_strPackage);
+
+         m_packagereferencea.add(packagereferenceNew);
 
       }
 

@@ -294,6 +294,106 @@ string application_build_helper::defer_translate_dependency(string strDependency
 }
 
 
+string application_build_helper::defer_rename_package(string strPackage)
+{
+
+   string_array stra;
+
+   stra.explode("/", strPackage);
+
+   if (stra.get_count() != 2)
+   {
+
+      return strPackage;
+
+   }
+
+   string strRoot = stra[0];
+
+   string strName = stra[1];
+
+   auto& renamemap = m_renamemap[strRoot];
+
+   if (renamemap["loaded"].is_empty())
+   {
+
+      load_rename_map(renamemap, strRoot);
+
+   }
+
+   string strRename;
+
+   strRename = renamemap[strName];
+
+   if (strRename.is_empty())
+   {
+
+      return strPackage;
+
+   }
+
+   return strRoot + "/" + strRename;
+
+}
+
+
+void application_build_helper::load_rename_map(string_to_string& renamemap, string strRoot)
+{
+
+   ::file::path pathRenameBase;
+
+   if (strRoot.begins_ci("platform-"))
+   {
+
+      pathRenameBase = m_pathArchive;
+
+   }
+   else
+   {
+
+      pathRenameBase = m_pathSource;
+
+   }
+
+   pathRenameBase /= strRoot;
+
+   ::file::path pathRename;
+
+   pathRename = pathRenameBase / "rename_map.txt";
+
+   string_array straLines;
+
+   m_pcontext->m_papexcontext->file().get_lines(straLines, pathRename);
+
+   for (auto& strLine : straLines)
+   {
+
+      string_array stra;
+
+      stra.explode("=", strLine);
+
+      if (stra.get_size() == 2)
+      {
+
+         string strName = stra[0];
+
+         string strRename = stra[1];
+
+         strName.trim();
+
+         strRename.trim();
+
+         renamemap[strName] = strRename;
+
+      }
+
+   }
+
+   renamemap["loaded"] = "true";
+
+}
+
+
 void application_build_helper::static_factory(const ::string& strFileDst, const ::string& strFileSrc)
 {
 

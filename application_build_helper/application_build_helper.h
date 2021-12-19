@@ -44,7 +44,7 @@ public:
    bool                          m_bTranslateDependency;
 
 
-   //string_to_string              m_mapAppId;
+   string_map < string_to_string >  m_renamemap;
 
 
 
@@ -87,6 +87,10 @@ public:
    void translate_items(const ::string& strFileDst, const ::string& strFileSrc);
    void static_factory(const ::string& strFileDst, const ::string& strFileSrc);
    string defer_translate_dependency(string strDependency);
+   string defer_rename_package(string strPackage);
+
+
+   void load_rename_map(string_to_string & renamemap, string strRoot);
 
 
 
