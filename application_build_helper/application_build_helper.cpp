@@ -1,676 +1,435 @@
+
 #include "framework.h"
-#include "_main.inl"
 //#include "acme/console.h"
 #include "acme/filesystem/file/_const.h"
 #ifdef WINDOWS_DESTKOP
 #include <direct.h>
 #endif
+#include "application_build_helper.h"
 
 
-class application_build_helper
-{
-public:
+application_build_helper::application_build_helper()
+   {
+   m_bTranslateDependency = false;
+   }
 
-
-   string m_strPlatform2;
-   string m_strSlashedPlatform;
-
-
-};
-
-
-application_build_helper * g_phelper;
-
-
-void get_root_and_item(string & strRoot, string & strItem, const char* pszFolder)
-{
-
-   ::file::path pathFolder = pszFolder;
-
-   strItem = pathFolder.name();
-
-   pathFolder.go_up();
-
-   strRoot = pathFolder.name();
-
-}
-
-
-void copy_icon_ico(class ::system* psystem, const char* pszFolder)
-{
-
-
-   string strRoot;
-
-   string strItem;
-
-   get_root_and_item(strRoot, strItem, pszFolder);
-
-   ::file::path pathFolder = pszFolder;
-
-   string strAppId;
-
-   strAppId = strRoot + "/" + strItem;
-
-   ::file::path pathRoot = pathFolder - 1;
-
-   ::file::path pathSource = pathRoot / "_matter" / strItem /"_std/_std/main";
-
-   ::file::path pathIconSource = pathSource / "icon.ico";
-
-   ::file::path pathIconTarget = pathFolder / "icon.ico";
-   
-   psystem->m_pacmefile->overwrite_if_different(pathIconTarget, pathIconSource);
-
-}
-
-
-void generate__main(class ::system * psystem, const char* pszFolder)
-{
-
-   string strRoot;
-
-   string strItem;
-
-   get_root_and_item(strRoot, strItem, pszFolder);
-
-   ::file::path pathFolder = pszFolder;
-
-   string strAppId;
-
-   strAppId = strRoot + "/" + strItem;
-
-   string strApplicationCppNamespace(strAppId);
-
-   strApplicationCppNamespace.replace("/", "_");
-
-   strApplicationCppNamespace.replace("-", "_");
-
+application_build_helper::~application_build_helper()
    {
 
-      ::file::path pathMain = pathFolder / "platform" / g_phelper->m_strSlashedPlatform / "_main.inl";
 
-      string strMain;
+   }
 
-      strMain += "#define APPLICATION " + strApplicationCppNamespace + "\n";
-      strMain += "#define __APP_ID \"" + strAppId + "\"\n";
-      strMain += "#if defined(WINDOWS_DESKTOP) && defined(CUBE)\n";
-      strMain += "#include \"_static_factory.inl\"\n";
-      strMain += "#endif\n";
-      strMain += "#include \"acme/application.h\"\n";
 
-      psystem->m_pacmefile->put_contents(pathMain, strMain);
 
-   } 
+void application_build_helper::set_package_folder(const ::file::path& pathFolderParam)
+{
 
+   ::file::path pathFolder(pathFolderParam);
+
+   if (pathFolder.length() >= 3)
    {
 
-      ::file::path pathApps = pathFolder / "_apps.txt";
-
-      string strApps = psystem->m_pacmefile->as_string(pathApps);
-
-      string_array straApps;
-
-      straApps.add_lines(strApps, false);
-
-      straApps.add("");
-
-      for (index i = 0; i < straApps.get_count(); i++)
+      if ((pathFolder[0] == '\\' || pathFolder[0] == '/')
+         && (pathFolder[2] == '\\' || pathFolder[2] == '/')
+         && ansi_char_is_alphabetic(pathFolder[1]))
       {
 
-         ::string strAppAddUp = straApps[i];
+         string str;
 
-         strAppAddUp.trim();
+         str.format("%c:/", ansi_toupper(pathFolder[1]));
 
-         string strAppName = strApplicationCppNamespace;
-
-         if (strAppAddUp.has_char())
-         {
-
-            strAppName += "_" + strAppAddUp;
-
-         }
-
-         {
-
-            ::file::path pathApplication = pathFolder / "platform" / g_phelper->m_strSlashedPlatform / ("_" + strAppName + ".cpp");
-
-            //if (!psystem->m_pacmefile->exists(pathApplication))
-            {
-
-               string strApplication;
-
-               strApplication += "#include \"framework.h\"\n";
-
-               if (strAppAddUp.has_char())
-               {
-
-                  strAppAddUp.make_upper();
-
-                  strApplication += "#define "+strAppAddUp+"\n";
-
-               }
-
-               strApplication += "#include \"_main.inl\"\n";
-
-               psystem->m_pacmefile->put_contents(pathApplication, strApplication);
-
-            }
-
-         }
+         pathFolder = str / (pathFolder.c_str() + 3);
 
       }
 
    }
 
-}
+   m_pathFolder = pathFolder;
 
+   m_pathBaseDir = pathFolder - 3;
 
-void command_system(const char* psz)
-{
+   m_pathArchive = m_pathBaseDir / "archive";
 
+   m_pathSource = m_pathBaseDir / "source";
 
-#ifdef WINDOWS_DESKTOP
-
-   string str(psz);
-
-   wstring wstr;
-
-   wstr = str;
-
-   ::OutputDebugStringW(wstr);
-
-   ::OutputDebugStringW(L"\n");
-
-   STARTUPINFO info = { sizeof(info) };
-   PROCESS_INFORMATION processInfo;
-   if (CreateProcessW(nullptr, wstr, NULL, NULL, TRUE, CREATE_NO_WINDOW, NULL, NULL, &info, &processInfo))
-   {
-      WaitForSingleObject(processInfo.hProcess, INFINITE);
-      CloseHandle(processInfo.hProcess);
-      CloseHandle(processInfo.hThread);
-   }
-#else
-
-   printf("%s\n", psz);
-   ::system(psz);
-
-#endif
-}
-
-
-string defer_translate_dependency(string strDependency)
-{
-
-   strDependency.trim();
-
-   strDependency.make_lower();
-
-   if(strDependency == "default_draw2d")
    {
 
-#ifdef WINDOWS_DESKTOP
+      ::file::path pathIterator = pathFolder;
 
-      return "draw2d_gdiplus";
+      m_strItem = pathIterator.name();
 
-#else
+      pathIterator.go_up();
 
-      return "draw2d_cairo";
-
-#endif
-
-   }
-   else if(strDependency == "default_node")
-   {
-
-#ifdef WINDOWS_DESKTOP
-
-      return "node_windows";
-
-#else
-
-      return "node_linux";
-
-#endif
-
-   }
-   else if(strDependency == "default_windowing")
-   {
-
-#ifdef WINDOWS_DESKTOP
-
-      return "windowing_win32";
-
-#else
-
-      return "";
-
-#endif
-
-   }
-   else if(strDependency == "default_imaging")
-   {
-
-#ifdef WINDOWS_DESKTOP
-
-      return "imaging_wic";
-
-#else
-
-      return "imaging_freeimage";
-
-#endif
-
-   }
-   else if(strDependency == "default_write_text")
-   {
-
-#ifdef WINDOWS_DESKTOP
-
-      return "write_text_win32";
-
-#else
-
-      return "write_text_pango";
-
-#endif
+      m_strRoot = pathIterator.name();
 
    }
 
-   return strDependency;
+   //load_application_list();
 
-}
+   m_strAppId = m_strRoot + "/" + m_strItem;
 
+   m_strUnderscoreAppId = m_strAppId;
 
-void static_factory(class ::system* psystem, const ::string & strFileDst, const ::string & strTranslateFile, const ::string & strFileSrc)
-{
+   m_strUnderscoreAppId.replace("/", "_");
 
-   psystem->m_pacmefile->ensure_exists(strFileSrc);
+   m_strUnderscoreAppId.replace("-", "_");
 
-   string strInput = psystem->m_pacmefile->as_string(strFileSrc);
+#ifdef WINDOWS
 
-   //auto len = strInput.length();
+   m_strPlatform2 = "windows";
 
-   string_array stra;
+   m_strSlashedPlatform = "windows";
 
-   stra.add_lines(strInput, false);
+#elif defined(LINUX)
 
-   string strOutput;
+   string strPlatform;
 
-   strOutput += "#define DO_FACTORY(do) \\\n";
+   strPlatform = getenv("UNDERSCORE_PLATFORM");
 
-   string strTranslate;
+   string strSlashedPlatform;
 
-   for (index i = 0; i < stra.get_count(); i++)
+   strSlashedPlatform = getenv("SLASHED_PLATFORM");
+
+   if (strPlatform.is_empty() || strSlashedPlatform.is_empty())
    {
 
-      auto& strLine = stra[i];
+      printf("%s", "Did you set UNDERSCORE_PLATFORM and UNDERSCORE_PLATFORM environment variables?\n");
+      printf("%s", "(They can be set \"automatically\" with patch_bashrc)\n");
 
-      strLine.trim();
-
-      if (strLine.has_char())
-      {
-
-         string strDependency = defer_translate_dependency(strLine);
-
-         if(strDependency.has_char())
-         {
-
-            strOutput += "do(" + strDependency + ");";
-
-            if (i < stra.get_upper_bound())
-            {
-
-               strOutput += " \\";
-
-            }
-
-            strOutput += "\n";
-
-            strTranslate += strDependency;
-
-            strTranslate += "\n";
-
-         }
-
-      }
-
-   }
-
-   strOutput += "\n";
-
-   psystem->m_pacmefile->put_contents(strFileDst, strOutput);
-
-   psystem->m_pacmefile->put_contents(strTranslateFile, strTranslate);
-
-}
-
-
-void defer_matter(class ::system* psystem, const ::string& strFolder)
-{
-
-   ::file::path pathFolder = strFolder;
-
-   ::file::path pathMatter = pathFolder / "matter.txt";
-
-   psystem->m_pacmefile->ensure_exists(pathMatter);
-
-   psystem->m_pacmefile->clear_read_only(pathMatter);
-
-   string strInput = psystem->m_pacmefile->as_string(pathMatter);
-
-   strInput.trim();
-
-   if (strInput.has_char())
-   {
+      m_psystem->m_estatus = error_wrong_state;
 
       return;
 
    }
 
-   string strOutput;
+   m_strPlatform2 = strPlatform;
 
-   strOutput += "app/main\n";
+   m_strSlashedPlatform = strSlashedPlatform;
 
-   string strRoot;
+#endif
 
-   string strItem;
+   m_strPlatform2.trim();
 
-   get_root_and_item(strRoot, strItem, strFolder);
+   m_strSlashedPlatform.trim();
 
-   string strAppId;
 
-   strAppId = strRoot + "/" + strItem;
+}
+//
+//
+//void application_build_helper::load_application_list()
+//{
+//
+//   auto pathApplicationMatterList = m_pathBaseDir / "application_matter_list.txt";
+//
+//   string_array straApplications;
+//
+//   m_psystem->m_papexsystem->file().get_lines(straApplications, pathApplicationMatterList);
+//
+//   straApplications.trim();
+//
+//   for (string& strPath : straApplications)
+//   {
+//
+//      strPath.ends_eat_ci("application_matter.txt");
+//
+//      ::file::path path = strPath;
+//
+//      string strItem = path.name();
+//
+//      path.go_up();
+//
+//      string strRoot = path.name();
+//
+//      string strAppId = strRoot + "/" + strItem;
+//
+//      string strUnderscoreAppId(strAppId);
+//
+//      strUnderscoreAppId.replace("/", "_");
+//
+//      strUnderscoreAppId.replace("-", "_");
+//
+//      m_mapAppId.set_at(strAppId, strRoot + "/" + strUnderscoreAppId);
+//
+//   }
+//
+//}
 
-   strOutput += strAppId + "\n";
 
-   psystem->m_pacmefile->put_contents(pathMatter, strOutput);
+void application_build_helper::create_package_list()
+{
+   
+   m_straIgnorePackage = get_lines(m_pathArchive / ("platform-" PLATFORM_NAME) / "ignore_packages.txt");
+
+   m_piniPackageMap = m_psystem->m_papexsystem->file().get_ini(m_pathArchive / ("platform-" PLATFORM_NAME) / "package_map.txt");
+
+   ::package_reference packagereference;
+
+   packagereference.m_strPackage = m_strAppId;
+
+   packagereference.m_iLine = -1;
+
+   add_package(packagereference);
 
 }
 
 
-void zip_matter(class ::system* psystem, const ::string& strFolder)
+void application_build_helper::translate_package_list()
 {
 
-   ::file::path pathFolder = strFolder;
+   m_bTranslateDependency = true;
 
-   ::file::path pathZip = pathFolder / "_matter.zip";
+   auto packagereferenceaCopy = m_packagereferencea;
 
-   ::file::path pathMatter = pathFolder / "matter.txt";
+   m_packagereferencea.clear();
 
-   psystem->m_pacmefile->ensure_exists(pathMatter);
-
-   string strInput = psystem->m_pacmefile->as_string(pathMatter);
-
-   //auto len = strInput.length();
-
-   string_array stra;
-
-   stra.add_lines(strInput, false);
-
-   string strOutput;
-
-   pathFolder -= 2;
-
-#ifdef WINDOWS_DESKTOP
-
-   _wchdir(wstring(pathFolder));
-
-#else
-
-   chdir(pathFolder);
-
-#endif
-
-   bool bFirst = true;
-
-#ifdef WINDOWS_DESKTOP
-
-   ::file::path pathZipExe(psystem->m_pacmedir->module() / "zip.exe");
-   string strZipExe = "\"" + pathZipExe + "\"";
-
-
-#else
-
-   ::file::path pathZipExe("zip");
-
-   string strZipExe = pathZipExe;
-
-#endif
-
-   for (auto & strLine: stra)
+   for (auto& packagereference : packagereferenceaCopy)
    {
 
-      strLine.trim();
+      add_package(packagereference);
 
-      if (strLine.has_char())
+   }
+
+}
+
+   //void application_build_helper::set_base_dir(const ::file::path& pathBaseDir)
+   //{
+
+   //   m_pathArchive = pathBaseDir / "archive";
+
+   //   m_pathSource = pathBaseDir / "source";
+
+   //   m_straIgnorePackage = get_lines(m_pathArchive / ("platform-" PLATFORM_NAME) / "ignore_packages.txt");
+
+   //}
+
+
+   void application_build_helper::add_package(::package_reference & packagereference)
+   {
+
+      if (m_bTranslateDependency)
       {
 
-         string_array straMatter;
+         string strTranslate = defer_translate_dependency(packagereference.m_strPackage);
 
-         straMatter.explode("/", strLine);
-
-         if (straMatter.get_size() == 2)
+         if (strTranslate.has_char() && strTranslate != packagereference.m_strPackage)
          {
 
-            string strFolder = straMatter[0] + "/_matter/" + straMatter[1];
+            packagereference.m_strPackage = strTranslate;
 
-            if (bFirst)
-            {
+         }
 
-               command_system(strZipExe + " -FSr \"" + pathZip + "\" " + strFolder + "/*");
+         if (packagereference.m_strPackage.begins_ci("default_"))
+         {
 
-               bFirst = false;
-
-            }
-            else
-            {
-
-               command_system(strZipExe + " -r \"" + pathZip + "\" " + strFolder + "/*");
-
-            }
+            return;
 
          }
 
       }
 
-   }
-
-
-#ifdef WINDOWS_DESKTOP
-
-   _wchdir(wstring("C:\\"));
-
-#else
-
-   {
-
-      ::file::path pathHome = getenv("HOME");
-
-      chdir(pathHome);
-
-   }
-
-#endif
-
-   command_system(strZipExe + " -r \"" + pathZip + "\" sensitive/sensitive/api/*");
-
-}
-
-
-#if defined(FREEBSD) || defined(LINUX)
-
-
-void create_matter_object(class ::system* psystem, const ::string& strFolder)
-{
-
-   ::file::path pathFolder = strFolder;
-
-   chdir(pathFolder);
-
-   string strRoot;
-
-   string strItem;
-
-   get_root_and_item(strRoot, strItem, pathFolder);
-
-   string strAppId;
-
-   strAppId = strRoot + "/" + strItem;
-
-   ::file::path pathMatterZipO = pathFolder / ".link_object/_matter.zip.o";
-
-   chdir(pathFolder);
-
-   psystem->m_pacmedir->create(pathFolder / ".link_object");
-
-#if defined(LINUX)
-
-   command_system("ld -r -b binary -o "  + pathMatterZipO + " _matter.zip");
-
-#else
-
-   command_system("ld -r -b binary -o "  + pathMatterZipO + " -m elf_amd64_fbsd -z noexecstack _matter.zip");
-
-#endif
-
-}
-
-
-#endif
-
-
-void implement(class ::system * psystem)
-{
-
-   if (psystem->m_argc == 2)
-   {
-
-#ifdef WINDOWS_DESKTOP
-
-      string strFolder = psystem->m_wargv[1];
-
-#else
-
-      string strFolder = psystem->m_argv[1];
-
-#endif
-
-      g_phelper = new application_build_helper;
-
-      ::file::path pathFolder = strFolder;
-
-      printf("build_helper \"%s\"\n", pathFolder.c_str());
-
-#ifdef WINDOWS
-
-      g_phelper->m_strPlatform2 = "windows";
-
-      g_phelper->m_strSlashedPlatform = "windows";
-
-#elif defined(LINUX)
-
-      string strPlatform;
-
-      strPlatform = getenv("UNDERSCORE_PLATFORM");
-
-      string strSlashedPlatform;
-
-      strSlashedPlatform = getenv("SLASHED_PLATFORM");
-
-      if(strPlatform.is_empty() || strSlashedPlatform.is_empty())
+      if (packagereference.m_strPackage.is_empty())
       {
-
-         printf("%s", "Did you set UNDERSCORE_PLATFORM and UNDERSCORE_PLATFORM environment variables?\n");
-         printf("%s", "(They can be set \"automatically\" with patch_bashrc)\n");
-
-         psystem->m_estatus = error_wrong_state;
 
          return;
 
       }
 
-      g_phelper->m_strPlatform2 = strPlatform;
+      if (packagereference.m_strPackage.ends_ci("node_windows"))
+      {
 
-      g_phelper->m_strSlashedPlatform = strSlashedPlatform;
+         printf("");
 
-#endif
+      }
 
+      if (m_straIgnorePackage.contains_ci(packagereference.m_strPackage))
+      {
 
-      g_phelper->m_strPlatform2.trim();
+         return;
 
-      g_phelper->m_strSlashedPlatform.trim();
+      }
 
-      printf("platform: \"%s\"\n", g_phelper->m_strPlatform2.c_str());
+      if (packagereference.m_strPackage.ends_ci("node_windows"))
+      {
 
-      ::file::path pathDeps = pathFolder / "deps.txt";
+         printf("");
 
-      ::file::path pathInl = pathFolder / "platform" / g_phelper->m_strSlashedPlatform / "_static_factory.inl";
+      }
 
-      generate__main(psystem, pathFolder);
+      string_array stra;
 
-      copy_icon_ico(psystem, pathFolder);
+      stra.explode("/", packagereference.m_strPackage);
 
-      ::file::path pathTranslate;
+      if (stra.get_size() != 2 && !packagereference.m_strPackage.begins_ci("default_"))
+      {
 
-      pathTranslate = pathFolder / "platform" / g_phelper->m_strSlashedPlatform / "deps.txt";
+         //printf("Error in package: \"%s\"\n", strPackage.c_str());
 
-      static_factory(psystem, pathInl, pathTranslate, pathFolder / "deps.txt");
+         printf("%s(%d,1): error: package name must have one and only one slash.\n", packagereference.m_pathReference.c_str(), packagereference.m_iLine + 1);
 
-      defer_matter(psystem, pathFolder);
+         return;
 
-      zip_matter(psystem, pathFolder);
+      }
 
-#if defined(FREEBSD) || defined(LINUX)
+      if (m_packagereferencea.is_empty())
+      {
 
-      create_matter_object(psystem, pathFolder);
+         package_reference packagereferenceNew;
 
-#endif
+         packagereferenceNew.m_strPackage = m_strRoot + "/" + m_strUnderscoreAppId;
 
+         packagereferenceNew.m_pathReference = packagereference.m_pathReference;
 
-      delete g_phelper;
+         packagereferenceNew.m_iLine = packagereference.m_iLine;
+
+         m_packagereferencea.add(packagereferenceNew);
+
+      }
+      else
+      {
+
+         for (auto& packagereferenceItem : m_packagereferencea)
+         {
+
+            if (packagereferenceItem.m_strPackage.trimmed().compare_ci(packagereference.m_strPackage.trimmed()) == 0)
+            {
+
+               return;
+
+            }
+
+         }
+
+         if (packagereference.m_strPackage.ends_ci("node_windows"))
+         {
+
+            //printf("test");
+
+         }
+
+         m_packagereferencea.add(packagereference);
+
+      }
+
+      add_package_dependencies(packagereference);
+
    }
 
-   if (psystem->m_argc == 4)
+
+   void application_build_helper::add_package_dependencies(const ::package_reference& packagereference)
    {
 
-      string strOp = psystem->m_wargv[1];
+      auto packagereferencea = get_all_package_dependencies(packagereference.m_strPackage);
 
-      if (strOp == "([a-z0-9_]+)_factory")
+      for (auto& packagereferenceItem : packagereferencea)
       {
 
-         string strFileDst = psystem->m_wargv[3];
-
-         string strFileSrc = psystem->m_wargv[2];
-
-//         ::file::path pathPlatform;
-//
-//         ::file::path pathFolder = strFolder;
-//
-//         pathPlatform = (pathFolder - 2) / "platform.txt";
-//
-//         string strPlatform = psystem->m_pacmefile->as_string(pathPlatform);
-//
-//         ::file::path pathTranslate;
-//
-//         pathTranslate = (pathFolder - 2) / (strPlatform + "_deps.txt");
-//
-//         static_factory(psystem, strFileDst, strFileSrc);
-//
-
-      }
-      else if (strOp == "zip_matter")
-      {
-
-         string strFolder = psystem->m_wargv[2];
-
-         zip_matter(psystem, strFolder);
+         add_package(packagereferenceItem);
 
       }
 
    }
 
-}
+
+   string_array application_build_helper::get_lines(const ::file::path & path)
+   {
+
+      string strInput = m_psystem->m_pacmefile->as_string(path);
+
+      string_array stra;
+
+      stra.add_lines(strInput, true);
+
+      return stra;
+
+   }
+
+
+   package_reference_array application_build_helper::get_package_list(const ::string& strList, const ::string& strPackage)
+   {
+
+      ::file::path path;
+
+      if (strPackage.begins_ci("platform-"))
+      {
+
+         path = m_pathArchive;
+
+      }
+      else
+      {
+
+         path = m_pathSource;
+
+      }
+
+      path /= strPackage.trimmed();
+
+      path /= (strList.trimmed() + ".txt");
+
+      auto stra = get_lines(path);
+
+      package_reference_array packagereferencea;
+
+      int iLine = 0;
+
+      for (auto& str : stra)
+      {
+
+         packagereferencea.add({ str, path, iLine });
+
+         iLine++;
+
+      }
+
+      return packagereferencea;
+
+   }
+
+
+   package_reference_array application_build_helper::get_package_references(const ::string& strPackage)
+   {
+
+      return get_package_list("_references", strPackage);
+
+   }
+
+
+   package_reference_array application_build_helper::get_package_dependencies(const ::string& strPackage)
+   {
+
+      return get_package_list("_dependencies", strPackage);
+
+   }
+
+
+   package_reference_array application_build_helper::get_package_extensions(const ::string& strPackage)
+   {
+
+      return get_package_list("_extensions", strPackage);
+
+   }
+
+
+   package_reference_array application_build_helper::get_all_package_dependencies(const ::string& strPackage)
+   {
+
+      package_reference_array packagereferencea;
+
+      package_reference_array straReferences = get_package_references(strPackage);
+
+      package_reference_array straDependencies = get_package_dependencies(strPackage);
+
+      package_reference_array straExtensions = get_package_extensions(strPackage);
+
+      packagereferencea.append(straReferences);
+
+      packagereferencea.append(straDependencies);
+
+      packagereferencea.append(straExtensions);
+
+      return packagereferencea;
+
+   }
 
 
 

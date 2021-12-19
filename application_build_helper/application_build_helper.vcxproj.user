@@ -18,8 +18,9 @@
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='basis|x64'">
-    <LocalDebuggerCommandArguments>C:\basis\source\app-core\flag</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>C:\basis\source\app-core\flag\</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerWorkingDirectory>C:\basis\source\app-core\flag\</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='cube_basis|x64'">
     <LocalDebuggerCommandArguments>C:\basis\source\app-core\flag</LocalDebuggerCommandArguments>
@@ -30,8 +31,8 @@
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='cube_stage|x64'">
-    <LocalDebuggerCommandArguments>C:\basis\source\app-core\flag</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>/c/basis/source/app-core/flag</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
-    <LocalDebuggerCommand>$(__archive)tool-windows\bin\$(TargetName)$(TargetExt)</LocalDebuggerCommand>
+    <LocalDebuggerWorkingDirectory>C:\basis</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
 </Project>

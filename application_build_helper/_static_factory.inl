@@ -1,5 +1,6 @@
 #define DO_FACTORY(do) \
-do(acme_windows); 
+do(apex_windows); \
+do(crypto_openssl);
 
 
 
