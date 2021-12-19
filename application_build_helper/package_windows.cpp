@@ -38,19 +38,9 @@ void application_build_helper::package_windows()
 
    bool bFirst = true;
 
-#ifdef WINDOWS_DESKTOP
+   string strCmd;
 
-   ::file::path pathZipExe(m_pathArchive / "tool-windows/bin/zip.exe");
-
-   string strZipExe = "\"" + pathZipExe + "\"";
-
-#else
-
-   ::file::path pathZipExe("zip");
-
-   string strZipExe = pathZipExe;
-
-#endif
+   strCmd = "7za u \"" + pathZip + "\"";
 
    for (auto& strLine : stra)
    {
@@ -87,11 +77,13 @@ void application_build_helper::package_windows()
 
                   }
 
-                  string strCommand = strZipExe + " -FS \"" + pathZip + "\" \"" + strName + "\"";
+                  //string strCommand = strZipExe + " -FS \"" + pathZip + "\" \"" + strName + "\"";
 
-                  int iExitCode = 0;
+                  strCmd += " \"" + strName + "\"";
 
-                  auto estatus = command_system(iExitCode, strCommand);
+                  //int iExitCode = 0;
+
+                  //auto estatus = command_system(iExitCode, strCommand);
 
                }
 
@@ -114,11 +106,13 @@ void application_build_helper::package_windows()
 
                }
 
-               string strCommand = strZipExe + " \"" + pathZip + "\" \"" + strName + "\"";
+               /// string strCommand = strZipExe + " \"" + pathZip + "\" \"" + strName + "\"";
 
-               int iExitCode = 0;
+               strCmd += " \"" + strName + "\"";
 
-               auto estatus = command_system(iExitCode, strCommand);
+               //int iExitCode = 0;
+
+               //auto estatus = command_system(iExitCode, strCommand);
 
             }
 
@@ -126,7 +120,12 @@ void application_build_helper::package_windows()
 
       }
 
+      
+
    }
+   int iExitCode = 0;
+
+   auto estatus = command_system(iExitCode, strCmd);
 
 }
 
