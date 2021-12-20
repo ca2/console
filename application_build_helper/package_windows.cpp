@@ -38,9 +38,9 @@ void application_build_helper::package_windows()
 
    bool bFirst = true;
 
-   string strCmd;
+   m_psystem->m_pacmefile->delete_file(pathZip);
 
-   strCmd = "7za u \"" + pathZip + "\"";
+   string strCmd = "7za a -tzip \"" + pathZip + "\"";
 
    for (auto& strLine : stra)
    {
@@ -120,12 +120,24 @@ void application_build_helper::package_windows()
 
       }
 
-      
-
    }
+
+   printf("%s", strCmd.c_str());
+
+   string strOutput;
+
+   string strError;
+
    int iExitCode = 0;
 
-   auto estatus = command_system(iExitCode, strCmd);
+   auto estatus = command_system(strOutput, strError, iExitCode, strCmd);
+
+   if (strError.trimmed().has_char())
+   {
+
+      fprintf(stderr, "%s", strError.c_str());
+
+   }
 
 }
 

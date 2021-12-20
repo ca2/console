@@ -164,6 +164,43 @@ void application_build_helper::generate__main()
 //}
 //
 
+string application_build_helper::defer_translate_application_name(string strDependency)
+{
+
+   ::file::path pathApplicationMatter = m_pathSource / strDependency / "application_matter.txt";
+
+   if (m_psystem->m_pacmefile->exists(pathApplicationMatter))
+   {
+
+      string strPath = pathApplicationMatter;
+
+      strPath.ends_eat_ci("application_matter.txt");
+
+      ::file::path path = strPath;
+
+      string strItem = path.name();
+
+      path.go_up();
+
+      string strRoot = path.name();
+
+      string strAppId = strRoot + "/" + strItem;
+
+      string strUnderscoreAppId(strAppId);
+
+      strUnderscoreAppId.replace("/", "_");
+
+      strUnderscoreAppId.replace("-", "_");
+
+      return strRoot + "/" + strUnderscoreAppId;
+
+   }
+
+   return strDependency;
+
+}
+
+
 string application_build_helper::defer_translate_dependency(string strDependency)
 {
 
@@ -180,35 +217,6 @@ string application_build_helper::defer_translate_dependency(string strDependency
       {
 
          return "";
-
-      }
-
-      ::file::path pathApplicationMatter = m_pathSource / strDependency / "application_matter.txt";
-
-      if (m_psystem->m_pacmefile->exists(pathApplicationMatter))
-      {
-
-         string strPath = pathApplicationMatter;
-
-         strPath.ends_eat_ci("application_matter.txt");
-
-         ::file::path path = strPath;
-
-         string strItem = path.name();
-
-         path.go_up();
-
-         string strRoot = path.name();
-
-         string strAppId = strRoot + "/" + strItem;
-
-         string strUnderscoreAppId(strAppId);
-
-         strUnderscoreAppId.replace("/", "_");
-
-         strUnderscoreAppId.replace("-", "_");
-
-         return strRoot + "/" + strUnderscoreAppId;
 
       }
 
@@ -559,6 +567,10 @@ void application_build_helper::zip_matter()
 
    //auto len = strInput.length();
 
+   string strZip = pathZip;
+
+   strZip.replace("\\", "/");
+
    string_array stra;
 
    stra.add_lines(strInput, false);
@@ -567,7 +579,7 @@ void application_build_helper::zip_matter()
 
 #ifdef WINDOWS_DESKTOP
 
-   _wchdir(wstring(m_pathFolder));
+   _wchdir(wstring(pathOutput));
 
 #else
 
@@ -577,19 +589,33 @@ void application_build_helper::zip_matter()
 
    bool bFirst = true;
 
-#ifdef WINDOWS_DESKTOP
+//#ifdef WINDOWS_DESKTOP
+//
+//   ::file::path pathZipExe(m_psystem->m_pacmedir->module() / "zip.exe");
+//
+//   string strZipExe = "\"" + pathZipExe + "\"";
+//
+//#else
 
-   ::file::path pathZipExe(m_psystem->m_pacmedir->module() / "zip.exe");
+   //{
 
-   string strZipExe = "\"" + pathZipExe + "\"";
+   //   string strOutput;
 
-#else
+   //   string strError;
+
+   //   int iExitCode = 0;
+
+   //   auto estatus = command_system(strOutput, strError, iExitCode, "where zip");
+
+   //}
 
    ::file::path pathZipExe("zip");
 
    string strZipExe = pathZipExe;
 
-#endif
+   // strZipExe.replace("\\", "\\\\");
+
+//#endif
 
    for (auto& strLine : stra)
    {
@@ -611,9 +637,13 @@ void application_build_helper::zip_matter()
             if (bFirst)
             {
 
+               string strOutput;
+
+               string strError;
+
                int iExitCode = 0;
 
-               auto estatus = command_system(iExitCode, strZipExe + " -FSr \"" + pathZip + "\" " + strFolder + "/*");
+               auto estatus = command_system(strOutput, strError, iExitCode, strZipExe + " -FSr \"" + strZip + "\" " + strFolder + "/*");
 
                bFirst = false;
 
@@ -621,9 +651,13 @@ void application_build_helper::zip_matter()
             else
             {
 
+               string strOutput;
+
+               string strError;
+
                int iExitCode = 0;
 
-               auto estatus = command_system(iExitCode, strZipExe + " -r \"" + pathZip + "\" " + strFolder + "/*");
+               auto estatus = command_system(strOutput, strError, iExitCode, strZipExe + " -r \"" + pathZip + "\" " + strFolder + "/*");
 
             }
 
@@ -650,9 +684,13 @@ void application_build_helper::zip_matter()
 
 #endif
 
+   string strOutput;
+
+   string strError;
+
    int iExitCode = 0;
 
-   auto estatus = command_system(iExitCode, strZipExe + " -r \"" + pathZip + "\" sensitive/sensitive/api/*");
+   auto estatus = command_system(strOutput, strError, iExitCode, strZipExe + " -r \"" + pathZip + "\" sensitive/sensitive/api/*");
 
 }
 

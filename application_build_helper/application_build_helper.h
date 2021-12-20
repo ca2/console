@@ -92,13 +92,10 @@ public:
 
    void load_rename_map(string_to_string & renamemap, string strRoot);
 
+   virtual string defer_translate_application_name(string strDependency);
 
 
 };
-
-
-
-
 
 
 

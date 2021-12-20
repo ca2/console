@@ -10,7 +10,7 @@
     <LocalDebuggerCommand>$(__archive)tool-windows\bin\$(TargetName)$(TargetExt)</LocalDebuggerCommand>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='stage|Win32'">
-    <LocalDebuggerCommandArguments>C:\basis\source\app-core\flag</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>C:\basis\source\app-veriwell\waven</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='cube_stage|Win32'">
@@ -18,16 +18,16 @@
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='basis|x64'">
-    <LocalDebuggerCommandArguments>C:\basis\source\app-core\flag\</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>C:\basis\source\app-veriwell\waven\</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
-    <LocalDebuggerWorkingDirectory>C:\basis\source\app-core\flag\</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerWorkingDirectory>C:\basis\source\app-veriwell\waven\</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='cube_basis|x64'">
     <LocalDebuggerCommandArguments>C:\basis\source\app-core\flag</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='stage|x64'">
-    <LocalDebuggerCommandArguments>C:\basis\source\app-core\flag</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>C:\basis\source\app-veriwell\waven</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='cube_stage|x64'">

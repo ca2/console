@@ -281,16 +281,31 @@ void application_build_helper::translate_package_list()
 
          packagereferenceNew.m_iLine = packagereference.m_iLine;
 
+         if (packagereferenceNew.m_strPackage.ends_ci("veriwell_multimedia"))
+         {
+
+            printf("");
+
+         }
+
          m_packagereferencea.add(packagereferenceNew);
 
       }
       else
       {
 
+         package_reference packagereferenceNew;
+
+         packagereferenceNew = packagereference;
+
+         packagereferenceNew.m_strPackage = defer_translate_application_name(packagereferenceNew.m_strPackage);
+
+         packagereferenceNew.m_strPackage = defer_rename_package(packagereferenceNew.m_strPackage);
+
          for (auto& packagereferenceItem : m_packagereferencea)
          {
 
-            if (packagereferenceItem.m_strPackage.trimmed().compare_ci(packagereference.m_strPackage.trimmed()) == 0)
+            if (packagereferenceItem.m_strPackage.trimmed().compare_ci(packagereferenceNew.m_strPackage.trimmed()) == 0)
             {
 
                return;
@@ -306,11 +321,12 @@ void application_build_helper::translate_package_list()
 
          }
 
-         package_reference packagereferenceNew;
+         if (packagereferenceNew.m_strPackage.ends_ci("veriwell_multimedia"))
+         {
 
-         packagereferenceNew = packagereference;
+            printf("");
 
-         packagereferenceNew.m_strPackage = defer_rename_package(packagereferenceNew.m_strPackage);
+         }
 
          m_packagereferencea.add(packagereferenceNew);
 
