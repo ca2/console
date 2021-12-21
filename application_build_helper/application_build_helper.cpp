@@ -160,7 +160,7 @@ void application_build_helper::create_package_list()
    
    m_straIgnorePackage = get_lines(m_pathArchive / ("platform-" PLATFORM_NAME) / "ignore_packages.txt");
 
-   m_piniPackageMap = m_psystem->m_papexsystem->file().get_ini(m_pathArchive / ("platform-" PLATFORM_NAME) / "package_map.txt");
+   m_piniPackageMap = m_psystem->m_papexsystem->file().get_ini(m_pathArchive / ("platform-" PLATFORM_NAME) / "platform" /m_strSlashedPlatform /"package_map.txt");
 
    ::package_reference packagereference;
 

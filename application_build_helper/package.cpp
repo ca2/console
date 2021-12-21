@@ -1,13 +1,15 @@
 // Created by camilo on 2021-12-17 21:01 BRT <3ThomasBorregaardSørensen!!
 #include "framework.h"
 #include "application_build_helper.h"
+#ifdef WINDOWS
 #include "apex_windows/_.h"
+#endif
 
 
 void get_root_and_item(string& strRoot, string& strItem, const char* pszFolder);
 
 
-void application_build_helper::package_windows()
+void application_build_helper::package()
 {
 
    ::file::path pathZip;

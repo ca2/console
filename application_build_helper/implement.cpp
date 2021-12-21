@@ -698,36 +698,42 @@ void application_build_helper::zip_matter()
 #if defined(FREEBSD) || defined(LINUX)
 
 
-void create_matter_object(class ::system* psystem, const ::string& strFolder)
+void application_build_helper::create_matter_object()
 {
 
-   ::file::path pathFolder = strFolder;
+   //::file::path pathFolder = strFolder;
 
-   chdir(pathFolder);
+   //chdir(m_pathFolder);
 
-   string strRoot;
+   //string strRoot;
 
-   string strItem;
+   //string strItem;
 
-   get_root_and_item(strRoot, strItem, pathFolder);
+   //get_root_and_item(strRoot, strItem, pathFolder);
 
-   string strAppId;
+   //string strAppId;
 
-   strAppId = strRoot + "/" + strItem;
+   //strAppId = strRoot + "/" + strItem;
 
-   ::file::path pathMatterZipO = pathFolder / ".link_object/_matter.zip.o";
+   ::file::path pathMatterZipO = m_pathFolder / ".link_object/_matter.zip.o";
 
-   chdir(pathFolder);
+   chdir(m_pathFolder);
 
-   psystem->m_pacmedir->create(pathFolder / ".link_object");
+   m_psystem->m_pacmedir->create(m_pathFolder / ".link_object");
+
+   string strOutput;
+
+   string strError;
+
+   int iExitCode = 0;
 
 #if defined(LINUX)
 
-   command_system("ld -r -b binary -o " + pathMatterZipO + " _matter.zip");
+   command_system(strOutput, strError, iExitCode, "ld -r -b binary -o " + pathMatterZipO + " _matter.zip");
 
 #else
 
-   command_system("ld -r -b binary -o " + pathMatterZipO + " -m elf_amd64_fbsd -z noexecstack _matter.zip");
+   command_system(strOutput, strError, iExitCode, "ld -r -b binary -o " + pathMatterZipO + " -m elf_amd64_fbsd -z noexecstack _matter.zip");
 
 #endif
 
@@ -765,11 +771,7 @@ void implement(class ::system* psystem)
 
          g_phelper->set_package_folder(strArg3);
 
-#ifdef WINDOWS
-
-         g_phelper->package_windows();
-
-#endif
+         g_phelper->package();
 
       }
 
@@ -894,7 +896,9 @@ void implement(class ::system* psystem)
 
 #if defined(FREEBSD) || defined(LINUX)
 
-      create_matter_object(psystem, pathFolder);
+      //create_matter_object(psystem, pathFolder);
+
+      g_phelper->create_matter_object();
 
 #endif
 

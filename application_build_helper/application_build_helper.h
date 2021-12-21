@@ -56,6 +56,12 @@ public:
 
    void set_package_folder(const ::file::path& pathFolder);
 
+#if defined(FREEBSD) || defined(LINUX)
+
+   void create_matter_object();
+
+#endif
+
    //void load_application_list();
 
    void create_package_list();
@@ -71,11 +77,7 @@ public:
    package_reference_array get_package_extensions(const ::string& strPackage);
    package_reference_array get_all_package_dependencies(const ::string& strPackage);
 
-#ifdef WINDOWS
-
-   void package_windows();
-
-#endif
+   void package();
 
    
    void copy_icon_ico();
