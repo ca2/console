@@ -259,6 +259,13 @@ void application_build_helper::translate_package_list()
 
       stra.explode("/", packagereference.m_strPackage);
 
+      if(stra.get_size() == 1 && packagereference.m_strPackage.compare_ci("none") == 0)
+      {
+
+         return;
+
+      }
+
       if (stra.get_size() != 2 && !packagereference.m_strPackage.begins_ci("default_"))
       {
 
