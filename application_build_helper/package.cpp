@@ -86,7 +86,15 @@ void application_build_helper::package()
 
                {
 
+#ifdef WINDOWS
+
                   string strName = "shared_" + strItem + ".exe";
+
+#else
+
+                  string strName = "_" + strItem;
+
+#endif
 
                   ::file::path pathItem = pathOutput / strName;
 
@@ -115,7 +123,15 @@ void application_build_helper::package()
 
             {
 
+#ifdef WINDOWS
+
                string strName = strItem + ".dll";
+
+#else
+
+               string strName = "lib" + strItem + ".so";
+
+#endif
 
                ::file::path pathItem = pathOutput / strName;
 
