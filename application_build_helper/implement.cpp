@@ -762,7 +762,7 @@ void implement(class ::system* psystem)
 
       string strArg2 = psystem->m_argv[1];
 
-      string strArg3 = psystem->m_argv[3];
+      string strArg3 = psystem->m_argv[2];
 
 #endif
 
@@ -770,7 +770,7 @@ void implement(class ::system* psystem)
       {
 
 
-         printf("application_build_helper -package %s", strArg3.c_str());
+         printf("application_build_helper -package %s\n", strArg3.c_str());
 
          g_phelper->set_package_folder(strArg3);
 
