@@ -26,7 +26,7 @@ void application_build_helper::package()
 
    pathZip = "/store/" + m_strSlashedPlatform + "/" + m_strUnderscoreAppId + ".zip";
 
-   pathOutput = string(get_current_dir_name()) + "/output";
+   pathOutput = m_pathOutput + "/output";
 
 #endif
 
