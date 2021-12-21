@@ -769,6 +769,9 @@ void implement(class ::system* psystem)
       if (strArg2.compare_ci("-package") == 0)
       {
 
+
+         printf("application_build_helper -package %s", strArg3.c_str());
+
          g_phelper->set_package_folder(strArg3);
 
          g_phelper->package();
