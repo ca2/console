@@ -14,7 +14,21 @@ void application_build_helper::package()
 
    ::file::path pathZip;
 
+   ::file::path pathOutput;
+
+#ifdef WINDOWS
+
    pathZip = "B:/windows/" + m_strUnderscoreAppId + ".zip";
+
+   pathOutput = (m_pathFolder - 3) / "time-windows/x64/stage";
+
+#else
+
+   pathZip = "/store/" + m_strSlashedPlatform + "/" + m_strUnderscoreAppId + ".zip";
+
+   pathOutput = string(get_current_dir_name()) + "/output";
+
+#endif
 
    ::file::path pathPackageList;
 
@@ -25,8 +39,6 @@ void application_build_helper::package()
    string_array stra;
 
    stra.add_lines(strInput, false);
-
-   ::file::path pathOutput = (m_pathFolder - 3) / "time-windows/x64/stage";
 
 #ifdef WINDOWS_DESKTOP
 
