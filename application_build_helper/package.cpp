@@ -121,6 +121,7 @@ void application_build_helper::package()
 
             }
 
+            if(strItem.compare_ci("none") != 0)
             {
 
 #ifdef WINDOWS
