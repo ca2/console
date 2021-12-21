@@ -785,6 +785,76 @@ void implement(class ::system* psystem)
       }
 
    }
+   else if (psystem->m_argc == 4)
+   {
+
+#ifdef WINDOWS_DESKTOP
+
+      string strArg2 = psystem->m_wargv[1];
+
+      string strArg3 = psystem->m_wargv[2];
+
+#else
+
+      string strArg2 = psystem->m_argv[1];
+
+      string strArg3 = psystem->m_argv[2];
+
+      string strArg4 = psystem->m_argv[3];
+
+#endif
+
+      if (strArg2.compare_ci("-package") == 0)
+      {
+
+
+         printf("application_build_helper -package %s\n", strArg3.c_str());
+
+         printf("output_dir : %s\n", strArg4.c_str());
+
+         g_phelper->set_package_folder(strArg3);
+
+         g_phelper->m_pathOutput = strArg4;
+
+         g_phelper->package();
+
+      }
+      else if(strArg2.compare_ci("([a-z0-9_]+)_factory") == 0)
+      {
+
+         string strFileDst = psystem->m_wargv[3];
+
+         string strFileSrc = psystem->m_wargv[2];
+
+         //         ::file::path pathPlatform;
+         //
+         //         ::file::path pathFolder = strFolder;
+         //
+         //         pathPlatform = (pathFolder - 2) / "platform.txt";
+         //
+         //         string strPlatform = psystem->m_pacmefile->as_string(pathPlatform);
+         //
+         //         ::file::path pathTranslate;
+         //
+         //         pathTranslate = (pathFolder - 2) / (strPlatform + "_deps.txt");
+         //
+         //         static_factory(psystem, strFileDst, strFileSrc);
+         //
+
+      }
+      else if(strArg2.compare_ci("zip_matter") == 0)
+      {
+
+         string strFolder = psystem->m_wargv[2];
+
+         g_phelper->set_package_folder(strFolder);
+
+         g_phelper->zip_matter();
+
+      }
+
+
+   }
    else if (psystem->m_argc == 2)
    {
 
@@ -914,46 +984,6 @@ void implement(class ::system* psystem)
 
    }
 
-   if (psystem->m_argc == 4)
-   {
-
-      string strOp = psystem->m_wargv[1];
-
-      if (strOp == "([a-z0-9_]+)_factory")
-      {
-
-         string strFileDst = psystem->m_wargv[3];
-
-         string strFileSrc = psystem->m_wargv[2];
-
-         //         ::file::path pathPlatform;
-         //
-         //         ::file::path pathFolder = strFolder;
-         //
-         //         pathPlatform = (pathFolder - 2) / "platform.txt";
-         //
-         //         string strPlatform = psystem->m_pacmefile->as_string(pathPlatform);
-         //
-         //         ::file::path pathTranslate;
-         //
-         //         pathTranslate = (pathFolder - 2) / (strPlatform + "_deps.txt");
-         //
-         //         static_factory(psystem, strFileDst, strFileSrc);
-         //
-
-      }
-      else if (strOp == "zip_matter")
-      {
-
-         string strFolder = psystem->m_wargv[2];
-
-         g_phelper->set_package_folder(strFolder);
-
-         g_phelper->zip_matter();
-
-      }
-
-   }
 
    delete g_phelper;
 
