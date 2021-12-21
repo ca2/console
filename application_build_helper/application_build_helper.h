@@ -33,6 +33,7 @@ public:
    ::file::path                  m_pathFolder;
    ::file::path                  m_pathArchive;
    ::file::path                  m_pathSource;
+   ::file::path                  m_pathOutput;
 
    string                        m_strAppId;
    string                        m_strUnderscoreAppId;

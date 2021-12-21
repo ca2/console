@@ -764,6 +764,8 @@ void implement(class ::system* psystem)
 
       string strArg3 = psystem->m_argv[2];
 
+      string strArg4 = psystem->m_argv[3];
+
 #endif
 
       if (strArg2.compare_ci("-package") == 0)
@@ -772,7 +774,11 @@ void implement(class ::system* psystem)
 
          printf("application_build_helper -package %s\n", strArg3.c_str());
 
+         printf("output_dir : %s\n", strArg4.c_str());
+
          g_phelper->set_package_folder(strArg3);
+
+         g_phelper->m_pathOutput = strArg4;
 
          g_phelper->package();
 
