@@ -26,7 +26,7 @@ target_link_libraries(_console_application_build_helper PRIVATE acme apex)
 add_custom_command(
    TARGET _console_application_build_helper
    POST_BUILD
-   COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/_console_application_build_helper $ENV{HOME}/bin/application_build_helper
+   COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/_console_application_build_helper ${APPLICATION_BUILD_HELPER}
    COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libacme.so $ENV{HOME}/bin/
    COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libacme_linux.so $ENV{HOME}/bin/
    COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libacme_posix.so $ENV{HOME}/bin/

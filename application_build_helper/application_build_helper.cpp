@@ -155,12 +155,25 @@ void application_build_helper::set_package_folder(const ::file::path& pathFolder
 //}
 
 
-void application_build_helper::create_package_list()
+::e_status application_build_helper::create_package_list()
 {
    
    m_straIgnorePackage = get_lines(m_pathArchive / ("platform-" PLATFORM_NAME) / "ignore_packages.txt");
 
-   m_piniPackageMap = m_psystem->m_papexsystem->file().get_ini(m_pathArchive / ("platform-" PLATFORM_NAME) / "platform" /m_strSlashedPlatform /"package_map.txt");
+   ::file::path pathPackageMap;
+
+   pathPackageMap = m_pathArchive / ("platform-" PLATFORM_NAME) / "platform" /m_strSlashedPlatform /"package_map.txt";
+
+   m_piniPackageMap = m_psystem->m_papexsystem->file().get_ini(pathPackageMap);
+
+   if(is_null(m_piniPackageMap))
+   {
+
+      fprintf(stderr,"\n\nFailed to open file: %s\n(Does it exist?)\n\n\n", pathPackageMap.c_str());
+
+      return error_failed;
+
+   }
 
    ::package_reference packagereference;
 
@@ -169,6 +182,8 @@ void application_build_helper::create_package_list()
    packagereference.m_iLine = -1;
 
    add_package(packagereference);
+
+   return ::success;
 
 }
 

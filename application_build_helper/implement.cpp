@@ -698,7 +698,7 @@ void application_build_helper::zip_matter()
 #if defined(FREEBSD) || defined(LINUX)
 
 
-void application_build_helper::create_matter_object()
+::e_status application_build_helper::create_matter_object()
 {
 
    //::file::path pathFolder = strFolder;
@@ -737,6 +737,8 @@ void application_build_helper::create_matter_object()
 
 #endif
 
+   return ::success;
+
 }
 
 
@@ -744,6 +746,8 @@ void application_build_helper::create_matter_object()
 
 void implement(class ::system* psystem)
 {
+
+   ::e_status estatus = ::success;
 
    g_phelper = new application_build_helper;
 
@@ -876,116 +880,123 @@ void implement(class ::system* psystem)
 
       printf("platform: \"%s\"\n", g_phelper->m_strPlatform2.c_str());
 
-      g_phelper->create_package_list();
+      auto estatus = g_phelper->create_package_list();
 
-      string strPackages;
-
-      for (auto& packagereference : g_phelper->m_packagereferencea)
+      if(estatus.succeeded())
       {
 
-         strPackages += packagereference.m_strPackage.trimmed() + "\n";
+         string strPackages;
 
-      }
+         for (auto & packagereference: g_phelper->m_packagereferencea)
+         {
 
-      ::file::path pathInl = pathFolder / "platform" / g_phelper->m_strSlashedPlatform / "_static_factory.inl";
+            strPackages += packagereference.m_strPackage.trimmed() + "\n";
 
-      ::file::path pathSourcePackages = pathFolder / "_packages.txt";
+         }
 
-      ::file::path pathTargetPackages = pathFolder / "platform" / g_phelper->m_strSlashedPlatform / "_packages.txt";
+         ::file::path pathInl = pathFolder / "platform" / g_phelper->m_strSlashedPlatform / "_static_factory.inl";
 
-      psystem->m_pacmefile->put_contents(pathSourcePackages, strPackages);
+         ::file::path pathSourcePackages = pathFolder / "_packages.txt";
 
-      ::file::path pathSourceReferences;
+         ::file::path pathTargetPackages = pathFolder / "platform" / g_phelper->m_strSlashedPlatform / "_packages.txt";
 
-      pathSourceReferences = pathFolder / "_references.txt";
+         psystem->m_pacmefile->put_contents(pathSourcePackages, strPackages);
 
-      ::file::path pathTargetReferences;
+         ::file::path pathSourceReferences;
 
-      pathTargetReferences = pathFolder / "platform" / g_phelper->m_strSlashedPlatform / "_references.txt";
+         pathSourceReferences = pathFolder / "_references.txt";
 
-      ::file::path pathDepsDeprecated;
+         ::file::path pathTargetReferences;
 
-      pathDepsDeprecated = pathFolder / "deps.txt";
+         pathTargetReferences = pathFolder / "platform" / g_phelper->m_strSlashedPlatform / "_references.txt";
 
-      ::file::path pathSourceDependencies;
+         ::file::path pathDepsDeprecated;
 
-      pathSourceDependencies = pathFolder / "_dependencies.txt";
+         pathDepsDeprecated = pathFolder / "deps.txt";
 
-      ::file::path pathTargetDependencies;
+         ::file::path pathSourceDependencies;
 
-      pathTargetDependencies = pathFolder / "platform" / g_phelper->m_strSlashedPlatform / "_dependencies.txt";
+         pathSourceDependencies = pathFolder / "_dependencies.txt";
 
-      ::file::path pathSourceExtensions;
+         ::file::path pathTargetDependencies;
 
-      pathSourceExtensions = pathFolder / "_extensions.txt";
+         pathTargetDependencies = pathFolder / "platform" / g_phelper->m_strSlashedPlatform / "_dependencies.txt";
 
-      ::file::path pathTargetExtensions;
+         ::file::path pathSourceExtensions;
 
-      pathTargetExtensions = pathFolder / "platform" / g_phelper->m_strSlashedPlatform / "_extensions.txt";
+         pathSourceExtensions = pathFolder / "_extensions.txt";
 
-      psystem->m_pacmefile->set_file_normal(pathTargetReferences);
+         ::file::path pathTargetExtensions;
 
-      psystem->m_pacmefile->set_file_normal(pathTargetDependencies);
+         pathTargetExtensions = pathFolder / "platform" / g_phelper->m_strSlashedPlatform / "_extensions.txt";
 
-      psystem->m_pacmefile->set_file_normal(pathTargetExtensions);
+         psystem->m_pacmefile->set_file_normal(pathTargetReferences);
 
-      psystem->m_pacmefile->set_file_normal(pathTargetPackages);
+         psystem->m_pacmefile->set_file_normal(pathTargetDependencies);
 
-      auto lenDepsDeprecated = psystem->m_pacmefile->as_string(pathDepsDeprecated).trimmed().length();
+         psystem->m_pacmefile->set_file_normal(pathTargetExtensions);
 
-      auto lenSourceDependencies = psystem->m_pacmefile->as_string(pathSourceDependencies).trimmed().length();
+         psystem->m_pacmefile->set_file_normal(pathTargetPackages);
 
-      if (lenDepsDeprecated > 0 && lenSourceDependencies == 0)
-      {
+         auto lenDepsDeprecated = psystem->m_pacmefile->as_string(pathDepsDeprecated).trimmed().length();
 
-         psystem->m_pacmefile->set_file_normal(pathSourceDependencies);
+         auto lenSourceDependencies = psystem->m_pacmefile->as_string(pathSourceDependencies).trimmed().length();
 
-         psystem->m_pacmefile->copy(pathSourceDependencies, pathDepsDeprecated, true);
+         if (lenDepsDeprecated > 0 && lenSourceDependencies == 0)
+         {
 
-      }
+            psystem->m_pacmefile->set_file_normal(pathSourceDependencies);
 
-      g_phelper->generate__main();
+            psystem->m_pacmefile->copy(pathSourceDependencies, pathDepsDeprecated, true);
 
-      g_phelper->copy_icon_ico();
+         }
 
-      g_phelper->static_factory(pathInl, pathSourceDependencies);
+         g_phelper->generate__main();
 
-      g_phelper->translate_items(pathTargetReferences, pathSourceReferences);
-      g_phelper->translate_items(pathTargetDependencies, pathSourceDependencies);
-      g_phelper->translate_items(pathTargetExtensions, pathSourceExtensions);
-      //g_phelper->translate_items(pathTargetPackages, pathSourcePackages);
+         g_phelper->copy_icon_ico();
 
-      g_phelper->translate_package_list();
+         g_phelper->static_factory(pathInl, pathSourceDependencies);
 
-      string strTranslatedPackages;
+         g_phelper->translate_items(pathTargetReferences, pathSourceReferences);
+         g_phelper->translate_items(pathTargetDependencies, pathSourceDependencies);
+         g_phelper->translate_items(pathTargetExtensions, pathSourceExtensions);
+         //g_phelper->translate_items(pathTargetPackages, pathSourcePackages);
 
-      for (auto& packagereference : g_phelper->m_packagereferencea)
-      {
+         g_phelper->translate_package_list();
 
-         strTranslatedPackages += packagereference.m_strPackage.trimmed() + "\n";
+         string strTranslatedPackages;
 
-      }
+         for (auto & packagereference: g_phelper->m_packagereferencea)
+         {
 
-      psystem->m_pacmefile->put_contents(pathTargetPackages, strTranslatedPackages);
+            strTranslatedPackages += packagereference.m_strPackage.trimmed() + "\n";
+
+         }
+
+         psystem->m_pacmefile->put_contents(pathTargetPackages, strTranslatedPackages);
 
 
-      g_phelper->defer_matter();
+         g_phelper->defer_matter();
 
-      g_phelper->zip_matter();
+         g_phelper->zip_matter();
 
 #if defined(FREEBSD) || defined(LINUX)
 
-      //create_matter_object(psystem, pathFolder);
+         //create_matter_object(psystem, pathFolder);
 
-      g_phelper->create_matter_object();
+         g_phelper->create_matter_object();
 
 #endif
+
+      }
 
 
    }
 
-
    delete g_phelper;
+
+   psystem->m_estatus = estatus;
+
 
 }
 

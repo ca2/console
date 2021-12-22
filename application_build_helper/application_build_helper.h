@@ -59,13 +59,13 @@ public:
 
 #if defined(FREEBSD) || defined(LINUX)
 
-   void create_matter_object();
+   ::e_status create_matter_object();
 
 #endif
 
    //void load_application_list();
 
-   void create_package_list();
+   ::e_status create_package_list();
 
    void translate_package_list();
 
@@ -80,7 +80,7 @@ public:
 
    void package();
 
-   
+
    void copy_icon_ico();
    void generate__main();
    void defer_matter();
