@@ -762,7 +762,7 @@ status < string > application_build_helper::defer_rename_package(string strPacka
 
                int iExitCode = 0;
 
-               auto estatus = command_system(strOutput, strError, iExitCode, strZipExe + " -FSr \"" + strZip + "\" " + strFolder + "/*", e_command_system_inline_log);
+               estatus = command_system(strOutput, strError, iExitCode, strZipExe + " -FSr \"" + strZip + "\" " + strFolder + "/*", e_command_system_inline_log);
 
                bFirst = false;
 
@@ -776,7 +776,7 @@ status < string > application_build_helper::defer_rename_package(string strPacka
 
                int iExitCode = 0;
 
-               auto estatus = command_system(strOutput, strError, iExitCode, strZipExe + " -r \"" + pathZip + "\" " + strFolder + "/*", e_command_system_inline_log);
+               estatus = command_system(strOutput, strError, iExitCode, strZipExe + " -r \"" + pathZip + "\" " + strFolder + "/*", e_command_system_inline_log);
 
             }
 
@@ -829,6 +829,7 @@ status < string > application_build_helper::defer_rename_package(string strPacka
    return estatus;
 
 }
+
 
 
 #if defined(FREEBSD) || defined(LINUX)
