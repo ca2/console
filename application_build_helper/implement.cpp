@@ -639,7 +639,7 @@ void application_build_helper::zip_matter()
 
                int iExitCode = 0;
 
-               auto estatus = command_system(strOutput, strError, iExitCode, strZipExe + " -FSr \"" + strZip + "\" " + strFolder + "/*");
+               auto estatus = command_system(strOutput, strError, iExitCode, strZipExe + " -FSr \"" + strZip + "\" " + strFolder + "/*", e_command_system_inline_log);
 
                bFirst = false;
 
@@ -653,7 +653,7 @@ void application_build_helper::zip_matter()
 
                int iExitCode = 0;
 
-               auto estatus = command_system(strOutput, strError, iExitCode, strZipExe + " -r \"" + pathZip + "\" " + strFolder + "/*");
+               auto estatus = command_system(strOutput, strError, iExitCode, strZipExe + " -r \"" + pathZip + "\" " + strFolder + "/*", e_command_system_inline_log);
 
             }
 
@@ -686,7 +686,7 @@ void application_build_helper::zip_matter()
 
    int iExitCode = 0;
 
-   auto estatus = command_system(strOutput, strError, iExitCode, strZipExe + " -r \"" + pathZip + "\" sensitive/sensitive/api/*");
+   auto estatus = command_system(strOutput, strError, iExitCode, strZipExe + " -r \"" + pathZip + "\" sensitive/sensitive/api/*", e_command_system_inline_log);
 
 }
 
@@ -725,11 +725,11 @@ void application_build_helper::zip_matter()
 
 #if defined(LINUX)
 
-   command_system(strOutput, strError, iExitCode, "ld -r -b binary -o " + pathMatterZipO + " _matter.zip");
+   command_system(strOutput, strError, iExitCode, "ld -r -b binary -o " + pathMatterZipO + " _matter.zip", e_command_system_inline_log);
 
 #else
 
-   command_system(strOutput, strError, iExitCode, "ld -r -b binary -o " + pathMatterZipO + " -m elf_amd64_fbsd -z noexecstack _matter.zip");
+   command_system(strOutput, strError, iExitCode, "ld -r -b binary -o " + pathMatterZipO + " -m elf_amd64_fbsd -z noexecstack _matter.zip", e_command_system_inline_log);
 
 #endif
 

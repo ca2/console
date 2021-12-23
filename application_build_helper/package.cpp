@@ -169,7 +169,7 @@ void application_build_helper::package()
 
    int iExitCode = 0;
 
-   auto estatus = command_system(strOutput, strError, iExitCode, strCmd);
+   auto estatus = command_system(strOutput, strError, iExitCode, strCmd, e_command_system_inline_log);
 
    if (strError.trimmed().has_char())
    {
