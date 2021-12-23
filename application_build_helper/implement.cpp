@@ -696,15 +696,15 @@ status < string > application_build_helper::defer_rename_package(string strPacka
 
    }
 
-#ifdef WINDOWS_DESKTOP
-
-   _wchdir(wstring(pathOutput));
-
-#else
-
-   chdir(pathOutput);
-
-#endif
+//#ifdef WINDOWS_DESKTOP
+//
+//   _wchdir(wstring(pathOutput));
+//
+//#else
+//
+//   chdir(pathOutput);
+//
+//#endif
 
    bool bFirst = true;
 
