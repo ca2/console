@@ -162,7 +162,7 @@ void application_build_helper::set_package_folder(const ::file::path& pathFolder
 
    ::file::path pathPackageMap;
 
-   pathPackageMap = m_pathArchive / ("platform-" PLATFORM_NAME) / "platform" /m_strSlashedPlatform /"package_map.txt";
+   pathPackageMap = m_pathArchive / ("platform-" PLATFORM_NAME) / "platform" / m_strSlashedPlatform /"package_map.txt";
 
    m_piniPackageMap = m_psystem->m_papexsystem->file().get_ini(pathPackageMap);
 

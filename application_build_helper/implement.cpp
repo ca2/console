@@ -8,8 +8,6 @@
 #endif
 #include "application_build_helper.h"
 
-application_build_helper* g_phelper;
-
 void package_windows(class ::system* psystem, const ::file::path& pathFolder);
 
 //void get_root_and_item(string& strRoot, string& strItem, const char* pszFolder)
@@ -747,9 +745,9 @@ void implement(class ::system* psystem)
 
    ::e_status estatus = ::success;
 
-   g_phelper = new application_build_helper;
+   application_build_helper helper;
 
-   g_phelper->initialize(psystem);
+   helper.initialize(psystem);
 
    if (psystem->m_argc == 3)
    {
@@ -778,11 +776,11 @@ void implement(class ::system* psystem)
 
          printf("output_dir : %s\n", strArg4.c_str());
 
-         g_phelper->set_package_folder(strArg3);
+         helper.set_package_folder(strArg3);
 
-         g_phelper->m_pathOutput = strArg4;
+         helper.m_pathOutput = strArg4;
 
-         g_phelper->package();
+         helper.package();
 
       }
 
@@ -814,11 +812,11 @@ void implement(class ::system* psystem)
 
          printf("output_dir : %s\n", strArg4.c_str());
 
-         g_phelper->set_package_folder(strArg3);
+         helper.set_package_folder(strArg3);
 
-         g_phelper->m_pathOutput = strArg4;
+         helper.m_pathOutput = strArg4;
 
-         g_phelper->package();
+         helper.package();
 
       }
       else if(strArg2.compare_ci("([a-z0-9_]+)_factory") == 0)
@@ -849,9 +847,9 @@ void implement(class ::system* psystem)
 
          string strFolder = psystem->m_wargv[2];
 
-         g_phelper->set_package_folder(strFolder);
+         helper.set_package_folder(strFolder);
 
-         g_phelper->zip_matter();
+         helper.zip_matter();
 
       }
 
@@ -860,11 +858,9 @@ void implement(class ::system* psystem)
    else if (psystem->m_argc == 2)
    {
 
-      g_phelper->prepare_application();
+      helper.prepare_application();
 
    }
-
-   delete g_phelper;
 
    psystem->m_estatus = estatus;
 
@@ -889,15 +885,15 @@ void implement(class ::system* psystem)
 
 #endif
 
-   g_phelper->set_package_folder(strFolder);
+   set_package_folder(strFolder);
 
-   auto pathFolder = g_phelper->m_pathFolder;
+   auto pathFolder = m_pathFolder;
 
    printf("build_helper \"%s\"\n", pathFolder.c_str());
 
-   printf("platform: \"%s\"\n", g_phelper->m_strPlatform2.c_str());
+   printf("platform: \"%s\"\n", m_strPlatform2.c_str());
 
-   auto estatus = g_phelper->create_package_list();
+   auto estatus = create_package_list();
 
    if(estatus.failed())
    {
@@ -910,18 +906,18 @@ void implement(class ::system* psystem)
 
    string strPackages;
 
-   for (auto & packagereference: g_phelper->m_packagereferencea)
+   for (auto & packagereference: m_packagereferencea)
    {
 
       strPackages += packagereference.m_strPackage.trimmed() + "\n";
 
    }
 
-   ::file::path pathInl = pathFolder / "platform" / g_phelper->m_strSlashedPlatform / "_static_factory.inl";
+   ::file::path pathInl = pathFolder / "platform" / m_strSlashedPlatform / "_static_factory.inl";
 
    ::file::path pathSourcePackages = pathFolder / "_packages.txt";
 
-   ::file::path pathTargetPackages = pathFolder / "platform" / g_phelper->m_strSlashedPlatform / "_packages.txt";
+   ::file::path pathTargetPackages = pathFolder / "platform" / m_strSlashedPlatform / "_packages.txt";
 
    m_psystem->m_pacmefile->put_contents(pathSourcePackages, strPackages);
 
@@ -931,7 +927,7 @@ void implement(class ::system* psystem)
 
    ::file::path pathTargetReferences;
 
-   pathTargetReferences = pathFolder / "platform" / g_phelper->m_strSlashedPlatform / "_references.txt";
+   pathTargetReferences = pathFolder / "platform" / m_strSlashedPlatform / "_references.txt";
 
    ::file::path pathDepsDeprecated;
 
@@ -943,7 +939,7 @@ void implement(class ::system* psystem)
 
    ::file::path pathTargetDependencies;
 
-   pathTargetDependencies = pathFolder / "platform" / g_phelper->m_strSlashedPlatform / "_dependencies.txt";
+   pathTargetDependencies = pathFolder / "platform" / m_strSlashedPlatform / "_dependencies.txt";
 
    ::file::path pathSourceExtensions;
 
@@ -951,7 +947,7 @@ void implement(class ::system* psystem)
 
    ::file::path pathTargetExtensions;
 
-   pathTargetExtensions = pathFolder / "platform" / g_phelper->m_strSlashedPlatform / "_extensions.txt";
+   pathTargetExtensions = pathFolder / "platform" / m_strSlashedPlatform / "_extensions.txt";
 
    m_psystem->m_pacmefile->set_file_normal(pathTargetReferences);
 
@@ -989,7 +985,7 @@ void implement(class ::system* psystem)
 
    string strTranslatedPackages;
 
-   for (auto & packagereference: g_phelper->m_packagereferencea)
+   for (auto & packagereference: m_packagereferencea)
    {
 
       strTranslatedPackages += packagereference.m_strPackage.trimmed() + "\n";
