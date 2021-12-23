@@ -188,8 +188,10 @@ void application_build_helper::set_package_folder(const ::file::path& pathFolder
 }
 
 
-void application_build_helper::translate_package_list()
+::e_status application_build_helper::translate_package_list()
 {
+
+   ::e_status estatus = ::success;
 
    m_bTranslateDependency = true;
 
@@ -200,9 +202,18 @@ void application_build_helper::translate_package_list()
    for (auto& packagereference : packagereferenceaCopy)
    {
 
-      add_package(packagereference);
+      estatus = add_package(packagereference);
+
+      if(!estatus)
+      {
+
+         break;
+
+      }
 
    }
+
+   return estatus;
 
 }
 
@@ -218,7 +229,7 @@ void application_build_helper::translate_package_list()
    //}
 
 
-   void application_build_helper::add_package(::package_reference & packagereference)
+   ::e_status application_build_helper::add_package(::package_reference & packagereference)
    {
 
       if (m_bTranslateDependency)
@@ -236,7 +247,7 @@ void application_build_helper::translate_package_list()
          if (packagereference.m_strPackage.begins_ci("default_"))
          {
 
-            return;
+            return ::success_none;
 
          }
 
@@ -245,28 +256,28 @@ void application_build_helper::translate_package_list()
       if (packagereference.m_strPackage.is_empty())
       {
 
-         return;
+         return ::success_none;
 
       }
 
       if (packagereference.m_strPackage.ends_ci("node_windows"))
       {
 
-         printf("");
+         printf("%s", "");
 
       }
 
       if (m_straIgnorePackage.contains_ci(packagereference.m_strPackage))
       {
 
-         return;
+         return ::success_none;
 
       }
 
       if (packagereference.m_strPackage.ends_ci("node_windows"))
       {
 
-         printf("");
+         printf("%s", "");
 
       }
 
@@ -277,7 +288,7 @@ void application_build_helper::translate_package_list()
       if(stra.get_size() == 1 && packagereference.m_strPackage.compare_ci("none") == 0)
       {
 
-         return;
+         return success_none;
 
       }
 
@@ -286,9 +297,22 @@ void application_build_helper::translate_package_list()
 
          //printf("Error in package: \"%s\"\n", strPackage.c_str());
 
-         printf("%s(%d,1): error: package name must have one and only one slash.\n", packagereference.m_pathReference.c_str(), packagereference.m_iLine + 1);
+         auto psz =
 
-         return;
+#ifdef WINDOWS
+
+         "%s(%d,1)"
+
+#else
+
+         "%s:%d:1"
+
+#endif
+         ": error: package name must have one and only one slash.\n";
+
+         fprintf(stderr, psz, packagereference.m_pathReference.c_str(), packagereference.m_iLine + 1);
+
+         return error_failed;
 
       }
 
@@ -306,7 +330,7 @@ void application_build_helper::translate_package_list()
          if (packagereferenceNew.m_strPackage.ends_ci("veriwell_multimedia"))
          {
 
-            printf("");
+            printf("%s", "");
 
          }
 
@@ -330,7 +354,7 @@ void application_build_helper::translate_package_list()
             if (packagereferenceItem.m_strPackage.trimmed().compare_ci(packagereferenceNew.m_strPackage.trimmed()) == 0)
             {
 
-               return;
+               return success_none;
 
             }
 
@@ -346,7 +370,7 @@ void application_build_helper::translate_package_list()
          if (packagereferenceNew.m_strPackage.ends_ci("veriwell_multimedia"))
          {
 
-            printf("");
+            printf("%s", "");
 
          }
 
@@ -354,30 +378,57 @@ void application_build_helper::translate_package_list()
 
       }
 
-      add_package_dependencies(packagereference);
+      auto estatus = add_package_dependencies(packagereference);
+
+      if(!estatus)
+      {
+
+         return estatus;
+
+      }
+
+      return estatus;
 
    }
 
 
-   void application_build_helper::add_package_dependencies(const ::package_reference& packagereference)
+   ::e_status application_build_helper::add_package_dependencies(const ::package_reference& packagereference)
    {
+
+      ::e_status estatus = ::success;
 
       auto packagereferencea = get_all_package_dependencies(packagereference.m_strPackage);
 
       for (auto& packagereferenceItem : packagereferencea)
       {
 
-         add_package(packagereferenceItem);
+         estatus = add_package(packagereferenceItem);
+
+         if(!estatus)
+         {
+
+            break;
+
+         }
 
       }
+
+      return estatus;
 
    }
 
 
-   string_array application_build_helper::get_lines(const ::file::path & path)
+   status < string_array > application_build_helper::get_lines(const ::file::path & path)
    {
 
-      string strInput = m_psystem->m_pacmefile->as_string(path);
+      auto strInput = m_psystem->m_pacmefile->as_string(path);
+
+      if(!strInput)
+      {
+
+         return strInput.estatus();
+
+      }
 
       string_array stra;
 
@@ -388,7 +439,7 @@ void application_build_helper::translate_package_list()
    }
 
 
-   package_reference_array application_build_helper::get_package_list(const ::string& strList, const ::string& strPackage)
+   status < package_reference_array > application_build_helper::get_package_list(const ::string& strList, const ::string& strPackage)
    {
 
       ::file::path path;
@@ -430,7 +481,7 @@ void application_build_helper::translate_package_list()
    }
 
 
-   package_reference_array application_build_helper::get_package_references(const ::string& strPackage)
+   status < package_reference_array > application_build_helper::get_package_references(const ::string& strPackage)
    {
 
       return get_package_list("_references", strPackage);
@@ -438,7 +489,7 @@ void application_build_helper::translate_package_list()
    }
 
 
-   package_reference_array application_build_helper::get_package_dependencies(const ::string& strPackage)
+   status < package_reference_array > application_build_helper::get_package_dependencies(const ::string& strPackage)
    {
 
       return get_package_list("_dependencies", strPackage);
@@ -446,7 +497,7 @@ void application_build_helper::translate_package_list()
    }
 
 
-   package_reference_array application_build_helper::get_package_extensions(const ::string& strPackage)
+   status < package_reference_array > application_build_helper::get_package_extensions(const ::string& strPackage)
    {
 
       return get_package_list("_extensions", strPackage);
@@ -454,7 +505,7 @@ void application_build_helper::translate_package_list()
    }
 
 
-   package_reference_array application_build_helper::get_all_package_dependencies(const ::string& strPackage)
+   status < package_reference_array > application_build_helper::get_all_package_dependencies(const ::string& strPackage)
    {
 
       package_reference_array packagereferencea;

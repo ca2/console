@@ -66,39 +66,38 @@ public:
 
 #endif
 
-   //void load_application_list();
-
    ::e_status create_package_list();
 
-   void translate_package_list();
+   ::e_status translate_package_list();
 
-   void add_package(::package_reference& packagereference);
-   void add_package_dependencies(const ::package_reference & packagereference);
-   string_array get_lines(const ::file::path& path);
-   package_reference_array get_package_list(const ::string& strList, const ::string& strPackage);
-   package_reference_array get_package_references(const ::string& strPackage);
-   package_reference_array get_package_dependencies(const ::string& strPackage);
-   package_reference_array get_package_extensions(const ::string& strPackage);
-   package_reference_array get_all_package_dependencies(const ::string& strPackage);
-
-   void package();
+   ::e_status add_package(::package_reference& packagereference);
+   ::e_status add_package_dependencies(const ::package_reference & packagereference);
+   status < string_array > get_lines(const ::file::path& path);
+   status < package_reference_array > get_package_list(const ::string& strList, const ::string& strPackage);
+   status < package_reference_array > get_package_references(const ::string& strPackage);
+   status < package_reference_array > get_package_dependencies(const ::string& strPackage);
+   status < package_reference_array > get_package_extensions(const ::string& strPackage);
+   status < package_reference_array > get_all_package_dependencies(const ::string& strPackage);
 
 
-   void copy_icon_ico();
-   void generate__main();
-   void defer_matter();
-   void zip_matter();
+   ::e_status package();
 
 
-   void translate_items(const ::string& strFileDst, const ::string& strFileSrc);
-   void static_factory(const ::string& strFileDst, const ::string& strFileSrc);
-   string defer_translate_dependency(string strDependency);
-   string defer_rename_package(string strPackage);
+   ::e_status copy_icon_ico();
+   ::e_status generate__main();
+   ::e_status defer_matter();
+   ::e_status zip_matter();
 
 
-   void load_rename_map(string_to_string & renamemap, string strRoot);
+   ::e_status translate_items(const ::string& strFileDst, const ::string& strFileSrc);
+   ::e_status static_factory(const ::string& strFileDst, const ::string& strFileSrc);
+   status < string > defer_translate_dependency(string strDependency);
+   status < string > defer_rename_package(string strPackage);
 
-   virtual string defer_translate_application_name(string strDependency);
+
+   ::e_status load_rename_map(string_to_string & renamemap, string strRoot);
+
+   status < string > defer_translate_application_name(string strDependency);
 
 
 };

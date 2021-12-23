@@ -9,7 +9,7 @@
 void get_root_and_item(string& strRoot, string& strItem, const char* pszFolder);
 
 
-void application_build_helper::package()
+::e_status application_build_helper::package()
 {
 
    ::file::path pathZip;
@@ -40,15 +40,16 @@ void application_build_helper::package()
 
    stra.add_lines(strInput, false);
 
-#ifdef WINDOWS_DESKTOP
+   auto estatus = m_psystem->m_pacmedir->change_current(pathOutput);
 
-   _wchdir(wstring(pathOutput));
+   if(!estatus)
+   {
 
-#else
+      fprintf(stderr, "Fatal: Current current directory to: %s (%" PRIestatus ")\n", pathOutput.c_str(), estatus.m_estatus);
 
-   chdir(pathOutput);
+      return estatus;
 
-#endif
+   }
 
    bool bFirst = true;
 
@@ -98,12 +99,14 @@ void application_build_helper::package()
 
                   ::file::path pathItem = pathOutput / strName;
 
-                  if (!m_psystem->m_pacmefile->exists(pathItem))
+                  estatus = m_psystem->m_pacmefile->exists(pathItem);
+
+                  if(!estatus)
                   {
 
-                     printf("Fatal: File doesn't exist: %s\n", pathItem.c_str());
+                     fprintf(stderr, "Fatal: File doesn't exist: %s (%" PRIestatus ")\n", pathItem.c_str(), estatus.m_estatus);
 
-                     return;
+                     return estatus;
 
                   }
 
@@ -136,12 +139,14 @@ void application_build_helper::package()
 
                ::file::path pathItem = pathOutput / strName;
 
-               if (!m_psystem->m_pacmefile->exists(pathItem))
+               estatus = m_psystem->m_pacmefile->exists(pathItem);
+
+               if(!estatus)
                {
 
-                  printf("Fatal: File doesn't exist: %s", pathItem.c_str());
+                  fprintf(stderr, "Fatal: File doesn't exist: %s (%" PRIestatus ")", pathItem.c_str(), estatus.m_estatus);
 
-                  return;
+                  return estatus;
 
                }
 
@@ -169,14 +174,16 @@ void application_build_helper::package()
 
    int iExitCode = 0;
 
-   auto estatus = command_system(strOutput, strError, iExitCode, strCmd, e_command_system_inline_log);
+   estatus = command_system(strOutput, strError, iExitCode, strCmd, e_command_system_inline_log);
 
-   if (strError.trimmed().has_char())
+   if (!estatus || strError.trimmed().has_char())
    {
 
-      fprintf(stderr, "%s", strError.c_str());
+      fprintf(stderr, "%s %" PRIestatus "\n", strError.c_str(), estatus.m_estatus);
 
    }
+
+   return estatus;
 
 }
 
