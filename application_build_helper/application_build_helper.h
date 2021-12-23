@@ -57,6 +57,9 @@ public:
 
    void set_package_folder(const ::file::path& pathFolder);
 
+
+   ::e_status prepare_application();
+
 #if defined(FREEBSD) || defined(LINUX)
 
    ::e_status create_matter_object();

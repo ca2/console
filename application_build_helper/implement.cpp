@@ -565,8 +565,6 @@ void application_build_helper::zip_matter()
 
    string strInput = m_psystem->m_pacmefile->as_string(pathMatter);
 
-   //auto len = strInput.length();
-
    string strZip = pathZip;
 
    strZip.replace("\\", "/");
@@ -862,134 +860,7 @@ void implement(class ::system* psystem)
    else if (psystem->m_argc == 2)
    {
 
-#ifdef WINDOWS_DESKTOP
-
-      string strFolder = psystem->m_wargv[1];
-
-#else
-
-      string strFolder = psystem->m_argv[1];
-
-#endif
-
-      g_phelper->set_package_folder(strFolder);
-
-      auto pathFolder = g_phelper->m_pathFolder;
-
-      printf("build_helper \"%s\"\n", pathFolder.c_str());
-
-      printf("platform: \"%s\"\n", g_phelper->m_strPlatform2.c_str());
-
-      auto estatus = g_phelper->create_package_list();
-
-      if(estatus.succeeded())
-      {
-
-         string strPackages;
-
-         for (auto & packagereference: g_phelper->m_packagereferencea)
-         {
-
-            strPackages += packagereference.m_strPackage.trimmed() + "\n";
-
-         }
-
-         ::file::path pathInl = pathFolder / "platform" / g_phelper->m_strSlashedPlatform / "_static_factory.inl";
-
-         ::file::path pathSourcePackages = pathFolder / "_packages.txt";
-
-         ::file::path pathTargetPackages = pathFolder / "platform" / g_phelper->m_strSlashedPlatform / "_packages.txt";
-
-         psystem->m_pacmefile->put_contents(pathSourcePackages, strPackages);
-
-         ::file::path pathSourceReferences;
-
-         pathSourceReferences = pathFolder / "_references.txt";
-
-         ::file::path pathTargetReferences;
-
-         pathTargetReferences = pathFolder / "platform" / g_phelper->m_strSlashedPlatform / "_references.txt";
-
-         ::file::path pathDepsDeprecated;
-
-         pathDepsDeprecated = pathFolder / "deps.txt";
-
-         ::file::path pathSourceDependencies;
-
-         pathSourceDependencies = pathFolder / "_dependencies.txt";
-
-         ::file::path pathTargetDependencies;
-
-         pathTargetDependencies = pathFolder / "platform" / g_phelper->m_strSlashedPlatform / "_dependencies.txt";
-
-         ::file::path pathSourceExtensions;
-
-         pathSourceExtensions = pathFolder / "_extensions.txt";
-
-         ::file::path pathTargetExtensions;
-
-         pathTargetExtensions = pathFolder / "platform" / g_phelper->m_strSlashedPlatform / "_extensions.txt";
-
-         psystem->m_pacmefile->set_file_normal(pathTargetReferences);
-
-         psystem->m_pacmefile->set_file_normal(pathTargetDependencies);
-
-         psystem->m_pacmefile->set_file_normal(pathTargetExtensions);
-
-         psystem->m_pacmefile->set_file_normal(pathTargetPackages);
-
-         auto lenDepsDeprecated = psystem->m_pacmefile->as_string(pathDepsDeprecated).trimmed().length();
-
-         auto lenSourceDependencies = psystem->m_pacmefile->as_string(pathSourceDependencies).trimmed().length();
-
-         if (lenDepsDeprecated > 0 && lenSourceDependencies == 0)
-         {
-
-            psystem->m_pacmefile->set_file_normal(pathSourceDependencies);
-
-            psystem->m_pacmefile->copy(pathSourceDependencies, pathDepsDeprecated, true);
-
-         }
-
-         g_phelper->generate__main();
-
-         g_phelper->copy_icon_ico();
-
-         g_phelper->static_factory(pathInl, pathSourceDependencies);
-
-         g_phelper->translate_items(pathTargetReferences, pathSourceReferences);
-         g_phelper->translate_items(pathTargetDependencies, pathSourceDependencies);
-         g_phelper->translate_items(pathTargetExtensions, pathSourceExtensions);
-         //g_phelper->translate_items(pathTargetPackages, pathSourcePackages);
-
-         g_phelper->translate_package_list();
-
-         string strTranslatedPackages;
-
-         for (auto & packagereference: g_phelper->m_packagereferencea)
-         {
-
-            strTranslatedPackages += packagereference.m_strPackage.trimmed() + "\n";
-
-         }
-
-         psystem->m_pacmefile->put_contents(pathTargetPackages, strTranslatedPackages);
-
-
-         g_phelper->defer_matter();
-
-         g_phelper->zip_matter();
-
-#if defined(FREEBSD) || defined(LINUX)
-
-         //create_matter_object(psystem, pathFolder);
-
-         g_phelper->create_matter_object();
-
-#endif
-
-      }
-
+      g_phelper->prepare_application();
 
    }
 
@@ -1002,3 +873,146 @@ void implement(class ::system* psystem)
 
 
 
+
+
+::e_status application_build_helper::prepare_application()
+{
+
+
+#ifdef WINDOWS_DESKTOP
+
+   string strFolder = m_psystem->m_wargv[1];
+
+#else
+
+   string strFolder = m_psystem->m_argv[1];
+
+#endif
+
+   g_phelper->set_package_folder(strFolder);
+
+   auto pathFolder = g_phelper->m_pathFolder;
+
+   printf("build_helper \"%s\"\n", pathFolder.c_str());
+
+   printf("platform: \"%s\"\n", g_phelper->m_strPlatform2.c_str());
+
+   auto estatus = g_phelper->create_package_list();
+
+   if(estatus.failed())
+   {
+
+      fprintf(stderr, "Failed to generate package list: %s", m_pathFolder.c_str());
+
+      return estatus;
+
+   }
+
+   string strPackages;
+
+   for (auto & packagereference: g_phelper->m_packagereferencea)
+   {
+
+      strPackages += packagereference.m_strPackage.trimmed() + "\n";
+
+   }
+
+   ::file::path pathInl = pathFolder / "platform" / g_phelper->m_strSlashedPlatform / "_static_factory.inl";
+
+   ::file::path pathSourcePackages = pathFolder / "_packages.txt";
+
+   ::file::path pathTargetPackages = pathFolder / "platform" / g_phelper->m_strSlashedPlatform / "_packages.txt";
+
+   m_psystem->m_pacmefile->put_contents(pathSourcePackages, strPackages);
+
+   ::file::path pathSourceReferences;
+
+   pathSourceReferences = pathFolder / "_references.txt";
+
+   ::file::path pathTargetReferences;
+
+   pathTargetReferences = pathFolder / "platform" / g_phelper->m_strSlashedPlatform / "_references.txt";
+
+   ::file::path pathDepsDeprecated;
+
+   pathDepsDeprecated = pathFolder / "deps.txt";
+
+   ::file::path pathSourceDependencies;
+
+   pathSourceDependencies = pathFolder / "_dependencies.txt";
+
+   ::file::path pathTargetDependencies;
+
+   pathTargetDependencies = pathFolder / "platform" / g_phelper->m_strSlashedPlatform / "_dependencies.txt";
+
+   ::file::path pathSourceExtensions;
+
+   pathSourceExtensions = pathFolder / "_extensions.txt";
+
+   ::file::path pathTargetExtensions;
+
+   pathTargetExtensions = pathFolder / "platform" / g_phelper->m_strSlashedPlatform / "_extensions.txt";
+
+   m_psystem->m_pacmefile->set_file_normal(pathTargetReferences);
+
+   m_psystem->m_pacmefile->set_file_normal(pathTargetDependencies);
+
+   m_psystem->m_pacmefile->set_file_normal(pathTargetExtensions);
+
+   m_psystem->m_pacmefile->set_file_normal(pathTargetPackages);
+
+   auto lenDepsDeprecated = m_psystem->m_pacmefile->as_string(pathDepsDeprecated).trimmed().length();
+
+   auto lenSourceDependencies = m_psystem->m_pacmefile->as_string(pathSourceDependencies).trimmed().length();
+
+   if (lenDepsDeprecated > 0 && lenSourceDependencies == 0)
+   {
+
+      m_psystem->m_pacmefile->set_file_normal(pathSourceDependencies);
+
+      m_psystem->m_pacmefile->copy(pathSourceDependencies, pathDepsDeprecated, true);
+
+   }
+
+   generate__main();
+
+   copy_icon_ico();
+
+   static_factory(pathInl, pathSourceDependencies);
+
+   translate_items(pathTargetReferences, pathSourceReferences);
+   translate_items(pathTargetDependencies, pathSourceDependencies);
+   translate_items(pathTargetExtensions, pathSourceExtensions);
+   //g_phelper->translate_items(pathTargetPackages, pathSourcePackages);
+
+   translate_package_list();
+
+   string strTranslatedPackages;
+
+   for (auto & packagereference: g_phelper->m_packagereferencea)
+   {
+
+      strTranslatedPackages += packagereference.m_strPackage.trimmed() + "\n";
+
+   }
+
+
+   m_psystem->m_pacmefile->put_contents(pathTargetPackages, strTranslatedPackages);
+
+
+   defer_matter();
+
+   zip_matter();
+
+#if defined(FREEBSD) || defined(LINUX)
+
+   //create_matter_object(psystem, pathFolder);
+
+   create_matter_object();
+
+#endif
+
+
+   return ::success;
+
+}
