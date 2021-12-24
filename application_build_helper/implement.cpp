@@ -49,6 +49,10 @@ void package_windows(class ::system* psystem, const ::file::path& pathFolder);
    if(!estatus)
    {
 
+      string strStatus = estatus_to_string(estatus);
+
+      fprintf(stderr, "error: copy_icon_ico overwrite_if_different \"%s\" \"%s\" (%s)", pathIconTarget.c_str(), pathIconSource.c_str(), strStatus.c_str());
+
       return estatus;
 
    }
