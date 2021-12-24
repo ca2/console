@@ -14,14 +14,14 @@ application_build_helper::application_build_helper()
    }
 
 application_build_helper::~application_build_helper()
-   {
+{
 
 
-   }
+}
 
 
 
-void application_build_helper::set_package_folder(const ::file::path& pathFolderParam)
+::e_status application_build_helper::set_package_folder(const ::file::path& pathFolderParam)
 {
 
    ::file::path pathFolder(pathFolderParam);
@@ -96,9 +96,7 @@ void application_build_helper::set_package_folder(const ::file::path& pathFolder
       printf("%s", "Did you set UNDERSCORE_PLATFORM and UNDERSCORE_PLATFORM environment variables?\n");
       printf("%s", "(They can be set \"automatically\" with patch_bashrc)\n");
 
-      m_psystem->m_estatus = error_wrong_state;
-
-      return;
+      return error_wrong_state;
 
    }
 
@@ -112,8 +110,11 @@ void application_build_helper::set_package_folder(const ::file::path& pathFolder
 
    m_strSlashedPlatform.trim();
 
+   return ::success;
 
 }
+
+
 //
 //
 //void application_build_helper::load_application_list()

@@ -55,7 +55,7 @@ public:
    ~application_build_helper() override;
 
 
-   void set_package_folder(const ::file::path& pathFolder);
+   ::e_status set_package_folder(const ::file::path& pathFolder);
 
 
    ::e_status prepare_application();

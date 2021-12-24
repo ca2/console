@@ -463,15 +463,22 @@ status < string > application_build_helper::defer_rename_package(string strPacka
 ::e_status application_build_helper::static_factory(const ::string& strFileDst, const ::string& strFileSrc)
 {
 
-   m_psystem->m_pacmefile->ensure_exists(strFileSrc);
+   auto estatus = m_psystem->m_pacmefile->ensure_exists(strFileSrc);
+
+   if(!estatus)
+   {
+
+      return estatus;
+
+   }
 
    auto strInput = m_psystem->m_pacmefile->as_string(strFileSrc);
 
-   if(!strInput.m_estatus)
+   if(!strInput)
    {
 
 
-      return strInput.m_estatus;
+      return strInput;
 
    }
 
@@ -535,9 +542,25 @@ status < string > application_build_helper::defer_rename_package(string strPacka
 
    strOutput += "\n";
 
-   m_psystem->m_pacmefile->set_file_normal(strFileDst);
+   estatus = m_psystem->m_pacmefile->set_file_normal(strFileDst);
 
-   m_psystem->m_pacmefile->put_contents(strFileDst, strOutput);
+   if(!estatus)
+   {
+
+      return estatus;
+
+   }
+
+   estatus = m_psystem->m_pacmefile->put_contents(strFileDst, strOutput);
+
+   if(!estatus)
+   {
+
+      return estatus;
+
+   }
+
+   return estatus;
 
 }
 
@@ -545,11 +568,23 @@ status < string > application_build_helper::defer_rename_package(string strPacka
 ::e_status application_build_helper::translate_items(const ::string& strFileDst, const ::string& strFileSrc)
 {
 
-   //printf("translate_items %s\n", strFileSrc.c_str());
+   auto estatus = m_psystem->m_pacmefile->ensure_exists(strFileSrc);
 
-   m_psystem->m_pacmefile->ensure_exists(strFileSrc);
+   if(!estatus)
+   {
+
+      return estatus;
+
+   }
 
    auto strInput = m_psystem->m_pacmefile->as_string(strFileSrc);
+
+   if(!strInput)
+   {
+
+      return strInput;
+
+   }
 
    string_array stra;
 
@@ -582,7 +617,7 @@ status < string > application_build_helper::defer_rename_package(string strPacka
 
    }
 
-   auto estatus = m_psystem->m_pacmefile->set_file_normal(strFileDst);
+   estatus = m_psystem->m_pacmefile->set_file_normal(strFileDst);
 
    if(!estatus)
    {
@@ -673,9 +708,23 @@ status < string > application_build_helper::defer_rename_package(string strPacka
 
    ::file::path pathMatter = m_pathFolder / "matter.txt";
 
-   m_psystem->m_pacmefile->ensure_exists(pathMatter);
+   auto estatus = m_psystem->m_pacmefile->ensure_exists(pathMatter);
 
-   string strInput = m_psystem->m_pacmefile->as_string(pathMatter);
+   if(!estatus)
+   {
+
+      return estatus;
+
+   }
+
+   auto strInput = m_psystem->m_pacmefile->as_string(pathMatter);
+
+   if(!strInput)
+   {
+
+      return strInput;
+
+   }
 
    string strZip = pathZip;
 
@@ -687,7 +736,7 @@ status < string > application_build_helper::defer_rename_package(string strPacka
 
    ::file::path pathOutput = m_pathFolder - 2;
 
-   auto estatus = m_psystem->m_pacmedir->change_current(pathOutput);
+   estatus = m_psystem->m_pacmedir->change_current(pathOutput);
 
    if(!estatus)
    {
@@ -780,33 +829,33 @@ status < string > application_build_helper::defer_rename_package(string strPacka
 
             }
 
-
          }
 
-
       }
-
 
    }
 
 
 #ifdef WINDOWS_DESKTOP
 
-
    _wchdir(wstring("C:\\"));
 
-
 #else
-
 
    {
 
       ::file::path pathHome = getenv("HOME");
 
-      chdir(pathHome);
+      estatus = m_psystem->m_pacmedir->change_current(pathHome);
+
+      if (!estatus)
+      {
+
+         return estatus;
+
+      }
 
    }
-
 
 #endif
 
@@ -854,9 +903,23 @@ status < string > application_build_helper::defer_rename_package(string strPacka
 
    ::file::path pathMatterZipO = m_pathFolder / ".link_object/_matter.zip.o";
 
-   chdir(m_pathFolder);
+   auto estatus = m_psystem->m_pacmedir->change_current(m_pathFolder);
 
-   m_psystem->m_pacmedir->create(m_pathFolder / ".link_object");
+   if(!estatus)
+   {
+
+      return estatus;
+
+   }
+
+   estatus = m_psystem->m_pacmedir->create(m_pathFolder / ".link_object");
+
+   if(!estatus)
+   {
+
+      return estatus;
+
+   }
 
    string strOutput;
 
@@ -866,15 +929,22 @@ status < string > application_build_helper::defer_rename_package(string strPacka
 
 #if defined(LINUX)
 
-   command_system(strOutput, strError, iExitCode, "ld -r -b binary -o " + pathMatterZipO + " _matter.zip", e_command_system_inline_log);
+   estatus = command_system(strOutput, strError, iExitCode, "ld -r -b binary -o " + pathMatterZipO + " _matter.zip", e_command_system_inline_log);
 
 #else
 
-   command_system(strOutput, strError, iExitCode, "ld -r -b binary -o " + pathMatterZipO + " -m elf_amd64_fbsd -z noexecstack _matter.zip", e_command_system_inline_log);
+   estatus = command_system(strOutput, strError, iExitCode, "ld -r -b binary -o " + pathMatterZipO + " -m elf_amd64_fbsd -z noexecstack _matter.zip", e_command_system_inline_log);
 
 #endif
 
-   return ::success;
+   if(!estatus)
+   {
+
+      return estatus;
+
+   }
+
+   return estatus;
 
 }
 
@@ -894,7 +964,7 @@ void implement(class ::system* psystem)
    if(!estatus)
    {
 
-      fprintf(stderr, "error: implement: helper.initialize %" PRIestatus, estatus);
+      fprintf(stderr, "error: implement: helper.initialize %" PRIestatus, estatus.m_estatus);
 
       psystem->m_estatus = estatus;
 
@@ -929,11 +999,16 @@ void implement(class ::system* psystem)
 
          printf("output_dir : %s\n", strArg4.c_str());
 
-         helper.set_package_folder(strArg3);
+         estatus = helper.set_package_folder(strArg3);
 
-         helper.m_pathOutput = strArg4;
+         if(estatus)
+         {
 
-         helper.package();
+            helper.m_pathOutput = strArg4;
+
+            estatus = helper.package();
+
+         }
 
       }
 
@@ -965,11 +1040,16 @@ void implement(class ::system* psystem)
 
          printf("output_dir : %s\n", strArg4.c_str());
 
-         helper.set_package_folder(strArg3);
+         estatus = helper.set_package_folder(strArg3);
 
-         helper.m_pathOutput = strArg4;
+         if(estatus)
+         {
 
-         helper.package();
+            helper.m_pathOutput = strArg4;
+
+            estatus = helper.package();
+
+         }
 
       }
       else if(strArg2.compare_ci("([a-z0-9_]+)_factory") == 0)
@@ -1000,9 +1080,14 @@ void implement(class ::system* psystem)
 
          string strFolder = psystem->m_wargv[2];
 
-         helper.set_package_folder(strFolder);
+         estatus = helper.set_package_folder(strFolder);
 
-         helper.zip_matter();
+         if(estatus)
+         {
+
+            estatus = helper.zip_matter();
+
+         }
 
       }
 
@@ -1038,7 +1123,16 @@ void implement(class ::system* psystem)
 
 #endif
 
-   set_package_folder(strFolder);
+   auto estatus = set_package_folder(strFolder);
+
+   if(!estatus)
+   {
+
+      fprintf(stderr, "error: application_build_helper::prepare_application set_package_folder (%" PRIestatus ")", estatus.m_estatus);
+
+      return estatus;
+
+   }
 
    auto pathFolder = m_pathFolder;
 
@@ -1046,12 +1140,12 @@ void implement(class ::system* psystem)
 
    printf("platform: \"%s\"\n", m_strPlatform2.c_str());
 
-   auto estatus = create_package_list();
+   estatus = create_package_list();
 
-   if(estatus.failed())
+   if(!estatus)
    {
 
-      fprintf(stderr, "Failed to generate package list: %s", m_pathFolder.c_str());
+      fprintf(stderr, "error: application_build_helper::prepare_application create_package_list \"%s\" (%" PRIestatus ")", m_pathFolder.c_str(), estatus.m_estatus);
 
       return estatus;
 
@@ -1072,7 +1166,16 @@ void implement(class ::system* psystem)
 
    ::file::path pathTargetPackages = pathFolder / "platform" / m_strSlashedPlatform / "_packages.txt";
 
-   m_psystem->m_pacmefile->put_contents(pathSourcePackages, strPackages);
+   estatus = m_psystem->m_pacmefile->put_contents(pathSourcePackages, strPackages);
+
+   if(!estatus)
+   {
+
+      fprintf(stderr, "error: application_build_helper::prepare_application put_contents (1) \"%s\" (%" PRIestatus ")", pathSourcePackages.c_str(), estatus.m_estatus);
+
+      return estatus;
+
+   }
 
    ::file::path pathSourceReferences;
 
@@ -1102,13 +1205,49 @@ void implement(class ::system* psystem)
 
    pathTargetExtensions = pathFolder / "platform" / m_strSlashedPlatform / "_extensions.txt";
 
-   m_psystem->m_pacmefile->set_file_normal(pathTargetReferences);
+   estatus = m_psystem->m_pacmefile->set_file_normal(pathTargetReferences);
 
-   m_psystem->m_pacmefile->set_file_normal(pathTargetDependencies);
+   if(!estatus)
+   {
 
-   m_psystem->m_pacmefile->set_file_normal(pathTargetExtensions);
+      fprintf(stderr, "error: application_build_helper::prepare_application set_file_normal (1) \"%s\" (%" PRIestatus ")", pathTargetReferences.c_str(), estatus.m_estatus);
 
-   m_psystem->m_pacmefile->set_file_normal(pathTargetPackages);
+      return estatus;
+
+   }
+
+   estatus = m_psystem->m_pacmefile->set_file_normal(pathTargetDependencies);
+
+   if(!estatus)
+   {
+
+      fprintf(stderr, "error: application_build_helper::prepare_application set_file_normal (2) \"%s\" (%" PRIestatus ")", pathTargetDependencies.c_str(), estatus.m_estatus);
+
+      return estatus;
+
+   }
+
+   estatus = m_psystem->m_pacmefile->set_file_normal(pathTargetExtensions);
+
+   if(!estatus)
+   {
+
+      fprintf(stderr, "error: application_build_helper::prepare_application set_file_normal (3) \"%s\" (%" PRIestatus ")", pathTargetExtensions.c_str(), estatus.m_estatus);
+
+      return estatus;
+
+   }
+
+   estatus = m_psystem->m_pacmefile->set_file_normal(pathTargetPackages);
+
+   if(!estatus)
+   {
+
+      fprintf(stderr, "error: application_build_helper::prepare_application set_file_normal (4) \"%s\" (%" PRIestatus ")", pathTargetPackages.c_str(), estatus.m_estatus);
+
+      return estatus;
+
+   }
 
    auto lenDepsDeprecated = m_psystem->m_pacmefile->as_string(pathDepsDeprecated).trimmed().length();
 
@@ -1117,24 +1256,108 @@ void implement(class ::system* psystem)
    if (lenDepsDeprecated > 0 && lenSourceDependencies == 0)
    {
 
-      m_psystem->m_pacmefile->set_file_normal(pathSourceDependencies);
+      estatus = m_psystem->m_pacmefile->set_file_normal(pathSourceDependencies);
 
-      m_psystem->m_pacmefile->copy(pathSourceDependencies, pathDepsDeprecated, true);
+      if(!estatus)
+      {
+
+         fprintf(stderr, "error: application_build_helper::prepare_application set_file_normal (5) \"%s\" (%" PRIestatus ")", pathSourceDependencies.c_str(), estatus.m_estatus);
+
+         return estatus;
+
+      }
+
+      estatus = m_psystem->m_pacmefile->copy(pathSourceDependencies, pathDepsDeprecated, true);
+
+      if(!estatus)
+      {
+
+         fprintf(stderr, "error: application_build_helper::prepare_application copy \"%s\" \"%s\" (%" PRIestatus ")", pathSourceDependencies.c_str(), pathDepsDeprecated.c_str(), estatus.m_estatus);
+
+         return estatus;
+
+      }
 
    }
 
-   generate__main();
+   estatus = generate__main();
 
-   copy_icon_ico();
+   if(!estatus)
+   {
 
-   static_factory(pathInl, pathSourceDependencies);
+      fprintf(stderr, "error: application_build_helper::prepare_application generate__main (%" PRIestatus ")", estatus.m_estatus);
 
-   translate_items(pathTargetReferences, pathSourceReferences);
-   translate_items(pathTargetDependencies, pathSourceDependencies);
-   translate_items(pathTargetExtensions, pathSourceExtensions);
+      return estatus;
+
+   }
+
+   estatus = copy_icon_ico();
+
+   if(!estatus)
+   {
+
+      fprintf(stderr, "error: application_build_helper::prepare_application copy_icon_ico (%" PRIestatus ")", estatus.m_estatus);
+
+      return estatus;
+
+   }
+
+   estatus = static_factory(pathInl, pathSourceDependencies);
+
+   if(!estatus)
+   {
+
+      fprintf(stderr, "error: application_build_helper::prepare_application static_factory \"%s\" \"%s\" (%" PRIestatus ")", pathInl.c_str(), pathSourceDependencies.c_str(), estatus.m_estatus);
+
+      return estatus;
+
+   }
+
+   estatus = translate_items(pathTargetReferences, pathSourceReferences);
+
+   if(!estatus)
+   {
+
+      fprintf(stderr, "error: application_build_helper::prepare_application translate_items (1) \"%s\" \"%s\" (%" PRIestatus ")", pathTargetReferences.c_str(), pathSourceReferences.c_str(), estatus.m_estatus);
+
+      return estatus;
+
+   }
+
+   estatus = translate_items(pathTargetDependencies, pathSourceDependencies);
+
+   if(!estatus)
+   {
+
+      fprintf(stderr, "error: application_build_helper::prepare_application translate_items (2) \"%s\" \"%s\" (%" PRIestatus ")", pathTargetDependencies.c_str(), pathSourceDependencies.c_str(), estatus.m_estatus);
+
+      return estatus;
+
+   }
+
+   estatus = translate_items(pathTargetExtensions, pathSourceExtensions);
+
+   if(!estatus)
+   {
+
+      fprintf(stderr, "error: application_build_helper::prepare_application translate_items (3) \"%s\" \"%s\" (%" PRIestatus ")", pathTargetExtensions.c_str(), pathSourceExtensions.c_str(), estatus.m_estatus);
+
+      return estatus;
+
+   }
+
    //g_phelper->translate_items(pathTargetPackages, pathSourcePackages);
 
-   translate_package_list();
+   estatus = translate_package_list();
+
+   if(!estatus)
+   {
+
+      fprintf(stderr, "error: application_build_helper::prepare_application translate_package_list (%" PRIestatus ")", estatus.m_estatus);
+
+      return estatus;
+
+   }
 
    string strTranslatedPackages;
 
@@ -1145,13 +1368,38 @@ void implement(class ::system* psystem)
 
    }
 
+   estatus = m_psystem->m_pacmefile->put_contents(pathTargetPackages, strTranslatedPackages);
 
-   m_psystem->m_pacmefile->put_contents(pathTargetPackages, strTranslatedPackages);
+   if(!estatus)
+   {
 
+      fprintf(stderr, "error: application_build_helper::prepare_application put_contents (2) \"%s\" (%" PRIestatus ")", pathTargetPackages.c_str(), estatus.m_estatus);
 
-   defer_matter();
+      return estatus;
 
-   zip_matter();
+   }
+
+   estatus = defer_matter();
+
+   if(!estatus)
+   {
+
+      fprintf(stderr, "error: application_build_helper::prepare_application defer_matter (%" PRIestatus ")", estatus.m_estatus);
+
+      return estatus;
+
+   }
+
+   estatus = zip_matter();
+
+   if(!estatus)
+   {
+
+      fprintf(stderr, "error: application_build_helper::prepare_application zip_matter (%" PRIestatus ")", estatus.m_estatus);
+
+      return estatus;
+
+   }
 
    ::file::path pathZip = m_pathFolder / "_matter.zip";
 
@@ -1168,11 +1416,20 @@ void implement(class ::system* psystem)
 
    //create_matter_object(psystem, pathFolder);
 
-   create_matter_object();
+   estatus = create_matter_object();
+
+   if(!estatus)
+   {
+
+      fprintf(stderr, "error: application_build_helper::prepare_application create_matter_object (%" PRIestatus ")", estatus.m_estatus);
+
+      return estatus;
+
+   }
 
 #endif
 
 
-   return ::success;
+   return estatus;
 
 }
