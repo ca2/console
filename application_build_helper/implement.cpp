@@ -833,6 +833,15 @@ status < string > application_build_helper::defer_rename_package(string strPacka
 
             }
 
+            if(estatus == error_file_not_found)
+            {
+
+               fprintf(stderr, "Compressing failed: Is \"" + strZipExe + "\" installed?\n");
+
+               return estatus;
+
+            }
+
          }
 
       }
