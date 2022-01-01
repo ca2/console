@@ -85,16 +85,16 @@ application_build_helper::~application_build_helper()
 
    string strPlatform;
 
-   strPlatform = getenv("UNDERSCORE_PLATFORM");
+   strPlatform = getenv("__SYSTEM_UNDERSCORE_PLATFORM");
 
    string strSlashedPlatform;
 
-   strSlashedPlatform = getenv("SLASHED_PLATFORM");
+   strSlashedPlatform = getenv("__SYSTEM_SLASHED_PLATFORM");
 
    if (strPlatform.is_empty() || strSlashedPlatform.is_empty())
    {
 
-      printf("%s", "Did you set UNDERSCORE_PLATFORM and UNDERSCORE_PLATFORM environment variables?\n");
+      printf("%s", "Did you set __SYSTEM_SLASHED_PLATFORM and __SYSTEM_UNDERSCORE_PLATFORM environment variables?\n");
       printf("%s", "(They can be set \"automatically\" with patch_bashrc)\n");
 
       return error_wrong_state;
