@@ -39,6 +39,7 @@
 		9A104A0327795720008570C4 /* libidn.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9A7F40C9274DAD9A00D914CC /* libidn.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9A104A0527795750008570C4 /* libcrypto.3.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9A1049CB2779512E008570C4 /* libcrypto.3.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9A104A0627795753008570C4 /* libssl.3.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9A1049CC2779512E008570C4 /* libssl.3.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		9A5051A0277CF754009D1CD1 /* libapex.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A1049C92778C8B1008570C4 /* libapex.dylib */; };
 		9A7F40C2274DA92A00D914CC /* application_build_helper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A7F40C1274DA92A00D914CC /* application_build_helper.cpp */; };
 		9A7F40C3274DAA3700D914CC /* application_build_helper in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9ADD64DE26B5CBBC00D11298 /* application_build_helper */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9A7F40C4274DAD0000D914CC /* libacme.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9ADD64FB26B5CC6000D11298 /* libacme.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -108,6 +109,7 @@
 			dstPath = $HOME/bin;
 			dstSubfolderSpec = 0;
 			files = (
+				9A5051A0277CF754009D1CD1 /* libapex.dylib in CopyFiles */,
 				9A81FBD92751536C003F38EC /* libidn.dylib in CopyFiles */,
 				9A1049EC2779556A008570C4 /* libcrypto_openssl.dylib in CopyFiles */,
 				9A7F40CF274DADB400D914CC /* libacme_posix.dylib in CopyFiles */,
