@@ -2,6 +2,7 @@
 #include "framework.h"
 //#include "acme/console.h"
 #include "acme/filesystem/file/_const.h"
+#include "acme/filesystem/filesystem/acme_file.h"
 #ifdef WINDOWS_DESTKOP
 #include <direct.h>
 #endif

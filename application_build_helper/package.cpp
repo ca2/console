@@ -4,6 +4,8 @@
 #ifdef WINDOWS
 #include "apex_windows/_.h"
 #endif
+#include "acme/filesystem/filesystem/acme_dir.h"
+#include "acme/filesystem/filesystem/acme_file.h"
 
 
 void get_root_and_item(string& strRoot, string& strItem, const char* pszFolder);

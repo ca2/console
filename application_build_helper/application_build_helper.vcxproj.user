@@ -31,8 +31,8 @@
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='cube_stage|x64'">
-    <LocalDebuggerCommandArguments>/c/basis/source/app-core/flag</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>C:\basis\source\app-core\commander\</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
-    <LocalDebuggerWorkingDirectory>C:\basis</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerWorkingDirectory>$(OutDir)</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
 </Project>

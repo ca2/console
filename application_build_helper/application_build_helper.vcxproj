@@ -880,7 +880,7 @@
     </PreBuildEvent>
     <ClCompile>
       <AdditionalOptions>/bigobj -Zm1024</AdditionalOptions>
-      <Optimization>MinSpace</Optimization>
+      <Optimization>MaxSpeed</Optimization>
       <AdditionalIncludeDirectories>include;$(SolutionDir)../../inc;$(__sensitive)/sensitive/include;$(SolutionDir)../../../source/include;$(__archive)local/include;$(__archive)third-windows/$(PlatformName)/$(Configuration)/include;$(__archive)third-windows/include;$(__archive)third-windows/third/include;$(__archive)third-windows/third/include/include;$(SolutionDir)../../../archive/platform-windows/_include;$(SolutionDir)../../../archive/platform-windows;$(SolutionDir)../../../archive/platform-windows_common;$(SolutionDir)../../../source/app/_include;$(SolutionDir)../../../source/third/include;.;$(IntDir);$(SolutionDir)../../../;$(SolutionDir)../../../source;$(SolutionDir)../../../source/app;$(ProjectDir)../..;$(ProjectDir)../../;$(ProjectDir)../;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>CUBE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
@@ -906,7 +906,7 @@
       <FunctionLevelLinking>false</FunctionLevelLinking>
       <EnableParallelCodeGeneration>false</EnableParallelCodeGeneration>
       <CreateHotpatchableImage>false</CreateHotpatchableImage>
-      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <WholeProgramOptimization>true</WholeProgramOptimization>
       <EnableFiberSafeOptimizations>false</EnableFiberSafeOptimizations>
       <SDLCheck>
@@ -979,7 +979,7 @@
   <ItemGroup>
     <ClCompile Include="application_build_helper.cpp" />
     <ClCompile Include="implement.cpp" />
-    <ClCompile Include="package_windows.cpp" />
+    <ClCompile Include="package.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\archive\platform-windows\acme_windows\acme_windows.vcxproj">
