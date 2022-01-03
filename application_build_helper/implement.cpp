@@ -39,12 +39,12 @@ void package_windows(class ::system* psystem, const ::file::path& pathFolder);
 
    auto estatus = m_psystem->m_pacmefile->set_file_normal(pathIconTarget);
 
-   if(!estatus)
-   {
+   //if(!estatus)
+   //{
 
-      return estatus;
+   //   return estatus;
 
-   }
+   //}
 
    estatus = m_psystem->m_pacmefile->overwrite_if_different(pathIconTarget, pathIconSource);
 
@@ -987,39 +987,28 @@ void implement(class ::system* psystem)
 
    }
 
-   if (psystem->m_argc == 3)
+   if (psystem->get_argument_count1() == 2 || psystem->get_argument_count1() == 3)
    {
 
-#ifdef WINDOWS_DESKTOP
+      string strArgument1 = psystem->get_argument1(0);
 
-      string strArg2 = psystem->m_wargv[1];
+      string strArgument2 = psystem->get_argument1(1);
 
-      string strArg3 = psystem->m_wargv[2];
+      string strArgument3 = psystem->get_argument1(3);
 
-#else
-
-      string strArg2 = psystem->m_argv[1];
-
-      string strArg3 = psystem->m_argv[2];
-
-      string strArg4 = psystem->m_argv[3];
-
-#endif
-
-      if (strArg2.compare_ci("-package") == 0)
+      if (strArgument1.compare_ci("-package") == 0)
       {
 
+         printf("application_build_helper -package %s\n", strArgument2.c_str());
 
-         printf("application_build_helper -package %s\n", strArg3.c_str());
+         printf("output_dir : %s\n", strArgument3.c_str());
 
-         printf("output_dir : %s\n", strArg4.c_str());
-
-         estatus = helper.set_package_folder(strArg3);
+         estatus = helper.set_package_folder(strArgument2);
 
          if(estatus)
          {
 
-            helper.m_pathOutput = strArg4;
+            helper.m_pathOutput = strArgument3;
 
             estatus = helper.package();
 
@@ -1028,51 +1017,42 @@ void implement(class ::system* psystem)
       }
 
    }
-   else if (psystem->m_argc == 4)
+   
+   if (psystem->get_argument_count1() == 3)
    {
 
-#ifdef WINDOWS_DESKTOP
+      string strArgument1 = psystem->get_argument1(0);
 
-      string strArg2 = psystem->m_wargv[1];
+      string strArgument2 = psystem->get_argument1(1);
 
-      string strArg3 = psystem->m_wargv[2];
+      string strArgument3 = psystem->get_argument1(2);
 
-#else
-
-      string strArg2 = psystem->m_argv[1];
-
-      string strArg3 = psystem->m_argv[2];
-
-      string strArg4 = psystem->m_argv[3];
-
-#endif
-
-      if (strArg2.compare_ci("-package") == 0)
+      if (strArgument1.compare_ci("-package") == 0)
       {
 
 
-         printf("application_build_helper -package %s\n", strArg3.c_str());
+         printf("application_build_helper -package %s\n", strArgument2.c_str());
 
-         printf("output_dir : %s\n", strArg4.c_str());
+         printf("output_dir : %s\n", strArgument3.c_str());
 
-         estatus = helper.set_package_folder(strArg3);
+         estatus = helper.set_package_folder(strArgument2);
 
          if(estatus)
          {
 
-            helper.m_pathOutput = strArg4;
+            helper.m_pathOutput = strArgument3;
 
             estatus = helper.package();
 
          }
 
       }
-      else if(strArg2.compare_ci("([a-z0-9_]+)_factory") == 0)
+      else if (strArgument1.compare_ci("node_factory") == 0)
       {
 
-         string strFileDst = psystem->m_wargv[3];
+         string strFileSrc = strArgument2;
 
-         string strFileSrc = psystem->m_wargv[2];
+         string strFileDst = strArgument3;
 
          //         ::file::path pathPlatform;
          //
@@ -1090,10 +1070,10 @@ void implement(class ::system* psystem)
          //
 
       }
-      else if(strArg2.compare_ci("zip_matter") == 0)
+      else if(strArgument1.compare_ci("zip_matter") == 0)
       {
 
-         string strFolder = psystem->m_wargv[2];
+         string strFolder = strArgument2;
 
          estatus = helper.set_package_folder(strFolder);
 
@@ -1106,9 +1086,8 @@ void implement(class ::system* psystem)
 
       }
 
-
    }
-   else if (psystem->m_argc == 2)
+   else if (psystem->get_argument_count1() == 1)
    {
 
       estatus = helper.prepare_application();
@@ -1127,16 +1106,7 @@ void implement(class ::system* psystem)
 ::e_status application_build_helper::prepare_application()
 {
 
-
-#ifdef WINDOWS_DESKTOP
-
-   string strFolder = m_psystem->m_wargv[1];
-
-#else
-
-   string strFolder = m_psystem->m_argv[1];
-
-#endif
+   string strFolder = m_psystem->get_argument1(0);
 
    auto estatus = set_package_folder(strFolder);
 

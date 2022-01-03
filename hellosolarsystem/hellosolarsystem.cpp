@@ -6,6 +6,7 @@
 #include "apex/console.h"
 //#include "aqua/xml.h"
 #include <stdio.h>
+#include "acme/primitive/mathematics/mathematics.h"
 
 #include "pointer_const_pointer.cpp"
 #include "tutor.cpp"
