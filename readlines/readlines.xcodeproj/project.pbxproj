@@ -14,8 +14,8 @@
 		9AC019EE2748AB85006BEBCC /* libaqua.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A83B83B2651615100B39AB9 /* libaqua.dylib */; };
 		9AC019F82748ACA2006BEBCC /* libcrypto_openssl.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9AC019F42748AC6C006BEBCC /* libcrypto_openssl.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9AD19ACF2512D2FA00B4C44A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AD19ACD2512D2FA00B4C44A /* main.cpp */; };
-		9AF36BDA272A67220035D52C /* libssl.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9AF36BD8272A67210035D52C /* libssl.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		9AF36BDB272A67220035D52C /* libcrypto.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9AF36BD9272A67210035D52C /* libcrypto.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		9AF36BDA272A67220035D52C /* libssl.3.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9AF36BD8272A67210035D52C /* libssl.3.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		9AF36BDB272A67220035D52C /* libcrypto.3.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9AF36BD9272A67210035D52C /* libcrypto.3.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9AF36BDC272A676C0035D52C /* libapex.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9A46D24C26784418000B22D0 /* libapex.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9AF36BDD272A676C0035D52C /* libacme.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9A46D24A2678440E000B22D0 /* libacme.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -55,9 +55,9 @@
 				9AF36BDC272A676C0035D52C /* libapex.dylib in Embed Libraries */,
 				9AF36BDD272A676C0035D52C /* libacme.dylib in Embed Libraries */,
 				9AC019F82748ACA2006BEBCC /* libcrypto_openssl.dylib in Embed Libraries */,
-				9AF36BDA272A67220035D52C /* libssl.dylib in Embed Libraries */,
+				9AF36BDA272A67220035D52C /* libssl.3.dylib in Embed Libraries */,
 				9A83B871265161DB00B39AB9 /* libapex_macos.dylib in Embed Libraries */,
-				9AF36BDB272A67220035D52C /* libcrypto.dylib in Embed Libraries */,
+				9AF36BDB272A67220035D52C /* libcrypto.3.dylib in Embed Libraries */,
 			);
 			name = "Embed Libraries";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,8 +72,8 @@
 		9A83B8342651615100B39AB9 /* aqua.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = aqua.xcodeproj; path = ../../app/aqua/aqua.xcodeproj; sourceTree = "<group>"; };
 		9AC019EF2748AC6C006BEBCC /* crypto_openssl.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = crypto_openssl.xcodeproj; path = ../../app/crypto_openssl/crypto_openssl.xcodeproj; sourceTree = "<group>"; };
 		9AD19ACD2512D2FA00B4C44A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		9AF36BD8272A67210035D52C /* libssl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.dylib; path = "../../../../archive/storage-macos/library/x86_64/Debug/libssl.dylib"; sourceTree = "<group>"; };
-		9AF36BD9272A67210035D52C /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = "../../../../archive/storage-macos/library/x86_64/Debug/libcrypto.dylib"; sourceTree = "<group>"; };
+		9AF36BD8272A67210035D52C /* libssl.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.3.dylib; path = "../../../../archive/storage-macos/library/libssl.3.dylib"; sourceTree = "<group>"; };
+		9AF36BD9272A67210035D52C /* libcrypto.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.3.dylib; path = "../../../../archive/storage-macos/library/libcrypto.3.dylib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,8 +129,8 @@
 		9A90EEE02512F6AF0060868A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9AF36BD9272A67210035D52C /* libcrypto.dylib */,
-				9AF36BD8272A67210035D52C /* libssl.dylib */,
+				9AF36BD9272A67210035D52C /* libcrypto.3.dylib */,
+				9AF36BD8272A67210035D52C /* libssl.3.dylib */,
 				9A46D24C26784418000B22D0 /* libapex.dylib */,
 				9A46D24A2678440E000B22D0 /* libacme.dylib */,
 			);

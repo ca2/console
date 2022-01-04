@@ -81,6 +81,12 @@ application_build_helper::~application_build_helper()
 
    m_strSlashedPlatform = "windows";
 
+#elif defined(MACOS)
+
+   m_strPlatform2 = "macos";
+
+   m_strSlashedPlatform = "macos";
+
 #elif defined(LINUX)
 
    string strPlatform;

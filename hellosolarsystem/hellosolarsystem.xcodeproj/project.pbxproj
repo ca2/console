@@ -21,8 +21,8 @@
 		9AEA195C2760163C006437A3 /* libcrypto_openssl.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9AEA19472760163C006437A3 /* libcrypto_openssl.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9AEA195E2760163D006437A3 /* libidn.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9AEA19482760163C006437A3 /* libidn.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9AEA19612760170E006437A3 /* hellosolarsystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AEA19602760170E006437A3 /* hellosolarsystem.cpp */; };
-		9AEA19A327601BBD006437A3 /* libcrypto.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9AEA19A027601B3C006437A3 /* libcrypto.dylib */; };
-		9AEA19A427601BBD006437A3 /* libssl.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9AEA199F27601B3C006437A3 /* libssl.dylib */; };
+		9AEA19A327601BBD006437A3 /* libcrypto.3.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9AEA19A027601B3C006437A3 /* libcrypto.3.dylib */; };
+		9AEA19A427601BBD006437A3 /* libssl.3.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9AEA199F27601B3C006437A3 /* libssl.3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,8 +32,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				9AEA19A327601BBD006437A3 /* libcrypto.dylib in Embed Libraries */,
-				9AEA19A427601BBD006437A3 /* libssl.dylib in Embed Libraries */,
+				9AEA19A327601BBD006437A3 /* libcrypto.3.dylib in Embed Libraries */,
+				9AEA19A427601BBD006437A3 /* libssl.3.dylib in Embed Libraries */,
 				9AEA19502760163C006437A3 /* libacme.dylib in Embed Libraries */,
 				9AEA195A2760163C006437A3 /* libaqua.dylib in Embed Libraries */,
 				9AEA195C2760163C006437A3 /* libcrypto_openssl.dylib in Embed Libraries */,
@@ -65,8 +65,8 @@
 		9AEA19472760163C006437A3 /* libcrypto_openssl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto_openssl.dylib; path = "../../../time-macos/x86_64/Debug/libcrypto_openssl.dylib"; sourceTree = "<group>"; };
 		9AEA19482760163C006437A3 /* libidn.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libidn.dylib; path = "../../../time-macos/x86_64/Debug/libidn.dylib"; sourceTree = "<group>"; };
 		9AEA19602760170E006437A3 /* hellosolarsystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hellosolarsystem.cpp; sourceTree = SOURCE_ROOT; };
-		9AEA199F27601B3C006437A3 /* libssl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.dylib; path = "../../../archive/storage-macos/library/x86_64/Debug/libssl.dylib"; sourceTree = "<group>"; };
-		9AEA19A027601B3C006437A3 /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = "../../../archive/storage-macos/library/x86_64/Debug/libcrypto.dylib"; sourceTree = "<group>"; };
+		9AEA199F27601B3C006437A3 /* libssl.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.3.dylib; path = "../../../archive/storage-macos/library/libssl.3.dylib"; sourceTree = "<group>"; };
+		9AEA19A027601B3C006437A3 /* libcrypto.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.3.dylib; path = "../../../archive/storage-macos/library/libcrypto.3.dylib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +110,8 @@
 		9AEA193D2760163B006437A3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9AEA19A027601B3C006437A3 /* libcrypto.dylib */,
-				9AEA199F27601B3C006437A3 /* libssl.dylib */,
+				9AEA19A027601B3C006437A3 /* libcrypto.3.dylib */,
+				9AEA199F27601B3C006437A3 /* libssl.3.dylib */,
 				9AEA19422760163C006437A3 /* libacme_apple.dylib */,
 				9AEA193E2760163B006437A3 /* libacme_macos.dylib */,
 				9AEA19402760163B006437A3 /* libacme_posix.dylib */,
