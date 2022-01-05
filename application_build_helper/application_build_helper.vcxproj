@@ -970,7 +970,8 @@
       </Inputs>
     </CustomBuildStep>
     <PostBuildEvent>
-      <Command>copy $(TargetPath) $(__archive)tool-windows\bin\application_build_helper.exe</Command>
+      <Command>mkdir %USERPROFILE%\bin
+copy $(TargetPath) %USERPROFILE%\bin\application_build_helper.exe</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
