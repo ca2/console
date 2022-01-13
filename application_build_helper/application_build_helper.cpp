@@ -10,19 +10,21 @@
 
 
 application_build_helper::application_build_helper()
-   {
+{
+
    m_bTranslateDependency = false;
-   }
+   
+}
+
 
 application_build_helper::~application_build_helper()
 {
-
 
 }
 
 
 
-::e_status application_build_helper::set_package_folder(const ::file::path& pathFolderParam)
+void application_build_helper::set_package_folder(const ::file::path& pathFolderParam)
 {
 
    ::file::path pathFolder(pathFolderParam);
@@ -117,7 +119,7 @@ application_build_helper::~application_build_helper()
 
    m_strSlashedPlatform.trim();
 
-   return ::success;
+   ///return ::success;
 
 }
 
@@ -163,10 +165,12 @@ application_build_helper::~application_build_helper()
 //}
 
 
-::e_status application_build_helper::create_package_list()
+void application_build_helper::create_package_list()
 {
-   
-   m_straIgnorePackage = get_lines(m_pathArchive / ("platform-" PLATFORM_NAME) / "ignore_packages.txt");
+
+   auto pathIgnorePackage = m_pathArchive / ("platform-" PLATFORM_NAME) / "ignore_packages.txt";
+
+   m_straIgnorePackage = get_lines(pathIgnorePackage);
 
    ::file::path pathPackageMap;
 
@@ -179,7 +183,7 @@ application_build_helper::~application_build_helper()
 
       fprintf(stderr,"\n\nFailed to open file: %s\n(Does it exist?)\n\n\n", pathPackageMap.c_str());
 
-      return error_failed;
+      throw_status(error_failed);
 
    }
 
@@ -191,15 +195,15 @@ application_build_helper::~application_build_helper()
 
    add_package(packagereference);
 
-   return ::success;
+   //return ::success;
 
 }
 
 
-::e_status application_build_helper::translate_package_list()
+void application_build_helper::translate_package_list()
 {
 
-   ::e_status estatus = ::success;
+   //::e_status estatus = ::success;
 
    m_bTranslateDependency = true;
 
@@ -210,18 +214,20 @@ application_build_helper::~application_build_helper()
    for (auto& packagereference : packagereferenceaCopy)
    {
 
-      estatus = add_package(packagereference);
+      //estatus = 
+      
+      add_package(packagereference);
 
-      if(!estatus)
-      {
+      //if(!estatus)
+      //{
 
-         break;
+      //   break;
 
-      }
+      //}
 
    }
 
-   return estatus;
+//   return estatus;
 
 }
 
@@ -237,7 +243,7 @@ application_build_helper::~application_build_helper()
    //}
 
 
-   ::e_status application_build_helper::add_package(::package_reference & packagereference)
+   void application_build_helper::add_package(::package_reference & packagereference)
    {
 
       if (m_bTranslateDependency)
@@ -255,7 +261,7 @@ application_build_helper::~application_build_helper()
          if (packagereference.m_strPackage.begins_ci("default_"))
          {
 
-            return ::success_none;
+            return;
 
          }
 
@@ -264,7 +270,7 @@ application_build_helper::~application_build_helper()
       if (packagereference.m_strPackage.is_empty())
       {
 
-         return ::success_none;
+         return;
 
       }
 
@@ -278,7 +284,7 @@ application_build_helper::~application_build_helper()
       if (m_straIgnorePackage.contains_ci(packagereference.m_strPackage))
       {
 
-         return ::success_none;
+         return;
 
       }
 
@@ -296,7 +302,7 @@ application_build_helper::~application_build_helper()
       if(stra.get_size() == 1 && packagereference.m_strPackage.compare_ci("none") == 0)
       {
 
-         return success_none;
+         return;
 
       }
 
@@ -320,7 +326,7 @@ application_build_helper::~application_build_helper()
 
          fprintf(stderr, psz, packagereference.m_pathReference.c_str(), packagereference.m_iLine + 1);
 
-         return error_failed;
+         throw_status(error_failed);
 
       }
 
@@ -362,7 +368,7 @@ application_build_helper::~application_build_helper()
             if (packagereferenceItem.m_strPackage.trimmed().compare_ci(packagereferenceNew.m_strPackage.trimmed()) == 0)
             {
 
-               return success_none;
+               return;
 
             }
 
@@ -386,55 +392,57 @@ application_build_helper::~application_build_helper()
 
       }
 
-      auto estatus = add_package_dependencies(packagereference);
+      add_package_dependencies(packagereference);
 
-      if(!estatus)
-      {
+      //if(!estatus)
+      //{
 
-         return estatus;
+      //   return estatus;
 
-      }
+      //}
 
-      return estatus;
+      //return estatus;
 
    }
 
 
-   ::e_status application_build_helper::add_package_dependencies(const ::package_reference& packagereference)
+   void application_build_helper::add_package_dependencies(const ::package_reference& packagereference)
    {
 
-      ::e_status estatus = ::success;
+      //::e_status estatus = ::success;
 
       auto packagereferencea = get_all_package_dependencies(packagereference.m_strPackage);
 
       for (auto& packagereferenceItem : packagereferencea)
       {
 
-         estatus = add_package(packagereferenceItem);
+         //estatus = 
+         
+         add_package(packagereferenceItem);
 
-         if(!estatus)
-         {
+         //if(!estatus)
+         //{
 
-            break;
+         //   break;
 
-         }
+         //}
 
       }
 
-      return estatus;
+      //return estatus;
 
    }
 
 
-   status < string_array > application_build_helper::get_lines(const ::file::path & path)
+   string_array application_build_helper::get_lines(const ::file::path & path, bool bNoExceptionIfNotFound)
    {
 
-      auto strInput = m_psystem->m_pacmefile->as_string(path);
+      auto strInput = m_psystem->m_pacmefile->as_string(path, -1, bNoExceptionIfNotFound);
 
-      if(!strInput)
+      if(strInput.is_empty())
       {
 
-         return strInput.estatus();
+         return {};
 
       }
 
@@ -447,7 +455,7 @@ application_build_helper::~application_build_helper()
    }
 
 
-   status < package_reference_array > application_build_helper::get_package_list(const ::string& strList, const ::string& strPackage)
+   package_reference_array application_build_helper::get_package_list(const ::string& strList, const ::string& strPackage)
    {
 
       ::file::path path;
@@ -489,7 +497,7 @@ application_build_helper::~application_build_helper()
    }
 
 
-   status < package_reference_array > application_build_helper::get_package_references(const ::string& strPackage)
+   package_reference_array application_build_helper::get_package_references(const ::string& strPackage)
    {
 
       return get_package_list("_references", strPackage);
@@ -497,7 +505,7 @@ application_build_helper::~application_build_helper()
    }
 
 
-   status < package_reference_array > application_build_helper::get_package_dependencies(const ::string& strPackage)
+   package_reference_array application_build_helper::get_package_dependencies(const ::string& strPackage)
    {
 
       return get_package_list("_dependencies", strPackage);
@@ -505,7 +513,7 @@ application_build_helper::~application_build_helper()
    }
 
 
-   status < package_reference_array > application_build_helper::get_package_extensions(const ::string& strPackage)
+   package_reference_array application_build_helper::get_package_extensions(const ::string& strPackage)
    {
 
       return get_package_list("_extensions", strPackage);
@@ -513,7 +521,7 @@ application_build_helper::~application_build_helper()
    }
 
 
-   status < package_reference_array > application_build_helper::get_all_package_dependencies(const ::string& strPackage)
+   package_reference_array application_build_helper::get_all_package_dependencies(const ::string& strPackage)
    {
 
       package_reference_array packagereferencea;

@@ -11,7 +11,7 @@
 void get_root_and_item(string& strRoot, string& strItem, const char* pszFolder);
 
 
-::e_status application_build_helper::package()
+void application_build_helper::package()
 {
 
    ::file::path pathZip;
@@ -42,16 +42,18 @@ void get_root_and_item(string& strRoot, string& strItem, const char* pszFolder);
 
    stra.add_lines(strInput, false);
 
-   auto estatus = m_psystem->m_pacmedir->change_current(pathOutput);
+   //auto estatus = 
+   
+   m_psystem->m_pacmedir->change_current(pathOutput);
 
-   if(!estatus)
-   {
+   //if(!estatus)
+   //{
 
-      fprintf(stderr, "Fatal: Current current directory to: %s (%" PRIestatus ")\n", pathOutput.c_str(), estatus.m_estatus);
+   //   fprintf(stderr, "Fatal: Current current directory to: %s (%" PRIestatus ")\n", pathOutput.c_str(), estatus.m_estatus);
 
-      return estatus;
+   //   return estatus;
 
-   }
+   //}
 
    bool bFirst = true;
 
@@ -101,14 +103,14 @@ void get_root_and_item(string& strRoot, string& strItem, const char* pszFolder);
 
                   ::file::path pathItem = pathOutput / strName;
 
-                  estatus = m_psystem->m_pacmefile->exists(pathItem);
-
-                  if(!estatus)
+                  //estatus = 
+                  
+                  if(!m_psystem->m_pacmefile->exists(pathItem))
                   {
 
-                     fprintf(stderr, "Fatal: File doesn't exist: %s (%" PRIestatus ")\n", pathItem.c_str(), estatus.m_estatus);
+                     fprintf(stderr, "Fatal: File doesn't exist: %s\n", pathItem.c_str());
 
-                     return estatus;
+                     throw_status(error_file_not_found);
 
                   }
 
@@ -141,14 +143,14 @@ void get_root_and_item(string& strRoot, string& strItem, const char* pszFolder);
 
                ::file::path pathItem = pathOutput / strName;
 
-               estatus = m_psystem->m_pacmefile->exists(pathItem);
+               //estatus = 
 
-               if(!estatus)
+               if(!m_psystem->m_pacmefile->exists(pathItem))
                {
 
-                  fprintf(stderr, "Fatal: File doesn't exist: %s (%" PRIestatus ")", pathItem.c_str(), estatus.m_estatus);
+                  fprintf(stderr, "Fatal: File doesn't exist: %s", pathItem.c_str());
 
-                  return estatus;
+                  throw_status(error_file_not_found);
 
                }
 
@@ -176,16 +178,18 @@ void get_root_and_item(string& strRoot, string& strItem, const char* pszFolder);
 
    int iExitCode = 0;
 
-   estatus = command_system(strOutput, strError, iExitCode, strCmd, e_command_system_inline_log);
+   //estatus = 
+   
+   command_system(strOutput, strError, iExitCode, strCmd, e_command_system_inline_log);
 
-   if (!estatus || strError.trimmed().has_char())
+   if (strError.trimmed().has_char())
    {
 
-      fprintf(stderr, "%s %" PRIestatus "\n", strError.c_str(), estatus.m_estatus);
+      fprintf(stderr, "%s\n", strError.c_str());
 
    }
 
-   return estatus;
+   //return estatus;
 
 }
 
