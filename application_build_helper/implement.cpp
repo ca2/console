@@ -38,7 +38,7 @@ void application_build_helper::copy_icon_ico()
    ::file::path pathIconTarget = m_pathFolder / "icon.ico";
 
    //auto estatus = 
-   m_psystem->m_pacmefile->set_file_normal(pathIconTarget);
+   //m_psystem->m_pacmefile->set_file_normal(pathIconTarget);
 
    //if(!estatus)
    //{
@@ -86,7 +86,7 @@ void application_build_helper::generate__main()
       strMain += "#include \"acme/application.h\"\n";
 
       ///estatus =
-      m_psystem->m_pacmefile->set_file_normal(pathMain);
+      //m_psystem->m_pacmefile->set_file_normal(pathMain);
 
       //if(!estatus)
       //{
@@ -116,14 +116,18 @@ void application_build_helper::generate__main()
 
       strApps.trim();
 
-      if(strApps.has_char())
+      string_array straApps;
+
+      straApps.add_lines(strApps, false);
+
+      straApps.trim();
+
+      straApps.erase_empty();
+
+      straApps.add("");
+
+      //if(strApps.has_char())
       {
-
-         string_array straApps;
-
-         straApps.add_lines(strApps, false);
-
-         straApps.add("");
 
          for (index i = 0; i < straApps.get_count(); i++)
          {
@@ -164,7 +168,7 @@ void application_build_helper::generate__main()
 
                   strApplication += "#include \"_main.inl\"\n";
 
-                  m_psystem->m_pacmefile->set_file_normal(pathApplication);
+                  //m_psystem->m_pacmefile->set_file_normal(pathApplication);
 
                   //if (!estatus)
                   //{
@@ -561,7 +565,7 @@ void application_build_helper::static_factory(const ::string& strFileDst, const 
 
    //estatus = 
    
-   m_psystem->m_pacmefile->set_file_normal(strFileDst);
+   //m_psystem->m_pacmefile->set_file_normal(strFileDst);
 
    //if(!estatus)
    //{
@@ -642,7 +646,7 @@ void application_build_helper::translate_items(const ::string& strFileDst, const
 
    //estatus = 
    
-   m_psystem->m_pacmefile->set_file_normal(strFileDst);
+   //m_psystem->m_pacmefile->set_file_normal(strFileDst);
 
    //if(!estatus)
    //{
@@ -683,7 +687,7 @@ void application_build_helper::defer_matter()
 
    //}
 
-   m_psystem->m_pacmefile->set_file_normal(pathMatter);
+   //m_psystem->m_pacmefile->set_file_normal(pathMatter);
 
    //if(!estatus)
    //{
@@ -1226,9 +1230,12 @@ void application_build_helper::prepare_application()
 
    pathTargetExtensions = pathFolder / "platform" / m_strSlashedPlatform / "_extensions.txt";
 
-   //estatus = 
-   
-   m_psystem->m_pacmefile->set_file_normal(pathTargetReferences);
+   //if (m_psystem->m_pacmefile->exists(pathTargetReferences))
+   //{
+
+   //   m_psystem->m_pacmefile->set_file_normal(pathTargetReferences);
+
+   //}
 
    /*if(!estatus)
    {
@@ -1241,7 +1248,7 @@ void application_build_helper::prepare_application()
 
    //estatus =
    
-   m_psystem->m_pacmefile->set_file_normal(pathTargetDependencies);
+   //m_psystem->m_pacmefile->set_file_normal(pathTargetDependencies);
 
    //if(!estatus)
    //{
@@ -1254,7 +1261,7 @@ void application_build_helper::prepare_application()
 
    //estatus =
    
-   m_psystem->m_pacmefile->set_file_normal(pathTargetExtensions);
+   //m_psystem->m_pacmefile->set_file_normal(pathTargetExtensions);
 
    //if(!estatus)
    //{
@@ -1267,7 +1274,7 @@ void application_build_helper::prepare_application()
 
    //estatus =
    
-   m_psystem->m_pacmefile->set_file_normal(pathTargetPackages);
+   //m_psystem->m_pacmefile->set_file_normal(pathTargetPackages);
 
    /*if(!estatus)
    {
