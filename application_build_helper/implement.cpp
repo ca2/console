@@ -885,14 +885,16 @@ void application_build_helper::zip_matter()
 
       ::file::path pathHome = getenv("HOME");
 
-      estatus = m_psystem->m_pacmedir->change_current(pathHome);
+      //estatus =
+      //
+      m_psystem->m_pacmedir->change_current(pathHome);
 
-      if (!estatus)
-      {
-
-         return estatus;
-
-      }
+//      if (!estatus)
+//      {
+//
+//         return estatus;
+//
+//      }
 
    }
 
@@ -925,7 +927,7 @@ void application_build_helper::zip_matter()
 #if defined(FREEBSD) || defined(LINUX)
 
 
-::e_status application_build_helper::create_matter_object()
+void application_build_helper::create_matter_object()
 {
 
    //::file::path pathFolder = strFolder;
@@ -944,23 +946,27 @@ void application_build_helper::zip_matter()
 
    ::file::path pathMatterZipO = m_pathFolder / ".link_object/_matter.zip.o";
 
-   auto estatus = m_psystem->m_pacmedir->change_current(m_pathFolder);
+   //auto estatus =
 
-   if(!estatus)
-   {
+      m_psystem->m_pacmedir->change_current(m_pathFolder);
 
-      return estatus;
+//   if(!estatus)
+//   {
+//
+//      return estatus;
+//
+//   }
 
-   }
+   //estatus =
 
-   estatus = m_psystem->m_pacmedir->create(m_pathFolder / ".link_object");
+      m_psystem->m_pacmedir->create(m_pathFolder / ".link_object");
 
-   if(!estatus)
-   {
-
-      return estatus;
-
-   }
+//   if(!estatus)
+//   {
+//
+//      return estatus;
+//
+//   }
 
    string strOutput;
 
@@ -970,7 +976,9 @@ void application_build_helper::zip_matter()
 
 #if defined(LINUX)
 
-   estatus = command_system(strOutput, strError, iExitCode, "ld -r -b binary -o " + pathMatterZipO + " _matter.zip", e_command_system_inline_log);
+   //estatus =
+   //
+   command_system(strOutput, strError, iExitCode, "ld -r -b binary -o " + pathMatterZipO + " _matter.zip", e_command_system_inline_log);
 
 #else
 
@@ -978,14 +986,14 @@ void application_build_helper::zip_matter()
 
 #endif
 
-   if(!estatus)
-   {
-
-      return estatus;
-
-   }
-
-   return estatus;
+//   if(!estatus)
+//   {
+//
+//      return estatus;
+//
+//   }
+//
+//   return estatus;
 
 }
 
@@ -1475,16 +1483,18 @@ void application_build_helper::prepare_application()
 
    //create_matter_object(psystem, pathFolder);
 
-   estatus = create_matter_object();
+   //estatus =
+   //
+   create_matter_object();
 
-   if(!estatus)
-   {
-
-      fprintf(stderr, "error: application_build_helper::prepare_application create_matter_object (%" PRIestatus ")", estatus.m_estatus);
-
-      return estatus;
-
-   }
+//   if(!estatus)
+//   {
+//
+//      fprintf(stderr, "error: application_build_helper::prepare_application create_matter_object (%" PRIestatus ")", estatus.m_estatus);
+//
+//      return estatus;
+//
+//   }
 
 #endif
 

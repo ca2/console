@@ -105,7 +105,9 @@ void application_build_helper::set_package_folder(const ::file::path& pathFolder
       printf("%s", "Did you set __SYSTEM_SLASHED_PLATFORM and __SYSTEM_UNDERSCORE_PLATFORM environment variables?\n");
       printf("%s", "(They can be set \"automatically\" with patch_bashrc)\n");
 
-      return error_wrong_state;
+      //return error_wrong_state;
+
+      throw_status(error_wrong_state);
 
    }
 
