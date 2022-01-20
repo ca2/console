@@ -22,9 +22,11 @@ void implement(class ::system * psystem)
 
    pbuild->m_bStdout = true;
 
-   auto estatus = pbuild->run();
+   //auto estatus =
+   //
+   pbuild->run();
 
-   psystem->m_estatus = estatus;
+   psystem->m_estatus = pbuild->m_estatus;
 
 }
 
