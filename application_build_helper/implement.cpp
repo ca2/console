@@ -1030,7 +1030,7 @@ void implement(class ::system* psystem)
 
       string strArgument2 = psystem->get_argument1(1);
 
-      string strArgument3 = psystem->get_argument1(3);
+      string strArgument3 = psystem->get_argument1(2);
 
       if (strArgument1.compare_ci("-package") == 0)
       {
