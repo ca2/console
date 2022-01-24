@@ -51,16 +51,16 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\archive\storage-universal_windows\third\binary\Win32\basis\bzip2.dll">
+    <None Include="..\..\..\operating-system\storage-universal_windows\third\binary\Win32\basis\bzip2.dll">
       <Filter>Library\Win32\basis</Filter>
     </None>
-    <None Include="..\..\..\archive\storage-universal_windows\third\binary\Win32\basis\pcre.dll">
+    <None Include="..\..\..\operating-system\storage-universal_windows\third\binary\Win32\basis\pcre.dll">
       <Filter>Library\Win32\basis</Filter>
     </None>
-    <None Include="..\..\..\archive\storage-universal_windows\third\binary\Win32\basis\sqlite.dll">
+    <None Include="..\..\..\operating-system\storage-universal_windows\third\binary\Win32\basis\sqlite.dll">
       <Filter>Library\Win32\basis</Filter>
     </None>
-    <None Include="..\..\..\archive\storage-universal_windows\third\binary\Win32\basis\zlib.dll">
+    <None Include="..\..\..\operating-system\storage-universal_windows\third\binary\Win32\basis\zlib.dll">
       <Filter>Library\Win32\basis</Filter>
     </None>
     <None Include="hello_TemporaryKey.pfx" />

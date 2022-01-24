@@ -12,7 +12,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="..\..\..\archive\platform-windows\version.rc" />
+    <ResourceCompile Include="..\..\..\operating-system\operating-system-windows\version.rc" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="application_build_helper.cpp">

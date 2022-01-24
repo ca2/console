@@ -26,7 +26,7 @@ void application_build_helper::package()
 
 #else
 
-   pathZip = "/store/" + m_strSlashedPlatform + "/" + m_strUnderscoreAppId + ".zip";
+   pathZip = "/store/" + m_strSlashedOperatingSystem + "/" + m_strUnderscoreAppId + ".zip";
 
    pathOutput = m_pathOutput + "/output";
 
@@ -34,7 +34,7 @@ void application_build_helper::package()
 
    ::file::path pathPackageList;
 
-   pathPackageList = m_pathFolder / "platform" / m_strSlashedPlatform / "_packages.txt";
+   pathPackageList = m_pathFolder / "operating-system" / m_strSlashedOperatingSystem / "_packages.txt";
 
    string strInput = m_psystem->m_pacmefile->as_string(pathPackageList);
 

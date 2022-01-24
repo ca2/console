@@ -51,7 +51,7 @@ void application_build_helper::set_package_folder(const ::file::path& pathFolder
 
    m_pathBaseDir = pathFolder - 3;
 
-   m_pathArchive = m_pathBaseDir / "archive";
+   m_pathOperatingSystem = m_pathBaseDir / "operating-system";
 
    m_pathSource = m_pathBaseDir / "source";
 
@@ -79,30 +79,30 @@ void application_build_helper::set_package_folder(const ::file::path& pathFolder
 
 #ifdef WINDOWS
 
-   m_strPlatform2 = "windows";
+   m_strOperatingSystem2 = "windows";
 
-   m_strSlashedPlatform = "windows";
+   m_strSlashedOperatingSystem = "windows";
 
 #elif defined(MACOS)
 
-   m_strPlatform2 = "macos";
+   m_strOperatingSystem2 = "macos";
 
-   m_strSlashedPlatform = "macos";
+   m_strSlashedOperatingSystem = "macos";
 
 #elif defined(LINUX)
 
-   string strPlatform;
+   string strOperatingSystem;
 
-   strPlatform = getenv("__SYSTEM_UNDERSCORE_PLATFORM");
+   strOperatingSystem = getenv("__SYSTEM_UNDERSCORE_OPERATING_SYSTEM");
 
-   string strSlashedPlatform;
+   string strSlashedOperatingSystem;
 
-   strSlashedPlatform = getenv("__SYSTEM_SLASHED_PLATFORM");
+   strSlashedOperatingSystem = getenv("__SYSTEM_SLASHED_OPERATING_SYSTEM");
 
-   if (strPlatform.is_empty() || strSlashedPlatform.is_empty())
+   if (strOperatingSystem.is_empty() || strSlashedOperatingSystem.is_empty())
    {
 
-      printf("%s", "Did you set __SYSTEM_SLASHED_PLATFORM and __SYSTEM_UNDERSCORE_PLATFORM environment variables?\n");
+      printf("%s", "Did you set __SYSTEM_SLASHED_OPERATING_SYSTEM and __SYSTEM_UNDERSCORE_OPERATING_SYSTEM environment variables?\n");
       printf("%s", "(They can be set \"automatically\" with patch_bashrc)\n");
 
       //return error_wrong_state;
@@ -111,15 +111,15 @@ void application_build_helper::set_package_folder(const ::file::path& pathFolder
 
    }
 
-   m_strPlatform2 = strPlatform;
+   m_strOperatingSystem2 = strOperatingSystem;
 
-   m_strSlashedPlatform = strSlashedPlatform;
+   m_strSlashedOperatingSystem = strSlashedOperatingSystem;
 
 #endif
 
-   m_strPlatform2.trim();
+   m_strOperatingSystem2.trim();
 
-   m_strSlashedPlatform.trim();
+   m_strSlashedOperatingSystem.trim();
 
    ///return ::success;
 
@@ -170,13 +170,13 @@ void application_build_helper::set_package_folder(const ::file::path& pathFolder
 void application_build_helper::create_package_list()
 {
 
-   auto pathIgnorePackage = m_pathArchive / ("platform-" PLATFORM_NAME) / "ignore_packages.txt";
+   auto pathIgnorePackage = m_pathOperatingSystem / ("operating-system-" OPERATING_SYSTEM_NAME) / "ignore_packages.txt";
 
    m_straIgnorePackage = get_lines(pathIgnorePackage);
 
    ::file::path pathPackageMap;
 
-   pathPackageMap = m_pathArchive / ("platform-" PLATFORM_NAME) / "platform" / m_strSlashedPlatform /"package_map.txt";
+   pathPackageMap = m_pathOperatingSystem / ("operating-system-" OPERATING_SYSTEM_NAME) / "operating-system" / m_strSlashedOperatingSystem /"package_map.txt";
 
    m_piniPackageMap = m_psystem->m_papexsystem->file().get_ini(pathPackageMap);
 
@@ -236,11 +236,11 @@ void application_build_helper::translate_package_list()
    //void application_build_helper::set_base_dir(const ::file::path& pathBaseDir)
    //{
 
-   //   m_pathArchive = pathBaseDir / "archive";
+   //   m_pathOperatingSystem = pathBaseDir / "operating-system";
 
    //   m_pathSource = pathBaseDir / "source";
 
-   //   m_straIgnorePackage = get_lines(m_pathArchive / ("platform-" PLATFORM_NAME) / "ignore_packages.txt");
+   //   m_straIgnorePackage = get_lines(m_pathOperatingSystem / ("operating-system-" OPERATING_SYSTEM_NAME) / "ignore_packages.txt");
 
    //}
 
@@ -462,10 +462,10 @@ void application_build_helper::translate_package_list()
 
       ::file::path path;
 
-      if (strPackage.begins_ci("platform-"))
+      if (strPackage.begins_ci("operating-system-"))
       {
 
-         path = m_pathArchive;
+         path = m_pathOperatingSystem;
 
       }
       else

@@ -52,7 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="hello_TemporaryKey.pfx" />
-    <None Include="..\..\..\..\archive\storage-universal_windows\Win32\basis\third\binary\zlib.dll">
+    <None Include="..\..\..\..\operating-system\storage-universal_windows\Win32\basis\third\binary\zlib.dll">
       <Filter>Library\Win32\basis</Filter>
     </None>
   </ItemGroup>

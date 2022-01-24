@@ -24,14 +24,14 @@ class application_build_helper :
 public:
 
 
-   string                        m_strPlatform2;
-   string                        m_strSlashedPlatform;
+   string                        m_strOperatingSystem2;
+   string                        m_strSlashedOperatingSystem;
    package_reference_array       m_packagereferencea;
    string_array                  m_straIgnorePackage;
 
    ::file::path                  m_pathBaseDir;
    ::file::path                  m_pathFolder;
-   ::file::path                  m_pathArchive;
+   ::file::path                  m_pathOperatingSystem;
    ::file::path                  m_pathSource;
    ::file::path                  m_pathOutput;
 

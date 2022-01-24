@@ -74,7 +74,7 @@ void application_build_helper::generate__main()
 
    {
 
-      ::file::path pathMain = m_pathFolder / "platform" / m_strSlashedPlatform / "_main.inl";
+      ::file::path pathMain = m_pathFolder / "operating-system" / m_strSlashedOperatingSystem / "_main.inl";
 
       string strMain;
 
@@ -148,7 +148,7 @@ void application_build_helper::generate__main()
             {
 
                ::file::path pathApplication =
-                  m_pathFolder / "platform" / m_strSlashedPlatform / ("_" + strAppName + ".cpp");
+                  m_pathFolder / "operating-system" / m_strSlashedOperatingSystem / ("_" + strAppName + ".cpp");
 
                //if (!psystem->m_pacmefile->exists(pathApplication))
                {
@@ -425,10 +425,10 @@ void application_build_helper::load_rename_map(string_to_string& renamemap, stri
 
    ::file::path pathRenameBase;
 
-   if (strRoot.begins_ci("platform-"))
+   if (strRoot.begins_ci("operating-system-"))
    {
 
-      pathRenameBase = m_pathArchive;
+      pathRenameBase = m_pathOperatingSystem;
 
    }
    else
@@ -1096,17 +1096,17 @@ void implement(class ::system* psystem)
 
          string strFileDst = strArgument3;
 
-         //         ::file::path pathPlatform;
+         //         ::file::path pathOperatingSystem;
          //
          //         ::file::path pathFolder = strFolder;
          //
-         //         pathPlatform = (pathFolder - 2) / "platform.txt";
+         //         pathOperatingSystem = (pathFolder - 2) / "operating-system.txt";
          //
-         //         string strPlatform = psystem->m_pacmefile->as_string(pathPlatform);
+         //         string strOperatingSystem = psystem->m_pacmefile->as_string(pathOperatingSystem);
          //
          //         ::file::path pathTranslate;
          //
-         //         pathTranslate = (pathFolder - 2) / (strPlatform + "_deps.txt");
+         //         pathTranslate = (pathFolder - 2) / (strOperatingSystem + "_deps.txt");
          //
          //         static_factory(psystem, strFileDst, strFileSrc);
          //
@@ -1167,7 +1167,7 @@ void application_build_helper::prepare_application()
 
    printf("build_helper \"%s\"\n", pathFolder.c_str());
 
-   printf("platform: \"%s\"\n", m_strPlatform2.c_str());
+   printf("operating system: \"%s\"\n", m_strOperatingSystem2.c_str());
 
    //estatus = 
    
@@ -1191,11 +1191,11 @@ void application_build_helper::prepare_application()
 
    }
 
-   ::file::path pathInl = pathFolder / "platform" / m_strSlashedPlatform / "_static_factory.inl";
+   ::file::path pathInl = pathFolder / "operating-system" / m_strSlashedOperatingSystem / "_static_factory.inl";
 
    ::file::path pathSourcePackages = pathFolder / "_packages.txt";
 
-   ::file::path pathTargetPackages = pathFolder / "platform" / m_strSlashedPlatform / "_packages.txt";
+   ::file::path pathTargetPackages = pathFolder / "operating-system" / m_strSlashedOperatingSystem / "_packages.txt";
 
    //estatus = 
    
@@ -1216,7 +1216,7 @@ void application_build_helper::prepare_application()
 
    ::file::path pathTargetReferences;
 
-   pathTargetReferences = pathFolder / "platform" / m_strSlashedPlatform / "_references.txt";
+   pathTargetReferences = pathFolder / "operating-system" / m_strSlashedOperatingSystem / "_references.txt";
 
    ::file::path pathDepsDeprecated;
 
@@ -1228,7 +1228,7 @@ void application_build_helper::prepare_application()
 
    ::file::path pathTargetDependencies;
 
-   pathTargetDependencies = pathFolder / "platform" / m_strSlashedPlatform / "_dependencies.txt";
+   pathTargetDependencies = pathFolder / "operating-system" / m_strSlashedOperatingSystem / "_dependencies.txt";
 
    ::file::path pathSourceExtensions;
 
@@ -1236,7 +1236,7 @@ void application_build_helper::prepare_application()
 
    ::file::path pathTargetExtensions;
 
-   pathTargetExtensions = pathFolder / "platform" / m_strSlashedPlatform / "_extensions.txt";
+   pathTargetExtensions = pathFolder / "operating-system" / m_strSlashedOperatingSystem / "_extensions.txt";
 
    //if (m_psystem->m_pacmefile->exists(pathTargetReferences))
    //{

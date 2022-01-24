@@ -1,7 +1,0 @@
-platform-windows/node_windows
-platform-windows/draw2d_gdiplus
-platform-windows/write_text_win32
-platform-windows_common/imaging_wic
-experience_core
-database_sqlite3
-regular_expression_pcre2
