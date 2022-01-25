@@ -16,7 +16,7 @@ endif()
 
 target_link_libraries(_console_readlines PRIVATE acme apex aqua)
 
-add_dependencies(_console_readlines apex_${PLATFORM_NAME})
+add_dependencies(_console_readlines apex_${OPERATING_SYSTEM_NAME})
 add_dependencies(_console_readlines crypto_openssl)
 
 

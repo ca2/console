@@ -262,9 +262,9 @@ string application_build_helper::defer_translate_application_name(string strDepe
 
       string strUnderscoreAppId(strAppId);
 
-      strUnderscoreAppId.replace("/", "_");
+      strUnderscoreAppId.find_replace("/", "_");
 
-      strUnderscoreAppId.replace("-", "_");
+      strUnderscoreAppId.find_replace("-", "_");
 
       return strRoot + "/" + strUnderscoreAppId;
 
@@ -754,7 +754,7 @@ void application_build_helper::zip_matter()
 
    string strZip = pathZip;
 
-   strZip.replace("\\", "/");
+   strZip.find_replace("\\", "/");
 
    string_array stra;
 

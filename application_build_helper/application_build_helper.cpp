@@ -73,9 +73,9 @@ void application_build_helper::set_package_folder(const ::file::path& pathFolder
 
    m_strUnderscoreAppId = m_strAppId;
 
-   m_strUnderscoreAppId.replace("/", "_");
+   m_strUnderscoreAppId.find_replace("/", "_");
 
-   m_strUnderscoreAppId.replace("-", "_");
+   m_strUnderscoreAppId.find_replace("-", "_");
 
 #ifdef WINDOWS
 

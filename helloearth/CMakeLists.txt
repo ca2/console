@@ -12,7 +12,7 @@ if (MSVC)
 endif()
 
 
-add_dependencies(_console_helloearth acme_${PLATFORM_NAME})
+add_dependencies(_console_helloearth acme_${OPERATING_SYSTEM_NAME})
 
 
 target_link_libraries(_console_helloearth PRIVATE acme)

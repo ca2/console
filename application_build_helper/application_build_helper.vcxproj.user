@@ -23,7 +23,7 @@
     <LocalDebuggerWorkingDirectory>C:\Users\camilo</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='cube_basis|x64'">
-    <LocalDebuggerCommandArguments>C:\basis\source\app-simple\application\</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>-package C:\basis\source\app-simple\application\</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='stage|x64'">

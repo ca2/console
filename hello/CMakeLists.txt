@@ -15,7 +15,7 @@ endif()
 #target_link_options(acme PRIVATE -L . -Wl,-rpath .)
 
 
-add_dependencies(_console_hello acme_${PLATFORM_NAME})
+add_dependencies(_console_hello acme_${OPERATING_SYSTEM_NAME})
 
 
 target_link_libraries(_console_hello PRIVATE acme)

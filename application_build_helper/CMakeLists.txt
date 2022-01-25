@@ -15,9 +15,9 @@ if (MSVC)
 endif()
 
 
-add_dependencies(_console_application_build_helper acme_${PLATFORM_NAME})
+add_dependencies(_console_application_build_helper acme_${OPERATING_SYSTEM_NAME})
 add_dependencies(_console_application_build_helper acme_posix)
-add_dependencies(_console_application_build_helper apex_${PLATFORM_NAME})
+add_dependencies(_console_application_build_helper apex_${OPERATING_SYSTEM_NAME})
 add_dependencies(_console_application_build_helper apex_posix)
 add_dependencies(_console_application_build_helper crypto_openssl)
 add_dependencies(_console_application_build_helper folder_zip)

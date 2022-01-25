@@ -12,7 +12,7 @@ if (MSVC)
 endif()
 
 
-add_dependencies(_console_build apex_${PLATFORM_NAME})
+add_dependencies(_console_build apex_${OPERATING_SYSTEM_NAME})
 
 
 target_link_libraries(_console_build PRIVATE acme)

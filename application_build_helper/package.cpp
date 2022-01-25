@@ -20,7 +20,7 @@ void application_build_helper::package()
 
 #ifdef WINDOWS
 
-   pathZip = "B:/windows/" + m_strUnderscoreAppId + ".zip";
+   pathZip = "S:/windows/" + m_strUnderscoreAppId + ".zip";
 
    pathOutput = (m_pathFolder - 3) / "time-windows/x64/stage";
 
@@ -59,9 +59,14 @@ void application_build_helper::package()
 
 #ifdef WINDOWS
 
-   m_psystem->m_pacmefile->delete_file(pathZip);
+   if (m_psystem->m_pacmefile->exists(pathZip))
+   {
 
-   string strCmd = "7za a -tzip \"" + pathZip + "\"";
+      m_psystem->m_pacmefile->delete_file(pathZip);
+
+   }
+
+   string strCmd = "7z a -tzip \"" + pathZip + "\"";
 
 #else
 
