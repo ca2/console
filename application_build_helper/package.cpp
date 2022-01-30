@@ -62,7 +62,7 @@ void application_build_helper::package()
    if (m_psystem->m_pacmefile->exists(pathZip))
    {
 
-      m_psystem->m_pacmefile->delete_file(pathZip);
+      m_psystem->m_pacmefile->erase(pathZip);
 
    }
 
