@@ -19,6 +19,8 @@ void implement(class ::system * psystem)
 
    printf("\n");
 
+   os_message_box(psystem, "Hello!!", "Hello App!", e_message_box_yes_no_cancel);
+
 #ifdef _UWP
 
    getchar();
