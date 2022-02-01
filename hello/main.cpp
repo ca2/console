@@ -19,7 +19,26 @@ void implement(class ::system * psystem)
 
    printf("\n");
 
-   os_message_box(psystem, "Hello!!", "Hello App!", e_message_box_yes_no_cancel);
+   auto result = os_message_box(psystem, "Hello!!", "Hello App!", e_message_box_yes_no_cancel | e_message_box_default_button_3);
+
+   if (result == e_dialog_result_yes)
+   {
+
+      os_message_box(psystem, "Yes!!", "Yes!!", e_message_box_ok);
+
+   }
+   else if (result == e_dialog_result_no)
+   {
+
+      os_message_box(psystem, "No!", "No!", e_message_box_ok);
+
+   }
+   else if (result == e_dialog_result_cancel)
+   {
+
+      os_message_box(psystem, "Cancel", "Cancel", e_message_box_ok);
+
+   }
 
 #ifdef _UWP
 
