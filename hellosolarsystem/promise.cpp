@@ -5,7 +5,7 @@
 //   public promise::manager
 //{
 //
-//   void process(id);
+//   void process(atom);
 //   {
 //
 //

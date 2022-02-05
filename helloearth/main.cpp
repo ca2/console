@@ -108,15 +108,15 @@ void implement(class ::system * psystem)
 
    }
 
-   ::id id;
+   ::atom atom;
 
-   id = 1;
+   atom = 1;
 
-   printf("id=%s\n", id.to_string().c_str());
+   printf("atom=%s\n", atom.to_string().c_str());
 
-   id = "two";
+   atom = "two";
 
-   printf("id=%s\n", id.to_string().c_str());
+   printf("atom=%s\n", atom.to_string().c_str());
 
    property_set set;
 
