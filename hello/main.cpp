@@ -19,7 +19,7 @@ void implement(class ::system * psystem)
 
    printf("\n");
 
-   auto result = os_message_box(psystem, "Hello!!", "Hello App!", e_message_box_yes_no_cancel | e_message_box_default_button_3);
+   auto result = os_message_box(psystem, "Hello!!", "Hello App!", e_message_box_yes_no_cancel | e_message_box_default_button_3, "Hello Multiverse!!");
 
    if (result == e_dialog_result_yes)
    {

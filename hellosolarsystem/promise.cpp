@@ -14,7 +14,7 @@
 //   void handle(::topic * ptopic, ::context * pcontext)
 //   {
 //
-//      if (ptopic->m_id == id_dark_mode)
+//      if (ptopic->m_atom == id_dark_mode)
 //      {
 //
 //
@@ -26,7 +26,7 @@
 //   void handle(::topic * ptopic, ::context * pcontext)
 //   {
 //
-//      if (ptopic->m_id == id_dark_mode)
+//      if (ptopic->m_atom == id_dark_mode)
 //      {
 //
 //
