@@ -27,6 +27,10 @@ void implement(class ::system * psystem)
       if (result == e_dialog_result_yes)
       {
 
+         printf("\n");
+
+         printf("Yes!!\n");
+
          os_message_box(psystem, "Yes!!", "Yes!!", e_message_box_ok);
 
          break;
@@ -35,11 +39,19 @@ void implement(class ::system * psystem)
       else if (result == e_dialog_result_no)
       {
 
+         printf("\n");
+
+         printf("No!\n");
+
          os_message_box(psystem, "No!", "No!", e_message_box_ok);
 
       }
       else if (result == e_dialog_result_cancel)
       {
+
+         printf("\n");
+
+         printf("Cancel!!\n");
 
          os_message_box(psystem, "Cancel", "Cancel", e_message_box_ok);
 
