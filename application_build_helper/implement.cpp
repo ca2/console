@@ -48,6 +48,19 @@ void application_build_helper::copy_icon_ico()
    //}
 
    //estatus = 
+
+   if (!m_psystem->m_pacmefile->exists(pathIconSource))
+   {
+
+       string strMessage;
+
+       strMessage.format("The icon file is missing: \"%s\".\n", pathIconSource.c_str());
+
+       fprintf(stderr, "%s", strMessage.c_str());
+
+       throw exception(error_not_found, strMessage);
+
+   }
    
    m_psystem->m_pacmefile->overwrite_if_different(pathIconTarget, pathIconSource);
 
