@@ -1145,7 +1145,7 @@ void implement(class ::system* psystem)
       }
 
    }
-   else if (psystem->get_argument_count1() == 1)
+   else if (psystem->get_argument_count1() == 1 || psystem->get_argument_count1() == 2)
    {
 
       //estatus = 
@@ -1164,6 +1164,9 @@ void application_build_helper::prepare_application()
 
    string strFolder = m_psystem->get_argument1(0);
 
+
+   string strProjectName = m_psystem->get_argument1(1);
+
    //auto estatus =
    set_package_folder(strFolder);
 
@@ -1177,6 +1180,30 @@ void application_build_helper::prepare_application()
    //}
 
    auto pathFolder = m_pathFolder;
+
+   ::file::path pathApplicationMatter;
+
+   pathApplicationMatter = pathFolder / "application_matter.txt";
+
+   if (!m_psystem->m_pacmefile->exists(pathApplicationMatter))
+   {
+
+       return;
+
+   }
+
+   if (strProjectName.has_char())
+   {
+
+       if (strProjectName.begins_ci("shared_") || strProjectName.begins_ci("static_"))
+       {
+
+           return;
+
+       }
+
+   }
+
 
    printf("build_helper \"%s\"\n", pathFolder.c_str());
 
