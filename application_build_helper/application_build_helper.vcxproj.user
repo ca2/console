@@ -18,7 +18,7 @@
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='basis|x64'">
-    <LocalDebuggerCommandArguments>"C:\basis\source\app\apex" "apex"</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>C:\basis\source\app\folder_zip\ folder_zip</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
     <LocalDebuggerWorkingDirectory>C:\Users\camilo</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
@@ -28,7 +28,7 @@
     <LocalDebuggerWorkingDirectory>C:\basis\source\app-simple\change_grub_default_entry\</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='stage|x64'">
-    <LocalDebuggerCommandArguments>C:\basis\source\game\particle</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>C:\basis\source\app\folder_zip\ folder_zip</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
     <LocalDebuggerWorkingDirectory>C:\Users\camilo</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
