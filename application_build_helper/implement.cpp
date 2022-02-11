@@ -818,7 +818,17 @@ void application_build_helper::zip_matter()
 
    //}
 
-   ::file::path pathZipExe("zip");
+   ::file::path pathZipExe;
+
+#ifdef WINDOWS
+
+   pathZipExe = (m_pathFolder - 3) / "operating-system/tool-windows/bin/zip";
+
+#else
+
+   pathZipExe = "zip";
+
+#endif
 
    string strZipExe = pathZipExe;
 
@@ -922,7 +932,7 @@ void application_build_helper::zip_matter()
 
    //estatus = 
    
-   command_system(strOutput, strError, iExitCode, strZipExe + " -r \"" + pathZip + "\" sensitive/sensitive/api/*", e_command_system_inline_log);
+   //command_system(strOutput, strError, iExitCode, strZipExe + " -r \"" + pathZip + "\" sensitive/sensitive/api/*", e_command_system_inline_log);
 
    //if(!estatus)
    //{

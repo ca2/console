@@ -4,6 +4,9 @@
 #include "_static_factory.inl"
 #endif
 #include "acme/console.h"
+
+#include "memoriesdota@twitch-projects.cpp"
+
 //template<typename T>
 //inline const auto oddProduct(T n)  noexcept
 //-> std::enable_if_t<std::is_unsigned<T>::value, unsigned long long> {
@@ -214,6 +217,18 @@ void implement(class ::system * psystem)
    printf("\n");
 
    printf("\n");
+
+   ::std::cout << "1. for run memories dota program:" << ::std::endl;
+   ::std::cout << "other number to resume" << ::std::endl;
+   int i;
+   ::std::cin >> i;
+
+   if (i == 1)
+   {
+
+      file_count_program();
+
+   }
 
    while (true)
    {
