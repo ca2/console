@@ -107,7 +107,7 @@ void application_build_helper::set_package_folder(const ::file::path& pathFolder
 
       //return error_wrong_state;
 
-      throw_status(error_wrong_state);
+      throw ::exception(error_wrong_state);
 
    }
 
@@ -185,7 +185,7 @@ void application_build_helper::create_package_list()
 
       fprintf(stderr,"\n\nFailed to open file: %s\n(Does it exist?)\n\n\n", pathPackageMap.c_str());
 
-      throw_status(error_failed);
+      throw ::exception(error_failed);
 
    }
 
@@ -328,7 +328,7 @@ void application_build_helper::translate_package_list()
 
          fprintf(stderr, psz, packagereference.m_pathReference.c_str(), packagereference.m_iLine + 1);
 
-         throw_status(error_failed);
+         throw ::exception(error_failed);
 
       }
 

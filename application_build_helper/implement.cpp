@@ -1,5 +1,7 @@
 // From application_build_helper to implement.cpp by camilo on 2021-12-17 21:04 BRT <3ThomasBorregaardSørensen!!
 #include "framework.h"
+//#define APPLICATION console_application_build_helper
+#define __APP_ID "console/application_build_helper"
 #include "_main.inl"
 //#include "acme/console.h"
 #include "acme/filesystem/file/_const.h"
@@ -58,7 +60,7 @@ void application_build_helper::copy_icon_ico()
 
        fprintf(stderr, "%s", strMessage.c_str());
 
-       throw exception(error_not_found, strMessage);
+       throw ::exception(error_not_found, strMessage);
 
    }
    
@@ -1525,7 +1527,7 @@ void application_build_helper::prepare_application()
 
       fprintf(stderr, "\"%s\" wasn't created.", pathZip.c_str());
 
-      throw_status(error_failed);
+      throw ::exception(error_failed);
 
    }
 

@@ -55,24 +55,21 @@ void application_build_helper::package()
 
    //}
 
-   bool bFirst = true;
+   ::file::path pathZipExe;
 
 #ifdef WINDOWS
 
-   if (m_psystem->m_pacmefile->exists(pathZip))
-   {
-
-      m_psystem->m_pacmefile->erase(pathZip);
-
-   }
-
-   string strCmd = "7z a -tzip \"" + pathZip + "\"";
+   pathZipExe = (m_pathFolder - 3) / "operating-system/tool-windows/bin/zip";
 
 #else
 
-   string strCmd = "zip -FS \"" + pathZip + "\"";
+   pathZipExe = "zip";
 
 #endif
+
+   bool bFirst = true;
+
+   string strCmd = pathZipExe + " -FS \"" + pathZip + "\"";
 
    for (auto& strLine : stra)
    {
@@ -115,7 +112,7 @@ void application_build_helper::package()
 
                      fprintf(stderr, "Fatal: File doesn't exist: %s\n", pathItem.c_str());
 
-                     throw_status(error_file_not_found);
+                     throw ::exception(error_file_not_found);
 
                   }
 
@@ -155,7 +152,7 @@ void application_build_helper::package()
 
                   fprintf(stderr, "Fatal: File doesn't exist: %s", pathItem.c_str());
 
-                  throw_status(error_file_not_found);
+                  throw ::exception(error_file_not_found);
 
                }
 
