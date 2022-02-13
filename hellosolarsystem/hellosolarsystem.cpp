@@ -1,5 +1,6 @@
 #include "acme/_start.h"
 #include "apex/_.h"
+#define __APP_ID "console/hellosolarsystem"
 #if defined(WINDOWS_DESKTOP) && defined(CUBE)
 #include "_static_factory.inl"
 #endif

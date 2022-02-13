@@ -1,5 +1,6 @@
 #include "acme/_start.h"
 #include "aqua/_.h"
+#define __APP_ID "console/readlines"
 #if defined(WINDOWS_DESKTOP) && defined(CUBE)
 #include "_static_factory.inl"
 #endif
@@ -26,7 +27,7 @@ void implement(class ::system * psystem)
    if (path.is_empty())
    {
 
-      path = "dropbox://readlines.txt";
+      path = "dropbox-app://readlines.txt";
 
    }
 

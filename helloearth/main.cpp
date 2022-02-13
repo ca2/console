@@ -1,5 +1,6 @@
 #include "acme/_start.h"
 #include "acme/_.h"
+#define __APP_ID "console/helloearth"
 #if defined(WINDOWS_DESKTOP) && defined(CUBE)
 #include "_static_factory.inl"
 #endif
