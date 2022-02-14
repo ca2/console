@@ -10,6 +10,8 @@
 void implement(class ::system * psystem)
 {
 
+   throw ::exception(error_debug_testing);
+
    printf("\n");
 
    printf("\n");
