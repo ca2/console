@@ -9,13 +9,9 @@
 /* Begin PBXBuildFile section */
 		9A0B8CFB27AA03E500760D34 /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0B8CF827AA03E500760D34 /* libacme.dylib */; };
 		9A0B8CFC27AA03E500760D34 /* libacme.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A0B8CF827AA03E500760D34 /* libacme.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		9A0B8CFD27AA03E500760D34 /* libacme_apple.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0B8CF927AA03E500760D34 /* libacme_apple.dylib */; };
 		9A0B8CFE27AA03E500760D34 /* libacme_apple.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A0B8CF927AA03E500760D34 /* libacme_apple.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		9A0B8CFF27AA03E500760D34 /* libacme_macos.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0B8CF527AA035900760D34 /* libacme_macos.dylib */; };
 		9A0B8D0027AA03E500760D34 /* libacme_macos.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A0B8CF527AA035900760D34 /* libacme_macos.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		9A0B8D0127AA03E500760D34 /* libacme_posix.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0B8CFA27AA03E500760D34 /* libacme_posix.dylib */; };
 		9A0B8D0227AA03E500760D34 /* libacme_posix.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A0B8CFA27AA03E500760D34 /* libacme_posix.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		9A0B8D0427AA03F000760D34 /* libidn.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0B8D0327AA03F000760D34 /* libidn.dylib */; };
 		9A0B8D0527AA03F000760D34 /* libidn.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A0B8D0327AA03F000760D34 /* libidn.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9ADD64F126B5CC0C00D11298 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ADD64EF26B5CC0C00D11298 /* main.cpp */; };
 /* End PBXBuildFile section */
@@ -69,11 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A0B8D0127AA03E500760D34 /* libacme_posix.dylib in Frameworks */,
 				9A0B8CFB27AA03E500760D34 /* libacme.dylib in Frameworks */,
-				9A0B8CFD27AA03E500760D34 /* libacme_apple.dylib in Frameworks */,
-				9A0B8D0427AA03F000760D34 /* libidn.dylib in Frameworks */,
-				9A0B8CFF27AA03E500760D34 /* libacme_macos.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
