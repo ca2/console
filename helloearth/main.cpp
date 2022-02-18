@@ -1,11 +1,15 @@
 #include "acme/_start.h"
 #include "acme/_.h"
+#define FACTORY console_helloearth
 #define __APP_ID "console/helloearth"
 #if defined(WINDOWS_DESKTOP) && defined(CUBE)
 #include "_static_factory.inl"
 #endif
+#include "acme_windows/_acme_windows.h"
+//BEGIN_FACTORY(console_helloearth)
+//FACTORY_DEPENDENCY(acme_windows)
+//END_FACTORY()
 #include "acme/console.h"
-
 #include "memoriesdota@twitch-projects.cpp"
 
 //template<typename T>

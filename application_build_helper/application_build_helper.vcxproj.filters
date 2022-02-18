@@ -42,5 +42,8 @@
     <ClInclude Include="application_build_helper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="_factory.cpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,0 +1,10 @@
+// Created by camilo on 2022-02-15 08:46 <3ThomasBorregaardSørensen!!
+#include "framework.h"
+
+
+BEGIN_FACTORY(console_application_build_helper)
+FACTORY_DEPENDENCY(apex_windows)
+END_FACTORY()
+
+
+

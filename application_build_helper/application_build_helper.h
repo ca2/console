@@ -90,7 +90,7 @@ public:
 
 
    void translate_items(const ::string& strFileDst, const ::string& strFileSrc);
-   void static_factory(const ::string& strFileDst, const ::string& strFileSrc);
+   void static_factory(const ::string& strFileDst, const ::string & strFileFactory, const ::string& strFileSrc);
    string defer_translate_dependency(string strDependency);
    string defer_rename_package(string strPackage);
 

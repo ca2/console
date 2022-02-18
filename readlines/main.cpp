@@ -1,9 +1,14 @@
 #include "acme/_start.h"
 #include "aqua/_.h"
+#define FACTORY console_readlines
 #define __APP_ID "console/readlines"
 #if defined(WINDOWS_DESKTOP) && defined(CUBE)
 #include "_static_factory.inl"
 #endif
+#include "apex_windows/_apex_windows.h"
+//BEGIN_FACTORY(console_readlines)
+//FACTORY_DEPENDENCY(apex_windows)
+//END_FACTORY()
 #include "aqua/console.h"
 #include "aqua/_defer.h"
 #include "aqua/xml.h"

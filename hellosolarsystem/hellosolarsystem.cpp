@@ -1,9 +1,14 @@
 #include "acme/_start.h"
 #include "apex/_.h"
+#define FACTORY console_hellosolarsystem
 #define __APP_ID "console/hellosolarsystem"
 #if defined(WINDOWS_DESKTOP) && defined(CUBE)
 #include "_static_factory.inl"
 #endif
+#include "apex_windows/_apex_windows.h"
+//BEGIN_FACTORY(console_hellosolarsystem)
+//FACTORY_DEPENDENCY(apex_windows)
+//END_FACTORY()
 #include "apex/console.h"
 //#include "aqua/xml.h"
 #include <stdio.h>

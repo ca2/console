@@ -1,9 +1,14 @@
 #include "acme/_start.h"
 #include "acme/_.h"
+#define FACTORY console_hello
 #define __APP_ID "console/hello"
 #if defined(WINDOWS_DESKTOP) && defined(CUBE)
 #include "_static_factory.inl"
 #endif
+#include "acme_windows/_acme_windows.h"
+//BEGIN_FACTORY(console_hello)
+//FACTORY_DEPENDENCY(acme_windows)
+//END_FACTORY()
 #include "acme/console.h"
 
 

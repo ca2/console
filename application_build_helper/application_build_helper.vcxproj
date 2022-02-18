@@ -1019,6 +1019,7 @@
     <ClInclude Include="application_build_helper.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="_.h" />
+    <ClInclude Include="_factory.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

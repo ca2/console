@@ -7,6 +7,7 @@
 #include <direct.h>
 #endif
 #include "application_build_helper.h"
+//#include "_factory.h"
 
 
 application_build_helper::application_build_helper()
