@@ -12,13 +12,13 @@ void implement(class ::system * psystem)
 
 #endif
 
-   auto papplication = psystem->m_papplicationStartup;
+   auto papp = psystem->m_pappStartup;
 
-   papplication->osthread_init();
+   papp->osthread_init();
 
-   papplication->init_thread();
+   papp->init_thread();
 
-   auto pbuild = papplication->__create < ::app_build::build>();
+   auto pbuild = papp->__create < ::app_build::build>();
 
    pbuild->m_bStdout = true;
 

@@ -18,6 +18,7 @@ target_link_libraries(_console_readlines PRIVATE acme apex aqua)
 
 add_dependencies(_console_readlines apex_${OPERATING_SYSTEM_NAME})
 add_dependencies(_console_readlines crypto_openssl)
+add_dependencies(_console_readlines folder_zip)
 
 
 target_include_directories(apex PRIVATE .)

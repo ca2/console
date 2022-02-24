@@ -5,7 +5,7 @@
 #if defined(WINDOWS_DESKTOP) && defined(CUBE)
 #include "_static_factory.inl"
 #endif
-#include "apex_windows/_apex_windows.h"
+//#include "apex_windows/_apex_windows.h"
 //BEGIN_FACTORY(console_hellosolarsystem)
 //FACTORY_DEPENDENCY(apex_windows)
 //END_FACTORY()
@@ -100,7 +100,7 @@ void implement(class ::system * psystem)
    {
 
       printf("\n");
-      printf("papplication->m_strAppId == \"%s\"\n", psystem->m_strAppId.c_str());
+      printf("papp->m_strAppId == \"%s\"\n", psystem->m_strAppId.c_str());
       printf("\n");
 
    }

@@ -5,7 +5,7 @@
 #if defined(WINDOWS_DESKTOP) && defined(CUBE)
 #include "_static_factory.inl"
 #endif
-#include "acme_windows/_acme_windows.h"
+//#include "acme_windows/_acme_windows.h"
 //BEGIN_FACTORY(console_hello)
 //FACTORY_DEPENDENCY(acme_windows)
 //END_FACTORY()
