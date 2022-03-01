@@ -21,6 +21,41 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9A226D6C27CEAF840042BAC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A226D6527CEAF840042BAC2 /* folder_zip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9AC09A2D274DFC67008B042E;
+			remoteInfo = folder_zip;
+		};
+		9A226D6E27CEAF930042BAC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A83B8282651612E00B39AB9 /* apex_macos.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A0C1694264A2AA700B5CC33;
+			remoteInfo = apex_macos;
+		};
+		9A226D7027CEAF930042BAC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A83B8342651615100B39AB9 /* aqua.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A2818FD25242488009FA9CB;
+			remoteInfo = aqua;
+		};
+		9A226D7227CEAF930042BAC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AC019EF2748AC6C006BEBCC /* crypto_openssl.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9AC019332748A002006BEBCC;
+			remoteInfo = crypto_openssl;
+		};
+		9A226D7427CEAF9A0042BAC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A226D6527CEAF840042BAC2 /* folder_zip.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9AC09A2C274DFC67008B042E;
+			remoteInfo = folder_zip;
+		};
 		9A83B82C2651612E00B39AB9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9A83B8282651612E00B39AB9 /* apex_macos.xcodeproj */;
@@ -65,6 +100,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9A226D6527CEAF840042BAC2 /* folder_zip.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = folder_zip.xcodeproj; path = ../../app/folder_zip/folder_zip.xcodeproj; sourceTree = "<group>"; };
 		9A46D24A2678440E000B22D0 /* libacme.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A46D24C26784418000B22D0 /* libapex.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libapex.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A68A39E25112AFD008DABD2 /* readlines */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = readlines; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,12 +126,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A226D6627CEAF840042BAC2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A226D6D27CEAF840042BAC2 /* libfolder_zip.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		9A68A39525112AFD008DABD2 = {
 			isa = PBXGroup;
 			children = (
 				9A83B8282651612E00B39AB9 /* apex_macos.xcodeproj */,
 				9A83B8342651615100B39AB9 /* aqua.xcodeproj */,
 				9AC019EF2748AC6C006BEBCC /* crypto_openssl.xcodeproj */,
+				9A226D6527CEAF840042BAC2 /* folder_zip.xcodeproj */,
 				9AD19AC52512D2FA00B4C44A /* readlines */,
 				9A68A39F25112AFD008DABD2 /* Products */,
 				9A90EEE02512F6AF0060868A /* Frameworks */,
@@ -167,6 +212,10 @@
 			buildRules = (
 			);
 			dependencies = (
+				9A226D7527CEAF9A0042BAC2 /* PBXTargetDependency */,
+				9A226D6F27CEAF930042BAC2 /* PBXTargetDependency */,
+				9A226D7127CEAF930042BAC2 /* PBXTargetDependency */,
+				9A226D7327CEAF930042BAC2 /* PBXTargetDependency */,
 			);
 			name = readlines;
 			productName = readlines;
@@ -211,6 +260,10 @@
 					ProductGroup = 9AC019F02748AC6C006BEBCC /* Products */;
 					ProjectRef = 9AC019EF2748AC6C006BEBCC /* crypto_openssl.xcodeproj */;
 				},
+				{
+					ProductGroup = 9A226D6627CEAF840042BAC2 /* Products */;
+					ProjectRef = 9A226D6527CEAF840042BAC2 /* folder_zip.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -220,6 +273,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		9A226D6D27CEAF840042BAC2 /* libfolder_zip.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libfolder_zip.dylib;
+			remoteRef = 9A226D6C27CEAF840042BAC2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		9A83B82D2651612E00B39AB9 /* libapex_macos.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
@@ -253,6 +313,29 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9A226D6F27CEAF930042BAC2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = apex_macos;
+			targetProxy = 9A226D6E27CEAF930042BAC2 /* PBXContainerItemProxy */;
+		};
+		9A226D7127CEAF930042BAC2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = aqua;
+			targetProxy = 9A226D7027CEAF930042BAC2 /* PBXContainerItemProxy */;
+		};
+		9A226D7327CEAF930042BAC2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = crypto_openssl;
+			targetProxy = 9A226D7227CEAF930042BAC2 /* PBXContainerItemProxy */;
+		};
+		9A226D7527CEAF9A0042BAC2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = folder_zip;
+			targetProxy = 9A226D7427CEAF9A0042BAC2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		9A68A3A325112AFD008DABD2 /* Debug */ = {
@@ -325,9 +408,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(WorkspaceDir)/archive",
+					"$(WorkspaceDir)/operating-system",
 					"$(WorkspaceDir)/operating-system/storage-$(PLATFORM_MODIFIER)/library",
-					"$(WorkspaceDir)/time-$(PLATFORM_MODIFIER)/output",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -347,7 +429,7 @@
 					"$(WorkspaceDir)/source/include",
 					"$(WorkspaceDir)/source/app",
 					"$(WorkspaceDir)/source/app/_include",
-					"$(WorkspaceDir)/archive",
+					"$(WorkspaceDir)/operating-system",
 					"$(WorkspaceDir)/operating-system/operating-system-$(PLATFORM_MODIFIER)",
 					"$(WorkspaceDir)/operating-system/operating-system-$(PLATFORM_MODIFIER)/_include",
 					"$(WorkspaceDir)/source/third/include",
@@ -429,10 +511,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(WorkspaceDir)/archive",
+					"$(WorkspaceDir)/operating-system",
 					"$(WorkspaceDir)/operating-system/storage-$(PLATFORM_MODIFIER)/library",
-					"$(WorkspaceDir)/time-$(PLATFORM_MODIFIER)/output",
-					"$(WorkspaceDir)/archive",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -450,7 +530,7 @@
 					"$(WorkspaceDir)/source/include",
 					"$(WorkspaceDir)/source/app",
 					"$(WorkspaceDir)/source/app/_include",
-					"$(WorkspaceDir)/archive",
+					"$(WorkspaceDir)/operating-system",
 					"$(WorkspaceDir)/operating-system/operating-system-$(PLATFORM_MODIFIER)",
 					"$(WorkspaceDir)/operating-system/operating-system-$(PLATFORM_MODIFIER)/_include",
 					"$(WorkspaceDir)/source/third/include",

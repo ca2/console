@@ -14,6 +14,8 @@
 #include <stdio.h>
 #include "acme/primitive/mathematics/mathematics.h"
 
+
+#undef new
 #include "pointer_const_pointer.cpp"
 #include "tutor.cpp"
 #include "asterisk_ampersand_naked_type.cpp"

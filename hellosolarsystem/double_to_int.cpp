@@ -38,5 +38,6 @@ void double_to_int()
 
    }
 
+   printf("This is the double value %f", d);
 
 }

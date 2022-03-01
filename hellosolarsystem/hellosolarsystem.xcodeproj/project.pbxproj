@@ -7,44 +7,83 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9AEA194A2760163C006437A3 /* libacme_macos.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9AEA193E2760163B006437A3 /* libacme_macos.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		9AEA194C2760163C006437A3 /* libapex_macos.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9AEA193F2760163B006437A3 /* libapex_macos.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		9AEA194E2760163C006437A3 /* libacme_posix.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9AEA19402760163B006437A3 /* libacme_posix.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		9AEA194F2760163C006437A3 /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AEA19412760163C006437A3 /* libacme.dylib */; };
-		9AEA19502760163C006437A3 /* libacme.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9AEA19412760163C006437A3 /* libacme.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		9AEA19522760163C006437A3 /* libacme_apple.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9AEA19422760163C006437A3 /* libacme_apple.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		9AEA19542760163C006437A3 /* libapex_posix.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9AEA19432760163C006437A3 /* libapex_posix.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		9AEA19562760163C006437A3 /* libapex_apple.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9AEA19442760163C006437A3 /* libapex_apple.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		9AEA19572760163C006437A3 /* libapex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AEA19452760163C006437A3 /* libapex.dylib */; };
-		9AEA19582760163C006437A3 /* libapex.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9AEA19452760163C006437A3 /* libapex.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		9AEA195A2760163C006437A3 /* libaqua.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9AEA19462760163C006437A3 /* libaqua.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		9AEA195C2760163C006437A3 /* libcrypto_openssl.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9AEA19472760163C006437A3 /* libcrypto_openssl.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		9AEA195E2760163D006437A3 /* libidn.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9AEA19482760163C006437A3 /* libidn.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		9A22672D27CE8CD80042BAC2 /* libapex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A22672927CE8CD80042BAC2 /* libapex.dylib */; };
+		9A22672E27CE8CD80042BAC2 /* libssl.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A22672A27CE8CD80042BAC2 /* libssl.3.dylib */; };
+		9A22672F27CE8CD80042BAC2 /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A22672B27CE8CD80042BAC2 /* libacme.dylib */; };
+		9A22673027CE8CD80042BAC2 /* libcrypto.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A22672C27CE8CD80042BAC2 /* libcrypto.3.dylib */; };
+		9A226D6127CEAE250042BAC2 /* libacme.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9A22672B27CE8CD80042BAC2 /* libacme.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		9A226D6327CEAE260042BAC2 /* libapex.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9A22672927CE8CD80042BAC2 /* libapex.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9AEA19612760170E006437A3 /* hellosolarsystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AEA19602760170E006437A3 /* hellosolarsystem.cpp */; };
-		9AEA19A327601BBD006437A3 /* libcrypto.3.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9AEA19A027601B3C006437A3 /* libcrypto.3.dylib */; };
-		9AEA19A427601BBD006437A3 /* libssl.3.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9AEA199F27601B3C006437A3 /* libssl.3.dylib */; };
+		9AEA19A327601BBD006437A3 /* libcrypto.3.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9AEA19A027601B3C006437A3 /* libcrypto.3.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		9AEA19A427601BBD006437A3 /* libssl.3.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9AEA199F27601B3C006437A3 /* libssl.3.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		9A22672527CE8C7C0042BAC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A22672127CE8C7B0042BAC2 /* apex_macos.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9A0C1695264A2AA700B5CC33;
+			remoteInfo = apex_macos;
+		};
+		9A22672727CE8C8A0042BAC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A22672127CE8C7B0042BAC2 /* apex_macos.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A0C1694264A2AA700B5CC33;
+			remoteInfo = apex_macos;
+		};
+		9A226D5527CEACE30042BAC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A226D5127CEACE30042BAC2 /* crypto_openssl.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9AC019342748A002006BEBCC;
+			remoteInfo = crypto_openssl;
+		};
+		9A226D5727CEACEE0042BAC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A226D5127CEACE30042BAC2 /* crypto_openssl.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9AC019332748A002006BEBCC;
+			remoteInfo = crypto_openssl;
+		};
+		9A226D5D27CEAD390042BAC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A226D5927CEAD390042BAC2 /* folder_zip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9AC09A2D274DFC67008B042E;
+			remoteInfo = folder_zip;
+		};
+		9A226D5F27CEAD4E0042BAC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A226D5927CEAD390042BAC2 /* folder_zip.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9AC09A2C274DFC67008B042E;
+			remoteInfo = folder_zip;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
+		9A226D6227CEAE250042BAC2 /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9A226D6327CEAE260042BAC2 /* libapex.dylib in Embed Libraries */,
+				9A226D6127CEAE250042BAC2 /* libacme.dylib in Embed Libraries */,
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9AEA195F2760163D006437A3 /* Embed Libraries */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
-			dstSubfolderSpec = 16;
+			dstSubfolderSpec = 6;
 			files = (
 				9AEA19A327601BBD006437A3 /* libcrypto.3.dylib in Embed Libraries */,
 				9AEA19A427601BBD006437A3 /* libssl.3.dylib in Embed Libraries */,
-				9AEA19502760163C006437A3 /* libacme.dylib in Embed Libraries */,
-				9AEA195A2760163C006437A3 /* libaqua.dylib in Embed Libraries */,
-				9AEA195C2760163C006437A3 /* libcrypto_openssl.dylib in Embed Libraries */,
-				9AEA19522760163C006437A3 /* libacme_apple.dylib in Embed Libraries */,
-				9AEA195E2760163D006437A3 /* libidn.dylib in Embed Libraries */,
-				9AEA19542760163C006437A3 /* libapex_posix.dylib in Embed Libraries */,
-				9AEA194C2760163C006437A3 /* libapex_macos.dylib in Embed Libraries */,
-				9AEA19582760163C006437A3 /* libapex.dylib in Embed Libraries */,
-				9AEA194E2760163C006437A3 /* libacme_posix.dylib in Embed Libraries */,
-				9AEA194A2760163C006437A3 /* libacme_macos.dylib in Embed Libraries */,
-				9AEA19562760163C006437A3 /* libapex_apple.dylib in Embed Libraries */,
 			);
 			name = "Embed Libraries";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -52,18 +91,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9A22672127CE8C7B0042BAC2 /* apex_macos.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = apex_macos.xcodeproj; path = "../../../operating-system/operating-system-macos/apex_macos/apex_macos.xcodeproj"; sourceTree = "<group>"; };
+		9A22672927CE8CD80042BAC2 /* libapex.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libapex.dylib; path = "../../../../../Library/Developer/Xcode/DerivedData/mac-__hello-ferbzpmqoopfvnbsljzanjlsduhf/Build/Products/Debug/libapex.dylib"; sourceTree = "<group>"; };
+		9A22672A27CE8CD80042BAC2 /* libssl.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.3.dylib; path = "../../../../operating-system/storage-macos/library/libssl.3.dylib"; sourceTree = "<group>"; };
+		9A22672B27CE8CD80042BAC2 /* libacme.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libacme.dylib; path = "../../../../../Library/Developer/Xcode/DerivedData/mac-__hello-ferbzpmqoopfvnbsljzanjlsduhf/Build/Products/Debug/libacme.dylib"; sourceTree = "<group>"; };
+		9A22672C27CE8CD80042BAC2 /* libcrypto.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.3.dylib; path = "../../../../operating-system/storage-macos/library/libcrypto.3.dylib"; sourceTree = "<group>"; };
+		9A226D5127CEACE30042BAC2 /* crypto_openssl.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = crypto_openssl.xcodeproj; path = ../../app/crypto_openssl/crypto_openssl.xcodeproj; sourceTree = "<group>"; };
+		9A226D5927CEAD390042BAC2 /* folder_zip.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = folder_zip.xcodeproj; path = ../../app/folder_zip/folder_zip.xcodeproj; sourceTree = "<group>"; };
 		9AEA193327601557006437A3 /* hellosolarsystem */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = hellosolarsystem; sourceTree = BUILT_PRODUCTS_DIR; };
-		9AEA193E2760163B006437A3 /* libacme_macos.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libacme_macos.dylib; path = "../../../time-macos/x86_64/Debug/libacme_macos.dylib"; sourceTree = "<group>"; };
-		9AEA193F2760163B006437A3 /* libapex_macos.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libapex_macos.dylib; path = "../../../time-macos/x86_64/Debug/libapex_macos.dylib"; sourceTree = "<group>"; };
-		9AEA19402760163B006437A3 /* libacme_posix.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libacme_posix.dylib; path = "../../../time-macos/x86_64/Debug/libacme_posix.dylib"; sourceTree = "<group>"; };
-		9AEA19412760163C006437A3 /* libacme.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libacme.dylib; path = "../../../time-macos/x86_64/Debug/libacme.dylib"; sourceTree = "<group>"; };
-		9AEA19422760163C006437A3 /* libacme_apple.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libacme_apple.dylib; path = "../../../time-macos/x86_64/Debug/libacme_apple.dylib"; sourceTree = "<group>"; };
-		9AEA19432760163C006437A3 /* libapex_posix.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libapex_posix.dylib; path = "../../../time-macos/x86_64/Debug/libapex_posix.dylib"; sourceTree = "<group>"; };
-		9AEA19442760163C006437A3 /* libapex_apple.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libapex_apple.dylib; path = "../../../time-macos/x86_64/Debug/libapex_apple.dylib"; sourceTree = "<group>"; };
-		9AEA19452760163C006437A3 /* libapex.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libapex.dylib; path = "../../../time-macos/x86_64/Debug/libapex.dylib"; sourceTree = "<group>"; };
-		9AEA19462760163C006437A3 /* libaqua.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libaqua.dylib; path = "../../../time-macos/x86_64/Debug/libaqua.dylib"; sourceTree = "<group>"; };
-		9AEA19472760163C006437A3 /* libcrypto_openssl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto_openssl.dylib; path = "../../../time-macos/x86_64/Debug/libcrypto_openssl.dylib"; sourceTree = "<group>"; };
-		9AEA19482760163C006437A3 /* libidn.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libidn.dylib; path = "../../../time-macos/x86_64/Debug/libidn.dylib"; sourceTree = "<group>"; };
 		9AEA19602760170E006437A3 /* hellosolarsystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hellosolarsystem.cpp; sourceTree = SOURCE_ROOT; };
 		9AEA199F27601B3C006437A3 /* libssl.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.3.dylib; path = "../../../operating-system/storage-macos/library/libssl.3.dylib"; sourceTree = "<group>"; };
 		9AEA19A027601B3C006437A3 /* libcrypto.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.3.dylib; path = "../../../operating-system/storage-macos/library/libcrypto.3.dylib"; sourceTree = "<group>"; };
@@ -74,17 +109,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AEA194F2760163C006437A3 /* libacme.dylib in Frameworks */,
-				9AEA19572760163C006437A3 /* libapex.dylib in Frameworks */,
+				9A22673027CE8CD80042BAC2 /* libcrypto.3.dylib in Frameworks */,
+				9A22672E27CE8CD80042BAC2 /* libssl.3.dylib in Frameworks */,
+				9A22672F27CE8CD80042BAC2 /* libacme.dylib in Frameworks */,
+				9A22672D27CE8CD80042BAC2 /* libapex.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A22672227CE8C7B0042BAC2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A22672627CE8C7C0042BAC2 /* libapex_macos.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A226D5227CEACE30042BAC2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A226D5627CEACE30042BAC2 /* libcrypto_openssl.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A226D5A27CEAD390042BAC2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A226D5E27CEAD390042BAC2 /* libfolder_zip.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		9AEA192A27601557006437A3 = {
 			isa = PBXGroup;
 			children = (
+				9A22672127CE8C7B0042BAC2 /* apex_macos.xcodeproj */,
+				9A226D5127CEACE30042BAC2 /* crypto_openssl.xcodeproj */,
+				9A226D5927CEAD390042BAC2 /* folder_zip.xcodeproj */,
 				9AEA193527601557006437A3 /* hellosolarsystem */,
 				9AEA193427601557006437A3 /* Products */,
 				9AEA193D2760163B006437A3 /* Frameworks */,
@@ -110,19 +174,12 @@
 		9AEA193D2760163B006437A3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9A22672C27CE8CD80042BAC2 /* libcrypto.3.dylib */,
+				9A22672A27CE8CD80042BAC2 /* libssl.3.dylib */,
+				9A22672927CE8CD80042BAC2 /* libapex.dylib */,
+				9A22672B27CE8CD80042BAC2 /* libacme.dylib */,
 				9AEA19A027601B3C006437A3 /* libcrypto.3.dylib */,
 				9AEA199F27601B3C006437A3 /* libssl.3.dylib */,
-				9AEA19422760163C006437A3 /* libacme_apple.dylib */,
-				9AEA193E2760163B006437A3 /* libacme_macos.dylib */,
-				9AEA19402760163B006437A3 /* libacme_posix.dylib */,
-				9AEA19412760163C006437A3 /* libacme.dylib */,
-				9AEA19442760163C006437A3 /* libapex_apple.dylib */,
-				9AEA193F2760163B006437A3 /* libapex_macos.dylib */,
-				9AEA19432760163C006437A3 /* libapex_posix.dylib */,
-				9AEA19452760163C006437A3 /* libapex.dylib */,
-				9AEA19462760163C006437A3 /* libaqua.dylib */,
-				9AEA19472760163C006437A3 /* libcrypto_openssl.dylib */,
-				9AEA19482760163C006437A3 /* libidn.dylib */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -148,10 +205,14 @@
 				9AEA192F27601557006437A3 /* Sources */,
 				9AEA193027601557006437A3 /* Frameworks */,
 				9AEA195F2760163D006437A3 /* Embed Libraries */,
+				9A226D6227CEAE250042BAC2 /* Embed Libraries */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9A226D6027CEAD4E0042BAC2 /* PBXTargetDependency */,
+				9A226D5827CEACEE0042BAC2 /* PBXTargetDependency */,
+				9A22672827CE8C8A0042BAC2 /* PBXTargetDependency */,
 			);
 			name = hellosolarsystem;
 			productName = hellosolarsystem;
@@ -183,12 +244,50 @@
 			mainGroup = 9AEA192A27601557006437A3;
 			productRefGroup = 9AEA193427601557006437A3 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9A22672227CE8C7B0042BAC2 /* Products */;
+					ProjectRef = 9A22672127CE8C7B0042BAC2 /* apex_macos.xcodeproj */;
+				},
+				{
+					ProductGroup = 9A226D5227CEACE30042BAC2 /* Products */;
+					ProjectRef = 9A226D5127CEACE30042BAC2 /* crypto_openssl.xcodeproj */;
+				},
+				{
+					ProductGroup = 9A226D5A27CEAD390042BAC2 /* Products */;
+					ProjectRef = 9A226D5927CEAD390042BAC2 /* folder_zip.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				9AEA193227601557006437A3 /* hellosolarsystem */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		9A22672627CE8C7C0042BAC2 /* libapex_macos.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libapex_macos.dylib;
+			remoteRef = 9A22672527CE8C7C0042BAC2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A226D5627CEACE30042BAC2 /* libcrypto_openssl.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libcrypto_openssl.dylib;
+			remoteRef = 9A226D5527CEACE30042BAC2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A226D5E27CEAD390042BAC2 /* libfolder_zip.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libfolder_zip.dylib;
+			remoteRef = 9A226D5D27CEAD390042BAC2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9AEA192F27601557006437A3 /* Sources */ = {
@@ -200,6 +299,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9A22672827CE8C8A0042BAC2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = apex_macos;
+			targetProxy = 9A22672727CE8C8A0042BAC2 /* PBXContainerItemProxy */;
+		};
+		9A226D5827CEACEE0042BAC2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = crypto_openssl;
+			targetProxy = 9A226D5727CEACEE0042BAC2 /* PBXContainerItemProxy */;
+		};
+		9A226D6027CEAD4E0042BAC2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = folder_zip;
+			targetProxy = 9A226D5F27CEAD4E0042BAC2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		9AEA193827601557006437A3 /* Debug */ = {
@@ -258,9 +375,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(WorkspaceDir)/archive",
+					"$(WorkspaceDir)/operating-system",
 					"$(WorkspaceDir)/operating-system/storage-$(PLATFORM_MODIFIER)/library",
-					"$(WorkspaceDir)/time-$(PLATFORM_MODIFIER)/output",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -274,7 +390,7 @@
 					"$(WorkspaceDir)/source/include",
 					"$(WorkspaceDir)/source/app",
 					"$(WorkspaceDir)/source/app/_include",
-					"$(WorkspaceDir)/archive",
+					"$(WorkspaceDir)/operating-system",
 					"$(WorkspaceDir)/operating-system/operating-system-$(PLATFORM_MODIFIER)",
 					"$(WorkspaceDir)/operating-system/operating-system-$(PLATFORM_MODIFIER)/_include",
 					"$(WorkspaceDir)/source/third/include",
@@ -339,10 +455,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(WorkspaceDir)/archive",
+					"$(WorkspaceDir)/operating-system",
 					"$(WorkspaceDir)/operating-system/storage-$(PLATFORM_MODIFIER)/library",
-					"$(WorkspaceDir)/time-$(PLATFORM_MODIFIER)/output",
-					"$(WorkspaceDir)/archive",
+					"$(WorkspaceDir)/operating-system",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -355,7 +470,7 @@
 					"$(WorkspaceDir)/source/include",
 					"$(WorkspaceDir)/source/app",
 					"$(WorkspaceDir)/source/app/_include",
-					"$(WorkspaceDir)/archive",
+					"$(WorkspaceDir)/operating-system",
 					"$(WorkspaceDir)/operating-system/operating-system-$(PLATFORM_MODIFIER)",
 					"$(WorkspaceDir)/operating-system/operating-system-$(PLATFORM_MODIFIER)/_include",
 					"$(WorkspaceDir)/source/third/include",

@@ -27,6 +27,8 @@ void printf_format_flags()
    printf("|   %%f %f\n", f);
    printf("|   %%04.2f %04.2f\n", f);
    printf("|   %%s %s\n", psz);
+   printf("|   %%d %d\n", *pi);
+   printf("|   %%c %c\n", *pi);
    printf("|\n");
    printf("=============================================================\n");
    printf("\n");

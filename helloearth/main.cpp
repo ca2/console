@@ -10,6 +10,7 @@
 //FACTORY_DEPENDENCY(acme_windows)
 //END_FACTORY()
 #include "acme/console.h"
+#undef new
 #include "memoriesdota@twitch-projects.cpp"
 
 //template<typename T>
