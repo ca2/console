@@ -939,12 +939,12 @@ void application_build_helper::zip_matter()
 
 #endif
 
-
-   string strOutput;
-
-   string strError;
-
-   int iExitCode = 0;
+//
+//   string strOutput;
+//
+//   string strError;
+//
+//   int iExitCode = 0;
 
    //estatus = 
    
