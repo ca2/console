@@ -3,6 +3,7 @@
 //#include "acme/console.h"
 #include "acme/filesystem/file/_const.h"
 #include "acme/filesystem/filesystem/acme_file.h"
+#include "acme/filesystem/filesystem/acme_path.h"
 #ifdef WINDOWS_DESTKOP
 #include <direct.h>
 #endif
@@ -47,6 +48,8 @@ void application_build_helper::set_package_folder(const ::file::path& pathFolder
       }
 
    }
+
+   pathFolder = m_psystem->m_pacmepath->defer_process_relative_path(pathFolder);
 
    m_pathFolder = pathFolder;
 
