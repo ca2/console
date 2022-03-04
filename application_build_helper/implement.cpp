@@ -2,6 +2,9 @@
 #include "framework.h"
 #define FACTORY console_application_build_helper
 #define __APP_ID "console/application_build_helper"
+#ifdef CUBE
+#include "_static_factory.inl"
+#endif
 //#include "_factory.h"
 #include "_main.inl"
 //#include "acme/console.h"
