@@ -99,10 +99,10 @@ void application_build_helper::generate__main()
 
       strMain += "#define APPLICATION " + m_strUnderscoreAppId + "\n";
       strMain += "#define __APP_ID \"" + m_strAppId + "\"\n";
-      strMain += "#if defined(WINDOWS_DESKTOP) && defined(CUBE)\n";
+      //strMain += "#if defined(WINDOWS_DESKTOP) && defined(CUBE)\n";
       strMain += "#include \"_static_factory.inl\"\n";
-      strMain += "#endif\n";
-      strMain += "#include \"_factory.h\"\n";
+      //strMain += "#endif\n";
+      //strMain += "#include \"_factory.h\"\n";
       strMain += "#include \"acme/application.h\"\n";
 
       ///estatus =
@@ -499,7 +499,7 @@ void application_build_helper::load_rename_map(string_to_string& renamemap, stri
 }
 
 
-void application_build_helper::static_factory(const ::string& strFileDst, const ::string & strFileFactory, const ::string& strFileSrc)
+void application_build_helper::static_factory(const ::string& strFileDst, const ::string& strFileSrc)
 {
 
    //auto estatus = 
@@ -531,9 +531,9 @@ void application_build_helper::static_factory(const ::string& strFileDst, const 
 
    strOutput += "#define DO_FACTORY(do) \\\n";
 
-   string strFactory;
+   //string strFactory;
 
-   strFactory += "BEGIN_FACTORY("+ m_strUnderscoreAppId +") \n";
+   //strFactory += "BEGIN_FACTORY("+ m_strUnderscoreAppId +") \n";
 
    bool bFirst = true;
 
@@ -573,7 +573,7 @@ void application_build_helper::static_factory(const ::string& strFileDst, const 
 
                   strOutput += "do(" + strPackage + ");";
 
-                  strFactory += "FACTORY_DEPENDENCY(" + strPackage + ") \n";
+                  //strFactory += "FACTORY_DEPENDENCY(" + strPackage + ") \n";
 
                   bFirst = false;
 
@@ -589,9 +589,9 @@ void application_build_helper::static_factory(const ::string& strFileDst, const 
 
    strOutput += "\n";
 
-   strFactory += "FACTORY_DEPENDENCY(" + m_strUnderscoreAppId + ") \n";
+   ///strFactory += "FACTORY_DEPENDENCY(" + m_strUnderscoreAppId + ") \n";
 
-   strFactory += "END_FACTORY() \n";
+   //strFactory += "END_FACTORY() \n";
 
    //estatus = 
    
@@ -608,7 +608,7 @@ void application_build_helper::static_factory(const ::string& strFileDst, const 
    
    m_psystem->m_pacmefile->put_contents(strFileDst, strOutput);
 
-   m_psystem->m_pacmefile->put_contents(strFileFactory, strFactory);
+   //m_psystem->m_pacmefile->put_contents(strFileFactory, strFactory);
 
    //if(!estatus)
    //{
@@ -1264,7 +1264,7 @@ void application_build_helper::prepare_application()
 
    ::file::path pathInl = pathFolder / "operating-system" / m_strSlashedOperatingSystem / "_static_factory.inl";
 
-   ::file::path pathFactory = pathFolder / "operating-system" / m_strSlashedOperatingSystem / "_factory.h";
+   //::file::path pathFactory = pathFolder / "operating-system" / m_strSlashedOperatingSystem / "_factory.h";
 
    ::file::path pathSourcePackages = pathFolder / "_packages.txt";
 
@@ -1429,7 +1429,9 @@ void application_build_helper::prepare_application()
 
    //estatus = 
    
-   static_factory(pathInl, pathFactory, pathSourceDependencies);
+   //static_factory(pathInl, pathFactory, pathSourceDependencies);
+
+   static_factory(pathInl, pathSourceDependencies);
 
    //if(!estatus)
    //{
