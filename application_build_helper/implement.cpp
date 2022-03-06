@@ -426,7 +426,7 @@ string application_build_helper::defer_binary_to_project(string strBinary)
 
    string strRename;
 
-   strRename = map[strName];
+   strRename = map[strBinary];
 
    if (strRename.is_empty())
    {
@@ -435,7 +435,7 @@ string application_build_helper::defer_binary_to_project(string strBinary)
 
    }
 
-   return strRoot + "/" + strRename;
+   return strRename;
 
 }
 
@@ -469,7 +469,7 @@ string application_build_helper::defer_project_to_binary(string strProject)
 
    string strRename;
 
-   strRename = map[strName];
+   strRename = map[strProject];
 
    if (strRename.is_empty())
    {
@@ -478,7 +478,7 @@ string application_build_helper::defer_project_to_binary(string strProject)
 
    }
 
-   return strRoot + "/" + strRename;
+   return strRename;
 
 }
 
