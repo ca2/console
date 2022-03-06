@@ -23,9 +23,9 @@
     <LocalDebuggerWorkingDirectory>C:\Users\camilo</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='cube_basis|x64'">
-    <LocalDebuggerCommandArguments>"C:\basis\source\app-simple\change_grub_default_entry\\" "shared_app_simple_change_grub_default_entry"</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>C:\stage\source\app-veriwell\waven</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
-    <LocalDebuggerWorkingDirectory>C:\basis\source\app-simple\change_grub_default_entry\</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerWorkingDirectory>C:\stage</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='stage|x64'">
     <LocalDebuggerCommandArguments>C:\basis\source\app\folder_zip\ folder_zip</LocalDebuggerCommandArguments>
