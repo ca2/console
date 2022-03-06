@@ -45,7 +45,8 @@ public:
    bool                          m_bTranslateDependency;
 
 
-   string_map < string_to_string >  m_renamemap;
+   string_map < string_to_string >  m_mapBinaryToProject;
+   string_map < string_to_string >  m_mapProjectToBinary;
 
 
 
@@ -93,10 +94,11 @@ public:
    //void static_factory(const ::string& strFileDst, const ::string & strFileFactory, const ::string& strFileSrc);
    void static_factory(const ::string & strFileDst, const ::string & strFileSrc);
    string defer_translate_dependency(string strDependency);
-   string defer_rename_package(string strPackage);
+   string defer_binary_to_project(string strBinary);
+   string defer_project_to_binary(string strProject);
 
 
-   void load_rename_map(string_to_string & renamemap, string strRoot);
+   void load_map(string_to_string & map, string strMap, string strRoot);
 
    string defer_translate_application_name(string strDependency);
 

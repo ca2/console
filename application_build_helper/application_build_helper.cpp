@@ -366,7 +366,7 @@ void application_build_helper::translate_package_list()
 
          packagereferenceNew.m_strPackage = defer_translate_application_name(packagereferenceNew.m_strPackage);
 
-         packagereferenceNew.m_strPackage = defer_rename_package(packagereferenceNew.m_strPackage);
+         packagereferenceNew.m_strPackage = defer_binary_to_project(packagereferenceNew.m_strPackage);
 
          for (auto& packagereferenceItem : m_packagereferencea)
          {

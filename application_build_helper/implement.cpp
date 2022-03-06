@@ -397,17 +397,17 @@ string application_build_helper::defer_translate_dependency(string strDependency
 }
 
 
-string application_build_helper::defer_rename_package(string strPackage)
+string application_build_helper::defer_binary_to_project(string strBinary)
 {
 
    string_array stra;
 
-   stra.explode("/", strPackage);
+   stra.explode("/", strBinary);
 
    if (stra.get_count() != 2)
    {
 
-      return strPackage;
+      return strBinary;
 
    }
 
@@ -415,23 +415,23 @@ string application_build_helper::defer_rename_package(string strPackage)
 
    string strName = stra[1];
 
-   auto& renamemap = m_renamemap[strRoot];
+   auto& map = m_mapBinaryToProject[strRoot];
 
-   if (renamemap["loaded"].is_empty())
+   if (map["(--loaded--)"].is_empty())
    {
 
-      load_rename_map(renamemap, strRoot);
+      load_map(map, "binary_to_project", strRoot);
 
    }
 
    string strRename;
 
-   strRename = renamemap[strName];
+   strRename = map[strName];
 
    if (strRename.is_empty())
    {
 
-      return strPackage;
+      return strBinary;
 
    }
 
@@ -440,33 +440,76 @@ string application_build_helper::defer_rename_package(string strPackage)
 }
 
 
-void application_build_helper::load_rename_map(string_to_string& renamemap, string strRoot)
+string application_build_helper::defer_project_to_binary(string strProject)
 {
 
-   ::file::path pathRenameBase;
+   string_array stra;
+
+   stra.explode("/", strProject);
+
+   if (stra.get_count() != 2)
+   {
+
+      return strProject;
+
+   }
+
+   string strRoot = stra[0];
+
+   string strName = stra[1];
+
+   auto & map = m_mapProjectToBinary[strRoot];
+
+   if (map["(--loaded--)"].is_empty())
+   {
+
+      load_map(map, "project_to_binary", strRoot);
+
+   }
+
+   string strRename;
+
+   strRename = map[strName];
+
+   if (strRename.is_empty())
+   {
+
+      return strProject;
+
+   }
+
+   return strRoot + "/" + strRename;
+
+}
+
+
+void application_build_helper::load_map(string_to_string& map, string strMap, string strRoot)
+{
+
+   ::file::path pathMapBase;
 
    if (strRoot.begins_ci("operating-system-"))
    {
 
-      pathRenameBase = m_pathOperatingSystem;
+      pathMapBase = m_pathOperatingSystem;
 
    }
    else
    {
 
-      pathRenameBase = m_pathSource;
+      pathMapBase = m_pathSource;
 
    }
 
-   pathRenameBase /= strRoot;
+   pathMapBase /= strRoot;
 
-   ::file::path pathRename;
+   ::file::path pathMap;
 
-   pathRename = pathRenameBase / "rename_map.txt";
+   pathMap = pathMapBase / (strMap + ".txt");
 
    string_array straLines;
 
-   m_pcontext->m_papexcontext->file().get_lines(straLines, pathRename);
+   m_pcontext->m_papexcontext->file().get_lines(straLines, pathMap);
 
    for (auto& strLine : straLines)
    {
@@ -486,15 +529,13 @@ void application_build_helper::load_rename_map(string_to_string& renamemap, stri
 
          strRename.trim();
 
-         renamemap[strName] = strRename;
+         map[strName] = strRename;
 
       }
 
    }
 
-   renamemap["loaded"] = "true";
-
-   //return ::success;
+   map["(--loaded--)"] = "true";
 
 }
 
@@ -1500,7 +1541,11 @@ void application_build_helper::prepare_application()
    for (auto & packagereference: m_packagereferencea)
    {
 
-      strTranslatedPackages += packagereference.m_strPackage.trimmed() + "\n";
+      string strPackage = packagereference.m_strPackage.trimmed();
+
+      string strTranslatedPackage = defer_project_to_binary(strPackage);
+
+      strTranslatedPackages +=  strTranslatedPackage + "\n";
 
    }
 
