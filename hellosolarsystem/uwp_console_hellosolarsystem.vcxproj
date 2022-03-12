@@ -598,6 +598,9 @@
     <ProjectReference Include="..\..\app\crypto_openssl\u_crypto_openssl.vcxproj">
       <Project>{bc919186-f67a-4ffc-b6be-0e63dc652a63}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\..\app\folder_zip\u_folder_zip.vcxproj">
+      <Project>{fc96f9e0-d65e-4286-95b1-f1ff4873dace}</Project>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="hellosolarsystem.cpp" />
