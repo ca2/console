@@ -9,7 +9,7 @@
 #include "_main.inl"
 //#include "acme/console.h"
 #include "acme/filesystem/file/_const.h"
-#include "acme/filesystem/filesystem/acme_dir.h"
+#include "acme/filesystem/filesystem/acme_directory.h"
 #include "acme/filesystem/filesystem/acme_file.h"
 #ifdef WINDOWS_DESTKOP
 #include <direct.h>
@@ -835,9 +835,9 @@ void application_build_helper::zip_matter()
 
    ::file::path pathOutput = m_pathFolder - 2;
 
-   m_psystem->m_pacmedir->change_current(pathOutput);
+   m_psystem->m_pacmedirectory->change_current(pathOutput);
 
-   //estatus = m_psystem->m_pacmedir->change_current(pathOutput);
+   //estatus = m_psystem->m_pacmedirectory->change_current(pathOutput);
 
    //if(!estatus)
    //{
@@ -860,7 +860,7 @@ void application_build_helper::zip_matter()
 
 //#ifdef WINDOWS_DESKTOP
 //
-//   ::file::path pathZipExe(m_psystem->m_pacmedir->module() / "zip.exe");
+//   ::file::path pathZipExe(m_psystem->m_pacmedirectory->module() / "zip.exe");
 //
 //   string strZipExe = "\"" + pathZipExe + "\"";
 //
@@ -970,7 +970,7 @@ void application_build_helper::zip_matter()
 
       //estatus =
       //
-      m_psystem->m_pacmedir->change_current(pathHome);
+      m_psystem->m_pacmedirectory->change_current(pathHome);
 
 //      if (!estatus)
 //      {
@@ -1031,7 +1031,7 @@ void application_build_helper::create_matter_object()
 
    //auto estatus =
 
-      m_psystem->m_pacmedir->change_current(m_pathFolder);
+      m_psystem->m_pacmedirectory->change_current(m_pathFolder);
 
 //   if(!estatus)
 //   {
@@ -1042,7 +1042,7 @@ void application_build_helper::create_matter_object()
 
    //estatus =
 
-      m_psystem->m_pacmedir->create(m_pathFolder / ".link_object");
+      m_psystem->m_pacmedirectory->create(m_pathFolder / ".link_object");
 
 //   if(!estatus)
 //   {

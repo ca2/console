@@ -4,7 +4,7 @@
 #ifdef WINDOWS
 #include "apex_windows/_.h"
 #endif
-#include "acme/filesystem/filesystem/acme_dir.h"
+#include "acme/filesystem/filesystem/acme_directory.h"
 #include "acme/filesystem/filesystem/acme_file.h"
 
 
@@ -44,7 +44,7 @@ void application_build_helper::package()
 
    //auto estatus = 
    
-   m_psystem->m_pacmedir->change_current(pathOutput);
+   m_psystem->m_pacmedirectory->change_current(pathOutput);
 
    //if(!estatus)
    //{

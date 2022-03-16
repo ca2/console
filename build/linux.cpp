@@ -46,11 +46,11 @@ namespace app_core_build
 
       //process->prop("inherit") = false;
 
-      ::file::path pathBaseDir = m_psystem->m_pacmedir->home();
+      ::file::path pathBaseDir = m_psystem->m_pacmedirectory->home();
 
       ::file::path pathBuildDir = pathBaseDir / "build" / m_strDistro / m_strDesktopEnvironment;
 
-      m_psystem->m_pacmedir->create(pathBuildDir);
+      m_psystem->m_pacmedirectory->create(pathBuildDir);
 
       chdir(pathBuildDir);
 
