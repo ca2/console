@@ -243,11 +243,22 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		9A6402F927F975D5006B60D1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		9ADD64DD26B5CBBC00D11298 /* application_build_helper */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9ADD64E526B5CBBC00D11298 /* Build configuration list for PBXNativeTarget "application_build_helper" */;
 			buildPhases = (
+				9A6402F927F975D5006B60D1 /* Headers */,
 				9ADD64DA26B5CBBC00D11298 /* Sources */,
 				9ADD64DB26B5CBBC00D11298 /* Frameworks */,
 				9ADD64DC26B5CBBC00D11298 /* CopyFiles */,
@@ -421,7 +432,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(WorkspaceDir)/operating-system/storage-$(PLATFORM_MODIFIER)/library",
-				
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -497,7 +507,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(WorkspaceDir)/operating-system/storage-$(PLATFORM_MODIFIER)/library",
-				
 					"$(WorkspaceDir)/operating-system",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.3;
