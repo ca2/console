@@ -30,7 +30,7 @@ void implement(class ::system * psystem)
    while (true)
    {
 
-      auto result = os_message_box(psystem, "Hello!!", "Hello App!", e_message_box_yes_no_cancel | e_message_box_default_button_3, "Hello Multiverse!!");
+      auto result = message_box_synchronous(psystem, "Hello!!", "Hello App!", e_message_box_yes_no_cancel | e_message_box_default_button_3, "Hello Multiverse!!");
 
       if (result == e_dialog_result_yes)
       {
@@ -39,7 +39,7 @@ void implement(class ::system * psystem)
 
          printf("Yes!!\n");
 
-         os_message_box(psystem, "Yes!!", "Yes!!", e_message_box_ok);
+         message_box_synchronous(psystem, "Yes!!", "Yes!!", e_message_box_ok);
 
          break;
 
@@ -51,7 +51,7 @@ void implement(class ::system * psystem)
 
          printf("No!\n");
 
-         os_message_box(psystem, "No!", "No!", e_message_box_ok);
+         message_box_synchronous(psystem, "No!", "No!", e_message_box_ok);
 
       }
       else if (result == e_dialog_result_cancel)
@@ -61,7 +61,7 @@ void implement(class ::system * psystem)
 
          printf("Cancel!!\n");
 
-         os_message_box(psystem, "Cancel", "Cancel", e_message_box_ok);
+         message_box_synchronous(psystem, "Cancel", "Cancel", e_message_box_ok);
 
       }
 
