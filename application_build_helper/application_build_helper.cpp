@@ -51,6 +51,8 @@ void application_build_helper::set_package_folder(const ::file::path& pathFolder
 
    pathFolder = m_psystem->m_pacmepath->defer_process_relative_path(pathFolder);
 
+   //printf("Processing folder: %s\n", pathFolder.c_str());
+
    m_pathFolder = pathFolder;
 
    m_pathBaseDir = pathFolder - 3;
@@ -182,12 +184,25 @@ void application_build_helper::create_package_list()
 
    pathPackageMap = m_pathOperatingSystem / ("operating-system-" OPERATING_SYSTEM_NAME) / "operating-system" / m_strSlashedOperatingSystem /"package_map.txt";
 
-   m_piniPackageMap = m_psystem->m_papexsystem->file().get_ini(pathPackageMap);
+   try
+   {
+
+      m_piniPackageMap = m_psystem->m_papexsystem->file().get_ini(pathPackageMap);
+
+   }
+   catch(const ::exception & e)
+   {
+
+      fprintf(stderr,"\n\nFatal! Failed to open package map file: %s\n(Does it exist?)\n\n\n", pathPackageMap.c_str());
+
+      throw e;
+
+   }
 
    if(is_null(m_piniPackageMap))
    {
 
-      fprintf(stderr,"\n\nFailed to open file: %s\n(Does it exist?)\n\n\n", pathPackageMap.c_str());
+      fprintf(stderr,"\n\nFatal! Failed to open package map file: %s\n(Does it exist?)\n\n\n", pathPackageMap.c_str());
 
       throw ::exception(error_failed);
 
