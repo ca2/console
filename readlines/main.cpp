@@ -43,8 +43,12 @@ void implement(class ::system * psystem)
    //console.m_psystem->get_main_application()->initialize_context();
 
    //path -= ::file::e_flag_bypass_cache;
+   
+   auto papexsystem = psystem->m_papexsystem;
+   
+   auto & file = papexsystem->file();
 
-   string str = psystem->m_papexsystem->file().as_string(path);
+   string str = file.as_string(path);
 
    //stra.add_lines(str);
 
