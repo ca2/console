@@ -508,6 +508,7 @@ source/console/application_build_helper/CMakeFiles/_console_application_build_he
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/application_build_helper.cpp.o: source/app/acme/primitive/string/__c_wd32_impl.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/application_build_helper.cpp.o: source/app/acme/primitive/string/__c_wide.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/application_build_helper.cpp.o: source/app/acme/primitive/string/__c_wide_impl.h
+source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/application_build_helper.cpp.o: source/app/acme/primitive/string/__string.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/application_build_helper.cpp.o: source/app/acme/primitive/string/_base.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/application_build_helper.cpp.o: source/app/acme/primitive/string/_base_impl.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/application_build_helper.cpp.o: source/app/acme/primitive/string/_c.h
@@ -528,7 +529,6 @@ source/console/application_build_helper/CMakeFiles/_console_application_build_he
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/application_build_helper.cpp.o: source/app/acme/primitive/string/_compare.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/application_build_helper.cpp.o: source/app/acme/primitive/string/_compare_impl.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/application_build_helper.cpp.o: source/app/acme/primitive/string/_conv.h
-source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/application_build_helper.cpp.o: source/app/acme/primitive/string/_conv_ansi.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/application_build_helper.cpp.o: source/app/acme/primitive/string/_conv_ansi_impl.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/application_build_helper.cpp.o: source/app/acme/primitive/string/_defer.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/application_build_helper.cpp.o: source/app/acme/primitive/string/_impl.h
@@ -561,6 +561,7 @@ source/console/application_build_helper/CMakeFiles/_console_application_build_he
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/application_build_helper.cpp.o: source/app/acme/primitive/string/stringtow.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/application_build_helper.cpp.o: source/app/acme/primitive/string/sz.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/application_build_helper.cpp.o: source/app/acme/primitive/string/to_integer.h
+source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/application_build_helper.cpp.o: source/app/acme/primitive/string/to_string.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/application_build_helper.cpp.o: source/app/acme/primitive/string/tokenizer.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/application_build_helper.cpp.o: source/app/acme/primitive/string/x.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/application_build_helper.cpp.o: source/app/acme/primitive/string/x/x_charcategory.h
@@ -1292,6 +1293,7 @@ source/console/application_build_helper/CMakeFiles/_console_application_build_he
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/implement.cpp.o: source/app/acme/primitive/string/__c_wd32_impl.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/implement.cpp.o: source/app/acme/primitive/string/__c_wide.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/implement.cpp.o: source/app/acme/primitive/string/__c_wide_impl.h
+source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/implement.cpp.o: source/app/acme/primitive/string/__string.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/implement.cpp.o: source/app/acme/primitive/string/_base.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/implement.cpp.o: source/app/acme/primitive/string/_base_impl.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/implement.cpp.o: source/app/acme/primitive/string/_c.h
@@ -1312,7 +1314,6 @@ source/console/application_build_helper/CMakeFiles/_console_application_build_he
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/implement.cpp.o: source/app/acme/primitive/string/_compare.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/implement.cpp.o: source/app/acme/primitive/string/_compare_impl.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/implement.cpp.o: source/app/acme/primitive/string/_conv.h
-source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/implement.cpp.o: source/app/acme/primitive/string/_conv_ansi.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/implement.cpp.o: source/app/acme/primitive/string/_conv_ansi_impl.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/implement.cpp.o: source/app/acme/primitive/string/_defer.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/implement.cpp.o: source/app/acme/primitive/string/_impl.h
@@ -1345,6 +1346,7 @@ source/console/application_build_helper/CMakeFiles/_console_application_build_he
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/implement.cpp.o: source/app/acme/primitive/string/stringtow.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/implement.cpp.o: source/app/acme/primitive/string/sz.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/implement.cpp.o: source/app/acme/primitive/string/to_integer.h
+source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/implement.cpp.o: source/app/acme/primitive/string/to_string.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/implement.cpp.o: source/app/acme/primitive/string/tokenizer.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/implement.cpp.o: source/app/acme/primitive/string/x.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/implement.cpp.o: source/app/acme/primitive/string/x/x_charcategory.h
@@ -2028,6 +2030,7 @@ source/console/application_build_helper/CMakeFiles/_console_application_build_he
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/package.cpp.o: source/app/acme/primitive/string/__c_wd32_impl.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/package.cpp.o: source/app/acme/primitive/string/__c_wide.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/package.cpp.o: source/app/acme/primitive/string/__c_wide_impl.h
+source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/package.cpp.o: source/app/acme/primitive/string/__string.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/package.cpp.o: source/app/acme/primitive/string/_base.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/package.cpp.o: source/app/acme/primitive/string/_base_impl.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/package.cpp.o: source/app/acme/primitive/string/_c.h
@@ -2048,7 +2051,6 @@ source/console/application_build_helper/CMakeFiles/_console_application_build_he
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/package.cpp.o: source/app/acme/primitive/string/_compare.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/package.cpp.o: source/app/acme/primitive/string/_compare_impl.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/package.cpp.o: source/app/acme/primitive/string/_conv.h
-source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/package.cpp.o: source/app/acme/primitive/string/_conv_ansi.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/package.cpp.o: source/app/acme/primitive/string/_conv_ansi_impl.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/package.cpp.o: source/app/acme/primitive/string/_defer.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/package.cpp.o: source/app/acme/primitive/string/_impl.h
@@ -2081,6 +2083,7 @@ source/console/application_build_helper/CMakeFiles/_console_application_build_he
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/package.cpp.o: source/app/acme/primitive/string/stringtow.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/package.cpp.o: source/app/acme/primitive/string/sz.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/package.cpp.o: source/app/acme/primitive/string/to_integer.h
+source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/package.cpp.o: source/app/acme/primitive/string/to_string.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/package.cpp.o: source/app/acme/primitive/string/tokenizer.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/package.cpp.o: source/app/acme/primitive/string/x.h
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/package.cpp.o: source/app/acme/primitive/string/x/x_charcategory.h

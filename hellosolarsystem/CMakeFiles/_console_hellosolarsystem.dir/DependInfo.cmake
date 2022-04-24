@@ -10,6 +10,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX
+  "DESKTOP_ENVIRONMENT_GNOME"
   "RASPBIAN"
   "UNICODE"
   "WITH_X11"
@@ -36,6 +37,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "source/console/hellosolarsystem/../.."
   "source/console/hellosolarsystem/.."
   "source/console/hellosolarsystem"
+  "source/console/hellosolarsystem/folder_zip"
   )
 
 # Targets to which this target links.
