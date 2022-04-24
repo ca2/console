@@ -18,7 +18,9 @@ elseif(FREEBSD)
     add_dependencies(_console_hellosolarsystem acme_freebsd apex_freebsd)
 endif()
 
+
 add_dependencies(_console_hellosolarsystem crypto_openssl)
+
 
 target_link_libraries(_console_hellosolarsystem PRIVATE acme apex)
 
@@ -26,10 +28,10 @@ target_link_libraries(_console_hellosolarsystem PRIVATE acme apex)
 list(APPEND library_include_directories ${CMAKE_CURRENT_SOURCE_DIR}/../..)
 list(APPEND library_include_directories ${CMAKE_CURRENT_SOURCE_DIR}/..)
 list(APPEND library_include_directories ${CMAKE_CURRENT_SOURCE_DIR})
+list(APPEND library_include_directories folder_zip)
 
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${library_include_directories})
-
 
 
 target_compile_definitions(_console_hellosolarsystem PRIVATE _CONSOLE_HELLOSOLARSYSTEM_LIBRARY)
