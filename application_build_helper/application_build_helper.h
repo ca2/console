@@ -61,11 +61,7 @@ public:
 
    void prepare_application();
 
-#if defined(FREEBSD) || defined(LINUX)
-
-   void create_matter_object();
-
-#endif
+   void create_linux_matter_object();
 
    void create_package_list();
 

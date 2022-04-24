@@ -1007,10 +1007,10 @@ void application_build_helper::zip_matter()
 
 
 
-#if defined(FREEBSD) || defined(LINUX)
+//#if defined(FREEBSD) || defined(LINUX)
 
 
-void application_build_helper::create_matter_object()
+void application_build_helper::create_linux_matter_object()
 {
 
    //::file::path pathFolder = strFolder;
@@ -1057,15 +1057,25 @@ void application_build_helper::create_matter_object()
 
    int iExitCode = 0;
 
-#if defined(LINUX)
+#if defined(FREEBSD)
 
-   //estatus =
-   //
-   command_system(strOutput, strError, iExitCode, "ld -r -b binary -o " + pathMatterZipO + " _matter.zip", e_command_system_inline_log);
+   command_system(strOutput, strError, iExitCode, "ld -r -b binary -o " + pathMatterZipO + " -m elf_amd64_fbsd -z noexecstack _matter.zip", e_command_system_inline_log);
 
 #else
 
-   estatus = command_system(strOutput, strError, iExitCode, "ld -r -b binary -o " + pathMatterZipO + " -m elf_amd64_fbsd -z noexecstack _matter.zip", e_command_system_inline_log);
+   //estatus =
+   //
+
+   string strCommand = "ld -r -b binary -o " + pathMatterZipO + " _matter.zip";
+
+   command_system(strOutput, strError, iExitCode, strCommand, e_command_system_inline_log);
+
+   if (iExitCode != 0)
+   {
+
+      fprintf(stderr, "Command failed: %s\n%s", strCommand.c_str(), strError.c_str());
+
+   }
 
 #endif
 
@@ -1081,7 +1091,7 @@ void application_build_helper::create_matter_object()
 }
 
 
-#endif
+//#endif
 
 
 void implement(class ::system* psystem)
@@ -1599,13 +1609,24 @@ void application_build_helper::prepare_application()
 
    }
 
+   int iCreateLinuxMatterObject = string(getenv("DISTRO")) == "raspbian";
+
 #if defined(FREEBSD) || defined(LINUX)
+   iCreateLinuxMatterObject = 1;
+#endif
 
-   //create_matter_object(psystem, pathFolder);
+   if (iCreateLinuxMatterObject)
+   {
 
-   //estatus =
-   //
-   create_matter_object();
+      //create_matter_object(psystem, pathFolder);
+
+      //estatus =
+      //
+      create_linux_matter_object();
+
+   }
+
+//#endif
 
 //   if(!estatus)
 //   {
@@ -1616,7 +1637,7 @@ void application_build_helper::prepare_application()
 //
 //   }
 
-#endif
+//#endif
 
 
    //return estatus;
