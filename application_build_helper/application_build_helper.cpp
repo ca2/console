@@ -89,6 +89,12 @@ void application_build_helper::set_package_folder(const ::file::path& pathFolder
 
    m_strSlashedOperatingSystem = "windows";
 
+#elif defined(FREEBSD)
+
+   m_strOperatingSystem2 = "freebsd";
+
+   m_strSlashedOperatingSystem = "freebsd";
+
 #elif defined(MACOS)
 
    m_strOperatingSystem2 = "macos";
