@@ -61,7 +61,7 @@
       </MacroExpansion>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "/Users/camilo/solution/RedDotLogics/source/RedDotLogics/PixelPerfectLEDPro"
+            argument = "/Users/camilo/solution/RedDotLogics/source/RedDotLogics/PixelPerfectPro"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
