@@ -70,7 +70,7 @@ void implement(class ::system * psystem)
 
    printf("Test123=%s\n", strTest123.c_str());
 
-   ::::str::ch().begins_eat_ci(strTest123, "test");
+   ::str().begins_eat_ci(strTest123, "test");
 
    printf("begins_eat_ci(strTest123, \"test\")=%s\n", strTest123.c_str());
 
