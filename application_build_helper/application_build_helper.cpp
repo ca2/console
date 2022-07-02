@@ -67,7 +67,7 @@ void application_build_helper::set_package_folder(const ::file::path& pathFolder
 
       m_strItem = pathIterator.name();
 
-      pathIterator.go_up();
+      pathIterator.ascend();
 
       m_strRoot = pathIterator.name();
 

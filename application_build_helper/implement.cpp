@@ -274,7 +274,7 @@ string application_build_helper::defer_translate_application_name(string strDepe
 
       string strItem = path.name();
 
-      path.go_up();
+      path.ascend();
 
       string strRoot = path.name();
 
