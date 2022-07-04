@@ -983,25 +983,18 @@ void application_build_helper::zip_matter()
 
 #endif
 
-//
-//   string strOutput;
-//
-//   string strError;
-//
-//   int iExitCode = 0;
+   {
 
-   //estatus = 
-   
-   //command_system(strOutput, strError, iExitCode, strZipExe + " -r \"" + pathZip + "\" sensitive/sensitive/api/*", e_command_system_inline_log);
+   string strOutput;
 
-   //if(!estatus)
-   //{
+   string strError;
 
-   //   return estatus;
+   int iExitCode = 0;
 
-   //}
-
-   //return estatus;
+   command_system(strOutput, strError, iExitCode, strZipExe + " -r \"" + pathZip + "\" sensitive/sensitive/api/*", e_command_system_inline_log);
+      
+      
+   }
 
 }
 
