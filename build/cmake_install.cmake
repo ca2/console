@@ -1,4 +1,4 @@
-# Install script for directory: /home/camilo/solution/basis/source/console/readlines
+# Install script for directory: /home/camilo/solution/basis/source/console/build
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

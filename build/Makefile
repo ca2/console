@@ -99,14 +99,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/camilo/solution/basis && $(CMAKE_COMMAND) -E cmake_progress_start /home/camilo/solution/basis/CMakeFiles /home/camilo/solution/basis/source/console/hello//CMakeFiles/progress.marks
-	cd /home/camilo/solution/basis && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 source/console/hello/all
+	cd /home/camilo/solution/basis && $(CMAKE_COMMAND) -E cmake_progress_start /home/camilo/solution/basis/CMakeFiles /home/camilo/solution/basis/source/console/build//CMakeFiles/progress.marks
+	cd /home/camilo/solution/basis && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 source/console/build/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/camilo/solution/basis/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/camilo/solution/basis && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 source/console/hello/clean
+	cd /home/camilo/solution/basis && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 source/console/build/clean
 .PHONY : clean
 
 # The main clean target
@@ -116,12 +116,12 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/camilo/solution/basis && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 source/console/hello/preinstall
+	cd /home/camilo/solution/basis && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 source/console/build/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/camilo/solution/basis && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 source/console/hello/preinstall
+	cd /home/camilo/solution/basis && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 source/console/build/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
@@ -130,46 +130,46 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-source/console/hello/CMakeFiles/_console_hello.dir/rule:
-	cd /home/camilo/solution/basis && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 source/console/hello/CMakeFiles/_console_hello.dir/rule
-.PHONY : source/console/hello/CMakeFiles/_console_hello.dir/rule
+source/console/build/CMakeFiles/_console_build.dir/rule:
+	cd /home/camilo/solution/basis && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 source/console/build/CMakeFiles/_console_build.dir/rule
+.PHONY : source/console/build/CMakeFiles/_console_build.dir/rule
 
 # Convenience name for target.
-_console_hello: source/console/hello/CMakeFiles/_console_hello.dir/rule
+_console_build: source/console/build/CMakeFiles/_console_build.dir/rule
 
-.PHONY : _console_hello
+.PHONY : _console_build
 
 # fast build rule for target.
-_console_hello/fast:
-	cd /home/camilo/solution/basis && $(MAKE) $(MAKESILENT) -f source/console/hello/CMakeFiles/_console_hello.dir/build.make source/console/hello/CMakeFiles/_console_hello.dir/build
-.PHONY : _console_hello/fast
+_console_build/fast:
+	cd /home/camilo/solution/basis && $(MAKE) $(MAKESILENT) -f source/console/build/CMakeFiles/_console_build.dir/build.make source/console/build/CMakeFiles/_console_build.dir/build
+.PHONY : _console_build/fast
 
-main.o: main.cpp.o
+build.o: build.cpp.o
 
-.PHONY : main.o
+.PHONY : build.o
 
 # target to build an object file
-main.cpp.o:
-	cd /home/camilo/solution/basis && $(MAKE) $(MAKESILENT) -f source/console/hello/CMakeFiles/_console_hello.dir/build.make source/console/hello/CMakeFiles/_console_hello.dir/main.cpp.o
-.PHONY : main.cpp.o
+build.cpp.o:
+	cd /home/camilo/solution/basis && $(MAKE) $(MAKESILENT) -f source/console/build/CMakeFiles/_console_build.dir/build.make source/console/build/CMakeFiles/_console_build.dir/build.cpp.o
+.PHONY : build.cpp.o
 
-main.i: main.cpp.i
+build.i: build.cpp.i
 
-.PHONY : main.i
+.PHONY : build.i
 
 # target to preprocess a source file
-main.cpp.i:
-	cd /home/camilo/solution/basis && $(MAKE) $(MAKESILENT) -f source/console/hello/CMakeFiles/_console_hello.dir/build.make source/console/hello/CMakeFiles/_console_hello.dir/main.cpp.i
-.PHONY : main.cpp.i
+build.cpp.i:
+	cd /home/camilo/solution/basis && $(MAKE) $(MAKESILENT) -f source/console/build/CMakeFiles/_console_build.dir/build.make source/console/build/CMakeFiles/_console_build.dir/build.cpp.i
+.PHONY : build.cpp.i
 
-main.s: main.cpp.s
+build.s: build.cpp.s
 
-.PHONY : main.s
+.PHONY : build.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	cd /home/camilo/solution/basis && $(MAKE) $(MAKESILENT) -f source/console/hello/CMakeFiles/_console_hello.dir/build.make source/console/hello/CMakeFiles/_console_hello.dir/main.cpp.s
-.PHONY : main.cpp.s
+build.cpp.s:
+	cd /home/camilo/solution/basis && $(MAKE) $(MAKESILENT) -f source/console/build/CMakeFiles/_console_build.dir/build.make source/console/build/CMakeFiles/_console_build.dir/build.cpp.s
+.PHONY : build.cpp.s
 
 # Help Target
 help:
@@ -179,10 +179,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... _console_hello"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... _console_build"
+	@echo "... build.o"
+	@echo "... build.i"
+	@echo "... build.s"
 .PHONY : help
 
 

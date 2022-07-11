@@ -67,10 +67,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/solution/basis
+CMAKE_SOURCE_DIR = /home/camilo/solution/basis
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/solution/basis
+CMAKE_BINARY_DIR = /home/camilo/solution/basis
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,14 +99,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/pi/solution/basis && $(CMAKE_COMMAND) -E cmake_progress_start /home/pi/solution/basis/CMakeFiles /home/pi/solution/basis/source/console/application_build_helper//CMakeFiles/progress.marks
-	cd /home/pi/solution/basis && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 source/console/application_build_helper/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/solution/basis/CMakeFiles 0
+	cd /home/camilo/solution/basis && $(CMAKE_COMMAND) -E cmake_progress_start /home/camilo/solution/basis/CMakeFiles /home/camilo/solution/basis/source/console/application_build_helper//CMakeFiles/progress.marks
+	cd /home/camilo/solution/basis && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 source/console/application_build_helper/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/camilo/solution/basis/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/pi/solution/basis && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 source/console/application_build_helper/clean
+	cd /home/camilo/solution/basis && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 source/console/application_build_helper/clean
 .PHONY : clean
 
 # The main clean target
@@ -116,22 +116,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/pi/solution/basis && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 source/console/application_build_helper/preinstall
+	cd /home/camilo/solution/basis && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 source/console/application_build_helper/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/pi/solution/basis && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 source/console/application_build_helper/preinstall
+	cd /home/camilo/solution/basis && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 source/console/application_build_helper/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/pi/solution/basis && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/camilo/solution/basis && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/rule:
-	cd /home/pi/solution/basis && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/rule
+	cd /home/camilo/solution/basis && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/rule
 .PHONY : source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/rule
 
 # Convenience name for target.
@@ -141,7 +141,7 @@ _console_application_build_helper: source/console/application_build_helper/CMake
 
 # fast build rule for target.
 _console_application_build_helper/fast:
-	cd /home/pi/solution/basis && $(MAKE) $(MAKESILENT) -f source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/build.make source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/build
+	cd /home/camilo/solution/basis && $(MAKE) $(MAKESILENT) -f source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/build.make source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/build
 .PHONY : _console_application_build_helper/fast
 
 application_build_helper.o: application_build_helper.cpp.o
@@ -150,7 +150,7 @@ application_build_helper.o: application_build_helper.cpp.o
 
 # target to build an object file
 application_build_helper.cpp.o:
-	cd /home/pi/solution/basis && $(MAKE) $(MAKESILENT) -f source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/build.make source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/application_build_helper.cpp.o
+	cd /home/camilo/solution/basis && $(MAKE) $(MAKESILENT) -f source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/build.make source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/application_build_helper.cpp.o
 .PHONY : application_build_helper.cpp.o
 
 application_build_helper.i: application_build_helper.cpp.i
@@ -159,7 +159,7 @@ application_build_helper.i: application_build_helper.cpp.i
 
 # target to preprocess a source file
 application_build_helper.cpp.i:
-	cd /home/pi/solution/basis && $(MAKE) $(MAKESILENT) -f source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/build.make source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/application_build_helper.cpp.i
+	cd /home/camilo/solution/basis && $(MAKE) $(MAKESILENT) -f source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/build.make source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/application_build_helper.cpp.i
 .PHONY : application_build_helper.cpp.i
 
 application_build_helper.s: application_build_helper.cpp.s
@@ -168,7 +168,7 @@ application_build_helper.s: application_build_helper.cpp.s
 
 # target to generate assembly for a file
 application_build_helper.cpp.s:
-	cd /home/pi/solution/basis && $(MAKE) $(MAKESILENT) -f source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/build.make source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/application_build_helper.cpp.s
+	cd /home/camilo/solution/basis && $(MAKE) $(MAKESILENT) -f source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/build.make source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/application_build_helper.cpp.s
 .PHONY : application_build_helper.cpp.s
 
 implement.o: implement.cpp.o
@@ -177,7 +177,7 @@ implement.o: implement.cpp.o
 
 # target to build an object file
 implement.cpp.o:
-	cd /home/pi/solution/basis && $(MAKE) $(MAKESILENT) -f source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/build.make source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/implement.cpp.o
+	cd /home/camilo/solution/basis && $(MAKE) $(MAKESILENT) -f source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/build.make source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/implement.cpp.o
 .PHONY : implement.cpp.o
 
 implement.i: implement.cpp.i
@@ -186,7 +186,7 @@ implement.i: implement.cpp.i
 
 # target to preprocess a source file
 implement.cpp.i:
-	cd /home/pi/solution/basis && $(MAKE) $(MAKESILENT) -f source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/build.make source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/implement.cpp.i
+	cd /home/camilo/solution/basis && $(MAKE) $(MAKESILENT) -f source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/build.make source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/implement.cpp.i
 .PHONY : implement.cpp.i
 
 implement.s: implement.cpp.s
@@ -195,7 +195,7 @@ implement.s: implement.cpp.s
 
 # target to generate assembly for a file
 implement.cpp.s:
-	cd /home/pi/solution/basis && $(MAKE) $(MAKESILENT) -f source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/build.make source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/implement.cpp.s
+	cd /home/camilo/solution/basis && $(MAKE) $(MAKESILENT) -f source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/build.make source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/implement.cpp.s
 .PHONY : implement.cpp.s
 
 package.o: package.cpp.o
@@ -204,7 +204,7 @@ package.o: package.cpp.o
 
 # target to build an object file
 package.cpp.o:
-	cd /home/pi/solution/basis && $(MAKE) $(MAKESILENT) -f source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/build.make source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/package.cpp.o
+	cd /home/camilo/solution/basis && $(MAKE) $(MAKESILENT) -f source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/build.make source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/package.cpp.o
 .PHONY : package.cpp.o
 
 package.i: package.cpp.i
@@ -213,7 +213,7 @@ package.i: package.cpp.i
 
 # target to preprocess a source file
 package.cpp.i:
-	cd /home/pi/solution/basis && $(MAKE) $(MAKESILENT) -f source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/build.make source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/package.cpp.i
+	cd /home/camilo/solution/basis && $(MAKE) $(MAKESILENT) -f source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/build.make source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/package.cpp.i
 .PHONY : package.cpp.i
 
 package.s: package.cpp.s
@@ -222,7 +222,7 @@ package.s: package.cpp.s
 
 # target to generate assembly for a file
 package.cpp.s:
-	cd /home/pi/solution/basis && $(MAKE) $(MAKESILENT) -f source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/build.make source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/package.cpp.s
+	cd /home/camilo/solution/basis && $(MAKE) $(MAKESILENT) -f source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/build.make source/console/application_build_helper/CMakeFiles/_console_application_build_helper.dir/package.cpp.s
 .PHONY : package.cpp.s
 
 # Help Target
@@ -254,6 +254,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/pi/solution/basis && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/camilo/solution/basis && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
