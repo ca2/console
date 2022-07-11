@@ -12,6 +12,7 @@
 #include "acme/console.h"
 #undef new
 #include "memoriesdota@twitch-projects.cpp"
+#include "korishama.polymorphism@twitch-projects.cpp"
 
 //template<typename T>
 //inline const auto oddProduct(T n)  noexcept
@@ -225,16 +226,23 @@ void implement(class ::system * psystem)
    printf("\n");
 
    ::std::cout << "1. for run memories dota program:" << ::std::endl;
+   ::std::cout << "2. korishama polymorphism programs" << ::std::endl;
    ::std::cout << "other number to resume" << ::std::endl;
    int i;
    ::std::cin >> i;
 
-   if (i == 1)
-   {
+      if (i == 1)
+      {
 
-      file_count_program();
+         file_count_program();
 
-   }
+      }
+      else if (i == 2)
+      {
+
+         korishama_polymorphism_program();
+
+      }
 
    while (true)
    {

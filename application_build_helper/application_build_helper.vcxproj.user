@@ -18,9 +18,9 @@
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='basis|x64'">
-    <LocalDebuggerCommandArguments>C:\stage\source\game\csgomatchmaking\ game_csgomatchmaking</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>C:\stage\source\app-simple\networking_application\ app_simple_networking_application</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
-    <LocalDebuggerWorkingDirectory>C:\stage\source\game\csgomatchmaking</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerWorkingDirectory>C:\stage\source\app-simple\networking_application</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='cube_basis|x64'">
     <LocalDebuggerCommandArguments>C:\stage\source\app-veriwell\waven</LocalDebuggerCommandArguments>
