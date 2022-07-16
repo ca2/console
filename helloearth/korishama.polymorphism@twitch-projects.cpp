@@ -111,7 +111,7 @@ public:
 
    }
 
-   virtual double get_perimeter()
+   double get_perimeter() override
    {
 
 
@@ -144,7 +144,7 @@ public:
 
    }
 
-   virtual double get_perimeter()
+   double get_perimeter() override
    {
 
 
