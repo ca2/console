@@ -57,6 +57,8 @@ void application_build_helper::set_package_folder(const ::file::path& pathFolder
 
    m_pathBaseDir = pathFolder - 3;
 
+   m_pathGroup = pathFolder - 2;
+
    m_pathOperatingSystem = m_pathBaseDir / "operating-system";
 
    m_pathSource = m_pathBaseDir / "source";

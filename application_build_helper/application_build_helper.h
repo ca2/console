@@ -30,6 +30,7 @@ public:
    string_array                  m_straIgnorePackage;
 
    ::file::path                  m_pathBaseDir;
+   ::file::path                  m_pathGroup;
    ::file::path                  m_pathFolder;
    ::file::path                  m_pathOperatingSystem;
    ::file::path                  m_pathSource;

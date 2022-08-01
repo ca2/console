@@ -11,6 +11,38 @@
 void application_build_helper::prepare_project()
 {
 
+   auto straIgnoreRoot = m_psystem->m_pacmefile->lines(m_pathGroup / ".deployignore");
+
+   if (straIgnoreRoot.contains_ci(m_strRoot))
+   {
+
+      return;
+
+   }
+
+   auto straIgnoreItem = m_psystem->m_pacmefile->lines(m_pathGroup / m_strRoot / ".deployignore");
+
+   if (straIgnoreItem.contains_ci(m_strItem))
+   {
+
+      return;
+
+   }
+
+   if (m_strItem.compare_ci("include") == 0)
+   {
+
+      return;
+
+   }
+
+   if (m_strItem.begins("_"))
+   {
+
+      return;
+
+   }
+
    generate_deployment_rc();
 
    if (m_strItem.compare_ci("deployment") != 0)
