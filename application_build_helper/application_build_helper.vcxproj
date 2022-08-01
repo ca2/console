@@ -963,6 +963,7 @@ copy /y $(TargetPath) "C:\operating-system\tool-windows\bin\application_build_he
     <ClCompile Include="application_build_helper.cpp" />
     <ClCompile Include="implement.cpp" />
     <ClCompile Include="package.cpp" />
+    <ClCompile Include="prepare_project.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\operating-system\operating-system-windows\acme_windows\acme_windows.vcxproj">

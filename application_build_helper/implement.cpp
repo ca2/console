@@ -223,6 +223,8 @@ void application_build_helper::generate__main()
 }
 
 
+
+
 //void command_system(const char* psz)
 //{
 //
@@ -1141,6 +1143,16 @@ void implement(class ::system* psystem)
          //}
 
       }
+      else if (strArgument1.compare_ci("-prepare_project") == 0)
+      {
+
+         printf("application_build_helper -prepare_project %s\n", strArgument2.c_str());
+
+         helper.set_package_folder(strArgument2);
+
+         helper.prepare_project();
+
+      }
 
    }
    
@@ -1448,6 +1460,11 @@ void application_build_helper::prepare_application()
    //estatus = 
    
    generate__main();
+
+
+   //generate_deployment_rc();
+
+
 
    //if(!estatus)
    //{

@@ -86,6 +86,10 @@ public:
    void zip_matter();
 
 
+   void prepare_project();
+   void generate_deployment_rc();
+
+
    void translate_items(const ::string& strFileDst, const ::string& strFileSrc);
    //void static_factory(const ::string& strFileDst, const ::string & strFileFactory, const ::string& strFileSrc);
    void static_factory(const ::string & strFileDst, const ::string & strFileSrc);
