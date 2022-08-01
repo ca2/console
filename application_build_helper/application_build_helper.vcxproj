@@ -957,7 +957,7 @@ copy /y $(TargetPath) "C:\operating-system\tool-windows\bin\application_build_he
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ResourceCompile Include="..\..\..\operating-system\operating-system-windows\deployment\deployment.rc" />
+    <ResourceCompile Include="deployment.rc" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="application_build_helper.cpp" />
