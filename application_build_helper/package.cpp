@@ -28,7 +28,7 @@ void application_build_helper::package()
 
    pathZip = "/store/" + m_strSlashedOperatingSystem + "/" + m_strUnderscoreAppId + ".zip";
 
-   pathOutput = m_pathOutput + "/output";
+   pathOutput = m_pathOutput + "/cmake-build-stage/output";
 
 #endif
 
