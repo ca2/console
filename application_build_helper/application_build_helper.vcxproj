@@ -992,7 +992,6 @@ copy /y $(TargetPath) "C:\operating-system\tool-windows\bin\application_build_he
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
     <None Include="_main.inl" />
     <None Include="_static_factory.inl" />
   </ItemGroup>

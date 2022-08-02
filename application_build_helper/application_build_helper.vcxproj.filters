@@ -12,9 +12,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="deployment.rc" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="application_build_helper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -29,11 +26,12 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
     <None Include="_static_factory.inl">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="_main.inl" />
+    <None Include="_main.inl">
+      <Filter>Header Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="_.h">
@@ -48,5 +46,10 @@
     <ClInclude Include="_factory.cpp">
       <Filter>Source Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="deployment.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

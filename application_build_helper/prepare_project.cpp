@@ -11,7 +11,9 @@
 void application_build_helper::prepare_project()
 {
 
-   auto straIgnoreRoot = m_psystem->m_pacmefile->lines(m_pathGroup / ".deployignore");
+   auto pathBaseDeployIgnore = m_pathGroup / ".deployignore";
+
+   auto straIgnoreRoot = m_psystem->m_pacmefile->lines(pathBaseDeployIgnore);
 
    if (straIgnoreRoot.contains_ci(m_strRoot))
    {
@@ -20,7 +22,9 @@ void application_build_helper::prepare_project()
 
    }
 
-   auto straIgnoreItem = m_psystem->m_pacmefile->lines(m_pathGroup / m_strRoot / ".deployignore");
+   auto pathRootDeployIgnore = m_pathGroup / m_strRoot / ".deployignore";
+
+   auto straIgnoreItem = m_psystem->m_pacmefile->lines(pathRootDeployIgnore);
 
    if (straIgnoreItem.contains_ci(m_strItem))
    {

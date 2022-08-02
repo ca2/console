@@ -23,7 +23,7 @@
     <LocalDebuggerWorkingDirectory>C:\stage\source\app-simple\networking_application</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='cube_basis|x64'">
-    <LocalDebuggerCommandArguments>C:\stage\source\app-veriwell\waven</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>-prepare_project "C:\stage\source\port\assimp"</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
     <LocalDebuggerWorkingDirectory>C:\stage</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
@@ -33,8 +33,11 @@
     <LocalDebuggerWorkingDirectory>C:\Users\camilo</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='cube_stage|x64'">
-    <LocalDebuggerCommandArguments>"C:\basis\source\app\apex" "apex"</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>-prepare_project "C:\stage\source\port\assimp"</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
     <LocalDebuggerWorkingDirectory>$(OutDir)</LocalDebuggerWorkingDirectory>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ShowAllFiles>false</ShowAllFiles>
   </PropertyGroup>
 </Project>
