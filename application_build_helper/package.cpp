@@ -42,18 +42,7 @@ void application_build_helper::package()
 
    stra.add_lines(strInput, false);
 
-   //auto estatus = 
-   
    m_psystem->m_pacmedirectory->change_current(pathOutput);
-
-   //if(!estatus)
-   //{
-
-   //   fprintf(stderr, "Fatal: Current current directory to: %s (%" PRIestatus ")\n", pathOutput.c_str(), estatus.m_estatus);
-
-   //   return estatus;
-
-   //}
 
    ::file::path pathZipExe;
 
@@ -105,8 +94,6 @@ void application_build_helper::package()
 
                   ::file::path pathItem = pathOutput / strName;
 
-                  //estatus = 
-                  
                   if(!m_psystem->m_pacmefile->exists(pathItem))
                   {
 
@@ -145,8 +132,6 @@ void application_build_helper::package()
 
                ::file::path pathItem = pathOutput / strName;
 
-               //estatus = 
-
                if(!m_psystem->m_pacmefile->exists(pathItem))
                {
 
@@ -156,13 +141,7 @@ void application_build_helper::package()
 
                }
 
-               /// string strCommand = strZipExe + " \"" + pathZip + "\" \"" + strName + "\"";
-
                strCmd += " \"" + strName + "\"";
-
-               //int iExitCode = 0;
-
-               //auto estatus = command_system(iExitCode, strCommand);
 
             }
 
@@ -174,24 +153,20 @@ void application_build_helper::package()
 
    printf("%s", strCmd.c_str());
 
-   string strOutput;
-
-   string strError;
-
    int iExitCode = 0;
 
-   //estatus = 
+   string_array straOutput;
    
-   command_system(strOutput, strError, iExitCode, strCmd, e_command_system_inline_log);
+   command_system(straOutput, iExitCode, strCmd, e_command_system_inline_log);
 
-   if (strError.trimmed().has_char())
+   string strOutput = straOutput.implode("\n");
+
+   if (strOutput.has_char())
    {
 
-      fprintf(stderr, "%s\n", strError.c_str());
+      fprintf(stderr, "%s\n", strOutput.c_str());
 
    }
-
-   //return estatus;
 
 }
 
