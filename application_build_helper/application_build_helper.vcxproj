@@ -957,12 +957,13 @@ copy /y $(TargetPath) "C:\operating-system\tool-windows\bin\application_build_he
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ResourceCompile Include="..\..\..\operating-system\operating-system-windows\version.rc" />
+    <ResourceCompile Include="deployment.rc" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="application_build_helper.cpp" />
     <ClCompile Include="implement.cpp" />
     <ClCompile Include="package.cpp" />
+    <ClCompile Include="prepare_project.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\operating-system\operating-system-windows\acme_windows\acme_windows.vcxproj">
@@ -991,7 +992,6 @@ copy /y $(TargetPath) "C:\operating-system\tool-windows\bin\application_build_he
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
     <None Include="_main.inl" />
     <None Include="_static_factory.inl" />
   </ItemGroup>

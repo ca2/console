@@ -30,6 +30,7 @@ public:
    string_array                  m_straIgnorePackage;
 
    ::file::path                  m_pathBaseDir;
+   ::file::path                  m_pathGroup;
    ::file::path                  m_pathFolder;
    ::file::path                  m_pathOperatingSystem;
    ::file::path                  m_pathSource;
@@ -84,6 +85,10 @@ public:
    void generate__main();
    void defer_matter();
    void zip_matter();
+
+
+   void prepare_project();
+   void generate_deployment_rc();
 
 
    void translate_items(const ::string& strFileDst, const ::string& strFileSrc);
