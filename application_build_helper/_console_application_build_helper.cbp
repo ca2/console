@@ -112,6 +112,9 @@
 		<Unit filename="/home/camilo/solution/stage/source/console/application_build_helper/package.cpp">
 			<Option target="_console_application_build_helper"/>
 		</Unit>
+		<Unit filename="/home/camilo/solution/stage/source/console/application_build_helper/prepare_project.cpp">
+			<Option target="_console_application_build_helper"/>
+		</Unit>
 		<Unit filename="/home/camilo/solution/stage/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
