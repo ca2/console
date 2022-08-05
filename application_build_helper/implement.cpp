@@ -913,7 +913,7 @@ void application_build_helper::create_linux_matter_object()
    if (iExitCode != 0)
    {
 
-      fprintf(stderr, "Command failed: %s\n%s", straOutput.implode("\n").c_str());
+      fprintf(stderr, "Command failed: %s\n", straOutput.implode("\n").c_str());
 
    }
 
