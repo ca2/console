@@ -145,7 +145,7 @@ void application_build_helper::set_package_folder(const ::file::path& pathFolder
 //void application_build_helper::load_application_list()
 //{
 //
-//   auto pathApplicationMatterList = m_pathBaseDir / "application_matter_list.txt";
+//   auto pathApplicationMatterList = m_pathBaseDir / "application_list.txt";
 //
 //   string_array straApplications;
 //
@@ -156,7 +156,7 @@ void application_build_helper::set_package_folder(const ::file::path& pathFolder
 //   for (string& strPath : straApplications)
 //   {
 //
-//      strPath.ends_eat_ci("application_matter.txt");
+//      strPath.ends_eat_ci("application.txt");
 //
 //      ::file::path path = strPath;
 //

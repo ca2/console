@@ -221,7 +221,7 @@ void application_build_helper::generate__main()
 string application_build_helper::defer_translate_application_name(string strDependency)
 {
 
-   ::file::path pathApplicationMatter = m_pathSource / strDependency / "application_matter.txt";
+   ::file::path pathApplicationMatter = m_pathSource / strDependency / "application.txt";
 
    auto estatus =m_psystem->m_pacmefile->exists(pathApplicationMatter);
 
@@ -230,7 +230,7 @@ string application_build_helper::defer_translate_application_name(string strDepe
 
       string strPath = pathApplicationMatter;
 
-      strPath.ends_eat_ci("application_matter.txt");
+      strPath.ends_eat_ci("application.txt");
 
       ::file::path path = strPath;
 

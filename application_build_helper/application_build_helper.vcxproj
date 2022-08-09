@@ -952,8 +952,7 @@ copy $(TargetPath) "C:\operating-system\tool-windows\bin\application_build_helpe
       </Inputs>
     </CustomBuildStep>
     <PostBuildEvent>
-      <Command>copy /y $(TargetPath) "$(SolutionDir)..\..\..\operating-system\tool-windows\bin\application_build_helper.exe"
-copy /y $(TargetPath) "C:\operating-system\tool-windows\bin\application_build_helper.exe"</Command>
+      <Command>copy /y $(TargetPath) "$(SolutionDir)..\..\..\operating-system\tool-windows\bin\application_build_helper.exe"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
