@@ -6,6 +6,7 @@
 #endif
 #include "acme/filesystem/filesystem/acme_directory.h"
 #include "acme/filesystem/filesystem/acme_file.h"
+#include "aura/_defer.h"
 
 
 void application_build_helper::prepare_project()
