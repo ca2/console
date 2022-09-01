@@ -955,11 +955,30 @@ void implement(class ::system* psystem)
       else if (strArgument1.compare_ci("-prepare_project") == 0)
       {
 
-         printf("application_build_helper -prepare_project %s\n", strArgument2.c_str());
+         //printf("application_build_helper -prepare_project %s\n", strArgument2.c_str());
 
          helper.set_package_folder(strArgument2);
 
          helper.prepare_project();
+
+      }
+      else if (strArgument1.compare_ci("-prepare_projects") == 0)
+      {
+
+         //printf("application_build_helper -prepare_project %s\n", strArgument2.c_str());
+
+         auto straProjects = psystem->m_pacmefile->lines(strArgument2);
+
+         for (auto & strProject : straProjects)
+         {
+
+            printf("%s\n", strProject.c_str());
+
+            helper.set_package_folder(strProject);
+
+            helper.prepare_project();
+
+         }
 
       }
 
