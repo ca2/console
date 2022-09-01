@@ -951,6 +951,8 @@ void implement(class ::system* psystem)
 
          helper.package();
 
+         return;
+
       }
       else if (strArgument1.compare_ci("-prepare_project") == 0)
       {
@@ -960,6 +962,8 @@ void implement(class ::system* psystem)
          helper.set_package_folder(strArgument2);
 
          helper.prepare_project();
+
+         return;
 
       }
       else if (strArgument1.compare_ci("-prepare_projects") == 0)
@@ -980,8 +984,10 @@ void implement(class ::system* psystem)
 
          }
 
-      }
+         return;
 
+      }
+      
    }
    
    if (psystem->get_argument_count1() == 3)
@@ -1006,6 +1012,8 @@ void implement(class ::system* psystem)
 
          helper.package();
 
+         return;
+
       }
       else if(strArgument1.compare_ci("zip_matter") == 0)
       {
@@ -1016,6 +1024,8 @@ void implement(class ::system* psystem)
 
          helper.zip_matter();
 
+         return;
+
       }
 
    }
@@ -1024,7 +1034,12 @@ void implement(class ::system* psystem)
 
       helper.prepare_application();
 
+      return;
+
    }
+
+
+   printf("Don't know what to do\n");
 
 }
 
