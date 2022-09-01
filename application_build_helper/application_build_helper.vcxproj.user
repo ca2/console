@@ -18,9 +18,9 @@
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='basis|x64'">
-    <LocalDebuggerCommandArguments>C:\stage\source\app-simple\networking_application\ app_simple_networking_application</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>-prepare_projects "project_list.txt"</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
-    <LocalDebuggerWorkingDirectory>C:\stage\source\app-simple\networking_application</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerWorkingDirectory>C:\basis</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='cube_basis|x64'">
     <LocalDebuggerCommandArguments>-prepare_project "C:\stage\source\app-core\netnodefs"</LocalDebuggerCommandArguments>
