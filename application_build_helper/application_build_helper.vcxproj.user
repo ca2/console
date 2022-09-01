@@ -18,9 +18,9 @@
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='basis|x64'">
-    <LocalDebuggerCommandArguments>C:\stage\source\app-simple\networking_application\ app_simple_networking_application</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>-prepare_project "./source/app-core/netnodefs"</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
-    <LocalDebuggerWorkingDirectory>C:\stage\source\app-simple\networking_application</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerWorkingDirectory>C:\basis</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='cube_basis|x64'">
     <LocalDebuggerCommandArguments>-prepare_project "C:\stage\source\app-core\netnodefs"</LocalDebuggerCommandArguments>
@@ -30,12 +30,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='stage|x64'">
     <LocalDebuggerCommandArguments>C:\basis\source\app\folder_zip\ folder_zip</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
-    <LocalDebuggerWorkingDirectory>C:\Users\camilo</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerWorkingDirectory>C:\basis</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='cube_stage|x64'">
-    <LocalDebuggerCommandArguments>-prepare_project "C:\stage\source\app-core\netnodefs"</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>-prepare_project "./source/app-core/netnodefs"</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
-    <LocalDebuggerWorkingDirectory>$(OutDir)</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerWorkingDirectory>C:\basis</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup>
     <ShowAllFiles>false</ShowAllFiles>
