@@ -6,6 +6,7 @@
 #endif
 #include "acme/filesystem/filesystem/acme_directory.h"
 #include "acme/filesystem/filesystem/acme_file.h"
+#include "aura/_defer.h"
 
 
 void application_build_helper::prepare_project()
@@ -76,7 +77,7 @@ void application_build_helper::generate_deployment_rc()
    if(m_strItem.compare_ci("deployment") != 0)
    {
 
-      ::file::path pathDeploymentRcTemplate = m_pathOperatingSystem / ("operating-system-" PLATFORM_STRING) / "deployment/deployment.rc";
+      ::file::path pathDeploymentRcTemplate = m_pathOperatingSystem / ("operating-system-" PLATFORM_STRING) / "deployment/deployment_rc.txt";
 
       string strDeploymentRcTemplate = m_psystem->m_pacmefile->as_string(pathDeploymentRcTemplate);
 
