@@ -16,7 +16,7 @@
 #endif
 #include "application_build_helper.h"
 
-void package_windows(class ::system* psystem, const ::file::path& pathFolder);
+void package_windows(::acme::system* psystem, const ::file::path& pathFolder);
 
 
 void application_build_helper::copy_icon_ico()
@@ -920,7 +920,7 @@ void application_build_helper::create_linux_matter_object()
 }
 
 
-void implement(class ::system* psystem)
+void implement(::acme::system* psystem)
 {
 
    //::Sleep(30'000);

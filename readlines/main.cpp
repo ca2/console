@@ -17,7 +17,7 @@
 //#include "xml.cpp"
 
 
-void implement(class ::system * psystem)
+void implement(::acme::system * psystem)
 {
 
    ::file::path path;

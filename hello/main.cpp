@@ -12,7 +12,7 @@
 #include "acme/console.h"
 
 
-void implement(class ::system * psystem)
+void implement(::acme::system * psystem)
 {
 
    //throw ::exception(error_debug_testing);

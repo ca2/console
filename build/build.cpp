@@ -2,7 +2,7 @@
 #include "_main.inl"
 
 
-void implement(class ::system * psystem)
+void implement(::acme::system * psystem)
 {
 
 
@@ -12,7 +12,7 @@ void implement(class ::system * psystem)
 
 #endif
 
-   auto papp = psystem->m_pappStartup;
+   auto papp = psystem->m_pacmeapplicationStartup;
 
    papp->osthread_init();
 
