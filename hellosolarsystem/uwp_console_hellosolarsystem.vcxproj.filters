@@ -51,14 +51,14 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <None Include="hellosolarsystem_TemporaryKey.pfx" />
-    <None Include="..\..\..\..\operating-system\storage-universal_windows\Win32\basis\binary\libcrypto-3.dll">
+    <None Include="..\hellosolarsystem_TemporaryKey.pfx" />
+    <None Include="..\..\..\..\..\operating-system\storage-universal_windows\Win32\basis\binary\libcrypto-3.dll">
       <Filter>Library\Win32\basis</Filter>
     </None>
-    <None Include="..\..\..\..\operating-system\storage-universal_windows\Win32\basis\binary\libssl-3.dll">
+    <None Include="..\..\..\..\..\operating-system\storage-universal_windows\Win32\basis\binary\libssl-3.dll">
       <Filter>Library\Win32\basis</Filter>
     </None>
-    <None Include="..\..\..\..\operating-system\storage-universal_windows\Win32\basis\third\binary\zlib.dll">
+    <None Include="..\..\..\..\..\operating-system\storage-universal_windows\Win32\basis\third\binary\zlib.dll">
       <Filter>Library\Win32\basis</Filter>
     </None>
   </ItemGroup>

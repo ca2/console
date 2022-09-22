@@ -51,8 +51,8 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <None Include="helloearth_TemporaryKey.pfx" />
-    <None Include="..\..\..\..\operating-system\storage-universal_windows\Win32\basis\third\binary\zlib.dll">
+    <None Include="..\helloearth_TemporaryKey.pfx" />
+    <None Include="..\..\..\..\..\operating-system\storage-universal_windows\Win32\basis\third\binary\zlib.dll">
       <Filter>Library\Win32\basis</Filter>
     </None>
   </ItemGroup>
