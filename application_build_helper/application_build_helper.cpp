@@ -484,10 +484,12 @@ void application_build_helper::translate_package_list()
    }
 
 
-   package_reference_array application_build_helper::get_package_list(const ::string& strList, const ::string& strPackage)
+   package_reference_array application_build_helper::get_package_list(const ::string& strList, const ::string& strPackageParam)
    {
 
       ::file::path path;
+
+      ::string strPackage = strPackageParam;
 
       if (strPackage.begins_ci("operating-system-"))
       {
@@ -495,16 +497,12 @@ void application_build_helper::translate_package_list()
          path = m_pathOperatingSystem;
 
       }
-      else if (strPackage.begins_ci("third"))
-      {
-
-         path = m_pathSource / "port";
-
-      }
       else
       {
 
          path = m_pathSource;
+
+         ::str().replace_prefix(strPackage, "port/", "third/");
 
       }
 

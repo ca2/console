@@ -6,6 +6,7 @@
 #include "_static_factory.inl"
 #endif
 //#include "_factory.h"
+#define NO_NETWORKING
 #include "_main.inl"
 //#include "acme/console.h"
 #include "acme/filesystem/file/_constant.h"
