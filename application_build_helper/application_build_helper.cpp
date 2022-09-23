@@ -495,6 +495,12 @@ void application_build_helper::translate_package_list()
          path = m_pathOperatingSystem;
 
       }
+      else if (strPackage.begins_ci("third"))
+      {
+
+         path = m_pathSource / "port";
+
+      }
       else
       {
 
