@@ -24,6 +24,9 @@
     <ClCompile Include="prepare_project.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="prepare_application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="_static_factory.inl">

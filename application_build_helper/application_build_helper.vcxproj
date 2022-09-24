@@ -962,6 +962,7 @@ copy $(TargetPath) "C:\operating-system\tool-windows\bin\application_build_helpe
     <ClCompile Include="application_build_helper.cpp" />
     <ClCompile Include="implement.cpp" />
     <ClCompile Include="package.cpp" />
+    <ClCompile Include="prepare_application.cpp" />
     <ClCompile Include="prepare_project.cpp" />
   </ItemGroup>
   <ItemGroup>
