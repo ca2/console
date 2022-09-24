@@ -21,16 +21,15 @@ add_dependencies(_console_readlines crypto_openssl)
 add_dependencies(_console_readlines folder_zip)
 
 
-target_include_directories(apex PRIVATE .)
-list(APPEND library_include_directories ${CMAKE_CURRENT_SOURCE_DIR}/../..)
-list(APPEND library_include_directories ${CMAKE_CURRENT_SOURCE_DIR}/..)
 list(APPEND library_include_directories ${CMAKE_CURRENT_SOURCE_DIR})
-
+list(APPEND library_include_directories ${CMAKE_CURRENT_SOURCE_DIR}/..)
+list(APPEND library_include_directories ${CMAKE_CURRENT_SOURCE_DIR}/../..)
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${library_include_directories})
 
 
-target_compile_definitions(_console_readlines PRIVATE _CONSOLE__console_readlines_LIBRARY)
+
+target_compile_definitions(_console_readlines PRIVATE _CONSOLE_READLINES_LIBRARY)
 
 
 
