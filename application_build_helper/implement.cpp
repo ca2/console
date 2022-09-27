@@ -18,18 +18,25 @@
 void package_windows(::acme::system* psystem, const ::file::path& pathFolder);
 
 
+//#define EXTRA_DEBUG
 
 
 void implement(::acme::system* psystem)
 {
 
-   //::Sleep(30'000);
+#ifdef EXTRA_DEBUG
+
+   auto pwszCommandLine = ::GetCommandLineW();
+
+   ::Sleep(30'000);
+
+#endif
 
    application_build_helper helper;
 
    helper.initialize(psystem);
 
-   int iArgumentCount = psystem->get_argument_count1();
+   auto countArgument = psystem->get_argument_count1();
 
    if (psystem->get_argument_count1() == 2 || psystem->get_argument_count1() == 3)
    {
@@ -131,15 +138,21 @@ void implement(::acme::system* psystem)
       }
 
    }
-   else if (psystem->get_argument_count1() == 1 || psystem->get_argument_count1() == 2)
+   
+   if (psystem->get_argument_count1() >= 1)
    {
 
+      helper.m_strBuildPlatform = psystem->get_argument1(2);
+
+      helper.m_strBuildConfiguration = psystem->get_argument1(3);
+
       helper.prepare_application();
+
+      helper.prepare_project();
 
       return;
 
    }
-
 
    printf("Don't know what to do\n");
 

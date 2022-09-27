@@ -42,6 +42,8 @@ public:
    string                        m_strItem;
    __pointer(::handle::ini)      m_piniPackageMap;
 
+   string                        m_strBuildPlatform;
+   string                        m_strBuildConfiguration;
 
    bool                          m_bTranslateDependency;
 

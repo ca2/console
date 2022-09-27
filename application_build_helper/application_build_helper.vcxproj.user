@@ -23,9 +23,9 @@
     <LocalDebuggerWorkingDirectory>C:\basis</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='cube_basis|x64'">
-    <LocalDebuggerCommandArguments>-package ./source/app/build</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>C:\basis\source\app-core\hello_animation\ app_core_hello_animation x64 basis</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
-    <LocalDebuggerWorkingDirectory>C:\stage</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerWorkingDirectory>C:\basis\source\app\acme</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='stage|x64'">
     <LocalDebuggerCommandArguments>C:\basis\source\app\folder_zip\ folder_zip</LocalDebuggerCommandArguments>
@@ -33,9 +33,10 @@
     <LocalDebuggerWorkingDirectory>C:\Users\camilo</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='cube_stage|x64'">
-    <LocalDebuggerCommandArguments>-prepare_project "C:\stage\source\app-core\netnodefs"</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>"C:\basis\source\app\acme" acme x64 basis</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
-    <LocalDebuggerWorkingDirectory>$(OutDir)</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerWorkingDirectory>C:\basis\source\app\acme</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerCommand>C:\basis\operating-system\tool-windows\bin\application_build_helper.exe</LocalDebuggerCommand>
   </PropertyGroup>
   <PropertyGroup>
     <ShowAllFiles>false</ShowAllFiles>

@@ -188,11 +188,10 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='cube_stage|Win32'" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='basis|x64'" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='stage|x64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='cube_basis|x64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='cube_stage|x64'" />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='basis|Win32'">
-    <PreBuildEvent>
-      <Command>
-      </Command>
-    </PreBuildEvent>
+    <PreBuildEvent />
     <ClCompile>
       <AdditionalOptions>/bigobj -Zm1024</AdditionalOptions>
       <Optimization>Disabled</Optimization>
@@ -276,10 +275,7 @@
     </Xdcmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='cube_basis|Win32'">
-    <PreBuildEvent>
-      <Command>
-      </Command>
-    </PreBuildEvent>
+    <PreBuildEvent />
     <ClCompile>
       <AdditionalOptions>/bigobj -Zm1024</AdditionalOptions>
       <Optimization>Disabled</Optimization>
@@ -370,10 +366,7 @@
     </Xdcmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='stage|Win32'">
-    <PreBuildEvent>
-      <Command>
-      </Command>
-    </PreBuildEvent>
+    <PreBuildEvent />
     <ClCompile>
       <AdditionalOptions>/bigobj -Zm1024</AdditionalOptions>
       <Optimization>MaxSpeed</Optimization>
@@ -476,10 +469,7 @@
     </Xdcmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='cube_stage|Win32'">
-    <PreBuildEvent>
-      <Command>
-      </Command>
-    </PreBuildEvent>
+    <PreBuildEvent />
     <ClCompile>
       <AdditionalOptions>/bigobj -Zm1024</AdditionalOptions>
       <Optimization>MinSpace</Optimization>
@@ -580,10 +570,7 @@
     </Xdcmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='basis|x64'">
-    <PreBuildEvent>
-      <Command>
-      </Command>
-    </PreBuildEvent>
+    <PreBuildEvent />
     <ClCompile>
       <AdditionalOptions>/bigobj -Zm1024</AdditionalOptions>
       <Optimization>Disabled</Optimization>
@@ -668,10 +655,7 @@
     </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='cube_basis|x64'">
-    <PreBuildEvent>
-      <Command>
-      </Command>
-    </PreBuildEvent>
+    <PreBuildEvent />
     <ClCompile>
       <AdditionalOptions>/bigobj -Zm1024</AdditionalOptions>
       <Optimization>Disabled</Optimization>
@@ -761,10 +745,7 @@ copy $(TargetPath) "C:\operating-system\tool-windows\bin\application_build_helpe
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='stage|x64'">
-    <PreBuildEvent>
-      <Command>
-      </Command>
-    </PreBuildEvent>
+    <PreBuildEvent />
     <ClCompile>
       <AdditionalOptions>/bigobj -Zm1024</AdditionalOptions>
       <Optimization>MaxSpeed</Optimization>
@@ -858,10 +839,7 @@ copy $(TargetPath) "C:\operating-system\tool-windows\bin\application_build_helpe
     </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='cube_stage|x64'">
-    <PreBuildEvent>
-      <Command>
-      </Command>
-    </PreBuildEvent>
+    <PreBuildEvent />
     <ClCompile>
       <AdditionalOptions>/bigobj -Zm1024</AdditionalOptions>
       <Optimization>MaxSpeed</Optimization>

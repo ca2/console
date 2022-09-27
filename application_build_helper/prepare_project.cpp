@@ -48,6 +48,49 @@ void application_build_helper::prepare_project()
 
    }
 
+#ifdef WINDOWS_DESKTOP
+
+   if (m_strRoot == "app"
+      && m_strItem == "acme")
+   {
+
+      string_array straOutput;
+
+      int iExitCode = 0;
+
+      string_array straCommand;
+
+      auto pathBeforeBase = m_pathBaseDir - 1;
+
+      auto pathStorage = pathBeforeBase / "operating-system/storage-windows";
+
+      auto pathPlatformConfiguration = pathStorage / m_strBuildPlatform / m_strBuildConfiguration;
+
+      string strPlatformConfiguration = pathPlatformConfiguration;
+
+      strPlatformConfiguration.find_replace("/", "\\");
+
+      auto pathOutDir = m_pathBaseDir / "time-windows";
+
+      string strOutDir = pathOutDir;
+
+      strOutDir.find_replace("/", "\\");
+
+      straCommand.add("cmd.exe /c xcopy /Y \"" + strPlatformConfiguration + "\\binary\\*.*\" \"" + strOutDir + "\"");
+      straCommand.add("cmd.exe /c xcopy /Y \"" + strPlatformConfiguration + "\\third\\binary\\*.*\" \"" + strOutDir + "\"");
+      straCommand.add("cmd.exe /c xcopy /Y \"" + strPlatformConfiguration + "\\library\\*.pdb\" \"" + strOutDir + "\"");
+
+      for (auto & strCommand : straCommand)
+      {
+
+         command_system(straOutput, iExitCode, strCommand, e_command_system_inline_log);
+
+      }
+
+   }
+
+#endif
+
    generate_deployment_rc();
 
    if (m_strItem.compare_ci("deployment") != 0)
