@@ -20,6 +20,7 @@ endif()
 
 
 add_dependencies(_console_hellosolarsystem crypto_openssl)
+add_dependencies(_console_hellosolarsystem folder_zip)
 
 
 target_link_libraries(_console_hellosolarsystem PRIVATE acme apex)
