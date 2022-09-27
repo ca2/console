@@ -72,6 +72,8 @@ void application_build_helper::prepare_project()
 
       auto pathOutDir = m_pathBaseDir / "time-windows";
 
+      pathOutDir = pathOutDir / m_strBuildPlatform / m_strBuildConfiguration;
+
       string strOutDir = pathOutDir;
 
       strOutDir.find_replace("/", "\\");

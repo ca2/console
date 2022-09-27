@@ -1,6 +1,7 @@
 #include "acme/_start.h"
 #include "aqua/_.h"
 //#define FACTORY console_readlines
+#define NO_NETWORKING
 #define APP_ID "console/readlines"
 #if defined(WINDOWS_DESKTOP) && defined(CUBE)
 #include "_static_factory.inl"
