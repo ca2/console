@@ -36,7 +36,7 @@ void implement(::acme::system* psystem)
 
    helper.initialize(psystem);
 
-   auto countArgument = psystem->get_argument_count1();
+   //auto countArgument = psystem->get_argument_count1();
 
    if (psystem->get_argument_count1() == 2 || psystem->get_argument_count1() == 3)
    {
