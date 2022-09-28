@@ -141,9 +141,11 @@ void application_build_helper::prepare_application()
    if (!m_psystem->m_pacmefile->exists(pathZip))
    {
 
-      fprintf(stderr, "\"%s\" wasn't created.", pathZip.c_str());
+      string strError;
 
-      throw ::exception(error_failed);
+      strError.format("\"%s\" wasn't created.", pathZip.c_str());
+
+      throw ::exception(error_failed, strError);
 
    }
 
