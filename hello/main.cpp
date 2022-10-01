@@ -10,7 +10,7 @@
 //FACTORY_DEPENDENCY(acme_windows)
 //END_FACTORY()
 #include "acme/console.h"
-
+int * g_pi = nullptr;
 
 void implement(::acme::system * psystem)
 {
@@ -30,7 +30,7 @@ void implement(::acme::system * psystem)
    while (true)
    {
 
-      auto result = message_box_synchronous(psystem, "Hello!!", "Hello App!", e_message_box_yes_no_cancel | e_message_box_default_button_3, "Hello Multiverse!!");
+      auto result = message_box_synchronous(psystem, "Hello!!\nNo: for exception test!!", "Hello App!", e_message_box_yes_no_cancel | e_message_box_default_button_3, "Hello Multiverse!!");
 
       if (result == e_dialog_result_yes)
       {
@@ -46,6 +46,56 @@ void implement(::acme::system * psystem)
       }
       else if (result == e_dialog_result_no)
       {
+         
+         psystem->fork([psystem]()
+         {
+            
+            task_set_name("Second Thread");
+            
+            psystem->fork([psystem]()
+                 {
+               
+               task_set_name("Third Thread");
+               
+               
+               try
+               {
+                  
+//                  ::exception exception(error_catch_all_exception);
+//
+//                  auto psequencer = psystem->exception_message_sequencer(exception, "Dummy inline Catchall Exception at Hello Console App!!\n", "Dummy inline Hello Console App!", e_message_box_ok, "Dummy inline Hello Console App!!");
+//
+//                  psequencer->do_asynchronously();
+                  
+                  //int * pi = nullptr;
+                  
+                  g_pi[1024] = 1;
+                  
+                  //int i = 23 / (iptr)g_pi;
+
+                  //printf("this is the result %d", i);
+                  
+               }
+               catch(::exception & exception)
+               {
+                  
+                  auto psequencer =  psystem->exception_message_sequencer(exception, "Exception at Hello Console App!!\n" + exception.get_message(), "Hello Console App!", e_message_box_ok, "Hello Console App!!\n");
+
+                  psequencer->do_asynchronously();
+                  
+               }
+               catch(...)
+               {
+                  
+                  ::exception exception(error_catch_all_exception);
+
+                  auto psequencer = psystem->exception_message_sequencer(exception, "Catchall Exception at Hello Console App!!\n", "Hello Console App!", e_message_box_ok, "Hello Console App!!");
+
+                  psequencer->do_asynchronously();
+
+               }
+            });
+         });
 
          printf("\n");
 
