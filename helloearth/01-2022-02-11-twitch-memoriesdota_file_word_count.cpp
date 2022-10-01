@@ -1,4 +1,4 @@
-
+#include "framework.h"
 #include <iostream>
 #include <fstream>
 
@@ -51,29 +51,24 @@ int file_word_count(::std::string filename)
 }
 
 
-int file_count_program()
+int twitch::memoriesdota_file_word_count_main()
 {
 
 
    ::std::string filename;
 
-   while (true)
+   ::std::cout << "Enter the name of a file (or \"quit\"): ";
+
+   ::std::cin >> filename;
+
+   if (filename == "quit")
    {
 
-      ::std::cout << "Enter the name of a file (or \"quit\"): ";
-
-      ::std::cin >> filename;
-
-      if (filename == "quit")
-      {
-
-         break;
-
-      }
-
-      ::std::cout << "Word count of file \"" << filename << "\" is " << file_word_count(filename) << ::std::endl << ::std::endl;
+      return -1;
 
    }
+
+   ::std::cout << "Word count of file \"" << filename << "\" is " << file_word_count(filename) << ::std::endl << ::std::endl;
 
    return 0;
 

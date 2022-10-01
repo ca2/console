@@ -1,5 +1,4 @@
-#include "acme/_start.h"
-#include "acme/_.h"
+#include "framework.h"
 #define FACTORY console_helloearth
 #define __APP_ID "console/helloearth"
 #if defined(WINDOWS_DESKTOP) && defined(CUBE)
@@ -10,9 +9,8 @@
 //FACTORY_DEPENDENCY(acme_windows)
 //END_FACTORY()
 #include "acme/console.h"
-
-#include "memoriesdota@twitch-projects.cpp"
-#include "korishama.polymorphism@twitch-projects.cpp"
+#include "_.h"
+#include <iostream> // mixing with STL
 
 //template<typename T>
 //inline const auto oddProduct(T n)  noexcept
@@ -225,49 +223,42 @@ void implement(::acme::system * psystem)
 
    printf("\n");
 
-   ::std::cout << "1. for run memories dota program:" << ::std::endl;
-   ::std::cout << "2. korishama polymorphism programs" << ::std::endl;
-   ::std::cout << "other number to resume" << ::std::endl;
-   int i;
-   ::std::cin >> i;
+   enum_dialog_result edialogresult = e_dialog_result_none;
 
-      if (i == 1)
-      {
+   twitch twitch;
 
-         file_count_program();
-
-      }
-      else if (i == 2)
-      {
-
-         korishama_polymorphism_program();
-
-      }
-
-   while (true)
+   while (edialogresult != e_dialog_result_yes)
    {
 
-      auto result = message_box_for_console("Hello Earth!! Yes, No or Cancel?!?", "helloearth!!", e_message_box_yes_no_cancel | e_message_box_icon_information);
+      int iMenuItem = twitch.show_main_menu_and_get_menu_item();
 
-      printf("\n");
-
-      printf("\n");
-
-      printf("helloearth response \"%s\"", message_box_result_to_string(result).c_str());
-
-      printf("\n");
-
-      printf("\n");
-
-      if (result == e_dialog_result_yes)
+      while (iMenuItem > 0)
       {
 
-         break;
+         int iNextMenuItem = twitch.do_menu_item_and_get_next_menu_item(iMenuItem);
+
+         iMenuItem = iNextMenuItem;
 
       }
 
-   }
+      do
+      {
 
+         edialogresult = message_box_for_console("Hello Earth!! Yes, No or Cancel?!?", "helloearth!!", e_message_box_yes_no_cancel | e_message_box_icon_information);
+
+         printf("\n");
+
+         printf("\n");
+
+         printf("helloearth response \"%s\"", message_box_result_to_string(edialogresult).c_str());
+
+         printf("\n");
+
+         printf("\n");
+
+      } while (edialogresult == e_dialog_result_cancel);
+
+   }
 
    printf("Exiting main...");
 

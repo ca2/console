@@ -1,12 +1,12 @@
-
+#include "framework.h"
 #include <iostream>
 #include <fstream>
 
-double yes_for_two_and_no_for_three()
+double yes_for_two__no_for_three_and_cancel_for_exit_exception()
 {
    auto psystem = ::get_system();
 
-   auto result = message_box_synchronous(psystem, "Yes for two and No for 3", "Hello App!", e_message_box_yes_no | e_message_box_default_button_1, "Hello Multiverse!!");
+   auto result = message_box_synchronous(psystem, "Yes for two and No for 3\n\n(and cancel for exit...)", "Hello App!", e_message_box_yes_no_cancel | e_message_box_default_button_3, "Hello Multiverse!!");
 
    if (result == e_dialog_result_yes)
    {
@@ -14,10 +14,16 @@ double yes_for_two_and_no_for_three()
       return 2.0;
 
    }
-   else
+   else if (result == e_dialog_result_no)
    {
 
       return 3.0;
+
+   }
+   else
+   {
+
+      throw exit_exception();
 
    }
 
@@ -64,7 +70,7 @@ public:
 
    double m_dRadius;
 
-   Circle(double dRadius = yes_for_two_and_no_for_three())
+   Circle(double dRadius = yes_for_two__no_for_three_and_cancel_for_exit_exception())
    {
 
       m_dRadius = dRadius;
@@ -96,7 +102,7 @@ public:
 
    double m_dSide;
 
-   TriangleRegular(double dSide = yes_for_two_and_no_for_three())
+   TriangleRegular(double dSide = yes_for_two__no_for_three_and_cancel_for_exit_exception())
    {
 
       m_dSide = dSide;
@@ -129,7 +135,7 @@ public:
 
    double m_dSide;
 
-   Square(double dSide = yes_for_two_and_no_for_three())
+   Square(double dSide = yes_for_two__no_for_three_and_cancel_for_exit_exception())
    {
 
       m_dSide = dSide;
@@ -157,7 +163,7 @@ public:
 
 
 
-int korishama_polymorphism_program()
+int twitch::korishama_polymorphism_main()
 {
 
    auto ptriangle = __new(TriangleRegular());
