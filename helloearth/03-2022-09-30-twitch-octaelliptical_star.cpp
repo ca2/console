@@ -7,7 +7,7 @@ using namespace std;
 
 int twitch::octaelliptical_star_main() 
 {
-   printf("Star Line Count? (negative for something else...)");
+   printf("Star Line Count? (negative for exiting...)");
    int n;
    cin >> n;
    if (n < 0)

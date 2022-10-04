@@ -14,6 +14,7 @@ public:
    int memoriesdota_file_word_count_main();
    int korishama_polymorphism_main();
    int octaelliptical_star_main();
+   int octaelliptical_star_main_only_odd_count_main();
 
 
 };

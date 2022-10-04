@@ -930,6 +930,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="02-2022-07-11-twitch-korishama_polymorphism.cpp" />
+    <ClCompile Include="04-2022-10-01-twitch-octaelliptical_star_only_odd_line_count.cpp" />
     <ClCompile Include="framework.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='cube_basis|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='cube_stage|Win32'">Create</PrecompiledHeader>
