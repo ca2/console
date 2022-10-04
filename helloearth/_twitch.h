@@ -1,4 +1,4 @@
-// Created by camilo on 2022-10-01 03:13 <3ThomasBS!!
+﻿// Created by camilo on 2022-10-01 03:13 <3ThomasBS!!
 #pragma once
 
 
@@ -15,6 +15,7 @@ public:
    int korishama_polymorphism_main();
    int octaelliptical_star_main();
    int octaelliptical_star_main_only_odd_count_main();
+   int octaelliptical_iterative_fibonacci_main();
 
 
 };

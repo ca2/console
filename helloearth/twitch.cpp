@@ -1,4 +1,4 @@
-// Created by camilo on 2022-10-01 03:25 <3ThomasBorregaardSorensen
+﻿// Created by camilo on 2022-10-01 03:25 <3ThomasBorregaardSorensen
 #include "framework.h"
 #include <iostream>
 #include <stdio.h>
@@ -13,6 +13,7 @@ int twitch::show_main_menu_and_get_menu_item()
    ::std::cout << "2. korishama polymorphism programs" << ::std::endl;
    ::std::cout << "3. octaelliptical stars programs" << ::std::endl;
    ::std::cout << "4. octaelliptical stars programs with odd only line count" << ::std::endl;
+   ::std::cout << "5. octaelliptical iterative fibonacci" << ::std::endl;
    ::std::cout << "other number to resume" << ::std::endl;
 
    int iMenuItem = -1;
@@ -45,6 +46,9 @@ int twitch::do_menu_item_and_get_next_menu_item(int iMenuItem)
          break;
       case 4:
          iResult = octaelliptical_star_main_only_odd_count_main();
+         break;
+      case 5:
+         iResult = octaelliptical_iterative_fibonacci_main();
          break;
       };
 
