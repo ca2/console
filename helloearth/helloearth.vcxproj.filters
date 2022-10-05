@@ -36,6 +36,9 @@
     <ClCompile Include="05-2022-10-04-twitch-octaelliptical_iterative_fibonacci.cpp">
       <Filter>Files</Filter>
     </ClCompile>
+    <ClCompile Include="06-2022-10-05-twitch-octaelliptical_count_miscellaneous_characters.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="_twitch.h">
