@@ -1,4 +1,4 @@
-#include "acme/_start.h"
+﻿#include "acme/_start.h"
 #include "acme/_.h"
 #define FACTORY console_hello
 #define __APP_ID "console/hello"
