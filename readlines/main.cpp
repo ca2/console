@@ -1,4 +1,4 @@
-#include "acme/_start.h"
+﻿#include "acme/_start.h"
 #include "aqua/_.h"
 //#define FACTORY console_readlines
 #define NO_NETWORKING
@@ -12,7 +12,6 @@
 //END_FACTORY()
 #include "aqua/console.h"
 #include "aqua/_defer.h"
-#include "aqua/xml.h"
 
 
 //#include "xml.cpp"

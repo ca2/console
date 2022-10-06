@@ -14,6 +14,8 @@ int twitch::show_main_menu_and_get_menu_item()
    ::std::cout << "3. octaelliptical stars programs" << ::std::endl;
    ::std::cout << "4. octaelliptical stars programs with odd only line count" << ::std::endl;
    ::std::cout << "5. octaelliptical iterative fibonacci" << ::std::endl;
+   ::std::cout << "6. octaelliptical count miscellaneous characters" << ::std::endl;
+   ::std::cout << "7. octaelliptical list prime numbers" << ::std::endl;
    ::std::cout << "other number to resume" << ::std::endl;
 
    int iMenuItem = -1;
@@ -49,6 +51,12 @@ int twitch::do_menu_item_and_get_next_menu_item(int iMenuItem)
          break;
       case 5:
          iResult = octaelliptical_iterative_fibonacci_main();
+         break;
+      case 6:
+         iResult = octaelliptical_count_miscellaneous_characters_main();
+         break;
+      case 7:
+         iResult = octaelliptical_list_prime_numbers_main();
          break;
       };
 

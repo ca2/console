@@ -39,6 +39,9 @@
     <ClCompile Include="06-2022-10-05-twitch-octaelliptical_count_miscellaneous_characters.cpp">
       <Filter>Files</Filter>
     </ClCompile>
+    <ClCompile Include="07-2022-10-06-twitch-octaelliptical_list_prime_numbers.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="_twitch.h">

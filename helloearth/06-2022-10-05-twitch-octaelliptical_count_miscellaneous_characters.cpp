@@ -10,3 +10,11 @@
 // Print count of characters, 
 // count of digits and count of white spaces 
 // respectively(separated by space).
+
+
+int twitch::octaelliptical_count_miscellaneous_characters_main()
+{
+
+
+   return -1;
+}

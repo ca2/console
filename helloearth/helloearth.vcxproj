@@ -933,6 +933,7 @@
     <ClCompile Include="04-2022-10-01-twitch-octaelliptical_star_only_odd_line_count.cpp" />
     <ClCompile Include="05-2022-10-04-twitch-octaelliptical_iterative_fibonacci.cpp" />
     <ClCompile Include="06-2022-10-05-twitch-octaelliptical_count_miscellaneous_characters.cpp" />
+    <ClCompile Include="07-2022-10-06-twitch-octaelliptical_list_prime_numbers.cpp" />
     <ClCompile Include="framework.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='cube_basis|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='cube_stage|Win32'">Create</PrecompiledHeader>

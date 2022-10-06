@@ -16,7 +16,8 @@ public:
    int octaelliptical_star_main();
    int octaelliptical_star_main_only_odd_count_main();
    int octaelliptical_iterative_fibonacci_main();
-
+   int octaelliptical_count_miscellaneous_characters_main();
+   int octaelliptical_list_prime_numbers_main();
 
 };
 
