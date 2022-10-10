@@ -1,4 +1,4 @@
-#include "framework.h"
+﻿#include "framework.h"
 #define FACTORY console_helloearth
 #define __APP_ID "console/helloearth"
 #if defined(WINDOWS_DESKTOP) && defined(CUBE)
@@ -120,11 +120,11 @@ void implement(::acme::system * psystem)
 
    atom = 1;
 
-   printf("atom=%s\n", atom.to_string().c_str());
+   printf("atom=%s\n", atom.string().c_str());
 
    atom = "two";
 
-   printf("atom=%s\n", atom.to_string().c_str());
+   printf("atom=%s\n", atom.string().c_str());
 
    property_set set;
 

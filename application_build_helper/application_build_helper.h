@@ -40,7 +40,7 @@ public:
    string                        m_strUnderscoreAppId;
    string                        m_strRoot;
    string                        m_strItem;
-   __pointer(::handle::ini)      m_piniPackageMap;
+   ::pointer<::handle::ini>     m_piniPackageMap;
 
    string                        m_strBuildPlatform;
    string                        m_strBuildConfiguration;

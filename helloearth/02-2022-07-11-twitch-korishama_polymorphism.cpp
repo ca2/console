@@ -172,7 +172,7 @@ int twitch::korishama_polymorphism_main()
 
    auto psquare = __new(Square());
 
-   __pointer_array(Figure) figures({ptriangle, pcircle, psquare});
+   pointer_array < Figure > figures({ptriangle, pcircle, psquare});
 
 
    for (auto pfigure : figures)
