@@ -1,5 +1,4 @@
-#include "acme/_start.h"
-#include "apex/_.h"
+﻿#include "framework.h"
 //#define FACTORY console_hellosolarsystem
 #define NO_NETWORKING
 #define APP_ID "console/hellosolarsystem"
@@ -14,7 +13,10 @@
 //#include "aqua/xml.h"
 #include <stdio.h>
 #include "acme/primitive/mathematics/mathematics.h"
+#include "unit_test/_.h"
 
+
+DECLARE_UNIT_TEST_SET(basic_types);
 
 
 #include "pointer_const_pointer.cpp"
@@ -24,6 +26,8 @@
 #include "brushing_bit_per_bit.cpp"
 #include "loop_get_char.cpp"
 #include "printf_format_flags.cpp"
+
+
 
 
 void implement(::acme::system * psystem)
@@ -158,6 +162,17 @@ void implement(::acme::system * psystem)
 
    printf("\n");
 
+   printf("Running all unit tests...\n\n");
+
+   auto punittestset = new_basic_types_unit_test_set();
+
+   punittestset->set_verbose(false);
+
+   punittestset->test();
+
+   auto strReport = punittestset->get_plain_text_report();
+
+   printf("%s", strReport.c_str());
    
    message_box_for_console("Hello Solar System!!", "hellosolarsystem", e_message_box_ok);
 
