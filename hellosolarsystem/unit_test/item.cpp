@@ -110,7 +110,18 @@ namespace unit_test
    void item::run()
    {
 
-      m_bTestPassed = test();
+      try
+      {
+
+         m_bTestPassed = test();
+
+      }
+      catch (...)
+      {
+
+         m_bTestPassed = false;
+
+      }
 
       //string strReport = get_report();
 

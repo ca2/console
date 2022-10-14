@@ -176,3 +176,69 @@ __end(atom.is_text() && atom.m_str == "2");
 
 __END();
 
+__START(numeric_array_copy)
+
+__begin(numeric_array_copy_constructor)
+
+
+i32_array ia1;
+
+ia1.add(1);
+ia1.add(1000);
+ia1.add(200'000'000);
+
+i32_array ia2(ia1);
+
+__end(ia2.size() == 3 && ia2[0] == 1 && ia2[1] == 1'000 && ia2[2] == 200'000'000)
+
+
+__begin(numeric_array_assign_construct)
+
+
+i32_array ia1;
+
+ia1.add(1);
+ia1.add(1000);
+ia1.add(200'000'000);
+
+i32_array ia2 = ia1;
+
+__end(ia2.size() == 3 && ia2[0] == 1 && ia2[1] == 1'000 && ia2[2] == 200'000'000)
+
+
+__begin(numeric_array_assign)
+
+
+i32_array ia1;
+
+ia1.add(1);
+ia1.add(1000);
+ia1.add(200'000'000);
+
+i32_array ia2;
+
+ia2 = ia1;
+
+__end(ia2.size() == 3 && ia2[0] == 1 && ia2[1] == 1'000 && ia2[2] == 200'000'000)
+
+__END();
+
+
+__START(pointer_array_copy)
+
+__begin(pointer_array_copy_constructor)
+
+
+::pointer_array < ::item> itema1;
+
+itema1.add(__new(::item(1)));
+itema1.add(__new(::item(1'000)));
+itema1.add(__new(::item(200'000'000)));
+
+::pointer_array < ::item> itema2(itema1);
+
+__end(itema2.size() == 3 && itema2[0]->m_iItem == 1 && itema2[1]->m_iItem == 1'000 && itema2[2]->m_iItem == 200'000'000)
+
+
+__END();
+
