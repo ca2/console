@@ -59,7 +59,7 @@ namespace unit_test
          for (auto & p : *this)
          {
 
-            strReport += p->get_plain_text_report(false) + "\n";
+            strReport += p->get_plain_text_report(is_verbose()) + "\n";
 
             if (is_verbose() && p->m_strText.has_char())
             {

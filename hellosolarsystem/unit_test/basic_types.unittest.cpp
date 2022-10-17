@@ -124,6 +124,7 @@ printf("sizeof(atom)=%" PRIiPTR "\n", sizeof(atom));
 printf("sizeof(&atom)=%" PRIiPTR "\n", sizeof(&atom));
 
 
+
 __end(iAtomClassSize == sizeof(void *) * 2);
 
 

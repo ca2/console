@@ -166,7 +166,7 @@ void implement(::acme::system * psystem)
 
    auto punittestset = new_basic_types_unit_test_set();
 
-   punittestset->set_verbose(false);
+   punittestset->set_verbose(true);
 
    punittestset->test();
 

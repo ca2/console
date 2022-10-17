@@ -75,6 +75,9 @@
     <Filter Include="Source Files">
       <UniqueIdentifier>{322fb022-14d5-4dc3-bb42-5f3a912473dc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\unit_test">
+      <UniqueIdentifier>{5c0f319d-5b8b-421e-86cc-6a09673f80aa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package10.appxmanifest">
@@ -84,6 +87,18 @@
   <ItemGroup>
     <ClCompile Include="hellosolarsystem.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="unit_test\unit_test.cpp">
+      <Filter>Source Files\unit_test</Filter>
+    </ClCompile>
+    <ClCompile Include="unit_test\item.cpp">
+      <Filter>Source Files\unit_test</Filter>
+    </ClCompile>
+    <ClCompile Include="unit_test\set.cpp">
+      <Filter>Source Files\unit_test</Filter>
+    </ClCompile>
+    <ClCompile Include="unit_test\basic_types.unittest.cpp">
+      <Filter>Source Files\unit_test</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
