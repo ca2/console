@@ -5,6 +5,7 @@
 #include "acme/filesystem/filesystem/acme_file.h"
 #include "acme/filesystem/filesystem/acme_path.h"
 #include "acme/filesystem/filesystem/acme_directory.h"
+#include "apex/filesystem/filesystem/file_context.h"
 #ifdef WINDOWS_DESTKOP
 #include <direct.h>
 #endif
