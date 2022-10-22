@@ -2,6 +2,7 @@
 #pragma once
 
 
+#include "item.h"
 
 
 namespace unit_test
@@ -43,6 +44,7 @@ namespace unit_test
 
    };
 
+
    class end_group
    {
    public:
@@ -61,6 +63,7 @@ namespace unit_test
 } // namespace unit_test
 
 
-
 #define DECLARE_UNIT_TEST_SET(MODULE) ::unit_test::set * TOKENPASTE(TOKENPASTE(new_, MODULE), _unit_test_set)()
+
+
 

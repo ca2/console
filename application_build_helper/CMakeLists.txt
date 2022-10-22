@@ -3,19 +3,19 @@ project(_console_application_build_helper CXX)
 
 
 add_executable(_console_application_build_helper
-   application_build_helper.cpp
-   implement.cpp
-   package.cpp
+        application_build_helper.cpp
+        implement.cpp
+        package.cpp
         prepare_application.cpp
-   prepare_project.cpp
-   )
+        prepare_project.cpp
+        )
 
 
 if (MSVC)
     target_compile_options(_console_application_build_helper PRIVATE "/MD$<$<CONFIG:Debug>:d>")
     target_link_options(_console_application_build_helper PRIVATE "/DEFAULTLIB:msvcrt$<$<CONFIG:Debug>:d>")
     target_link_options(_console_application_build_helper PRIVATE "/SUBSYSTEM:CONSOLE")
-endif()
+endif ()
 
 
 add_dependencies(_console_application_build_helper acme_${OPERATING_SYSTEM_NAME})
@@ -30,17 +30,17 @@ target_link_libraries(_console_application_build_helper PRIVATE acme apex)
 
 
 add_custom_command(
-   TARGET _console_application_build_helper
-   POST_BUILD
-   COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/_console_application_build_helper ${APPLICATION_BUILD_HELPER}
-   COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libacme.so $ENV{HOME}/bin/
-   COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libacme_${OPERATING_SYSTEM_NAME}.so $ENV{HOME}/bin/
-   COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libacme_posix.so $ENV{HOME}/bin/
-   COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libapex.so $ENV{HOME}/bin/
-   COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libapex_${OPERATING_SYSTEM_NAME}.so $ENV{HOME}/bin/
-   COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libapex_posix.so $ENV{HOME}/bin/
-   COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libcrypto_openssl.so $ENV{HOME}/bin/
-   COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libfolder_zip.so $ENV{HOME}/bin/
+        TARGET _console_application_build_helper
+        POST_BUILD
+        COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/_console_application_build_helper ${APPLICATION_BUILD_HELPER}
+        COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libacme.so $ENV{HOME}/bin/
+        COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libacme_${OPERATING_SYSTEM_NAME}.so $ENV{HOME}/bin/
+        COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libacme_posix.so $ENV{HOME}/bin/
+        COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libapex.so $ENV{HOME}/bin/
+        COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libapex_${OPERATING_SYSTEM_NAME}.so $ENV{HOME}/bin/
+        COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libapex_posix.so $ENV{HOME}/bin/
+        COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libcrypto_openssl.so $ENV{HOME}/bin/
+        COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libfolder_zip.so $ENV{HOME}/bin/
 )
 
 
