@@ -3,6 +3,8 @@ project(_console_hellosolarsystem CXX)
 
 
 list(APPEND executable_source
+        unit_test/item.cpp
+        unit_test/set.cpp
         unit_test/unit_test.cpp
         hellosolarsystem.cpp
         #tutor.cpp
