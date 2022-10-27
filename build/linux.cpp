@@ -46,11 +46,11 @@ namespace app_core_build
 
       //process->prop("inherit") = false;
 
-      ::file::path pathBaseDir = m_psystem->m_pacmedirectory->home();
+      ::file::path pathBaseDir = acmedirectory()->home();
 
       ::file::path pathBuildDir = pathBaseDir / "build" / m_strDistro / m_strDesktopEnvironment;
 
-      m_psystem->m_pacmedirectory->create(pathBuildDir);
+      acmedirectory()->create(pathBuildDir);
 
       chdir(pathBuildDir);
 
@@ -59,7 +59,7 @@ namespace app_core_build
          string strConfigure = "cmake configure " + pathBaseDir + "/solution/basis";
 
 
-         m_psystem->m_pacmefile->put_contents("/home/camilo/configure_build.sh", strConfigure);
+         acmefile()->put_contents("/home/camilo/configure_build.sh", strConfigure);
 
          chmod("/home/camilo/configure_build.sh", 0777);
 
@@ -71,7 +71,7 @@ namespace app_core_build
 
          string strCmakeBuild = "cmake --build " + pathBuildDir + " -- -j 8";
 
-         m_psystem->m_pacmefile->put_contents("/home/camilo/cmake_build.sh", strCmakeBuild);
+         acmefile()->put_contents("/home/camilo/cmake_build.sh", strCmakeBuild);
 
          chmod("/home/camilo/cmake_build.sh", 0777);
 

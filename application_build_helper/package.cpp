@@ -2,10 +2,11 @@
 #include "framework.h"
 #include "application_build_helper.h"
 #ifdef WINDOWS
-#include "apex_windows/_.h"
+//#include "apex_windows/_.h"
 #endif
 #include "acme/filesystem/filesystem/acme_directory.h"
 #include "acme/filesystem/filesystem/acme_file.h"
+#include "acme/operating_system/process.h"
 
 
 void get_root_and_item(string& strRoot, string& strItem, const char* pszFolder);
@@ -36,13 +37,13 @@ void application_build_helper::package()
 
    pathPackageList = m_pathFolder / "operating-system" / m_strSlashedOperatingSystem / "_packages.txt";
 
-   string strInput = m_psystem->m_pacmefile->as_string(pathPackageList);
+   string strInput = acmefile()->as_string(pathPackageList);
 
    string_array stra;
 
    stra.add_lines(strInput, false);
 
-   m_psystem->m_pacmedirectory->change_current(pathOutput);
+   acmedirectory()->change_current(pathOutput);
 
    ::file::path pathZipExe;
 
@@ -94,7 +95,7 @@ void application_build_helper::package()
 
                   ::file::path pathItem = pathOutput / strName;
 
-                  if(!m_psystem->m_pacmefile->exists(pathItem))
+                  if(!acmefile()->exists(pathItem))
                   {
 
                      fprintf(stderr, "Fatal: File doesn't exist: %s\n", pathItem.c_str());
@@ -132,7 +133,7 @@ void application_build_helper::package()
 
                ::file::path pathItem = pathOutput / strName;
 
-               if(!m_psystem->m_pacmefile->exists(pathItem))
+               if(!acmefile()->exists(pathItem))
                {
 
                   fprintf(stderr, "Fatal: File doesn't exist: %s", pathItem.c_str());

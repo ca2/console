@@ -1,5 +1,5 @@
 ﻿#include "acme/_start.h"
-#include "aqua/_.h"
+//#include "aqua/_.h"
 //#define FACTORY console_readlines
 #define NO_NETWORKING
 #define APP_ID "console/readlines"
@@ -19,15 +19,15 @@
 //#include "xml.cpp"
 
 
-void implement(::acme::system * psystem)
+void implement(::acme::context * pcontext)
 {
 
    ::file::path path;
 
-   if (psystem->m_argc >= 2)
+   if (pcontext->acmesystem()->m_argc >= 2)
    {
 
-      path = psystem->m_argv[1];
+      path = pcontext->acmesystem()->m_argv[1];
 
    }
 
@@ -42,11 +42,11 @@ void implement(::acme::system * psystem)
 
    string_array stra;
 
-   //console.m_psystem->get_main_application()->initialize_context();
+   //console.acmesystem()->get_main_application()->initialize_context();
 
    //path -= ::file::e_flag_bypass_cache;
    
-   auto papexsystem = psystem->m_papexsystem;
+   auto papexsystem = pcontext->acmesystem()->m_papexsystem;
    
    auto & file = papexsystem->file();
 

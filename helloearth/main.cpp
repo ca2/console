@@ -1,4 +1,5 @@
 ﻿#include "framework.h"
+#include "acme/primitive/primitive/payload.h"
 #define FACTORY console_helloearth
 #define __APP_ID "console/helloearth"
 #if defined(WINDOWS_DESKTOP) && defined(CUBE)
@@ -56,7 +57,7 @@ constexpr const auto min_test(const ::u32 & u, const ::i32 & i)
 #define minimum_ min_test
 
 
-void implement(::acme::system * psystem)
+void implement(::acme::context * pcontext)
 {
 
    string strHelloEarth = "Hello Earth!!";

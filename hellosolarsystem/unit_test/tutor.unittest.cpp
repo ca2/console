@@ -2,22 +2,20 @@
 // Attendee
 // 2020-04-29 CJsteel@Twitch.tv Present
 #include "framework.h"
-#include "acme/primitive/collection/list.h"
-#include "acme/primitive/string/string.h"
 
 
-::e_status somecode()
-{
+__begin(somecode)
+
 
 
    // done something and it failed
    // ....
    // ....
 
-   return ::error_failed;
+//   return ::error_failed;
 
 
-}
+__end(true);
 
 
 //CLASS_DECL_AQUA void debug_debug_reference();

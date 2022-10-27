@@ -3,14 +3,15 @@
 #include "application_build_helper.h"
 #include "acme/filesystem/filesystem/acme_directory.h"
 #include "acme/filesystem/filesystem/acme_file.h"
+#include "acme/platform/system.h"
 
 
 void application_build_helper::prepare_application()
 {
 
-   string strFolder = m_psystem->get_argument1(0);
+   string strFolder = acmesystem()->get_argument1(0);
 
-   string strProjectName = m_psystem->get_argument1(1);
+   string strProjectName = acmesystem()->get_argument1(1);
 
    set_package_folder(strFolder);
 
@@ -20,7 +21,7 @@ void application_build_helper::prepare_application()
 
    pathApplicationTxt = pathFolder / "application.txt";
 
-   if (!m_psystem->m_pacmefile->exists(pathApplicationTxt))
+   if (!acmefile()->exists(pathApplicationTxt))
    {
 
       return;
@@ -60,7 +61,7 @@ void application_build_helper::prepare_application()
 
    ::file::path pathTargetPackages = pathFolder / "operating-system" / m_strSlashedOperatingSystem / "_packages.txt";
 
-   m_psystem->m_pacmefile->put_contents(pathSourcePackages, strPackages);
+   acmefile()->put_contents(pathSourcePackages, strPackages);
 
    ::file::path pathSourceReferences;
 
@@ -90,16 +91,16 @@ void application_build_helper::prepare_application()
 
    pathTargetExtensions = pathFolder / "operating-system" / m_strSlashedOperatingSystem / "_extensions.txt";
 
-   auto lenDepsDeprecated = m_psystem->m_pacmefile->as_string(pathDepsDeprecated).trimmed().length();
+   auto lenDepsDeprecated = acmefile()->as_string(pathDepsDeprecated).trimmed().length();
 
-   auto lenSourceDependencies = m_psystem->m_pacmefile->as_string(pathSourceDependencies).trimmed().length();
+   auto lenSourceDependencies = acmefile()->as_string(pathSourceDependencies).trimmed().length();
 
    if (lenDepsDeprecated > 0 && lenSourceDependencies == 0)
    {
 
-      m_psystem->m_pacmefile->set_file_normal(pathSourceDependencies);
+      acmefile()->set_file_normal(pathSourceDependencies);
 
-      m_psystem->m_pacmefile->copy(pathSourceDependencies, pathDepsDeprecated, true);
+      acmefile()->copy(pathSourceDependencies, pathDepsDeprecated, true);
 
    }
 
@@ -130,7 +131,7 @@ void application_build_helper::prepare_application()
 
    }
 
-   m_psystem->m_pacmefile->put_contents(pathTargetPackages, strTranslatedPackages);
+   acmefile()->put_contents(pathTargetPackages, strTranslatedPackages);
 
    defer_matter();
 
@@ -138,7 +139,7 @@ void application_build_helper::prepare_application()
 
    ::file::path pathZip = m_pathFolder / "_matter.zip";
 
-   if (!m_psystem->m_pacmefile->exists(pathZip))
+   if (!acmefile()->exists(pathZip))
    {
 
       string strError;
@@ -151,12 +152,12 @@ void application_build_helper::prepare_application()
 
    auto pathSeedAndroid = m_pathOperatingSystem / "seed-android";
 
-   if (m_psystem->m_pacmedirectory->is(pathSeedAndroid))
+   if (acmedirectory()->is(pathSeedAndroid))
    {
 
       auto pathAssetsMatterZip = pathSeedAndroid / m_strAppId / "app/src/main/assets/_matter.zip";
 
-      m_psystem->m_pacmefile->copy(pathAssetsMatterZip, pathZip, true);
+      acmefile()->copy(pathAssetsMatterZip, pathZip, true);
       
    }
 

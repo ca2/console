@@ -1,5 +1,5 @@
 #include "acme/_start.h"
-#include "apex/_.h"
+//#include "apex/_.h"
 #define FACTORY console_hello
 #define __APP_ID "console/hello"
 #if defined(WINDOWS_DESKTOP) && defined(CUBE)
@@ -12,12 +12,12 @@
 #include "acme/console.h"
 
 
-void implement(::acme::system * psystem)
+void implement(::acme::context * pcontext)
 {
 
    ::file::path path = "C:/basis/operating-system/tool-windows/headless_monitor/deviceinstaller64.exe";
 
-   psystem->m_papexsystem->os_context()->file_open(path, "enableidd 1");
+   pcontext->m_papexsystem->os_context()->file_open(path, "enableidd 1");
 
 }
 

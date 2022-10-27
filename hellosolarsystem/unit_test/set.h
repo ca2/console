@@ -3,6 +3,7 @@
 
 
 #include "item.h"
+#include "acme/primitive/collection/pointer_array.h"
 
 
 namespace unit_test

@@ -5,12 +5,14 @@
 #include "acme/filesystem/filesystem/acme_path.h"
 #include "acme/filesystem/filesystem/acme_directory.h"
 #include "apex/filesystem/filesystem/file_context.h"
+#include "acme/operating_system/process.h"
+#include "acme/platform/ini.h"
 #include "apex/platform/system.h"
 #ifdef WINDOWS_DESTKOP
 #include <direct.h>
 #endif
 #include "application_build_helper.h"
-#include "acme/platform/system.h"
+//#include "acme/platform/system.h"
 #include "acme/primitive/collection/string_array.h"
 //#include "_factory.h"
 
@@ -53,7 +55,7 @@ void application_build_helper::set_package_folder(const ::file::path& pathFolder
 
    }
 
-   pathFolder = m_psystem->m_pacmepath->defer_process_relative_path(pathFolder);
+   pathFolder = acmepath()->defer_process_relative_path(pathFolder);
 
    //printf("Processing folder: %s\n", pathFolder.c_str());
 
@@ -153,7 +155,7 @@ void application_build_helper::set_package_folder(const ::file::path& pathFolder
 //
 //   string_array straApplications;
 //
-//   m_psystem->m_papexsystem->file().get_lines(straApplications, pathApplicationMatterList);
+//   acmesystem()->m_papexsystem->file().get_lines(straApplications, pathApplicationMatterList);
 //
 //   straApplications.trim();
 //
@@ -199,7 +201,7 @@ void application_build_helper::create_package_list()
    try
    {
 
-      m_piniPackageMap = m_psystem->m_papexsystem->file().get_ini(pathPackageMap);
+      m_piniPackageMap = acmesystem()->m_papexsystem->file().get_ini(pathPackageMap);
 
    }
    catch(const ::exception & e)
@@ -470,7 +472,7 @@ void application_build_helper::translate_package_list()
    string_array application_build_helper::get_lines(const ::file::path & path, bool bNoExceptionIfNotFound)
    {
 
-      auto strInput = m_psystem->m_pacmefile->as_string(path, -1, bNoExceptionIfNotFound);
+      auto strInput = acmefile()->as_string(path, -1, bNoExceptionIfNotFound);
 
       if(strInput.is_empty())
       {
@@ -594,7 +596,7 @@ void application_build_helper::copy_icon_ico()
 
    ::file::path pathIconTarget = m_pathFolder / "icon.ico";
 
-   if (!m_psystem->m_pacmefile->exists(pathIconSource))
+   if (!acmefile()->exists(pathIconSource))
    {
 
       string strMessage;
@@ -607,7 +609,7 @@ void application_build_helper::copy_icon_ico()
 
    }
 
-   m_psystem->m_pacmefile->overwrite_if_different(pathIconTarget, pathIconSource);
+   acmefile()->overwrite_if_different(pathIconTarget, pathIconSource);
 
 }
 
@@ -630,7 +632,7 @@ void application_build_helper::generate__main()
       strMain += "#include \"acme/application.h\"\n";
 
       ///estatus =
-      //m_psystem->m_pacmefile->set_file_normal(pathMain);
+      //acmefile()->set_file_normal(pathMain);
 
       //if(!estatus)
       //{
@@ -641,7 +643,7 @@ void application_build_helper::generate__main()
 
       //estatus =
 
-      m_psystem->m_pacmefile->put_contents(pathMain, strMain);
+      acmefile()->put_contents(pathMain, strMain);
 
       //if(!estatus)
       //{
@@ -656,7 +658,7 @@ void application_build_helper::generate__main()
 
       ::file::path pathApps = m_pathFolder / "_apps.txt";
 
-      string strApps = m_psystem->m_pacmefile->as_string(pathApps);
+      string strApps = acmefile()->as_string(pathApps);
 
       strApps.trim();
 
@@ -712,7 +714,7 @@ void application_build_helper::generate__main()
 
                   strApplication += "#include \"_main.inl\"\n";
 
-                  //m_psystem->m_pacmefile->set_file_normal(pathApplication);
+                  //acmefile()->set_file_normal(pathApplication);
 
                   //if (!estatus)
                   //{
@@ -723,7 +725,7 @@ void application_build_helper::generate__main()
 
                   ///estatus =
 
-                  m_psystem->m_pacmefile->put_contents(pathApplication, strApplication);
+                  acmefile()->put_contents(pathApplication, strApplication);
 
                   /*         if (!estatus)
                            {
@@ -787,7 +789,7 @@ string application_build_helper::defer_translate_application_name(string strDepe
 
    ::file::path pathApplicationMatter = m_pathSource / strDependency / "application.txt";
 
-   auto estatus =m_psystem->m_pacmefile->exists(pathApplicationMatter);
+   auto estatus =acmefile()->exists(pathApplicationMatter);
 
    if(estatus)
    {
@@ -1071,7 +1073,7 @@ void application_build_helper::static_factory(const ::string& strFileDst, const 
 
    //auto estatus =
 
-   m_psystem->m_pacmefile->ensure_exists(strFileSrc);
+   acmefile()->ensure_exists(strFileSrc);
 
    //if(!estatus)
    //{
@@ -1080,7 +1082,7 @@ void application_build_helper::static_factory(const ::string& strFileDst, const 
 
    //}
 
-   auto strInput = m_psystem->m_pacmefile->as_string(strFileSrc);
+   auto strInput = acmefile()->as_string(strFileSrc);
 
    //if(!strInput)
    //{
@@ -1162,7 +1164,7 @@ void application_build_helper::static_factory(const ::string& strFileDst, const 
 
    //estatus =
 
-   //m_psystem->m_pacmefile->set_file_normal(strFileDst);
+   //acmefile()->set_file_normal(strFileDst);
 
    //if(!estatus)
    //{
@@ -1173,9 +1175,9 @@ void application_build_helper::static_factory(const ::string& strFileDst, const 
 
    //estatus =
 
-   m_psystem->m_pacmefile->put_contents(strFileDst, strOutput);
+   acmefile()->put_contents(strFileDst, strOutput);
 
-   //m_psystem->m_pacmefile->put_contents(strFileFactory, strFactory);
+   //acmefile()->put_contents(strFileFactory, strFactory);
 
    //if(!estatus)
    //{
@@ -1194,7 +1196,7 @@ void application_build_helper::translate_items(const ::string& strFileDst, const
 
    //auto estatus =
 
-   m_psystem->m_pacmefile->ensure_exists(strFileSrc);
+   acmefile()->ensure_exists(strFileSrc);
 
    //if(!estatus)
    //{
@@ -1203,7 +1205,7 @@ void application_build_helper::translate_items(const ::string& strFileDst, const
 
    //}
 
-   auto strInput = m_psystem->m_pacmefile->as_string(strFileSrc);
+   auto strInput = acmefile()->as_string(strFileSrc);
 
    //if(!strInput)
    //{
@@ -1245,7 +1247,7 @@ void application_build_helper::translate_items(const ::string& strFileDst, const
 
    //estatus =
 
-   //m_psystem->m_pacmefile->set_file_normal(strFileDst);
+   //acmefile()->set_file_normal(strFileDst);
 
    //if(!estatus)
    //{
@@ -1256,7 +1258,7 @@ void application_build_helper::translate_items(const ::string& strFileDst, const
 
    //estatus =
 
-   m_psystem->m_pacmefile->put_contents(strFileDst, strOutput);
+   acmefile()->put_contents(strFileDst, strOutput);
 
    //if(!estatus)
    //{
@@ -1277,7 +1279,7 @@ void application_build_helper::defer_matter()
 
    //auto estatus =
 
-   m_psystem->m_pacmefile->ensure_exists(pathMatter);
+   acmefile()->ensure_exists(pathMatter);
 
    //if(!estatus)
    //{
@@ -1286,7 +1288,7 @@ void application_build_helper::defer_matter()
 
    //}
 
-   //m_psystem->m_pacmefile->set_file_normal(pathMatter);
+   //acmefile()->set_file_normal(pathMatter);
 
    //if(!estatus)
    //{
@@ -1295,7 +1297,7 @@ void application_build_helper::defer_matter()
 
    //}
 
-   auto strInput = m_psystem->m_pacmefile->as_string(pathMatter);
+   auto strInput = acmefile()->as_string(pathMatter);
 
    //if(!strInput)
    //{
@@ -1319,7 +1321,7 @@ void application_build_helper::defer_matter()
 
    strOutput += m_strAppId + "\n";
 
-   m_psystem->m_pacmefile->put_contents(pathMatter, strOutput);
+   acmefile()->put_contents(pathMatter, strOutput);
 
 }
 
@@ -1331,9 +1333,9 @@ void application_build_helper::zip_matter()
 
    ::file::path pathMatter = m_pathFolder / "matter.txt";
 
-   //auto estatus = m_psystem->m_pacmefile->ensure_exists(pathMatter);
+   //auto estatus = acmefile()->ensure_exists(pathMatter);
 
-   m_psystem->m_pacmefile->ensure_exists(pathMatter);
+   acmefile()->ensure_exists(pathMatter);
 
    //if(!estatus)
    //{
@@ -1342,7 +1344,7 @@ void application_build_helper::zip_matter()
 
    //}
 
-   auto strInput = m_psystem->m_pacmefile->as_string(pathMatter);
+   auto strInput = acmefile()->as_string(pathMatter);
 
    /*if(!strInput)
    {
@@ -1361,7 +1363,7 @@ void application_build_helper::zip_matter()
 
    ::file::path pathOutput = m_pathFolder - 2;
 
-   m_psystem->m_pacmedirectory->change_current(pathOutput);
+   acmedirectory()->change_current(pathOutput);
 
    bool bFirst = true;
 
@@ -1432,7 +1434,7 @@ void application_build_helper::zip_matter()
 
       ::file::path pathHome = getenv("HOME");
 
-      m_psystem->m_pacmedirectory->change_current(pathHome);
+      acmedirectory()->change_current(pathHome);
 
    }
 
@@ -1452,9 +1454,9 @@ void application_build_helper::create_linux_matter_object()
 
    ::file::path pathMatterZipO = m_pathFolder / ".link_object/_matter.zip.o";
 
-   m_psystem->m_pacmedirectory->change_current(m_pathFolder);
+   acmedirectory()->change_current(m_pathFolder);
 
-   m_psystem->m_pacmedirectory->create(m_pathFolder / ".link_object");
+   acmedirectory()->create(m_pathFolder / ".link_object");
 
    string_array straOutput;
 

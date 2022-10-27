@@ -2,7 +2,7 @@
 #include "framework.h"
 #include "application_build_helper.h"
 #ifdef WINDOWS
-#include "apex_windows/_.h"
+//#include "apex_windows/_.h"
 #endif
 #include "acme/filesystem/filesystem/acme_directory.h"
 #include "acme/filesystem/filesystem/acme_file.h"
@@ -14,7 +14,7 @@ void application_build_helper::prepare_project()
 
    auto pathBaseDeployIgnore = m_pathGroup / ".deployignore";
 
-   auto straIgnoreRoot = m_psystem->m_pacmefile->lines(pathBaseDeployIgnore);
+   auto straIgnoreRoot = acmefile()->lines(pathBaseDeployIgnore);
 
    if (straIgnoreRoot.contains_ci(m_strRoot))
    {
@@ -25,7 +25,7 @@ void application_build_helper::prepare_project()
 
    auto pathRootDeployIgnore = m_pathGroup / m_strRoot / ".deployignore";
 
-   auto straIgnoreItem = m_psystem->m_pacmefile->lines(pathRootDeployIgnore);
+   auto straIgnoreItem = acmefile()->lines(pathRootDeployIgnore);
 
    if (straIgnoreItem.contains_ci(m_strItem))
    {
@@ -105,7 +105,7 @@ void application_build_helper::prepare_project()
 
          ::file::path pathResourceTemplate = m_pathOperatingSystem / ("operating-system-" PLATFORM_STRING) / "deployment/resource1.h";
 
-         m_psystem->m_pacmefile->copy(pathResource, pathResourceTemplate, false);
+         acmefile()->copy(pathResource, pathResourceTemplate, false);
 
       }
 
@@ -124,7 +124,7 @@ void application_build_helper::generate_deployment_rc()
 
       ::file::path pathDeploymentRcTemplate = m_pathOperatingSystem / ("operating-system-" PLATFORM_STRING) / "deployment/deployment_rc.txt";
 
-      string strDeploymentRcTemplate = m_psystem->m_pacmefile->as_string(pathDeploymentRcTemplate);
+      string strDeploymentRcTemplate = acmefile()->as_string(pathDeploymentRcTemplate);
 
       string strDeploymentRc = ::str().find_replace("%ROOTNAME%", m_strRoot, strDeploymentRcTemplate);
 
@@ -132,7 +132,7 @@ void application_build_helper::generate_deployment_rc()
 
       ::file::path pathDeploymentRc = m_pathFolder / "deployment.rc";
 
-      m_psystem->m_pacmefile->put_contents(pathDeploymentRc, strDeploymentRc);
+      acmefile()->put_contents(pathDeploymentRc, strDeploymentRc);
 
 }
 

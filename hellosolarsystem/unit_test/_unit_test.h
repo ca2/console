@@ -1,8 +1,5 @@
 //
-// Created by camilo on 27/10/22.
+// Created by camilo on 2022-10-27 11:15 <3ThomasBorregaardSorensen!!
 //
+#pragma once
 
-#ifndef BASIS__UNIT_TEST_H
-#define BASIS__UNIT_TEST_H
-
-#endif //BASIS__UNIT_TEST_H

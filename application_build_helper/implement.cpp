@@ -6,6 +6,7 @@
 #include "_static_factory.inl"
 #endif
 #include "acme/filesystem/filesystem/acme_file.h"
+#include "acme/platform/system.h"
 #define NO_NETWORKING
 #include "_main.inl"
 //#include "acme/console.h"
