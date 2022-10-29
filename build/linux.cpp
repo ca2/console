@@ -26,7 +26,7 @@ namespace app_core_build
    ::e_status linux_build::prepare_build()
    {
 
-      auto pini = m_pcontext->m_papexcontext->file().get_ini("/etc/os-release");
+      auto pini = file()->get_ini("/etc/os-release");
 
       m_strDistro = (*pini)["ID"];
       m_strDesktopEnvironment = (*pini)["VARIANT_ID"];

@@ -155,7 +155,7 @@ void application_build_helper::set_package_folder(const ::file::path& pathFolder
 //
 //   string_array straApplications;
 //
-//   acmesystem()->m_papexsystem->file().get_lines(straApplications, pathApplicationMatterList);
+//   file()->get_lines(straApplications, pathApplicationMatterList);
 //
 //   straApplications.trim();
 //
@@ -201,7 +201,7 @@ void application_build_helper::create_package_list()
    try
    {
 
-      m_piniPackageMap = acmesystem()->m_papexsystem->file().get_ini(pathPackageMap);
+      m_piniPackageMap = file()->get_ini(pathPackageMap);
 
    }
    catch(const ::exception & e)
@@ -1037,7 +1037,7 @@ void application_build_helper::load_map(string_to_string& map, string strMap, st
 
    string_array straLines;
 
-   m_pcontext->m_papexcontext->file().get_lines(straLines, pathMap);
+   file()->get_lines(straLines, pathMap);
 
    for (auto& strLine : straLines)
    {

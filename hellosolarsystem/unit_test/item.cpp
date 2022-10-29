@@ -145,13 +145,13 @@ namespace unit_test
 
          strReport.append_format("%s", m_strText.c_str_for_printf());
 
-         strReport.append_format("%s", string('.', m_psetParent->m_iResultDotPadding));
+         strReport.append_format("%s", string('.', m_psetParent->m_iResultDotPadding).c_str_for_printf());
 
       }
       else
       {
 
-         strReport.append_format("%s", string('.', m_psetParent->m_iResultDotPadding - m_strName.length()));
+         strReport.append_format("%s", string('.', m_psetParent->m_iResultDotPadding - m_strName.length()).c_str_for_printf());
 
       }
 
