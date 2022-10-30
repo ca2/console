@@ -46,11 +46,7 @@ void implement(::acme::context * pcontext)
 
    //path -= ::file::e_flag_bypass_cache;
    
-   auto papexsystem = pcontext->acmesystem()->m_papexsystem;
-   
-   auto & file = papexsystem->file();
-
-   string str = file.as_string(path);
+   string str = pcontext->file()->as_string(path);
 
    //stra.add_lines(str);
 
