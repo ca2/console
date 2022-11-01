@@ -48,9 +48,9 @@ void implement(::acme::context * pcontext)
    
    auto papexsystem = pcontext->acmesystem()->m_papexsystem;
    
-   auto & file = papexsystem->file();
+   auto pfile = papexsystem->file();
 
-   string str = file.as_string(path);
+   string str = pfile->as_string(path);
 
    //stra.add_lines(str);
 

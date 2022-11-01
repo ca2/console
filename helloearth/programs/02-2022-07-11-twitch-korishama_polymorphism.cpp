@@ -37,7 +37,7 @@ double yes_for_two__no_for_three_and_cancel_for_exit_exception()
 //using namespace std;
 
 class Figure :
-   virtual public ::element
+   virtual public ::particle
 {
 public:
 

@@ -22,7 +22,7 @@ void package_windows(::acme::system* psystem, const ::file::path& pathFolder);
 //#define EXTRA_DEBUG
 
 
-void implement(::acme::system* psystem)
+void implement(::acme::context * pcontext)
 {
 
 #ifdef EXTRA_DEBUG
@@ -35,9 +35,9 @@ void implement(::acme::system* psystem)
 
    application_build_helper helper;
 
-   helper.initialize(psystem);
+   helper.initialize(pcontext);
 
-   //auto countArgument = psystem->get_argument_count1();
+   auto psystem = pcontext->acmesystem();
 
    if (psystem->get_argument_count1() == 2 || psystem->get_argument_count1() == 3)
    {
