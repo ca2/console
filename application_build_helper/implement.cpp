@@ -39,14 +39,16 @@ void implement(::acme::context * pcontext)
 
    auto psystem = pcontext->acmesystem();
 
-   if (psystem->get_argument_count1() == 2 || psystem->get_argument_count1() == 3)
+   auto psubsystem = psystem->m_psubsystem;
+
+   if (psubsystem->get_argument_count1() == 2 || psubsystem->get_argument_count1() == 3)
    {
 
-      string strArgument1 = psystem->get_argument1(0);
+      string strArgument1 = psubsystem->get_argument1(0);
 
-      string strArgument2 = psystem->get_argument1(1);
+      string strArgument2 = psubsystem->get_argument1(1);
 
-      string strArgument3 = psystem->get_argument1(2);
+      string strArgument3 = psubsystem->get_argument1(2);
 
       if (strArgument1.compare_ci("-package") == 0)
       {
@@ -100,14 +102,14 @@ void implement(::acme::context * pcontext)
       
    }
    
-   if (psystem->get_argument_count1() == 3)
+   if (psubsystem->get_argument_count1() == 3)
    {
 
-      string strArgument1 = psystem->get_argument1(0);
+      string strArgument1 = psubsystem->get_argument1(0);
 
-      string strArgument2 = psystem->get_argument1(1);
+      string strArgument2 = psubsystem->get_argument1(1);
 
-      string strArgument3 = psystem->get_argument1(2);
+      string strArgument3 = psubsystem->get_argument1(2);
 
       if (strArgument1.compare_ci("-package") == 0)
       {
@@ -140,12 +142,12 @@ void implement(::acme::context * pcontext)
 
    }
    
-   if (psystem->get_argument_count1() >= 1)
+   if (psubsystem->get_argument_count1() >= 1)
    {
 
-      helper.m_strBuildPlatform = psystem->get_argument1(2);
+      helper.m_strBuildPlatform = psubsystem->get_argument1(2);
 
-      helper.m_strBuildConfiguration = psystem->get_argument1(3);
+      helper.m_strBuildConfiguration = psubsystem->get_argument1(3);
 
       helper.prepare_application();
 

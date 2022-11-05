@@ -2,7 +2,8 @@
 #pragma once
 
 
-class twitch
+class twitch :
+   virtual public ::particle
 {
 public:
 

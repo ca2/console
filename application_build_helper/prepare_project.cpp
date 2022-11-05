@@ -1,12 +1,10 @@
 // Created by camilo on 2021-12-17 21:01 BRT <3ThomasBorregaardS�rensen!!
 #include "framework.h"
 #include "application_build_helper.h"
-#include "acme/operating_system/process.h"
-#ifdef WINDOWS
-//#include "apex_windows/_.h"
-#endif
 #include "acme/filesystem/filesystem/acme_directory.h"
 #include "acme/filesystem/filesystem/acme_file.h"
+#include "acme/operating_system/process.h"
+#include "acme/platform/node.h"
 //#include "aura/_defer.h"
 
 
@@ -86,7 +84,7 @@ void application_build_helper::prepare_project()
       for (auto & strCommand : straCommand)
       {
 
-         command_system(straOutput, iExitCode, strCommand, e_command_system_inline_log);
+         acmenode()->command_system(straOutput, iExitCode, strCommand, e_command_system_inline_log);
 
       }
 

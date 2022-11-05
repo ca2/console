@@ -9,9 +9,9 @@
 void application_build_helper::prepare_application()
 {
 
-   string strFolder = acmesystem()->get_argument1(0);
+   string strFolder = subsystem()->get_argument1(0);
 
-   string strProjectName = acmesystem()->get_argument1(1);
+   string strProjectName = subsystem()->get_argument1(1);
 
    set_package_folder(strFolder);
 

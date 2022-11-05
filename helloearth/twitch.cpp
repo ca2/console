@@ -1,6 +1,7 @@
 ﻿// Created by camilo on 2022-10-01 03:25 <3ThomasBorregaardSorensen
 #include "framework.h"
 #include "acme/exception/exit.h"
+#include "acme/platform/node.h"
 #include <iostream>
 #include <stdio.h>
 
@@ -8,7 +9,7 @@
 int twitch::show_main_menu_and_get_menu_item()
 {
 
-   flush_stdin();
+   acmenode()->flush_stdin();
 
    ::std::cout << "1. for run memories dota program:" << ::std::endl;
    ::std::cout << "2. korishama polymorphism programs" << ::std::endl;

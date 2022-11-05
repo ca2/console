@@ -24,10 +24,10 @@ void implement(::acme::context * pcontext)
 
    ::file::path path;
 
-   if (pcontext->acmesystem()->m_argc >= 2)
+   if (pcontext->acmesystem()->m_psubsystem->m_argc >= 2)
    {
 
-      path = pcontext->acmesystem()->m_argv[1];
+      path = pcontext->acmesystem()->m_psubsystem->m_argv[1];
 
    }
 

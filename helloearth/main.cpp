@@ -1,5 +1,6 @@
 ﻿#include "framework.h"
 #include "acme/primitive/primitive/payload.h"
+#include "acme/primitive/string/str.h"
 #define FACTORY console_helloearth
 #define __APP_ID "console/helloearth"
 #if defined(WINDOWS_DESKTOP) && defined(CUBE)

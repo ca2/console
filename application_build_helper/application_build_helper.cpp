@@ -7,6 +7,8 @@
 #include "apex/filesystem/filesystem/file_context.h"
 #include "acme/operating_system/process.h"
 #include "acme/platform/ini.h"
+#include "acme/platform/node.h"
+#include "acme/primitive/string/str.h"
 #include "apex/platform/system.h"
 #ifdef WINDOWS_DESTKOP
 #include <direct.h>
@@ -42,7 +44,7 @@ void application_build_helper::set_package_folder(const ::file::path& pathFolder
 
       if ((pathFolder[0] == '\\' || pathFolder[0] == '/')
          && (pathFolder[2] == '\\' || pathFolder[2] == '/')
-         && ansi_char_is_alphabetic(pathFolder[1]))
+         && ansi_char_isalpha(pathFolder[1]))
       {
 
          string str;
@@ -1405,7 +1407,7 @@ void application_build_helper::zip_matter()
             if (bFirst)
             {
 
-               command_system(straOutput, iExitCode, strZipExe + " -FSr \"" + strZip + "\" " + strFolder + "/*", e_command_system_inline_log);
+               acmenode()->command_system(straOutput, iExitCode, strZipExe + " -FSr \"" + strZip + "\" " + strFolder + "/*", e_command_system_inline_log);
 
                bFirst = false;
 
@@ -1413,7 +1415,7 @@ void application_build_helper::zip_matter()
             else
             {
 
-               command_system(straOutput, iExitCode, strZipExe + " -r \"" + pathZip + "\" " + strFolder + "/*", e_command_system_inline_log);
+               acmenode()->command_system(straOutput, iExitCode, strZipExe + " -r \"" + pathZip + "\" " + strFolder + "/*", e_command_system_inline_log);
 
             }
 
@@ -1444,7 +1446,7 @@ void application_build_helper::zip_matter()
 
    int iExitCode = 0;
 
-   command_system(straOutput, iExitCode, strZipExe + " -r \"" + pathZip + "\" sensitive/sensitive/api/*", e_command_system_inline_log);
+   acmenode()->command_system(straOutput, iExitCode, strZipExe + " -r \"" + pathZip + "\" sensitive/sensitive/api/*", e_command_system_inline_log);
 
 }
 
@@ -1474,7 +1476,7 @@ void application_build_helper::create_linux_matter_object()
 
 #endif
 
-   command_system(straOutput, iExitCode, strCommand, e_command_system_inline_log);
+   acmenode()->command_system(straOutput, iExitCode, strCommand, e_command_system_inline_log);
 
    if (iExitCode != 0)
    {

@@ -1,12 +1,10 @@
 // Created by camilo on 2021-12-17 21:01 BRT <3ThomasBorregaardSørensen!!
 #include "framework.h"
 #include "application_build_helper.h"
-#ifdef WINDOWS
-//#include "apex_windows/_.h"
-#endif
 #include "acme/filesystem/filesystem/acme_directory.h"
 #include "acme/filesystem/filesystem/acme_file.h"
 #include "acme/operating_system/process.h"
+#include "acme/platform/node.h"
 
 
 void get_root_and_item(string& strRoot, string& strItem, const char* pszFolder);
@@ -158,7 +156,7 @@ void application_build_helper::package()
 
    string_array straOutput;
    
-   command_system(straOutput, iExitCode, strCmd, e_command_system_inline_log);
+   acmenode()->command_system(straOutput, iExitCode, strCmd, e_command_system_inline_log);
 
    string strOutput = straOutput.implode("\n");
 
