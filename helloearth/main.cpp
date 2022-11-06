@@ -71,7 +71,7 @@ void implement(::acme::context * pcontext)
 
    printf("Test123=%s\n", strTest123.c_str());
 
-   ::str().begins_eat_ci(strTest123, "test");
+   strTest123.begins_eat_ci("test");
 
    printf("begins_eat_ci(strTest123, \"test\")=%s\n", strTest123.c_str());
 
