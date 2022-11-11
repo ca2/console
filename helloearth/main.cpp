@@ -229,6 +229,8 @@ void implement(::acme::context * pcontext)
 
    twitch twitch;
 
+   twitch.initialize(pcontext);
+
    while (edialogresult != e_dialog_result_yes)
    {
 

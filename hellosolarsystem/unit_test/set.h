@@ -31,7 +31,7 @@ namespace unit_test
       void add_item(item * pitem)
       {
 
-         pitem->set_verbose(is_verbose());
+         pitem->set_verbose_flag(is_verbose());
 
          add(pitem);
 

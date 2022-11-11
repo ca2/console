@@ -1,6 +1,7 @@
 // From implement.cpp by camilo on 2022-09-23 20:08 <3ThomasBorregaardSorensen!!
 #include "framework.h"
 #include "application_build_helper.h"
+#include "acme/exception/exception.h"
 #include "acme/filesystem/filesystem/acme_directory.h"
 #include "acme/filesystem/filesystem/acme_file.h"
 #include "acme/platform/system.h"

@@ -32,4 +32,7 @@
     <LocalDebuggerCommandArguments>"Untitled" : show_application_information2</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
+    <LocalDebuggerDebuggerType>NativeOnly</LocalDebuggerDebuggerType>
+  </PropertyGroup>
 </Project>

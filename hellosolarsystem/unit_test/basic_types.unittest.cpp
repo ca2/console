@@ -20,7 +20,7 @@ __end(iNaturalPointerSize == sizeof(void *));
 __begin(char_natural_pointer_string_type_size)
 
 
-auto stringtypenaturalpointer = string_type < natural_pointer < string_meta_data < char >, string_memory_allocator >>();
+auto stringtypenaturalpointer = natural_pointer < string_meta_data < char >, string_memory_allocator >();
 
 int iStringTypeNaturalPointerSize = sizeof(stringtypenaturalpointer);
 

@@ -204,7 +204,7 @@ void implement(::acme::context * pcontext)
 
    auto punittestset = new_basic_types_unit_test_set();
 
-   punittestset->set_verbose(true);
+   punittestset->set_verbose_flag(true);
 
    punittestset->test();
 
