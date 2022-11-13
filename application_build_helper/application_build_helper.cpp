@@ -215,7 +215,7 @@ void application_build_helper::create_package_list()
 
    }
 
-   if(is_null(m_piniPackageMap))
+   if(::is_null(m_piniPackageMap))
    {
 
       fprintf(stderr,"\n\nFatal! Failed to open package map file: %s\n(Does it exist?)\n\n\n", pathPackageMap.c_str());
