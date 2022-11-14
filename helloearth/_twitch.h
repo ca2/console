@@ -22,6 +22,7 @@ public:
    int octaelliptical_iterative_fibonacci_main();
    int octaelliptical_count_miscellaneous_characters_main();
    int octaelliptical_list_prime_numbers_main();
+   int nicopelullo_binary_tree_to_stack_main();
 
 };
 

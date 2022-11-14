@@ -18,6 +18,7 @@ int twitch::show_main_menu_and_get_menu_item()
    ::std::cout << "5. octaelliptical iterative fibonacci" << ::std::endl;
    ::std::cout << "6. octaelliptical count miscellaneous characters" << ::std::endl;
    ::std::cout << "7. octaelliptical list prime numbers" << ::std::endl;
+   ::std::cout << "8. nicopelullo binary tree to stack" << ::std::endl;
    ::std::cout << "other number to resume" << ::std::endl;
 
    int iMenuItem = -1;
@@ -59,6 +60,9 @@ int twitch::do_menu_item_and_get_next_menu_item(int iMenuItem)
          break;
       case 7:
          iResult = octaelliptical_list_prime_numbers_main();
+         break;
+      case 8:
+         iResult = nicopelullo_binary_tree_to_stack_main();
          break;
       };
 
