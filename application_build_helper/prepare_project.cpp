@@ -1,4 +1,4 @@
-// Created by camilo on 2021-12-17 21:01 BRT <3ThomasBorregaardS�rensen!!
+﻿// Created by camilo on 2021-12-17 21:01 BRT <3ThomasBorregaardS�rensen!!
 #include "framework.h"
 #include "application_build_helper.h"
 #include "acme/filesystem/filesystem/acme_directory.h"
@@ -108,6 +108,25 @@ void application_build_helper::prepare_project()
          acmefile()->copy(pathResource, pathResourceTemplate, false);
 
       }
+
+      ::file::path pathApplicationBuildHelperInput = m_pathFolder / "application_build_helper_input.txt";
+
+      if (!file_exists(pathApplicationBuildHelperInput))
+      {
+
+         acmefile()->touch(pathApplicationBuildHelperInput);
+
+      }
+
+      ::file::path pathApplicationBuildHelperOutput = m_pathFolder / "application_build_helper_output.txt";
+
+      if (!file_exists(pathApplicationBuildHelperOutput))
+      {
+
+         acmefile()->touch(pathApplicationBuildHelperOutput);
+
+      }
+
 
    }
 

@@ -1,4 +1,4 @@
-// From implement.cpp by camilo on 2022-09-23 20:08 <3ThomasBorregaardSorensen!!
+﻿// From implement.cpp by camilo on 2022-09-23 20:08 <3ThomasBorregaardSorensen!!
 #include "framework.h"
 #include "application_build_helper.h"
 #include "acme/exception/exception.h"
@@ -134,47 +134,69 @@ void application_build_helper::prepare_application()
 
    acmefile()->put_contents(pathTargetPackages, strTranslatedPackages);
 
-   defer_matter();
+   bool bDoMatter = true;
 
-   zip_matter();
+   ::file::path pathMatterOutput = m_pathFolder / "matter_output.txt";
 
-   ::file::path pathZip = m_pathFolder / "_matter.zip";
-
-   if (!acmefile()->exists(pathZip))
+   if (m_bSoftBuild)
    {
 
-      string strError;
+      if (file_exists(pathMatterOutput))
+      {
 
-      strError.format("\"%s\" wasn't created.", pathZip.c_str());
+         bDoMatter = false;
 
-      throw ::exception(error_failed, strError);
+      }
 
    }
 
-   auto pathSeedAndroid = m_pathOperatingSystem / "seed-android";
-
-   if (acmedirectory()->is(pathSeedAndroid))
+   if (bDoMatter)
    {
 
-      auto pathAssetsMatterZip = pathSeedAndroid / m_strAppId / "app/src/main/assets/_matter.zip";
+      defer_matter();
 
-      acmefile()->copy(pathAssetsMatterZip, pathZip, true);
-      
-   }
+      zip_matter();
 
+      ::file::path pathZip = m_pathFolder / "_matter.zip";
 
-   int iCreateLinuxMatterObject = string(getenv("DISTRO")) == "raspbian";
+      if (!acmefile()->exists(pathZip))
+      {
+
+         string strError;
+
+         strError.format("\"%s\" wasn't created.", pathZip.c_str());
+
+         throw ::exception(error_failed, strError);
+
+      }
+
+      acmefile()->touch(pathMatterOutput);
+
+      auto pathSeedAndroid = m_pathOperatingSystem / "seed-android";
+
+      if (acmedirectory()->is(pathSeedAndroid))
+      {
+
+         auto pathAssetsMatterZip = pathSeedAndroid / m_strAppId / "app/src/main/assets/_matter.zip";
+
+         acmefile()->copy(pathAssetsMatterZip, pathZip, true);
+
+      }
+
+      int iCreateLinuxMatterObject = string(getenv("DISTRO")) == "raspbian";
 
 #if defined(FREEBSD) || defined(LINUX)
 
-   iCreateLinuxMatterObject = 1;
+      iCreateLinuxMatterObject = 1;
 
 #endif
 
-   if (iCreateLinuxMatterObject)
-   {
+      if (iCreateLinuxMatterObject)
+      {
 
-      create_linux_matter_object();
+         create_linux_matter_object();
+
+      }
 
    }
 

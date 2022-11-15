@@ -1,4 +1,4 @@
-// From application_build_helper to implement.cpp by camilo on 2021-12-17 21:04 BRT <3ThomasBorregaardSørensen!!
+﻿// From application_build_helper to implement.cpp by camilo on 2021-12-17 21:04 BRT <3ThomasBorregaardSørensen!!
 #include "framework.h"
 #define FACTORY console_application_build_helper
 #define __APP_ID "console/application_build_helper"
@@ -149,9 +149,11 @@ void implement(::acme::context * pcontext)
 
       helper.m_strBuildConfiguration = psubsystem->get_argument1(3);
 
-      helper.prepare_application();
+      helper.m_bSoftBuild = true;
 
       helper.prepare_project();
+
+      helper.prepare_application();
 
       return;
 

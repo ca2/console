@@ -1,4 +1,4 @@
-// Created by camilo on 2021-12-17 21:01 BRT <3ThomasBorregaardSørensen!!
+﻿// Created by camilo on 2021-12-17 21:01 BRT <3ThomasBorregaardSørensen!!
 #pragma once
 
 
@@ -31,6 +31,8 @@ class application_build_helper :
 {
 public:
 
+
+   bool                          m_bSoftBuild = false;
 
    string                        m_strOperatingSystem2;
    string                        m_strSlashedOperatingSystem;
