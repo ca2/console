@@ -145,11 +145,15 @@ void implement(::acme::context * pcontext)
    if (psubsystem->get_argument_count1() >= 1)
    {
 
+      ::string strPackageFolder = psubsystem->get_argument1(0);
+
       helper.m_strBuildPlatform = psubsystem->get_argument1(2);
 
       helper.m_strBuildConfiguration = psubsystem->get_argument1(3);
 
       helper.m_bSoftBuild = true;
+
+      helper.set_package_folder(strPackageFolder);
 
       helper.prepare_project();
 
