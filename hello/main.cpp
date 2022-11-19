@@ -66,7 +66,7 @@ void implement(::acme::context * pcontext)
                   
 //                  ::exception exception(error_catch_all_exception);
 //
-//                  auto psequencer = psystem->exception_message_sequencer(exception, "Dummy inline Catchall Exception at Hello Console App!!\n", "Dummy inline Hello Console App!", e_message_box_ok, "Dummy inline Hello Console App!!");
+//                  auto psequencer = psystem->nano()->exception_message_sequencer(exception, "Dummy inline Catchall Exception at Hello Console App!!\n", "Dummy inline Hello Console App!", e_message_box_ok, "Dummy inline Hello Console App!!");
 //
 //                  psequencer->do_asynchronously();
                   
@@ -82,7 +82,7 @@ void implement(::acme::context * pcontext)
                catch(::exception & exception)
                {
                   
-                  auto psequencer = pcontext->exception_message_sequencer(exception, "Exception at Hello Console App!!\n" + exception.get_message(), "Hello Console App!", e_message_box_ok, "Hello Console App!!\n");
+                  auto psequencer = pcontext->nano()->exception_message_sequencer(exception, "Exception at Hello Console App!!\n" + exception.get_message(), "Hello Console App!", e_message_box_ok, "Hello Console App!!\n");
 
                   psequencer->do_asynchronously();
                   
@@ -92,7 +92,7 @@ void implement(::acme::context * pcontext)
                   
                   ::exception exception(error_catch_all_exception);
 
-                  auto psequencer = pcontext->exception_message_sequencer(exception, "Catchall Exception at Hello Console App!!\n", "Hello Console App!", e_message_box_ok, "Hello Console App!!");
+                  auto psequencer = pcontext->nano()->exception_message_sequencer(exception, "Catchall Exception at Hello Console App!!\n", "Hello Console App!", e_message_box_ok, "Hello Console App!!");
 
                   psequencer->do_asynchronously();
 
