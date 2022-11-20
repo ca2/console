@@ -3,6 +3,7 @@
 #include "acme/platform/system.h"
 #include "acme/platform/sequencer.h"
 #include "acme/user/user/conversation.h"
+#include "acme/user/nano/nano.h"
 #define FACTORY console_hello
 #define __APP_ID "console/hello"
 #if defined(WINDOWS_DESKTOP) && defined(CUBE)
