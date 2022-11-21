@@ -15,7 +15,7 @@
 #endif
 #include "application_build_helper.h"
 //#include "acme/platform/system.h"
-#include "acme/primitive/collection/string_array.h"
+//#include "acme/primitive/collection/string_array.h"
 //#include "_factory.h"
 
 

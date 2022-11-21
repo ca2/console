@@ -1,5 +1,5 @@
 ﻿#include "framework.h"
-#include "acme/primitive/primitive/payload.h"
+//#include "acme/primitive/primitive/payload.h"
 #include "acme/primitive/string/str.h"
 #define FACTORY console_helloearth
 #define __APP_ID "console/helloearth"
@@ -122,11 +122,11 @@ void implement(::acme::context * pcontext)
 
    atom = 1;
 
-   printf("atom=%s\n", atom.string().c_str());
+   printf("atom=%s\n", atom.as_string().c_str());
 
    atom = "two";
 
-   printf("atom=%s\n", atom.string().c_str());
+   printf("atom=%s\n", atom.as_string().c_str());
 
    property_set set;
 

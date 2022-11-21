@@ -9,7 +9,7 @@
 //BEGIN_FACTORY(console_hellosolarsystem)
 //FACTORY_DEPENDENCY(apex_windows)
 //END_FACTORY()
-#include "apex/console.h"
+#include "acme/console.h"
 #include "acme/platform/system.h"
 //#include "aqua/xml.h"
 #include <stdio.h>
