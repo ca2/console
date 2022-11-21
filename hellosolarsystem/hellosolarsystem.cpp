@@ -14,7 +14,7 @@
 //#include "aqua/xml.h"
 #include <stdio.h>
 #include "acme/primitive/mathematics/mathematics.h"
-#include "acme/primitive/duration/__string.h"
+#include "acme/primitive/duration/as_string.h"
 #include "unit_test/set.h"
 
 
@@ -32,7 +32,7 @@ inline string _009Explode(const CONTAINER& container, string strSeparator, strin
    for (auto& item : container)
    {
 
-      str += __string(item);
+      str += as_string(item);
 
       if (i > 2)
       {
@@ -117,7 +117,7 @@ void implement(::acme::context * pcontext)
 
    string strElapsed;
 
-   strElapsed = " Elapsed: " + __string(elapsed.integral_millisecond()) + "ms";
+   strElapsed = " Elapsed: " + as_string(elapsed.integral_millisecond()) + "ms";
 
    output_debug_string(strElapsed);
 
