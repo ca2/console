@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{1ca0861d-4267-4854-8bf6-9ad0173f1893}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Files">
+      <UniqueIdentifier>{64a04574-142f-4730-9ed6-f92aecc7ccc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Files\programs">
+      <UniqueIdentifier>{04917081-e654-4ca9-84dd-ae0bc6070000}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="twitch.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="framework.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="programs\07-2022-10-06-twitch-octaelliptical_list_prime_numbers.cpp">
+      <Filter>Files\programs</Filter>
+    </ClCompile>
+    <ClCompile Include="programs\01-2022-02-11-twitch-memoriesdota_file_word_count.cpp">
+      <Filter>Files\programs</Filter>
+    </ClCompile>
+    <ClCompile Include="programs\02-2022-07-11-twitch-korishama_polymorphism.cpp">
+      <Filter>Files\programs</Filter>
+    </ClCompile>
+    <ClCompile Include="programs\03-2022-09-30-twitch-octaelliptical_star.cpp">
+      <Filter>Files\programs</Filter>
+    </ClCompile>
+    <ClCompile Include="programs\04-2022-10-01-twitch-octaelliptical_star_only_odd_line_count.cpp">
+      <Filter>Files\programs</Filter>
+    </ClCompile>
+    <ClCompile Include="programs\05-2022-10-04-twitch-octaelliptical_iterative_fibonacci.cpp">
+      <Filter>Files\programs</Filter>
+    </ClCompile>
+    <ClCompile Include="programs\06-2022-10-05-twitch-octaelliptical_count_miscellaneous_characters.cpp">
+      <Filter>Files\programs</Filter>
+    </ClCompile>
+    <ClCompile Include="programs\08-2022-11-14-twitch%40nicopelullo-binary_tree_to_stack.cpp">
+      <Filter>Files\programs</Filter>
+    </ClCompile>
+    <ClCompile Include="programs\09-2022-11-15-twitch%40nicopelullo-inorder__preorder_and_post_order.cpp">
+      <Filter>Files\programs</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="_twitch.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="deployment.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>
