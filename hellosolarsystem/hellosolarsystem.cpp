@@ -14,7 +14,7 @@
 //#include "aqua/xml.h"
 #include <stdio.h>
 #include "acme/primitive/mathematics/mathematics.h"
-#include "acme/primitive/duration/as_string.h"
+#include "acme/primitive/duration/_string.h"
 #include "unit_test/set.h"
 
 
