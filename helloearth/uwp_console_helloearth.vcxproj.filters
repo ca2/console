@@ -52,7 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\helloearth_TemporaryKey.pfx" />
-    <None Include="..\..\..\..\operating-system\storage-universal_windows\Win32\basis\third\binary\zlib.dll" />
+    <None Include="..\..\..\..\operating-system\storage-universal_windows\Win32\debug\third\binary\zlib.dll" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="UWP">
@@ -73,6 +73,9 @@
     <Filter Include="Source Files">
       <UniqueIdentifier>{322fb022-14d5-4dc3-bb42-5f3a912473dc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\programs">
+      <UniqueIdentifier>{9f027ab0-e82b-4f31-ab3b-6d93c89b9b0c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package10.appxmanifest">
@@ -83,32 +86,38 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="01-2022-02-11-twitch-memoriesdota_file_word_count.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="02-2022-07-11-twitch-korishama_polymorphism.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="03-2022-09-30-twitch-octaelliptical_star.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="04-2022-10-01-twitch-octaelliptical_star_only_odd_line_count.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="05-2022-10-04-twitch-octaelliptical_iterative_fibonacci.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="06-2022-10-05-twitch-octaelliptical_count_miscellaneous_characters.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="07-2022-10-06-twitch-octaelliptical_list_prime_numbers.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="twitch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="framework.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="programs\01-2022-02-11-twitch-memoriesdota_file_word_count.cpp">
+      <Filter>Source Files\programs</Filter>
+    </ClCompile>
+    <ClCompile Include="programs\02-2022-07-11-twitch-korishama_polymorphism.cpp">
+      <Filter>Source Files\programs</Filter>
+    </ClCompile>
+    <ClCompile Include="programs\03-2022-09-30-twitch-octaelliptical_star.cpp">
+      <Filter>Source Files\programs</Filter>
+    </ClCompile>
+    <ClCompile Include="programs\04-2022-10-01-twitch-octaelliptical_star_only_odd_line_count.cpp">
+      <Filter>Source Files\programs</Filter>
+    </ClCompile>
+    <ClCompile Include="programs\05-2022-10-04-twitch-octaelliptical_iterative_fibonacci.cpp">
+      <Filter>Source Files\programs</Filter>
+    </ClCompile>
+    <ClCompile Include="programs\06-2022-10-05-twitch-octaelliptical_count_miscellaneous_characters.cpp">
+      <Filter>Source Files\programs</Filter>
+    </ClCompile>
+    <ClCompile Include="programs\07-2022-10-06-twitch-octaelliptical_list_prime_numbers.cpp">
+      <Filter>Source Files\programs</Filter>
+    </ClCompile>
+    <ClCompile Include="programs\08-2022-11-14-twitch%40nicopelullo-binary_tree_to_stack.cpp">
+      <Filter>Source Files\programs</Filter>
+    </ClCompile>
+    <ClCompile Include="programs\09-2022-11-15-twitch%40nicopelullo-inorder__preorder_and_post_order.cpp">
+      <Filter>Source Files\programs</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
