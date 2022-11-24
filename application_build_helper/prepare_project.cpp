@@ -98,6 +98,8 @@ void application_build_helper::prepare_project()
    if (m_strItem.compare_ci("deployment") != 0)
    {
 
+#ifdef WINDOWS_DESKTOP
+
       ::file::path pathResource = m_pathFolder / "resource.h";
 
       if (!file_exists(pathResource))
@@ -109,12 +111,14 @@ void application_build_helper::prepare_project()
 
       }
 
+#endif
+
       ::file::path pathApplicationBuildHelperInput = m_pathFolder / "application_build_helper_input.txt";
 
       if (!file_exists(pathApplicationBuildHelperInput))
       {
 
-         acmefile()->touch(pathApplicationBuildHelperInput);
+         acmefile()->ensure_exists(pathApplicationBuildHelperInput);
 
       }
 
@@ -123,7 +127,7 @@ void application_build_helper::prepare_project()
       if (!file_exists(pathApplicationBuildHelperOutput))
       {
 
-         acmefile()->touch(pathApplicationBuildHelperOutput);
+         acmefile()->ensure_exists(pathApplicationBuildHelperOutput);
 
       }
 

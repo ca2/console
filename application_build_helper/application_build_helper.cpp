@@ -1472,7 +1472,7 @@ void application_build_helper::create_linux_matter_object()
 
 #else
 
-   strCommand = "ld -r -b binary -o " + pathMatterZipO + " _matter.zip";
+   strCommand = "ld -r -z noexecstack -b binary -o " + pathMatterZipO + " _matter.zip";
 
 #endif
 

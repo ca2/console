@@ -170,7 +170,7 @@ void application_build_helper::prepare_application()
 
       }
 
-      acmefile()->touch(pathMatterOutput);
+      acmefile()->ensure_exists(pathMatterOutput);
 
       auto pathSeedAndroid = m_pathOperatingSystem / "seed-android";
 
