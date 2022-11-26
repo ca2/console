@@ -65,6 +65,12 @@ void implement(::acme::context * pcontext)
 
    printf("%s\n", strHelloEarth.c_str());
 
+   string strATestText(" A TestText");
+
+   string strAEIOU("Oh" + strATestText);
+
+   printf("strAEIOU=%s", strAEIOU.c_str());
+
    string strTest123;
 
    strTest123 = "Test123";
