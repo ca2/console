@@ -185,7 +185,7 @@ namespace nicopelullo
 int twitch::nicopelullo_binary_tree_to_stack_main()
 {
 
-	int m_iData, opcion2, opcion, contador = 0;
+	int m_iData, opcion, contador = 0;
 
 	do {
 		::std::cout << "MENU" << ::std::endl;

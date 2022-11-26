@@ -45,7 +45,7 @@
     <ClCompile Include="programs\08-2022-11-14-twitch%40nicopelullo-binary_tree_to_stack.cpp">
       <Filter>Files\programs</Filter>
     </ClCompile>
-    <ClCompile Include="09-2022-11-15-twitch%40nicopelullo-inorder__preorder_and_post_order.cpp">
+    <ClCompile Include="programs\09-2022-11-15-twitch%40nicopelullo-inorder__preorder_and_post_order.cpp">
       <Filter>Files\programs</Filter>
     </ClCompile>
   </ItemGroup>

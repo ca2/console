@@ -14,7 +14,7 @@
 //#include "aqua/xml.h"
 #include <stdio.h>
 #include "acme/primitive/mathematics/mathematics.h"
-#include "acme/primitive/duration/_string.h"
+#include "acme/primitive/time/_string.h"
 #include "unit_test/set.h"
 
 
@@ -87,9 +87,9 @@ void implement(::acme::context * pcontext)
 //
 //   cjsteel_0001_ca2_rev();
 
-   ::duration duration;
+   class ::time time;
 
-   duration.Now();
+   time.Now();
 
    preempt(10_ms);
 
@@ -113,7 +113,7 @@ void implement(::acme::context * pcontext)
 
 //   }
 
-   auto elapsed = duration.elapsed();
+   auto elapsed = time.elapsed();
 
    string strElapsed;
 

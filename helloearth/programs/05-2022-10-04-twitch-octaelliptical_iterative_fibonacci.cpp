@@ -83,7 +83,7 @@ int twitch::octaelliptical_iterative_fibonacci_main()
 
          iFibonacci_of_n_minus_2 = iFibonacci_of_n_minus_1;
 
-         iFibonacci_of_n_minus_1 = iFibonacci;
+         iFibonacci_of_n_minus_1 = (int) iFibonacci;
 
          nCurrent++;
 
