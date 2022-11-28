@@ -42,11 +42,13 @@
     <ShowAllFiles>false</ShowAllFiles>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='static_debug|x64'">
-    <LocalDebuggerCommandArguments>C:\basis\source\app\acme acme x64 debug</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>-prepare_projects project_list.txt</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerWorkingDirectory>C:\debug\</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
-    <LocalDebuggerCommandArguments>C:\basis\source\app\acme acme x64 debug</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>-prepare_projects project_list.txt</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerWorkingDirectory>C:\debug</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
 </Project>
