@@ -68,155 +68,175 @@ inline string _009Explode(const CONTAINER& container, string strSeparator, strin
 //#include "printf_format_flags.cpp"
 
 
-void implement(::acme::context * pcontext)
+class console_hellosolarsystem :
+   virtual public ::apex::application
 {
+public:
 
-   //::console console(argc, argv, envp);
 
-//   pointer_const_pointer();
-//
-//   pointer_const_pointer0();
-//
-//   printf_format_flags();
-//
-//   brushing_bit_per_bit();
-//
-//   double_to_int();
-//
-//   loop_get_char();
-//
-//   cjsteel_0001_ca2_rev();
-
-   class ::time time;
-
-   time.Now();
-
-   preempt(10_ms);
-
-//   {
-//
-//      int iAsteriskAmpersandNakedType = 1;
-//
-//      printf("iAsteriskAmpersandNakedType (init) %d\n", iAsteriskAmpersandNakedType);
-//
-//      asterisk(&iAsteriskAmpersandNakedType);
-//
-//      printf("iAsteriskAmpersandNakedType (after Asterisk) %d\n", iAsteriskAmpersandNakedType);
-//
-//      ampersand(iAsteriskAmpersandNakedType);
-//
-//      printf("iAsteriskAmpersandNakedType (after Ampersand) %d\n", iAsteriskAmpersandNakedType);
-//
-//      naked_type(iAsteriskAmpersandNakedType);
-//
-//      printf("iAsteriskAmpersandNakedType (after Naked Type) %d\n", iAsteriskAmpersandNakedType);
-
-//   }
-
-   auto elapsed = time.elapsed();
-
-   string strElapsed;
-
-   strElapsed = " Elapsed: " + as_string(elapsed.integral_millisecond()) + "ms";
-
-   output_debug_string(strElapsed);
-
-   if (pcontext->acmesystem()->is_true("debug"))
+   console_hellosolarsystem()
    {
 
-      printf("\n");
-      printf("%s", "\"debug\" command line parameter set\n");
-      printf("%s", "running debug routine(s)\n");
-      printf("\n");
-      printf("\n");
+      m_bNetworking = false;
 
-      //debug_debug_reference();
+      m_strAppId = "console/hellosolarsystem";
 
    }
 
+
+   void on_request(::request* prequest)
    {
 
-      string strTitle = "Hello Solar System!!";
+      //::console console(argc, argv, envp);
 
-      printf("%s\n", strTitle.c_str());
+   //   pointer_const_pointer();
+   //
+   //   pointer_const_pointer0();
+   //
+   //   printf_format_flags();
+   //
+   //   brushing_bit_per_bit();
+   //
+   //   double_to_int();
+   //
+   //   loop_get_char();
+   //
+   //   cjsteel_0001_ca2_rev();
+
+      class ::time time;
+
+      time.Now();
+
+      preempt(10_ms);
+
+      //   {
+      //
+      //      int iAsteriskAmpersandNakedType = 1;
+      //
+      //      printf("iAsteriskAmpersandNakedType (init) %d\n", iAsteriskAmpersandNakedType);
+      //
+      //      asterisk(&iAsteriskAmpersandNakedType);
+      //
+      //      printf("iAsteriskAmpersandNakedType (after Asterisk) %d\n", iAsteriskAmpersandNakedType);
+      //
+      //      ampersand(iAsteriskAmpersandNakedType);
+      //
+      //      printf("iAsteriskAmpersandNakedType (after Ampersand) %d\n", iAsteriskAmpersandNakedType);
+      //
+      //      naked_type(iAsteriskAmpersandNakedType);
+      //
+      //      printf("iAsteriskAmpersandNakedType (after Naked Type) %d\n", iAsteriskAmpersandNakedType);
+
+      //   }
+
+      auto elapsed = time.elapsed();
+
+      string strElapsed;
+
+      strElapsed = " Elapsed: " + ::as_string(elapsed.integral_millisecond()) + "ms";
+
+      output_debug_string(strElapsed);
+
+      if (acmesystem()->is_true("debug"))
+      {
+
+         printf("\n");
+         printf("%s", "\"debug\" command line parameter set\n");
+         printf("%s", "running debug routine(s)\n");
+         printf("\n");
+         printf("\n");
+
+         //debug_debug_reference();
+
+      }
+
+      {
+
+         string strTitle = "Hello Solar System!!";
+
+         printf("%s\n", strTitle.c_str());
+
+      }
+
+      {
+
+         printf("\n");
+         printf("papp->m_strAppId == \"%s\"\n", m_strAppId.c_str());
+         printf("\n");
+
+      }
+
+      printf("\n");
+
+      //   {
+      //
+      //      int_array ia;
+      //
+      //      ia.add(1);
+      //
+      //      ia.add(1);
+      //
+      //      ia.add(1);
+      //
+      //      ia.add(2);
+      //
+      //      ia.add(3);
+      //
+      //      ia.add(3);
+      //
+      //      ia.add(4);
+      //
+      //      ia.add(5);
+      //
+      //      ia.add(6);
+      //
+      //      ia.add(6);
+      //
+      //      ia.add(6);
+      //
+      //      ia.add(7);
+      //
+      //      ia.add(7);
+      //
+      //      ia.add(8);
+      //
+      //      string str = _009Explode(ia, ", ", " and ");
+      //
+      //      printf("Finding odds at %s\n", str.c_str());
+      //
+      //      int_array furyDriveArray;
+      //
+      //      ::in_odd_count(furyDriveArray, ia);
+      //
+      //      str = _009Explode(furyDriveArray, ", ", " and ");
+      //
+      //      printf("The items in_odd_count are %s\n", str.c_str());
+      //
+      //   }
+
+      printf("\n");
+
+      printf("Running all unit tests...\n\n");
+
+      auto punittestset = new_basic_types_unit_test_set();
+
+      punittestset->set_verbose_flag(true);
+
+      punittestset->test();
+
+      auto strReport = punittestset->get_plain_text_report();
+
+      printf("%s", strReport.c_str());
+
+      message_box_for_console("Hello Solar System!!", "hellosolarsystem", e_message_box_ok);
+
+      // return ::success;
 
    }
 
-   {
 
-      printf("\n");
-      printf("papp->m_strAppId == \"%s\"\n", pcontext->acmesystem()->m_strAppId.c_str());
-      printf("\n");
-
-   }
-
-   printf("\n");
-
-//   {
-//
-//      int_array ia;
-//
-//      ia.add(1);
-//
-//      ia.add(1);
-//
-//      ia.add(1);
-//
-//      ia.add(2);
-//
-//      ia.add(3);
-//
-//      ia.add(3);
-//
-//      ia.add(4);
-//
-//      ia.add(5);
-//
-//      ia.add(6);
-//
-//      ia.add(6);
-//
-//      ia.add(6);
-//
-//      ia.add(7);
-//
-//      ia.add(7);
-//
-//      ia.add(8);
-//
-//      string str = _009Explode(ia, ", ", " and ");
-//
-//      printf("Finding odds at %s\n", str.c_str());
-//
-//      int_array furyDriveArray;
-//
-//      ::in_odd_count(furyDriveArray, ia);
-//
-//      str = _009Explode(furyDriveArray, ", ", " and ");
-//
-//      printf("The items in_odd_count are %s\n", str.c_str());
-//
-//   }
-
-   printf("\n");
-
-   printf("Running all unit tests...\n\n");
-
-   auto punittestset = new_basic_types_unit_test_set();
-
-   punittestset->set_verbose_flag(true);
-
-   punittestset->test();
-
-   auto strReport = punittestset->get_plain_text_report();
-
-   printf("%s", strReport.c_str());
-   
-   message_box_for_console("Hello Solar System!!", "hellosolarsystem", e_message_box_ok);
-
-   // return ::success;
-
-}
+};
 
 
 
+console_hellosolarsystem g_consolesolarsystem;

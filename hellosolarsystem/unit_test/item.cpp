@@ -138,7 +138,7 @@ namespace unit_test
 
       strReport.append_format("%s", m_strName.c_str_for_printf());
 
-      if (is_verbose() && m_strText.has_char())
+      if (acmeapplication()->m_bVerbose && m_strText.has_char())
       {
 
          strReport += "\n";

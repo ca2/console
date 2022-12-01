@@ -3,6 +3,7 @@
 
 
 #include "item.h"
+#include "acme/platform/application.h"
 //#include "acme/primitive/collection/pointer_array.h"
 
 
@@ -31,7 +32,7 @@ namespace unit_test
       void add_item(item * pitem)
       {
 
-         pitem->set_verbose_flag(is_verbose());
+         pitem->set_verbose_flag(acmeapplication()->m_bVerbose);
 
          add(pitem);
 
@@ -64,7 +65,7 @@ namespace unit_test
 } // namespace unit_test
 
 
-#define DECLARE_UNIT_TEST_SET(MODULE) ::unit_test::set * TOKENPASTE(TOKENPASTE(new_, MODULE), _unit_test_set)()
+#define DECLARE_UNIT_TEST_SET(MODULE) ::unit_test::set * TOKEN_CONCATENATE(TOKEN_CONCATENATE(new_, MODULE), _unit_test_set)()
 
 
 

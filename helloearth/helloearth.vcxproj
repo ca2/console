@@ -936,7 +936,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="application.cpp" />
     <ClCompile Include="programs\01-2022-02-11-twitch-memoriesdota_file_word_count.cpp" />
     <ClCompile Include="programs\02-2022-07-11-twitch-korishama_polymorphism.cpp" />
     <ClCompile Include="programs\03-2022-09-30-twitch-octaelliptical_star.cpp" />

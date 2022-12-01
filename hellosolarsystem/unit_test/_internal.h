@@ -19,7 +19,7 @@ bool test() override {
 return (b); \
 } \
  \
-} TOKENPASTE(m_unittest,__LINE__);
+} TOKEN_CONCATENATE(m_unittest,__LINE__);
 
 //#define DECLARE_UNIT_TEST(xxx) \
 //bool unit_test_ ## xxx()
@@ -32,14 +32,14 @@ return (b); \
 
 
 
-//::unit_test::switch_to_parent_before_add_item TOKENPASTE(m_switchtoparentbeforeadditem, __LINE__); 
+//::unit_test::switch_to_parent_before_add_item TOKEN_CONCATENATE(m_switchtoparentbeforeadditem, __LINE__); 
 
 
 #define __START(xxx) \
-class TOKENPASTE(set_, xxx) : \
+class TOKEN_CONCATENATE(set_, xxx) : \
    virtual public ::unit_test::set \
 { \
-public: TOKENPASTE(set_, xxx)() : set(STRINGFY(xxx)),item(e_add_set, STRINGFY(xxx)) {}
+public: TOKEN_CONCATENATE(set_, xxx)() : set(STRINGFY(xxx)),item(e_add_set, STRINGFY(xxx)) {}
 
 
 
@@ -51,8 +51,8 @@ __START(MODULE)
 
 
 #define __END() \
-} TOKENPASTE(m_unitest, __LINE__); \
-::unit_test::end_group TOKENPASTE(m_endgroup, __LINE__);
+} TOKEN_CONCATENATE(m_unitest, __LINE__); \
+::unit_test::end_group TOKEN_CONCATENATE(m_endgroup, __LINE__);
 
 
 
@@ -63,7 +63,7 @@ __START(MODULE)
 DECLARE_UNIT_TEST_SET(MODULE) \
 { \
 \
-auto p= new ::unit_test::MODULE::TOKENPASTE(set_, MODULE)(); \
+auto p= new ::unit_test::MODULE::TOKEN_CONCATENATE(set_, MODULE)(); \
 ::unit_test::set::t_bEndGroup = false;\
 return p;\
 \

@@ -8,11 +8,11 @@ void implement(::acme::system * psystem)
 
 #ifdef LINUX
 
-   ::factory::add_factory_item< ::linux::build, ::app_build::build>();
+   factory()->add_factory_item< ::linux::build, ::app_build::build>();
 
 #endif
 
-   auto papp = psystem->m_pacmeapplicationStartup;
+   auto papp = psystem->acmeapplication();
 
    papp->osthread_init();
 

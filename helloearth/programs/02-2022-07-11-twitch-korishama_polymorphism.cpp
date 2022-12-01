@@ -1,4 +1,4 @@
-#include "framework.h"
+﻿#include "framework.h"
 #include "acme/platform/system.h"
 #include "acme/exception/exit.h"
 #include "acme/exception/interface_only.h"
@@ -6,10 +6,10 @@
 #include <fstream>
 
 
-double yes_for_two__no_for_three_and_cancel_for_exit_exception()
+double yes_for_two__no_for_three_and_cancel_for_exit_exception(::particle * pparticle)
 {
 
-   auto psystem = ::get_system();
+   auto psystem = pparticle->acmesystem();
 
    auto result = message_box_synchronous(psystem, "Yes for two and No for 3\n\n(and cancel for exit...)", "Hello App!", e_message_box_yes_no_cancel | e_message_box_default_button_3, "Hello Multiverse!!");
 
@@ -75,7 +75,7 @@ public:
 
    double m_dRadius;
 
-   Circle(double dRadius = yes_for_two__no_for_three_and_cancel_for_exit_exception())
+   Circle(double dRadius)
    {
 
       m_dRadius = dRadius;
@@ -107,7 +107,7 @@ public:
 
    double m_dSide;
 
-   TriangleRegular(double dSide = yes_for_two__no_for_three_and_cancel_for_exit_exception())
+   TriangleRegular(double dSide)
    {
 
       m_dSide = dSide;
@@ -140,7 +140,7 @@ public:
 
    double m_dSide;
 
-   Square(double dSide = yes_for_two__no_for_three_and_cancel_for_exit_exception())
+   Square(double dSide)
    {
 
       m_dSide = dSide;
@@ -171,11 +171,11 @@ public:
 int twitch::korishama_polymorphism_main()
 {
 
-   auto ptriangle = __new(TriangleRegular());
+   auto ptriangle = __new(TriangleRegular(yes_for_two__no_for_three_and_cancel_for_exit_exception(this)));
 
-   auto pcircle = __new(Circle());
+   auto pcircle = __new(Circle(yes_for_two__no_for_three_and_cancel_for_exit_exception(this)));
 
-   auto psquare = __new(Square());
+   auto psquare = __new(Square(yes_for_two__no_for_three_and_cancel_for_exit_exception(this)));
 
    pointer_array < Figure > figures({ptriangle, pcircle, psquare});
 

@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{1ca0861d-4267-4854-8bf6-9ad0173f1893}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{64a04574-142f-4730-9ed6-f92aecc7ccc4}</UniqueIdentifier>
+      <UniqueIdentifier>{ae342578-23ba-4178-83e7-29e5cbb54847}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{b47597aa-ee8a-4837-a068-492370be0e7c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -17,10 +17,5 @@
     <ResourceCompile Include="deployment.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="_static_factory.inl">
-      <Filter>Source Files</Filter>
-    </None>
   </ItemGroup>
 </Project>
