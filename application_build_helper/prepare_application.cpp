@@ -177,7 +177,7 @@ void application_build_helper::prepare_application()
       if (acmedirectory()->is(pathSeedAndroid))
       {
 
-         auto pathAssetsMatterZip = pathSeedAndroid / m_strAppId / "app/src/main/assets/_matter.zip";
+         auto pathAssetsMatterZip = pathSeedAndroid / m_strPackageAppId / "app/src/main/assets/_matter.zip";
 
          acmefile()->copy(pathAssetsMatterZip, pathZip, true);
 

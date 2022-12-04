@@ -736,8 +736,8 @@
       </Inputs>
     </CustomBuildStep>
     <PostBuildEvent>
-      <Command>copy $(TargetPath) "$(SolutionDir)..\..\..\operating-system\tool-windows\bin\application_build_helper.exe"
-copy $(TargetPath) "C:\operating-system\tool-windows\bin\application_build_helper.exe"</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
@@ -934,7 +934,7 @@ copy $(TargetPath) "C:\operating-system\tool-windows\bin\application_build_helpe
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="application_build_helper.cpp" />
-    <ClCompile Include="implement.cpp" />
+    <ClCompile Include="application.cpp" />
     <ClCompile Include="package.cpp" />
     <ClCompile Include="prepare_application.cpp" />
     <ClCompile Include="prepare_project.cpp" />

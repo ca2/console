@@ -1,4 +1,4 @@
-#include "framework.h"
+﻿#include "framework.h"
 ////#include "acme/exception/exception.h"
 #include "acme/filesystem/file/_constant.h"
 #include "acme/filesystem/filesystem/acme_file.h"
@@ -19,10 +19,16 @@
 //#include "_factory.h"
 
 
+
+
+
 application_build_helper::application_build_helper()
 {
 
+   m_strAppId = "console/application_build_helper";
    m_bTranslateDependency = false;
+   m_bNetworking = false;
+   m_eexclusiveinstance = e_exclusive_instance_none;
    
 }
 
@@ -85,9 +91,9 @@ void application_build_helper::set_package_folder(const ::file::path& pathFolder
 
    //load_application_list();
 
-   m_strAppId = m_strRoot + "/" + m_strItem;
+   m_strPackageAppId = m_strRoot + "/" + m_strItem;
 
-   m_strUnderscoreAppId = m_strAppId;
+   m_strUnderscoreAppId = m_strPackageAppId;
 
    m_strUnderscoreAppId.find_replace("/", "_");
 
@@ -226,7 +232,7 @@ void application_build_helper::create_package_list()
 
    ::package_reference packagereference;
 
-   packagereference.m_strPackage = m_strAppId;
+   packagereference.m_strPackage = m_strPackageAppId;
 
    packagereference.m_iLine = -1;
 
@@ -626,7 +632,7 @@ void application_build_helper::generate__main()
       string strMain;
 
       strMain += "#define APPLICATION " + m_strUnderscoreAppId + "\n";
-      strMain += "#define __APP_ID \"" + m_strAppId + "\"\n";
+      strMain += "#define __APP_ID \"" + m_strPackageAppId + "\"\n";
       //strMain += "#if defined(WINDOWS_DESKTOP) && defined(CUBE)\n";
       strMain += "#include \"_static_factory.inl\"\n";
       //strMain += "#endif\n";
@@ -1321,7 +1327,7 @@ void application_build_helper::defer_matter()
 
    strOutput += "app/main\n";
 
-   strOutput += m_strAppId + "\n";
+   strOutput += m_strPackageAppId + "\n";
 
    acmefile()->put_contents(pathMatter, strOutput);
 

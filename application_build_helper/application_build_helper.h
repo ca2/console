@@ -2,7 +2,7 @@
 #pragma once
 
 
-
+#include "apex/platform/application.h"
 #include "acme/filesystem/filesystem/path.h"
 ////#include "acme/primitive/primitive/object.h"
 //#include "acme/primitive/collection/string_array.h"
@@ -27,7 +27,7 @@ using package_reference_array = ::array < package_reference >;
 
 
 class application_build_helper :
-   virtual public ::object
+   virtual public ::apex::application
 {
 public:
 
@@ -46,7 +46,7 @@ public:
    ::file::path                  m_pathSource;
    ::file::path                  m_pathOutput;
 
-   string                        m_strAppId;
+   string                        m_strPackageAppId;
    string                        m_strUnderscoreAppId;
    string                        m_strRoot;
    string                        m_strItem;
@@ -67,6 +67,9 @@ public:
    application_build_helper();
 
    ~application_build_helper() override;
+
+
+   void on_request(::request* prequest) override;
 
 
    void set_package_folder(const ::file::path& pathFolder);
