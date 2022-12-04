@@ -42,7 +42,7 @@
     <ShowAllFiles>false</ShowAllFiles>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='static_debug|x64'">
-    <LocalDebuggerCommandArguments>-prepare_application app/app</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>C:\debug\source\app\app app/app x64 debug</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
     <LocalDebuggerWorkingDirectory>C:\debug\</LocalDebuggerWorkingDirectory>
   </PropertyGroup>

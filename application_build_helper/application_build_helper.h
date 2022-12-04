@@ -72,6 +72,9 @@ public:
    void on_request(::request* prequest) override;
 
 
+   virtual void on_application_build_helper_request(::request* prequest);
+
+
    void set_package_folder(const ::file::path& pathFolder);
 
 

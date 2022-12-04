@@ -23,10 +23,17 @@ void package_windows(::acme::system* psystem, const ::file::path& pathFolder);
 
 application_build_helper g_application_build_helper;
 
+void application_build_helper::on_request(::request* prequest)
+{
+
+   on_application_build_helper_request(prequest);
+
+   exit_application();
+
+}
 
 
-
-void application_build_helper::on_request(::request * prequest)
+void application_build_helper::on_application_build_helper_request(::request * prequest)
 {
 
 #ifdef EXTRA_DEBUG
