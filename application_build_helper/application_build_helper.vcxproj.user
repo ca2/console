@@ -42,7 +42,7 @@
     <ShowAllFiles>false</ShowAllFiles>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='static_debug|x64'">
-    <LocalDebuggerCommandArguments>C:\debug\source\app\app app/app x64 debug</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>source/app-core/clockverse app_core_clockverse x64 debug</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
     <LocalDebuggerWorkingDirectory>C:\debug\</LocalDebuggerWorkingDirectory>
   </PropertyGroup>

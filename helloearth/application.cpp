@@ -83,9 +83,9 @@ public:
 
       printf("Test123=%s\n", strTest123.c_str());
 
-      strTest123.begins_eat_ci("test");
+      strTest123.case_insensitive_begins_eat("test");
 
-      printf("begins_eat_ci(strTest123, \"test\")=%s\n", strTest123.c_str());
+      printf("case_insensitive_begins_eat(strTest123, \"test\")=%s\n", strTest123.c_str());
 
       string_array stra;
 
@@ -134,11 +134,11 @@ public:
 
       atom = 1;
 
-      printf("atom=%s\n", atom.as_string().c_str());
+      printf("atom=%s\n", atom.operator string().c_str());
 
       atom = "two";
 
-      printf("atom=%s\n", atom.as_string().c_str());
+      printf("atom=%s\n", atom.operator string().c_str());
 
       property_set set;
 

@@ -342,14 +342,16 @@ void application_build_helper::translate_package_list()
 
       stra.explode("/", packagereference.m_strPackage);
 
-      if(stra.get_size() == 1 && packagereference.m_strPackage.compare_ci("none") == 0)
+      auto size = stra.get_size();
+
+      if(size == 1 && packagereference.m_strPackage.compare_ci("none") == 0)
       {
 
          return;
 
       }
 
-      if (stra.get_size() != 2 && !packagereference.m_strPackage.begins_ci("default_"))
+      if (size != 2 && !packagereference.m_strPackage.begins_ci("default_"))
       {
 
          //printf("Error in package: \"%s\"\n", strPackage.c_str());
@@ -1413,7 +1415,11 @@ void application_build_helper::zip_matter()
             if (bFirst)
             {
 
-               acmenode()->command_system(straOutput, iExitCode, strZipExe + " -FSr \"" + strZip + "\" " + strFolder + "/*", e_command_system_inline_log);
+               auto strCurrentDirectory = acmedirectory()->get_current();
+
+               ::string strCommandLine = strZipExe + " --filesync -r \"" + strZip + "\" " + strFolder + "/*";
+
+               acmenode()->command_system(straOutput, iExitCode, strCommandLine, e_command_system_inline_log);
 
                bFirst = false;
 

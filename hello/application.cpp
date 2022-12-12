@@ -158,6 +158,43 @@ int * g_pi = nullptr;
 //};
 
 
+#include <algorithm>
+
+void unit_test_2034875209384()
+{
+
+   i32_array a{ 1,1,2,3,5,8,13,21,34 };
+
+
+   auto print_elem = [](auto const e) {::output_debug_string(::as_string(e) + "\n"); };
+
+   ::std::ranges::for_each(a, print_elem);
+
+}
+inline void test_12345()
+{
+
+
+
+   auto pstart = __FILE__;
+   auto pend = pstart + strlen(pstart);
+
+   //const char * pSearch = __FILE__;
+   //const char * pSearchEnd = pstart + strlen(pstart);
+
+   string str(pstart, pend);
+
+   auto find = str.find("application.cpp");
+
+   auto p = str.c_str() + find;
+
+   ASSERT(!stricmp(p, "application.cpp"));
+
+}
+
+
+//#error "error_compiled back function"
+
 class console_hello :
    virtual public ::acme::application
 {
@@ -167,6 +204,16 @@ public:
 
    void main() override
    {
+
+      test_12345();
+
+      unit_test_2034875209384();
+
+      string_array stra{ "StringNumber1", "StringNumber2", "StringNumber5" };
+
+      string str4("StringNumber4");
+
+      stra.insert_at(2, str4);
 
       //MyPoint p1{ 1,1 };
       //MyPoint p2{ 1,4 };
@@ -192,6 +239,19 @@ public:
       //   printf("p1  p2");
 
       //}
+
+      {
+
+         string str("HiHelloYou!!");
+
+         auto psz1 = (const char *)str;
+
+         printf("printf(\"%s\", str) : %s\n", str);
+         printf("printf(\"%s\", psz = (const char *)str; ) : %s\n", psz1);
+
+      }
+
+
 
 
 

@@ -81,7 +81,7 @@ void do_xml_test(::acme::system * psystem)
 
          string str1("value1");
 
-         if (pdocument->rfind("node1", { "attribute", str1 }) == nullptr)
+         if (pdocument->rear_find("node1", { "attribute", str1 }) == nullptr)
          {
 
             string strAttr6Value("value6");
@@ -96,7 +96,7 @@ void do_xml_test(::acme::system * psystem)
 
          string str2("Attr1Value123456789");
 
-         if (pdocument->rfind("test", { "attr1", str2 }) == nullptr)
+         if (pdocument->rear_find("test", { "attr1", str2 }) == nullptr)
          {
 
             string strAttr7Value("value7");
