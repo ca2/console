@@ -246,8 +246,8 @@ public:
 
          auto psz1 = (const char *)str;
 
-         printf("printf(\"%s\", str) : %s\n", str);
-         printf("printf(\"%s\", psz = (const char *)str; ) : %s\n", psz1);
+         printf("printf(\"%%s\", str) : %s\n", (const char*)str);
+         printf("printf(\"%%s\", psz = (const char *)str; ) : %s\n", psz1);
 
       }
 
