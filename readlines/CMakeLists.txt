@@ -4,7 +4,7 @@ project(_console_readlines CXX)
 
 
 
-add_executable(_console_readlines main.cpp)
+add_executable(_console_readlines application.cpp)
 
 
 if (MSVC)

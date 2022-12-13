@@ -32,7 +32,7 @@ void application_build_helper::prepare_application()
    if (strProjectName.has_char())
    {
 
-      if (strProjectName.begins_ci("shared_") || strProjectName.begins_ci("static_"))
+      if (strProjectName.case_insensitive_begins("shared_") || strProjectName.case_insensitive_begins("static_"))
       {
 
          return;

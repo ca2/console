@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 project(_console_hello CXX)
 
 
-add_executable(_console_hello main.cpp)
+add_executable(_console_hello application.cpp)
 
 
 if (MSVC)

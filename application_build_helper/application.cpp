@@ -63,7 +63,7 @@ void application_build_helper::on_application_build_helper_request(::request * p
 
       string strArgument4 = psubsystem->get_argument1(3);
 
-      if (strArgument1.compare_ci("-package") == 0)
+      if (strArgument1.case_insensitive_order("-package") == 0)
       {
 
          printf("application_build_helper -package %s\n", strArgument2.c_str());
@@ -79,7 +79,7 @@ void application_build_helper::on_application_build_helper_request(::request * p
          return;
 
       }
-      else if (strArgument1.compare_ci("-prepare_project") == 0)
+      else if (strArgument1.case_insensitive_order("-prepare_project") == 0)
       {
 
          string strArgument4 = psubsystem->get_argument1(3);
@@ -93,7 +93,7 @@ void application_build_helper::on_application_build_helper_request(::request * p
          return;
 
       }
-      else if (strArgument1.compare_ci("-prepare_projects") == 0)
+      else if (strArgument1.case_insensitive_order("-prepare_projects") == 0)
       {
 
          //printf("application_build_helper -prepare_project %s\n", strArgument2.c_str());
@@ -114,7 +114,7 @@ void application_build_helper::on_application_build_helper_request(::request * p
          return;
 
       }
-      else if (strArgument1.compare_ci("-prepare_application") == 0)
+      else if (strArgument1.case_insensitive_order("-prepare_application") == 0)
       {
 
          //printf("application_build_helper -prepare_project %s\n", strArgument2.c_str());
@@ -142,7 +142,7 @@ void application_build_helper::on_application_build_helper_request(::request * p
          return;
 
       }
-      else if (strArgument1.compare_ci("-prepare_applications") == 0)
+      else if (strArgument1.case_insensitive_order("-prepare_applications") == 0)
       {
 
          //printf("application_build_helper -prepare_project %s\n", strArgument2.c_str());
@@ -181,7 +181,7 @@ void application_build_helper::on_application_build_helper_request(::request * p
 
       string strArgument3 = psubsystem->get_argument1(2);
 
-      if (strArgument1.compare_ci("-package") == 0)
+      if (strArgument1.case_insensitive_order("-package") == 0)
       {
 
          printf("application_build_helper -package %s\n", strArgument2.c_str());
@@ -197,7 +197,7 @@ void application_build_helper::on_application_build_helper_request(::request * p
          return;
 
       }
-      else if(strArgument1.compare_ci("zip_matter") == 0)
+      else if(strArgument1.case_insensitive_order("zip_matter") == 0)
       {
 
          string strFolder = strArgument2;

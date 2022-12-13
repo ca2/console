@@ -117,7 +117,7 @@ void application_build_helper::package()
 
             }
 
-            if(strItem.compare_ci("none") != 0)
+            if(strItem.case_insensitive_order("none") != 0)
             {
 
 #ifdef WINDOWS

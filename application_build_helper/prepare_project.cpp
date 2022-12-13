@@ -34,7 +34,7 @@ void application_build_helper::prepare_project()
 
    }
 
-   if (m_strItem.compare_ci("include") == 0)
+   if (m_strItem.case_insensitive_order("include") == 0)
    {
 
       return;
@@ -95,7 +95,7 @@ void application_build_helper::prepare_project()
 
    generate_deployment_rc();
 
-   if (m_strItem.compare_ci("deployment") != 0)
+   if (m_strItem.case_insensitive_order("deployment") != 0)
    {
 
 #ifdef WINDOWS_DESKTOP
@@ -142,7 +142,7 @@ void application_build_helper::generate_deployment_rc()
 
    //::e_status estatus = ::success;
 
-   if(m_strItem.compare_ci("deployment") != 0)
+   if(m_strItem.case_insensitive_order("deployment") != 0)
    {
 
       ::file::path pathDeploymentRcTemplate = m_pathOperatingSystem / ("operating-system-" PLATFORM_STRING) / "deployment/deployment_rc.txt";

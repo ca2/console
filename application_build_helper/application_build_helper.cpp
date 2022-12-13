@@ -170,7 +170,7 @@ void application_build_helper::set_package_folder(const ::file::path& pathFolder
 //   for (string& strPath : straApplications)
 //   {
 //
-//      strPath.ends_eat_ci("application.txt");
+//      strPath.case_insensitive_ends_eat("application.txt");
 //
 //      ::file::path path = strPath;
 //
@@ -301,7 +301,7 @@ void application_build_helper::translate_package_list()
 
          }
 
-         if (packagereference.m_strPackage.begins_ci("default_"))
+         if (packagereference.m_strPackage.case_insensitive_begins("default_"))
          {
 
             return;
@@ -317,7 +317,7 @@ void application_build_helper::translate_package_list()
 
       }
 
-      if (packagereference.m_strPackage.ends_ci("node_windows"))
+      if (packagereference.m_strPackage.case_insensitive_ends("node_windows"))
       {
 
          printf("%s", "");
@@ -331,7 +331,7 @@ void application_build_helper::translate_package_list()
 
       }
 
-      if (packagereference.m_strPackage.ends_ci("node_windows"))
+      if (packagereference.m_strPackage.case_insensitive_ends("node_windows"))
       {
 
          printf("%s", "");
@@ -344,14 +344,14 @@ void application_build_helper::translate_package_list()
 
       auto size = stra.get_size();
 
-      if(size == 1 && packagereference.m_strPackage.compare_ci("none") == 0)
+      if(size == 1 && packagereference.m_strPackage.case_insensitive_order("none") == 0)
       {
 
          return;
 
       }
 
-      if (size != 2 && !packagereference.m_strPackage.begins_ci("default_"))
+      if (size != 2 && !packagereference.m_strPackage.case_insensitive_begins("default_"))
       {
 
          //printf("Error in package: \"%s\"\n", strPackage.c_str());
@@ -386,7 +386,7 @@ void application_build_helper::translate_package_list()
 
          packagereferenceNew.m_iLine = packagereference.m_iLine;
 
-         if (packagereferenceNew.m_strPackage.ends_ci("veriwell_multimedia"))
+         if (packagereferenceNew.m_strPackage.case_insensitive_ends("veriwell_multimedia"))
          {
 
             printf("%s", "");
@@ -410,7 +410,7 @@ void application_build_helper::translate_package_list()
          for (auto& packagereferenceItem : m_packagereferencea)
          {
 
-            if (packagereferenceItem.m_strPackage.trimmed().compare_ci(packagereferenceNew.m_strPackage.trimmed()) == 0)
+            if (packagereferenceItem.m_strPackage.trimmed().case_insensitive_order(packagereferenceNew.m_strPackage.trimmed()) == 0)
             {
 
                return;
@@ -419,14 +419,14 @@ void application_build_helper::translate_package_list()
 
          }
 
-         if (packagereference.m_strPackage.ends_ci("node_windows"))
+         if (packagereference.m_strPackage.case_insensitive_ends("node_windows"))
          {
 
             //printf("test");
 
          }
 
-         if (packagereferenceNew.m_strPackage.ends_ci("veriwell_multimedia"))
+         if (packagereferenceNew.m_strPackage.case_insensitive_ends("veriwell_multimedia"))
          {
 
             printf("%s", "");
@@ -507,7 +507,7 @@ void application_build_helper::translate_package_list()
 
       ::string strPackage = strPackageParam;
 
-      if (strPackage.begins_ci("operating-system-"))
+      if (strPackage.case_insensitive_begins("operating-system-"))
       {
 
          path = m_pathOperatingSystem;
@@ -806,7 +806,7 @@ string application_build_helper::defer_translate_application_name(string strDepe
 
       string strPath = pathApplicationMatter;
 
-      strPath.ends_eat_ci("application.txt");
+      strPath.case_insensitive_ends_eat("application.txt");
 
       ::file::path path = strPath;
 
@@ -845,7 +845,7 @@ string application_build_helper::defer_translate_dependency(string strDependency
    if (strTranslatedDependency.is_empty())
    {
 
-      if (strDependency.trimmed().begins_ci("default_"))
+      if (strDependency.trimmed().case_insensitive_begins("default_"))
       {
 
          //return success_none;
@@ -1026,7 +1026,7 @@ void application_build_helper::load_map(string_to_string& map, string strMap, st
 
    ::file::path pathMapBase;
 
-   if (strRoot.begins_ci("operating-system-"))
+   if (strRoot.case_insensitive_begins("operating-system-"))
    {
 
       pathMapBase = m_pathOperatingSystem;

@@ -125,9 +125,9 @@ void implement(::acme::context * pcontext)
 
    //printf("Test123=%s\n", strTest123.c_str());
 
-   //strTest123.begins_eat_ci("test");
+   //strTest123.case_insensitive_begins_eat("test");
 
-   //printf("begins_eat_ci(strTest123, \"test\")=%s\n", strTest123.c_str());
+   //printf("case_insensitive_begins_eat(strTest123, \"test\")=%s\n", strTest123.c_str());
 
    //string_array stra;
 

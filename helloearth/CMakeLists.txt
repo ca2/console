@@ -12,7 +12,7 @@ list(APPEND executable_source
         programs/07-2022-10-06-twitch-octaelliptical_list_prime_numbers.cpp
         programs/08-2022-11-14-twitch@nicopelullo-binary_tree_to_stack.cpp
         programs/09-2022-11-15-twitch@nicopelullo-inorder__preorder_and_post_order.cpp
-        main.cpp
+        application.cpp
         twitch.cpp
         )
 
