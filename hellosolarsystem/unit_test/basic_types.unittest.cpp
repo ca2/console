@@ -4,23 +4,17 @@
 
 __begin(char_natural_pointer_size)
 
-
-auto naturalpointer = natural_pointer < string_meta_data < char >, string_memory_allocator >();
+auto naturalpointer = natural_pointer < string_range < const char * >, string_meta_data < char >, string_memory_allocator >();
 
 auto iNaturalPointerSize = sizeof(naturalpointer);
 
 printf("sizeof(natural_pointer<\"char\">) = % " PRIiPTR "\n", iNaturalPointerSize);
 
-
 __end(iNaturalPointerSize == sizeof(void *));
-
-
-
 
 __begin(char_natural_pointer_string_type_size)
 
-
-auto stringtypenaturalpointer = natural_pointer < string_meta_data < char >, string_memory_allocator >();
+auto stringtypenaturalpointer = natural_pointer < string_range < const char * >, string_meta_data < char >, string_memory_allocator >();
 
 int iStringTypeNaturalPointerSize = sizeof(stringtypenaturalpointer);
 
