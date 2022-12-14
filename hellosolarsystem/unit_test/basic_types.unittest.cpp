@@ -109,7 +109,7 @@ __begin(atom)
 
 ::atom atom = "atom should act like a pointer to c string";
 
-printf("(const char *)atom = \"%s\"\n", (const char *)atom);
+printf("(const char *)atom = \"%s\"\n", (const char *)::string(atom));
 
 auto iAtomClassSize = sizeof(atom);
 
