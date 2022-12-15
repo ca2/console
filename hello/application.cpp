@@ -157,6 +157,33 @@ int * g_pi = nullptr;
 //
 //};
 
+string checking_string_move_001()
+{
+
+   string str("checking_string_move_001");
+
+
+   return str;
+
+}
+
+
+string checking_string_move_002()
+{
+
+   string str;
+
+   auto p = new char[123];
+
+   strcpy(p, "checking_string_move_002");
+
+   str = p;
+
+   delete p;
+
+   return str;
+
+}
 
 #include <algorithm>
 
@@ -207,6 +234,22 @@ public:
 
    void main() override
    {
+
+      {
+
+         string str = checking_string_move_001();
+
+         output_debug_string(str);
+
+      }
+
+      {
+
+         string str = checking_string_move_002();
+
+         output_debug_string(str);
+
+      }
 
       test_12345();
 
