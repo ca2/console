@@ -13,7 +13,7 @@
 		9A0B8D0027AA03E500760D34 /* libacme_macos.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A0B8CF527AA035900760D34 /* libacme_macos.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9A0B8D0227AA03E500760D34 /* libacme_posix.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A0B8CFA27AA03E500760D34 /* libacme_posix.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9A0B8D0527AA03F000760D34 /* libidn.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A0B8D0327AA03F000760D34 /* libidn.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		9ADD64F126B5CC0C00D11298 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ADD64EF26B5CC0C00D11298 /* main.cpp */; };
+		9ADD64F126B5CC0C00D11298 /* application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ADD64EF26B5CC0C00D11298 /* application.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +57,7 @@
 		9A0B8CFA27AA03E500760D34 /* libacme_posix.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme_posix.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A0B8D0327AA03F000760D34 /* libidn.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libidn.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ADD64DE26B5CBBC00D11298 /* hello */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = hello; sourceTree = BUILT_PRODUCTS_DIR; };
-		9ADD64EF26B5CC0C00D11298 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		9ADD64EF26B5CC0C00D11298 /* application.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = application.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +101,7 @@
 		9ADD64E826B5CC0B00D11298 /* hello */ = {
 			isa = PBXGroup;
 			children = (
-				9ADD64EF26B5CC0C00D11298 /* main.cpp */,
+				9ADD64EF26B5CC0C00D11298 /* application.cpp */,
 			);
 			name = hello;
 			sourceTree = "<group>";
@@ -201,7 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9ADD64F126B5CC0C00D11298 /* main.cpp in Sources */,
+				9ADD64F126B5CC0C00D11298 /* application.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
