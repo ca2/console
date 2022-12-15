@@ -198,7 +198,7 @@ void unit_test_2034875209384()
    ::std::ranges::for_each(a, print_elem);
 
 }
-inline void test_12345()
+void test_12345()
 {
 
 
@@ -210,6 +210,9 @@ inline void test_12345()
    //const char * pSearchEnd = pstart + strlen(pstart);
 
    string str(pstart, pend);
+
+
+   auto size = str.size();
 
    auto find = str.find("application.cpp");
 
