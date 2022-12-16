@@ -187,7 +187,7 @@ string checking_string_move_002()
 
 #include <algorithm>
 
-void unit_test_2034875209384()
+void test_001()
 {
 
    i32_array a{ 1,1,2,3,5,8,13,21,34 };
@@ -198,7 +198,7 @@ void unit_test_2034875209384()
    ::std::ranges::for_each(a, print_elem);
 
 }
-void test_12345()
+void test_002()
 {
 
 
@@ -235,6 +235,10 @@ public:
    void main() override
    {
 
+      test_001();
+
+      test_002();
+
       {
 
          string str = checking_string_move_001();
@@ -250,10 +254,6 @@ public:
          output_debug_string(str);
 
       }
-
-      test_12345();
-
-      unit_test_2034875209384();
 
       string_array stra{ "StringNumber1", "StringNumber2", "StringNumber5" };
 
