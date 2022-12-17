@@ -84,7 +84,7 @@ public:
    }
 
 
-   void on_request(::request* prequest)
+   void main() override
    {
 
       //::console console(argc, argv, envp);
