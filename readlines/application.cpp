@@ -33,7 +33,7 @@ public:
    }
 
 
-   void on_request(::request * prequest) override
+   void main() override
    {
 
       ::file::path path;

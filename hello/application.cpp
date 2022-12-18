@@ -189,6 +189,34 @@ string checking_string_move_002()
 #include <algorithm>
 
 
+void trim_left_001()
+{
+
+
+   string str("001Test");
+
+   str.trim_left("01");
+
+   printf("trim_left_001:\"%s\"\n\n", str.c_str());
+
+
+}
+
+void trim_right_001()
+{
+
+
+   string str("Test001");
+
+   str.trim_right("01");
+
+   printf("trim_right_001:\"%s\"\n\n", str.c_str());
+
+
+}
+
+
+
 void test_001()
 {
 
@@ -238,6 +266,10 @@ public:
 
    void main() override
    {
+
+      trim_left_001();
+
+      trim_right_001();
 
       test_001();
 
