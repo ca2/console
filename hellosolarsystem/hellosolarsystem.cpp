@@ -68,6 +68,7 @@ inline string _009Explode(const CONTAINER& container, string strSeparator, strin
 //#include "printf_format_flags.cpp"
 
 
+
 class console_hellosolarsystem :
    virtual public ::apex::application
 {
@@ -216,7 +217,25 @@ public:
 
       printf("\n");
 
-      printf("Running all unit tests...\n\n");
+      bool bUnitTest001 = false;
+
+      if (bUnitTest001)
+      {
+
+         unit_test_001();
+
+      }
+
+      message_box_for_console("Hello Solar System!!", "hellosolarsystem", e_message_box_ok);
+
+      // return ::success;
+
+   }
+
+   void unit_test_001()
+   {
+
+      printf("Running unit tests version 0.01 ...\n\n");
 
       auto punittestset = new_basic_types_unit_test_set();
 
@@ -227,10 +246,6 @@ public:
       auto strReport = punittestset->get_plain_text_report();
 
       printf("%s", strReport.c_str());
-
-      message_box_for_console("Hello Solar System!!", "hellosolarsystem", e_message_box_ok);
-
-      // return ::success;
 
    }
 
