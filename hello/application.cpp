@@ -248,9 +248,7 @@ void test_002()
 
    auto find = str.find("application.cpp");
 
-   auto p = str.c_str() + find;
-
-   ASSERT(!stricmp(p, "application.cpp"));
+   ASSERT(!stricmp(find, "application.cpp"));
 
 }
 

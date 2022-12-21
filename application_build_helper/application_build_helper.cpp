@@ -518,7 +518,7 @@ void application_build_helper::translate_package_list()
 
          path = m_pathSource;
 
-         ::str().replace_prefix(strPackage, "port/", "third/");
+         strPackage.begins_replace("port/", "third/");
 
       }
 
