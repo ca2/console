@@ -1,4 +1,4 @@
-﻿#include "acme/_start.h"
+#include "acme/_start.h"
 #include "acme/_.h"
 #include "acme/platform/application.h"
 #include "acme/platform/system.h"
@@ -185,6 +185,7 @@ string checking_string_move_002()
 
 }
 
+
 #include <algorithm>
 
 
@@ -224,9 +225,11 @@ void test_001()
 
    auto print_elem = [](auto const e) {::output_debug_string(::as_string(e) + "\n"); };
 
-   ::std::ranges::for_each(a, print_elem);
+   //::std::ranges::for_each(a, print_elem);
 
 }
+
+
 void test_002()
 {
 
