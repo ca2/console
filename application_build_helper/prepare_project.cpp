@@ -16,7 +16,7 @@ void application_build_helper::prepare_project()
 
    auto straIgnoreRoot = acmefile()->lines(pathBaseDeployIgnore);
 
-   if (straIgnoreRoot.contains_ci(m_strRoot))
+   if (straIgnoreRoot.case_insensitive_contains(m_strRoot))
    {
 
       return;
@@ -27,7 +27,7 @@ void application_build_helper::prepare_project()
 
    auto straIgnoreItem = acmefile()->lines(pathRootDeployIgnore);
 
-   if (straIgnoreItem.contains_ci(m_strItem))
+   if (straIgnoreItem.case_insensitive_contains(m_strItem))
    {
 
       return;

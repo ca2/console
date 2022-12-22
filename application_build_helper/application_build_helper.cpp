@@ -4,12 +4,12 @@
 #include "acme/filesystem/filesystem/acme_file.h"
 #include "acme/filesystem/filesystem/acme_path.h"
 #include "acme/filesystem/filesystem/acme_directory.h"
-#include "apex/filesystem/filesystem/file_context.h"
+//#include "apex/filesystem/filesystem/file_context.h"
 #include "acme/operating_system/process.h"
 #include "acme/platform/ini.h"
 #include "acme/platform/node.h"
 #include "acme/primitive/string/str.h"
-#include "apex/platform/system.h"
+#include "acme/platform/system.h"
 #ifdef WINDOWS_DESTKOP
 #include <direct.h>
 #endif
@@ -28,7 +28,7 @@ application_build_helper::application_build_helper()
    m_strAppId = "console/application_build_helper";
    m_bTranslateDependency = false;
    m_bNetworking = false;
-   m_eexclusiveinstance = e_exclusive_instance_none;
+//   m_eexclusiveinstance = e_exclusive_instance_none;
    
 }
 
@@ -209,7 +209,7 @@ void application_build_helper::create_package_list()
    try
    {
 
-      m_piniPackageMap = file()->get_ini(pathPackageMap);
+      m_piniPackageMap = acmefile()->get_ini(pathPackageMap);
 
    }
    catch(const ::exception & e)
@@ -324,7 +324,7 @@ void application_build_helper::translate_package_list()
 
       }
 
-      if (m_straIgnorePackage.contains_ci(packagereference.m_strPackage))
+      if (m_straIgnorePackage.case_insensitive_contains(packagereference.m_strPackage))
       {
 
          return;
@@ -518,7 +518,7 @@ void application_build_helper::translate_package_list()
 
          path = m_pathSource;
 
-         ::str().replace_prefix(strPackage, "port/", "third/");
+         strPackage.begins_replace("port/", "third/");
 
       }
 
@@ -1047,7 +1047,7 @@ void application_build_helper::load_map(string_to_string& map, string strMap, st
 
    string_array straLines;
 
-   file()->get_lines(straLines, pathMap);
+   straLines = acmefile()->lines(pathMap);
 
    for (auto& strLine : straLines)
    {

@@ -3,7 +3,7 @@
 
 
 BEGIN_FACTORY(console_application_build_helper)
-FACTORY_DEPENDENCY(apex_windows)
+FACTORY_DEPENDENCY(acme_windows)
 END_FACTORY()
 
 
