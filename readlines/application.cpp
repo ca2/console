@@ -28,6 +28,10 @@ public:
 
       m_bNetworking = false;
 
+      m_bCrypto = false;
+
+      m_bResource = false;
+
       m_strAppId = "console/readlines";
 
    }
