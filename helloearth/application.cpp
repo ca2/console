@@ -112,13 +112,12 @@ public:
       for (auto& str2 : stra2)
       {
 
-         auto pFind = stra.find_first_begins_ci(str2);
+         auto iFind = stra.find_first_begins_ci(str2);
 
-         if (::is_null(pFind))
+         if (not_found(iFind))
          {
 
             printf("find first starts with: %s - %" PRIiPTR "\n", str2.c_str(), iFind);
-
 
          }
          else
