@@ -10,11 +10,11 @@
 void application_build_helper::prepare_application()
 {
 
-   string strFolder = subsystem()->get_argument1(0);
+   //string strFolder = subsystem()->get_argument1(0);
 
-   string strProjectName = subsystem()->get_argument1(1);
+   //string strProjectName = subsystem()->get_argument1(1);
 
-   set_package_folder(strFolder);
+   //set_package_folder(strFolder);
 
    auto pathFolder = m_pathFolder;
 
@@ -29,10 +29,10 @@ void application_build_helper::prepare_application()
 
    }
 
-   if (strProjectName.has_char())
+   if (m_strProjectName.has_char())
    {
 
-      if (strProjectName.case_insensitive_begins("shared_") || strProjectName.case_insensitive_begins("static_"))
+      if (m_strProjectName.case_insensitive_begins("shared_") || m_strProjectName.case_insensitive_begins("static_"))
       {
 
          return;

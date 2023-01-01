@@ -149,7 +149,7 @@ void application_build_helper::generate_deployment_rc()
 
       string strDeploymentRcTemplate = acmefile()->as_string(pathDeploymentRcTemplate);
 
-      string strDeploymentRc = ::str().find_replace("%ROOTNAME%", m_strRoot, strDeploymentRcTemplate);
+      string strDeploymentRc = ::str::find_replace("%ROOTNAME%", m_strRoot, strDeploymentRcTemplate);
 
       strDeploymentRc.find_replace("%PROJECTNAME%", m_strItem);
 

@@ -45,6 +45,12 @@ void application_build_helper::set_package_folder(const ::file::path& pathFolder
 
    ::file::path pathFolder(pathFolderParam);
 
+   ::string strFolder = pathFolder;
+
+   strFolder.case_insensitive_ends_eat("application.txt");
+
+   pathFolder = strFolder;
+
    if (pathFolder.length() >= 3)
    {
 

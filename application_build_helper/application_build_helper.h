@@ -39,6 +39,9 @@ public:
    package_reference_array       m_packagereferencea;
    string_array                  m_straIgnorePackage;
 
+
+   string                        m_strProjectName;
+
    ::file::path                  m_pathBaseDir;
    ::file::path                  m_pathGroup;
    ::file::path                  m_pathFolder;
@@ -69,10 +72,14 @@ public:
    ~application_build_helper() override;
 
 
-   void on_request(::request* prequest) override;
+   //void on_request(::request* prequest) override;
+
+   void main() override;
+
+   virtual void application_build_helper_main();
 
 
-   virtual void on_application_build_helper_request(::request* prequest);
+   //virtual void on_application_build_helper_request(::request* prequest);
 
 
    void set_package_folder(const ::file::path& pathFolder);

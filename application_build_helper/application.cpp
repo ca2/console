@@ -23,17 +23,28 @@ void package_windows(::acme::system* psystem, const ::file::path& pathFolder);
 
 application_build_helper g_application_build_helper;
 
-void application_build_helper::on_request(::request* prequest)
+//void application_build_helper::on_request(::request* prequest)
+//{
+//
+//   on_application_build_helper_request(prequest);
+//
+//   exit_application();
+//
+//}
+
+
+void application_build_helper::main()
 {
 
-   on_application_build_helper_request(prequest);
+   application_build_helper_main();
 
-   exit_application();
+   //exit_application();
 
 }
 
 
-void application_build_helper::on_application_build_helper_request(::request * prequest)
+//void application_build_helper::on_application_build_helper_request(::request * prequest)
+void application_build_helper::application_build_helper_main()
 {
 
 #ifdef EXTRA_DEBUG
@@ -62,6 +73,8 @@ void application_build_helper::on_application_build_helper_request(::request * p
       string strArgument3 = psubsystem->get_argument1(2);
 
       string strArgument4 = psubsystem->get_argument1(3);
+
+      string strArgument5 = psubsystem->get_argument1(4);
 
       if (strArgument1.case_insensitive_order("-package") == 0)
       {
@@ -125,9 +138,11 @@ void application_build_helper::on_application_build_helper_request(::request * p
 
          ::string strPackageFolder = strArgument2;
 
-         m_strBuildPlatform = strArgument3;
+         m_strProjectName = strArgument3;
 
-         m_strBuildConfiguration = strArgument4;
+         m_strBuildPlatform = strArgument4;
+
+         m_strBuildConfiguration = strArgument5;
 
          m_bSoftBuild = true;
 
