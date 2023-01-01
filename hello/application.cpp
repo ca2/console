@@ -246,7 +246,7 @@ void test_002()
    string str(pstart, pend);
 
 
-   auto size = str.size();
+   //auto size = str.size();
 
    auto find = str.find("application.cpp");
 
