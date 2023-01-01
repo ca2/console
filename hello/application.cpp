@@ -179,7 +179,7 @@ string checking_string_move_002()
 
    str = p;
 
-   delete p;
+   delete [] p;
 
    return str;
 
@@ -224,6 +224,8 @@ void test_001()
 
 
    auto print_elem = [](auto const e) {::output_debug_string(::as_string(e) + "\n"); };
+
+   for(auto & item : a) print_elem(item);
 
    //::std::ranges::for_each(a, print_elem);
 
