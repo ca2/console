@@ -47,8 +47,8 @@
     <LocalDebuggerWorkingDirectory>C:\debug\</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
-    <LocalDebuggerCommandArguments>-prepare_projects project_list.txt</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>-prepare_application source/game/particle</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
-    <LocalDebuggerWorkingDirectory>C:\debug</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerWorkingDirectory>C:\main</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
 </Project>
