@@ -534,6 +534,10 @@ void application_build_helper::translate_package_list()
 
       auto stra = get_lines(path);
 
+      stra.trim();
+
+      stra.erase_empty();
+
       package_reference_array packagereferencea;
 
       int iLine = 0;
