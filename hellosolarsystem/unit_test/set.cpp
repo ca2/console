@@ -1,4 +1,4 @@
-﻿// Created by camilo on 2022-10-13 17:48 <3ThomasBorregaardSorensen!!
+﻿// Created by camilo on 2022-10-13 17:48 <3ThomasBorregaardSørensen!!
 #include "framework.h"
 #ifdef WITH_UNIT_TEST
 #include "item.h"

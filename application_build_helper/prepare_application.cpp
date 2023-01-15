@@ -1,4 +1,4 @@
-﻿// From implement.cpp by camilo on 2022-09-23 20:08 <3ThomasBorregaardSorensen!!
+﻿// From implement.cpp by camilo on 2022-09-23 20:08 <3ThomasBorregaardSørensen!!
 #include "framework.h"
 #include "application_build_helper.h"
 ////#include "acme/exception/exception.h"
