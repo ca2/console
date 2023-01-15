@@ -35,10 +35,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{4B776F6A-069F-4696-A099-980D732543AC}</ProjectGuid>
+    <ProjectGuid>{32B0F384-A600-4AFC-80AE-5B2A7D16EAAF}</ProjectGuid>
     <RootNamespace>app</RootNamespace>
     <Keyword>Win32Proj</Keyword>
-    <ProjectName>shared_console_http_get</ProjectName>
+    <ProjectName>shared_console_build_library</ProjectName>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
