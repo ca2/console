@@ -34,6 +34,8 @@ namespace console_integration
 
       void build();
 
+      void clean();
+
       void prepare();
 
       void download();

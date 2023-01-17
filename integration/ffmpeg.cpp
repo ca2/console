@@ -19,8 +19,6 @@ namespace console_integration
    ffmpeg::ffmpeg()
    {
 
-
-
    }
 
 
@@ -39,6 +37,8 @@ namespace console_integration
 
       __construct(m_pcontext);
 
+      m_pcontext->m_bMsys = true;
+
       m_pcontext->m_strName = "ffmpeg";
 
    }
@@ -48,6 +48,8 @@ namespace console_integration
    {
 
       prepare();
+
+      clean();
 
       download();
 
@@ -141,6 +143,12 @@ namespace console_integration
    }
 
 
+   void ffmpeg::clean()
+   {
+
+      m_pcontext->clean();
+
+   }
 
 
    void ffmpeg::download()
@@ -294,7 +302,7 @@ namespace console_integration
 
          //m_pcontext->bash(strCommand);
 
-         m_pcontext->bash("make -j 8");
+         m_pcontext->bash("make");
 
       }
 
@@ -309,9 +317,6 @@ namespace console_integration
 
             //cp - Rf $BASE_DIR / $NAME / lib$LIBRARY_NAME/*.dll $STORAGE_DIR/binary/
             //cp -Rf $BASE_DIR/$NAME/lib$LIBRARY_NAME/*.pdb $STORAGE_DIR/binary/
-
-         m_pcontext->bash("make install");
-
 
          auto str = m_pcontext->prepare_path(m_pcontext->m_pathFolder / m_pcontext->m_path);
 
@@ -351,6 +356,11 @@ namespace console_integration
       //   mkdir -p $SOURCE_DIR/include/
       //   mkdir -p $STORAGE_DIR/binary/
       //   mkdir -p $STORAGE_DIR/library/
+
+         m_pcontext->bash("make install");
+
+
+
 
          auto pathSourceFolder = m_pcontext->m_pathSourceFolder;
 

@@ -15,7 +15,6 @@ namespace console_integration
    openssl::openssl()
    {
 
-
    }
 
 
@@ -34,6 +33,8 @@ namespace console_integration
 
       __construct(m_pcontext);
 
+      m_pcontext->m_bMsys = true;
+
       m_pcontext->m_strName = "openssl";
 
    }
@@ -44,6 +45,8 @@ namespace console_integration
 
       prepare();
 
+      clean();
+
       download();
 
       configure();
@@ -51,6 +54,14 @@ namespace console_integration
       compile();
 
       install();
+
+   }
+
+
+   void openssl::clean()
+   {
+
+      m_pcontext->clean();
 
    }
 
@@ -137,41 +148,6 @@ namespace console_integration
    }
 
 
-   //void openssl::install()
-   //{
-
-   //   m_pcontext->m_pathSourceFolder = "C:/operating-system-new/operating-system-windows";
-
-
-   //   m_pcontext->m_pathStorageFolder = "C:/operating-system-new/storage-windows";
-
-
-
-
-
-
-   //   //VERSION = "3.0.7"
-
-
-   //   //   SRC_FOLDER = "/c/main/operating-system/operating-system-windows"
-
-
-   //   //   STG_FOLDER = "/c/operating-system/storage-windows"
-
-
-   //      //if[!- d $BASE_DIR]; then
-
-   //      //   echo "$BASE_DIR does not exist!!"
-
-   //      //   exit - 1
-
-   //      //   fi
-
-
-   //      //   cd $BASE_DIR
-
-   //}
-
 
    void openssl::configure()
    {
@@ -186,12 +162,9 @@ namespace console_integration
 
       auto pathProgram = pathBase / path / "program";
 
-      auto strPrefix = m_pcontext->prepare_path(pathPrefix);
+      strCommand += "perl Configure " + m_strConfigure + " " + m_strDebug;
 
-      auto strProgram = m_pcontext->prepare_path(pathProgram);
-
-      strCommand =
-         "perl Configure " + m_strConfigure + " " + m_strDebug + " --prefix=" + strPrefix + " --openssldir=" + strProgram + " " + m_strShared;
+      strCommand += " --prefix=" + pathPrefix + " --openssldir=" + pathProgram + " " + m_strShared;
 
       m_pcontext->command_system(strCommand);
 
@@ -251,32 +224,35 @@ namespace console_integration
       m_pcontext->command_system("nmake install_sw");
 
       auto pathSourceFolder = m_pcontext->m_pathSourceFolder;
+
       auto pathStorageFolder = m_pcontext->m_pathStorageFolder / m_pcontext->m_strPlatform / m_pcontext->m_strConfiguration;
 
       acmedirectory()->create(pathSourceFolder / "include");
+
       acmedirectory()->create(pathStorageFolder / "binary");
+
       acmedirectory()->create(pathStorageFolder / "library");
 
       //mkdir - p $SOURCE_DIR / include /
       //mkdir - p $STORAGE_DIR / binary /
       //mkdir - p $STORAGE_DIR / library /
 
+      //cp -Rf $BASE_DIR/$NAME/build/bin/* $STORAGE_DIR/binary/
+      //cp -Rf $BASE_DIR/$NAME/build/lib/* $STORAGE_DIR/library/
 
-         //cp -Rf $BASE_DIR/$NAME/build/bin/* $STORAGE_DIR/binary/
-         //cp -Rf $BASE_DIR/$NAME/build/lib/* $STORAGE_DIR/library/
-
-      auto str  = m_pcontext->prepare_path(m_pcontext->m_pathFolder / m_pcontext->m_path);
+      auto strBase  = m_pcontext->prepare_path(m_pcontext->m_pathFolder / m_pcontext->m_path);
 
       auto strSource = m_pcontext->prepare_path(pathSourceFolder);
 
       auto strStorage = m_pcontext->prepare_path(pathStorageFolder);
 
-      m_pcontext->bash("cp -Rf " + str + "/build/include/* " + strSource + "/include/");
-      m_pcontext->bash("cp -Rf " + str + "/build/bin/* " + strStorage + "/binary/");
-      m_pcontext->bash("cp -Rf " + str + "/build/lib/* " + strStorage + "/library/");
+      m_pcontext->bash("cp -Rf " + strBase + "/build/include/* " + strSource + "/include/");
+
+      m_pcontext->bash("cp -Rf " + strBase + "/build/bin/* " + strStorage + "/binary/");
+
+      m_pcontext->bash("cp -Rf " + strBase + "/build/lib/* " + strStorage + "/library/");
 
    }
-
 
 
 } // namespace console_integration
