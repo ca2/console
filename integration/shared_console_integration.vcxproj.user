@@ -33,7 +33,7 @@
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LocalDebuggerCommandArguments>-trim https://raw.githubusercontent.com/FFmpeg/FFmpeg/master/RELEASE</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>ffmpeg Win32 Debug</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
 </Project>
