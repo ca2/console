@@ -294,7 +294,7 @@ namespace console_integration
 
          //m_pcontext->bash(strCommand);
 
-         m_pcontext->bash("make -j8");
+         m_pcontext->bash("make -j 8");
 
       }
 
