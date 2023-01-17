@@ -232,9 +232,11 @@ namespace console_integration
 
       string strCommand;
 
+      auto strPrefix = m_pcontext->prepare_path(m_pcontext->m_pathFolder / m_pcontext->m_path / "build");
+
       strCommand += "./configure --enable-asm --enable-yasm --arch=" + m_strArch + " --disable-doc " + m_strShared + " " + m_strStatic;
       strCommand += " --disable-bzlib --disable-libopenjpeg --disable-iconv --disable-zlib";
-      strCommand += " --prefix=" + (m_pcontext->m_pathFolder / m_pcontext->m_path / "build") + " --toolchain=msvc " + m_strDebug;
+      strCommand += " --prefix=" + strPrefix  + " --toolchain=msvc " + m_strDebug;
 
       m_pcontext->bash(strCommand);
 

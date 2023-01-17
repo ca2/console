@@ -182,12 +182,16 @@ namespace console_integration
 
       auto path = m_pcontext->m_path;
 
-      auto pathBuild = pathBase / path / "build";
+      auto pathPrefix = pathBase / path / "build";
 
       auto pathProgram = pathBase / path / "program";
 
+      auto strPrefix = m_pcontext->prepare_path(pathPrefix);
+
+      auto strProgram = m_pcontext->prepare_path(pathProgram);
+
       strCommand =
-         "perl Configure " + m_strConfigure + " " + m_strDebug + " --prefix=" + pathBuild + " --openssldir=" + pathProgram + " " + m_strShared;
+         "perl Configure " + m_strConfigure + " " + m_strDebug + " --prefix=" + strPrefix + " --openssldir=" + strProgram + " " + m_strShared;
 
       m_pcontext->command_system(strCommand);
 
