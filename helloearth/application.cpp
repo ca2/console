@@ -3,9 +3,6 @@
 #include "acme/primitive/string/str.h"
 #define FACTORY console_helloearth
 #define __APP_ID "console/helloearth"
-#if defined(WINDOWS_DESKTOP) && defined(CUBE)
-#include "_static_factory.inl"
-#endif
 //#include "acme_windows/_acme_windows.h"
 //BEGIN_FACTORY(console_helloearth)
 //FACTORY_DEPENDENCY(acme_windows)

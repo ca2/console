@@ -2,9 +2,9 @@
 #include "framework.h"
 #define FACTORY console_application_build_helper
 #define __APP_ID "console/application_build_helper"
-#ifdef CUBE
-#include "_static_factory.inl"
-#endif
+//#ifdef CUBE
+//#include "_static_factory_.inl"
+//#endif
 #include "acme/filesystem/filesystem/acme_file.h"
 #include "acme/platform/system.h"
 #define NO_NETWORKING
@@ -118,9 +118,27 @@ void application_build_helper::application_build_helper_main()
 
             printf("%s\n", strProject.c_str());
 
-            set_package_folder(strProject);
+            if(strProject.case_insensitive_ends("/operating-system-windows/x64"))
+            {
+            
+               ::output_debug_string("is it here");
+            
+            }
+            try
+            {
 
-            prepare_project();
+               set_package_folder(strProject);
+
+            
+               prepare_project();
+
+            }
+            catch (const ::exception & e)
+            {
+
+               fprintf(stderr, "%s: \"%s\"\n", e.m_strMessage.c_str(), e.m_strDetails.c_str());
+
+            }
 
          }
 

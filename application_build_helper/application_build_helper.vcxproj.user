@@ -47,8 +47,8 @@
     <LocalDebuggerWorkingDirectory>C:\debug\</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
-    <LocalDebuggerCommandArguments>-prepare_application source/app-core/clockverse</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>-prepare_projects project_list.txt</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
-    <LocalDebuggerWorkingDirectory>C:\main</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerWorkingDirectory>C:\console</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
 </Project>

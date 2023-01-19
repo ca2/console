@@ -19,7 +19,7 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="_static_factory.inl">
+    <None Include="_static_factory_.inl">
       <Filter>Source Files</Filter>
     </None>
   </ItemGroup>

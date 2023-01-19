@@ -952,7 +952,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="_main.inl" />
-    <None Include="_static_factory.inl" />
+    <None Include="_static_factory_.inl" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="application_build_helper.h" />
