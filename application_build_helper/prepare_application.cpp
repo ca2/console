@@ -64,6 +64,27 @@ void application_build_helper::prepare_application()
 
    acmefile()->put_contents(pathSourcePackages, strPackages);
 
+   auto strPackagesConfirm = acmefile()->as_string(pathSourcePackages);
+
+#ifdef WINDOWS
+
+   strPackagesConfirm.find_replace("\r\n", "\n");
+
+#endif
+
+   if (strPackagesConfirm == strPackages)
+   {
+
+      printf("\"_packages.txt\" created successfully.");
+
+   }
+   else
+   {
+
+      printf("\"_packages.txt\" wasn't correctly created.");
+
+   }
+
    ::file::path pathSourceReferences;
 
    pathSourceReferences = pathFolder / "_references.txt";

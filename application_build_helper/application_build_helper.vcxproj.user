@@ -47,8 +47,8 @@
     <LocalDebuggerWorkingDirectory>C:\debug\</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
-    <LocalDebuggerCommandArguments>-prepare_projects project_list.txt</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>-prepare_application "source/app-core/netnodelite"</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
-    <LocalDebuggerWorkingDirectory>C:\console</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerWorkingDirectory>C:\netnode</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
 </Project>
