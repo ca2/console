@@ -18,12 +18,19 @@
 		9A7F40CF274DADB400D914CC /* libacme_posix.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A7F40CE274DADB400D914CC /* libacme_posix.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9A81FBD92751536C003F38EC /* libidn.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A7F40C9274DAD9A00D914CC /* libidn.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9A9814AE28E4EBF7001C9855 /* prepare_application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A9814AB28E4EBF7001C9855 /* prepare_application.cpp */; };
+		9AA44B9B297BEAA600AA2F92 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA44B9A297BEAA600AA2F92 /* libiconv.tbd */; };
+		9AA44B9F297BEBCB00AA2F92 /* application_build_helper in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9AC1478F297B3327006D9BD3 /* application_build_helper */; };
+		9AA44BA9297BFB2300AA2F92 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA44BA8297BFB2300AA2F92 /* CoreGraphics.framework */; };
+		9AA44BAB297BFB5B00AA2F92 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA44BAA297BFB5B00AA2F92 /* CoreFoundation.framework */; };
+		9AA44BAC297BFBBF00AA2F92 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA44B05297BE5AA00AA2F92 /* Foundation.framework */; };
+		9AA44BAE297BFBEE00AA2F92 /* UniformTypeIdentifiers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA44BAD297BFBEE00AA2F92 /* UniformTypeIdentifiers.framework */; };
+		9AA44BB0297BFC6D00AA2F92 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA44BAF297BFC6D00AA2F92 /* IOKit.framework */; };
+		9AA44BB2297BFCD900AA2F92 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA44BB1297BFCD900AA2F92 /* AppKit.framework */; };
 		9AC1477B297B3327006D9BD3 /* application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6DED92962A36D008A1335 /* application.cpp */; };
 		9AC1477C297B3327006D9BD3 /* package.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A1049B52778C78D008570C4 /* package.cpp */; };
 		9AC1477D297B3327006D9BD3 /* prepare_project.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AD5390D28B190A3009CCC33 /* prepare_project.cpp */; };
 		9AC1477E297B3327006D9BD3 /* application_build_helper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A7F40C1274DA92A00D914CC /* application_build_helper.cpp */; };
 		9AC1477F297B3327006D9BD3 /* prepare_application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A9814AB28E4EBF7001C9855 /* prepare_application.cpp */; };
-		9AC1478B297B3327006D9BD3 /* shared_application_build_helper in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9ADD64DE26B5CBBC00D11298 /* shared_application_build_helper */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9AD5391428B190A3009CCC33 /* prepare_project.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AD5390D28B190A3009CCC33 /* prepare_project.cpp */; };
 		9AE6DEDA2962A36D008A1335 /* application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6DED92962A36D008A1335 /* application.cpp */; };
 		9AE6DEE42962A799008A1335 /* libacme_darwin.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AE6DEE32962A799008A1335 /* libacme_darwin.dylib */; };
@@ -71,10 +78,10 @@
 		9AC14784297B3327006D9BD3 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
-			dstPath = $HOME/bin;
+			dstPath = "$(WorkspaceDir)/operating-system/tool-macos/bin";
 			dstSubfolderSpec = 0;
 			files = (
-				9AC1478B297B3327006D9BD3 /* shared_application_build_helper in CopyFiles */,
+				9AA44B9F297BEBCB00AA2F92 /* application_build_helper in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +116,14 @@
 		9A7F40CC274DADAD00D914CC /* libacme_apple.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme_apple.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A7F40CE274DADB400D914CC /* libacme_posix.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme_posix.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A9814AB28E4EBF7001C9855 /* prepare_application.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = prepare_application.cpp; sourceTree = "<group>"; };
+		9AA44B05297BE5AA00AA2F92 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9AA44B9A297BEAA600AA2F92 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		9AA44BA7297BF85300AA2F92 /* _static_factory_.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = _static_factory_.inl; sourceTree = "<group>"; };
+		9AA44BA8297BFB2300AA2F92 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9AA44BAA297BFB5B00AA2F92 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		9AA44BAD297BFBEE00AA2F92 /* UniformTypeIdentifiers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UniformTypeIdentifiers.framework; path = System/Library/Frameworks/UniformTypeIdentifiers.framework; sourceTree = SDKROOT; };
+		9AA44BAF297BFC6D00AA2F92 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		9AA44BB1297BFCD900AA2F92 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		9AC1478F297B3327006D9BD3 /* application_build_helper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = application_build_helper; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC14D7F297B355E006D9BD3 /* lib_acme.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = lib_acme.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC14D80297B355E006D9BD3 /* lib_acme_apple.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = lib_acme_apple.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +148,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AA44BB2297BFCD900AA2F92 /* AppKit.framework in Frameworks */,
+				9AA44BB0297BFC6D00AA2F92 /* IOKit.framework in Frameworks */,
+				9AA44BAE297BFBEE00AA2F92 /* UniformTypeIdentifiers.framework in Frameworks */,
+				9AA44BAC297BFBBF00AA2F92 /* Foundation.framework in Frameworks */,
+				9AA44BAB297BFB5B00AA2F92 /* CoreFoundation.framework in Frameworks */,
+				9AA44BA9297BFB2300AA2F92 /* CoreGraphics.framework in Frameworks */,
+				9AA44B9B297BEAA600AA2F92 /* libiconv.tbd in Frameworks */,
 				9AFD8075297B571900BAD9DD /* lib_acme.a in Frameworks */,
 				9AFD806C297B55C000BAD9DD /* lib_acme_macos.a in Frameworks */,
 				9AFD806D297B55C900BAD9DD /* lib_acme_apple.a in Frameworks */,
@@ -177,6 +199,7 @@
 		9ADD64E826B5CC0B00D11298 /* application_build_helper */ = {
 			isa = PBXGroup;
 			children = (
+				9AA44BA7297BF85300AA2F92 /* _static_factory_.inl */,
 				9AE6DED92962A36D008A1335 /* application.cpp */,
 				9A7F40C1274DA92A00D914CC /* application_build_helper.cpp */,
 				9A1049B52778C78D008570C4 /* package.cpp */,
@@ -189,6 +212,13 @@
 		9ADD64FA26B5CC6000D11298 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9AA44BB1297BFCD900AA2F92 /* AppKit.framework */,
+				9AA44BAF297BFC6D00AA2F92 /* IOKit.framework */,
+				9AA44BAD297BFBEE00AA2F92 /* UniformTypeIdentifiers.framework */,
+				9AA44BAA297BFB5B00AA2F92 /* CoreFoundation.framework */,
+				9AA44BA8297BFB2300AA2F92 /* CoreGraphics.framework */,
+				9AA44B9A297BEAA600AA2F92 /* libiconv.tbd */,
+				9AA44B05297BE5AA00AA2F92 /* Foundation.framework */,
 				9AFD8074297B571900BAD9DD /* lib_acme.a */,
 				9AFD806A297B55B600BAD9DD /* lib_acme_darwin.a */,
 				9AFD8068297B55AE00BAD9DD /* lib_acme_posix.a */,
@@ -385,6 +415,11 @@
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = L8N5V6TZE5;
 				ENABLE_HARDENED_RUNTIME = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					CUBE,
+					"DEBUG=1",
+					"$(inherited)",
+				);
 				PLATFORM_MODIFIER = macos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -398,6 +433,7 @@
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = L8N5V6TZE5;
 				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = CUBE;
 				PLATFORM_MODIFIER = macos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
