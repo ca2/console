@@ -24,6 +24,9 @@
     <ClCompile Include="openssl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="x264.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="deployment.rc">
@@ -44,6 +47,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="openssl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="x264.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

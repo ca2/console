@@ -1,6 +1,7 @@
 ﻿// From impact.cpp on 2023-01-15 09:46 <3ThomasBorregaardSørensen!!
 #include "framework.h"
 #include "ffmpeg.h"
+#include "x264.h"
 #include "application.h"
 #include "acme/constant/id.h"
 #include "acme/constant/message.h"
@@ -49,6 +50,8 @@ namespace console_integration
 
       prepare();
 
+      build_dependencies();
+
       clean();
 
       download();
@@ -88,7 +91,6 @@ namespace console_integration
       m_pcontext->m_pathDownloadURL = "https://git.ffmpeg.org/ffmpeg.git";
 
       m_pcontext->prepare_compile_and_link_environment();
-
 
       if (m_pcontext->m_strPlatform == "Win32")
       {
@@ -139,6 +141,23 @@ namespace console_integration
 
       }
 
+      m_strPrefix = m_pcontext->prepare_path(m_pcontext->m_pathFolder / m_pcontext->m_path / "build");
+
+   }
+
+
+   void ffmpeg::build_dependencies()
+   {
+
+      __construct_new(m_px264);
+
+      m_px264->m_strPrefix = m_strPrefix;
+
+      m_px264->m_pcontext->m_strPlatform = m_pcontext->m_strPlatform;
+
+      m_px264->m_pcontext->m_strConfiguration = m_pcontext->m_strConfiguration;
+
+      m_px264->build();
 
    }
 
@@ -240,11 +259,10 @@ namespace console_integration
 
       string strCommand;
 
-      auto strPrefix = m_pcontext->prepare_path(m_pcontext->m_pathFolder / m_pcontext->m_path / "build");
-
-      strCommand += "./configure --enable-asm --enable-yasm --arch=" + m_strArch + " --disable-doc " + m_strShared + " " + m_strStatic;
+      strCommand += "./configure --enable-asm --enable-yasm --arch=" + m_strArch;
+      strCommand += " --disable-doc " + m_strShared + " " + m_strStatic;
       strCommand += " --disable-bzlib --disable-libopenjpeg --disable-iconv --disable-zlib";
-      strCommand += " --prefix=" + strPrefix  + " --toolchain=msvc " + m_strDebug;
+      strCommand += " --prefix=" + m_strPrefix  + " --toolchain=msvc " + m_strDebug;
 
       m_pcontext->bash(strCommand);
 

@@ -10,15 +10,6 @@
     <Filter Include="Header Files">
       <UniqueIdentifier>{e7f44857-7173-4504-b819-471dcf636980}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\unit_test">
-      <UniqueIdentifier>{b1ecc3a2-d4a6-4dee-b2fa-8792f8176b12}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\unit_test">
-      <UniqueIdentifier>{228bab0a-7f85-4bb0-b63b-34db85068f31}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\NewFilter1">
-      <UniqueIdentifier>{585e46d5-5056-4704-aa44-637c17cc70c7}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="application.cpp">
@@ -51,18 +42,6 @@
     <ClCompile Include="framework.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="unit_test\item.cpp">
-      <Filter>Source Files\unit_test</Filter>
-    </ClCompile>
-    <ClCompile Include="unit_test\basic_types.unittest.cpp">
-      <Filter>Source Files\unit_test</Filter>
-    </ClCompile>
-    <ClCompile Include="unit_test\unit_test.cpp">
-      <Filter>Source Files\unit_test</Filter>
-    </ClCompile>
-    <ClCompile Include="unit_test\set.cpp">
-      <Filter>Source Files\unit_test</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="deployment.rc">
@@ -76,23 +55,13 @@
     <ClInclude Include="_.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="item.h">
-      <Filter>Header Files\unit_test</Filter>
-    </ClInclude>
-    <ClInclude Include="unit_test\set.h">
-      <Filter>Header Files\unit_test</Filter>
-    </ClInclude>
-    <ClInclude Include="unit_test\basic_types.h">
-      <Filter>Header Files\unit_test</Filter>
-    </ClInclude>
-    <ClInclude Include="unit_test\_.h">
-      <Filter>Header Files\unit_test</Filter>
-    </ClInclude>
-    <ClInclude Include="unit_test\_internal.h">
-      <Filter>Header Files\unit_test</Filter>
-    </ClInclude>
     <ClInclude Include="application.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="_static_factory_.inl">
+      <Filter>Header Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

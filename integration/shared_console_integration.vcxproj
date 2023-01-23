@@ -941,6 +941,7 @@
     </ClCompile>
     <ClCompile Include="application.cpp" />
     <ClCompile Include="openssl.cpp" />
+    <ClCompile Include="x264.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\operating-system\operating-system-windows\apex_windows\apex_windows.vcxproj">
@@ -958,6 +959,7 @@
     <ClInclude Include="ffmpeg.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="openssl.h" />
+    <ClInclude Include="x264.h" />
     <ClInclude Include="_.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

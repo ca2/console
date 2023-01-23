@@ -1,4 +1,4 @@
-﻿// From impact.h on 2023-01-15 09:46 <3ThomasBorregaardSørensen!!
+﻿// From impact.h on 2023-01-23 17:27 <3ThomasBorregaardSørensen!!
 #pragma once
 
 
@@ -8,37 +8,28 @@ namespace integration { class context; }
 namespace console_integration
 {
 
-   class x264;
 
-   class ffmpeg :
+   class x264 :
       virtual public ::particle
    {
    public:
-      
-      
-      
-      string m_strArch;
-      string m_strDebug;
+
+
+
+      string m_strPrefix;
       string m_strShared;
       string m_strStatic;
 
 
       ::pointer < ::integration::context > m_pcontext;
 
-      ::pointer < x264 > m_px264;
 
-
-      string m_strPrefix;
-
-
-      ffmpeg();
-      ~ffmpeg() override;
+      x264();
+      ~x264() override;
 
 
       void initialize(::particle * pparticle);
 
-
-      void build_dependencies();
 
       void build();
 
