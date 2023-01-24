@@ -25,10 +25,10 @@ namespace console_integration
 
       ::pointer < ::integration::context > m_pcontext;
 
-      ::pointer < x264 > m_px264;
+      //::pointer < x264 > m_px264;
 
+      ::string_array m_strax264;
 
-      string m_strPrefix;
 
 
       ffmpeg();

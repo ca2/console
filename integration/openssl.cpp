@@ -73,7 +73,7 @@ namespace console_integration
 
       m_pcontext->m_pathDownloadURL = "https://www.openssl.org/source/openssl-" + m_pcontext->m_strRelease + ".tar.gz";
 
-      m_pcontext->prepare_compile_and_link_environment();
+      m_pcontext->prepare();
 
       if (m_pcontext->m_strPlatform == "Win32")
       {
@@ -137,34 +137,41 @@ namespace console_integration
 
       }
 
+      auto pathBase = m_pcontext->m_pathFolder;
+
+      auto path = m_pcontext->m_path;
+
+      m_pcontext->m_pathPrefix = pathBase / path / "build";
+
+      m_pcontext->prepare_compile_and_link_environment();
+
    }
 
 
    void openssl::download()
    {
 
+      m_pcontext->change_to_source_directory();
+
       m_pcontext->download_and_uncompress();
 
    }
 
 
-
    void openssl::configure()
    {
 
+      m_pcontext->change_to_source_directory();
+
+      string strPrefix = m_pcontext->prepare_path(m_pcontext->m_pathPrefix);
+
       ::string strCommand;
 
-      auto pathBase = m_pcontext->m_pathFolder;
-
-      auto path = m_pcontext->m_path;
-
-      auto pathPrefix = pathBase / path / "build";
-
-      auto pathProgram = pathBase / path / "program";
+      auto pathProgram = m_pcontext->m_pathFolder / m_pcontext->m_path / "program";
 
       strCommand += "perl Configure " + m_strConfigure + " " + m_strDebug;
 
-      strCommand += " --prefix=" + pathPrefix + " --openssldir=" + pathProgram + " " + m_strShared;
+      strCommand += " --prefix=" + strPrefix + " --openssldir=" + pathProgram + " " + m_strShared;
 
       m_pcontext->command_system(strCommand);
 
@@ -174,29 +181,7 @@ namespace console_integration
    void openssl::compile()
    {
 
-
-      //PLATFORM = $1
-      //   CONFIGURATION = $2
-      //   NAME = $3
-      //   DEBUG = $4
-      //   CONFIGURE = $5
-      //   SHARED = $6
-
-
-         //RELATIVE = openssl / $VERSION / $PLATFORM / $CONFIGURATION
-
-
-         //cd $BASE_DIR
-         //mkdir - p $RELATIVE
-         //cd $RELATIVE
-
-
-         //echo "Downloading openssl.tar.gz to $RELATIVE ..."
-         //wget - O openssl.tar.gz  https ://www.openssl.org/source/openssl-$VERSION.tar.gz
-      //echo "Uncompressing openssl.tar.gz to $RELATIVE ..."
-        // tar - xzf openssl.tar.gz --strip - components = 1 - C .
-
-         ///nmake
+      m_pcontext->change_to_source_directory();
 
       m_pcontext->command_system("nmake");
 
@@ -206,51 +191,29 @@ namespace console_integration
    void openssl::install()
    {
 
-      //BASE_DIR = $1
-      //   VERSION = $2
-      //   PLATFORM = $3
-      //   CONFIGURATION = $4
-      //   REL = $5
-      //   SRC_FOLDER = $6
-      //   STG_FOLDER = $7
-
-
-      //RELATIVE = openssl / $VERSION / $PLATFORM / $CONFIGURATION
-
-
-        // cd $BASE_DIR
-         //cd $RELATIVE
+      m_pcontext->change_to_source_directory();
 
       m_pcontext->command_system("nmake install_sw");
 
-      auto pathSourceFolder = m_pcontext->m_pathSourceFolder;
+      auto pathOperatingSystemIncludeFolder = m_pcontext->m_pathOperatingSystemIncludeFolder;
 
-      auto pathStorageFolder = m_pcontext->m_pathStorageFolder / m_pcontext->m_strPlatform / m_pcontext->m_strConfiguration;
+      auto pathOperatingSystemStorageFolder = m_pcontext->m_pathOperatingSystemStorageFolder / m_pcontext->m_strPlatform / m_pcontext->m_strConfiguration;
 
-      acmedirectory()->create(pathSourceFolder / "include");
+      acmedirectory()->create(pathOperatingSystemIncludeFolder / "include");
 
-      acmedirectory()->create(pathStorageFolder / "binary");
+      acmedirectory()->create(pathOperatingSystemStorageFolder / "binary");
 
-      acmedirectory()->create(pathStorageFolder / "library");
+      acmedirectory()->create(pathOperatingSystemStorageFolder / "library");
 
-      //mkdir - p $SOURCE_DIR / include /
-      //mkdir - p $STORAGE_DIR / binary /
-      //mkdir - p $STORAGE_DIR / library /
+      auto strPrefix = m_pcontext->prepare_path(m_pcontext->m_pathPrefix);
 
-      //cp -Rf $BASE_DIR/$NAME/build/bin/* $STORAGE_DIR/binary/
-      //cp -Rf $BASE_DIR/$NAME/build/lib/* $STORAGE_DIR/library/
+      auto strInclude = m_pcontext->prepare_path(pathOperatingSystemIncludeFolder);
 
-      auto strBase  = m_pcontext->prepare_path(m_pcontext->m_pathFolder / m_pcontext->m_path);
+      auto strStorage = m_pcontext->prepare_path(pathOperatingSystemStorageFolder);
 
-      auto strSource = m_pcontext->prepare_path(pathSourceFolder);
-
-      auto strStorage = m_pcontext->prepare_path(pathStorageFolder);
-
-      m_pcontext->bash("cp -Rf " + strBase + "/build/include/* " + strSource + "/include/");
-
-      m_pcontext->bash("cp -Rf " + strBase + "/build/bin/* " + strStorage + "/binary/");
-
-      m_pcontext->bash("cp -Rf " + strBase + "/build/lib/* " + strStorage + "/library/");
+      m_pcontext->bash("cp -f " + strPrefix + "/include/* " + strInclude + "/include/");
+      m_pcontext->bash("cp -f " + strPrefix + "/bin/* " + strStorage + "/binary/");
+      m_pcontext->bash("cp -f " + strPrefix + "/lib/* " + strStorage + "/library/");
 
    }
 

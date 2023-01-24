@@ -16,7 +16,6 @@ namespace console_integration
 
 
 
-      string m_strPrefix;
       string m_strShared;
       string m_strStatic;
 
@@ -42,8 +41,6 @@ namespace console_integration
       void configure();
 
       void compile();
-
-      void install_lib(const ::scoped_string & scopedstr);
 
       void install();
 

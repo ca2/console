@@ -6,6 +6,7 @@
 #include "acme/constant/id.h"
 #include "acme/constant/message.h"
 #include "acme/filesystem/filesystem/acme_directory.h"
+#include "acme/filesystem/filesystem/acme_file.h"
 #include "acme/platform/node.h"
 #include "acme/platform/system.h"
 #include "acme/primitive/primitive/url.h"
@@ -50,9 +51,9 @@ namespace console_integration
 
       prepare();
 
-      build_dependencies();
-
       clean();
+
+      build_dependencies();
 
       download();
 
@@ -64,12 +65,6 @@ namespace console_integration
 
    }
 
-
-   //void download();
-
-   //void compile();
-
-   //void install();
 
    void ffmpeg::prepare()
    {
@@ -90,7 +85,7 @@ namespace console_integration
 
       m_pcontext->m_pathDownloadURL = "https://git.ffmpeg.org/ffmpeg.git";
 
-      m_pcontext->prepare_compile_and_link_environment();
+      m_pcontext->prepare();
 
       if (m_pcontext->m_strPlatform == "Win32")
       {
@@ -141,7 +136,9 @@ namespace console_integration
 
       }
 
-      m_strPrefix = m_pcontext->prepare_path(m_pcontext->m_pathFolder / m_pcontext->m_path / "build");
+      m_pcontext->m_pathPrefix = m_pcontext->m_pathFolder / m_pcontext->m_path / "build";
+
+      m_pcontext->prepare_compile_and_link_environment();
 
    }
 
@@ -149,21 +146,47 @@ namespace console_integration
    void ffmpeg::build_dependencies()
    {
 
-      __construct_new(m_px264);
+      int iExitCode = 0;
 
-      m_px264->m_strPrefix = m_strPrefix;
+      ::string strParameters;
 
-      m_px264->m_pcontext->m_strPlatform = m_pcontext->m_strPlatform;
+      strParameters = "x264 " + m_pcontext->m_strPlatform + " " + m_pcontext->m_strConfiguration;
 
-      m_px264->m_pcontext->m_strConfiguration = m_pcontext->m_strConfiguration;
+      strParameters += " " + m_pcontext->m_pathPrefix;
 
-      m_px264->build();
+      acmenode()->command_system(m_strax264, iExitCode, acmefile()->module() + " " + strParameters, e_command_system_inline_log);
+
+      if (iExitCode == 0)
+      {
+
+         m_strax264.add("x264 Completed!!");
+
+      }
+      else
+      {
+
+         m_strax264.add("x264 Finished with error exit code: " + ::as_string(iExitCode) + "!");
+
+      }
+
+
+      //__construct_new(m_px264);
+
+      //m_px264->m_pcontext->m_pathPrefix = m_pcontext->m_pathPrefix;
+
+      //m_px264->m_pcontext->m_strPlatform = m_pcontext->m_strPlatform;
+
+      //m_px264->m_pcontext->m_strConfiguration = m_pcontext->m_strConfiguration;
+
+      //m_px264->build();
 
    }
 
 
    void ffmpeg::clean()
    {
+
+      m_pcontext->change_to_source_directory();
 
       m_pcontext->clean();
 
@@ -173,310 +196,95 @@ namespace console_integration
    void ffmpeg::download()
    {
 
-
-      //RELEASE = `http_get - case_insensitive_ends_eat.git - trim https ://raw.githubusercontent.com/FFmpeg/FFmpeg/master/RELEASE`
-
-
-      //auto path = m_pcontext->m_pathFolder / m_pcontext->m_path;
-
-
-      //m_pcontext->m_pathDownloadURL = "https://git.ffmpeg.org/ffmpeg.git";
-
-
-      //m_pcontext->git_clone();
-
-
-      //acmedirectory()->create(path);
-
-
-      //acmedirectory()->change_current(path);
-
-
-      //m_pcontext->command_system(strCommand);
-
+      m_pcontext->change_to_source_directory();
 
       m_pcontext->git_clone();
 
-
-      //string strCommand = "git clone https ://git.ffmpeg.org/ffmpeg.git .
-
-
-//         if[!- d $BASE_DIR]; then
-//
-//            echo "$BASE_DIR does not exist!!"
-//
-//            exit - 1
-//
-//            fi
-//
-//
-//            cd $BASE_DIR
-//
-//
-
    }
+
 
    void ffmpeg::configure()
    {
 
-      //PLATFORM = $1
-      //   CONFIGURATION = $2
+      m_pcontext->change_to_source_directory();
 
-
-         //prepare
-
-
-         //cd "$BASE_DIR"
-         //mkdir - p "$PATH"
-         //cd "$PATH"
-
-
-         //echo "BASE_DIR is $BASE_DIR"
-         //echo "PATH is $PATH"
-         //echo "RELEASE is $RELEASE"
-         //echo "ARCH is $ARCH"
-         //echo "DEBUG is $DEBUG"
-         //echo "SHARED is $SHARED"
-         //echo "STATIC is $STATIC"
-
-
-         //exit - 1
-         //#DEBUG --enable - debug
-
-         //#ARCH i386   x86_64
-
-         //#for shared: --enable - shared --disable - static
-         //#for static: ""              ""
-
-//#(compile x64 Debug --enable-debug --enable-shared --disable-static -MDd???) &
-//#(compile x64 Release --disable-debug --enable-shared --disable-static -MD???) &
-//#(compile x64 StaticDebug --enable-debug "" "" -MTd???) &
-//#(compile x64 StaticRelease --disable-debug "" "" -MT???) &
-
-
-
-//#./configure --enable-asm --enable-yasm --arch=$ARCH --disable-ffserver --disable-avdevice --disable-swscale --disable-doc --disable-ffplay --disable-ffprobe --disable-ffmpeg $SHARED $STATIC --disable-bzlib --disable-libopenjpeg --disable-iconv --disable-zlib --prefix=$BASE_DIR/output/$NAME --toolchain=msvc $DEBUG
+      string strPrefix = m_pcontext->prepare_path(m_pcontext->m_pathPrefix);
 
       string strCommand;
 
       strCommand += "./configure --enable-asm --enable-yasm --arch=" + m_strArch;
       strCommand += " --disable-doc " + m_strShared + " " + m_strStatic;
       strCommand += " --disable-bzlib --disable-libopenjpeg --disable-iconv --disable-zlib";
-      strCommand += " --prefix=" + m_strPrefix  + " --toolchain=msvc " + m_strDebug;
+      strCommand += " --disable-programs";
+      strCommand += " --enable-libx264 --enable-gpl";
+      strCommand += " --prefix=" + strPrefix + "/ --toolchain=msvc " + m_strDebug;
+      strCommand += " --extra-ldflags=-LIBPATH:" + strPrefix + "/lib/";
+      strCommand += " --extra-cflags=-I" + strPrefix + "/include/";
 
       m_pcontext->bash(strCommand);
-
 
    }
 
 
+   void ffmpeg::compile()
+   {
 
-      void ffmpeg::compile()
-      {
+      m_pcontext->change_to_source_directory();
 
-         //PLATFORM = $1
-         //   CONFIGURATION = $2
+      m_pcontext->bash("make");
 
+   }
 
-            //prepare
 
+   void ffmpeg::install_lib(const ::scoped_string & scopedstrLibrary)
+   {
 
-            //cd "$BASE_DIR"
-            //mkdir - p "$PATH"
-            //cd "$PATH"
+      auto pathSource = m_pcontext->m_pathSource2;
 
+      auto pathOperatingSystemStorageFolder = m_pcontext->m_pathOperatingSystemStorageFolder / m_pcontext->m_strPlatform / m_pcontext->m_strConfiguration;
 
-            //echo "BASE_DIR is $BASE_DIR"
-            //echo "PATH is $PATH"
-            //echo "RELEASE is $RELEASE"
-            //echo "ARCH is $ARCH"
-            //echo "DEBUG is $DEBUG"
-            //echo "SHARED is $SHARED"
-            //echo "STATIC is $STATIC"
+      auto strSource = m_pcontext->prepare_path(pathSource);
 
+      auto strStorage = m_pcontext->prepare_path(pathOperatingSystemStorageFolder);
 
-            //exit - 1
-            //#DEBUG --enable - debug
+      //m_pcontext->bash("cp -f " + strSource + "/lib" + scopedstrLibrary + "/*.dll " + strStorage + "/binary/");
+      m_pcontext->bash("cp -f " + strSource + "/lib" + scopedstrLibrary + "/*.pdb " + strStorage + "/binary/");
 
-            //#ARCH i386   x86_64
+   }
 
-            //#for shared: --enable - shared --disable - static
-            //#for static: ""              ""
 
-//#(compile x64 Debug --enable-debug --enable-shared --disable-static -MDd???) &
-//#(compile x64 Release --disable-debug --enable-shared --disable-static -MD???) &
-//#(compile x64 StaticDebug --enable-debug "" "" -MTd???) &
-//#(compile x64 StaticRelease --disable-debug "" "" -MT???) &
+   void ffmpeg::install()
+   {
 
+      m_pcontext->change_to_source_directory();
 
-            
-//#./configure --enable-asm --enable-yasm --arch=$ARCH --disable-ffserver --disable-avdevice --disable-swscale --disable-doc --disable-ffplay --disable-ffprobe --disable-ffmpeg $SHARED $STATIC --disable-bzlib --disable-libopenjpeg --disable-iconv --disable-zlib --prefix=$BASE_DIR/output/$NAME --toolchain=msvc $DEBUG
+      m_pcontext->bash("make install");
 
-         //string strCommand;
+      auto pathOperatingSystemIncludeFolder = m_pcontext->m_pathOperatingSystemIncludeFolder;
 
-         //strCommand += "./configure --enable-asm --enable-yasm --arch=" + m_strArch + " --disable-doc " + m_strShared + " " + m_strStatic;
-         //strCommand += " --disable-bzlib --disable-libopenjpeg --disable-iconv --disable-zlib";
-         //strCommand += " --prefix=" + (m_pcontext->m_pathFolder / m_pcontext->m_path / "build") + " --toolchain=msvc " + m_strDebug;
+      auto pathOperatingSystemStorageFolder = m_pcontext->m_pathOperatingSystemStorageFolder / m_pcontext->m_strPlatform / m_pcontext->m_strConfiguration;
 
-         //m_pcontext->bash(strCommand);
+      auto strPrefix = m_pcontext->prepare_path(m_pcontext->m_pathPrefix);
 
-         m_pcontext->bash("make");
+      auto strInclude = m_pcontext->prepare_path(pathOperatingSystemIncludeFolder);
 
-      }
+      auto strStorage = m_pcontext->prepare_path(pathOperatingSystemStorageFolder);
 
+      m_pcontext->bash("cp -Rf " + strPrefix + "/include/* " + strInclude + "/include/");
+      m_pcontext->bash("cp -f " + strPrefix + "/bin/*.exe " + strStorage + "/binary/");
+      m_pcontext->bash("cp -f " + strPrefix + "/bin/*.dll " + strStorage + "/binary/");
+      m_pcontext->bash("cp -f " + strPrefix + "/bin/*.lib " + strStorage + "/library/");
+      m_pcontext->bash("cp -f " + strPrefix + "/lib/* " + strStorage + "/library/");
 
-      void ffmpeg::install_lib(const ::scoped_string & scopedstrLibrary)
-      {
+      install_lib("avcodec");
+      install_lib("avdevice");
+      install_lib("avfilter");
+      install_lib("avformat");
+      install_lib("avutil");
+      install_lib("swresample");
+      install_lib("swscale");
 
-         //REL = $3
-           // SRC_FOLDER = $4
-            //STG_FOLDER = $5
-            //LIBRARY_NAME = $6
-
-            //cp - Rf $BASE_DIR / $NAME / lib$LIBRARY_NAME/*.dll $STORAGE_DIR/binary/
-            //cp -Rf $BASE_DIR/$NAME/lib$LIBRARY_NAME/*.pdb $STORAGE_DIR/binary/
-
-         auto str = m_pcontext->prepare_path(m_pcontext->m_pathFolder / m_pcontext->m_path);
-
-         auto pathStorageFolder = m_pcontext->m_pathStorageFolder / m_pcontext->m_strPlatform / m_pcontext->m_strConfiguration;
-
-         auto strStorage = m_pcontext->prepare_path(pathStorageFolder);
-
-         m_pcontext->bash("cp -Rf " + str + "/lib" + scopedstrLibrary + "/*.dll " + strStorage + "/binary/");
-         m_pcontext->bash("cp -Rf " + str + "/lib" + scopedstrLibrary + "/*.pdb " + strStorage + "/binary/");
-
-      }
-
-      
-      void ffmpeg::install()
-      {
-
-            //m_pcontext->m_pathSourceFolder = "C:/main/operating-system/operating-system-windows";
-
-
-      //m_pcontext->m_pathStorageFolder = "C:/operating-system/storage-windows";
-
-
-
-      //   NAME=$2
-        // REL=$3
-      //   SRC_FOLDER=$4
-        // STG_FOLDER=$5
-
-      //   cd $BASE_DIR
-      //   cd $NAME
-
-      //   make install
-
-      //   SOURCE_DIR="$SRC_FOLDER"
-      //   STORAGE_DIR="$STG_FOLDER/$REL"
-
-      //   mkdir -p $SOURCE_DIR/include/
-      //   mkdir -p $STORAGE_DIR/binary/
-      //   mkdir -p $STORAGE_DIR/library/
-
-         m_pcontext->bash("make install");
-
-
-
-
-         auto pathSourceFolder = m_pcontext->m_pathSourceFolder;
-
-         auto pathStorageFolder = m_pcontext->m_pathStorageFolder / m_pcontext->m_strPlatform / m_pcontext->m_strConfiguration;
-
-         auto str = m_pcontext->prepare_path(m_pcontext->m_pathFolder / m_pcontext->m_path);
-
-         auto strSource = m_pcontext->prepare_path(pathSourceFolder);
-
-         auto strStorage = m_pcontext->prepare_path(pathStorageFolder);
-
-
-         m_pcontext->bash("cp -Rf " + str + "/build/include/* " + strSource + "/include/");
-         m_pcontext->bash("cp -Rf " + str + "/build/bin/*.exe " + strStorage + " /binary/");
-         m_pcontext->bash("cp -Rf " + str + "/build/bin/*.lib " + strStorage + " /library/");
-         m_pcontext->bash("cp -Rf " + str + "/build/lib/* " + strStorage + "/library/");
-
-         install_lib("avcodec");
-         install_lib("avdevice");
-         install_lib("avfilter");
-         install_lib("avformat");
-         install_lib("avutil");
-         install_lib("swresample");
-         install_lib("swscale");
-
-      }
-
-
-
-
-
-   //}
-
-
-   //void ffmpeg::handle(::topic * ptopic, ::context * pcontext)
-   //{
-
-   //   if (ptopic->m_atom == "simple_checkbox"
-   //      || ptopic->m_atom == "no_client_frame")
-   //   {
-
-   //      set_need_redraw();
-   //      
-   //      post_redraw();
-
-   //   }
-
-   //   ::user::impact::handle(ptopic, pcontext);
-   //}
-
-
-   //::user::document * ffmpeg::get_document()
-   //{
-
-   //   return ::user::impact::get_document();
-
-   //}
-
-
-   //void ffmpeg::_001OnDraw(::draw2d::graphics_pointer & pgraphics)
-   //{
-
-   //   if (get_app()->application_properties().m_echeckNoClientFrame != ::e_check_checked)
-   //   {
-
-   //      ::rectangle_i32 rectangle = get_client_rect();
-
-   //      for (index i = 0; i < 11; i++)
-   //      {
-
-   //         pgraphics->draw_inset_rectangle(rectangle, argb(180, 80, 80, 80));
-
-   //         rectangle.deflate(1, 1);
-
-   //      }
-
-   //   }
-
-   //   //m_prender->_001OnDraw(pgraphics);
-
-   //}
-
-
-   //void ffmpeg::on_layout(::draw2d::graphics_pointer & pgraphics)
-   //{
-
-   //   auto rectangleClient = get_client_rect();
-
-   //   if(rectangleClient.is_empty())
-   //   {
-
-   //      return;
-
-   //   }
-
-   //   //m_prender->m_rectangle = rectangleClient;
-
-   //}
+   }
 
 
 } // namespace console_integration

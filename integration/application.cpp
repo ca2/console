@@ -1,6 +1,7 @@
 ﻿#include "framework.h"
 #include "ffmpeg.h"
 #include "openssl.h"
+#include "x264.h"
 #include "acme/console.h"
 #include <stdio.h>
 #include "acme/platform/system.h"
@@ -128,6 +129,20 @@ namespace console_integration
             popenssl->m_pcontext->m_strConfiguration = psubsystem->get_argument1(2);
 
             popenssl->build();
+
+         }
+         else if (strArgument.case_insensitive_equals("x264"))
+         {
+
+            auto px264 = __create_new < x264 >();
+
+            px264->m_pcontext->m_strPlatform = psubsystem->get_argument1(1);
+
+            px264->m_pcontext->m_strConfiguration = psubsystem->get_argument1(2);
+
+            px264->m_pcontext->m_pathPrefix = psubsystem->get_argument1(3);
+
+            px264->build();
 
          }
 
