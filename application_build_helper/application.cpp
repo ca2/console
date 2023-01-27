@@ -191,11 +191,28 @@ void application_build_helper::application_build_helper_main()
          for (auto& strApplication : straApplications)
          {
 
-            printf("%s\n", strApplication.c_str());
+            try
+            {
 
-            set_package_folder(strApplication);
+               printf("%s\n", strApplication.c_str());
 
-            prepare_application();
+               set_package_folder(strApplication);
+
+               prepare_application();
+
+            }
+            catch (const exception & exception)
+            {
+
+               printf("Exception has occurred: %s\n", exception.m_strMessage.c_str());
+               printf("Exception details:\n%s\n", exception.m_strDetails.c_str());
+
+            }
+            catch (...)
+            {
+
+               printf("catch all exception has occurred for application: %s\n", strApplication.c_str());
+            }
 
          }
 
