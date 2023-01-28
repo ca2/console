@@ -3,6 +3,8 @@
 #include "acme/platform/application.h"
 #include "acme/platform/system.h"
 #include "acme/platform/sequencer.h"
+#include "acme/primitive/datetime/datetime.h"
+#include "acme/primitive/mathematics/_random.h"
 #include "acme/user/user/conversation.h"
 #include "acme/user/nano/nano.h"
 #include "acme/memory/_new.inl"
@@ -263,9 +265,145 @@ class console_hello :
 
 public:
 
+   ::string generatecontatenation(char ch)
+   {
+
+      ::string str;
+
+      int iCount = random(20, 200);
+
+      for (int i = 0; i < iCount; i++)
+      {
+
+         char ch1 = (ch + (char)random(0, 4));
+
+         str.append(&ch1, 1);
+
+      }
+
+      return str;
+
+   }
+
+   void test_contatenation(char ch)
+   {
+
+      
+      fork([this, ch]()
+   {
+
+      string strLastA;
+      string strLastB;
+      ::file::path pathLast;
+      ::file::path pathLast2;
+
+   for (int i = 0; i < 100'000; i++)
+   {
+      string strA = generatecontatenation(ch);
+
+      wstring wstrB = strA;
+
+      string strC(wstrB);
+
+      string str = strA + strC;
+
+      string str1;
+
+      string strD = generatecontatenation(ch);
+      
+      string strMillis;
+
+      ::file::path path = strA / strLastB / "dynamic_source" / pathLast2.name() + ".exp";
+
+      auto path1 = path.sibling(pathLast.name());
+
+      strMillis = ::as_string(::integral_millisecond() % 1000);
+
+      str1.format("this is a contatenation%s and format test%s ", str.c_str(), strD.c_str());
+
+      if (str.size() < 20)
+      {
+         
+         ::output_debug_string("What!!");
+
+      }
+      if (str1.size() < 20)
+      {
+
+         ::output_debug_string("What(1)!!");
+
+      }
+
+      if (i % 1'000 == 0)
+      {
+
+         printf("%c", ch);
+
+      }
+
+      strLastA = strA;
+      pathLast = path;
+      pathLast2 = pathLast;
+   }
+
+      printf("\nCompleted concatenation \"%c\"!!", ch);
+
+      });
+
+
+   }
+
+   void test_datetime_format(char ch)
+   {
+
+
+      fork([this, ch]()
+         {
+
+            auto pdatetime = acmesystem()->datetime();
+            ::earth::time timeNow;
+
+
+      for (int i = 0; i < 1'000'000; i++)
+      {
+
+         timeNow.Now();
+
+         string strCompileLogUnique = pdatetime->format(INTERNATIONAL_DATE_TIME_FORMAT_FOR_FILE, timeNow);
+
+         if (strCompileLogUnique.size() < 5)
+         {
+            ::output_debug_string("What!!");
+
+         }
+         if (i % 10'000 == 0)
+         {
+
+            printf("%c", ch);
+
+         }
+      }
+
+      printf("\nCompleted datetime_format\"%c\"!!", ch);
+
+            });
+
+
+   }
 
    void main() override
    {
+
+      test_datetime_format('w');
+      //test_datetime_format('x');
+      //test_datetime_format('y');
+      //test_datetime_format('z');
+      //test_contatenation('a');
+      //test_contatenation('f');
+      //test_contatenation('l');
+      //test_contatenation('s');
+
+      preempt(5_min);
 
       trim_left_001();
 
