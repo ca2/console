@@ -1391,7 +1391,9 @@ void application_build_helper::zip_matter()
 
 #ifdef WINDOWS
 
-   pathZipExe = (m_pathFolder - 3) / "operating-system/tool-windows/bin/zip";
+   //pathZipExe = (m_pathFolder - 3) / "operating-system/tool-windows/bin/zip";
+
+   pathZipExe = "C:/operating-system/tool-windows/bin/zip";
 
 #else
 
