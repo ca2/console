@@ -64,180 +64,184 @@ public:
    void main() override
    {
 
-      string strHelloEarth = "Hello Earth!!";
+      //string strHelloEarth = "Hello Earth!!";
 
-      printf("%s\n", strHelloEarth.c_str());
+      //printf("%s\n", strHelloEarth.c_str());
 
-      string strATestText(" A TestText");
+      //string strATestText(" A TestText");
 
-      string strAEIOU("Oh" + strATestText);
+      //string strAEIOU("Oh" + strATestText);
 
-      printf("strAEIOU=%s", strAEIOU.c_str());
+      //printf("strAEIOU=%s", strAEIOU.c_str());
 
-      string strTest123;
+      //string strTest123;
 
-      strTest123 = "Test123";
+      //strTest123 = "Test123";
 
-      printf("Test123=%s\n", strTest123.c_str());
+      //printf("Test123=%s\n", strTest123.c_str());
 
-      strTest123.case_insensitive_begins_eat("test");
+      //strTest123.case_insensitive_begins_eat("test");
 
-      printf("case_insensitive_begins_eat(strTest123, \"test\")=%s\n", strTest123.c_str());
+      //printf("case_insensitive_begins_eat(strTest123, \"test\")=%s\n", strTest123.c_str());
 
-      string_array stra;
+      //string_array stra;
 
-      stra.add("apple");
-      stra.add("orange");
-      stra.add("strawberry");
+      //stra.add("apple");
+      //stra.add("orange");
+      //stra.add("strawberry");
 
-      for (auto& str : stra)
-      {
+      //for (auto& str : stra)
+      //{
 
-         printf("a fruit: %s\n", str.c_str());
+      //   printf("a fruit: %s\n", str.c_str());
 
-      }
+      //}
 
-      string_array stra2;
+      //string_array stra2;
 
-      stra2.add("apP");
-      stra2.add("ap1");
-      stra2.add("oRa");
-      stra2.add("or2");
-      stra2.add("Str");
-      stra2.add("st3");
+      //stra2.add("apP");
+      //stra2.add("ap1");
+      //stra2.add("oRa");
+      //stra2.add("or2");
+      //stra2.add("Str");
+      //stra2.add("st3");
 
-      for (auto& str2 : stra2)
-      {
+      //for (auto& str2 : stra2)
+      //{
 
-         auto iFind = stra.find_first_begins_ci(str2);
+      //   auto iFind = stra.find_first_begins_ci(str2);
 
-         if (not_found(iFind))
-         {
+      //   if (not_found(iFind))
+      //   {
 
-            printf("find first starts with: %s - %" PRIiPTR "\n", str2.c_str(), iFind);
+      //      printf("find first starts with: %s - %" PRIiPTR "\n", str2.c_str(), iFind);
 
-         }
-         else
-         {
+      //   }
+      //   else
+      //   {
 
-            printf("find first starts with: %s - %" PRIiPTR " - %s\n", str2.c_str(), iFind, stra[iFind].c_str());
+      //      printf("find first starts with: %s - %" PRIiPTR " - %s\n", str2.c_str(), iFind, stra[iFind].c_str());
 
-         }
+      //   }
 
-      }
+      //}
 
-      ::atom atom;
+      //::atom atom;
 
-      atom = 1;
+      //atom = 1;
 
-      printf("atom=%s\n", atom.as_string().c_str());
+      //printf("atom=%s\n", atom.as_string().c_str());
 
-      atom = "two";
+      //atom = "two";
 
-      printf("atom=%s\n", atom.as_string().c_str());
+      //printf("atom=%s\n", atom.as_string().c_str());
 
-      property_set set;
+      //property_set set;
 
-      auto& library = set["user1"];
+      //auto& library = set["user1"];
 
-      library["book1"]["title"] = "First C++ Book";
-      library["book1"]["chapter1"] = "First C++ Book - First Chapter";
-      library["book1"]["chapter2"] = "First C++ Book - Second Chapter";
-      library["book1"]["chapter3"] = "First C++ Book - Last Chapter";
-      library["book1"]["page_count"] = 40;
-      library["book1"]["first_edition_weight"] = 0.621;
-      library["book2"]["title"] = "Second C++ Book";
-      library["book2"]["chapter1"] = "First C++ Book - First Chapter";
-      library["book2"]["chapter2"] = "First C++ Book - Second Chapter";
-      library["book2"]["chapter3"] = "First C++ Book - Third Chapter";
-      library["book2"]["chapter4"] = "First C++ Book - Fourth Chapter";
-      library["book2"]["chapter5"] = "First C++ Book - Last Chapter";
-      library["book2"]["page_count"] = 81;
-      library["book2"]["first_edition_weight"] = 0.907;
+      //library["book1"]["title"] = "First C++ Book";
+      //library["book1"]["chapter1"] = "First C++ Book - First Chapter";
+      //library["book1"]["chapter2"] = "First C++ Book - Second Chapter";
+      //library["book1"]["chapter3"] = "First C++ Book - Last Chapter";
+      //library["book1"]["page_count"] = 40;
+      //library["book1"]["first_edition_weight"] = 0.621;
+      //library["book2"]["title"] = "Second C++ Book";
+      //library["book2"]["chapter1"] = "First C++ Book - First Chapter";
+      //library["book2"]["chapter2"] = "First C++ Book - Second Chapter";
+      //library["book2"]["chapter3"] = "First C++ Book - Third Chapter";
+      //library["book2"]["chapter4"] = "First C++ Book - Fourth Chapter";
+      //library["book2"]["chapter5"] = "First C++ Book - Last Chapter";
+      //library["book2"]["page_count"] = 81;
+      //library["book2"]["first_edition_weight"] = 0.907;
 
-      auto& library2 = set["user2"];
+      //auto& library2 = set["user2"];
 
-      library2["book1"]["title"] = "First C Book";
-      library2["book1"]["chapter1"] = "First C++ Book - First Chapter";
-      library2["book1"]["chapter2"] = "First C++ Book - Last Chapter";
-      library2["book1"]["page_count"] = 32;
-      library2["book1"]["first_edition_weight"] = 0.517;
+      //library2["book1"]["title"] = "First C Book";
+      //library2["book1"]["chapter1"] = "First C++ Book - First Chapter";
+      //library2["book1"]["chapter2"] = "First C++ Book - Last Chapter";
+      //library2["book1"]["page_count"] = 32;
+      //library2["book1"]["first_edition_weight"] = 0.517;
 
-      library2["book2"]["title"] = "Second C Book";
-      library2["book2"]["chapter1"] = "First C++ Book - First Chapter";
-      library2["book2"]["chapter2"] = "First C++ Book - Second Chapter";
-      library2["book2"]["chapter3"] = "First C++ Book - Third Chapter";
-      library2["book2"]["chapter4"] = "First C++ Book - Last Chapter";
-      library2["book2"]["page_count"] = 72;
-      library2["book2"]["editions_weight"] = payload_array({ 0.907, 0.856, 0.741 });
+      //library2["book2"]["title"] = "Second C Book";
+      //library2["book2"]["chapter1"] = "First C++ Book - First Chapter";
+      //library2["book2"]["chapter2"] = "First C++ Book - Second Chapter";
+      //library2["book2"]["chapter3"] = "First C++ Book - Third Chapter";
+      //library2["book2"]["chapter4"] = "First C++ Book - Last Chapter";
+      //library2["book2"]["page_count"] = 72;
+      //library2["book2"]["editions_weight"] = payload_array({ 0.907, 0.856, 0.741 });
 
-      string strNetworkPayload = set.get_network_payload();
+      //string strNetworkPayload = set.get_network_payload();
 
-      printf("%s\n", strNetworkPayload.c_str());
-
-
-      unsigned int uAllOne = 0xffffffff;
-      int iUAllOne = uAllOne;
-      auto min1 = minimum(uAllOne, iUAllOne);
-      printf("%d\n", min1);
-      auto min2 = minimum(iUAllOne, uAllOne);
-      printf("%d\n", min2);
-      int iAllOne = -1;
-      unsigned int uIAllOne = iAllOne;
-      auto min3 = minimum(iAllOne, uIAllOne);
-      printf("%u\n", min3);
-      auto min4 = minimum(uIAllOne, iAllOne);
-      printf("%u\n", min4);
+      //printf("%s\n", strNetworkPayload.c_str());
 
 
-      unsigned int uAlmostAllOne = 0xfffffffe;
-      int iUAlmostAllOne = uAlmostAllOne;
-      auto min5 = minimum(uAlmostAllOne, iUAlmostAllOne);
-      printf("min5: %i\n", min5);
-      auto min6 = minimum(iUAlmostAllOne, uAlmostAllOne);
-      printf("min6: %i\n", min6);
-      int iAlmostAllOne = -2;
-      unsigned int uIAlmostAllOne = iAlmostAllOne;
-      auto min7 = minimum(iAlmostAllOne, uIAlmostAllOne);
-      printf("%i\n", min7);
-      auto min8 = minimum(uIAlmostAllOne, iAlmostAllOne);
-      printf("%i\n", min8);
+      //unsigned int uAllOne = 0xffffffff;
+      //int iUAllOne = uAllOne;
+      //auto min1 = minimum(uAllOne, iUAllOne);
+      //printf("%d\n", min1);
+      //auto min2 = minimum(iUAllOne, uAllOne);
+      //printf("%d\n", min2);
+      //int iAllOne = -1;
+      //unsigned int uIAllOne = iAllOne;
+      //auto min3 = minimum(iAllOne, uIAllOne);
+      //printf("%u\n", min3);
+      //auto min4 = minimum(uIAllOne, iAllOne);
+      //printf("%u\n", min4);
 
-      unsigned short u1 = 0xffff;
-      int i1 = u1;
-      auto min9 = minimum(u1, i1);
-      printf("%i\n", min9);
-      auto mina = minimum(i1, u1);
-      printf("%i\n", mina);
-      short s1 = -1;
-      unsigned int i2 = s1;
-      auto minb = minimum(s1, i2);
-      printf("%i\n", minb);
-      auto minc = minimum(i2, s1);
-      printf("%i\n", minc);
 
-      unsigned int u3 = 0xffffffff;
-      short i3 = u3;
-      auto mind = minimum(u3, i3);
-      printf("%i\n", mind);
-      auto mine = minimum(i3, u3);
-      printf("%i\n", mine);
-      int s3 = -1;
-      unsigned short i4 = s3;
-      auto minf = minimum(s3, i4);
-      printf("%i\n", minf);
-      auto ming = minimum(i4, s3);
-      printf("%i\n", ming);
+      //unsigned int uAlmostAllOne = 0xfffffffe;
+      //int iUAlmostAllOne = uAlmostAllOne;
+      //auto min5 = minimum(uAlmostAllOne, iUAlmostAllOne);
+      //printf("min5: %i\n", min5);
+      //auto min6 = minimum(iUAlmostAllOne, uAlmostAllOne);
+      //printf("min6: %i\n", min6);
+      //int iAlmostAllOne = -2;
+      //unsigned int uIAlmostAllOne = iAlmostAllOne;
+      //auto min7 = minimum(iAlmostAllOne, uIAlmostAllOne);
+      //printf("%i\n", min7);
+      //auto min8 = minimum(uIAlmostAllOne, iAlmostAllOne);
+      //printf("%i\n", min8);
 
-      printf("\n");
+      //unsigned short u1 = 0xffff;
+      //int i1 = u1;
+      //auto min9 = minimum(u1, i1);
+      //printf("%i\n", min9);
+      //auto mina = minimum(i1, u1);
+      //printf("%i\n", mina);
+      //short s1 = -1;
+      //unsigned int i2 = s1;
+      //auto minb = minimum(s1, i2);
+      //printf("%i\n", minb);
+      //auto minc = minimum(i2, s1);
+      //printf("%i\n", minc);
 
-      printf("\n");
+      //unsigned int u3 = 0xffffffff;
+      //short i3 = u3;
+      //auto mind = minimum(u3, i3);
+      //printf("%i\n", mind);
+      //auto mine = minimum(i3, u3);
+      //printf("%i\n", mine);
+      //int s3 = -1;
+      //unsigned short i4 = s3;
+      //auto minf = minimum(s3, i4);
+      //printf("%i\n", minf);
+      //auto ming = minimum(i4, s3);
+      //printf("%i\n", ming);
+
+      //printf("\n");
+
+      //printf("\n");
 
       enum_dialog_result edialogresult = e_dialog_result_none;
 
       twitch twitch;
 
       twitch.initialize(this);
+
+      twitch.ca2software_int_to_string_bases();
+
+      return;
 
       while (edialogresult != e_dialog_result_yes)
       {

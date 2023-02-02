@@ -9,8 +9,6 @@
 int twitch::show_main_menu_and_get_menu_item()
 {
 
-   nicopelullo_inorder__preorder_and_post_order_main();
-
    acmenode()->flush_stdin();
 
    ::std::cout << "1. for run memories dota program:" << ::std::endl;
@@ -22,9 +20,10 @@ int twitch::show_main_menu_and_get_menu_item()
    ::std::cout << "7. octaelliptical list prime numbers" << ::std::endl;
    ::std::cout << "8. nicopelullo binary tree to stack" << ::std::endl;
    ::std::cout << "9. nicopelullo inorder, preorder and post order" << ::std::endl;
+   ::std::cout << "a. ca2software int_to_string bases " << ::std::endl;
    ::std::cout << "other number to resume" << ::std::endl;
 
-   int iMenuItem = -1;
+   char iMenuItem = -1;
 
    ::std::cin >> iMenuItem;
 
@@ -43,32 +42,35 @@ int twitch::do_menu_item_and_get_next_menu_item(int iMenuItem)
 
       switch (iMenuItem)
       {
-      case 1:
+      case '1':
          iResult = memoriesdota_file_word_count_main();
          break;
-      case 2:
+      case '2':
          iResult = korishama_polymorphism_main();
          break;
-      case 3:
+      case '3':
          iResult = octaelliptical_star_main();
          break;
-      case 4:
+      case '4':
          iResult = octaelliptical_star_main_only_odd_count_main();
          break;
-      case 5:
+      case '5':
          iResult = octaelliptical_iterative_fibonacci_main();
          break;
-      case 6:
+      case '6':
          iResult = octaelliptical_count_miscellaneous_characters_main();
          break;
-      case 7:
+      case '7':
          iResult = octaelliptical_list_prime_numbers_main();
          break;
-      case 8:
+      case '8':
          iResult = nicopelullo_binary_tree_to_stack_main();
          break;
-      case 9:
+      case '9':
          iResult = nicopelullo_inorder__preorder_and_post_order_main();
+         break;
+      case 'a':
+         iResult = ca2software_int_to_string_bases();
          break;
       };
 
