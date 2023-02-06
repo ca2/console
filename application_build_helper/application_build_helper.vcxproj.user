@@ -47,8 +47,18 @@
     <LocalDebuggerWorkingDirectory>C:\debug\</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
-    <LocalDebuggerCommandArguments>-prepare_applications application_list.txt</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>-prepare_applications application_list.txt x64 Release</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
-    <LocalDebuggerWorkingDirectory>C:\main</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerWorkingDirectory>C:\release</LocalDebuggerWorkingDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LocalDebuggerCommandArguments>-prepare_applications application_list.txt x64 Release</LocalDebuggerCommandArguments>
+    <LocalDebuggerWorkingDirectory>C:\release</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StaticRelease|x64'">
+    <LocalDebuggerCommandArguments>-prepare_applications application_list.txt x64 Release</LocalDebuggerCommandArguments>
+    <LocalDebuggerWorkingDirectory>C:\release</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
 </Project>

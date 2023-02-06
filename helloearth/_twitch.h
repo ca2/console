@@ -24,6 +24,7 @@ public:
    int octaelliptical_list_prime_numbers_main();
    int nicopelullo_binary_tree_to_stack_main();
    int nicopelullo_inorder__preorder_and_post_order_main();
+   int ca2software_int_to_string_bases();
 
 };
 

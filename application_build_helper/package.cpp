@@ -1,4 +1,4 @@
-// Created by camilo on 2021-12-17 21:01 BRT <3ThomasBorregaardSørensen!!
+﻿// Created by camilo on 2021-12-17 21:01 BRT <3ThomasBorregaardSørensen!!
 #include "framework.h"
 #include "application_build_helper.h"
 ////#include "acme/exception/exception.h"
@@ -22,7 +22,7 @@ void application_build_helper::package()
 
    pathZip = "S:/windows/" + m_strUnderscoreAppId + ".zip";
 
-   pathOutput = (m_pathFolder - 3) / "time-windows/x64/stage";
+   pathOutput = "C:/release/time-windows/x64/Release";
 
 #else
 
@@ -48,7 +48,7 @@ void application_build_helper::package()
 
 #ifdef WINDOWS
 
-   pathZipExe = (m_pathFolder - 3) / "operating-system/tool-windows/bin/zip";
+   pathZipExe = "C:/operating-system/tool-windows/bin/zip";
 
 #else
 
