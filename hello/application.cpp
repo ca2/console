@@ -394,7 +394,7 @@ public:
    void main() override
    {
 
-      test_datetime_format('w');
+      //test_datetime_format('w');
       //test_datetime_format('x');
       //test_datetime_format('y');
       //test_datetime_format('z');
@@ -403,7 +403,7 @@ public:
       //test_contatenation('l');
       //test_contatenation('s');
 
-      preempt(5_min);
+      //preempt(5_min);
 
       trim_left_001();
 
