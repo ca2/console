@@ -18,6 +18,7 @@ if (MSVC)
 endif ()
 
 
+add_dependencies(_console_application_build_helper acme)
 add_dependencies(_console_application_build_helper acme_${OPERATING_SYSTEM_NAME})
 add_dependencies(_console_application_build_helper acme_posix)
 #add_dependencies(_console_application_build_helper apex_${OPERATING_SYSTEM_NAME})
@@ -26,7 +27,10 @@ add_dependencies(_console_application_build_helper acme_posix)
 #add_dependencies(_console_application_build_helper folder_zip)
 
 
-target_link_libraries(_console_application_build_helper PRIVATE acme apex)
+target_link_libraries(_console_application_build_helper PRIVATE acme)
+
+target_precompile_headers(_console_application_build_helper PRIVATE framework.h)
+
 
 
 add_custom_command(
@@ -36,11 +40,11 @@ add_custom_command(
         COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libacme.so $ENV{HOME}/bin/
         COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libacme_${OPERATING_SYSTEM_NAME}.so $ENV{HOME}/bin/
         COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libacme_posix.so $ENV{HOME}/bin/
-        COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libapex.so $ENV{HOME}/bin/
-        COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libapex_${OPERATING_SYSTEM_NAME}.so $ENV{HOME}/bin/
-        COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libapex_posix.so $ENV{HOME}/bin/
-        COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libcrypto_openssl.so $ENV{HOME}/bin/
-        COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libfolder_zip.so $ENV{HOME}/bin/
+        #COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libapex.so $ENV{HOME}/bin/
+        #COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libapex_${OPERATING_SYSTEM_NAME}.so $ENV{HOME}/bin/
+        #COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libapex_posix.so $ENV{HOME}/bin/
+        #COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libcrypto_openssl.so $ENV{HOME}/bin/
+        #COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libfolder_zip.so $ENV{HOME}/bin/
 )
 
 
