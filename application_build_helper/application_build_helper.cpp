@@ -1,6 +1,6 @@
 ﻿#include "framework.h"
 ////#include "acme/exception/exception.h"
-#include "acme/filesystem/file/_constant.h"
+//#include "acme/filesystem/file/_constant.h"
 #include "acme/filesystem/filesystem/acme_file.h"
 #include "acme/filesystem/filesystem/acme_path.h"
 #include "acme/filesystem/filesystem/acme_directory.h"
