@@ -37,9 +37,9 @@ add_custom_command(
         TARGET _console_application_build_helper
         POST_BUILD
         COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/_console_application_build_helper ${APPLICATION_BUILD_HELPER}
-        COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libacme.so $ENV{HOME}/bin/
-        COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libacme_${OPERATING_SYSTEM_NAME}.so $ENV{HOME}/bin/
-        COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libacme_posix.so $ENV{HOME}/bin/
+        COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libacme.so $ENV{HOME}/solution/main/operating-system/tool-linux/bin/
+        COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libacme_${OPERATING_SYSTEM_NAME}.so $ENV{HOME}/solution/main/operating-system/tool-linux/bin/
+        COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libacme_posix.so $ENV{HOME}/solution/main/operating-system/tool-linux/bin/
         #COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libapex.so $ENV{HOME}/bin/
         #COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libapex_${OPERATING_SYSTEM_NAME}.so $ENV{HOME}/bin/
         #COMMAND cp ${EXECUTABLE_OUTPUT_PATH}/libapex_posix.so $ENV{HOME}/bin/
