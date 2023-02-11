@@ -266,7 +266,7 @@ void application_build_helper::generate_documentation(const ::scoped_string & sc
 
    acmedirectory()->change_current(path / scopedstrSubPath);
 
-   acmedirectory()->change_current(path / scopedstrSubPath / "doxygen.directory");
+   acmedirectory()->create(path / scopedstrSubPath / "doxygen.directory");
 
    int iExitCode = 0;
 
