@@ -276,7 +276,7 @@ void application_build_helper::generate_documentation(const ::scoped_string & sc
 
    strCmd = "doxygen doxygen.doxygen";
 
-   acmenode()->command_system(straOutput, iExitCode, strCmd, e_command_system_inline_log);
+   acmenode()->command_system(straOutput, iExitCode, strCmd, e_command_system_none);
 
    string strLog;
 
