@@ -12,11 +12,11 @@ void application_build_helper::generate_documentation()
 
    printf("Preparing to generate documentation...");
 
+   auto path = acmedirectory()->get_current();
 
-   acmedirectory()->change_current("C:\\main\\source\\app\\acme");
-   acmedirectory()->create("C:\\documentation\\doxygen\\source\\app\\acme");
+   acmedirectory()->change_current(path / "source/app/acme");
 
-
+   acmedirectory()->change_current(path / "source/app/acme/doxygen.directory");
 
    int iExitCode = 0;
 
