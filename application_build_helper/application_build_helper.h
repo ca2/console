@@ -93,6 +93,8 @@ public:
 
    void translate_package_list();
 
+   void generate_documentation();
+
    void add_package(::package_reference& packagereference);
    void add_package_dependencies(const ::package_reference & packagereference);
    string_array get_lines(const ::file::path& path, bool bNoExceptionIfNotFound = true);

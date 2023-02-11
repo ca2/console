@@ -930,6 +930,7 @@
   <ItemGroup>
     <ClCompile Include="application_build_helper.cpp" />
     <ClCompile Include="application.cpp" />
+    <ClCompile Include="generate_documentation.cpp" />
     <ClCompile Include="package.cpp" />
     <ClCompile Include="prepare_application.cpp" />
     <ClCompile Include="prepare_project.cpp" />

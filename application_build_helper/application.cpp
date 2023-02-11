@@ -219,6 +219,31 @@ void application_build_helper::application_build_helper_main()
          return;
 
       }
+      else if (strArgument1.case_insensitive_order("-generate_documentation") == 0)
+      {
+
+         try
+         {
+
+            generate_documentation();
+
+         }
+         catch (const exception & exception)
+         {
+
+            printf("Exception has occurred: %s\n", exception.m_strMessage.c_str());
+            printf("Exception details:\n%s\n", exception.m_strDetails.c_str());
+
+         }
+         catch (...)
+         {
+
+            printf("catch all exception has occurred generating documentation");
+         }
+
+         return;
+
+      }
 
    }
    

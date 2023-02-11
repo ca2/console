@@ -190,7 +190,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <PackageCertificateKeyFile>hello_TemporaryKey.pfx</PackageCertificateKeyFile>
-    <PackageCertificateThumbprint>9AB24184263CDC2DB28C0BC15641E0123773B585</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>A57293094228D0D474072B924617D245DF7344DD</PackageCertificateThumbprint>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <AppxBundle>Always</AppxBundle>
     <AppxBundlePlatforms>x86</AppxBundlePlatforms>
@@ -529,7 +529,7 @@
     <None Include="..\..\..\..\operating-system\storage-universal_windows\Win32\Debug\third\binary\zlib.dll">
       <DeploymentContent>true</DeploymentContent>
     </None>
-    <None Include="..\hello_TemporaryKey.pfx" />
+    <None Include="hello_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package10.appxmanifest">
@@ -582,7 +582,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="application.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
