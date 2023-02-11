@@ -3,6 +3,7 @@
 #include "application_build_helper.h"
 #include "acme/filesystem/filesystem/acme_directory.h"
 #include "acme/filesystem/filesystem/acme_file.h"
+#include "acme/platform/node.h"
 #include "acme/platform/system.h"
 
 
@@ -10,6 +11,25 @@ void application_build_helper::generate_documentation()
 {
 
    printf("Preparing to generate documentation...");
+
+
+   acmedirectory()->change_current("C:\\main\\source\\app\\acme");
+   acmedirectory()->create("C:\\documentation\\doxygen\\source\\app\\acme");
+
+
+
+   int iExitCode = 0;
+
+   string_array straOutput;
+
+   string strCmd;
+
+   strCmd = "doxygen doxygen.doxygen";
+
+   acmenode()->command_system(straOutput, iExitCode, strCmd, e_command_system_inline_log);
+
+   // acmefile()->copy("C:\\documentation-release", "C:\\documentation", true);
+
 
 //   //string strFolder = subsystem()->get_argument1(0);
 //

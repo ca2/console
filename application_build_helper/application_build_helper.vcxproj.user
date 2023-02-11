@@ -57,8 +57,13 @@
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StaticRelease|x64'">
-    <LocalDebuggerCommandArguments>-prepare_applications application_list.txt x64 Release</LocalDebuggerCommandArguments>
-    <LocalDebuggerWorkingDirectory>C:\release</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerCommandArguments>-generate_documentation</LocalDebuggerCommandArguments>
+    <LocalDebuggerWorkingDirectory>C:\main</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StaticDebug|x64'">
+    <LocalDebuggerCommandArguments>-generate_documentation</LocalDebuggerCommandArguments>
+    <LocalDebuggerWorkingDirectory>C:\main</LocalDebuggerWorkingDirectory>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
 </Project>

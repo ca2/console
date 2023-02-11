@@ -63,6 +63,39 @@ void application_build_helper::application_build_helper_main()
 
    auto psubsystem = psystem->m_psubsystem;
 
+   if (psubsystem->get_argument_count1() == 1)
+   {
+
+      string strArgument1 = psubsystem->get_argument1(0);
+
+      if (strArgument1.case_insensitive_order("-generate_documentation") == 0)
+      {
+
+         try
+         {
+
+            generate_documentation();
+
+         }
+         catch (const exception & exception)
+         {
+
+            printf("Exception has occurred: %s\n", exception.m_strMessage.c_str());
+            printf("Exception details:\n%s\n", exception.m_strDetails.c_str());
+
+         }
+         catch (...)
+         {
+
+            printf("catch all exception has occurred generating documentation");
+         }
+
+      }
+
+      return;
+
+   }
+
    if (psubsystem->get_argument_count1() >= 2)
    {
 
@@ -214,31 +247,6 @@ void application_build_helper::application_build_helper_main()
                printf("catch all exception has occurred for application: %s\n", strApplication.c_str());
             }
 
-         }
-
-         return;
-
-      }
-      else if (strArgument1.case_insensitive_order("-generate_documentation") == 0)
-      {
-
-         try
-         {
-
-            generate_documentation();
-
-         }
-         catch (const exception & exception)
-         {
-
-            printf("Exception has occurred: %s\n", exception.m_strMessage.c_str());
-            printf("Exception details:\n%s\n", exception.m_strDetails.c_str());
-
-         }
-         catch (...)
-         {
-
-            printf("catch all exception has occurred generating documentation");
          }
 
          return;
