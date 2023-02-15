@@ -5,6 +5,7 @@ project(_console_application_build_helper CXX)
 add_executable(_console_application_build_helper
         application_build_helper.cpp
         application.cpp
+        generate_documentation.cpp
         package.cpp
         prepare_application.cpp
         prepare_project.cpp

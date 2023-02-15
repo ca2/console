@@ -241,8 +241,6 @@ public:
 
       //twitch.ca2software_int_to_string_bases();
 
-      return;
-
       while (edialogresult != e_dialog_result_yes)
       {
 

@@ -260,7 +260,7 @@ void application_build_helper::generate_documentation()
 void application_build_helper::generate_documentation(const ::scoped_string & scopedstrSubPath)
 {
 
-   printf("Generating documentation for " + scopedstrSubPath + " ...");
+   printf("%s", ("Generating documentation for " + scopedstrSubPath + " ...").c_str());
 
    auto path = acmedirectory()->get_current();
 
