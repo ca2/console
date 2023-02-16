@@ -11,16 +11,17 @@
 		9A22671627CE8B140042BAC2 /* libidn.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A22671227CE8B140042BAC2 /* libidn.dylib */; };
 		9A22671727CE8B140042BAC2 /* libacme_apple.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A22671327CE8B140042BAC2 /* libacme_apple.dylib */; };
 		9A22671827CE8B140042BAC2 /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A22671427CE8B140042BAC2 /* libacme.dylib */; };
+		9A4387BF299E4AD900D2EE15 /* a-2023-02-02-twitch@ca2software.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A4387BE299E4AD800D2EE15 /* a-2023-02-02-twitch@ca2software.cpp */; };
 		9AE6DE6A29629C5F008A1335 /* application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6DE6929629C5F008A1335 /* application.cpp */; };
-		9AE6DE7529629CBC008A1335 /* 01-2022-02-11-twitch-memoriesdota_file_word_count.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6DE6C29629CBC008A1335 /* 01-2022-02-11-twitch-memoriesdota_file_word_count.cpp */; };
-		9AE6DE7629629CBC008A1335 /* 09-2022-11-15-twitch@nicopelullo-inorder__preorder_and_post_order.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6DE6D29629CBC008A1335 /* 09-2022-11-15-twitch@nicopelullo-inorder__preorder_and_post_order.cpp */; };
-		9AE6DE7729629CBC008A1335 /* 06-2022-10-05-twitch-octaelliptical_count_miscellaneous_characters.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6DE6E29629CBC008A1335 /* 06-2022-10-05-twitch-octaelliptical_count_miscellaneous_characters.cpp */; };
-		9AE6DE7829629CBC008A1335 /* 05-2022-10-04-twitch-octaelliptical_iterative_fibonacci.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6DE6F29629CBC008A1335 /* 05-2022-10-04-twitch-octaelliptical_iterative_fibonacci.cpp */; };
-		9AE6DE7929629CBC008A1335 /* 02-2022-07-11-twitch-korishama_polymorphism.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6DE7029629CBC008A1335 /* 02-2022-07-11-twitch-korishama_polymorphism.cpp */; };
-		9AE6DE7A29629CBC008A1335 /* 07-2022-10-06-twitch-octaelliptical_list_prime_numbers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6DE7129629CBC008A1335 /* 07-2022-10-06-twitch-octaelliptical_list_prime_numbers.cpp */; };
-		9AE6DE7B29629CBC008A1335 /* 03-2022-09-30-twitch-octaelliptical_star.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6DE7229629CBC008A1335 /* 03-2022-09-30-twitch-octaelliptical_star.cpp */; };
-		9AE6DE7C29629CBC008A1335 /* 04-2022-10-01-twitch-octaelliptical_star_only_odd_line_count.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6DE7329629CBC008A1335 /* 04-2022-10-01-twitch-octaelliptical_star_only_odd_line_count.cpp */; };
-		9AE6DE7D29629CBC008A1335 /* 08-2022-11-14-twitch@nicopelullo-binary_tree_to_stack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6DE7429629CBC008A1335 /* 08-2022-11-14-twitch@nicopelullo-binary_tree_to_stack.cpp */; };
+		9AE6DE7529629CBC008A1335 /* 1-2022-02-11-twitch-memoriesdota_file_word_count.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6DE6C29629CBC008A1335 /* 1-2022-02-11-twitch-memoriesdota_file_word_count.cpp */; };
+		9AE6DE7629629CBC008A1335 /* 9-2022-11-15-twitch@nicopelullo-inorder__preorder_and_post_order.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6DE6D29629CBC008A1335 /* 9-2022-11-15-twitch@nicopelullo-inorder__preorder_and_post_order.cpp */; };
+		9AE6DE7729629CBC008A1335 /* 6-2022-10-05-twitch-octaelliptical_count_miscellaneous_characters.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6DE6E29629CBC008A1335 /* 6-2022-10-05-twitch-octaelliptical_count_miscellaneous_characters.cpp */; };
+		9AE6DE7829629CBC008A1335 /* 5-2022-10-04-twitch-octaelliptical_iterative_fibonacci.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6DE6F29629CBC008A1335 /* 5-2022-10-04-twitch-octaelliptical_iterative_fibonacci.cpp */; };
+		9AE6DE7929629CBC008A1335 /* 2-2022-07-11-twitch-korishama_polymorphism.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6DE7029629CBC008A1335 /* 2-2022-07-11-twitch-korishama_polymorphism.cpp */; };
+		9AE6DE7A29629CBC008A1335 /* 7-2022-10-06-twitch-octaelliptical_list_prime_numbers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6DE7129629CBC008A1335 /* 7-2022-10-06-twitch-octaelliptical_list_prime_numbers.cpp */; };
+		9AE6DE7B29629CBC008A1335 /* 3-2022-09-30-twitch-octaelliptical_star.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6DE7229629CBC008A1335 /* 3-2022-09-30-twitch-octaelliptical_star.cpp */; };
+		9AE6DE7C29629CBC008A1335 /* 4-2022-10-01-twitch-octaelliptical_star_only_odd_line_count.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6DE7329629CBC008A1335 /* 4-2022-10-01-twitch-octaelliptical_star_only_odd_line_count.cpp */; };
+		9AE6DE7D29629CBC008A1335 /* 8-2022-11-14-twitch@nicopelullo-binary_tree_to_stack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6DE7429629CBC008A1335 /* 8-2022-11-14-twitch@nicopelullo-binary_tree_to_stack.cpp */; };
 		9AE6DE7F29629D3F008A1335 /* twitch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6DE7E29629D3F008A1335 /* twitch.cpp */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 9A0C165E264A290E00B5CC33;
 			remoteInfo = acme_macos;
+		};
+		9A4387BC299E4AB000D2EE15 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A22671927CE8B460042BAC2 /* acme_macos.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9AC14D56297B3488006D9BD3;
+			remoteInfo = _acme_macos;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -60,17 +68,18 @@
 		9A22671327CE8B140042BAC2 /* libacme_apple.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libacme_apple.dylib; path = "../../../../../Library/Developer/Xcode/DerivedData/mac-__hello-ferbzpmqoopfvnbsljzanjlsduhf/Build/Products/Debug/libacme_apple.dylib"; sourceTree = "<group>"; };
 		9A22671427CE8B140042BAC2 /* libacme.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libacme.dylib; path = "../../../../../Library/Developer/Xcode/DerivedData/mac-__hello-ferbzpmqoopfvnbsljzanjlsduhf/Build/Products/Debug/libacme.dylib"; sourceTree = "<group>"; };
 		9A22671927CE8B460042BAC2 /* acme_macos.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = acme_macos.xcodeproj; path = "../../../operating-system/operating-system-macos/acme_macos/acme_macos.xcodeproj"; sourceTree = "<group>"; };
+		9A4387BE299E4AD800D2EE15 /* a-2023-02-02-twitch@ca2software.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "a-2023-02-02-twitch@ca2software.cpp"; sourceTree = "<group>"; };
 		9A5EE4912650D105009F25F0 /* helloearth */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = helloearth; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AE6DE6929629C5F008A1335 /* application.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = application.cpp; sourceTree = "<group>"; };
-		9AE6DE6C29629CBC008A1335 /* 01-2022-02-11-twitch-memoriesdota_file_word_count.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "01-2022-02-11-twitch-memoriesdota_file_word_count.cpp"; sourceTree = "<group>"; };
-		9AE6DE6D29629CBC008A1335 /* 09-2022-11-15-twitch@nicopelullo-inorder__preorder_and_post_order.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "09-2022-11-15-twitch@nicopelullo-inorder__preorder_and_post_order.cpp"; sourceTree = "<group>"; };
-		9AE6DE6E29629CBC008A1335 /* 06-2022-10-05-twitch-octaelliptical_count_miscellaneous_characters.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "06-2022-10-05-twitch-octaelliptical_count_miscellaneous_characters.cpp"; sourceTree = "<group>"; };
-		9AE6DE6F29629CBC008A1335 /* 05-2022-10-04-twitch-octaelliptical_iterative_fibonacci.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "05-2022-10-04-twitch-octaelliptical_iterative_fibonacci.cpp"; sourceTree = "<group>"; };
-		9AE6DE7029629CBC008A1335 /* 02-2022-07-11-twitch-korishama_polymorphism.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "02-2022-07-11-twitch-korishama_polymorphism.cpp"; sourceTree = "<group>"; };
-		9AE6DE7129629CBC008A1335 /* 07-2022-10-06-twitch-octaelliptical_list_prime_numbers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "07-2022-10-06-twitch-octaelliptical_list_prime_numbers.cpp"; sourceTree = "<group>"; };
-		9AE6DE7229629CBC008A1335 /* 03-2022-09-30-twitch-octaelliptical_star.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "03-2022-09-30-twitch-octaelliptical_star.cpp"; sourceTree = "<group>"; };
-		9AE6DE7329629CBC008A1335 /* 04-2022-10-01-twitch-octaelliptical_star_only_odd_line_count.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "04-2022-10-01-twitch-octaelliptical_star_only_odd_line_count.cpp"; sourceTree = "<group>"; };
-		9AE6DE7429629CBC008A1335 /* 08-2022-11-14-twitch@nicopelullo-binary_tree_to_stack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "08-2022-11-14-twitch@nicopelullo-binary_tree_to_stack.cpp"; sourceTree = "<group>"; };
+		9AE6DE6C29629CBC008A1335 /* 1-2022-02-11-twitch-memoriesdota_file_word_count.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "1-2022-02-11-twitch-memoriesdota_file_word_count.cpp"; sourceTree = "<group>"; };
+		9AE6DE6D29629CBC008A1335 /* 9-2022-11-15-twitch@nicopelullo-inorder__preorder_and_post_order.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "9-2022-11-15-twitch@nicopelullo-inorder__preorder_and_post_order.cpp"; sourceTree = "<group>"; };
+		9AE6DE6E29629CBC008A1335 /* 6-2022-10-05-twitch-octaelliptical_count_miscellaneous_characters.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "6-2022-10-05-twitch-octaelliptical_count_miscellaneous_characters.cpp"; sourceTree = "<group>"; };
+		9AE6DE6F29629CBC008A1335 /* 5-2022-10-04-twitch-octaelliptical_iterative_fibonacci.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "5-2022-10-04-twitch-octaelliptical_iterative_fibonacci.cpp"; sourceTree = "<group>"; };
+		9AE6DE7029629CBC008A1335 /* 2-2022-07-11-twitch-korishama_polymorphism.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "2-2022-07-11-twitch-korishama_polymorphism.cpp"; sourceTree = "<group>"; };
+		9AE6DE7129629CBC008A1335 /* 7-2022-10-06-twitch-octaelliptical_list_prime_numbers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "7-2022-10-06-twitch-octaelliptical_list_prime_numbers.cpp"; sourceTree = "<group>"; };
+		9AE6DE7229629CBC008A1335 /* 3-2022-09-30-twitch-octaelliptical_star.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "3-2022-09-30-twitch-octaelliptical_star.cpp"; sourceTree = "<group>"; };
+		9AE6DE7329629CBC008A1335 /* 4-2022-10-01-twitch-octaelliptical_star_only_odd_line_count.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "4-2022-10-01-twitch-octaelliptical_star_only_odd_line_count.cpp"; sourceTree = "<group>"; };
+		9AE6DE7429629CBC008A1335 /* 8-2022-11-14-twitch@nicopelullo-binary_tree_to_stack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "8-2022-11-14-twitch@nicopelullo-binary_tree_to_stack.cpp"; sourceTree = "<group>"; };
 		9AE6DE7E29629D3F008A1335 /* twitch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = twitch.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				9A22671E27CE8B460042BAC2 /* libacme_macos.dylib */,
+				9A4387BD299E4AB000D2EE15 /* lib_acme_macos.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,15 +149,16 @@
 		9AE6DE6B29629CBC008A1335 /* programs */ = {
 			isa = PBXGroup;
 			children = (
-				9AE6DE6C29629CBC008A1335 /* 01-2022-02-11-twitch-memoriesdota_file_word_count.cpp */,
-				9AE6DE6D29629CBC008A1335 /* 09-2022-11-15-twitch@nicopelullo-inorder__preorder_and_post_order.cpp */,
-				9AE6DE6E29629CBC008A1335 /* 06-2022-10-05-twitch-octaelliptical_count_miscellaneous_characters.cpp */,
-				9AE6DE6F29629CBC008A1335 /* 05-2022-10-04-twitch-octaelliptical_iterative_fibonacci.cpp */,
-				9AE6DE7029629CBC008A1335 /* 02-2022-07-11-twitch-korishama_polymorphism.cpp */,
-				9AE6DE7129629CBC008A1335 /* 07-2022-10-06-twitch-octaelliptical_list_prime_numbers.cpp */,
-				9AE6DE7229629CBC008A1335 /* 03-2022-09-30-twitch-octaelliptical_star.cpp */,
-				9AE6DE7329629CBC008A1335 /* 04-2022-10-01-twitch-octaelliptical_star_only_odd_line_count.cpp */,
-				9AE6DE7429629CBC008A1335 /* 08-2022-11-14-twitch@nicopelullo-binary_tree_to_stack.cpp */,
+				9AE6DE6C29629CBC008A1335 /* 1-2022-02-11-twitch-memoriesdota_file_word_count.cpp */,
+				9AE6DE7029629CBC008A1335 /* 2-2022-07-11-twitch-korishama_polymorphism.cpp */,
+				9AE6DE7229629CBC008A1335 /* 3-2022-09-30-twitch-octaelliptical_star.cpp */,
+				9AE6DE7329629CBC008A1335 /* 4-2022-10-01-twitch-octaelliptical_star_only_odd_line_count.cpp */,
+				9AE6DE6F29629CBC008A1335 /* 5-2022-10-04-twitch-octaelliptical_iterative_fibonacci.cpp */,
+				9AE6DE6E29629CBC008A1335 /* 6-2022-10-05-twitch-octaelliptical_count_miscellaneous_characters.cpp */,
+				9AE6DE7129629CBC008A1335 /* 7-2022-10-06-twitch-octaelliptical_list_prime_numbers.cpp */,
+				9AE6DE7429629CBC008A1335 /* 8-2022-11-14-twitch@nicopelullo-binary_tree_to_stack.cpp */,
+				9AE6DE6D29629CBC008A1335 /* 9-2022-11-15-twitch@nicopelullo-inorder__preorder_and_post_order.cpp */,
+				9A4387BE299E4AD800D2EE15 /* a-2023-02-02-twitch@ca2software.cpp */,
 			);
 			path = programs;
 			sourceTree = "<group>";
@@ -229,6 +240,13 @@
 			remoteRef = 9A22671D27CE8B460042BAC2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		9A4387BD299E4AB000D2EE15 /* lib_acme_macos.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = lib_acme_macos.a;
+			remoteRef = 9A4387BC299E4AB000D2EE15 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -236,17 +254,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AE6DE7A29629CBC008A1335 /* 07-2022-10-06-twitch-octaelliptical_list_prime_numbers.cpp in Sources */,
+				9A4387BF299E4AD900D2EE15 /* a-2023-02-02-twitch@ca2software.cpp in Sources */,
+				9AE6DE7A29629CBC008A1335 /* 7-2022-10-06-twitch-octaelliptical_list_prime_numbers.cpp in Sources */,
 				9AE6DE7F29629D3F008A1335 /* twitch.cpp in Sources */,
-				9AE6DE7B29629CBC008A1335 /* 03-2022-09-30-twitch-octaelliptical_star.cpp in Sources */,
-				9AE6DE7D29629CBC008A1335 /* 08-2022-11-14-twitch@nicopelullo-binary_tree_to_stack.cpp in Sources */,
-				9AE6DE7C29629CBC008A1335 /* 04-2022-10-01-twitch-octaelliptical_star_only_odd_line_count.cpp in Sources */,
-				9AE6DE7929629CBC008A1335 /* 02-2022-07-11-twitch-korishama_polymorphism.cpp in Sources */,
-				9AE6DE7829629CBC008A1335 /* 05-2022-10-04-twitch-octaelliptical_iterative_fibonacci.cpp in Sources */,
-				9AE6DE7529629CBC008A1335 /* 01-2022-02-11-twitch-memoriesdota_file_word_count.cpp in Sources */,
-				9AE6DE7729629CBC008A1335 /* 06-2022-10-05-twitch-octaelliptical_count_miscellaneous_characters.cpp in Sources */,
+				9AE6DE7B29629CBC008A1335 /* 3-2022-09-30-twitch-octaelliptical_star.cpp in Sources */,
+				9AE6DE7D29629CBC008A1335 /* 8-2022-11-14-twitch@nicopelullo-binary_tree_to_stack.cpp in Sources */,
+				9AE6DE7C29629CBC008A1335 /* 4-2022-10-01-twitch-octaelliptical_star_only_odd_line_count.cpp in Sources */,
+				9AE6DE7929629CBC008A1335 /* 2-2022-07-11-twitch-korishama_polymorphism.cpp in Sources */,
+				9AE6DE7829629CBC008A1335 /* 5-2022-10-04-twitch-octaelliptical_iterative_fibonacci.cpp in Sources */,
+				9AE6DE7529629CBC008A1335 /* 1-2022-02-11-twitch-memoriesdota_file_word_count.cpp in Sources */,
+				9AE6DE7729629CBC008A1335 /* 6-2022-10-05-twitch-octaelliptical_count_miscellaneous_characters.cpp in Sources */,
 				9AE6DE6A29629C5F008A1335 /* application.cpp in Sources */,
-				9AE6DE7629629CBC008A1335 /* 09-2022-11-15-twitch@nicopelullo-inorder__preorder_and_post_order.cpp in Sources */,
+				9AE6DE7629629CBC008A1335 /* 9-2022-11-15-twitch@nicopelullo-inorder__preorder_and_post_order.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

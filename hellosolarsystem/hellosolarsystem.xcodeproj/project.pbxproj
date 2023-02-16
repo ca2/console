@@ -11,11 +11,19 @@
 		9A22672E27CE8CD80042BAC2 /* libssl.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A22672A27CE8CD80042BAC2 /* libssl.3.dylib */; };
 		9A22672F27CE8CD80042BAC2 /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A22672B27CE8CD80042BAC2 /* libacme.dylib */; };
 		9A22673027CE8CD80042BAC2 /* libcrypto.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A22672C27CE8CD80042BAC2 /* libcrypto.3.dylib */; };
-		9A226D6127CEAE250042BAC2 /* libacme.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9A22672B27CE8CD80042BAC2 /* libacme.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		9A226D6327CEAE260042BAC2 /* libapex.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9A22672927CE8CD80042BAC2 /* libapex.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		9A4387D9299E4CC000D2EE15 /* _internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A4387C7299E4CBF00D2EE15 /* _internal.h */; };
+		9A4387DA299E4CC000D2EE15 /* unit_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A4387C8299E4CBF00D2EE15 /* unit_test.cpp */; };
+		9A4387DC299E4CC000D2EE15 /* item.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A4387CA299E4CBF00D2EE15 /* item.h */; };
+		9A4387DE299E4CC000D2EE15 /* set.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A4387CC299E4CBF00D2EE15 /* set.cpp */; };
+		9A4387DF299E4CC000D2EE15 /* item.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A4387CD299E4CBF00D2EE15 /* item.cpp */; };
+		9A4387E2299E4CC000D2EE15 /* basic_types.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A4387D0299E4CBF00D2EE15 /* basic_types.h */; };
+		9A4387E6299E4CC000D2EE15 /* _unit_test.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A4387D4299E4CBF00D2EE15 /* _unit_test.h */; };
+		9A4387E8299E4CC000D2EE15 /* unit_test.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A4387D6299E4CBF00D2EE15 /* unit_test.h */; };
+		9A4387E9299E4CC000D2EE15 /* set.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A4387D7299E4CBF00D2EE15 /* set.h */; };
+		9A4387EA299E4CC000D2EE15 /* _.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A4387D8299E4CBF00D2EE15 /* _.h */; };
+		9A4387EB299E4D1D00D2EE15 /* libcrypto.3.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9A22672C27CE8CD80042BAC2 /* libcrypto.3.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		9A4387ED299E4D1F00D2EE15 /* libssl.3.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9A22672A27CE8CD80042BAC2 /* libssl.3.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9AEA19612760170E006437A3 /* hellosolarsystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AEA19602760170E006437A3 /* hellosolarsystem.cpp */; };
-		9AEA19A327601BBD006437A3 /* libcrypto.3.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9AEA19A027601B3C006437A3 /* libcrypto.3.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		9AEA19A427601BBD006437A3 /* libssl.3.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9AEA199F27601B3C006437A3 /* libssl.3.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,29 +69,31 @@
 			remoteGlobalIDString = 9AC09A2C274DFC67008B042E;
 			remoteInfo = folder_zip;
 		};
+		9A4387C1299E4BCB00D2EE15 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A226D5127CEACE30042BAC2 /* crypto_openssl.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9AA14DBB282A17C600B1621E;
+			remoteInfo = ios_crypto_openssl;
+		};
+		9A4387C4299E4BCB00D2EE15 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A226D5927CEAD390042BAC2 /* folder_zip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9AA14DDC282A17D900B1621E;
+			remoteInfo = ios_folder_zip;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		9A226D6227CEAE250042BAC2 /* Embed Libraries */ = {
+		9A4387EC299E4D1D00D2EE15 /* Embed Libraries */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9A226D6327CEAE260042BAC2 /* libapex.dylib in Embed Libraries */,
-				9A226D6127CEAE250042BAC2 /* libacme.dylib in Embed Libraries */,
-			);
-			name = "Embed Libraries";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9AEA195F2760163D006437A3 /* Embed Libraries */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 6;
-			files = (
-				9AEA19A327601BBD006437A3 /* libcrypto.3.dylib in Embed Libraries */,
-				9AEA19A427601BBD006437A3 /* libssl.3.dylib in Embed Libraries */,
+				9A4387ED299E4D1F00D2EE15 /* libssl.3.dylib in Embed Libraries */,
+				9A4387EB299E4D1D00D2EE15 /* libcrypto.3.dylib in Embed Libraries */,
 			);
 			name = "Embed Libraries";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,6 +108,16 @@
 		9A22672C27CE8CD80042BAC2 /* libcrypto.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.3.dylib; path = "../../../../operating-system/storage-macos/library/libcrypto.3.dylib"; sourceTree = "<group>"; };
 		9A226D5127CEACE30042BAC2 /* crypto_openssl.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = crypto_openssl.xcodeproj; path = ../../app/crypto_openssl/crypto_openssl.xcodeproj; sourceTree = "<group>"; };
 		9A226D5927CEAD390042BAC2 /* folder_zip.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = folder_zip.xcodeproj; path = ../../app/folder_zip/folder_zip.xcodeproj; sourceTree = "<group>"; };
+		9A4387C7299E4CBF00D2EE15 /* _internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _internal.h; sourceTree = "<group>"; };
+		9A4387C8299E4CBF00D2EE15 /* unit_test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = unit_test.cpp; sourceTree = "<group>"; };
+		9A4387CA299E4CBF00D2EE15 /* item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = item.h; sourceTree = "<group>"; };
+		9A4387CC299E4CBF00D2EE15 /* set.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = set.cpp; sourceTree = "<group>"; };
+		9A4387CD299E4CBF00D2EE15 /* item.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = item.cpp; sourceTree = "<group>"; };
+		9A4387D0299E4CBF00D2EE15 /* basic_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = basic_types.h; sourceTree = "<group>"; };
+		9A4387D4299E4CBF00D2EE15 /* _unit_test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _unit_test.h; sourceTree = "<group>"; };
+		9A4387D6299E4CBF00D2EE15 /* unit_test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unit_test.h; sourceTree = "<group>"; };
+		9A4387D7299E4CBF00D2EE15 /* set.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = set.h; sourceTree = "<group>"; };
+		9A4387D8299E4CBF00D2EE15 /* _.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _.h; sourceTree = "<group>"; };
 		9AEA193327601557006437A3 /* hellosolarsystem */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = hellosolarsystem; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AEA19602760170E006437A3 /* hellosolarsystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hellosolarsystem.cpp; sourceTree = SOURCE_ROOT; };
 		9AEA199F27601B3C006437A3 /* libssl.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.3.dylib; path = "../../../operating-system/storage-macos/library/libssl.3.dylib"; sourceTree = "<group>"; };
@@ -131,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				9A226D5627CEACE30042BAC2 /* libcrypto_openssl.dylib */,
+				9A4387C2299E4BCB00D2EE15 /* libios_crypto_openssl.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,9 +160,27 @@
 			isa = PBXGroup;
 			children = (
 				9A226D5E27CEAD390042BAC2 /* libfolder_zip.dylib */,
+				9A4387C5299E4BCB00D2EE15 /* libios_folder_zip.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		9A4387C6299E4CBF00D2EE15 /* unit_test */ = {
+			isa = PBXGroup;
+			children = (
+				9A4387C7299E4CBF00D2EE15 /* _internal.h */,
+				9A4387C8299E4CBF00D2EE15 /* unit_test.cpp */,
+				9A4387CA299E4CBF00D2EE15 /* item.h */,
+				9A4387CC299E4CBF00D2EE15 /* set.cpp */,
+				9A4387CD299E4CBF00D2EE15 /* item.cpp */,
+				9A4387D0299E4CBF00D2EE15 /* basic_types.h */,
+				9A4387D4299E4CBF00D2EE15 /* _unit_test.h */,
+				9A4387D6299E4CBF00D2EE15 /* unit_test.h */,
+				9A4387D7299E4CBF00D2EE15 /* set.h */,
+				9A4387D8299E4CBF00D2EE15 /* _.h */,
+			);
+			path = unit_test;
+			sourceTree = SOURCE_ROOT;
 		};
 		9AEA192A27601557006437A3 = {
 			isa = PBXGroup;
@@ -166,6 +205,7 @@
 		9AEA193527601557006437A3 /* hellosolarsystem */ = {
 			isa = PBXGroup;
 			children = (
+				9A4387C6299E4CBF00D2EE15 /* unit_test */,
 				9AEA19602760170E006437A3 /* hellosolarsystem.cpp */,
 			);
 			path = hellosolarsystem;
@@ -191,6 +231,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A4387E6299E4CC000D2EE15 /* _unit_test.h in Headers */,
+				9A4387EA299E4CC000D2EE15 /* _.h in Headers */,
+				9A4387E2299E4CC000D2EE15 /* basic_types.h in Headers */,
+				9A4387D9299E4CC000D2EE15 /* _internal.h in Headers */,
+				9A4387E9299E4CC000D2EE15 /* set.h in Headers */,
+				9A4387DC299E4CC000D2EE15 /* item.h in Headers */,
+				9A4387E8299E4CC000D2EE15 /* unit_test.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,8 +251,7 @@
 				9AEA19A527601BFB006437A3 /* Headers */,
 				9AEA192F27601557006437A3 /* Sources */,
 				9AEA193027601557006437A3 /* Frameworks */,
-				9AEA195F2760163D006437A3 /* Embed Libraries */,
-				9A226D6227CEAE250042BAC2 /* Embed Libraries */,
+				9A4387EC299E4D1D00D2EE15 /* Embed Libraries */,
 			);
 			buildRules = (
 			);
@@ -287,6 +333,20 @@
 			remoteRef = 9A226D5D27CEAD390042BAC2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		9A4387C2299E4BCB00D2EE15 /* libios_crypto_openssl.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libios_crypto_openssl.a;
+			remoteRef = 9A4387C1299E4BCB00D2EE15 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A4387C5299E4BCB00D2EE15 /* libios_folder_zip.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libios_folder_zip.a;
+			remoteRef = 9A4387C4299E4BCB00D2EE15 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -295,6 +355,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AEA19612760170E006437A3 /* hellosolarsystem.cpp in Sources */,
+				9A4387DF299E4CC000D2EE15 /* item.cpp in Sources */,
+				9A4387DE299E4CC000D2EE15 /* set.cpp in Sources */,
+				9A4387DA299E4CC000D2EE15 /* unit_test.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

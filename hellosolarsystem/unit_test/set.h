@@ -1,4 +1,4 @@
-﻿// Created by camilo on 2022-10-13 16:47 <3ThomasBorregaardSørensen!!
+// Created by camilo on 2022-10-13 16:47 <3ThomasBorregaardSørensen!!
 #pragma once
 
 
@@ -42,7 +42,7 @@ namespace unit_test
 
       bool test() override;
 
-      ::string get_plain_text_report(bool bExpanded = true);
+      ::string get_plain_text_report(bool bExpanded = true) override;
 
    };
 

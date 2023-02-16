@@ -1,4 +1,4 @@
-﻿#include "framework.h"
+#include "framework.h"
 #include <stdio.h>
 
 #include <iostream>
@@ -286,7 +286,7 @@ bool busquedaIterativa(int n) {
 int twitch::nicopelullo_inorder__preorder_and_post_order_main()
 {
 
-	int iData, opcion2, opcion, contador = 0;
+	int iData, opcion2, opcion = 0;
 
 	int iTest = 1;
 	if (iTest == 1)
