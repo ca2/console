@@ -928,12 +928,12 @@
     <ResourceCompile Include="deployment.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="application_build_helper.cpp" />
     <ClCompile Include="application.cpp" />
+    <ClCompile Include="application_build_helper\application_build_helper.cpp" />
+    <ClCompile Include="application_build_helper\package.cpp" />
+    <ClCompile Include="application_build_helper\prepare_application.cpp" />
+    <ClCompile Include="application_build_helper\prepare_project.cpp" />
     <ClCompile Include="generate_documentation.cpp" />
-    <ClCompile Include="package.cpp" />
-    <ClCompile Include="prepare_application.cpp" />
-    <ClCompile Include="prepare_project.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\operating-system\operating-system-windows\acme_windows\acme_windows.vcxproj">
@@ -951,7 +951,9 @@
     <None Include="_static_factory_.inl" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="application.h" />
     <ClInclude Include="application_build_helper.h" />
+    <ClInclude Include="application_build_helper\application_build_helper.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="_.h" />
     <ClInclude Include="_factory.cpp" />

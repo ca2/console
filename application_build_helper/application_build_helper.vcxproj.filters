@@ -10,25 +10,31 @@
     <Filter Include="Header Files">
       <UniqueIdentifier>{54ccd7b0-0adc-48c0-8c7d-9badfadf8965}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\application_build_helper">
+      <UniqueIdentifier>{c81c352a-9709-4b81-bcdb-5bea93fd20f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\application_build_helper">
+      <UniqueIdentifier>{4563ab31-1d1d-4bbf-b83c-e697490b9658}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="application_build_helper.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="application.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="package.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="prepare_project.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="prepare_application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="generate_documentation.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="application_build_helper\application_build_helper.cpp">
+      <Filter>Source Files\application_build_helper</Filter>
+    </ClCompile>
+    <ClCompile Include="application_build_helper\package.cpp">
+      <Filter>Source Files\application_build_helper</Filter>
+    </ClCompile>
+    <ClCompile Include="application_build_helper\prepare_application.cpp">
+      <Filter>Source Files\application_build_helper</Filter>
+    </ClCompile>
+    <ClCompile Include="application_build_helper\prepare_project.cpp">
+      <Filter>Source Files\application_build_helper</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -46,11 +52,17 @@
     <ClInclude Include="framework.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="application_build_helper.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="_factory.cpp">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="application.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="application_build_helper.h">
+      <Filter>Header Files\application_build_helper</Filter>
+    </ClInclude>
+    <ClInclude Include="application_build_helper\application_build_helper.h">
+      <Filter>Header Files\application_build_helper</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
