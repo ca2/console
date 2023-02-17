@@ -13,7 +13,7 @@
 		9A83B871265161DB00B39AB9 /* libapex_macos.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9A83B82D2651612E00B39AB9 /* libapex_macos.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9AC019EE2748AB85006BEBCC /* libaqua.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A83B83B2651615100B39AB9 /* libaqua.dylib */; };
 		9AC019F82748ACA2006BEBCC /* libcrypto_openssl.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9AC019F42748AC6C006BEBCC /* libcrypto_openssl.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		9AD19ACF2512D2FA00B4C44A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AD19ACD2512D2FA00B4C44A /* main.cpp */; };
+		9AD19ACF2512D2FA00B4C44A /* application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AD19ACD2512D2FA00B4C44A /* application.cpp */; };
 		9AF36BDA272A67220035D52C /* libssl.3.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9AF36BD8272A67210035D52C /* libssl.3.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9AF36BDB272A67220035D52C /* libcrypto.3.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9AF36BD9272A67210035D52C /* libcrypto.3.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9AF36BDC272A676C0035D52C /* libapex.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9A46D24C26784418000B22D0 /* libapex.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -55,6 +55,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = 9AC09A2C274DFC67008B042E;
 			remoteInfo = folder_zip;
+		};
+		9A4387EF299E4E0C00D2EE15 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A83B8342651615100B39AB9 /* aqua.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9A8E9EB9282A3210005FF778;
+			remoteInfo = ios_aqua;
+		};
+		9A4387F2299E4E0C00D2EE15 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AC019EF2748AC6C006BEBCC /* crypto_openssl.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9AA14DBB282A17C600B1621E;
+			remoteInfo = ios_crypto_openssl;
+		};
+		9A4387F5299E4E0C00D2EE15 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A226D6527CEAF840042BAC2 /* folder_zip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9AA14DDC282A17D900B1621E;
+			remoteInfo = ios_folder_zip;
 		};
 		9A83B82C2651612E00B39AB9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -107,7 +128,7 @@
 		9A83B8282651612E00B39AB9 /* apex_macos.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = apex_macos.xcodeproj; path = "../../../operating-system/operating-system-macos/apex_macos/apex_macos.xcodeproj"; sourceTree = "<group>"; };
 		9A83B8342651615100B39AB9 /* aqua.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = aqua.xcodeproj; path = ../../app/aqua/aqua.xcodeproj; sourceTree = "<group>"; };
 		9AC019EF2748AC6C006BEBCC /* crypto_openssl.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = crypto_openssl.xcodeproj; path = ../../app/crypto_openssl/crypto_openssl.xcodeproj; sourceTree = "<group>"; };
-		9AD19ACD2512D2FA00B4C44A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		9AD19ACD2512D2FA00B4C44A /* application.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = application.cpp; sourceTree = "<group>"; };
 		9AF36BD8272A67210035D52C /* libssl.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.3.dylib; path = "../../../../operating-system/storage-macos/library/libssl.3.dylib"; sourceTree = "<group>"; };
 		9AF36BD9272A67210035D52C /* libcrypto.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.3.dylib; path = "../../../../operating-system/storage-macos/library/libcrypto.3.dylib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				9A226D6D27CEAF840042BAC2 /* libfolder_zip.dylib */,
+				9A4387F6299E4E0C00D2EE15 /* libios_folder_zip.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -167,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				9A83B83B2651615100B39AB9 /* libaqua.dylib */,
+				9A4387F0299E4E0C00D2EE15 /* libios_aqua.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -186,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				9AC019F42748AC6C006BEBCC /* libcrypto_openssl.dylib */,
+				9A4387F3299E4E0C00D2EE15 /* libios_crypto_openssl.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -193,7 +217,7 @@
 		9AD19AC52512D2FA00B4C44A /* readlines */ = {
 			isa = PBXGroup;
 			children = (
-				9AD19ACD2512D2FA00B4C44A /* main.cpp */,
+				9AD19ACD2512D2FA00B4C44A /* application.cpp */,
 			);
 			name = readlines;
 			sourceTree = "<group>";
@@ -280,6 +304,27 @@
 			remoteRef = 9A226D6C27CEAF840042BAC2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		9A4387F0299E4E0C00D2EE15 /* libios_aqua.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libios_aqua.a;
+			remoteRef = 9A4387EF299E4E0C00D2EE15 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A4387F3299E4E0C00D2EE15 /* libios_crypto_openssl.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libios_crypto_openssl.a;
+			remoteRef = 9A4387F2299E4E0C00D2EE15 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A4387F6299E4E0C00D2EE15 /* libios_folder_zip.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libios_folder_zip.a;
+			remoteRef = 9A4387F5299E4E0C00D2EE15 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		9A83B82D2651612E00B39AB9 /* libapex_macos.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
@@ -308,7 +353,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AD19ACF2512D2FA00B4C44A /* main.cpp in Sources */,
+				9AD19ACF2512D2FA00B4C44A /* application.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
