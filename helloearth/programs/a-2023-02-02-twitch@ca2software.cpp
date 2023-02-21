@@ -29,7 +29,7 @@ using namespace std;
    return u;
 }
 
-int log2(::u64 u)
+int __log2(::u64 u)
 {
    int iBits = 0;
    while (u >>= 1) ++iBits;
@@ -45,7 +45,7 @@ int log2(::u64 u)
 
 int logpow2(int iBase, ::u64 u)
 {
-   int iShift = log2(iBase);
+   int iShift = __log2(iBase);
    int l = 0;
    while (u >>= iShift) ++l;
    return l;
@@ -53,7 +53,7 @@ int logpow2(int iBase, ::u64 u)
 
 int ceillogpow2(int iBase, ::u64 u)
 {
-   int iShift = log2(iBase);
+   int iShift = __log2(iBase);
    int l = 0;
    auto uOriginal = u;
    while (u >>= iShift) ++l;
@@ -95,7 +95,7 @@ int signed_maximum_number_of_digits(int iBase, int iBits)
       auto logmax = log(p);
       auto logbase = log((double)iBase);
       auto digits = logmax / logbase;
-      return ceil(digits) + 1;
+      return (int) (ceil(digits) + 1);
 
    }
 
@@ -104,7 +104,7 @@ int signed_maximum_number_of_digits(int iBase, int iBits)
 int unsigned_maximum_number_of_digits(int iBase, int iBits)
 {
 
-   return ceil(log(pow(2.0, (double)(iBits))-1.0) / log((double)iBase));
+   return (int) ceil(log(pow(2.0, (double)(iBits))-1.0) / log((double)iBase));
 
 }
 

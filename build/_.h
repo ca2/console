@@ -5,7 +5,7 @@
 #include "app/build/_.h"
 
 
-#ifdef _CONSOLE_BUILD_LIBRARY
+#if defined(_console_build_project)
 #define CLASS_DECL_CONSOLE_BUILD  CLASS_DECL_EXPORT
 #else
 #define CLASS_DECL_CONSOLE_BUILD  CLASS_DECL_IMPORT
