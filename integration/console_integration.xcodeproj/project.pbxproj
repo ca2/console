@@ -61,6 +61,20 @@
 			remoteGlobalIDString = 9AC09A2C274DFC67008B042E;
 			remoteInfo = folder_zip;
 		};
+		9ACCEC5E29A31A3500634891 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A226D5127CEACE30042BAC2 /* crypto_openssl.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9AA14DBB282A17C600B1621E;
+			remoteInfo = ios_crypto_openssl;
+		};
+		9ACCEC6129A31A3500634891 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A226D5927CEAD390042BAC2 /* folder_zip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9AA14DDC282A17D900B1621E;
+			remoteInfo = ios_folder_zip;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -131,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				9A226D5627CEACE30042BAC2 /* libcrypto_openssl.dylib */,
+				9ACCEC5F29A31A3500634891 /* libios_crypto_openssl.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				9A226D5E27CEAD390042BAC2 /* libfolder_zip.dylib */,
+				9ACCEC6229A31A3500634891 /* libios_folder_zip.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -233,7 +249,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9AEA192E27601557006437A3 /* Build configuration list for PBXProject "hellosolarsystem" */;
+			buildConfigurationList = 9AEA192E27601557006437A3 /* Build configuration list for PBXProject "console_integration" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -285,6 +301,20 @@
 			fileType = "compiled.mach-o.dylib";
 			path = libfolder_zip.dylib;
 			remoteRef = 9A226D5D27CEAD390042BAC2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9ACCEC5F29A31A3500634891 /* libios_crypto_openssl.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libios_crypto_openssl.a;
+			remoteRef = 9ACCEC5E29A31A3500634891 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9ACCEC6229A31A3500634891 /* libios_folder_zip.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libios_folder_zip.a;
+			remoteRef = 9ACCEC6129A31A3500634891 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -507,7 +537,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9AEA192E27601557006437A3 /* Build configuration list for PBXProject "hellosolarsystem" */ = {
+		9AEA192E27601557006437A3 /* Build configuration list for PBXProject "console_integration" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9AEA193827601557006437A3 /* Debug */,
