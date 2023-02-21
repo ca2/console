@@ -1,4 +1,4 @@
-﻿#include "framework.h"
+#include "framework.h"
 ////#include "acme/exception/exception.h"
 #include "application_build_helper.h"
 #include "acme/filesystem/filesystem/acme_file.h"
@@ -1410,6 +1410,13 @@ namespace application_build_helper
       {
 
          strLine.trim();
+         
+         if(strLine.contains(">>>>>"))
+         {
+            
+            throw ::exception(error_parsing, "revision marks in \"" + pathMatter + "\"");
+            
+         }
 
          if (strLine.has_char())
          {
@@ -1441,8 +1448,12 @@ namespace application_build_helper
                }
                else
                {
+                  
+                  ::string strCommand;
+                  
+                  strCommand = strZipExe + " -r \"" + pathZip + "\" " + strFolder + "/*";
 
-                  acmenode()->command_system(straOutput, iExitCode, strZipExe + " -r \"" + pathZip + "\" " + strFolder + "/*", e_command_system_inline_log);
+                  acmenode()->command_system(straOutput, iExitCode, strCommand, e_command_system_inline_log);
 
                }
 
