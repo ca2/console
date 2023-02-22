@@ -29,7 +29,7 @@ using namespace std;
    return u;
 }
 
-int __log2(::u64 u)
+int integer_log_base_2(::u64 u)
 {
    int iBits = 0;
    while (u >>= 1) ++iBits;
@@ -45,7 +45,7 @@ int __log2(::u64 u)
 
 int logpow2(int iBase, ::u64 u)
 {
-   int iShift = __log2(iBase);
+   int iShift = integer_log_base_2(iBase);
    int l = 0;
    while (u >>= iShift) ++l;
    return l;
@@ -53,7 +53,7 @@ int logpow2(int iBase, ::u64 u)
 
 int ceillogpow2(int iBase, ::u64 u)
 {
-   int iShift = __log2(iBase);
+   int iShift = integer_log_base_2(iBase);
    int l = 0;
    auto uOriginal = u;
    while (u >>= iShift) ++l;
