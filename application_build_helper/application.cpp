@@ -14,6 +14,8 @@
 #ifdef WINDOWS_DESTKOP
 #include <direct.h>
 #endif
+#include "acme/filesystem/filesystem/acme_directory.h"
+#include "acme/platform/node.h"
 #include "application.h"
 
 
@@ -133,7 +135,7 @@ namespace application_build_helper
 
          string strArgument5 = psubsystem->get_argument1(4);
 
-         if (strArgument1.case_insensitive_order("-package") == 0)
+         if (strArgument1.case_insensitive_equals("-package_application"))
          {
 
             printf("application_build_helper -package %s\n", strArgument2.c_str());
@@ -149,6 +151,51 @@ namespace application_build_helper
             applicationbuildhelper.package();
 
             return;
+
+         }
+         else if (strArgument1.case_insensitive_equals("-package"))
+         {
+
+            ::file::path pathOutput;
+
+            pathOutput = acmedirectory()->get_current();
+
+            auto straProjects = psystem->m_pacmefile->lines(strArgument2);
+
+            for (auto & strProject : straProjects)
+            {
+
+               printf("%s\n", strProject.c_str());
+
+               if (strProject.case_insensitive_ends("/operating-system-windows/x64"))
+               {
+
+                  ::output_debug_string("is it here");
+
+               }
+
+               try
+               {
+
+                  application_build_helper applicationbuildhelper(this);
+
+                  applicationbuildhelper.set_package_folder(strProject);
+
+                  applicationbuildhelper.m_pathOutput = pathOutput;
+
+                  applicationbuildhelper.package();
+
+               }
+               catch (const ::exception & e)
+               {
+
+                  fprintf(stderr, "%s: \"%s\"\n", e.m_strMessage.c_str(), e.m_strDetails.c_str());
+
+               }
+
+            }
+
+
 
          }
          else if (strArgument1.case_insensitive_order("-prepare_project") == 0)

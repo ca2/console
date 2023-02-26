@@ -32,7 +32,7 @@ namespace application_build_helper
 
       pathZip = "/store/" + m_strSlashedOperatingSystem + "/" + m_strUnderscoreAppId + ".zip";
 
-      pathOutput = m_pathOutput + "/cmake-build-stage/output";
+      pathOutput = m_pathOutput + "/cmake-build-release/output";
 
 #endif
 
