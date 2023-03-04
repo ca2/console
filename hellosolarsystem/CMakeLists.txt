@@ -3,6 +3,7 @@ project(_console_hellosolarsystem CXX)
 
 
 list(APPEND executable_source
+        unit_test/_unit_test.h
         unit_test/item.cpp
         unit_test/set.cpp
         unit_test/unit_test.cpp
@@ -10,7 +11,7 @@ list(APPEND executable_source
         #tutor.cpp
         )
 
-add_executable(${PROJECT_NAME} ${executable_source} unit_test/_unit_test.h)
+add_library(${PROJECT_NAME} ${executable_source})
 
 
 if (MSVC)
@@ -44,6 +45,8 @@ target_include_directories(${PROJECT_NAME} PRIVATE ${library_include_directories
 
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE _CONSOLE_HELLOSOLARSYSTEM_LIBRARY)
+
+target_compile_definitions(${PROJECT_NAME} PRIVATE WITH_UNIT_TEST)
 
 
 
