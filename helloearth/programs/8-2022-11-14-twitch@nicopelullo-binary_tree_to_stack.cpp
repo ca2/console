@@ -202,7 +202,7 @@ int twitch::nicopelullo_binary_tree_to_stack_main()
 			insert_tree_node(::nicopelullo::g_ptreenodeRoot, m_iData);
 
 
-			system("pause");
+			//system("pause");
 			break;
 
 		case 2: 
@@ -212,7 +212,7 @@ int twitch::nicopelullo_binary_tree_to_stack_main()
 			nicopelullo::insert_tree_node(::nicopelullo::g_ptreenodeRoot, 8);
 
 			nicopelullo::preorder(::nicopelullo::g_ptreenodeRoot);
-			system("pause");
+			//system("pause");
 			break;
 
 			//			case 2: system("cls");
@@ -247,7 +247,8 @@ int twitch::nicopelullo_binary_tree_to_stack_main()
 			//					system("pause");
 			//					break;
 
-		}system("cls");
+		}
+      //system("cls");
 	} while (opcion != 4);
 
 

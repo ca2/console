@@ -336,10 +336,11 @@ int twitch::nicopelullo_inorder__preorder_and_post_order_main()
 			::std::cin >> iData;
 			::nicopelullo2::tree_node_input(::nicopelullo2::g_ptreenodeRoot, iData);
 
-			system("pause");
+			//system("pause");
 			break;
 
-		case 2: system("cls");
+		case 2:
+         //system("cls");
 			::std::cout << "MENU" << ::std::endl;
 			::std::cout << "1. Preorden" << ::std::endl;
 			::std::cout << "2. Postorden" << ::std::endl;
@@ -352,24 +353,24 @@ int twitch::nicopelullo_inorder__preorder_and_post_order_main()
 			case 1: ::std::cout << "Mostrando el g_ptreenodeRoot en Preorden" << ::std::endl;
 				::nicopelullo2::pre_order(::nicopelullo2::g_ptreenodeRoot);
 
-				system("pause");
+				//system("pause");
 				break;
 
 			case 2: ::std::cout << "Mostrando el g_ptreenodeRoot en Postorden" << ::std::endl;
 				::nicopelullo2::post_order(::nicopelullo2::g_ptreenodeRoot);
 
-				system("pause");
+				//system("pause");
 				break;
 
 			case 3: ::std::cout << "Mostrando el g_ptreenodeRoot en Inorden" << ::std::endl;
 				::nicopelullo2::in_order(::nicopelullo2::g_ptreenodeRoot);
 
-				system("pause");
+				//system("pause");
 				break;
 
 			}
 
-			system("pause");
+			//system("pause");
 			break;
 
 		case 3: ::std::cout << "Ingrese el elemento que desee buscar: ";
@@ -381,10 +382,11 @@ int twitch::nicopelullo_inorder__preorder_and_post_order_main()
 				::std::cout << "Su elemento no ha sido encontrado" << ::std::endl;
 			}
 
-			system("pause");
+			//system("pause");
 			break;
 
-		}system("cls");
+		}
+      //system("cls");
 	} while (opcion != 4);
 
 
