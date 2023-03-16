@@ -18,7 +18,9 @@
 #include "unit_test/set.h"
 
 
+#ifdef WITH_UNIT_TEST
 DECLARE_UNIT_TEST_SET(basic_types);
+#endif
 
 
 template < typename CONTAINER >
@@ -221,6 +223,8 @@ public:
 
       printf("\n");
 
+#ifdef WITH_UNIT_TEST
+
       bool bUnitTest001 = false;
 
       if (bUnitTest001)
@@ -230,11 +234,16 @@ public:
 
       }
 
+#endif //  WITH_UNIT_TEST
+
       message_box_for_console("Hello Solar System!!", "hellosolarsystem", e_message_box_ok);
 
       // return ::success;
 
    }
+
+
+   #ifdef WITH_UNIT_TEST
 
    void unit_test_001()
    {
@@ -253,6 +262,7 @@ public:
 
    }
 
+#endif //  WITH_UNIT_TEST
 
 };
 
