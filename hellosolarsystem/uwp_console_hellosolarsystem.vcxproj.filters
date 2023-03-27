@@ -51,10 +51,18 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\hellosolarsystem_TemporaryKey.pfx" />
-    <None Include="..\..\..\..\operating-system\storage-universal_windows\Win32\basis\binary\libcrypto-3.dll" />
-    <None Include="..\..\..\..\operating-system\storage-universal_windows\Win32\basis\binary\libssl-3.dll" />
-    <None Include="..\..\..\..\operating-system\storage-universal_windows\Win32\basis\third\binary\zlib.dll" />
+    <None Include="..\..\..\..\operating_system\storage-universal_windows\Win32\Debug\binary\libcrypto-3.dll">
+      <Filter>Library\Win32\basis</Filter>
+    </None>
+    <None Include="..\..\..\..\operating_system\storage-universal_windows\Win32\Debug\binary\libssl-3.dll">
+      <Filter>Library\Win32\basis</Filter>
+    </None>
+    <None Include="..\..\..\..\operating_system\storage-universal_windows\Win32\Debug\third\binary\zlib.dll">
+      <Filter>Library\Win32\basis</Filter>
+    </None>
+    <None Include="hellosolarsystem_TemporaryKey.pfx">
+      <Filter>UWP</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="UWP">
@@ -78,6 +86,9 @@
     <Filter Include="Source Files\unit_test">
       <UniqueIdentifier>{5c0f319d-5b8b-421e-86cc-6a09673f80aa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{f7b18373-a21b-42fd-b637-e1dd3e93e92d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package10.appxmanifest">
@@ -100,5 +111,13 @@
     <ClCompile Include="unit_test\basic_types.unittest.cpp">
       <Filter>Source Files\unit_test</Filter>
     </ClCompile>
+    <ClCompile Include="framework.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

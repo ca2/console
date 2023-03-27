@@ -1,5 +1,4 @@
-﻿#include "acme/_start.h"
-#include "acme/_.h"
+﻿#include "framework.h"
 #include "acme/platform/application.h"
 #include "acme/platform/system.h"
 #include "acme/platform/sequencer.h"

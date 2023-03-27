@@ -51,10 +51,18 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\readlines_TemporaryKey.pfx" />
-    <None Include="..\..\..\..\operating-system\storage-universal_windows\Win32\Debug\binary\libcrypto-3.dll" />
-    <None Include="..\..\..\..\operating-system\storage-universal_windows\Win32\Debug\binary\libssl-3.dll" />
-    <None Include="..\..\..\..\operating-system\storage-universal_windows\Win32\Debug\third\binary\zlib.dll" />
+    <None Include="..\..\..\..\operating_system\storage-universal_windows\Win32\Debug\binary\libcrypto-3.dll">
+      <Filter>Library\Win32\basis</Filter>
+    </None>
+    <None Include="..\..\..\..\operating_system\storage-universal_windows\Win32\Debug\binary\libssl-3.dll">
+      <Filter>Library\Win32\basis</Filter>
+    </None>
+    <None Include="..\..\..\..\operating_system\storage-universal_windows\Win32\Debug\third\binary\zlib.dll">
+      <Filter>Library\Win32\basis</Filter>
+    </None>
+    <None Include="readlines_TemporaryKey.pfx">
+      <Filter>UWP</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Assets">
@@ -75,6 +83,9 @@
     <Filter Include="UWP">
       <UniqueIdentifier>{4ff99add-88c3-4d02-8a3c-722256e38d50}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{5403e18b-c660-45a4-ae93-8da7fa8ffb04}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package10.appxmanifest">
@@ -85,5 +96,13 @@
     <ClCompile Include="application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="framework.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -51,8 +51,12 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\helloearth_TemporaryKey.pfx" />
-    <None Include="..\..\..\..\operating-system\storage-universal_windows\Win32\debug\third\binary\zlib.dll" />
+    <None Include="helloearth_TemporaryKey.pfx">
+      <Filter>UWP</Filter>
+    </None>
+    <None Include="..\..\..\..\operating-system\storage-universal_windows\Win32\Debug\third\binary\zlib.dll">
+      <Filter>Library\Win32\basis</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="UWP">
@@ -75,6 +79,9 @@
     </Filter>
     <Filter Include="Source Files\programs">
       <UniqueIdentifier>{9f027ab0-e82b-4f31-ab3b-6d93c89b9b0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{31d01805-986f-4155-ad4d-6e65f520fb23}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -122,5 +129,10 @@
     <ClCompile Include="programs\a-2023-02-02-twitch%40ca2software.cpp">
       <Filter>Source Files\programs</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
