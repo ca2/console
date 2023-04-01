@@ -126,7 +126,7 @@ int * g_pi = nullptr;
 //
 //   }
 //
-//#ifdef _UWP
+//#ifdef UNIVERSAL_WINDOWS
 //
 //   getchar();
 //
@@ -584,7 +584,7 @@ public:
 
       }
 
-#ifdef _UWP
+#ifdef UNIVERSAL_WINDOWS
 
       getchar();
 
@@ -925,7 +925,7 @@ console_hello g_consolehello;
 //
 //   }
 //
-//#ifdef _UWP
+//#ifdef UNIVERSAL_WINDOWS
 //
 //   getchar();
 //
