@@ -18,6 +18,24 @@
 //END_FACTORY()
 #include "acme/console.h"
 int * g_pi = nullptr;
+
+enum enum_test_increment
+{
+
+   e_test_increment_none,
+   e_test_increment_one,
+   e_test_increment_two,
+   e_test_increment_three,
+   e_test_increment_four,
+   e_test_increment_last = e_test_increment_four,
+   e_test_increment_count,
+   
+
+};
+
+
+
+
 //
 //void implement(::acme::context * pcontext)
 //{
@@ -392,6 +410,34 @@ public:
 
    void main() override
    {
+
+      auto etestincrement = e_test_increment_none;
+
+      for (; etestincrement <= e_test_increment_last; etestincrement = (enum_test_increment)((int)etestincrement+ 1))
+      {
+
+         switch (etestincrement)
+         {
+         case e_test_increment_none:
+            printf("e_test_increment_none\n");
+            break;
+         case e_test_increment_one:
+            printf("e_test_increment_one\n");
+            break;
+         case e_test_increment_two:
+            printf("e_test_increment_two\n");
+            break;
+         case e_test_increment_three:
+            printf("e_test_increment_three\n");
+            break;
+         case e_test_increment_four:
+            printf("e_test_increment_four\n");
+            break;
+
+
+         };
+
+      }
 
       //test_datetime_format('w');
       //test_datetime_format('x');
