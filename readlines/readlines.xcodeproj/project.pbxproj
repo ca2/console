@@ -21,6 +21,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9A1862902A2702D30054515F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A226D6527CEAF840042BAC2 /* folder_zip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9A1BD6E12A0079D400152CD1;
+			remoteInfo = static_folder_zip;
+		};
 		9A226D6C27CEAF840042BAC2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9A226D6527CEAF840042BAC2 /* folder_zip.xcodeproj */;
@@ -121,6 +128,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9A18628B2A2702D30054515F /* _____debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "_____debug.xcconfig"; sourceTree = "<group>"; };
+		9A1862922A2702D50054515F /* _____release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "_____release.xcconfig"; sourceTree = "<group>"; };
 		9A226D6527CEAF840042BAC2 /* folder_zip.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = folder_zip.xcodeproj; path = ../../app/folder_zip/folder_zip.xcodeproj; sourceTree = "<group>"; };
 		9A46D24A2678440E000B22D0 /* libacme.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A46D24C26784418000B22D0 /* libapex.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libapex.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +161,7 @@
 			children = (
 				9A226D6D27CEAF840042BAC2 /* libfolder_zip.dylib */,
 				9A4387F6299E4E0C00D2EE15 /* libios_folder_zip.a */,
+				9A1862912A2702D30054515F /* libstatic_folder_zip.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -217,6 +227,8 @@
 		9AD19AC52512D2FA00B4C44A /* readlines */ = {
 			isa = PBXGroup;
 			children = (
+				9A18628B2A2702D30054515F /* _____debug.xcconfig */,
+				9A1862922A2702D50054515F /* _____release.xcconfig */,
 				9AD19ACD2512D2FA00B4C44A /* application.cpp */,
 			);
 			name = readlines;
@@ -297,6 +309,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		9A1862912A2702D30054515F /* libstatic_folder_zip.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libstatic_folder_zip.a;
+			remoteRef = 9A1862902A2702D30054515F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		9A226D6D27CEAF840042BAC2 /* libfolder_zip.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
@@ -385,6 +404,7 @@
 /* Begin XCBuildConfiguration section */
 		9A68A3A325112AFD008DABD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A18628B2A2702D30054515F /* _____debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
@@ -455,7 +475,6 @@
 					"$(WorkspaceDir)/operating_system",
 					"$(WorkspaceDir)/../operating_system/storage-$(PLATFORM_MODIFIER)/library",
 				);
-				MACOSX_DEPLOYMENT_TARGET = "$(BUILD_MACHINE_MACOS_DEPLOYMENT_TARGET)";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -490,6 +509,7 @@
 		};
 		9A68A3A425112AFD008DABD2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A1862922A2702D50054515F /* _____release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
@@ -557,7 +577,6 @@
 					"$(WorkspaceDir)/operating_system",
 					"$(WorkspaceDir)/../operating_system/storage-$(PLATFORM_MODIFIER)/library",
 				);
-				MACOSX_DEPLOYMENT_TARGET = "$(BUILD_MACHINE_MACOS_DEPLOYMENT_TARGET)";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_LDFLAGS = "-all_load";

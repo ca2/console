@@ -63,6 +63,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9A1862812A27023D0054515F /* _____release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "_____release.xcconfig"; sourceTree = "<group>"; };
+		9A1862832A27023E0054515F /* _____debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "_____debug.xcconfig"; sourceTree = "<group>"; };
 		9A22671127CE8B140042BAC2 /* libacme_posix.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libacme_posix.dylib; path = "../../../../../Library/Developer/Xcode/DerivedData/mac-__hello-ferbzpmqoopfvnbsljzanjlsduhf/Build/Products/Debug/libacme_posix.dylib"; sourceTree = "<group>"; };
 		9A22671227CE8B140042BAC2 /* libidn.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libidn.dylib; path = "../../../../../Library/Developer/Xcode/DerivedData/mac-__hello-ferbzpmqoopfvnbsljzanjlsduhf/Build/Products/Debug/libidn.dylib"; sourceTree = "<group>"; };
 		9A22671327CE8B140042BAC2 /* libacme_apple.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libacme_apple.dylib; path = "../../../../../Library/Developer/Xcode/DerivedData/mac-__hello-ferbzpmqoopfvnbsljzanjlsduhf/Build/Products/Debug/libacme_apple.dylib"; sourceTree = "<group>"; };
@@ -102,7 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				9A22671E27CE8B460042BAC2 /* libacme_macos.dylib */,
-				9A4387BD299E4AB000D2EE15 /* lib_acme_macos.a */,
+				9A4387BD299E4AB000D2EE15 /* libstatic_acme_macos.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,6 +130,8 @@
 		9A5EE49B2650D168009F25F0 /* helloearth */ = {
 			isa = PBXGroup;
 			children = (
+				9A1862832A27023E0054515F /* _____debug.xcconfig */,
+				9A1862812A27023D0054515F /* _____release.xcconfig */,
 				9AE6DE7E29629D3F008A1335 /* twitch.cpp */,
 				9AE6DE6B29629CBC008A1335 /* programs */,
 				9AE6DE6929629C5F008A1335 /* application.cpp */,
@@ -240,10 +244,10 @@
 			remoteRef = 9A22671D27CE8B460042BAC2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9A4387BD299E4AB000D2EE15 /* lib_acme_macos.a */ = {
+		9A4387BD299E4AB000D2EE15 /* libstatic_acme_macos.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
-			path = lib_acme_macos.a;
+			path = libstatic_acme_macos.a;
 			remoteRef = 9A4387BC299E4AB000D2EE15 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -282,6 +286,7 @@
 /* Begin XCBuildConfiguration section */
 		9A5EE4962650D105009F25F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A1862832A27023E0054515F /* _____debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -338,7 +343,6 @@
 					"$(WorkspaceDir)/operating_system",
 					"$(WorkspaceDir)/../operating_system/storage-$(PLATFORM_MODIFIER)/library",
 				);
-				MACOSX_DEPLOYMENT_TARGET = "$(BUILD_MACHINE_MACOS_DEPLOYMENT_TARGET)";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -366,6 +370,7 @@
 		};
 		9A5EE4972650D105009F25F0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A1862812A27023D0054515F /* _____release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -418,7 +423,6 @@
 					"$(WorkspaceDir)/../operating_system/storage-$(PLATFORM_MODIFIER)/library",
 					"$(WorkspaceDir)/operating_system",
 				);
-				MACOSX_DEPLOYMENT_TARGET = "$(BUILD_MACHINE_MACOS_DEPLOYMENT_TARGET)";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;

@@ -27,6 +27,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9A1862882A2702A40054515F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A226D5927CEAD390042BAC2 /* folder_zip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9A1BD6E12A0079D400152CD1;
+			remoteInfo = static_folder_zip;
+		};
 		9A22672527CE8C7C0042BAC2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9A22672127CE8C7B0042BAC2 /* apex_macos.xcodeproj */;
@@ -101,6 +108,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9A1862842A2702A30054515F /* _____release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "_____release.xcconfig"; sourceTree = SOURCE_ROOT; };
+		9A18628A2A2702A40054515F /* _____debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "_____debug.xcconfig"; sourceTree = SOURCE_ROOT; };
 		9A22672127CE8C7B0042BAC2 /* apex_macos.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = apex_macos.xcodeproj; path = "../../../operating_system/operating_system-macos/apex_macos/apex_macos.xcodeproj"; sourceTree = "<group>"; };
 		9A22672927CE8CD80042BAC2 /* libapex.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libapex.dylib; path = "../../../../../Library/Developer/Xcode/DerivedData/mac-__hello-ferbzpmqoopfvnbsljzanjlsduhf/Build/Products/Debug/libapex.dylib"; sourceTree = "<group>"; };
 		9A22672A27CE8CD80042BAC2 /* libssl.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.3.dylib; path = "../../../../operating_system/storage-macos/library/libssl.3.dylib"; sourceTree = "<group>"; };
@@ -161,6 +170,7 @@
 			children = (
 				9A226D5E27CEAD390042BAC2 /* libfolder_zip.dylib */,
 				9A4387C5299E4BCB00D2EE15 /* libios_folder_zip.a */,
+				9A1862892A2702A40054515F /* libstatic_folder_zip.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -205,6 +215,8 @@
 		9AEA193527601557006437A3 /* hellosolarsystem */ = {
 			isa = PBXGroup;
 			children = (
+				9A18628A2A2702A40054515F /* _____debug.xcconfig */,
+				9A1862842A2702A30054515F /* _____release.xcconfig */,
 				9A4387C6299E4CBF00D2EE15 /* unit_test */,
 				9AEA19602760170E006437A3 /* hellosolarsystem.cpp */,
 			);
@@ -312,6 +324,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		9A1862892A2702A40054515F /* libstatic_folder_zip.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libstatic_folder_zip.a;
+			remoteRef = 9A1862882A2702A40054515F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		9A22672627CE8C7C0042BAC2 /* libapex_macos.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
@@ -384,6 +403,7 @@
 /* Begin XCBuildConfiguration section */
 		9AEA193827601557006437A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A18628A2A2702A40054515F /* _____debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -440,7 +460,6 @@
 					"$(WorkspaceDir)/operating_system",
 					"$(WorkspaceDir)/../operating_system/storage-$(PLATFORM_MODIFIER)/library",
 				);
-				MACOSX_DEPLOYMENT_TARGET = "$(BUILD_MACHINE_MACOS_DEPLOYMENT_TARGET)";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -469,6 +488,7 @@
 		};
 		9AEA193927601557006437A3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A1862842A2702A30054515F /* _____release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -521,7 +541,6 @@
 					"$(WorkspaceDir)/../operating_system/storage-$(PLATFORM_MODIFIER)/library",
 					"$(WorkspaceDir)/operating_system",
 				);
-				MACOSX_DEPLOYMENT_TARGET = "$(BUILD_MACHINE_MACOS_DEPLOYMENT_TARGET)";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
