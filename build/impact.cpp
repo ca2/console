@@ -228,17 +228,17 @@ namespace app_core_build
 
       ::point_i32 p;
 
-      p.x = 10;
+      p.x() = 10;
 
-      p.y = rectangleClient.height();
+      p.y() = rectangleClient.height();
 
       pgraphics->set_text_color(argb(255,89, 89, 89));
       if (straLine.has_element())
       {
 
-         for (int i = straLine.get_upper_bound(); i>= 0 && p.y >= 0; i--)
+         for (int i = straLine.get_upper_bound(); i>= 0 && p.y() >= 0; i--)
          {
-            p.y -= 20;
+            p.y() -= 20;
 
             pgraphics->text_out(p, straLine[i]);
 
