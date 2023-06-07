@@ -565,7 +565,7 @@ namespace console_hello
       while (true)
       {
 
-         auto psequencer = message_box("Hello!!\nNo: for exception test!!", "Hello App!", e_message_box_yes_no_cancel | e_message_box_default_button_3, "Hello Multiverse!!");
+         auto psequencer = message_box("Hello!!\nNo: for exception test(\u2717)!!", "Hello App!", e_message_box_yes_no_cancel | e_message_box_default_button_3, "Hello Multiverse!!");
 
          auto result = psequencer->do_synchronously();
 
