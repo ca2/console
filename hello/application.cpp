@@ -1,4 +1,5 @@
 #include "framework.h"
+#include "application.h"
 #include "acme/platform/application.h"
 #include "acme/platform/system.h"
 #include "acme/platform/sequencer.h"
@@ -276,11 +277,18 @@ void test_002()
 
 //#error "error_compiled back function"
 
-class console_hello :
-   virtual public ::acme::application
+namespace console_hello
 {
+ 
+   application::application()
+   {
+   }
 
-public:
+   application::~application()
+   {
+
+   }
+
 
    ::string generatecontatenation(char ch)
    {
@@ -302,7 +310,7 @@ public:
 
    }
 
-   void test_contatenation(char ch)
+   void application::test_contatenation(char ch)
    {
 
       
@@ -370,7 +378,7 @@ public:
 
    }
 
-   void test_datetime_format(char ch)
+   void application::test_datetime_format(char ch)
    {
 
 
@@ -408,8 +416,32 @@ public:
 
    }
 
-   void main() override
+   
+   void application::main()
    {
+
+      if (m_pacmesystem->m_psubsystem->m_argc == 2)
+      {
+
+
+         if (!wcscmp(m_pacmesystem->m_psubsystem->m_wargv[1],L"remove_utf8_bom_phase1"))
+         {
+
+            remove_utf8_bom_phase1();
+
+         }
+         else if (!wcscmp(m_pacmesystem->m_psubsystem->m_wargv[1], L"remove_utf8_bom_phase2"))
+         {
+
+            remove_utf8_bom_phase2();
+
+         }
+
+
+         return;
+
+
+      }
 
       auto etestincrement = e_test_increment_none;
 
@@ -644,7 +676,6 @@ public:
 
 };
 
-console_hello g_consolehello;
 
 ////#ifdef WINDOWS
 ////int wmain(int argc, wchar_t* argv[], wchar_t* envp[])
@@ -980,3 +1011,6 @@ console_hello g_consolehello;
 //#endif
 //
 //}
+
+
+console_hello::application g_consolehelloapplication;

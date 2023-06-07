@@ -32,4 +32,10 @@
     <LocalDebuggerCommandArguments>"Untitled" : show_application_information2</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StaticDebug|x64'">
+    <LocalDebuggerCommand>C:\operating_system\bin\hello.exe</LocalDebuggerCommand>
+    <LocalDebuggerCommandArguments>remove_utf8_bom_phase2</LocalDebuggerCommandArguments>
+    <LocalDebuggerWorkingDirectory>C:\main</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
 </Project>
