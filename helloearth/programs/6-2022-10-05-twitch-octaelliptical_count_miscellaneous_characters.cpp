@@ -1,4 +1,4 @@
-﻿#include "framework.h"
+#include "framework.h"
 // Write a program to count and print the total number
 // of characters(lowercase english alphabets only), 
 // digits(0 to 9) and white spaces

@@ -1,4 +1,4 @@
-﻿#include "framework.h"
+#include "framework.h"
 //#define FACTORY console_hellosolarsystem
 #define NO_NETWORKING
 #define APP_ID "console/hellosolarsystem"

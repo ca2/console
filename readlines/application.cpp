@@ -1,4 +1,4 @@
-﻿#include "framework.h"
+#include "framework.h"
 //#include "aqua/_.h"
 //#define FACTORY console_readlines
 #define NO_NETWORKING
