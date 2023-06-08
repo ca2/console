@@ -424,13 +424,13 @@ namespace console_hello
       {
 
 
-         if (!wcscmp(m_pacmesystem->m_psubsystem->m_wargv[1],L"remove_utf8_bom_phase1"))
+         if (m_pacmesystem->m_psubsystem->get_arg(0) == "remove_utf8_bom_phase1")
          {
 
             remove_utf8_bom_phase1();
 
          }
-         else if (!wcscmp(m_pacmesystem->m_psubsystem->m_wargv[1], L"remove_utf8_bom_phase2"))
+         else if (m_pacmesystem->m_psubsystem->get_arg(1) == "remove_utf8_bom_phase2")
          {
 
             remove_utf8_bom_phase2();
@@ -565,7 +565,7 @@ namespace console_hello
       while (true)
       {
 
-         auto psequencer = message_box(u8"Hello!!\nNo: for exception test(\u2717)!!", "Hello App!", e_message_box_yes_no_cancel | e_message_box_default_button_3, "Hello Multiverse!!");
+         auto psequencer = message_box((const char *) u8"Hello!!\nNo: for exception test(\u2717)!!", "Hello App!", e_message_box_yes_no_cancel | e_message_box_default_button_3, "Hello Multiverse!!");
 
          auto result = psequencer->do_synchronously();
 
