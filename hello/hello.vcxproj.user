@@ -34,7 +34,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StaticDebug|x64'">
     <LocalDebuggerCommand>C:\operating_system\bin\hello.exe</LocalDebuggerCommand>
-    <LocalDebuggerCommandArguments>remove_utf8_bom_phase2</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>search_special_characters</LocalDebuggerCommandArguments>
     <LocalDebuggerWorkingDirectory>C:\main</LocalDebuggerWorkingDirectory>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>

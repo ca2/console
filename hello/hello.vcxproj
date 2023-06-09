@@ -930,6 +930,7 @@
   <ItemGroup>
     <ClCompile Include="application.cpp" />
     <ClCompile Include="remove_utf8_bom.cpp" />
+    <ClCompile Include="search_special_characters.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\operating_system\operating_system-windows\acme_windows\acme_windows.vcxproj">

@@ -424,7 +424,7 @@ namespace console_hello
       {
 
 
-         if (m_pacmesystem->m_psubsystem->get_arg(0) == "remove_utf8_bom_phase1")
+         if (m_pacmesystem->m_psubsystem->get_arg(1) == "remove_utf8_bom_phase1")
          {
 
             remove_utf8_bom_phase1();
@@ -434,6 +434,12 @@ namespace console_hello
          {
 
             remove_utf8_bom_phase2();
+
+         }
+         else if (m_pacmesystem->m_psubsystem->get_arg(1) == "search_special_characters")
+         {
+
+            search_special_characters();
 
          }
 

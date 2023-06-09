@@ -26,6 +26,8 @@ namespace console_hello
       void remove_utf8_bom_phase1();
       void remove_utf8_bom_phase2();
 
+      void search_special_characters();
+
       void main() override;
 
 
