@@ -137,7 +137,7 @@ namespace nicopelullo
 			//muestra el m_iData del nodo en el que estamos parados.
 			::std::cout << ptreenodeCurrent->m_iData << " - ";
 
-			//una vez que mostró el m_iData; elimina ese nodo de la stack para poder guardar los siguientes nodos
+			//una vez que mostro el m_iData; elimina ese nodo de la stack para poder guardar los siguientes nodos
 			pstack = pop(pstack, ptreenodeCurrent);  //libera el pstack de la stack.
 
 

@@ -24,6 +24,22 @@ namespace console_hello
 
       listing.m_functionOnNewPath = [this,&patha,&strReports](auto & path)
          {
+
+
+         if (path.contains("aaa_") || path.contains("aaaa_") || path.contains("aaaaa_"))
+         {
+
+            return;
+
+         }
+
+         if (path.contains("archive_2021"))
+         {
+
+            return;
+
+         }
+
             auto lines = acmefile()->lines(path);
 
             for(int iLine = 1; iLine <= lines.size(); iLine++)
