@@ -2,7 +2,7 @@
 //  main.cpp
 //  hellosolarsystem
 //
-//  Created by Camilo Sasuke Thomas Borregaard Sørensen on 07/12/21.
+//  Created by Camilo Sasuke Thomas Borregaard Soerensen on 07/12/21.
 //
 
 #include <iostream>

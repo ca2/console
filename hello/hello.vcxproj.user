@@ -35,7 +35,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StaticDebug|x64'">
     <LocalDebuggerCommand>C:\operating_system\bin\hello.exe</LocalDebuggerCommand>
     <LocalDebuggerCommandArguments>search_special_characters</LocalDebuggerCommandArguments>
-    <LocalDebuggerWorkingDirectory>C:\main</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerWorkingDirectory>C:\main\source</LocalDebuggerWorkingDirectory>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
 </Project>
