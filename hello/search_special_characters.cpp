@@ -61,7 +61,7 @@ namespace console_hello
 
                      printf("%s", strReport.c_str());
 
-                     output_debug_string(strReport);
+                     infomration(strReport);
 
                      strReports += strReport;
 

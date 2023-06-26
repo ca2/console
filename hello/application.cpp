@@ -243,7 +243,7 @@ void test_001()
    i32_array a{ 1,1,2,3,5,8,13,21,34 };
 
 
-   auto print_elem = [](auto const e) {::output_debug_string(::as_string(e) + "\n"); };
+   auto print_elem = [](auto const e) {::infomration(::as_string(e) + "\n"); };
 
    for(auto & item : a) print_elem(item);
 
@@ -349,13 +349,13 @@ namespace console_hello
       if (str.size() < 20)
       {
          
-         ::output_debug_string("What!!");
+         ::infomration("What!!");
 
       }
       if (str1.size() < 20)
       {
 
-         ::output_debug_string("What(1)!!");
+         ::infomration("What(1)!!");
 
       }
 
@@ -398,7 +398,7 @@ namespace console_hello
 
          if (strCompileLogUnique.size() < 5)
          {
-            ::output_debug_string("What!!");
+            ::infomration("What!!");
 
          }
          if (i % 10'000 == 0)
@@ -500,7 +500,7 @@ namespace console_hello
 
          string str = checking_string_move_001();
 
-         output_debug_string(str);
+         infomration(str);
 
       }
 
@@ -508,7 +508,7 @@ namespace console_hello
 
          string str = checking_string_move_002();
 
-         output_debug_string(str);
+         infomration(str);
 
       }
 

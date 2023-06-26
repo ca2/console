@@ -201,25 +201,25 @@ void find_maximum_value_in_list()
 //catch (::exception& e)
 //{
 
-//   output_debug_string("::exception &");
+//   infomration("::exception &");
 
 //}
 //catch const ::exception & e
 //{
 
-//   output_debug_string("exception_pointer &");
+//   infomration("exception_pointer &");
 
 //}
 //catch (::exception* pe)
 //{
 
-//   output_debug_string("exception_pointer *");
+//   infomration("exception_pointer *");
 
 //}
 //catch (todo* p)
 //{
 
-//   output_debug_string("todo *");
+//   infomration("todo *");
 
 //}
 //catch (...)
@@ -237,25 +237,25 @@ void find_maximum_value_in_list()
 //catch (::exception& e)
 //{
 
-//   output_debug_string("::exception &");
+//   infomration("::exception &");
 
 //}
 //catch const ::exception & e
 //{
 
-//   output_debug_string("exception_pointer &");
+//   infomration("exception_pointer &");
 
 //}
 //catch (todo* p)
 //{
 
-//   output_debug_string("todo *");
+//   infomration("todo *");
 
 //}
 //catch (::exception* pe)
 //{
 
-//   output_debug_string("exception_pointer *");
+//   infomration("exception_pointer *");
 
 //}
 //catch (...)

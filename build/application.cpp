@@ -134,13 +134,13 @@ namespace app_core_build
 
 #ifdef _DEBUG
 
-      output_debug_string("_DEBUG build? (basis)");
+      infomration("_DEBUG build? (basis)");
 
       ASSERT(false);
 
 #else
 
-      output_debug_string("RELEASE build? (stage)");
+      infomration("RELEASE build? (stage)");
 
       ASSERT(false);
 
@@ -186,7 +186,7 @@ namespace app_core_build
 
       }
 
-      output_debug_string("\nfinished hellomultiverse::on_request");
+      infomration("\nfinished hellomultiverse::on_request");
 
    }
 
@@ -250,11 +250,11 @@ void hellomultiverse_debugging()
 
       strXX = strOh + "123" + as_string(15.59) + "%";
 
-      output_debug_string(strXX);
+      infomration(strXX);
 
    }
 
-   output_debug_string(pszFree);
+   infomration(pszFree);
 
 }
 
