@@ -142,7 +142,7 @@ public:
 
       strElapsed = " Elapsed: " + ::as_string(elapsed.integral_millisecond()) + "ms";
 
-      infomration(strElapsed);
+      information(strElapsed);
 
       if (acmesystem()->is_true("debug"))
       {

@@ -339,7 +339,7 @@ int twitch::ca2software_int_to_string_bases()
    }
    strTable.append_format("};");
 
-   ::infomration(str);
+   ::information(str);
 
 
    acmefile()->put_contents("C:\\archive\\int_to_string_bases.txt", str);
