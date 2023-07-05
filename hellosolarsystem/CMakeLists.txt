@@ -21,9 +21,9 @@ if (MSVC)
 endif()
 
 
-if(LINUX)
+if(${LINUX})
     add_dependencies(${PROJECT_NAME} acme_linux apex_linux)
-elseif(FREEBSD)
+elseif(${FREEBSD})
     add_dependencies(${PROJECT_NAME} acme_freebsd apex_freebsd)
 endif()
 
