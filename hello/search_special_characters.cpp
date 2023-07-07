@@ -59,7 +59,7 @@ namespace console_hello
 
                      strReport.format("%s(%d,%d): %s\r\n",path.c_str(), iLine, iCharacter, line.substr(iCharacter - 1, line.length() - iCharacter + 1).c_str());
 
-                     printf("%s", strReport.c_str());
+                     output_debug_string_format("%s", strReport.c_str());
 
                      information(strReport);
 

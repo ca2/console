@@ -43,15 +43,15 @@ enum enum_test_increment
 //
 //   //throw ::exception(error_debug_testing);
 //
-//   printf("\n");
+//   output_debug_string("\n");
 //
-//   printf("\n");
+//   output_debug_string("\n");
 //
-//   printf("Hello!!");
+//   output_debug_string("Hello!!");
 //
-//   printf("\n");
+//   output_debug_string("\n");
 //
-//   printf("\n");
+//   output_debug_string("\n");
 //
 //   while (true)
 //   {
@@ -61,9 +61,9 @@ enum enum_test_increment
 //      if (result == e_dialog_result_yes)
 //      {
 //
-//         printf("\n");
+//         output_debug_string("\n");
 //
-//         printf("Yes!!\n");
+//         output_debug_string("Yes!!\n");
 //
 //         message_box_synchronous(pcontext, "Yes!!", "Yes!!", e_message_box_ok);
 //
@@ -99,7 +99,7 @@ enum enum_test_increment
 //                  
 //                  //int i = 23 / (iptr)g_pi;
 //
-//                  //printf("this is the result %d", i);
+//                  //output_debug_string("this is the result %d", i);
 //                  
 //               }
 //               catch(::exception & exception)
@@ -125,9 +125,9 @@ enum enum_test_increment
 //
 //         });
 //
-//         printf("\n");
+//         output_debug_string("\n");
 //
-//         printf("No!\n");
+//         output_debug_string("No!\n");
 //
 //         message_box_synchronous(pcontext, "No!", "No!", e_message_box_ok);
 //
@@ -135,9 +135,9 @@ enum enum_test_increment
 //      else if (result == e_dialog_result_cancel)
 //      {
 //
-//         printf("\n");
+//         output_debug_string("\n");
 //
-//         printf("Cancel!!\n");
+//         output_debug_string("Cancel!!\n");
 //
 //         message_box_synchronous(pcontext, "Cancel", "Cancel", e_message_box_ok);
 //
@@ -195,7 +195,7 @@ string checking_string_move_002()
 
    auto p = new char[123];
 
-   strcpy(p, "checking_string_move_002");
+   ansi_cpy(p, "checking_string_move_002");
 
    str = p;
 
@@ -217,7 +217,7 @@ void trim_left_001()
 
    str.trim_left("01");
 
-   printf("trim_left_001:\"%s\"\n\n", str.c_str());
+   output_debug_string_format("trim_left_001:\"%s\"\n\n", str.c_str());
 
 
 }
@@ -230,7 +230,7 @@ void trim_right_001()
 
    str.trim_right("01");
 
-   printf("trim_right_001:\"%s\"\n\n", str.c_str());
+   output_debug_string_format("trim_right_001:\"%s\"\n\n", str.c_str());
 
 
 }
@@ -258,7 +258,7 @@ void test_002()
 
 
    auto pstart = __FILE__;
-   auto pend = pstart + strlen(pstart);
+   auto pend = pstart + ansi_len(pstart);
 
    //const char * pSearch = __FILE__;
    //const char * pSearchEnd = pstart + strlen(pstart);
@@ -270,7 +270,7 @@ void test_002()
 
    auto find = str.find("application.cpp");
 
-   ASSERT(!stricmp(find, "application.cpp"));
+   ASSERT(!ansi_icmp(find, "application.cpp"));
 
 }
 
@@ -362,7 +362,7 @@ namespace console_hello
       if (i % 1'000 == 0)
       {
 
-         printf("%c", ch);
+         output_debug_string_format("%c", ch);
 
       }
 
@@ -371,7 +371,7 @@ namespace console_hello
       pathLast2 = pathLast;
    }
 
-      printf("\nCompleted concatenation \"%c\"!!", ch);
+      output_debug_string_format("\nCompleted concatenation \"%c\"!!", ch);
 
       });
 
@@ -404,12 +404,12 @@ namespace console_hello
          if (i % 10'000 == 0)
          {
 
-            printf("%c", ch);
+            output_debug_string_format("%c", ch);
 
          }
       }
 
-      printf("\nCompleted datetime_format\"%c\"!!", ch);
+      output_debug_string_format("\nCompleted datetime_format\"%c\"!!", ch);
 
             });
 
@@ -457,19 +457,19 @@ namespace console_hello
          switch (etestincrement)
          {
          case e_test_increment_none:
-            printf("e_test_increment_none\n");
+            output_debug_string("e_test_increment_none\n");
             break;
          case e_test_increment_one:
-            printf("e_test_increment_one\n");
+            output_debug_string("e_test_increment_one\n");
             break;
          case e_test_increment_two:
-            printf("e_test_increment_two\n");
+            output_debug_string("e_test_increment_two\n");
             break;
          case e_test_increment_three:
-            printf("e_test_increment_three\n");
+            output_debug_string("e_test_increment_three\n");
             break;
          case e_test_increment_four:
-            printf("e_test_increment_four\n");
+            output_debug_string("e_test_increment_four\n");
             break;
 
 
@@ -527,19 +527,19 @@ namespace console_hello
       //if (compare < 0)
       //{
 
-      //   printf("p1 < p2");
+      //   output_debug_string("p1 < p2");
 
       //}
       //else if (compare > 0)
       //{
 
-      //   printf("p1 > p2");
+      //   output_debug_string("p1 > p2");
 
       //}
       //else
       //{
 
-      //   printf("p1  p2");
+      //   output_debug_string("p1  p2");
 
       //}
 
@@ -549,8 +549,8 @@ namespace console_hello
 
          auto psz1 = (const char *)str;
 
-         printf("printf(\"%%s\", str) : %s\n", (const char*)str);
-         printf("printf(\"%%s\", psz = (const char *)str; ) : %s\n", psz1);
+         output_debug_string_format("(\"%%s\", str) : %s\n", (const char*)str);
+         output_debug_string_format("(\"%%s\", psz = (const char *)str; ) : %s\n", psz1);
 
       }
 
@@ -558,15 +558,15 @@ namespace console_hello
 
 
 
-      printf("\n");
+      output_debug_string("\n");
 
-      printf("\n");
+      output_debug_string("\n");
 
-      printf("Hello!!");
+      output_debug_string("Hello!!");
 
-      printf("\n");
+      output_debug_string("\n");
 
-      printf("\n");
+      output_debug_string("\n");
 
       while (true)
       {
@@ -578,9 +578,9 @@ namespace console_hello
          if (result == e_dialog_result_yes)
          {
 
-            printf("\n");
+            output_debug_string("\n");
 
-            printf("Yes!!\n");
+            output_debug_string("Yes!!\n");
 
             psequencer = message_box("Yes!!", "Yes!!", e_message_box_ok);
 
@@ -618,7 +618,7 @@ namespace console_hello
 
                //int i = 23 / (iptr)g_pi;
 
-               //printf("this is the result %d", i);
+               //output_debug_string("this is the result %d", i);
 
             }
             catch (::exception& exception)
@@ -644,9 +644,9 @@ namespace console_hello
 
                });
 
-            printf("\n");
+            output_debug_string("\n");
 
-            printf("No!\n");
+            output_debug_string("No!\n");
 
             psequencer = message_box("No!", "No!", e_message_box_ok);
 
@@ -656,9 +656,9 @@ namespace console_hello
          else if (result == e_dialog_result_cancel)
          {
 
-            printf("\n");
+            output_debug_string("\n");
 
-            printf("Cancel!!\n");
+            output_debug_string("Cancel!!\n");
 
             psequencer = message_box("Cancel", "Cancel", e_message_box_ok);
 
@@ -896,15 +896,15 @@ namespace console_hello
 ////   
 ////   //throw ::exception(error_debug_testing);
 //
-//   printf("\n");
+//   output_debug_string("\n");
 //
-//   printf("\n");
+//   output_debug_string("\n");
 //
-//   printf("Hello!!");
+//   output_debug_string("Hello!!");
 //
-//   printf("\n");
+//   output_debug_string("\n");
 //
-//   printf("\n");
+//   output_debug_string("\n");
 //
 //   while (true)
 //   {
@@ -916,9 +916,9 @@ namespace console_hello
 //      if (result == e_dialog_result_yes)
 //      {
 //
-//         printf("\n");
+//         output_debug_string("\n");
 //
-//         printf("Yes!!\n");
+//         output_debug_string("Yes!!\n");
 //
 //         psequencer = application.message_box("Yes!!", "Yes!!", e_message_box_ok);
 //
@@ -958,7 +958,7 @@ namespace console_hello
 //                  
 //                  //int i = 23 / (iptr)g_pi;
 //
-//                  //printf("this is the result %d", i);
+//                  //output_debug_string("this is the result %d", i);
 //                  
 //               }
 //               catch(::exception & exception)
@@ -984,9 +984,9 @@ namespace console_hello
 //
 //         });
 //
-//         printf("\n");
+//         output_debug_string("\n");
 //
-//         printf("No!\n");
+//         output_debug_string("No!\n");
 //
 //         psequencer = application.message_box("No!", "No!", e_message_box_ok);
 //
@@ -996,9 +996,9 @@ namespace console_hello
 //      else if (result == e_dialog_result_cancel)
 //      {
 //
-//         printf("\n");
+//         output_debug_string("\n");
 //
-//         printf("Cancel!!\n");
+//         output_debug_string("Cancel!!\n");
 //
 //         psequencer = application.message_box("Cancel", "Cancel", e_message_box_ok);
 //
