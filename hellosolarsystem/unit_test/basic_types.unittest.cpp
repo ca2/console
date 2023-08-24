@@ -232,7 +232,7 @@ itema1.add(__new(::item(200'000'000)));
 
 ::pointer_array < ::item> itema2(itema1);
 
-__end(itema2.size() == 3 && itema2[0]->m_iItem == 1 && itema2[1]->m_iItem == 1'000 && itema2[2]->m_iItem == 200'000'000)
+__end(itema2.size() == 3 && itema2[0]->m_item.m_iItem == 1 && itema2[1]->m_item.m_iItem == 1'000 && itema2[2]->m_item.m_iItem == 200'000'000)
 
 
 __END();
