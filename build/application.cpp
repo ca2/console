@@ -95,9 +95,9 @@ namespace app_core_build
 
       auto ptemplate = __new(::user::single_document_template(
                             "main",
-                            __type(simple_pane_document),
-                            __type(main_frame),
-                            __type(pane_impact)));
+                            ::type < simple_pane_document >(),
+                            ::type < main_frame >(),
+                            ::type < pane_impact >()));
 
       m_ptemplateHelloMultiverseMain = ptemplate;
 
@@ -105,9 +105,9 @@ namespace app_core_build
 
       ptemplate = __new(::user::single_document_template(
                        "main",
-                       __type(document),
-                       __type(frame),
-                       __type(main_impact)));
+                       ::type < document >(),
+                       ::type < frame >(),
+                       ::type < main_impact >()));
 
       m_ptemplateHelloMultiverseImpact = ptemplate;
 
