@@ -6,9 +6,9 @@
 #include "acme/primitive/primitive/memory.h"
 
 
-
 namespace console_hello
 {
+
 
    void application::remove_utf8_bom_phase1()
    {

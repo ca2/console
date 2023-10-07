@@ -93,6 +93,12 @@
     <ClCompile Include="framework.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="remove_utf8_bom.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="search_special_characters.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
