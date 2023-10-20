@@ -8,6 +8,9 @@ void hellomultiverse_debugging();
 namespace app_core_build
 {
 
+   __IMPLEMENT_APPLICATION_RELEASE_TIME();
+
+
    application::application()
    {
 
@@ -134,13 +137,13 @@ namespace app_core_build
 
 #ifdef _DEBUG
 
-      information("_DEBUG build? (basis)");
+      informationf("_DEBUG build? (basis)");
 
       ASSERT(false);
 
 #else
 
-      information("RELEASE build? (stage)");
+      informationf("RELEASE build? (stage)");
 
       ASSERT(false);
 
@@ -186,7 +189,7 @@ namespace app_core_build
 
       }
 
-      information("\nfinished hellomultiverse::on_request");
+      informationf("\nfinished hellomultiverse::on_request");
 
    }
 

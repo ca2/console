@@ -41,6 +41,9 @@ namespace app_core_build
 
       application();
       ~application() override;
+      
+      __DECLARE_APPLICATION_RELEASE_TIME();
+
 
 
       ::e_status set_finish() override;

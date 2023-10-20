@@ -18,6 +18,9 @@ namespace console_hello
 
       application();
       ~application() override;
+      
+      __DECLARE_APPLICATION_RELEASE_TIME();
+
 
 
       void test_datetime_format(char ch);

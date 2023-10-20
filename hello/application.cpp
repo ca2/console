@@ -280,6 +280,9 @@ void test_002()
 namespace console_hello
 {
  
+   __IMPLEMENT_APPLICATION_RELEASE_TIME();
+
+
    application::application()
    {
    }
@@ -349,13 +352,13 @@ namespace console_hello
       if (str.size() < 20)
       {
          
-         ::information("What!!");
+         ::informationf("What!!");
 
       }
       if (str1.size() < 20)
       {
 
-         ::information("What(1)!!");
+         ::informationf("What(1)!!");
 
       }
 
@@ -398,7 +401,7 @@ namespace console_hello
 
          if (strCompileLogUnique.size() < 5)
          {
-            ::information("What!!");
+            ::informationf("What!!");
 
          }
          if (i % 10'000 == 0)

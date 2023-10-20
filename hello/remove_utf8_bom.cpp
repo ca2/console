@@ -39,7 +39,7 @@ namespace console_hello
                {
 
                   patha.add(path);
-                  information("%s", path.c_str());
+                  informationf("%s", path.c_str());
 
                }
 

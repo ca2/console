@@ -95,7 +95,10 @@ inline string _009Explode(const CONTAINER& container, string strSeparator, strin
 //{
 //
 //
-//   application::application()
+//   __IMPLEMENT_APPLICATION_RELEASE_TIME();
+
+
+   application::application()
 //   {
 //
 //      m_strAppName = "consolelab";
@@ -203,25 +206,25 @@ void find_maximum_value_in_list()
 //catch (::exception& e)
 //{
 
-//   information("::exception &");
+//   informationf("::exception &");
 
 //}
 //catch const ::exception & e
 //{
 
-//   information("exception_pointer &");
+//   informationf("exception_pointer &");
 
 //}
 //catch (::exception* pe)
 //{
 
-//   information("exception_pointer *");
+//   informationf("exception_pointer *");
 
 //}
 //catch (todo* p)
 //{
 
-//   information("todo *");
+//   informationf("todo *");
 
 //}
 //catch (...)
@@ -239,25 +242,25 @@ void find_maximum_value_in_list()
 //catch (::exception& e)
 //{
 
-//   information("::exception &");
+//   informationf("::exception &");
 
 //}
 //catch const ::exception & e
 //{
 
-//   information("exception_pointer &");
+//   informationf("exception_pointer &");
 
 //}
 //catch (todo* p)
 //{
 
-//   information("todo *");
+//   informationf("todo *");
 
 //}
 //catch (::exception* pe)
 //{
 
-//   information("exception_pointer *");
+//   informationf("exception_pointer *");
 
 //}
 //catch (...)
