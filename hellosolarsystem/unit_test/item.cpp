@@ -87,7 +87,7 @@ namespace unit_test
    void item::print(const char * psz)
    {
 
-      m_strText.append_format("%s", psz);
+      m_strText.append_formatf("%s", psz);
 
    }
 
@@ -99,7 +99,7 @@ namespace unit_test
 
       va_start(argList, psz);
 
-      m_strText.append_format_arguments(psz, argList);
+      m_strText.append_formatf_arguments(psz, argList);
 
       va_end(argList);
 
@@ -136,35 +136,35 @@ namespace unit_test
 
       string strReport;
 
-      strReport.append_format("%s", m_strName.c_str_for_printf());
+      strReport.append_formatf("%s", m_strName.c_str_for_printf());
 
       if (acmeapplication()->m_bVerbose && m_strText.has_char())
       {
 
          strReport += "\n";
 
-         strReport.append_format("%s", m_strText.c_str_for_printf());
+         strReport.append_formatf("%s", m_strText.c_str_for_printf());
 
-         strReport.append_format("%s", string('.', m_psetParent->m_iResultDotPadding).c_str_for_printf());
+         strReport.append_formatf("%s", string('.', m_psetParent->m_iResultDotPadding).c_str_for_printf());
 
       }
       else
       {
 
-         strReport.append_format("%s", string('.', m_psetParent->m_iResultDotPadding - m_strName.length()).c_str_for_printf());
+         strReport.append_formatf("%s", string('.', m_psetParent->m_iResultDotPadding - m_strName.length()).c_str_for_printf());
 
       }
 
       if (m_bTestPassed)
       {
 
-         strReport.append_format("...OK!");
+         strReport.append_formatf("...OK!");
 
       }
       else
       {
 
-         strReport.append_format("... failed!!");
+         strReport.append_formatf("... failed!!");
 
       }
 

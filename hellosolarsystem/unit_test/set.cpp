@@ -64,7 +64,7 @@ namespace unit_test
             if (acmeapplication()->m_bVerbose && p->m_strText.has_char())
             {
 
-               strReport.append_format("\n");
+               strReport.append_formatf("\n");
 
             }
 
@@ -73,25 +73,25 @@ namespace unit_test
          if (m_cPassed >= this->size())
          {
 
-            strReport.append_format("All tests were OK!!", this->size());
+            strReport.append_formatf("All tests were OK!!", this->size());
 
          }
          else if (m_cPassed <= 0)
          {
 
-            strReport.append_format("All tests failed!!!", this->size());
+            strReport.append_formatf("All tests failed!!!", this->size());
 
          }
          else if (m_cPassed == 1)
          {
 
-            strReport.append_format("One test failed!");
+            strReport.append_formatf("One test failed!");
 
          }
          else
          {
 
-            strReport.append_format("Some tests failed! (%d)", this->size() - m_cPassed);
+            strReport.append_formatf("Some tests failed! (%d)", this->size() - m_cPassed);
 
          }
 
@@ -103,7 +103,7 @@ namespace unit_test
 
       }
 
-      strReport.append_format(" (%d/%d)", m_cPassed, this->size());
+      strReport.append_formatf(" (%d/%d)", m_cPassed, this->size());
 
       if (bExpanded)
       {

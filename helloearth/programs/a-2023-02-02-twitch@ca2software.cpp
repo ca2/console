@@ -164,19 +164,19 @@ int twitch::ca2software_int_to_string_bases()
 {
    ::string str;
    ::string strTable;
-      //str.append_format("Hello World");
+      //str.append_formatf("Hello World");
 
 
    for (int i = 'a'; i <= 'z'; i++)
    {
 
-      //str.append_format("max character '%c' - base: %d\n", i, i- 'a' + 11 );
+      //str.append_formatf("max character '%c' - base: %d\n", i, i- 'a' + 11 );
 
    }
 
 
    int bases[40];
-   strTable.append_format("int iaBaseLog[8][] = {\n");
+   strTable.append_formatf("int iaBaseLog[8][] = {\n");
    int iBits;
    int iMaximumDigits1;
    int iMaximumDigits2;
@@ -191,7 +191,7 @@ int twitch::ca2software_int_to_string_bases()
 
       }
       bases[iBase] = (int)ceil(log((double)2) * 1000.0 / log((double)iBase));
-      str.append_format("%2d\n", iBase);
+      str.append_formatf("%2d\n", iBase);
       char sz[1024];
       char sz1[1024];
       char sz2[1024];
@@ -201,68 +201,68 @@ int twitch::ca2software_int_to_string_bases()
       iBits = sizeof(char) *8;
       my_itoa_base(sz1, sizeof(sz1), CHAR_MAX, iBase);
       iMaximumDigits1 = signed_maximum_number_of_digits(iBase, iBits);
-      str.append_format("            char %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(char) / 100), iMaximumDigits1, sz1, (int)strlen(sz1));
+      str.append_formatf("            char %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(char) / 100), iMaximumDigits1, sz1, (int)strlen(sz1));
       my_utoa_base(sz2, sizeof(sz2), CHAR_MAX, iBase);
       iMaximumDigits2 = unsigned_maximum_number_of_digits(iBase, iBits);
-      str.append_format("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(char) / 100), iMaximumDigits2, sz2, (int)strlen(sz2));
+      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(char) / 100), iMaximumDigits2, sz2, (int)strlen(sz2));
       if (strcmp(sz1, sz2) == 0)
       {
-         //   str.append_format("OK\n");
+         //   str.append_formatf("OK\n");
       }
       else
       {
-         str.append_format("ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM\n");
+         str.append_formatf("ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM\n");
       }
       my_itoa_base(sz, sizeof(sz), CHAR_MIN, iBase);
       iMaximumDigits3 = signed_maximum_number_of_digits(iBase, iBits);
-      str.append_format("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(char) / 100), iMaximumDigits3, sz, (int)strlen(sz));
+      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(char) / 100), iMaximumDigits3, sz, (int)strlen(sz));
       if (iMaximumDigits3 == strlen(sz))
       {
-         str.append_format("OK2\n");
+         str.append_formatf("OK2\n");
       }
       else
       {
-         str.append_format("ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALARM 2ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALAR2M ALARM2 ALARM2 ALARM ALARM\n");
+         str.append_formatf("ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALARM 2ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALAR2M ALARM2 ALARM2 ALARM ALARM\n");
       }
       my_itoa_base(sz, sizeof(sz), CHAR_MIN, iBase);
-      strTable.append_format("%d, ", strlen(sz));
+      strTable.append_formatf("%d, ", strlen(sz));
       my_itoa_base(sz, sizeof(sz), UCHAR_MAX, iBase);
       iMaximumDigits4 = unsigned_maximum_number_of_digits(iBase, iBits);
-      str.append_format("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(char) / 100), iMaximumDigits4, sz, (int)strlen(sz));
-      strTable.append_format("%d, ", strlen(sz));
+      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(char) / 100), iMaximumDigits4, sz, (int)strlen(sz));
+      strTable.append_formatf("%d, ", strlen(sz));
 
 
       iBits = sizeof(short) *8;
       my_itoa_base(sz1, sizeof(sz1), SHRT_MAX, iBase);
       iMaximumDigits1 = signed_maximum_number_of_digits(iBase, iBits);
-      str.append_format("           short %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(short) / 100), iMaximumDigits1, sz1, (int)strlen(sz1));
+      str.append_formatf("           short %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(short) / 100), iMaximumDigits1, sz1, (int)strlen(sz1));
       my_utoa_base(sz2, sizeof(sz2), SHRT_MAX, iBase);
       iMaximumDigits2 = unsigned_maximum_number_of_digits(iBase, iBits);
-      str.append_format("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(short) / 100), iMaximumDigits2, sz2, (int)strlen(sz2));
+      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(short) / 100), iMaximumDigits2, sz2, (int)strlen(sz2));
       if (strcmp(sz1, sz2) == 0)
       {
-         //str.append_format("OK\n");
+         //str.append_formatf("OK\n");
       }
       else
       {
-         str.append_format("ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM\n");
+         str.append_formatf("ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM\n");
       }
       my_itoa_base(sz, sizeof(sz), SHRT_MIN, iBase);
-      strTable.append_format("%d, ", strlen(sz));
+      strTable.append_formatf("%d, ", strlen(sz));
       iMaximumDigits3 = signed_maximum_number_of_digits(iBase, iBits);
-      str.append_format("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(short) / 100), iMaximumDigits3, sz, (int)strlen(sz));
+      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(short) / 100), iMaximumDigits3, sz, (int)strlen(sz));
       if (iMaximumDigits3 == strlen(sz))
       {
-         str.append_format("OK2\n");
+         str.append_formatf("OK2\n");
       }
       else
       {
-         str.append_format("ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALARM 2ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALAR2M ALARM2 ALARM2 ALARM ALARM\n");
+         str.append_formatf("ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALARM 2ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALAR2M ALARM2 ALARM2 ALARM ALARM\n");
       }
       my_itoa_base(sz, sizeof(sz), USHRT_MAX, iBase);
-      strTable.append_format("%d, ", strlen(sz));
+      strTable.append_formatf("%d, ", strlen(sz));
       iMaximumDigits4 = unsigned_maximum_number_of_digits(iBase, iBits);
-      str.append_format("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(short) / 100), iMaximumDigits4, sz, (int)strlen(sz));
+      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(short) / 100), iMaximumDigits4, sz, (int)strlen(sz));
 
 
 
@@ -270,34 +270,34 @@ int twitch::ca2software_int_to_string_bases()
       iBits = sizeof(int) * 8;
       my_itoa_base(sz1, sizeof(sz1), INT_MAX, iBase);
       iMaximumDigits1 = signed_maximum_number_of_digits(iBase, iBits);
-      str.append_format("             int %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(int) / 100), iMaximumDigits1, sz1, (int)strlen(sz2));
+      str.append_formatf("             int %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(int) / 100), iMaximumDigits1, sz1, (int)strlen(sz2));
       my_utoa_base(sz2, sizeof(sz2), INT_MAX, iBase);
       iMaximumDigits2 = unsigned_maximum_number_of_digits(iBase, iBits);
-      str.append_format("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(int) / 100), iMaximumDigits2, sz1, (int)strlen(sz2));
+      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(int) / 100), iMaximumDigits2, sz1, (int)strlen(sz2));
       if (strcmp(sz1, sz2) == 0)
       {
-         //str.append_format("OK\n");
+         //str.append_formatf("OK\n");
       }
       else
       {
-         str.append_format("ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM\n");
+         str.append_formatf("ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM\n");
       }
       my_itoa_base(sz, sizeof(sz), INT_MIN, iBase);
-      strTable.append_format("%d, ", strlen(sz));
+      strTable.append_formatf("%d, ", strlen(sz));
       iMaximumDigits3 = signed_maximum_number_of_digits(iBase, iBits);
-      str.append_format("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(int) / 100), iMaximumDigits3, sz, (int)strlen(sz));
+      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(int) / 100), iMaximumDigits3, sz, (int)strlen(sz));
       if (iMaximumDigits3 == strlen(sz))
       {
-         str.append_format("OK2\n");
+         str.append_formatf("OK2\n");
       }
       else
       {
-         str.append_format("ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALARM 2ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALAR2M ALARM2 ALARM2 ALARM ALARM\n");
+         str.append_formatf("ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALARM 2ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALAR2M ALARM2 ALARM2 ALARM ALARM\n");
       }
       my_itoa_base(sz, sizeof(sz), UINT_MAX, iBase);
-      strTable.append_format("%d, ", strlen(sz));
+      strTable.append_formatf("%d, ", strlen(sz));
       iMaximumDigits4 = unsigned_maximum_number_of_digits(iBase, iBits);
-      str.append_format("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(int) / 100), iMaximumDigits4, sz, (int)strlen(sz));
+      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(int) / 100), iMaximumDigits4, sz, (int)strlen(sz));
 
 
 
@@ -305,39 +305,39 @@ int twitch::ca2software_int_to_string_bases()
       iBits = sizeof(::i64) * 8;
       my_itoa_base(sz1, sizeof(sz1), INT64_MAX, iBase);
       iMaximumDigits1 = signed_maximum_number_of_digits(iBase, iBits);
-      str.append_format("   long long int %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(int64_t) / 100), iMaximumDigits1, sz1, (int)strlen(sz2));
+      str.append_formatf("   long long int %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(int64_t) / 100), iMaximumDigits1, sz1, (int)strlen(sz2));
       my_utoa_base(sz2, sizeof(sz2), INT64_MAX, iBase);
       iMaximumDigits2 = unsigned_maximum_number_of_digits(iBase, iBits);
-      str.append_format("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(int64_t) / 100), iMaximumDigits2, sz1, (int)strlen(sz2));
+      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(int64_t) / 100), iMaximumDigits2, sz1, (int)strlen(sz2));
       if (strcmp(sz1, sz2) == 0)
       {
-         //str.append_format("OK\n");
+         //str.append_formatf("OK\n");
       }
       else
       {
-         str.append_format("ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM\n");
+         str.append_formatf("ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM ALARM\n");
       }
       my_itoa_base(sz, sizeof(sz), INT64_MIN, iBase);
-      strTable.append_format("%d, ", strlen(sz));
+      strTable.append_formatf("%d, ", strlen(sz));
       iMaximumDigits3 = signed_maximum_number_of_digits(iBase, iBits);
-      str.append_format("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(int64_t) / 100), iMaximumDigits3, sz, (int)strlen(sz));
+      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(int64_t) / 100), iMaximumDigits3, sz, (int)strlen(sz));
       if (iMaximumDigits3 == strlen(sz))
       {
-         str.append_format("OK2\n");
+         str.append_formatf("OK2\n");
       }
       else
       {
-         str.append_format("ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALARM 2ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALAR2M ALARM2 ALARM2 ALARM ALARM\n");
+         str.append_formatf("ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALARM 2ALARM2 ALARM2 ALARM2 ALARM2 ALARM2 ALAR2M ALARM2 ALARM2 ALARM ALARM\n");
       }
       my_utoa_base(sz, sizeof(sz), UINT64_MAX, iBase);
-      strTable.append_format("%d ", strlen(sz));
+      strTable.append_formatf("%d ", strlen(sz));
       iMaximumDigits4 = unsigned_maximum_number_of_digits(iBase, iBits);
-      str.append_format("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(int64_t) / 100), iMaximumDigits4, sz, (int)strlen(sz));
-      str.append_format("%4d,\n", bases[iBase]);
+      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(int64_t) / 100), iMaximumDigits4, sz, (int)strlen(sz));
+      str.append_formatf("%4d,\n", bases[iBase]);
 
       strTable += "}";
    }
-   strTable.append_format("};");
+   strTable.append_formatf("};");
 
    ::information(str);
 
