@@ -22,6 +22,8 @@ namespace console_hello
       __DECLARE_APPLICATION_RELEASE_TIME();
 
 
+      void test_std_format();
+
 
       void test_datetime_format(char ch);
       void test_contatenation(char ch);

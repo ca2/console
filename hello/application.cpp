@@ -10,6 +10,8 @@
 #include "acme/memory/_new.inl"
 #define FACTORY console_hello
 #define __APP_ID "console/hello"
+#include "acme/_iostream.h"
+#include "acme/_stdio.h"
 //#if defined(WINDOWS_DESKTOP) && defined(CUBE)
 //#include "_static_factory.inl"
 //#endif
@@ -242,7 +244,6 @@ void test_001()
 
    i32_array a{ 1,1,2,3,5,8,13,21,34 };
 
-
    auto print_elem = [](auto const e) {::information(::as_string(e) + "\n"); };
 
    for(auto & item : a) print_elem(item);
@@ -275,12 +276,16 @@ void test_002()
 }
 
 
+__DECLARE_RELEASE_TIME(console_hello);
+
+
 //#error "error_compiled back function"
 
 namespace console_hello
 {
  
-   __IMPLEMENT_APPLICATION_RELEASE_TIME();
+   
+   __IMPLEMENT_APPLICATION_RELEASE_TIME(console_hello);
 
 
    application::application()
@@ -419,9 +424,24 @@ namespace console_hello
 
    }
 
+
+   void application::test_std_format()
+   {
+
+      ::string str;
+
+      str.format("{2}{1}{0}", "!!", "Multiverse", "Hello");
+
+      print("{}**", str);
+      println("{}**", str);
+
+   }
+
    
    void application::main()
    {
+
+      test_std_format();
 
       if (m_pacmesystem->m_psubsystem->m_argc == 2)
       {
@@ -479,6 +499,8 @@ namespace console_hello
          };
 
       }
+
+
 
       //test_datetime_format('w');
       //test_datetime_format('x');
