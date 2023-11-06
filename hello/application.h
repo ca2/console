@@ -22,8 +22,11 @@ namespace console_hello
       __DECLARE_APPLICATION_RELEASE_TIME();
 
 
+#if defined(__STD_FORMAT__)
+
       void test_std_format();
 
+#endif // __STD_FORMAT__
 
       void test_datetime_format(char ch);
       void test_contatenation(char ch);

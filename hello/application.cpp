@@ -352,7 +352,7 @@ namespace console_hello
 
       strMillis = ::as_string(::i64_millisecond() % 1000);
 
-      str1.format("this is a contatenation%s and format test%s ", str.c_str(), strD.c_str());
+      str1.formatf("this is a contatenation%s and format test%s ", str.c_str(), strD.c_str());
 
       if (str.size() < 20)
       {
@@ -425,6 +425,8 @@ namespace console_hello
    }
 
 
+#if defined(__STD_FORMAT__)
+
    void application::test_std_format()
    {
 
@@ -437,29 +439,35 @@ namespace console_hello
 
    }
 
+#endif // __STD_FORMAT__
+
    
    void application::main()
    {
 
+#if defined(__STD_FORMAT__)
+
       test_std_format();
 
-      if (m_pacmesystem->m_psubsystem->m_argc == 2)
+#endif // __STD_FORMAT__
+
+      if (m_pacmesystem->m_pplatform->m_argc == 2)
       {
 
 
-         if (m_pacmesystem->m_psubsystem->get_arg(1) == "remove_utf8_bom_phase1")
+         if (m_pacmesystem->m_pplatform->get_arg(1) == "remove_utf8_bom_phase1")
          {
 
             remove_utf8_bom_phase1();
 
          }
-         else if (m_pacmesystem->m_psubsystem->get_arg(1) == "remove_utf8_bom_phase2")
+         else if (m_pacmesystem->m_pplatform->get_arg(1) == "remove_utf8_bom_phase2")
          {
 
             remove_utf8_bom_phase2();
 
          }
-         else if (m_pacmesystem->m_psubsystem->get_arg(1) == "search_special_characters")
+         else if (m_pacmesystem->m_pplatform->get_arg(1) == "search_special_characters")
          {
 
             search_special_characters();
@@ -720,7 +728,7 @@ namespace console_hello
 ////
 ////   //sub_system subsystem(&acme);
 ////
-////   //acme.m_psubsystem = &subsystem;
+////   //acme.m_pplatform = &subsystem;
 ////
 ////   //subsystem.m_pacme = &acme;
 //////   subsystem.m_argc = argc;
@@ -1043,5 +1051,18 @@ namespace console_hello
 //
 //}
 
+//console_hello::application g_consolehelloapplication;
 
-console_hello::application g_consolehelloapplication;
+::i32 application_main()
+{
+
+   auto papplication = __new(console_hello::application);
+
+   auto iExitCode = papplication->application_main();
+
+   return iExitCode;
+
+}
+
+
+
