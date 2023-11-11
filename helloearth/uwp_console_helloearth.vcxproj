@@ -522,7 +522,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='StaticRelease|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="application.cpp" />
+    <ClCompile Include="application_main.cpp" />
     <ClCompile Include="programs\1-2022-02-11-twitch-memoriesdota_file_word_count.cpp" />
     <ClCompile Include="programs\2-2022-07-11-twitch-korishama_polymorphism.cpp" />
     <ClCompile Include="programs\3-2022-09-30-twitch-octaelliptical_star.cpp" />
