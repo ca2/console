@@ -82,7 +82,7 @@ string calculate(const string& str)
 void implement(::acme::context * pcontext)
 {
 
-   auto psystem = pcontext->acmesystem();
+   auto psystem = pcontext->system();
 
    auto psubsystem = psystem->m_psubsystem;
 

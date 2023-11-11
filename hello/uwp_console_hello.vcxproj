@@ -538,6 +538,7 @@
     </ClCompile>
     <ClCompile Include="remove_utf8_bom.cpp" />
     <ClCompile Include="search_special_characters.cpp" />
+    <ClCompile Include="_.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h" />

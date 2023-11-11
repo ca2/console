@@ -59,9 +59,9 @@ namespace unit_test
          for (auto & p : *this)
          {
 
-            strReport += p->get_plain_text_report(acmeapplication()->m_bVerbose) + "\n";
+            strReport += p->get_plain_text_report(application()->m_bVerbose) + "\n";
 
-            if (acmeapplication()->m_bVerbose && p->m_strText.has_char())
+            if (application()->m_bVerbose && p->m_strText.has_char())
             {
 
                strReport.append_formatf("\n");

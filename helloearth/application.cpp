@@ -284,8 +284,21 @@ public:
 
 };
 
+//
+//console_helloearth g_consoleearth;
+//
 
-console_helloearth g_consoleearth;
 
+
+::i32 application_main()
+{
+
+   auto papplication = __new(console_helloearth::application);
+
+   auto iExitCode = papplication->application_main();
+
+   return iExitCode;
+
+}
 
 

@@ -42,10 +42,10 @@ public:
 
       ::file::path path;
 
-      if (acmesystem()->m_psubsystem->m_argc >= 2)
+      if (platform()->m_argc >= 2)
       {
 
-         path = acmesystem()->m_psubsystem->m_argv[1];
+         path = platform()->m_argv[1];
 
       }
 
@@ -60,11 +60,11 @@ public:
 
       string_array stra;
 
-      //console.acmesystem()->get_main_application()->initialize_context();
+      //console.system()->get_main_application()->initialize_context();
 
       //path -= ::file::e_flag_bypass_cache;
 
-      auto papexsystem = acmesystem()->m_papexsystem;
+      auto papexsystem = system()->m_papexsystem;
 
       auto pfile = papexsystem->file();
 
@@ -89,4 +89,21 @@ public:
 };
 
 
-console_readlines g_consolereadlines;
+//console_readlines g_consolereadlines;
+//
+//
+
+
+
+::i32 application_main()
+{
+
+   auto papplication = __new(console_readlines::application);
+
+   auto iExitCode = papplication->application_main();
+
+   return iExitCode;
+
+}
+
+

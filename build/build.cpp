@@ -12,7 +12,7 @@ void implement(::acme::system * psystem)
 
 #endif
 
-   auto papp = psystem->acmeapplication();
+   auto papp = psystem->application();
 
    papp->osthread_init();
 

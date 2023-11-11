@@ -32,7 +32,7 @@ namespace unit_test
       void add_item(item * pitem)
       {
 
-         pitem->set_verbose_flag(acmeapplication()->m_bVerbose);
+         pitem->set_verbose_flag(application()->m_bVerbose);
 
          add(pitem);
 

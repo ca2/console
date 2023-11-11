@@ -132,7 +132,7 @@ namespace app_core_build
 
    acmefile()->put_contents(pacmedirectory->system() / "env.bat", "@call " + strBuildCmd + "\r\n@set");
 
-   auto psystem = acmesystem();
+   auto psystem = system();
 
    auto pnode = psystem->node();
 

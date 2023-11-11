@@ -144,7 +144,7 @@ public:
 
       information(strElapsed);
 
-      if (acmesystem()->is_true("debug"))
+      if (system()->is_true("debug"))
       {
 
          printf("\n");
@@ -267,5 +267,21 @@ public:
 };
 
 
+//
+//console_hellosolarsystem g_consolesolarsystem;
+//
 
-console_hellosolarsystem g_consolesolarsystem;
+
+::i32 application_main()
+{
+
+   auto papplication = __new(console_hellosolarsystem::application);
+
+   auto iExitCode = papplication->application_main();
+
+   return iExitCode;
+
+}
+
+
+
