@@ -226,9 +226,9 @@ __begin(pointer_array_copy_constructor)
 
 ::pointer_array < ::item> itema1;
 
-itema1.add(__new(::item(1)));
-itema1.add(__new(::item(1'000)));
-itema1.add(__new(::item(200'000'000)));
+itema1.add(__allocate< ::item >(1));
+itema1.add(__allocate< ::item >(1'000));
+itema1.add(__allocate< ::item >(200'000'000));
 
 ::pointer_array < ::item> itema2(itema1);
 

@@ -96,7 +96,7 @@ namespace app_core_build
 
       }
 
-      auto ptemplate = __new(::user::single_document_template(
+      auto ptemplate = __allocate < ::user::single_document_template >(
                             "main",
                             ::type < simple_pane_document >(),
                             ::type < main_frame >(),
@@ -106,7 +106,7 @@ namespace app_core_build
 
       add_document_template(ptemplate);
 
-      ptemplate = __new(::user::single_document_template(
+      ptemplate = __allocate < ::user::single_document_template >(
                        "main",
                        ::type < document >(),
                        ::type < frame >(),
@@ -222,14 +222,14 @@ namespace app_core_build
    //i64 application::increment_reference_count()
    //{
 
-   //   return ::object::increment_reference_count(OBJECT_REFERENCE_COUNT_DEBUG_ARGS);
+   //   return ::object::increment_reference_count(REFERENCING_DEBUGGING_ARGS);
 
    //}
 
    //i64 application::decrement_reference_count()
    //{
 
-   //   return ::object::decrement_reference_count(OBJECT_REFERENCE_COUNT_DEBUG_ARGS);
+   //   return ::object::decrement_reference_count(REFERENCING_DEBUGGING_ARGS);
 
    //}
 

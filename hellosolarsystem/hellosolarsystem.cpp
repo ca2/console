@@ -275,7 +275,7 @@ public:
 ::i32 application_main()
 {
 
-   auto papplication = __new(console_hellosolarsystem::application);
+   auto papplication = __allocate< console_hellosolarsystem::application >();
 
    auto iExitCode = papplication->application_main();
 

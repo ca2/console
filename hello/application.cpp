@@ -357,13 +357,13 @@ namespace console_hello
       if (str.size() < 20)
       {
          
-         ::informationf("What!!");
+         ::acme::get()->platform()->informationf("What!!");
 
       }
       if (str1.size() < 20)
       {
 
-         ::informationf("What(1)!!");
+         ::acme::get()->platform()->informationf("What(1)!!");
 
       }
 
@@ -406,7 +406,7 @@ namespace console_hello
 
          if (strCompileLogUnique.size() < 5)
          {
-            ::informationf("What!!");
+            ::acme::get()->platform()->informationf("What!!");
 
          }
          if (i % 10'000 == 0)
@@ -752,7 +752,7 @@ namespace console_hello
 ////   application.initialize_application(&main);
 ////
 ////
-////   //::pointer<APPLICATION_CLASS>papp(__new(APPLICATION_CLASS));
+////   //::pointer<APPLICATION_CLASS>papp(__allocate< APPLICATION_CLASS >());
 //////
 //////#ifdef NO_NETWORKING
 //////
@@ -1056,7 +1056,7 @@ namespace console_hello
 ::i32 application_main()
 {
 
-   auto papplication = __new(console_hello::application);
+   auto papplication = __allocate< console_hello::application >();
 
    auto iExitCode = papplication->application_main();
 
