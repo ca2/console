@@ -1,10 +1,11 @@
 #include "framework.h"
 #include "application.h"
+#include "acme/operating_system/message_box.h"
 #include "acme/platform/application.h"
 #include "acme/platform/system.h"
 #include "acme/platform/sequencer.h"
 #include "acme/primitive/datetime/datetime.h"
-#include "acme/primitive/mathematics/_random.h"
+#include "acme/primitive/mathematics/mathematics.h"
 #include "acme/user/user/conversation.h"
 #include "acme/user/nano/nano.h"
 #include "acme/memory/_new.inl"
@@ -244,7 +245,7 @@ void test_001()
 
    i32_array a{ 1,1,2,3,5,8,13,21,34 };
 
-   auto print_elem = [](auto const e) {::information(::as_string(e) + "\n"); };
+   auto print_elem = [](auto const e) {::platform::get()->informationf(::as_string(e) + "\n"); };
 
    for(auto & item : a) print_elem(item);
 
@@ -298,17 +299,17 @@ namespace console_hello
    }
 
 
-   ::string generatecontatenation(char ch)
+   ::string generatecontatenation(::particle * pparticle, char ch)
    {
 
       ::string str;
 
-      int iCount = random(20, 200);
+      int iCount = pparticle->mathematics()->random(20, 200);
 
       for (int i = 0; i < iCount; i++)
       {
 
-         char ch1 = (ch + (char)random(0, 4));
+         char ch1 = (ch + (char)pparticle->mathematics()->random(0, 4));
 
          str.append(&ch1, 1);
 
@@ -332,7 +333,7 @@ namespace console_hello
 
    for (int i = 0; i < 100'000; i++)
    {
-      string strA = generatecontatenation(ch);
+      string strA = generatecontatenation(this, ch);
 
       wstring wstrB = strA;
 
@@ -342,7 +343,7 @@ namespace console_hello
 
       string str1;
 
-      string strD = generatecontatenation(ch);
+      string strD = generatecontatenation(this, ch);
       
       string strMillis;
 
@@ -658,8 +659,18 @@ namespace console_hello
             {
 
                auto psequencer = exception_message_box(exception, "Exception at Hello Console App!!\n" + exception.get_message(), "Hello Console App!", e_message_box_ok, "Hello Console App!!\n");
+               
+               psequencer->then([this](auto)
+                  {
 
-               psequencer->do_asynchronously();
+                     auto pmessagebox = __create<::operating_system::message_box>();
+
+                     pmessagebox->do_modal("Got ::exception", "Got ::exception", e_message_box_ok | e_message_box_icon_information);
+
+                  });
+
+                  psequencer->do_asynchronously();
+
 
             }
             catch (...)
@@ -668,6 +679,15 @@ namespace console_hello
                ::exception exception(error_catch_all_exception);
 
                auto psequencer = exception_message_box(exception, "Catchall Exception at Hello Console App!!\n", "Hello Console App!", e_message_box_ok, "Hello Console App!!");
+               
+               psequencer->then([this](auto)
+               {
+
+                  auto pmessagebox = __create<::operating_system::message_box>();
+
+                  pmessagebox->do_modal("Caught (...)", "Caught (...)", e_message_box_ok | e_message_box_icon_information);
+
+               });
 
                psequencer->do_asynchronously();
 
@@ -1053,12 +1073,12 @@ namespace console_hello
 
 //console_hello::application g_consolehelloapplication;
 
-::i32 application_main()
+::i32 application_main(::platform::platform * pplatform)
 {
 
    auto papplication = __allocate< console_hello::application >();
 
-   auto iExitCode = papplication->application_main();
+   auto iExitCode = papplication->application_main(pplatform);
 
    return iExitCode;
 
