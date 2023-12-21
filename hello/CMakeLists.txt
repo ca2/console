@@ -2,7 +2,9 @@ cmake_minimum_required(VERSION 3.16)
 project(_console_hello CXX)
 
 
-add_executable(${PROJECT_NAME} application.cpp remove_utf8_bom.cpp search_special_characters.cpp)
+add_executable(${PROJECT_NAME}
+   _.cpp
+   application.cpp remove_utf8_bom.cpp search_special_characters.cpp)
 
 
 if (MSVC)
