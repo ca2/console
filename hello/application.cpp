@@ -276,7 +276,7 @@ void test_002()
 }
 
 
-__DECLARE_RELEASE_TIME(console_hello);
+__IMPLEMENT_APPLICATION_RELEASE_TIME(console_hello);
 
 
 //#error "error_compiled back function"
@@ -285,7 +285,7 @@ namespace console_hello
 {
  
    
-   __IMPLEMENT_APPLICATION_RELEASE_TIME(console_hello);
+   // __IMPLEMENT_APPLICATION_RELEASE_TIME1(console_hello));
 
 
    application::application()
