@@ -12,6 +12,8 @@
 		9A22671727CE8B140042BAC2 /* libacme_apple.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A22671327CE8B140042BAC2 /* libacme_apple.dylib */; };
 		9A22671827CE8B140042BAC2 /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A22671427CE8B140042BAC2 /* libacme.dylib */; };
 		9A4387BF299E4AD900D2EE15 /* a-2023-02-02-twitch@ca2software.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A4387BE299E4AD800D2EE15 /* a-2023-02-02-twitch@ca2software.cpp */; };
+		9A58487F2B54B059001FFF2B /* libarchive.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A58487E2B54B059001FFF2B /* libarchive.dylib */; };
+		9A5848802B54B059001FFF2B /* libarchive.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9A58487E2B54B059001FFF2B /* libarchive.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9AE6DE6A29629C5F008A1335 /* application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6DE6929629C5F008A1335 /* application.cpp */; };
 		9AE6DE7529629CBC008A1335 /* 1-2022-02-11-twitch-memoriesdota_file_word_count.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6DE6C29629CBC008A1335 /* 1-2022-02-11-twitch-memoriesdota_file_word_count.cpp */; };
 		9AE6DE7629629CBC008A1335 /* 9-2022-11-15-twitch@nicopelullo-inorder__preorder_and_post_order.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6DE6D29629CBC008A1335 /* 9-2022-11-15-twitch@nicopelullo-inorder__preorder_and_post_order.cpp */; };
@@ -60,6 +62,17 @@
 			name = "Embed Libraries";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9A5848812B54B05A001FFF2B /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9A5848802B54B059001FFF2B /* libarchive.dylib in Embed Libraries */,
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +84,7 @@
 		9A22671427CE8B140042BAC2 /* libacme.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libacme.dylib; path = "../../../../../Library/Developer/Xcode/DerivedData/mac-__hello-ferbzpmqoopfvnbsljzanjlsduhf/Build/Products/Debug/libacme.dylib"; sourceTree = "<group>"; };
 		9A22671927CE8B460042BAC2 /* acme_macos.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = acme_macos.xcodeproj; path = "../../../operating_system/operating_system-macos/acme_macos/acme_macos.xcodeproj"; sourceTree = "<group>"; };
 		9A4387BE299E4AD800D2EE15 /* a-2023-02-02-twitch@ca2software.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "a-2023-02-02-twitch@ca2software.cpp"; sourceTree = "<group>"; };
+		9A58487E2B54B059001FFF2B /* libarchive.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libarchive.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A5EE4912650D105009F25F0 /* helloearth */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = helloearth; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AE6DE6929629C5F008A1335 /* application.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = application.cpp; sourceTree = "<group>"; };
 		9AE6DE6C29629CBC008A1335 /* 1-2022-02-11-twitch-memoriesdota_file_word_count.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "1-2022-02-11-twitch-memoriesdota_file_word_count.cpp"; sourceTree = "<group>"; };
@@ -92,6 +106,7 @@
 			files = (
 				9A22671827CE8B140042BAC2 /* libacme.dylib in Frameworks */,
 				9A22671727CE8B140042BAC2 /* libacme_apple.dylib in Frameworks */,
+				9A58487F2B54B059001FFF2B /* libarchive.dylib in Frameworks */,
 				9A22671627CE8B140042BAC2 /* libidn.dylib in Frameworks */,
 				9A22671527CE8B140042BAC2 /* libacme_posix.dylib in Frameworks */,
 			);
@@ -142,6 +157,7 @@
 		9A5EE4E22650D260009F25F0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9A58487E2B54B059001FFF2B /* libarchive.dylib */,
 				9A22671227CE8B140042BAC2 /* libidn.dylib */,
 				9A22671427CE8B140042BAC2 /* libacme.dylib */,
 				9A22671327CE8B140042BAC2 /* libacme_apple.dylib */,
@@ -188,6 +204,7 @@
 				9A5EE48D2650D105009F25F0 /* Sources */,
 				9A5EE48E2650D105009F25F0 /* Frameworks */,
 				9A46D23E26783F74000B22D0 /* Embed Libraries */,
+				9A5848812B54B05A001FFF2B /* Embed Libraries */,
 			);
 			buildRules = (
 			);
