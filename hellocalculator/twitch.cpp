@@ -11,7 +11,7 @@ int twitch::show_main_menu_and_get_menu_item()
 
    nicopelullo_inorder__preorder_and_post_order_main();
 
-   acmenode()->flush_stdin();
+   node()->flush_stdin();
 
    ::std::cout << "1. for run memories dota program:" << ::std::endl;
    ::std::cout << "2. korishama polymorphism programs" << ::std::endl;
