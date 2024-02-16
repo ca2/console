@@ -90,9 +90,6 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="application.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="twitch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -128,6 +125,9 @@
     </ClCompile>
     <ClCompile Include="programs\a-2023-02-02-twitch%40ca2software.cpp">
       <Filter>Source Files\programs</Filter>
+    </ClCompile>
+    <ClCompile Include="application.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
