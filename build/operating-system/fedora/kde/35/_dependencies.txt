@@ -1,7 +1,0 @@
-operating-system-linux/node_linux
-app/draw2d_cairo
-operating-system-posix/write_text_pango
-app/imaging_freeimage
-experience_core
-database_sqlite3
-regular_expression_pcre2
