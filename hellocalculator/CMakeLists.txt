@@ -17,20 +17,20 @@ list(APPEND executable_source
         )
 
 
-add_executable(_console_helloearth ${executable_source})
+add_executable(${PROJECT_NAME} ${executable_source})
 
 
 if (MSVC)
-    target_compile_options(_console_helloearth PRIVATE "/MD$<$<CONFIG:Debug>:d>")
-    target_link_options(_console_helloearth PRIVATE "/DEFAULTLIB:msvcrt$<$<CONFIG:Debug>:d>")
-    target_link_options(_console_helloearth PRIVATE "/SUBSYSTEM:CONSOLE")
+    target_compile_options(${PROJECT_NAME} PRIVATE "/MD$<$<CONFIG:Debug>:d>")
+    target_link_options(${PROJECT_NAME} PRIVATE "/DEFAULTLIB:msvcrt$<$<CONFIG:Debug>:d>")
+    target_link_options(${PROJECT_NAME} PRIVATE "/SUBSYSTEM:CONSOLE")
 endif()
 
 
-add_dependencies(_console_helloearth acme_${OPERATING_SYSTEM_NAME})
+add_dependencies(${PROJECT_NAME} acme_${OPERATING_SYSTEM_NAME})
 
 
-target_link_libraries(_console_helloearth PRIVATE acme)
+target_link_libraries(${PROJECT_NAME} PRIVATE acme)
 
 
 list(APPEND library_include_directories ${CMAKE_CURRENT_SOURCE_DIR})
@@ -42,7 +42,7 @@ target_include_directories(static_${PROJECT_NAME} PRIVATE ${library_include_dire
 
 
 
-target_compile_definitions(_console_helloearth PRIVATE _CONSOLE_HELLOEARTH_LIBRARY)
+target_compile_definitions(${PROJECT_NAME} PRIVATE _${PROJECT_NAME}_project)
 
 
 
