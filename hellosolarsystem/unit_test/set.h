@@ -20,7 +20,7 @@ namespace unit_test
 
       static thread_local set *                    t_pset;
       static thread_local bool                     t_bEndGroup;
-      ::count                                      m_cPassed;
+      ::raw::count                                      m_cPassed;
       strsize                                      m_iMaximumNameLength;
       strsize                                      m_iResultDotPadding;
 

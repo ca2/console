@@ -58,7 +58,7 @@ inline string _009Explode(const CONTAINER& container, string strSeparator, strin
 
    string str;
 
-   ::index i = container.get_count();
+   ::raw::index i = container.get_count();
 
    for (auto& item : container)
    {

@@ -29,7 +29,7 @@ inline string _009Explode(const CONTAINER& container, string strSeparator, strin
 
    string str;
 
-   ::index i = container.get_count();
+   ::raw::index i = container.get_count();
 
    for (auto& item : container)
    {
@@ -272,12 +272,12 @@ public:
 //
 
 
-::i32 application_main()
+::i32 application_main(::platform::platform * pplatform)
 {
 
    auto papplication = __allocate< console_hellosolarsystem::application >();
 
-   auto iExitCode = papplication->application_main();
+   auto iExitCode = papplication->application_main(pplatform);
 
    return iExitCode;
 
