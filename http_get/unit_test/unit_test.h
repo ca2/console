@@ -70,7 +70,7 @@ public:
 
    static unit_test_set * get();
 
-   ::raw::count m_cPassed;
+   ::collection::count m_cPassed;
 
    void run_all(bool bVerbose)
    {

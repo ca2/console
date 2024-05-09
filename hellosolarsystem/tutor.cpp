@@ -60,7 +60,7 @@ inline string _009Explode(const CONTAINER& container, string strSeparator, strin
 
    string str;
 
-   ::raw::index i = container.get_count();
+   ::collection::index i = container.get_count();
 
    for (auto& item : container)
    {
