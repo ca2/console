@@ -96,7 +96,7 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="hellosolarsystem.cpp">
+    <ClCompile Include="application_main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="unit_test\unit_test.cpp">

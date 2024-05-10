@@ -556,7 +556,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='StaticRelease|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="hellosolarsystem.cpp" />
+    <ClCompile Include="application_main.cpp" />
     <ClCompile Include="unit_test\basic_types.unittest.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='StaticDebug|Win32'">true</ExcludedFromBuild>

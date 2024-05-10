@@ -290,12 +290,12 @@ public:
 
 
 
-::i32 application_main()
+::i32 application_main(::platform::platform * pplatform)
 {
 
    auto papplication = __allocate< console_helloearth::application >();
 
-   auto iExitCode = papplication->application_main();
+   auto iExitCode = papplication->application_main(pplatform);
 
    return iExitCode;
 
