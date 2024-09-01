@@ -5,12 +5,12 @@
 
 
 //#define DO_UNIT_TEST(xxx) \
-//print_unit_test_result(unit_test::xxx(), _STRINGFY(unit_test::xxx));
+//print_unit_test_result(unit_test::xxx(), _MAKE_STRING(unit_test::xxx));
 
 #define __begin(xxx) \
 class item_ ## xxx : public ::unit_test::item \
 { public: \
-item_ ## xxx(): item(STRINGFY(xxx)) {} \
+item_ ## xxx(): item(MAKE_STRING(xxx)) {} \
  \
 bool test() override { 
 
@@ -39,7 +39,7 @@ return (b); \
 class TOKEN_CONCATENATE(set_, xxx) : \
    virtual public ::unit_test::set \
 { \
-public: TOKEN_CONCATENATE(set_, xxx)() : set(STRINGFY(xxx)),item(e_add_set, STRINGFY(xxx)) {}
+public: TOKEN_CONCATENATE(set_, xxx)() : set(MAKE_STRING(xxx)),item(e_add_set, MAKE_STRING(xxx)) {}
 
 
 

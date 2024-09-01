@@ -37,12 +37,12 @@ public:
 
 
 #define DO_UNIT_TEST(xxx) \
-print_unit_test_result(unit_test_ ## xxx(), _STRINGFY(unit_test_ ## xxx));
+print_unit_test_result(unit_test_ ## xxx(), _MAKE_STRING(unit_test_ ## xxx));
 
 #define __begin(xxx) \
 class unit_test_ ## xxx : public unit_test \
 { public:  \
-unit_test_ ## xxx(unit_test_set * punittestset): unit_test(STRINGFY(xxx), punittestset) {} \
+unit_test_ ## xxx(unit_test_set * punittestset): unit_test(MAKE_STRING(xxx), punittestset) {} \
 bool test() override \
 { 
 
