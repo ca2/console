@@ -6,7 +6,7 @@
 ::i32 application_main(::platform::platform * pplatform)
 {
 
-   auto papplication = __allocate< console_readlines::application >();
+   auto papplication = ::place(new console_readlines::application());
 
    auto iExitCode = papplication->application_main(pplatform);
 

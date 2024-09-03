@@ -293,7 +293,7 @@ public:
 ::i32 application_main(::platform::platform * pplatform)
 {
 
-   auto papplication = __allocate< console_helloearth::application >();
+   auto papplication = ::place(new console_helloearth::application());
 
    auto iExitCode = papplication->application_main(pplatform);
 
