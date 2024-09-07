@@ -92,7 +92,7 @@ namespace console
             for (auto & strUrl : straUrl)
             {
 
-               auto strHttpGet = http().get(strUrl, set);
+               auto strHttpGet = http()->get(strUrl, set);
 
                strHttpGetTotal += strHttpGet;
 
