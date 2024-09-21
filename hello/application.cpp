@@ -7,7 +7,7 @@
 #include "acme/primitive/datetime/datetime.h"
 #include "acme/primitive/mathematics/mathematics.h"
 #include "acme/user/user/conversation.h"
-#include "acme/user/nano/nano.h"
+//#include "acme/user/nano/nano.h"
 #include "acme/memory/_new.inl"
 #define FACTORY console_hello
 #define __APP_ID "console/hello"
@@ -220,7 +220,7 @@ void trim_left_001()
 
    str.trim_left("01");
 
-   output_debug_string_format("trim_left_001:\"%s\"\n\n", str.c_str());
+   output_debug_string_formatf("trim_left_001:\"%s\"\n\n", str.c_str());
 
 
 }
@@ -233,7 +233,7 @@ void trim_right_001()
 
    str.trim_right("01");
 
-   output_debug_string_format("trim_right_001:\"%s\"\n\n", str.c_str());
+   output_debug_string_formatf("trim_right_001:\"%s\"\n\n", str.c_str());
 
 
 }
@@ -371,7 +371,7 @@ namespace console_hello
       if (i % 1'000 == 0)
       {
 
-         output_debug_string_format("%c", ch);
+         output_debug_string_formatf("%c", ch);
 
       }
 
@@ -380,7 +380,7 @@ namespace console_hello
       pathLast2 = pathLast;
    }
 
-      output_debug_string_format("\nCompleted concatenation \"%c\"!!", ch);
+      output_debug_string_formatf("\nCompleted concatenation \"%c\"!!", ch);
 
       });
 
@@ -413,12 +413,12 @@ namespace console_hello
          if (i % 10'000 == 0)
          {
 
-            output_debug_string_format("%c", ch);
+            output_debug_string_formatf("%c", ch);
 
          }
       }
 
-      output_debug_string_format("\nCompleted datetime_format\"%c\"!!", ch);
+      output_debug_string_formatf("\nCompleted datetime_format\"%c\"!!", ch);
 
             });
 
@@ -442,9 +442,62 @@ namespace console_hello
 
 #endif // __STD_FORMAT__
 
+
+   void test_scoped_string(const scoped_string & scopedstr)
+   {
+
+      ::string str(scopedstr);
+
+      printf("scoped_string : %s", str.c_str());
+
+   }
+
+#define STRING_ALLOCATION_TEST_ONLY
    
    void application::main()
    {
+
+#ifdef STRING_ALLOCATION_TEST_ONLY
+
+      {
+
+         string str1("test1");
+
+      }
+
+      {
+
+         string str2 = "test2";
+
+      }
+
+      {
+
+         string str3;
+
+         str3 = "test3";
+
+      }
+
+      {
+
+         test_scoped_string("test4");
+
+      }
+
+      {
+
+         string str5("test5");
+
+         string str6;
+
+         str6 = str5;
+
+      }
+
+      return;
+
+#endif // STRING_ALLOCATION_TEST_ONLY
 
 #if defined(__STD_FORMAT__)
 
@@ -583,8 +636,8 @@ namespace console_hello
 
          auto psz1 = (const char *)str;
 
-         output_debug_string_format("(\"%%s\", str) : %s\n", (const char*)str);
-         output_debug_string_format("(\"%%s\", psz = (const char *)str; ) : %s\n", psz1);
+         output_debug_string_formatf("(\"%%s\", str) : %s\n", (const char*)str);
+         output_debug_string_formatf("(\"%%s\", psz = (const char *)str; ) : %s\n", psz1);
 
       }
 
@@ -663,9 +716,9 @@ namespace console_hello
                psequencer->then([this](auto)
                   {
 
-                     auto pmessagebox = __create<::operating_system::message_box>();
+                     auto psequencer = message_box("Got ::exception", "Got ::exception", e_message_box_ok | e_message_box_icon_information);
 
-                     pmessagebox->do_modal("Got ::exception", "Got ::exception", e_message_box_ok | e_message_box_icon_information);
+                     psequencer->do_synchronously();
 
                   });
 
@@ -683,9 +736,9 @@ namespace console_hello
                psequencer->then([this](auto)
                {
 
-                  auto pmessagebox = __create<::operating_system::message_box>();
+                  auto psequencer = message_box("Caught (...)", "Caught (...)", e_message_box_ok | e_message_box_icon_information);
 
-                  pmessagebox->do_modal("Caught (...)", "Caught (...)", e_message_box_ok | e_message_box_icon_information);
+                  psequencer->do_asynchronously();
 
                });
 
