@@ -13,8 +13,8 @@
 #include "acme/platform/system.h"
 //#include "aqua/xml.h"
 #include <stdio.h>
-#include "acme/primitive/mathematics/mathematics.h"
-#include "acme/primitive/time/_string.h"
+#include "acme/prototype/mathematics/mathematics.h"
+#include "acme/prototype/time/_string.h"
 #include "unit_test/set.h"
 
 
