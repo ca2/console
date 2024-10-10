@@ -13,7 +13,7 @@ double yes_for_two__no_for_three_and_cancel_for_exit_exception(::particle* ppart
 
    auto result = auto pmessagebox = __initialize_new ::message_box(psystem, "Yes for two and No for 3\n\n(and cancel for exit...)", "Hello App!", e_message_box_yes_no_cancel | e_message_box_default_button_3, "Hello Multiverse!!");
 
-send(pmessagebox);
+pmessagebox->sync();
 
    if (result == e_dialog_result_yes)
    {
