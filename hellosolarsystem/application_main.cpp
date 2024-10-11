@@ -275,7 +275,7 @@ public:
 ::i32 application_main(::platform::platform * pplatform)
 {
 
-   auto papplication = new console_hellosolarsystem::application();
+   auto papplication = __new console_hellosolarsystem::application();
 
    auto iExitCode = papplication->application_main(pplatform);
 

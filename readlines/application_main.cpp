@@ -6,7 +6,7 @@
 ::i32 application_main(::platform::platform * pplatform)
 {
 
-   auto papplication = new console_readlines::application();
+   auto papplication = __new console_readlines::application();
 
    auto iExitCode = papplication->application_main(pplatform);
 
