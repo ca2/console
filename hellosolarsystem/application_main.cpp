@@ -272,7 +272,7 @@ public:
 //
 
 
-::i32 application_main(::platform::platform * pplatform)
+void application_main()
 {
 
    auto papplication = __new console_hellosolarsystem::application();
