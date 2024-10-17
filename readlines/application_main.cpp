@@ -8,7 +8,7 @@ void application_main()
 
    auto papplication = __new console_readlines::application();
 
-   auto iExitCode = papplication->application_main(pplatform);
+   auto iExitCode = papplication->application_main();
 
    return iExitCode;
 
