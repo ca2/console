@@ -38,7 +38,7 @@ int altura(tree_node*);
 //Funcion para crear un nuevo nodo
 tree_node* create_tree_node(int n) {
 
-	tree_node* nuevo_nodo = __new tree_node();		//Reserva de memoria
+	tree_node* nuevo_nodo = ___new tree_node();		//Reserva de memoria
 
 	nuevo_nodo->m_iData = n;
 	nuevo_nodo->m_ptreenodeRight = NULL;				//Le asignamos NULL debido a que es un nuevo nodo y por el momento no tiene hijos
@@ -48,7 +48,7 @@ tree_node* create_tree_node(int n) {
 }
 
 stack* push(stack* pstack, tree_node* ptreenodNext) {  //le pasamos el inicio de la stack y el nodo que querramos guardar como parametros
-	stack* nueva = __new stack();
+	stack* nueva = ___new stack();
 	nueva->m_ptreenodeStack = ptreenodNext;  //le asignamos en el nodo que vamos a procesar (fijense que esta pasado por parametro)
 	nueva->m_pstackNext = pstack; //en el campo siguiente; le guardamos lo que anteriormente era el inicio de la stack (el nodo anterior)
 	pstack = nueva;  //y ahora, el inicio de la stack es esta nueva "stack" que pusimos.
@@ -109,7 +109,7 @@ void pre_order(tree_node*& g_ptreenodeRoot) {
 	}
 
 	//crea el inicio de la stack de datos.
-	stack* pstack = __new stack();
+	stack* pstack = ___new stack();
 	pstack->m_ptreenodeStack = g_ptreenodeRoot;  //en el campo "nodo" del pstack siempre guardamos el nodo en el que estamos parados.
 	pstack->m_pstackNext = NULL; //en el campo "sgte" se marca cual es el m_iData siguiente a procesar.
 

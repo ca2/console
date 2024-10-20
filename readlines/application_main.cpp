@@ -6,7 +6,7 @@
 void application_main()
 {
 
-   auto papplication = __new console_readlines::application();
+   auto papplication = ___new console_readlines::application();
 
    auto iExitCode = papplication->application_main();
 

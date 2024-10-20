@@ -42,7 +42,7 @@ namespace nicopelullo
 	tree_node* create_node(int n) 
 	{
 
-		tree_node* nuevo_nodo = __new tree_node();		//Reserva de memoria
+		tree_node* nuevo_nodo = ___new tree_node();		//Reserva de memoria
 
 		nuevo_nodo->m_iData = n;
 		nuevo_nodo->m_ptreenodeRight = NULL;				//Le asignamos NULL debido a que es un nuevo nodo y por el momento no tiene hijos
@@ -56,7 +56,7 @@ namespace nicopelullo
 	stack* push(stack* pstack, tree_node* ptreenode)
 	{ 
 
-		stack* pstackNew = __new stack();
+		stack* pstackNew = ___new stack();
 
 		pstackNew->m_ptreenode = ptreenode;  //le asignamos en el nodo que vamos a procesar (fijense que esta pasado por parametro)
 		pstackNew->m_pstackNext = pstack; //en el campo siguiente; le guardamos lo que anteriormente era el pstack de la stack (el nodo anterior)
@@ -119,7 +119,7 @@ namespace nicopelullo
 		}
 
 		//crea el pstack de la stack de datos.
-		stack* pstack = __new stack();
+		stack* pstack = ___new stack();
 		pstack->m_ptreenode = ptreenode;  //en el campo "nodo" del pstack siempre guardamos el nodo en el que estamos parados.
 		pstack->m_pstackNext = NULL; //en el campo "sgte" se marca cual es el m_iData siguiente a procesar.
 

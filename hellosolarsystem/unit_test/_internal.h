@@ -63,7 +63,7 @@ __START(MODULE)
 DECLARE_UNIT_TEST_SET(MODULE) \
 { \
 \
-auto p= __new ::unit_test::MODULE::TOKEN_CONCATENATE(set_, MODULE)(); \
+auto p= ___new ::unit_test::MODULE::TOKEN_CONCATENATE(set_, MODULE)(); \
 ::unit_test::set::t_bEndGroup = false;\
 return p;\
 \
