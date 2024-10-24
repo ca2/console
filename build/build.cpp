@@ -2,7 +2,7 @@
 #include "_main.inl"
 
 
-void implement(::acme::system * psystem)
+void implement(::platform::system * psystem)
 {
 
 

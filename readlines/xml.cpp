@@ -1,6 +1,6 @@
 
 
-void do_xml_test(::acme::system * psystem)
+void do_xml_test(::platform::system * psystem)
 {
 
    {

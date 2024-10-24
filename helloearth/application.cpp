@@ -56,7 +56,7 @@ constexpr const auto min_test(const ::u32 & u, const ::i32 & i)
 
 
 class console_helloearth :
-   virtual public ::acme::application
+   virtual public ::platform::application
 {
 public:
 

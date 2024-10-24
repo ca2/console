@@ -46,7 +46,7 @@ void console_readlines::main()
 
    //path -= ::file::e_flag_bypass_cache;
 
-   auto papexsystem = system()->m_papexsystem;
+   auto papexsystem = system();
 
    auto pfile = papexsystem->file();
 
