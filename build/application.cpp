@@ -166,7 +166,7 @@ namespace app_core_build
             if (!file()->exists(path))
             {
 
-               path = dir()->document2() / "default.hellomultiverse";
+               path = directory()->document2() / "default.hellomultiverse";
 
             }
 

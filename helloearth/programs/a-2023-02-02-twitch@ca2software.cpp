@@ -9,7 +9,7 @@ Write your code in this editor and press "Run" button to compile and execute it.
 
 
 #include "framework.h"
-#include "acme/filesystem/filesystem/acme_file.h"
+#include "acme/filesystem/filesystem/file_system.h"
 #include <iostream>
 
 #include <stdio.h>
@@ -342,8 +342,8 @@ int twitch::ca2software_int_to_string_bases()
    information(str);
 
 
-   acmefile()->put_contents("C:\\archive\\int_to_string_bases.txt", str);
-   acmefile()->put_contents("C:\\main\\source\\app\\acme\\primitive\\mathematics\\int_to_string_bases_table.dynamically_generated", strTable);
+   file_system()->put_contents("C:\\archive\\int_to_string_bases.txt", str);
+   file_system()->put_contents("C:\\main\\source\\app\\acme\\primitive\\mathematics\\int_to_string_bases_table.dynamically_generated", strTable);
 
    //getchar();
 

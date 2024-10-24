@@ -1,6 +1,6 @@
 #include "framework.h"
 //#include "aura/update.h"
-#include "acme/filesystem/filesystem/acme_directory.h"
+#include "acme/filesystem/filesystem/directory_system.h"
 #include "acme/operating_system.h"
 
 namespace app_core_build
@@ -124,13 +124,13 @@ namespace app_core_build
 
    ::file::path pathEnvTxt;
 
-   auto pacmedirectory = acmedirectory();
+   auto pacmedirectory = directory_system();
 
    pathEnvTxt = pacmedirectory->system() / "env.txt";
 
-   acmefile()->put_contents(pacmedirectory->system() / "env1.bat", pacmedirectory->system() / "env.bat > \"" + pathEnvTxt + "\"");
+   file_system()->put_contents(pacmedirectory->system() / "env1.bat", pacmedirectory->system() / "env.bat > \"" + pathEnvTxt + "\"");
 
-   acmefile()->put_contents(pacmedirectory->system() / "env.bat", "@call " + strBuildCmd + "\r\n@set");
+   file_system()->put_contents(pacmedirectory->system() / "env.bat", "@call " + strBuildCmd + "\r\n@set");
 
    auto psystem = system();
 
@@ -138,7 +138,7 @@ namespace app_core_build
 
    pnode->run_silent(pacmedirectory->system() / "env1.bat", "");
 
-   string strLog = acmefile()->as_string(pacmedirectory->system() / "env.txt");
+   string strLog = file_system()->as_string(pacmedirectory->system() / "env.txt");
    string_array stra;
    stra.add_lines(strLog);
 
@@ -224,7 +224,7 @@ namespace app_core_build
 
       string_array straLine;
 
-      file()->get_lines(straLine, acmedirectory()->home() /"build.log");
+      file()->get_lines(straLine, directory_system()->home() /"build.log");
 
       ::point_i32 p;
 
