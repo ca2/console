@@ -79,7 +79,7 @@ string calculate(const string& str)
 }
 
 
-void implement(::acme::context * pcontext)
+void implement(::platform::context * pcontext)
 {
 
    auto psystem = pcontext->system();

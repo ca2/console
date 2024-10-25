@@ -12,7 +12,7 @@
 #include "acme/console.h"
 
 
-void implement(::acme::context * pcontext)
+void implement(::platform::context * pcontext)
 {
 
    ::file::path path = "C:/basis/operating_system/tool-windows/headless_monitor/deviceinstaller64.exe";
