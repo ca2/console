@@ -66,7 +66,7 @@ namespace app_core_build
 
       set_local_data();
 
-      auto psession = get_session();
+      
 
       auto puser = psession->user()->m_pcoreuser;
 
