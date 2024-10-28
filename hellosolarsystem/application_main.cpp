@@ -275,9 +275,9 @@ public:
 void application_main()
 {
 
-   auto papplication = ___new console_hellosolarsystem::application();
+   console_hellosolarsystem::application application;
 
-   auto iExitCode = papplication->application_main();
+   auto iExitCode = application.application_main();
 
    return iExitCode;
 

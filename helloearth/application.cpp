@@ -295,7 +295,7 @@ void application_main()
 
    auto papplication = __allocate console_helloearth::application();
 
-   auto iExitCode = papplication->application_main();
+   auto iExitCode = application.application_main();
 
    return iExitCode;
 

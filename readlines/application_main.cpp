@@ -6,9 +6,9 @@
 void application_main()
 {
 
-   auto papplication = ___new console_readlines::application();
+   console_readlines::application application;
 
-   auto iExitCode = papplication->application_main();
+   auto iExitCode = application.application_main();
 
    return iExitCode;
 
