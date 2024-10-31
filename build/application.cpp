@@ -68,7 +68,7 @@ namespace app_core_build
 
       
 
-      auto puser = psession->user()->m_pcoreuser;
+      auto puser = user();
 
       puser->will_use_impact_hint(FONTSEL_IMPACT);
 
