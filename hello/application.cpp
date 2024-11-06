@@ -6,7 +6,7 @@
 //#include "acme/platform/sequencer.h"
 #include "acme/prototype/datetime/datetime.h"
 #include "acme/prototype/mathematics/mathematics.h"
-#include "acme/user/user/conversation.h"
+//#include "acme/user/user/conversation.h"
 //#include "acme/user/nano/nano.h"
 #include "acme/memory/_new.inl"
 #define FACTORY console_hello
@@ -61,7 +61,7 @@ enum enum_test_increment
 //
 //      auto result = auto pmessagebox = __initialize_new ::message_box(pcontext, "Hello!!\nNo: for exception test!!", "Hello App!", e_message_box_yes_no_cancel | e_message_box_default_button_3, "Hello Multiverse!!");
 
-pmessagebox->sync();
+//pmessagebox->sync();
 //
 //      if (result == e_dialog_result_yes)
 //      {
@@ -72,7 +72,7 @@ pmessagebox->sync();
 //
 //         auto pmessagebox = __initialize_new ::message_box(pcontext, "Yes!!", "Yes!!", e_message_box_ok);
 
-pmessagebox->sync();
+//pmessagebox->sync();
 //
 //         break;
 //
@@ -138,7 +138,7 @@ pmessagebox->sync();
 //
 //         auto pmessagebox = __initialize_new ::message_box(pcontext, "No!", "No!", e_message_box_ok);
 
-pmessagebox->sync();
+//pmessagebox->sync();
 //
 //      }
 //      else if (result == e_dialog_result_cancel)
@@ -150,7 +150,7 @@ pmessagebox->sync();
 //
 //         auto pmessagebox = __initialize_new ::message_box(pcontext, "Cancel", "Cancel", e_message_box_ok);
 
-pmessagebox->sync();
+//pmessagebox->sync();
 //
 //      }
 //
@@ -503,7 +503,7 @@ namespace console_hello
 
       }
 
-      return;
+      //return;
 
 #endif // STRING_ALLOCATION_TEST_ONLY
 
@@ -513,23 +513,23 @@ namespace console_hello
 
 #endif // __STD_FORMAT__
 
-      if (m_psystem->m_pplatform->m_argc == 2)
+      if (system()->m_argc == 2)
       {
 
 
-         if (m_psystem->m_pplatform->get_arg(1) == "remove_utf8_bom_phase1")
+         if (system()->get_arg(1) == "remove_utf8_bom_phase1")
          {
 
             remove_utf8_bom_phase1();
 
          }
-         else if (m_psystem->m_pplatform->get_arg(1) == "remove_utf8_bom_phase2")
+         else if (system()->get_arg(1) == "remove_utf8_bom_phase2")
          {
 
             remove_utf8_bom_phase2();
 
          }
-         else if (m_psystem->m_pplatform->get_arg(1) == "search_special_characters")
+         else if (system()->get_arg(1) == "search_special_characters")
          {
 
             search_special_characters();
@@ -666,25 +666,25 @@ namespace console_hello
       while (true)
       {
 
-         auto pmessagebox = message_box((const char *) unsigned char"Hello!!\nNo: for exception test(\u2717)!!", "Hello App!", e_message_box_yes_no_cancel | e_message_box_default_button_3, "Hello Multiverse!!");
+         auto pmessagebox = message_box("Hello!!\nNo: for exception test(\u2717)!!", "Hello App!", e_message_box_yes_no_cancel | e_message_box_default_button_3, "Hello Multiverse!!");
 
-         auto result = pmessagebox->sync();
+         pmessagebox->sync();
 
-         if (result == e_dialog_result_yes)
+         if (pmessagebox->get_result_payload() == e_dialog_result_yes)
          {
 
             output_debug_string("\n");
 
             output_debug_string("Yes!!\n");
 
-            psequencer = message_box("Yes!!", "Yes!!", e_message_box_ok);
+            pmessagebox = message_box("Yes!!", "Yes!!", e_message_box_ok);
 
             pmessagebox->sync();
 
             break;
 
          }
-         else if (result == e_dialog_result_no)
+         else if (pmessagebox->get_result_payload() == e_dialog_result_no)
          {
 
             fork([this]()
@@ -719,18 +719,19 @@ namespace console_hello
             catch (::exception& exception)
             {
 
-               auto psequencer = exception_message_box(exception, "Exception at Hello Console App!!\n" + exception.get_message(), "Hello Console App!", e_message_box_ok, "Hello Console App!!\n");
+               auto pmessagebox = message_box(exception, "Exception at Hello Console App!!\n" + exception.get_message(), "Hello Console App!", e_message_box_ok, "Hello Console App!!\n");
                
-               psequencer->then([this](auto)
+               pmessagebox->async()
+                  << [this]()
                   {
 
                      auto pmessagebox = message_box("Got ::exception", "Got ::exception", e_message_box_ok | e_message_box_icon_information);
 
                      pmessagebox->sync();
 
-                  });
+                  };
 
-                  pmessagebox->async();
+                  //pmessagebox->async();
 
 
             }
@@ -739,18 +740,19 @@ namespace console_hello
 
                ::exception exception(error_catch_all_exception);
 
-               auto psequencer = exception_message_box(exception, "Catchall Exception at Hello Console App!!\n", "Hello Console App!", e_message_box_ok, "Hello Console App!!");
+               auto pmessagebox = message_box(exception, "Catchall Exception at Hello Console App!!\n", "Hello Console App!", e_message_box_ok, "Hello Console App!!");
                
-               psequencer->then([this](auto)
+               pmessagebox->async()
+                  <<[this]()
                {
 
                   auto pmessagebox = message_box("Caught (...)", "Caught (...)", e_message_box_ok | e_message_box_icon_information);
 
                   pmessagebox->async();
 
-               });
+               };
 
-               pmessagebox->async();
+               //pmessagebox->async();
 
             }
 
@@ -762,19 +764,19 @@ namespace console_hello
 
             output_debug_string("No!\n");
 
-            psequencer = message_box("No!", "No!", e_message_box_ok);
+            pmessagebox = message_box("No!", "No!", e_message_box_ok);
 
             pmessagebox->sync();
 
          }
-         else if (result == e_dialog_result_cancel)
+         else if (pmessagebox->get_result_payload() == e_dialog_result_cancel)
          {
 
             output_debug_string("\n");
 
             output_debug_string("Cancel!!\n");
 
-            psequencer = message_box("Cancel", "Cancel", e_message_box_ok);
+            pmessagebox = message_box("Cancel", "Cancel", e_message_box_ok);
 
             pmessagebox->sync();
 
@@ -1137,11 +1139,9 @@ namespace console_hello
 void application_main()
 {
 
-   auto papplication = __allocate console_hello::application();
+   console_hello::application application;
 
-   auto iExitCode = application.application_main();
-
-   return iExitCode;
+   application.application_main();
 
 }
 

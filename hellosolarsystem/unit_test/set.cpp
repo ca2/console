@@ -61,7 +61,7 @@ namespace unit_test
 
             strReport += p->get_plain_text_report(application()->m_bVerbose) + "\n";
 
-            if (application()->m_bVerbose && p->m_strText.has_char())
+            if (application()->m_bVerbose && p->m_strText.has_character())
             {
 
                strReport.append_formatf("\n");

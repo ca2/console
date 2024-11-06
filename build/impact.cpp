@@ -226,7 +226,7 @@ namespace app_core_build
 
       file()->get_lines(straLine, directory_system()->home() /"build.log");
 
-      ::point_i32 p;
+      ::int_point p;
 
       p.x() = 10;
 

@@ -22,28 +22,28 @@ Write your code in this editor and press "Run" button to compile and execute it.
 
 using namespace std;
 
-::u64 pow2(int iBits)
+huge_natural pow2(int iBits)
 {
-   ::u64 u = 1;
+   huge_natural u = 1;
    while (iBits-- > 0) u *= 2;
    return u;
 }
 
-int integer_log_base_2(::u64 u)
+int integer_log_base_2(huge_natural u)
 {
    int iBits = 0;
    while (u >>= 1) ++iBits;
    return iBits;
 }
-::u64 intpow(int iBase,  int iBits)
+huge_natural intpow(int iBase,  int iBits)
 {
-   ::u64 u = 1;
+   huge_natural u = 1;
    while (iBits-- > 0) u *= iBase;
    return u;
 }
 
 
-int logpow2(int iBase, ::u64 u)
+int logpow2(int iBase, huge_natural u)
 {
    int iShift = integer_log_base_2(iBase);
    int l = 0;
@@ -51,7 +51,7 @@ int logpow2(int iBase, ::u64 u)
    return l;
 }
 
-int ceillogpow2(int iBase, ::u64 u)
+int ceillogpow2(int iBase, huge_natural u)
 {
    int iShift = integer_log_base_2(iBase);
    int l = 0;
@@ -61,19 +61,19 @@ int ceillogpow2(int iBase, ::u64 u)
    return l + (diff>0? 1: 0);
 }
 
-bool is_pow2(::u64 u)
+bool is_pow2(huge_natural u)
 {
    return !(u & (u - 1));
 }
 
-::i64 bits_maximum_signed(int iBits)
+huge_integer bits_maximum_signed(int iBits)
 {
  
    return pow2(iBits - 1) - 1;
 
 }
 
-::u64 bits_maximum_signed_unsigned(int iBits)
+huge_natural bits_maximum_signed_unsigned(int iBits)
 {
 
    return pow2(iBits - 1) + 1;
@@ -302,10 +302,10 @@ int twitch::ca2software_int_to_string_bases()
 
 
 
-      iBits = sizeof(::i64) * 8;
+      iBits = sizeof(huge_integer) * 8;
       my_itoa_base(sz1, sizeof(sz1), INT64_MAX, iBase);
       iMaximumDigits1 = signed_maximum_number_of_digits(iBase, iBits);
-      str.append_formatf("   long long int %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(int64_t) / 100), iMaximumDigits1, sz1, (int)strlen(sz2));
+      str.append_formatf("   huge_integer int %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(int64_t) / 100), iMaximumDigits1, sz1, (int)strlen(sz2));
       my_utoa_base(sz2, sizeof(sz2), INT64_MAX, iBase);
       iMaximumDigits2 = unsigned_maximum_number_of_digits(iBase, iBits);
       str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(int64_t) / 100), iMaximumDigits2, sz1, (int)strlen(sz2));

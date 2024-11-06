@@ -105,7 +105,7 @@ namespace console
 
             }
 
-            if (strCaseInsensitveEndsEat.has_char())
+            if (strCaseInsensitveEndsEat.has_character())
             {
 
                strHttpGetTotal.case_insensitive_ends_eat(strCaseInsensitveEndsEat);

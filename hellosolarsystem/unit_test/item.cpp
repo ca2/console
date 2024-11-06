@@ -138,7 +138,7 @@ namespace unit_test
 
       strReport.append_formatf("%s", m_strName.c_str_for_printf());
 
-      if (application()->m_bVerbose && m_strText.has_char())
+      if (application()->m_bVerbose && m_strText.has_character())
       {
 
          strReport += "\n";

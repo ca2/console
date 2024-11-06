@@ -21,8 +21,8 @@ namespace unit_test
       static thread_local set *                    t_pset;
       static thread_local bool                     t_bEndGroup;
       ::collection::count                                      m_cPassed;
-      strsize                                      m_iMaximumNameLength;
-      strsize                                      m_iResultDotPadding;
+      character_count                                      m_iMaximumNameLength;
+      character_count                                      m_iResultDotPadding;
 
 
       set(const char * pszName) : item(e_add_set, pszName) { t_pset = this; }
