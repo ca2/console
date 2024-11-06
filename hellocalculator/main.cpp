@@ -47,7 +47,7 @@ constexpr const auto min_test(const A & a, const B & b)
 
 }
 template <  >
-constexpr const auto min_test(const ::u32 & u, const ::i32 & i)
+constexpr const auto min_test(const ::u32 & u, const int & i)
 {
 
    return i < 0 ? 0 : (u < (::u32)i ? u : (::u32)i);

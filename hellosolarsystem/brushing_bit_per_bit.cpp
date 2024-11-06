@@ -6,7 +6,7 @@
 struct pair1
 {
 
-   ::u8 b1;
+   unsigned char b1;
    int i1;
 
 
@@ -17,7 +17,7 @@ struct pair1
 
 struct pair2
 {
-   ::u8 b1;
+   unsigned char b1;
    int i2;
 
 
