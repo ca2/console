@@ -17,7 +17,7 @@ Write your code in this editor and press "Run" button to compile and execute it.
 #include <string.h>
 #include <stdint.h>
 #include <limits.h>
-#define INT_STR_SIZE (sizeof(int64_t)*CHAR_BIT + 2)
+#define INT_STR_SIZE (sizeof(huge_integer)*CHAR_BIT + 2)
 
 
 using namespace std;
@@ -129,7 +129,7 @@ char * my_utoa_base(char * dest, size_t size, uint64_t x, int base) {
    return dest;
 }
 
-static char * my_itoa_base_helper(char * dest, size_t size, int64_t x, int base) {
+static char * my_itoa_base_helper(char * dest, size_t size, huge_integer x, int base) {
    if (size == 0) return NULL;
    int digit = -(x % base);
    x /= base;
@@ -141,7 +141,7 @@ static char * my_itoa_base_helper(char * dest, size_t size, int64_t x, int base)
    return dest + 1;
 }
 
-char * my_itoa_base(char * dest, size_t size, int64_t x, int base) {
+char * my_itoa_base(char * dest, size_t size, huge_integer x, int base) {
    if (base < 2 || base > 36 || size < 2) return NULL;
    char * p = dest;
    if (x < 0) {
@@ -305,10 +305,10 @@ int twitch::ca2software_int_to_string_bases()
       iBits = sizeof(huge_integer) * 8;
       my_itoa_base(sz1, sizeof(sz1), INT64_MAX, iBase);
       iMaximumDigits1 = signed_maximum_number_of_digits(iBase, iBits);
-      str.append_formatf("   huge_integer int %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(int64_t) / 100), iMaximumDigits1, sz1, (int)strlen(sz2));
+      str.append_formatf("   huge_integer int %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(huge_integer) / 100), iMaximumDigits1, sz1, (int)strlen(sz2));
       my_utoa_base(sz2, sizeof(sz2), INT64_MAX, iBase);
       iMaximumDigits2 = unsigned_maximum_number_of_digits(iBase, iBits);
-      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(int64_t) / 100), iMaximumDigits2, sz1, (int)strlen(sz2));
+      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(huge_integer) / 100), iMaximumDigits2, sz1, (int)strlen(sz2));
       if (strcmp(sz1, sz2) == 0)
       {
          //str.append_formatf("OK\n");
@@ -320,7 +320,7 @@ int twitch::ca2software_int_to_string_bases()
       my_itoa_base(sz, sizeof(sz), INT64_MIN, iBase);
       strTable.append_formatf("%d, ", strlen(sz));
       iMaximumDigits3 = signed_maximum_number_of_digits(iBase, iBits);
-      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(int64_t) / 100), iMaximumDigits3, sz, (int)strlen(sz));
+      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(huge_integer) / 100), iMaximumDigits3, sz, (int)strlen(sz));
       if (iMaximumDigits3 == strlen(sz))
       {
          str.append_formatf("OK2\n");
@@ -332,7 +332,7 @@ int twitch::ca2software_int_to_string_bases()
       my_utoa_base(sz, sizeof(sz), UINT64_MAX, iBase);
       strTable.append_formatf("%d ", strlen(sz));
       iMaximumDigits4 = unsigned_maximum_number_of_digits(iBase, iBits);
-      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(int64_t) / 100), iMaximumDigits4, sz, (int)strlen(sz));
+      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(huge_integer) / 100), iMaximumDigits4, sz, (int)strlen(sz));
       str.append_formatf("%4d,\n", bases[iBase]);
 
       strTable += "}";
