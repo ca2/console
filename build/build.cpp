@@ -18,7 +18,7 @@ void implement(::platform::system * psystem)
 
    papp->init_thread();
 
-   auto pbuild = papp->__create < ::app_build::build>();
+   auto pbuild = papp->__øcreate < ::app_build::build>();
 
    pbuild->m_bStdout = true;
 
