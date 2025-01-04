@@ -82,7 +82,7 @@
 		9A22671227CE8B140042BAC2 /* libidn.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libidn.dylib; path = "../../../../../Library/Developer/Xcode/DerivedData/mac-__hello-ferbzpmqoopfvnbsljzanjlsduhf/Build/Products/Debug/libidn.dylib"; sourceTree = "<group>"; };
 		9A22671327CE8B140042BAC2 /* libacme_apple.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libacme_apple.dylib; path = "../../../../../Library/Developer/Xcode/DerivedData/mac-__hello-ferbzpmqoopfvnbsljzanjlsduhf/Build/Products/Debug/libacme_apple.dylib"; sourceTree = "<group>"; };
 		9A22671427CE8B140042BAC2 /* libacme.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libacme.dylib; path = "../../../../../Library/Developer/Xcode/DerivedData/mac-__hello-ferbzpmqoopfvnbsljzanjlsduhf/Build/Products/Debug/libacme.dylib"; sourceTree = "<group>"; };
-		9A22671927CE8B460042BAC2 /* acme_macos.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = acme_macos.xcodeproj; path = "../../../operating_system/operating_system-macos/acme_macos/acme_macos.xcodeproj"; sourceTree = "<group>"; };
+		9A22671927CE8B460042BAC2 /* acme_macos.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = acme_macos.xcodeproj; path = "../../../operating_system/operating_system-macos/acme_macos/acme_macos.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		9A4387BE299E4AD800D2EE15 /* a-2023-02-02-twitch@ca2software.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "a-2023-02-02-twitch@ca2software.cpp"; sourceTree = "<group>"; };
 		9A58487E2B54B059001FFF2B /* libarchive.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libarchive.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A5EE4912650D105009F25F0 /* helloearth */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = helloearth; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -231,7 +231,7 @@
 				};
 			};
 			buildConfigurationList = 9A5EE48C2650D105009F25F0 /* Build configuration list for PBXProject "helloearth" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
