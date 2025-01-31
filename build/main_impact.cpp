@@ -134,10 +134,10 @@ namespace app_core_build
    //void main_impact::handle(::topic * ptopic, ::context * pcontext)
    //{
 
-   //   if(ptopic->m_atom == ::id_click)
+   //   if(ptopic->id() == ::id_click)
    //   {
 
-   //      if(ptopic->user_interaction()->m_atom == "hellomultiverse_toggle")
+   //      if(ptopic->user_interaction()->id() == "hellomultiverse_toggle")
    //      {
 
    //         m_pimpact->m_prender->m_bLite = !m_pimpact->m_prender->m_bLite;

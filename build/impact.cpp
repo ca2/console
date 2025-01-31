@@ -151,7 +151,7 @@ namespace app_core_build
    for (auto& pproperty : setEnvironment)
    {
 
-      SetEnvironmentVariableW(wstring(pproperty->m_atom), wstring(pproperty->string()));
+      SetEnvironmentVariableW(wstring(pproperty->id()), wstring(pproperty->string()));
 
    }
 
