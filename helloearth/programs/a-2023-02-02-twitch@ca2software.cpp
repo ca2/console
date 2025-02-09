@@ -17,33 +17,33 @@ Write your code in this editor and press "Run" button to compile and execute it.
 #include <string.h>
 #include <stdint.h>
 #include <limits.h>
-#define INT_STR_SIZE (sizeof(huge_integer)*CHAR_BIT + 2)
+#define INT_STR_SIZE (sizeof(long long)*CHAR_BIT + 2)
 
 
 using namespace std;
 
-huge_natural pow2(int iBits)
+unsigned long long pow2(int iBits)
 {
-   huge_natural u = 1;
+   unsigned long long u = 1;
    while (iBits-- > 0) u *= 2;
    return u;
 }
 
-int integer_log_base_2(huge_natural u)
+int integer_log_base_2(unsigned long long u)
 {
    int iBits = 0;
    while (u >>= 1) ++iBits;
    return iBits;
 }
-huge_natural intpow(int iBase,  int iBits)
+unsigned long long intpow(int iBase,  int iBits)
 {
-   huge_natural u = 1;
+   unsigned long long u = 1;
    while (iBits-- > 0) u *= iBase;
    return u;
 }
 
 
-int logpow2(int iBase, huge_natural u)
+int logpow2(int iBase, unsigned long long u)
 {
    int iShift = integer_log_base_2(iBase);
    int l = 0;
@@ -51,7 +51,7 @@ int logpow2(int iBase, huge_natural u)
    return l;
 }
 
-int ceillogpow2(int iBase, huge_natural u)
+int ceillogpow2(int iBase, unsigned long long u)
 {
    int iShift = integer_log_base_2(iBase);
    int l = 0;
@@ -61,19 +61,19 @@ int ceillogpow2(int iBase, huge_natural u)
    return l + (diff>0? 1: 0);
 }
 
-bool is_pow2(huge_natural u)
+bool is_pow2(unsigned long long u)
 {
    return !(u & (u - 1));
 }
 
-huge_integer bits_maximum_signed(int iBits)
+long long bits_maximum_signed(int iBits)
 {
  
    return pow2(iBits - 1) - 1;
 
 }
 
-huge_natural bits_maximum_signed_unsigned(int iBits)
+unsigned long long bits_maximum_signed_unsigned(int iBits)
 {
 
    return pow2(iBits - 1) + 1;
@@ -129,7 +129,7 @@ char * my_utoa_base(char * dest, size_t size, uint64_t x, int base) {
    return dest;
 }
 
-static char * my_itoa_base_helper(char * dest, size_t size, huge_integer x, int base) {
+static char * my_itoa_base_helper(char * dest, size_t size, long long x, int base) {
    if (size == 0) return NULL;
    int digit = -(x % base);
    x /= base;
@@ -141,7 +141,7 @@ static char * my_itoa_base_helper(char * dest, size_t size, huge_integer x, int 
    return dest + 1;
 }
 
-char * my_itoa_base(char * dest, size_t size, huge_integer x, int base) {
+char * my_itoa_base(char * dest, size_t size, long long x, int base) {
    if (base < 2 || base > 36 || size < 2) return NULL;
    char * p = dest;
    if (x < 0) {
@@ -302,13 +302,13 @@ int twitch::ca2software_int_to_string_bases()
 
 
 
-      iBits = sizeof(huge_integer) * 8;
+      iBits = sizeof(long long) * 8;
       my_itoa_base(sz1, sizeof(sz1), INT64_MAX, iBase);
       iMaximumDigits1 = signed_maximum_number_of_digits(iBase, iBits);
-      str.append_formatf("   huge_integer int %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(huge_integer) / 100), iMaximumDigits1, sz1, (int)strlen(sz2));
+      str.append_formatf("   long long int %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(long long) / 100), iMaximumDigits1, sz1, (int)strlen(sz2));
       my_utoa_base(sz2, sizeof(sz2), INT64_MAX, iBase);
       iMaximumDigits2 = unsigned_maximum_number_of_digits(iBase, iBits);
-      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(huge_integer) / 100), iMaximumDigits2, sz1, (int)strlen(sz2));
+      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(long long) / 100), iMaximumDigits2, sz1, (int)strlen(sz2));
       if (strcmp(sz1, sz2) == 0)
       {
          //str.append_formatf("OK\n");
@@ -320,7 +320,7 @@ int twitch::ca2software_int_to_string_bases()
       my_itoa_base(sz, sizeof(sz), INT64_MIN, iBase);
       strTable.append_formatf("%d, ", strlen(sz));
       iMaximumDigits3 = signed_maximum_number_of_digits(iBase, iBits);
-      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(huge_integer) / 100), iMaximumDigits3, sz, (int)strlen(sz));
+      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(long long) / 100), iMaximumDigits3, sz, (int)strlen(sz));
       if (iMaximumDigits3 == strlen(sz))
       {
          str.append_formatf("OK2\n");
@@ -332,7 +332,7 @@ int twitch::ca2software_int_to_string_bases()
       my_utoa_base(sz, sizeof(sz), UINT64_MAX, iBase);
       strTable.append_formatf("%d ", strlen(sz));
       iMaximumDigits4 = unsigned_maximum_number_of_digits(iBase, iBits);
-      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(huge_integer) / 100), iMaximumDigits4, sz, (int)strlen(sz));
+      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(long long) / 100), iMaximumDigits4, sz, (int)strlen(sz));
       str.append_formatf("%4d,\n", bases[iBase]);
 
       strTable += "}";

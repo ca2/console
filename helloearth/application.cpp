@@ -13,7 +13,7 @@
 
 //template<typename T>
 //inline const auto oddProduct(T n)  noexcept
-//-> std::enable_if_t<std::is_unsigned<T>::value, huge_natural> {
+//-> std::enable_if_t<std::is_unsigned<T>::value, unsigned long long> {
 //   return n < T{ 2 }
 //      ? n
 //      : (n % T{ 2 })
@@ -23,7 +23,7 @@
 //
 //template<typename T>
 //inline const auto oddProduct(T n)
-//-> std::enable_if_t<std::is_signed<T>::value, huge_natural> {
+//-> std::enable_if_t<std::is_signed<T>::value, unsigned long long> {
 //   if (n < 0) throw std::domain_error("Negative value passed");
 //   return n < T{ 2 }
 //      ? n

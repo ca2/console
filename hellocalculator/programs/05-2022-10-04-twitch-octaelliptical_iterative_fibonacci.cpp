@@ -12,7 +12,7 @@ using namespace std;
 //F(2) = 1
 
 
-huge_integer IterativeFibonacci(int iFibonacci);
+long long IterativeFibonacci(int iFibonacci);
 
 
 int twitch::octaelliptical_iterative_fibonacci_main() 
@@ -43,10 +43,10 @@ int twitch::octaelliptical_iterative_fibonacci_main()
 
 
 
-huge_integer IterativeFibonacci(int n)
+long long IterativeFibonacci(int n)
 {
 
-   huge_integer iFibonacci;
+   long long iFibonacci;
 
    if (n == 1)
    {
