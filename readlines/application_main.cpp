@@ -3,7 +3,7 @@
 #include "aqua/console.h"
 
 
-void application_main()
+void application_main(::platform::system * psystem)
 {
 
    console_readlines::application application;

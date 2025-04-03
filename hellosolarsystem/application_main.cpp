@@ -272,7 +272,7 @@ public:
 //
 
 
-void application_main()
+void application_main(::platform::system * psystem)
 {
 
    console_hellosolarsystem::application application;

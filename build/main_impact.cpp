@@ -40,7 +40,7 @@ namespace app_core_build
    }
 
 
-   void main_impact::handle(::topic * ptopic, ::context * pcontext)
+   void main_impact::handle(::topic * ptopic, ::handler_context * pcontext)
    {
 
       ::user::split_impact::handle(ptopic, pcontext);
@@ -131,7 +131,7 @@ namespace app_core_build
    }
 
 
-   //void main_impact::handle(::topic * ptopic, ::context * pcontext)
+   //void main_impact::handle(::topic * ptopic, ::handler_context * pcontext)
    //{
 
    //   if(ptopic->id() == ::id_click)

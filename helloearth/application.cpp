@@ -290,7 +290,7 @@ public:
 
 
 
-void application_main()
+void application_main(::platform::system * psystem)
 {
 
    auto papplication = __allocate console_helloearth::application();
