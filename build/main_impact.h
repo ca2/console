@@ -26,9 +26,9 @@ namespace app_core_build
 
       void on_create_split_impact() override;
 
-      void handle(::topic * ptopic, ::handler_context * pcontext) override;
+      void handle(::topic * ptopic, ::handler_context * phandlercontext) override;
 
-      //void handle(::topic * ptopic, ::handler_context * pcontext) override;
+      //void handle(::topic * ptopic, ::handler_context * phandlercontext) override;
 
 
       virtual void _001OnNcDraw(::draw2d::graphics_pointer & pgraphics) override;
