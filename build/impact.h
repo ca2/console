@@ -26,7 +26,7 @@ namespace app_core_build
 
 
 
-      void handle(::topic * ptopic, ::handler_context * pcontext) override;
+      void handle(::topic * ptopic, ::handler_context * phandlercontext) override;
 #ifdef _DEBUG
       // void assert_ok() const override;
       void dump(dump_context& dumpcontext) const override;
