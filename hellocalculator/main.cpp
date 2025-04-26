@@ -182,7 +182,7 @@ void implement(::platform::context * pcontext)
 
    //printf("atom=%s\n", atom.as_string().c_str());
 
-   //property_set set;
+   //::property_set set;
 
    //auto & library = set["user1"];
 
