@@ -7,17 +7,27 @@
 #include "aqua/_.h"
 #include "aqua/platform/application.h"
 
-
-
-class console_readlines :
-   virtual public ::aqua::application
+namespace console_readlines
 {
-public:
 
 
-   console_readlines();
-   void main() override;
+   class application :
+      virtual public ::aqua::application
+   {
+   public:
 
 
-};
+      application();
+      ~application() override;
+
+
+      void main() override;
+
+
+   };
+
+
+} // namespace console_readlines
+
+
 
