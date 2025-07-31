@@ -258,7 +258,7 @@ void hellomultiverse_debugging()
 
    }
 
-   information(pszFree);
+   information(scopedstrFree);
 
 }
 

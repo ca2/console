@@ -32,7 +32,7 @@ namespace app_build
       void write_log(const ::string &str);
 
 
-      ::e_status run_command(const ::string & strCommand);
+      ::e_status run_command(const ::scoped_string & scopedstrCommand);
 
 
    };

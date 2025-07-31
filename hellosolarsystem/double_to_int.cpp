@@ -29,7 +29,7 @@ void double_to_int()
       pParse++;
    }
 
-   double d = strtod(psz, &pStoppedHere);
+   double d = strtod(scopedstr, &pStoppedHere);
 
    if (pStoppedHere != nullptr)
    {

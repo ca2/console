@@ -61,7 +61,7 @@ constexpr const auto min_test(const unsigned int & u, const int & i)
 #include "axis/mathematics/calculator/result.h"
 
 
-string calculate(const string& str)
+string calculate(const ::scoped_string & scopedstr)
 {
 
    ::calculator::parser parser;
