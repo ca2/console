@@ -29,7 +29,7 @@ namespace app_build
       ::e_status run() override;
 
 
-      void write_log(const ::string &str);
+      void write_log(const ::scoped_string & scopedstr);
 
 
       ::e_status run_command(const ::scoped_string & scopedstrCommand);
