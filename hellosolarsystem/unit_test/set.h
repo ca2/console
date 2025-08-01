@@ -25,7 +25,7 @@ namespace unit_test
       character_count                                      m_iResultDotPadding;
 
 
-      set(const_char_pointer  pszName) : item(e_add_set, pszName) { t_pset = this; }
+      set(const_char_pointer pszName) : item(e_add_set, pszName) { t_pset = this; }
       ~set() {  }
 
 

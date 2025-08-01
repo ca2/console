@@ -1,7 +1,7 @@
 // polyglot_developer@Twitch Present : 2020-11-28 14:49 BRT 8.0
 
 
-void print_const_char_pointer  (const_char_pointer  psz)
+void print_const_char_pointer (const_char_pointer psz)
 {
 
    //psz[0] = 'a';
@@ -42,9 +42,9 @@ void pointer_const_pointer()
    sz[6] = 'r'; 
    sz[7] = 0;
 
-   //print_const_char_pointer  ("string");
+   //print_const_char_pointer ("string");
 
-   print_const_char_pointer  (sz);
+   print_const_char_pointer (sz);
 
    print_char_const_pointer(sz);
 
@@ -52,7 +52,7 @@ void pointer_const_pointer()
 
 
 
-void print_const_char_pointer  0(const_char_pointer  psz)
+void print_const_char_pointer 0(const_char_pointer psz)
 {
 
    psz++;
@@ -93,9 +93,9 @@ void pointer_const_pointer0()
    sz[6] = 'r';
    sz[7] = 0;
 
-   //print_const_char_pointer  ("string");
+   //print_const_char_pointer ("string");
 
-   print_const_char_pointer  0(sz);
+   print_const_char_pointer 0(sz);
 
    print_char_const_pointer0(sz);
 

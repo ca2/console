@@ -24,7 +24,7 @@ DECLARE_UNIT_TEST_SET(basic_types);
 
 
 template < typename CONTAINER >
-inline string _009Explode(const CONTAINER& container, string strSeparator, string strLastSeparator)
+inline string _009Explode(const CONTAINER& container, const ::scoped_string & scopedstrSeparator, const ::scoped_string & scopedstrLastSeparator)
 {
 
    string str;

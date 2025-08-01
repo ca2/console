@@ -30,8 +30,8 @@ namespace unit_test
       bool                       m_bTestPassed;
 
 
-      item(const_char_pointer  pszName);
-      item(enum_add_set, const_char_pointer  pszName);
+      item(const_char_pointer pszName);
+      item(enum_add_set, const_char_pointer pszName);
       ~item() override;
 
 
@@ -41,9 +41,9 @@ namespace unit_test
 
       virtual string get_plain_text_report(bool bExpanded = true);
 
-      void print(const_char_pointer  psz);
-      void printf(const_char_pointer  psz, ...);
-      //void print_unit_test_result(bool bResult, const_char_pointer  pszUnitTest);
+      void print(const_char_pointer psz);
+      void printf(const_char_pointer psz, ...);
+      //void print_unit_test_result(bool bResult, const_char_pointer pszUnitTest);
 
       bool test_passed() const { return m_bTestPassed; }
 

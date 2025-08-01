@@ -9,7 +9,7 @@ namespace unit_test
 {
 
 
-   item::item(const_char_pointer  pszName) :
+   item::item(const_char_pointer pszName) :
       m_strName(scopedstrName)
    {
 
@@ -84,7 +84,7 @@ namespace unit_test
    }
 
 
-   void item::print(const_char_pointer  psz)
+   void item::print(const_char_pointer psz)
    {
 
       m_strText.append_formatf("%s", psz);
@@ -92,7 +92,7 @@ namespace unit_test
    }
 
 
-   void item::printf(const_char_pointer  psz, ...)
+   void item::printf(const_char_pointer psz, ...)
    {
 
       va_list argList;

@@ -8,11 +8,11 @@ void double_to_int()
 
    int iLine = 123;
 
-   const_char_pointer  psz = "1e8abc,1a";
+   const_char_pointer psz = "1e8abc,1a";
 
    char* pStoppedHere = nullptr;
 
-   const_char_pointer  pParse = psz;
+   const_char_pointer pParse = psz;
 
    while (*pParse != ',')
    {

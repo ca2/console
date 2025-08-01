@@ -16,7 +16,7 @@ public:
    bool     m_bTestPassed;
 
 
-   unit_test(const_char_pointer  pszName, unit_test_set * punittestset);
+   unit_test(const_char_pointer pszName, unit_test_set * punittestset);
 
    virtual ~unit_test();
 
@@ -26,8 +26,8 @@ public:
 
    string get_report();
 
-   void print(const_char_pointer  psz);
-   //void print_unit_test_result(bool bResult, const_char_pointer  pszUnitTest);
+   void print(const_char_pointer psz);
+   //void print_unit_test_result(bool bResult, const_char_pointer pszUnitTest);
 
    bool test_passed() const { return m_bTestPassed; }
 

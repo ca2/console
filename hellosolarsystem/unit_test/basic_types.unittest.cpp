@@ -4,7 +4,7 @@
 
 __begin(char_natural_pointer_size)
 
-auto naturalpointer = natural_pointer < range < const_char_pointer  >, string_meta_data < char >, string_memory_allocator >();
+auto naturalpointer = natural_pointer < range < const_char_pointer >, string_meta_data < char >, string_memory_allocator >();
 
 auto iNaturalPointerSize = sizeof(naturalpointer);
 
@@ -14,7 +14,7 @@ __end(iNaturalPointerSize == sizeof(void *));
 
 __begin(char_natural_pointer_string_type_size)
 
-auto stringtypenaturalpointer = natural_pointer < range < const_char_pointer  >, string_meta_data < char >, string_memory_allocator >();
+auto stringtypenaturalpointer = natural_pointer < range < const_char_pointer >, string_meta_data < char >, string_memory_allocator >();
 
 int iStringTypeNaturalPointerSize = sizeof(stringtypenaturalpointer);
 
@@ -83,7 +83,7 @@ __begin(string)
 
 ::string str = "string should act like a pointer to c string";
 
-printf("psz = \"%s\"\n", (const_char_pointer  )str);
+printf("psz = \"%s\"\n", (const_char_pointer )str);
 
 auto iStringClassSize = sizeof(str);
 
@@ -109,7 +109,7 @@ __begin(atom)
 
 ::atom atom = "atom should act like a pointer to c string";
 
-printf("(const_char_pointer  )atom = \"%s\"\n", (const_char_pointer  )::string(atom));
+printf("(const_char_pointer )atom = \"%s\"\n", (const_char_pointer )::string(atom));
 
 auto iAtomClassSize = sizeof(atom);
 

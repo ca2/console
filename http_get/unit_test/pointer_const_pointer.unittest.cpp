@@ -1,7 +1,7 @@
 // polyglot_developer@Twitch Present : 2020-11-28 14:49 BRT 8.0
 
 
-__begin(print_const_char_pointer  )
+__begin(print_const_char_pointer )
 {
 
    auto psz = "Test";
@@ -46,9 +46,9 @@ auto psz = "Test";
    sz[6] = 'r';
    sz[7] = 0;
 
-   //print_const_char_pointer  ("string");
+   //print_const_char_pointer ("string");
 
-   print_const_char_pointer  (sz);
+   print_const_char_pointer (sz);
 
    print_char_const_pointer(sz);
 
@@ -56,7 +56,7 @@ __end(true)
 
 
 
-__begin(print_const_char_pointer  0)
+__begin(print_const_char_pointer 0)
 
 
 
@@ -106,9 +106,9 @@ __begin(pointer_const_pointer0)
    sz[6] = 'r';
    sz[7] = 0;
 
-   //print_const_char_pointer  ("string");
+   //print_const_char_pointer ("string");
 
-   print_const_char_pointer  0(sz);
+   print_const_char_pointer 0(sz);
 
    print_char_const_pointer0(sz);
 
