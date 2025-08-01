@@ -270,8 +270,8 @@ void test_002()
    auto pstart = __FILE__;
    auto pend = pstart + ansi_len(pstart);
 
-   //const char * pSearch = __FILE__;
-   //const char * pSearchEnd = pstart + strlen(pstart);
+   //const_char_pointer  pSearch = __FILE__;
+   //const_char_pointer  pSearchEnd = pstart + strlen(pstart);
 
    string str(pstart, pend);
 
@@ -643,10 +643,10 @@ namespace console_hello
 
          string str("HiHelloYou!!");
 
-         auto psz1 = (const char *)str;
+         auto psz1 = (const_char_pointer  )str;
 
-         output_debug_string_formatf("(\"%%s\", str) : %s\n", (const char*)str);
-         output_debug_string_formatf("(\"%%s\", psz = (const char *)str; ) : %s\n", psz1);
+         output_debug_string_formatf("(\"%%s\", str) : %s\n", (const_char_pointer  )str);
+         output_debug_string_formatf("(\"%%s\", psz = (const_char_pointer  )str; ) : %s\n", psz1);
 
       }
 
