@@ -36,7 +36,7 @@ namespace app_core_build
       pane_impact *                            m_ppaneimpact;
 
 
-      ::file::path_array                          m_pathaCommandLineSlide;
+      ::file::path_array_base                          m_pathaCommandLineSlide;
 
 
       application();
