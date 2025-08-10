@@ -53,7 +53,7 @@ namespace console
 
             string strCaseInsensitveEndsEat;
 
-            string_array straUrl;
+            string_array_base straUrl;
 
             for (int i = 0; i < psubsystem->get_argument_count1(); i++)
             {

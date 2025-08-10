@@ -84,7 +84,7 @@ public:
 
       //printf("case_insensitive_begins_eat(strTest123, \"test\")=%s\n", strTest123.c_str());
 
-      //string_array stra;
+      //string_array_base stra;
 
       //stra.add("apple");
       //stra.add("orange");
@@ -97,7 +97,7 @@ public:
 
       //}
 
-      //string_array stra2;
+      //string_array_base stra2;
 
       //stra2.add("apP");
       //stra2.add("ap1");

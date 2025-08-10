@@ -176,13 +176,13 @@ __START(numeric_array_copy)
 __begin(numeric_array_copy_constructor)
 
 
-int_array ia1;
+int_array_base ia1;
 
 ia1.add(1);
 ia1.add(1000);
 ia1.add(200'000'000);
 
-int_array ia2(ia1);
+int_array_base ia2(ia1);
 
 __end(ia2.size() == 3 && ia2[0] == 1 && ia2[1] == 1'000 && ia2[2] == 200'000'000)
 
@@ -190,13 +190,13 @@ __end(ia2.size() == 3 && ia2[0] == 1 && ia2[1] == 1'000 && ia2[2] == 200'000'000
 __begin(numeric_array_assign_construct)
 
 
-int_array ia1;
+int_array_base ia1;
 
 ia1.add(1);
 ia1.add(1000);
 ia1.add(200'000'000);
 
-int_array ia2 = ia1;
+int_array_base ia2 = ia1;
 
 __end(ia2.size() == 3 && ia2[0] == 1 && ia2[1] == 1'000 && ia2[2] == 200'000'000)
 
@@ -204,13 +204,13 @@ __end(ia2.size() == 3 && ia2[0] == 1 && ia2[1] == 1'000 && ia2[2] == 200'000'000
 __begin(numeric_array_assign)
 
 
-int_array ia1;
+int_array_base ia1;
 
 ia1.add(1);
 ia1.add(1000);
 ia1.add(200'000'000);
 
-int_array ia2;
+int_array_base ia2;
 
 ia2 = ia1;
 

@@ -53,7 +53,7 @@ namespace console_readlines
 
       //do_xml_test(psystem);
 
-      string_array stra;
+      string_array_base stra;
 
       //console.system()->get_main_application()->initialize_context();
 

@@ -11,7 +11,7 @@ namespace app_core_build
    public:
 
 
-      string_array      m_straLine;
+      string_array_base      m_straLine;
 
       ::pointer<build>       m_pbuild;
 

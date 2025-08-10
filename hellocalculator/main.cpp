@@ -96,7 +96,7 @@ void implement(::platform::context * pcontext)
 
    }
 
-   string_array straExpression;
+   string_array_base straExpression;
 
    for (int i = 0; i < psubsystem->get_argument_count1(); i++)
    {
@@ -129,7 +129,7 @@ void implement(::platform::context * pcontext)
 
    //printf("case_insensitive_begins_eat(strTest123, \"test\")=%s\n", strTest123.c_str());
 
-   //string_array stra;
+   //string_array_base stra;
 
    //stra.add("apple");
    //stra.add("orange");
@@ -142,7 +142,7 @@ void implement(::platform::context * pcontext)
 
    //}
 
-   //string_array stra2;
+   //string_array_base stra2;
 
    //stra2.add("apP");
    //stra2.add("ap1");

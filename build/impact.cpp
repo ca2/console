@@ -139,7 +139,7 @@ namespace app_core_build
    pnode->run_silent(pdirectorysystem->system() / "env1.bat", "");
 
    string strLog = file_system()->as_string(pdirectorysystem->system() / "env.txt");
-   string_array stra;
+   string_array_base stra;
    stra.add_lines(strLog);
 
    //sleep(10000_ms);
@@ -222,7 +222,7 @@ namespace app_core_build
       pgraphics->fill_rectangle(rectangleX, argb(127, 255, 255, 255));
 
 
-      string_array straLine;
+      string_array_base straLine;
 
       file()->get_lines(straLine, directory_system()->home() /"build.log");
 
