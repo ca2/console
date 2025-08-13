@@ -17,7 +17,7 @@ int twitch::show_main_menu_and_get_menu_item()
    ::std::cout << "4. octaelliptical stars programs with odd only line count" << ::std::endl;
    ::std::cout << "5. octaelliptical iterative fibonacci" << ::std::endl;
    ::std::cout << "6. octaelliptical count miscellaneous characters" << ::std::endl;
-   ::std::cout << "7. octaelliptical list prime numbers" << ::std::endl;
+   ::std::cout << "7. octaelliptical list_base prime numbers" << ::std::endl;
    ::std::cout << "8. nicopelullo binary tree to stack" << ::std::endl;
    ::std::cout << "9. nicopelullo inorder, preorder and post order" << ::std::endl;
    ::std::cout << "a. ca2software int_to_string bases " << ::std::endl;

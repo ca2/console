@@ -136,26 +136,26 @@ void find_maximum_value_in_list()
 
    using LIST_TYPE = double;
 
-   ::list<LIST_TYPE> list;
+   ::list_base<LIST_TYPE> list_base;
 
    auto minimum = ::numeric_info<LIST_TYPE >::minimum();
 
-   list.add_tail(minimum);
-   list.add_tail(minimum + 1);
-   list.add_tail(minimum);
-   list.add_tail(0);
-   list.add_tail(9);
-   list.add_tail(2);
-   list.add_tail(-3);
-   list.add_tail(500);
-   list.add_tail(1);
-   list.add_tail(-111);
-   list.add_tail(11);
+   list_base.add_tail(minimum);
+   list_base.add_tail(minimum + 1);
+   list_base.add_tail(minimum);
+   list_base.add_tail(0);
+   list_base.add_tail(9);
+   list_base.add_tail(2);
+   list_base.add_tail(-3);
+   list_base.add_tail(500);
+   list_base.add_tail(1);
+   list_base.add_tail(-111);
+   list_base.add_tail(11);
 
-   if (list.is_empty())
+   if (list_base.is_empty())
    {
 
-      printf("The list is empty. There is not maximum value to display");
+      printf("The list_base is empty. There is not maximum value to display");
 
    }
    else
@@ -179,7 +179,7 @@ void find_maximum_value_in_list()
 
       auto maximum = minimum;
 
-      for (auto& item : list)
+      for (auto& item : list_base)
       {
 
          if (item > maximum)
