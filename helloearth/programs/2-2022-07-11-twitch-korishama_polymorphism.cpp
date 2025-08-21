@@ -173,11 +173,11 @@ public:
 int twitch::korishama_polymorphism_main()
 {
 
-   auto ptriangle = __allocate TriangleRegular(yes_for_two__no_for_three_and_cancel_for_exit_exception(this));
+   auto ptriangle = øallocate TriangleRegular(yes_for_two__no_for_three_and_cancel_for_exit_exception(this));
 
-   auto pcircle = __allocate Circle(yes_for_two__no_for_three_and_cancel_for_exit_exception(this));
+   auto pcircle = øallocate Circle(yes_for_two__no_for_three_and_cancel_for_exit_exception(this));
 
-   auto psquare = __allocate Square(yes_for_two__no_for_three_and_cancel_for_exit_exception(this));
+   auto psquare = øallocate Square(yes_for_two__no_for_three_and_cancel_for_exit_exception(this));
 
    pointer_array < Figure > figures({ptriangle, pcircle, psquare});
 

@@ -293,7 +293,7 @@ public:
 void application_main(::platform::system * psystem)
 {
 
-   auto papplication = __allocate console_helloearth::application();
+   auto papplication = øallocate console_helloearth::application();
 
    auto iExitCode = application.application_main();
 

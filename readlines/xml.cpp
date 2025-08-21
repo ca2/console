@@ -9,7 +9,7 @@ void do_xml_test(::platform::system * psystem)
 
       {
 
-         auto pdocument = psystem->__create_new < xml::document >();
+         auto pdocument = psystem->øcreate_new < xml::document >();
 
          pdocument->set_name("xml");
 
@@ -31,7 +31,7 @@ void do_xml_test(::platform::system * psystem)
 
       {
 
-         auto pdocument = psystem->__create_new< xml::document>();
+         auto pdocument = psystem->øcreate_new< xml::document>();
 
          pdocument->set_name("xml");
 
