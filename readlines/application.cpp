@@ -6,7 +6,7 @@
 
 IMPLEMENT_APPLICATION_FACTORY(console_readlines);
 
-enum_dialog_result message_box_for_console(const ::scoped_string & scopedstr, const ::scoped_string & scopedstrTitle, const ::enum_message_box & emessagebox);
+enum_dialog_result message_box_for_console(const ::scoped_string & scopedstr, const ::scoped_string & scopedstrTitle, const ::user::enum_message_box & emessagebox);
 
 namespace console_readlines
 {
