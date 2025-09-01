@@ -74,7 +74,7 @@ namespace console_readlines
 
       //}
 
-      message_box_for_console(str, "readlines", e_message_box_ok);
+      message_box_for_console(str, "readlines", ::user::e_message_box_ok);
 
       //return console.result();
 

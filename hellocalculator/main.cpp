@@ -302,7 +302,7 @@ void implement(::platform::context * pcontext)
    //   do
    //   {
 
-   //      edialogresult = message_box_for_console("Hello Earth!! Yes, No or Cancel?!?", "helloearth!!", e_message_box_yes_no_cancel | e_message_box_icon_information);
+   //      edialogresult = message_box_for_console("Hello Earth!! Yes, No or Cancel?!?", "helloearth!!", ::user::e_message_box_yes_no_cancel | ::user::e_message_box_icon_information);
 
    //      printf("\n");
 

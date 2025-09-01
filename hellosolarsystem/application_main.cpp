@@ -236,7 +236,7 @@ public:
 
 #endif //  WITH_UNIT_TEST
 
-      message_box_for_console("Hello Solar System!!", "hellosolarsystem", e_message_box_ok);
+      message_box_for_console("Hello Solar System!!", "hellosolarsystem", ::user::e_message_box_ok);
 
       // return ::success;
 
