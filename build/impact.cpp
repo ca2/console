@@ -55,7 +55,7 @@ namespace app_core_build
 
       ::user::impact::install_message_routing(pchannel);
 
-      MESSAGE_LINK(::user::e_message_create, pchannel, this, &impact::on_message_create);
+      USER_MESSAGE_LINK(::user::e_message_create, pchannel, this, &impact::on_message_create);
 
    }
 
