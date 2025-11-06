@@ -86,6 +86,8 @@
 		9A4387BE299E4AD800D2EE15 /* a-2023-02-02-twitch@ca2software.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "a-2023-02-02-twitch@ca2software.cpp"; sourceTree = "<group>"; };
 		9A58487E2B54B059001FFF2B /* libarchive.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libarchive.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A5EE4912650D105009F25F0 /* helloearth */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = helloearth; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A6FB9C92EBCD080003BBE61 /* _____debug_application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "_____debug_application.xcconfig"; sourceTree = "<group>"; };
+		9A6FB9CA2EBCD080003BBE61 /* _____release_application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "_____release_application.xcconfig"; sourceTree = "<group>"; };
 		9AE6DE6929629C5F008A1335 /* application.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = application.cpp; sourceTree = "<group>"; };
 		9AE6DE6C29629CBC008A1335 /* 1-2022-02-11-twitch-memoriesdota_file_word_count.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "1-2022-02-11-twitch-memoriesdota_file_word_count.cpp"; sourceTree = "<group>"; };
 		9AE6DE6D29629CBC008A1335 /* 9-2022-11-15-twitch@nicopelullo-inorder__preorder_and_post_order.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "9-2022-11-15-twitch@nicopelullo-inorder__preorder_and_post_order.cpp"; sourceTree = "<group>"; };
@@ -145,6 +147,8 @@
 		9A5EE49B2650D168009F25F0 /* helloearth */ = {
 			isa = PBXGroup;
 			children = (
+				9A6FB9C92EBCD080003BBE61 /* _____debug_application.xcconfig */,
+				9A6FB9CA2EBCD080003BBE61 /* _____release_application.xcconfig */,
 				9A1862832A27023E0054515F /* _____debug.xcconfig */,
 				9A1862812A27023D0054515F /* _____release.xcconfig */,
 				9AE6DE7E29629D3F008A1335 /* twitch.cpp */,
@@ -477,6 +481,7 @@
 		};
 		9A5EE4992650D105009F25F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A6FB9C92EBCD080003BBE61 /* _____debug_application.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				PLATFORM_MODIFIER = macos;
@@ -487,6 +492,7 @@
 		};
 		9A5EE49A2650D105009F25F0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A6FB9CA2EBCD080003BBE61 /* _____release_application.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				PLATFORM_MODIFIER = macos;

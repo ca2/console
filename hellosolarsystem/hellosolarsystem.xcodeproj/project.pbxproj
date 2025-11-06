@@ -145,6 +145,8 @@
 		9A4387D7299E4CBF00D2EE15 /* set.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = set.h; sourceTree = "<group>"; };
 		9A4387D8299E4CBF00D2EE15 /* _.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _.h; sourceTree = "<group>"; };
 		9A5848822B54B07C001FFF2B /* libarchive.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libarchive.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A6FB9C22EBCD026003BBE61 /* _____debug_application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "_____debug_application.xcconfig"; sourceTree = "<group>"; };
+		9A6FB9C32EBCD026003BBE61 /* _____release_application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "_____release_application.xcconfig"; sourceTree = "<group>"; };
 		9AEA193327601557006437A3 /* hellosolarsystem */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = hellosolarsystem; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AEA19602760170E006437A3 /* hellosolarsystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hellosolarsystem.cpp; sourceTree = SOURCE_ROOT; };
 		9AEA199F27601B3C006437A3 /* libssl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.dylib; path = "../../../../operating_system/storage-macos/Debug/library/libssl.dylib"; sourceTree = "<group>"; };
@@ -236,6 +238,8 @@
 		9AEA193527601557006437A3 /* hellosolarsystem */ = {
 			isa = PBXGroup;
 			children = (
+				9A6FB9C22EBCD026003BBE61 /* _____debug_application.xcconfig */,
+				9A6FB9C32EBCD026003BBE61 /* _____release_application.xcconfig */,
 				9A18628A2A2702A40054515F /* _____debug.xcconfig */,
 				9A1862842A2702A30054515F /* _____release.xcconfig */,
 				9A4387C6299E4CBF00D2EE15 /* unit_test */,
