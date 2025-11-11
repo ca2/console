@@ -190,7 +190,7 @@ IMPLEMENT_APPLICATION_FACTORY();
 
       }
 
-      informationf("\nfinished hellomultiverse::on_request");
+      informationf("----> finished hellomultiverse::on_request");
 
    }
 
