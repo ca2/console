@@ -293,7 +293,7 @@ void cjsteel_0001_ca2_rev()
       int j = pmathematics->gen_rand() % 100;
 
       vecaParticle[i].w = j;
-      vecaParticle[i].x() = j + 1;
+      vecaParticle[i].x = j + 1;
 
    }
 
@@ -319,7 +319,7 @@ void cjsteel_0001_ca2_rev()
 
    }
 
-   auto dEstimatedPosition = vecaParticle[iFindMaxWParticle].x();
+   auto dEstimatedPosition = vecaParticle[iFindMaxWParticle].x;
 
    printf("Position: %s\n\n", as_string(dEstimatedPosition).c_str());
 
