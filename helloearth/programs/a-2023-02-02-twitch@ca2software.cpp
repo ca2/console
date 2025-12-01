@@ -343,7 +343,7 @@ int twitch::ca2software_int_to_string_bases()
 
 
    file_system()->put_contents("C:\\archive\\int_to_string_bases.txt", str);
-   file_system()->put_contents("C:\\main\\source\\app\\acme\\primitive\\mathematics\\int_to_string_bases_table.dynamically_generated", strTable);
+   file_system()->put_contents("C:\\main\\source\\app\\acme\\prototype\\mathematics\\int_to_string_bases_table.dynamically_generated", strTable);
 
    //getchar();
 
