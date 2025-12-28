@@ -5,7 +5,7 @@ project(_console_hello CXX)
 add_executable(_console_hello main.cpp)
 
 
-if (MSVC)
+if(${WIN32})
     target_compile_options(_console_hello PRIVATE "/MD$<$<CONFIG:Debug>:d>")
     target_link_options(_console_hello PRIVATE "/DEFAULTLIB:msvcrt$<$<CONFIG:Debug>:d>")
     target_link_options(_console_hello PRIVATE "/SUBSYSTEM:CONSOLE")
