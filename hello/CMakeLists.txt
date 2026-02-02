@@ -4,7 +4,10 @@ project(_console_hello CXX)
 
 add_executable(${PROJECT_NAME}
    _.cpp
-   application.cpp remove_utf8_bom.cpp search_special_characters.cpp)
+   application.cpp 
+   main.cpp
+   remove_utf8_bom.cpp 
+   search_special_characters.cpp)
 
 
 if(${WIN32})

@@ -10,29 +10,31 @@ double yes_for_two__no_for_three_and_cancel_for_exit_exception(::particle * ppar
 {
 
    auto psystem = pparticle->system();
+   
+   throw todo;
 
-   auto result = auto pmessagebox = __initialize_new ::message_box(psystem, "Yes for two and No for 3\n\n(and cancel for exit...)", "Hello App!", ::user::e_message_box_yes_no_cancel | ::user::e_message_box_default_button_3, "Hello Multiverse!!");
+   //auto result = auto pmessagebox = __initialize_new ::message_box(psystem, "Yes for two and No for 3\n\n(and cancel for exit...)", "Hello App!", ::user::e_message_box_yes_no_cancel | ::user::e_message_box_default_button_3, "Hello Multiverse!!");
 
-pmessagebox->sync();
+//pmessagebox->sync();
 
-   if (result == e_dialog_result_yes)
-   {
+   //if (result == e_dialog_result_yes)
+   //{
 
-      return 2.0;
+      //return 2.0;
 
-   }
-   else if (result == e_dialog_result_no)
-   {
+   //}
+   //else if (result == e_dialog_result_no)
+   //{
 
-      return 3.0;
+      //return 3.0;
 
-   }
-   else
-   {
+   //}
+   //else
+   //{
 
-      throw exit_exception();
+      //throw exit_exception();
 
-   }
+   //}
 
 }
 

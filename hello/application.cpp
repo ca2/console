@@ -20,7 +20,7 @@
 //BEGIN_FACTORY(console_hello)
 //FACTORY_DEPENDENCY(acme_windows)
 //END_FACTORY()
-#include "acme/console.h"
+//#include "acme/console.h"
 int * g_pi = nullptr;
 
 enum enum_test_increment
@@ -565,7 +565,9 @@ namespace console_hello
          case e_test_increment_four:
             output_debug_string("e_test_increment_four\n");
             break;
-
+case e_test_increment_count:
+throw ::exception(error_wrong_state);
+break;
 
          };
 

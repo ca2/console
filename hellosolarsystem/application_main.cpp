@@ -39,13 +39,13 @@ inline string _009Explode(const CONTAINER& container, const ::scoped_string & sc
       if (i > 2)
       {
 
-         str += strSeparator;
+         str += scopedstrSeparator;
 
       }
       else if (i == 2)
       {
 
-         str += strLastSeparator;
+         str += scopedstrLastSeparator;
 
       }
 
@@ -82,7 +82,7 @@ public:
 
       m_bNetworking = false;
 
-      m_bCrypto = false;
+      //m_bCrypto = false;
 
       m_bResource = false;
 
@@ -236,7 +236,10 @@ public:
 
 #endif //  WITH_UNIT_TEST
 
-      message_box_for_console("Hello Solar System!!", "hellosolarsystem", ::user::e_message_box_ok);
+      //message_box_for_console("Hello Solar System!!", "hellosolarsystem", ::user::e_message_box_ok);
+      auto pmessagebox = message_box("Hello Solar System!!", "hellosolarsystem", ::user::e_message_box_ok);
+      
+      pmessagebox->sync();
 
       // return ::success;
 
@@ -274,12 +277,13 @@ public:
 
 void application_main(::platform::system * psystem)
 {
+throw todo;
+   //console_hellosolarsystem::application application;
 
-   console_hellosolarsystem::application application;
+   //auto iExitCode = application.application_main();
 
-   auto iExitCode = application.application_main();
-
-   return iExitCode;
+//application.m_iExitCode = iExitCode;
+//   return iExitCode;
 
 }
 

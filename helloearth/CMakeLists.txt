@@ -14,6 +14,7 @@ list(APPEND executable_source
         programs/9-2022-11-15-twitch@nicopelullo-inorder__preorder_and_post_order.cpp
         programs/a-2023-02-02-twitch@ca2software.cpp
         application.cpp
+        main.cpp
         twitch.cpp
         )
 
