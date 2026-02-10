@@ -174,7 +174,7 @@ namespace nicopelullo
 					arboltemporal = arboltemporal->m_ptreenodeRight;
 				}
 			}
-			return NULL;
+			return nullptr;
 		}
 	}
 
