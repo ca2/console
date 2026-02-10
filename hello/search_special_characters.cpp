@@ -16,13 +16,13 @@ namespace console_hello
 
       ::file::listing_base listing;
 
-      auto pathFolder = directory_system()->get_current();
+      auto pathFolder = directory_system()->current();
 
       listing.set_pattern_file_listing(pathFolder, {"*.h", "*.cpp", "*.c", "*.hpp" }, e_depth_recursively);
       ::file::path_array_base patha;
       ::string strReports;
 
-      listing.m_functionOnNewPath = [this,&patha,&strReports](auto & path)
+      listing.m_functionOnNewPath = [this,&patha,&strReports](const ::file::path & path)
          {
 
 
@@ -57,7 +57,7 @@ namespace console_hello
 
                      string strReport;
 
-                     strReport.formatf("%s(%d,%d): %s\r\n",path.c_str(), iLine, iCharacter, line.substr(iCharacter - 1, line.length() - iCharacter + 1).c_str());
+                     strReport.formatf("%s(%d,%d): %s\r\n",path.c_str(), iLine, iCharacter, ::string(line.substr(iCharacter - 1, line.length() - iCharacter + 1)).c_str());
 
                      output_debug_string_formatf("%s", strReport.c_str());
 

@@ -10,7 +10,7 @@ namespace unit_test
 
 
    item::item(const_char_pointer pszName) :
-      m_strName(scopedstrName)
+      m_strName(pszName)
    {
 
       if (::unit_test::set::t_bEndGroup)
@@ -43,7 +43,7 @@ namespace unit_test
    }
 
    item::item(enum_add_set, const  char * pszName) :
-      m_strName(scopedstrName)
+      m_strName(pszName)
    {
 
       if (::unit_test::set::t_bEndGroup)
@@ -99,7 +99,7 @@ namespace unit_test
 
       va_start(argList, psz);
 
-      m_strText.append_formatf_arguments(scopedstr, argList);
+      m_strText.append_formatf_arguments(psz, argList);
 
       va_end(argList);
 

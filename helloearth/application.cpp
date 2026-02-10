@@ -1,4 +1,6 @@
+// Changed by camilo on 2026-02-01 08:51 <3ThomasBorregaardSørensen!!
 #include "framework.h"
+#include "application.h"
 //#include "acme/prototype/prototype/payload.h"
 #include "acme/prototype/string/str.h"
 #define FACTORY console_helloearth
@@ -7,9 +9,13 @@
 //BEGIN_FACTORY(console_helloearth)
 //FACTORY_DEPENDENCY(acme_windows)
 //END_FACTORY()
-#include "acme/console.h"
+//s#include "acme/console.h"
 #include "_.h"
 #include <iostream> // mixing with STL
+
+
+IMPLEMENT_APPLICATION_FACTORY(console_helloearth);
+
 
 //template<typename T>
 //inline const auto oddProduct(T n)  noexcept
@@ -55,13 +61,28 @@ constexpr const auto min_test(const unsigned int & u, const int & i)
 #define minimum_ min_test
 
 
-class console_helloearth :
-   virtual public ::platform::application
+//
+//console_helloearth g_consoleearth;
+//
+
+
+
+//void application_main(::platform::system * psystem)
+//{
+
+//throw todo;
+   ////auto papplication = øallocate console_helloearth::application();
+
+   ////auto iExitCode = application.application_main();
+
+   ////return iExitCode;
+
+//}
+namespace console_helloearth
 {
-public:
 
 
-   void main() override
+   void application::main()
    {
 
       //string strHelloEarth = "Hello Earth!!";
@@ -258,13 +279,19 @@ public:
          do
          {
 
-            edialogresult = message_box_for_console("Hello Earth!! Yes, No or Cancel?!?", "helloearth!!", ::user::e_message_box_yes_no_cancel | ::user::e_message_box_icon_information);
+            //edialogresult = message_box_for_console("Hello Earth!! Yes, No or Cancel?!?", "helloearth!!", ::user::e_message_box_yes_no_cancel | ::user::e_message_box_icon_information);
+            
+            auto pmessagebox = message_box("Hello Earth!! Yes, No or Cancel?!?", "helloearth!!", ::user::e_message_box_yes_no_cancel | ::user::e_message_box_icon_information);
 
             printf("\n");
 
             printf("\n");
+            
+            pmessagebox->sync();
+            
+            throw todo;
 
-            printf("helloearth response \"%s\"", message_box_result_to_string(edialogresult).c_str());
+            //printf("helloearth response \"%s\"", message_box_result_to_string(pmessagebox->m_edialogresult).c_str());
 
             printf("\n");
 
@@ -282,23 +309,7 @@ public:
 
    }
 
-};
 
-//
-//console_helloearth g_consoleearth;
-//
-
-
-
-void application_main(::platform::system * psystem)
-{
-
-   auto papplication = øallocate console_helloearth::application();
-
-   auto iExitCode = application.application_main();
-
-   return iExitCode;
-
-}
+} // namespace console_helloearth
 
 
