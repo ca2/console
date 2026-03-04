@@ -71,7 +71,7 @@ constexpr const auto min_test(const unsigned int & u, const int & i)
 //{
 
 //throw todo;
-   ////auto papplication = øallocate console_helloearth::application();
+   ////auto papplication = allocateø console_helloearth::application();
 
    ////auto iExitCode = application.application_main();
 
@@ -287,7 +287,7 @@ namespace console_helloearth
 
             printf("\n");
             
-            pmessagebox->sync();
+            send(pmessageboxpayload);
             
             throw todo;
 

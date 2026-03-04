@@ -232,9 +232,9 @@ throw todo;
 
 //::pointer_array < ::item> itema1;
 
-//itema1.add(øallocate ::item(1));
-//itema1.add(øallocate< ::item >(1'000));
-//itema1.add(øallocate< ::item >(200'000'000));
+//itema1.add(allocateø ::item(1));
+//itema1.add(allocateø< ::item >(1'000));
+//itema1.add(allocateø< ::item >(200'000'000));
 
 //::pointer_array < ::item> itema2(itema1);
 

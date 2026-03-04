@@ -11,9 +11,9 @@ double yes_for_two__no_for_three_and_cancel_for_exit_exception(::particle* ppart
 
    auto psystem = pparticle->system();
 
-   auto result = auto pmessagebox = __initialize_new ::message_box(psystem, "Yes for two and No for 3\n\n(and cancel for exit...)", "Hello App!", ::user::e_message_box_yes_no_cancel | ::user::e_message_box_default_button_3, "Hello Multiverse!!");
+   auto result = auto pmessageboxpayload = __initialize_new ::message_box_payload(psystem, "Yes for two and No for 3\n\n(and cancel for exit...)", "Hello App!", ::user::e_message_box_yes_no_cancel | ::user::e_message_box_default_button_3, "Hello Multiverse!!");
 
-pmessagebox->sync();
+send(pmessageboxpayload);
 
    if (result == e_dialog_result_yes)
    {
@@ -175,15 +175,15 @@ int twitch::korishama_polymorphism_main()
 
    auto dTriangle = yes_for_two__no_for_three_and_cancel_for_exit_exception(this);
 
-   auto ptriangle = øallocate TriangleRegular(dTriangle);
+   auto ptriangle = allocateø TriangleRegular(dTriangle);
 
    auto dCircle = yes_for_two__no_for_three_and_cancel_for_exit_exception(this);
 
-   auto pcircle = øallocate Circle(dCircle);
+   auto pcircle = allocateø Circle(dCircle);
 
    auto dSquare = yes_for_two__no_for_three_and_cancel_for_exit_exception(this);
 
-   auto psquare = øallocate Square(dSquare);
+   auto psquare = allocateø Square(dSquare);
 
    pointer_array < Figure > figures({ ptriangle, pcircle, psquare });
 
