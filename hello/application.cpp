@@ -669,7 +669,7 @@ break;
       while (true)
       {
 
-         auto pmessagebox = message_box("Hello!!\nNo: for exception test(\u2717)!!", "Hello App!", ::user::e_message_box_yes_no_cancel | ::user::e_message_box_default_button_3, "Hello Multiverse!!");
+         auto pmessageboxpayload = message_box("Hello!!\nNo: for exception test(\u2717)!!", "Hello App!", ::user::e_message_box_yes_no_cancel | ::user::e_message_box_default_button_3, "Hello Multiverse!!");
 
          send(pmessageboxpayload);
 
@@ -722,13 +722,13 @@ break;
             catch (::exception& exception)
             {
 
-               auto pmessagebox = message_box(exception, "Exception at Hello Console App!!\n" + exception.get_message(), "Hello Console App!", ::user::e_message_box_ok, "Hello Console App!!\n");
+               auto pmessageboxpayload = message_box(exception, "Exception at Hello Console App!!\n" + exception.get_message(), "Hello Console App!", ::user::e_message_box_ok, "Hello Console App!!\n");
                
                pmessagebox->async()
                   << [this]()
                   {
 
-                     auto pmessagebox = message_box("Got ::exception", "Got ::exception", ::user::e_message_box_ok | ::user::e_message_box_icon_information);
+                     auto pmessageboxpayload = message_box("Got ::exception", "Got ::exception", ::user::e_message_box_ok | ::user::e_message_box_icon_information);
 
                      send(pmessageboxpayload);
 
@@ -743,13 +743,13 @@ break;
 
                ::exception exception(error_catch_all_exception);
 
-               auto pmessagebox = message_box(exception, "Catchall Exception at Hello Console App!!\n", "Hello Console App!", ::user::e_message_box_ok, "Hello Console App!!");
+               auto pmessageboxpayload = message_box(exception, "Catchall Exception at Hello Console App!!\n", "Hello Console App!", ::user::e_message_box_ok, "Hello Console App!!");
                
                pmessagebox->async()
                   <<[this]()
                {
 
-                  auto pmessagebox = message_box("Caught (...)", "Caught (...)", ::user::e_message_box_ok | ::user::e_message_box_icon_information);
+                  auto pmessageboxpayload = message_box("Caught (...)", "Caught (...)", ::user::e_message_box_ok | ::user::e_message_box_icon_information);
 
                   post(pmessageboxpayload);
 

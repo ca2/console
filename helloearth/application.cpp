@@ -281,7 +281,7 @@ namespace console_helloearth
 
             //edialogresult = message_box_for_console("Hello Earth!! Yes, No or Cancel?!?", "helloearth!!", ::user::e_message_box_yes_no_cancel | ::user::e_message_box_icon_information);
             
-            auto pmessagebox = message_box("Hello Earth!! Yes, No or Cancel?!?", "helloearth!!", ::user::e_message_box_yes_no_cancel | ::user::e_message_box_icon_information);
+            auto pmessageboxpayload = message_box("Hello Earth!! Yes, No or Cancel?!?", "helloearth!!", ::user::e_message_box_yes_no_cancel | ::user::e_message_box_icon_information);
 
             printf("\n");
 

@@ -237,7 +237,7 @@ public:
 #endif //  WITH_UNIT_TEST
 
       //message_box_for_console("Hello Solar System!!", "hellosolarsystem", ::user::e_message_box_ok);
-      auto pmessagebox = message_box("Hello Solar System!!", "hellosolarsystem", ::user::e_message_box_ok);
+      auto pmessageboxpayload = message_box("Hello Solar System!!", "hellosolarsystem", ::user::e_message_box_ok);
       
       send(pmessageboxpayload);
 
