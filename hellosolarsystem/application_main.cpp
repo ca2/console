@@ -177,7 +177,7 @@ public:
 
       //   {
       //
-      //      ::int_array_base ia;
+      //      ::i32_array_base ia;
       //
       //      ia.add(1);
       //
@@ -211,7 +211,7 @@ public:
       //
       //      printf("Finding odds at %s\n", str.c_str());
       //
-      //      ::int_array_base furyDriveArray;
+      //      ::i32_array_base furyDriveArray;
       //
       //      ::in_odd_count(furyDriveArray, ia);
       //
