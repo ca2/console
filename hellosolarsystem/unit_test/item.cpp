@@ -42,7 +42,7 @@ namespace unit_test
 
    }
 
-   item::item(enum_add_set, const  char * pszName) :
+   item::item(enum_add_set, const  ::i8 * pszName) :
       m_strName(pszName)
    {
 

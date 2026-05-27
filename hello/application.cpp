@@ -204,7 +204,7 @@ string checking_string_move_002()
 
    string str;
 
-   auto p = ___new char[123];
+   auto p = ___new ::i8[123];
 
    ansi_cpy(p, "checking_string_move_002");
 
@@ -308,7 +308,7 @@ namespace console_hello
    }
 
 
-   ::string generatecontatenation(::particle * pparticle, char ch)
+   ::string generatecontatenation(::particle * pparticle, ::i8 ch)
    {
 
       ::string str;
@@ -318,7 +318,7 @@ namespace console_hello
       for (int i = 0; i < iCount; i++)
       {
 
-         char ch1 = (ch + (char)pparticle->mathematics()->random(0, 4));
+         ::i8 ch1 = (ch + (::i8)pparticle->mathematics()->random(0, 4));
 
          str.append(&ch1, 1);
 
@@ -328,7 +328,7 @@ namespace console_hello
 
    }
 
-   void application::test_contatenation(char ch)
+   void application::test_contatenation(::i8 ch)
    {
 
       
@@ -360,7 +360,7 @@ namespace console_hello
 
       auto path1 = path.sibling(pathLast.name());
 
-      strMillis = ::as_string(::long_long_millisecond() % 1000);
+      strMillis = ::as_string(::i64_millisecond() % 1000);
 
       str1.formatf("this is a contatenation%s and format test%s ", str.c_str(), strD.c_str());
 
@@ -396,7 +396,7 @@ namespace console_hello
 
    }
 
-   void application::test_datetime_format(char ch)
+   void application::test_datetime_format(::i8 ch)
    {
 
 

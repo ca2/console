@@ -6,7 +6,7 @@ void print_const_char_pointer (const_char_pointer psz)
 
    //psz[0] = 'a';
 
-   char * psz1 = (char *)psz;
+   ::i8 * psz1 = (::i8 *)psz;
 
    psz1[0] = 'b';
 
@@ -16,7 +16,7 @@ void print_const_char_pointer (const_char_pointer psz)
 
 }
 
-void print_char_const_pointer(char * const psz)
+void print_char_const_pointer(::i8 * const psz)
 {
 
    psz[0] = 'b';
@@ -31,7 +31,7 @@ void print_char_const_pointer(char * const psz)
 void pointer_const_pointer()
 {
 
-   char sz[8];
+   ::i8 sz[8];
 
    sz[0] = 'p';
    sz[1] = 'o';
@@ -61,7 +61,7 @@ void print_const_char_pointer 0(const_char_pointer psz)
 
 }
 
-void print_char_const_pointer0(char * const psz)
+void print_char_const_pointer0(::i8 * const psz)
 {
 
    psz[0] = 'b';
@@ -71,7 +71,7 @@ void print_char_const_pointer0(char * const psz)
 }
 
 
-void print_const_char_const_pointer0(char const * const psz)
+void print_const_char_const_pointer0(::i8 const * const psz)
 {
 
    printf("%s", psz);
@@ -82,7 +82,7 @@ void print_const_char_const_pointer0(char const * const psz)
 void pointer_const_pointer0()
 {
 
-   char sz[8];
+   ::i8 sz[8];
 
    sz[0] = 'p';
    sz[1] = 'o';

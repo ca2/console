@@ -6,7 +6,7 @@
 #include <fstream>
 
 
-double yes_for_two__no_for_three_and_cancel_for_exit_exception(::particle* pparticle)
+::f64 yes_for_two__no_for_three_and_cancel_for_exit_exception(::particle* pparticle)
 {
 
    auto psystem = pparticle->system();
@@ -57,7 +57,7 @@ public:
    }
 
 
-   virtual double get_perimeter()
+   virtual ::f64 get_perimeter()
    {
 
       throw interface_only();
@@ -75,9 +75,9 @@ class Circle :
 {
 public:
 
-   double m_dRadius;
+   ::f64 m_dRadius;
 
-   Circle(double dRadius)
+   Circle(::f64 dRadius)
    {
 
       m_dRadius = dRadius;
@@ -91,7 +91,7 @@ public:
 
    }
 
-   double get_perimeter() override
+   ::f64 get_perimeter() override
    {
 
 
@@ -107,9 +107,9 @@ class TriangleRegular :
 {
 public:
 
-   double m_dSide;
+   ::f64 m_dSide;
 
-   TriangleRegular(double dSide)
+   TriangleRegular(::f64 dSide)
    {
 
       m_dSide = dSide;
@@ -124,7 +124,7 @@ public:
 
    }
 
-   double get_perimeter() override
+   ::f64 get_perimeter() override
    {
 
 
@@ -140,9 +140,9 @@ class Square :
 {
 public:
 
-   double m_dSide;
+   ::f64 m_dSide;
 
-   Square(double dSide)
+   Square(::f64 dSide)
    {
 
       m_dSide = dSide;
@@ -157,7 +157,7 @@ public:
 
    }
 
-   double get_perimeter() override
+   ::f64 get_perimeter() override
    {
 
 

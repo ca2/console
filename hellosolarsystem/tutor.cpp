@@ -134,7 +134,7 @@ inline string _009Explode(const CONTAINER& container, const ::scoped_string & sc
 void find_maximum_value_in_list()
 {
 
-   using LIST_TYPE = double;
+   using LIST_TYPE = ::f64;
 
    ::list_base<LIST_TYPE> list_base;
 
@@ -270,10 +270,10 @@ void find_maximum_value_in_list()
 //}
 struct vec
 {
-   double x;
-   double y;
-   double z;
-   double w;
+   ::f64 x;
+   ::f64 y;
+   ::f64 z;
+   ::f64 w;
 
 };
 
@@ -299,14 +299,14 @@ void cjsteel_0001_ca2_rev()
 
    int numParticles = PARTICLE_COUNT;
 
-   double dMax = 0;
+   ::f64 dMax = 0;
 
    int iFindMaxWParticle = -1;
 
    for (int iParticle = 0; iParticle < numParticles; iParticle++)
    {
 
-      //double replace = vecaParticle[iParticle].w;
+      //::f64 replace = vecaParticle[iParticle].w;
 
       if (vecaParticle[iParticle].w > dMax)
       {

@@ -9,7 +9,7 @@ void printf_format_flags()
 
    int i = 'a';
    int * pi = &i;
-   float f = 23.130456734f;
+   ::f32 f = 23.130456734f;
    const_char_pointer psz = "This is a string";
 
    printf("=======================================\n");

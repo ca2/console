@@ -16,7 +16,7 @@
 
 //template<typename T>
 //inline const auto oddProduct(T n)  noexcept
-//-> std::enable_if_t<std::is_unsigned<T>::value, unsigned long long> {
+//-> std::enable_if_t<std::is_unsigned<T>::value, ::u64> {
 //   return n < T{ 2 }
 //      ? n
 //      : (n % T{ 2 })
@@ -26,7 +26,7 @@
 //
 //template<typename T>
 //inline const auto oddProduct(T n)
-//-> std::enable_if_t<std::is_signed<T>::value, unsigned long long> {
+//-> std::enable_if_t<std::is_signed<T>::value, ::u64> {
 //   if (n < 0) throw std::domain_error("Negative value passed");
 //   return n < T{ 2 }
 //      ? n
@@ -47,10 +47,10 @@ constexpr const auto min_test(const A & a, const B & b)
 
 }
 template <  >
-constexpr const auto min_test(const unsigned int & u, const int & i)
+constexpr const auto min_test(const ::u32 & u, const int & i)
 {
 
-   return i < 0 ? 0 : (u < (unsigned int)i ? u : (unsigned int)i);
+   return i < 0 ? 0 : (u < (::u32)i ? u : (::u32)i);
 
 }
 
@@ -222,54 +222,54 @@ void implement(::platform::context * pcontext)
    //printf("%s\n", strNetworkPayload.c_str());
 
 
-   //unsigned int uAllOne = 0xffffffff;
+   //::u32 uAllOne = 0xffffffff;
    //int iUAllOne = uAllOne;
    //auto min1 = minimum(uAllOne, iUAllOne);
    //printf("%d\n", min1);
    //auto min2 = minimum(iUAllOne, uAllOne);
    //printf("%d\n", min2);
    //int iAllOne = -1;
-   //unsigned int uIAllOne = iAllOne;
+   //::u32 uIAllOne = iAllOne;
    //auto min3 = minimum(iAllOne, uIAllOne);
    //printf("%u\n", min3);
    //auto min4 = minimum(uIAllOne, iAllOne);
    //printf("%u\n", min4);
 
 
-   //unsigned int uAlmostAllOne = 0xfffffffe;
+   //::u32 uAlmostAllOne = 0xfffffffe;
    //int iUAlmostAllOne = uAlmostAllOne;
    //auto min5 = minimum(uAlmostAllOne, iUAlmostAllOne);
    //printf("min5: %i\n", min5);
    //auto min6 = minimum(iUAlmostAllOne, uAlmostAllOne);
    //printf("min6: %i\n", min6);
    //int iAlmostAllOne = -2;
-   //unsigned int uIAlmostAllOne = iAlmostAllOne;
+   //::u32 uIAlmostAllOne = iAlmostAllOne;
    //auto min7 = minimum(iAlmostAllOne, uIAlmostAllOne);
    //printf("%i\n", min7);
    //auto min8 = minimum(uIAlmostAllOne, iAlmostAllOne);
    //printf("%i\n", min8);
 
-   //unsigned short u1 = 0xffff;
+   //::u16 u1 = 0xffff;
    //int i1 = u1;
    //auto min9 = minimum(u1, i1);
    //printf("%i\n", min9);
    //auto mina = minimum(i1, u1);
    //printf("%i\n", mina);
-   //short s1 = -1;
-   //unsigned int i2 = s1;
+   //::i16 s1 = -1;
+   //::u32 i2 = s1;
    //auto minb = minimum(s1, i2);
    //printf("%i\n", minb);
    //auto minc = minimum(i2, s1);
    //printf("%i\n", minc);
 
-   //unsigned int u3 = 0xffffffff;
-   //short i3 = u3;
+   //::u32 u3 = 0xffffffff;
+   //::i16 i3 = u3;
    //auto mind = minimum(u3, i3);
    //printf("%i\n", mind);
    //auto mine = minimum(i3, u3);
    //printf("%i\n", mine);
    //int s3 = -1;
-   //unsigned short i4 = s3;
+   //::u16 i4 = s3;
    //auto minf = minimum(s3, i4);
    //printf("%i\n", minf);
    //auto ming = minimum(i4, s3);

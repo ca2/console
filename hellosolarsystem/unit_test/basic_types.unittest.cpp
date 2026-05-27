@@ -4,11 +4,11 @@
 
 __begin(char_natural_pointer_size)
 
-//auto naturalpointer = natural_pointer < range < const_char_pointer >, string_meta_data < char >, string_memory_allocator >();
+//auto naturalpointer = natural_pointer < range < const_char_pointer >, string_meta_data < ::i8 >, string_memory_allocator >();
 
 //auto iNaturalPointerSize = sizeof(naturalpointer);
 
-//printf("sizeof(natural_pointer<\"char\">) = % " PRIiPTR "\n", iNaturalPointerSize);
+//printf("sizeof(natural_pointer<\"::i8\">) = % " PRIiPTR "\n", iNaturalPointerSize);
 
 //__end(iNaturalPointerSize == sizeof(void *));
 
@@ -16,11 +16,11 @@ __end(1);
 
 __begin(char_natural_pointer_string_type_size)
 
-//auto stringtypenaturalpointer = natural_pointer < range < const_char_pointer >, string_meta_data < char >, string_memory_allocator >();
+//auto stringtypenaturalpointer = natural_pointer < range < const_char_pointer >, string_meta_data < ::i8 >, string_memory_allocator >();
 
 //int iStringTypeNaturalPointerSize = sizeof(stringtypenaturalpointer);
 
-//printf("sizeof(string_type < natural_pointer<\"char\"> >)=%" PRIiPTR "\n", iStringTypeNaturalPointerSize);
+//printf("sizeof(string_type < natural_pointer<\"::i8\"> >)=%" PRIiPTR "\n", iStringTypeNaturalPointerSize);
 
 
 //__end(iStringTypeNaturalPointerSize == sizeof(void *));
@@ -128,7 +128,7 @@ __end(iAtomClassSize == sizeof(void *) * 2);
 
 
 
-__begin(int_atom_assign_int)
+__begin(i32_atom_assign_int)
 
 
 ::atom atom(1);
@@ -140,7 +140,7 @@ throw todo;
 __end(1);
 
 
-__begin(int_atom_assign_text)
+__begin(i32_atom_assign_text)
 
 
 ::atom atom(1);

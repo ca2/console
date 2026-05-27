@@ -6,7 +6,7 @@ __begin(print_const_char_pointer )
 
    auto psz = "Test";
 
-   char * psz1 = (char *)psz;
+   ::i8 * psz1 = (::i8 *)psz;
 
    psz1[0] = 'b';
 
@@ -35,7 +35,7 @@ __begin(pointer_const_pointer)
 
 auto psz = "Test";
 
-   char sz[8];
+   ::i8 sz[8];
 
    sz[0] = 'p';
    sz[1] = 'o';
@@ -95,7 +95,7 @@ __end(true)
 __begin(pointer_const_pointer0)
 {
 
-   char sz[8];
+   ::i8 sz[8];
 
    sz[0] = 'p';
    sz[1] = 'o';

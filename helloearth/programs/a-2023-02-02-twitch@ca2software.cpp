@@ -17,33 +17,33 @@ Write your code in this editor and press "Run" button to compile and execute it.
 #include <string.h>
 #include <stdint.h>
 #include <limits.h>
-#define INT_STR_SIZE (sizeof(long long)*CHAR_BIT + 2)
+#define INT_STR_SIZE (sizeof(::i64)*CHAR_BIT + 2)
 
 
 using namespace std;
 
-unsigned long long pow2(int iBits)
+::u64 pow2(int iBits)
 {
-   unsigned long long u = 1;
+   ::u64 u = 1;
    while (iBits-- > 0) u *= 2;
    return u;
 }
 
-int integer_log_base_2(unsigned long long u)
+int integer_log_base_2(::u64 u)
 {
    int iBits = 0;
    while (u >>= 1) ++iBits;
    return iBits;
 }
-unsigned long long intpow(int iBase,  int iBits)
+::u64 intpow(int iBase,  int iBits)
 {
-   unsigned long long u = 1;
+   ::u64 u = 1;
    while (iBits-- > 0) u *= iBase;
    return u;
 }
 
 
-int logpow2(int iBase, unsigned long long u)
+int logpow2(int iBase, ::u64 u)
 {
    int iShift = integer_log_base_2(iBase);
    int l = 0;
@@ -51,7 +51,7 @@ int logpow2(int iBase, unsigned long long u)
    return l;
 }
 
-int ceillogpow2(int iBase, unsigned long long u)
+int ceillogpow2(int iBase, ::u64 u)
 {
    int iShift = integer_log_base_2(iBase);
    int l = 0;
@@ -61,19 +61,19 @@ int ceillogpow2(int iBase, unsigned long long u)
    return l + (diff>0? 1: 0);
 }
 
-bool is_pow2(unsigned long long u)
+bool is_pow2(::u64 u)
 {
    return !(u & (u - 1));
 }
 
-long long bits_maximum_signed(int iBits)
+::i64 bits_maximum_signed(int iBits)
 {
  
    return pow2(iBits - 1) - 1;
 
 }
 
-unsigned long long bits_maximum_signed_unsigned(int iBits)
+::u64 bits_maximum_signed_unsigned(int iBits)
 {
 
    return pow2(iBits - 1) + 1;
@@ -91,9 +91,9 @@ int signed_maximum_number_of_digits(int iBase, int iBits)
    else
    {
 
-      auto p = (double)bits_maximum_signed_unsigned(iBits);
+      auto p = (::f64)bits_maximum_signed_unsigned(iBits);
       auto logmax = log(p);
-      auto logbase = log((double)iBase);
+      auto logbase = log((::f64)iBase);
       auto digits = logmax / logbase;
       return (int) (ceil(digits) + 1);
 
@@ -104,11 +104,11 @@ int signed_maximum_number_of_digits(int iBase, int iBits)
 int unsigned_maximum_number_of_digits(int iBase, int iBits)
 {
 
-   return (int) ceil(log(pow(2.0, (double)(iBits))-1.0) / log((double)iBase));
+   return (int) ceil(log(pow(2.0, (::f64)(iBits))-1.0) / log((::f64)iBase));
 
 }
 
-static char * my_utoa_base_helper(char * dest, size_t size, uint64_t x, int base) {
+static ::i8 * my_utoa_base_helper(::i8 * dest, size_t size, uint64_t x, int base) {
    if (size == 0) return NULL;
    int digit = (x % base);
    x /= base;
@@ -120,16 +120,16 @@ static char * my_utoa_base_helper(char * dest, size_t size, uint64_t x, int base
    return dest + 1;
 }
 
-char * my_utoa_base(char * dest, size_t size, uint64_t x, int base) {
+::i8 * my_utoa_base(::i8 * dest, size_t size, uint64_t x, int base) {
    if (base < 2 || base > 36 || size < 2) return NULL;
-   char * p = dest;
+   ::i8 * p = dest;
    p = my_utoa_base_helper(p, size - 1, x, base);
    if (p == NULL) return NULL;
    *p = '\0';
    return dest;
 }
 
-static char * my_itoa_base_helper(char * dest, size_t size, long long x, int base) {
+static ::i8 * my_itoa_base_helper(::i8 * dest, size_t size, ::i64 x, int base) {
    if (size == 0) return NULL;
    int digit = -(x % base);
    x /= base;
@@ -141,9 +141,9 @@ static char * my_itoa_base_helper(char * dest, size_t size, long long x, int bas
    return dest + 1;
 }
 
-char * my_itoa_base(char * dest, size_t size, long long x, int base) {
+::i8 * my_itoa_base(::i8 * dest, size_t size, ::i64 x, int base) {
    if (base < 2 || base > 36 || size < 2) return NULL;
-   char * p = dest;
+   ::i8 * p = dest;
    if (x < 0) {
       *p++ = '-';
       size--;
@@ -158,7 +158,7 @@ char * my_itoa_base(char * dest, size_t size, long long x, int base) {
 }
 
 // compound literal C99 or later
-#define MY_ITOA_BASE(x,base) my_itoa_base((char [INT_STR_SIZE]){""}, INT_STR_SIZE,(x),(base))
+#define MY_ITOA_BASE(x,base) my_itoa_base((::i8 [INT_STR_SIZE]){""}, INT_STR_SIZE,(x),(base))
 
 int twitch::ca2software_int_to_string_bases()
 {
@@ -190,21 +190,21 @@ int twitch::ca2software_int_to_string_bases()
          strTable += ",\n";
 
       }
-      bases[iBase] = (int)ceil(log((double)2) * 1000.0 / log((double)iBase));
+      bases[iBase] = (int)ceil(log((::f64)2) * 1000.0 / log((::f64)iBase));
       str.append_formatf("%2d\n", iBase);
-      char sz[1024];
-      char sz1[1024];
-      char sz2[1024];
+      ::i8 sz[1024];
+      ::i8 sz1[1024];
+      ::i8 sz2[1024];
 
       strTable += "{";
 
-      iBits = sizeof(char) *8;
+      iBits = sizeof(::i8) *8;
       my_itoa_base(sz1, sizeof(sz1), CHAR_MAX, iBase);
       iMaximumDigits1 = signed_maximum_number_of_digits(iBase, iBits);
-      str.append_formatf("            char %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(char) / 100), iMaximumDigits1, sz1, (int)strlen(sz1));
+      str.append_formatf("            ::i8 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(::i8) / 100), iMaximumDigits1, sz1, (int)strlen(sz1));
       my_utoa_base(sz2, sizeof(sz2), CHAR_MAX, iBase);
       iMaximumDigits2 = unsigned_maximum_number_of_digits(iBase, iBits);
-      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(char) / 100), iMaximumDigits2, sz2, (int)strlen(sz2));
+      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(::i8) / 100), iMaximumDigits2, sz2, (int)strlen(sz2));
       if (strcmp(sz1, sz2) == 0)
       {
          //   str.append_formatf("OK\n");
@@ -215,7 +215,7 @@ int twitch::ca2software_int_to_string_bases()
       }
       my_itoa_base(sz, sizeof(sz), CHAR_MIN, iBase);
       iMaximumDigits3 = signed_maximum_number_of_digits(iBase, iBits);
-      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(char) / 100), iMaximumDigits3, sz, (int)strlen(sz));
+      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(::i8) / 100), iMaximumDigits3, sz, (int)strlen(sz));
       if (iMaximumDigits3 == strlen(sz))
       {
          str.append_formatf("OK2\n");
@@ -228,17 +228,17 @@ int twitch::ca2software_int_to_string_bases()
       strTable.append_formatf("%d, ", strlen(sz));
       my_itoa_base(sz, sizeof(sz), UCHAR_MAX, iBase);
       iMaximumDigits4 = unsigned_maximum_number_of_digits(iBase, iBits);
-      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(char) / 100), iMaximumDigits4, sz, (int)strlen(sz));
+      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(::i8) / 100), iMaximumDigits4, sz, (int)strlen(sz));
       strTable.append_formatf("%d, ", strlen(sz));
 
 
-      iBits = sizeof(short) *8;
+      iBits = sizeof(::i16) *8;
       my_itoa_base(sz1, sizeof(sz1), SHRT_MAX, iBase);
       iMaximumDigits1 = signed_maximum_number_of_digits(iBase, iBits);
-      str.append_formatf("           short %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(short) / 100), iMaximumDigits1, sz1, (int)strlen(sz1));
+      str.append_formatf("           ::i16 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(::i16) / 100), iMaximumDigits1, sz1, (int)strlen(sz1));
       my_utoa_base(sz2, sizeof(sz2), SHRT_MAX, iBase);
       iMaximumDigits2 = unsigned_maximum_number_of_digits(iBase, iBits);
-      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(short) / 100), iMaximumDigits2, sz2, (int)strlen(sz2));
+      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(::i16) / 100), iMaximumDigits2, sz2, (int)strlen(sz2));
       if (strcmp(sz1, sz2) == 0)
       {
          //str.append_formatf("OK\n");
@@ -250,7 +250,7 @@ int twitch::ca2software_int_to_string_bases()
       my_itoa_base(sz, sizeof(sz), SHRT_MIN, iBase);
       strTable.append_formatf("%d, ", strlen(sz));
       iMaximumDigits3 = signed_maximum_number_of_digits(iBase, iBits);
-      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(short) / 100), iMaximumDigits3, sz, (int)strlen(sz));
+      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(::i16) / 100), iMaximumDigits3, sz, (int)strlen(sz));
       if (iMaximumDigits3 == strlen(sz))
       {
          str.append_formatf("OK2\n");
@@ -262,7 +262,7 @@ int twitch::ca2software_int_to_string_bases()
       my_itoa_base(sz, sizeof(sz), USHRT_MAX, iBase);
       strTable.append_formatf("%d, ", strlen(sz));
       iMaximumDigits4 = unsigned_maximum_number_of_digits(iBase, iBits);
-      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(short) / 100), iMaximumDigits4, sz, (int)strlen(sz));
+      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(::i16) / 100), iMaximumDigits4, sz, (int)strlen(sz));
 
 
 
@@ -302,13 +302,13 @@ int twitch::ca2software_int_to_string_bases()
 
 
 
-      iBits = sizeof(long long) * 8;
+      iBits = sizeof(::i64) * 8;
       my_itoa_base(sz1, sizeof(sz1), INT64_MAX, iBase);
       iMaximumDigits1 = signed_maximum_number_of_digits(iBase, iBits);
-      str.append_formatf("   long long int %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(long long) / 100), iMaximumDigits1, sz1, (int)strlen(sz2));
+      str.append_formatf("   ::i64 int %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(::i64) / 100), iMaximumDigits1, sz1, (int)strlen(sz2));
       my_utoa_base(sz2, sizeof(sz2), INT64_MAX, iBase);
       iMaximumDigits2 = unsigned_maximum_number_of_digits(iBase, iBits);
-      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(long long) / 100), iMaximumDigits2, sz1, (int)strlen(sz2));
+      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(::i64) / 100), iMaximumDigits2, sz1, (int)strlen(sz2));
       if (strcmp(sz1, sz2) == 0)
       {
          //str.append_formatf("OK\n");
@@ -320,7 +320,7 @@ int twitch::ca2software_int_to_string_bases()
       my_itoa_base(sz, sizeof(sz), INT64_MIN, iBase);
       strTable.append_formatf("%d, ", strlen(sz));
       iMaximumDigits3 = signed_maximum_number_of_digits(iBase, iBits);
-      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(long long) / 100), iMaximumDigits3, sz, (int)strlen(sz));
+      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(::i64) / 100), iMaximumDigits3, sz, (int)strlen(sz));
       if (iMaximumDigits3 == strlen(sz))
       {
          str.append_formatf("OK2\n");
@@ -332,7 +332,7 @@ int twitch::ca2software_int_to_string_bases()
       my_utoa_base(sz, sizeof(sz), UINT64_MAX, iBase);
       strTable.append_formatf("%d ", strlen(sz));
       iMaximumDigits4 = unsigned_maximum_number_of_digits(iBase, iBits);
-      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(long long) / 100), iMaximumDigits4, sz, (int)strlen(sz));
+      str.append_formatf("                 %2d (%2d) %s len=%2d\n", (int)(bases[iBase] * sizeof(::i64) / 100), iMaximumDigits4, sz, (int)strlen(sz));
       str.append_formatf("%4d,\n", bases[iBase]);
 
       strTable += "}";
@@ -342,8 +342,8 @@ int twitch::ca2software_int_to_string_bases()
    information(str);
 
 
-   file_system()->put_contents("C:\\archive\\int_to_string_bases.txt", str);
-   file_system()->put_contents("C:\\main\\source\\app\\acme\\prototype\\mathematics\\int_to_string_bases_table.dynamically_generated", strTable);
+   file_system()->put_contents("C:\\archive\\i32_to_string_bases.txt", str);
+   file_system()->put_contents("C:\\main\\source\\app\\acme\\prototype\\mathematics\\i32_to_string_bases_table.dynamically_generated", strTable);
 
    //getchar();
 

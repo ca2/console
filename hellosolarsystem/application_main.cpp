@@ -64,7 +64,7 @@ inline string _009Explode(const CONTAINER& container, const ::scoped_string & sc
 //#include "pointer_const_pointer.cpp"
 //#include "tutor.cpp"
 //#include "asterisk_ampersand_naked_type.cpp"
-//#include "double_to_int.cpp"
+//#include "f64_to_int.cpp"
 //#include "brushing_bit_per_bit.cpp"
 //#include "loop_get_char.cpp"
 //#include "printf_format_flags.cpp"
@@ -104,7 +104,7 @@ public:
    //
    //   brushing_bit_per_bit();
    //
-   //   double_to_int();
+   //   f64_to_int();
    //
    //   loop_get_char();
    //

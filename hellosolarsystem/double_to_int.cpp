@@ -3,14 +3,14 @@
 //#include <stdlib.h>
 
 
-void double_to_int()
+void f64_to_int()
 {
 
    int iLine = 123;
 
    const_char_pointer psz = "1e8abc,1a";
 
-   char* pStoppedHere = nullptr;
+   ::i8* pStoppedHere = nullptr;
 
    const_char_pointer pParse = psz;
 
@@ -29,7 +29,7 @@ void double_to_int()
       pParse++;
    }
 
-   double d = strtod(scopedstr, &pStoppedHere);
+   ::f64 d = strtod(scopedstr, &pStoppedHere);
 
    if (pStoppedHere != nullptr)
    {
@@ -38,6 +38,6 @@ void double_to_int()
 
    }
 
-   printf("This is the double value %f", d);
+   printf("This is the ::f64 value %f", d);
 
 }
