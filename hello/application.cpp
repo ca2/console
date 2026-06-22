@@ -59,9 +59,9 @@ enum enum_test_increment
 //   while (true)
 //   {
 //
-//      auto result = auto pmessageboxpayload = __initialize_new ::message_box_payload(pcontext, "Hello!!\nNo: for exception test!!", "Hello App!", ::user::e_message_box_yes_no_cancel | ::user::e_message_box_default_button_3, "Hello Multiverse!!");
+//      auto result = auto pmessagebox = __initialize_new ::message_box_payload(pcontext, "Hello!!\nNo: for exception test!!", "Hello App!", ::user::e_message_box_yes_no_cancel | ::user::e_message_box_default_button_3, "Hello Multiverse!!");
 
-//send(pmessageboxpayload);
+//send(pmessagebox);
 //
 //      if (result == e_dialog_result_yes)
 //      {
@@ -70,9 +70,9 @@ enum enum_test_increment
 //
 //         output_debug_string("Yes!!\n");
 //
-//         auto pmessageboxpayload = __initialize_new ::message_box_payload(pcontext, "Yes!!", "Yes!!", ::user::e_message_box_ok);
+//         auto pmessagebox = __initialize_new ::message_box_payload(pcontext, "Yes!!", "Yes!!", ::user::e_message_box_ok);
 
-//send(pmessageboxpayload);
+//send(pmessagebox);
 //
 //         break;
 //
@@ -98,7 +98,7 @@ enum enum_test_increment
 ////
 ////                  auto psequencer = psystem->nano()->exception_message_console(exception, "Dummy inline Catchall Exception at Hello Console App!!\n", "Dummy inline Hello Console App!", ::user::e_message_box_ok, "Dummy inline Hello Console App!!");
 ////
-////                  post(pmessageboxpayload);
+////                  post(pmessagebox);
 //                  
 //                  //int * pi = nullptr;
 //                  
@@ -114,7 +114,7 @@ enum enum_test_increment
 //                  
 //                  auto psequencer = pcontext->nano()->exception_message_console(exception, "Exception at Hello Console App!!\n" + exception.get_message(), "Hello Console App!", ::user::e_message_box_ok, "Hello Console App!!\n");
 //
-//                  post(pmessageboxpayload);
+//                  post(pmessagebox);
 //                  
 //               }
 //               catch(...)
@@ -124,7 +124,7 @@ enum enum_test_increment
 //
 //                  auto psequencer = pcontext->nano()->exception_message_console(exception, "Catchall Exception at Hello Console App!!\n", "Hello Console App!", ::user::e_message_box_ok, "Hello Console App!!");
 //
-//                  post(pmessageboxpayload);
+//                  post(pmessagebox);
 //
 //               }
 //
@@ -136,9 +136,9 @@ enum enum_test_increment
 //
 //         output_debug_string("No!\n");
 //
-//         auto pmessageboxpayload = __initialize_new ::message_box_payload(pcontext, "No!", "No!", ::user::e_message_box_ok);
+//         auto pmessagebox = __initialize_new ::message_box_payload(pcontext, "No!", "No!", ::user::e_message_box_ok);
 
-//send(pmessageboxpayload);
+//send(pmessagebox);
 //
 //      }
 //      else if (result == e_dialog_result_cancel)
@@ -148,9 +148,9 @@ enum enum_test_increment
 //
 //         output_debug_string("Cancel!!\n");
 //
-//         auto pmessageboxpayload = __initialize_new ::message_box_payload(pcontext, "Cancel", "Cancel", ::user::e_message_box_ok);
+//         auto pmessagebox = __initialize_new ::message_box_payload(pcontext, "Cancel", "Cancel", ::user::e_message_box_ok);
 
-//send(pmessageboxpayload);
+//send(pmessagebox);
 //
 //      }
 //
@@ -669,9 +669,11 @@ break;
       while (true)
       {
 
-         auto pmessageboxpayload = message_box("Hello!!\nNo: for exception test(\u2717)!!", "Hello App!", ::user::e_message_box_yes_no_cancel | ::user::e_message_box_default_button_3, "Hello Multiverse!!");
+         auto pmessagebox = message_box("Hello!!\nNo: for exception test(\u2717)!!", "Hello App!", ::user::e_message_box_yes_no_cancel | ::user::e_message_box_default_button_3, "Hello Multiverse!!");
 
-         send(pmessageboxpayload);
+         pmessagebox->display(e_display_normal, {});
+
+         pmessagebox->wait_dialog_response();
 
          if (pmessagebox->get_result_payload() == e_dialog_result_yes)
          {
@@ -682,7 +684,9 @@ break;
 
             pmessagebox = message_box("Yes!!", "Yes!!", ::user::e_message_box_ok);
 
-            send(pmessageboxpayload);
+            pmessagebox->display(e_display_normal, {});
+
+            pmessagebox->wait_dialog_response();
 
             break;
 
@@ -708,7 +712,7 @@ break;
                //
                //                  auto psequencer = psystem->nano()->exception_message_console(exception, "Dummy inline Catchall Exception at Hello Console App!!\n", "Dummy inline Hello Console App!", ::user::e_message_box_ok, "Dummy inline Hello Console App!!");
                //
-               //                  post(pmessageboxpayload);
+               //                  post(pmessagebox);
 
                                  //int * pi = nullptr;
 
@@ -722,19 +726,21 @@ break;
             catch (::exception& exception)
             {
 
-               auto pmessageboxpayload = message_box(exception, "Exception at Hello Console App!!\n" + exception.get_message(), "Hello Console App!", ::user::e_message_box_ok, "Hello Console App!!\n");
+               auto pmessagebox = message_box(exception, "Exception at Hello Console App!!\n" + exception.get_message(), "Hello Console App!", ::user::e_message_box_ok, "Hello Console App!!\n");
                
                pmessagebox->async()
                   << [this]()
                   {
 
-                     auto pmessageboxpayload = message_box("Got ::exception", "Got ::exception", ::user::e_message_box_ok | ::user::e_message_box_icon_information);
+                     auto pmessagebox = message_box("Got ::exception", "Got ::exception", ::user::e_message_box_ok | ::user::e_message_box_icon_information);
 
-                     send(pmessageboxpayload);
+                     pmessagebox->display(e_display_normal, {});
+
+                     pmessagebox->wait_dialog_response();
 
                   };
 
-                  //post(pmessageboxpayload);
+                  //post(pmessagebox);
 
 
             }
@@ -743,19 +749,19 @@ break;
 
                ::exception exception(error_catch_all_exception);
 
-               auto pmessageboxpayload = message_box(exception, "Catchall Exception at Hello Console App!!\n", "Hello Console App!", ::user::e_message_box_ok, "Hello Console App!!");
+               auto pmessagebox = message_box(exception, "Catchall Exception at Hello Console App!!\n", "Hello Console App!", ::user::e_message_box_ok, "Hello Console App!!");
                
                pmessagebox->async()
                   <<[this]()
                {
 
-                  auto pmessageboxpayload = message_box("Caught (...)", "Caught (...)", ::user::e_message_box_ok | ::user::e_message_box_icon_information);
+                  auto pmessagebox = message_box("Caught (...)", "Caught (...)", ::user::e_message_box_ok | ::user::e_message_box_icon_information);
 
-                  post(pmessageboxpayload);
+                  pmessagebox->display(e_display_normal, {});
 
                };
 
-               //post(pmessageboxpayload);
+               //post(pmessagebox);
 
             }
 
@@ -769,7 +775,9 @@ break;
 
             pmessagebox = message_box("No!", "No!", ::user::e_message_box_ok);
 
-            send(pmessageboxpayload);
+            pmessagebox->display(e_display_normal, {});
+
+            pmessagebox->wait_dialog_response();
 
          }
          else if (pmessagebox->get_result_payload() == e_dialog_result_cancel)
@@ -781,7 +789,9 @@ break;
 
             pmessagebox = message_box("Cancel", "Cancel", ::user::e_message_box_ok);
 
-            send(pmessageboxpayload);
+            pmessagebox->display(e_display_normal, {});
+
+            pmessagebox->wait_dialog_response();
 
          }
 
@@ -1030,7 +1040,7 @@ break;
 //
 //      auto psequencer = application.message_box("Hello!!\nNo: for exception test!!", "Hello App!", ::user::e_message_box_yes_no_cancel | ::user::e_message_box_default_button_3, "Hello Multiverse!!");
 //
-//      auto result = send(pmessageboxpayload);
+//      auto result = send(pmessagebox);
 //
 //      if (result == e_dialog_result_yes)
 //      {
@@ -1041,7 +1051,7 @@ break;
 //
 //         psequencer = application.message_box("Yes!!", "Yes!!", ::user::e_message_box_ok);
 //
-//         send(pmessageboxpayload);
+//         send(pmessagebox);
 //
 //         break;
 //
@@ -1069,7 +1079,7 @@ break;
 ////
 ////                  auto psequencer = psystem->nano()->exception_message_console(exception, "Dummy inline Catchall Exception at Hello Console App!!\n", "Dummy inline Hello Console App!", ::user::e_message_box_ok, "Dummy inline Hello Console App!!");
 ////
-////                  post(pmessageboxpayload);
+////                  post(pmessagebox);
 //                  
 //                  //int * pi = nullptr;
 //                  
@@ -1085,7 +1095,7 @@ break;
 //                  
 //                  auto psequencer = pcontext->exception_message_box(exception, "Exception at Hello Console App!!\n" + exception.get_message(), "Hello Console App!", ::user::e_message_box_ok, "Hello Console App!!\n");
 //
-//                  post(pmessageboxpayload);
+//                  post(pmessagebox);
 //                  
 //               }
 //               catch(...)
@@ -1095,7 +1105,7 @@ break;
 //
 //                  auto psequencer = pcontext->exception_message_box(exception, "Catchall Exception at Hello Console App!!\n", "Hello Console App!", ::user::e_message_box_ok, "Hello Console App!!");
 //
-//                  post(pmessageboxpayload);
+//                  post(pmessagebox);
 //
 //               }
 //
@@ -1109,7 +1119,7 @@ break;
 //
 //         psequencer = application.message_box("No!", "No!", ::user::e_message_box_ok);
 //
-//         send(pmessageboxpayload);
+//         send(pmessagebox);
 //
 //      }
 //      else if (result == e_dialog_result_cancel)
@@ -1121,7 +1131,7 @@ break;
 //
 //         psequencer = application.message_box("Cancel", "Cancel", ::user::e_message_box_ok);
 //
-//         send(pmessageboxpayload);
+//         send(pmessagebox);
 //
 //      }
 //
