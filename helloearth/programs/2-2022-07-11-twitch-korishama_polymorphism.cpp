@@ -11,13 +11,14 @@
 
    auto psystem = pparticle->system();
 
-   auto pmessagebox = __initialize_new ::acme::user::message_box("Yes for two and No for 3\n\n(and cancel for exit...)", "Hello App!", ::user::e_message_box_yes_no_cancel | ::user::e_message_box_default_button_3, "Hello Multiverse!!");
+   auto pmessagebox = createø < ::user_interface::message_box >();
+   pmessagebox->initialize_message_box("Yes for two and No for 3\n\n(and cancel for exit...)", "Hello App!", ::user::e_message_box_yes_no_cancel | ::user::e_message_box_default_button_3, "Hello Multiverse!!");
 
    pmessagebox->display(e_display_normal, {});
 
    pmessagebox->wait_dialog_response();
 
-   auto result = pmessagebox->m_payloadResult;
+   auto result = pmessagebox->get_dialog_response();
 
    if (result == e_dialog_result_yes)
    {
