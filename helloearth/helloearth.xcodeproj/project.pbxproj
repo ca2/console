@@ -7,52 +7,52 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9A22671527CE8B140042BAC2 /* libacme_posix.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A22671127CE8B140042BAC2 /* libacme_posix.dylib */; };
-		9A22671627CE8B140042BAC2 /* libidn.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A22671227CE8B140042BAC2 /* libidn.dylib */; };
-		9A22671727CE8B140042BAC2 /* libacme_apple.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A22671327CE8B140042BAC2 /* libacme_apple.dylib */; };
-		9A22671827CE8B140042BAC2 /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A22671427CE8B140042BAC2 /* libacme.dylib */; };
-		9A4387BF299E4AD900D2EE15 /* a-2023-02-02-twitch@ca2software.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A4387BE299E4AD800D2EE15 /* a-2023-02-02-twitch@ca2software.cpp */; };
-		9A58487F2B54B059001FFF2B /* libarchive.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A58487E2B54B059001FFF2B /* libarchive.dylib */; };
-		9A5848802B54B059001FFF2B /* libarchive.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9A58487E2B54B059001FFF2B /* libarchive.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		9AE6DE6A29629C5F008A1335 /* application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6DE6929629C5F008A1335 /* application.cpp */; };
-		9AE6DE7529629CBC008A1335 /* 1-2022-02-11-twitch-memoriesdota_file_word_count.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6DE6C29629CBC008A1335 /* 1-2022-02-11-twitch-memoriesdota_file_word_count.cpp */; };
-		9AE6DE7629629CBC008A1335 /* 9-2022-11-15-twitch@nicopelullo-inorder__preorder_and_post_order.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6DE6D29629CBC008A1335 /* 9-2022-11-15-twitch@nicopelullo-inorder__preorder_and_post_order.cpp */; };
-		9AE6DE7729629CBC008A1335 /* 6-2022-10-05-twitch-octaelliptical_count_miscellaneous_characters.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6DE6E29629CBC008A1335 /* 6-2022-10-05-twitch-octaelliptical_count_miscellaneous_characters.cpp */; };
-		9AE6DE7829629CBC008A1335 /* 5-2022-10-04-twitch-octaelliptical_iterative_fibonacci.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6DE6F29629CBC008A1335 /* 5-2022-10-04-twitch-octaelliptical_iterative_fibonacci.cpp */; };
-		9AE6DE7929629CBC008A1335 /* 2-2022-07-11-twitch-korishama_polymorphism.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6DE7029629CBC008A1335 /* 2-2022-07-11-twitch-korishama_polymorphism.cpp */; };
-		9AE6DE7A29629CBC008A1335 /* 7-2022-10-06-twitch-octaelliptical_list_prime_numbers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6DE7129629CBC008A1335 /* 7-2022-10-06-twitch-octaelliptical_list_prime_numbers.cpp */; };
-		9AE6DE7B29629CBC008A1335 /* 3-2022-09-30-twitch-octaelliptical_star.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6DE7229629CBC008A1335 /* 3-2022-09-30-twitch-octaelliptical_star.cpp */; };
-		9AE6DE7C29629CBC008A1335 /* 4-2022-10-01-twitch-octaelliptical_star_only_odd_line_count.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6DE7329629CBC008A1335 /* 4-2022-10-01-twitch-octaelliptical_star_only_odd_line_count.cpp */; };
-		9AE6DE7D29629CBC008A1335 /* 8-2022-11-14-twitch@nicopelullo-binary_tree_to_stack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6DE7429629CBC008A1335 /* 8-2022-11-14-twitch@nicopelullo-binary_tree_to_stack.cpp */; };
-		9AE6DE7F29629D3F008A1335 /* twitch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6DE7E29629D3F008A1335 /* twitch.cpp */; };
+		822A5A1B80544BD866A9CF3C /* libacme_posix.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4706C1CF34B7696D51F4BC16 /* libacme_posix.dylib */; };
+		0ADD5137F313C57DE0CD4340 /* libidn.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 451591A37783D4ADC892417B /* libidn.dylib */; };
+		19E660A16B05A1BA7FDE67D5 /* libacme_apple.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A4AA9A78690D1E824BC6128 /* libacme_apple.dylib */; };
+		A0BD463863A3A00C33AA015F /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C6B28DEAE55F9B81DAAC1E8 /* libacme.dylib */; };
+		B3306FB56035E6FB3D379E44 /* a-2023-02-02-twitch@ca2software.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5EAB68A47AF93F71EAF7802B /* a-2023-02-02-twitch@ca2software.cpp */; };
+		31E41F5902D42B421D28D4DC /* libarchive.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2371F5FB74C97AD163675809 /* libarchive.dylib */; };
+		8878B14A958BEB90F760CE9D /* libarchive.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 2371F5FB74C97AD163675809 /* libarchive.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		B1D6E1A7AB6A5734034436D8 /* application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B379CBDA6C6CA4CCF261B787 /* application.cpp */; };
+		BAC51A6BDC56D7089909BB3A /* 1-2022-02-11-twitch-memoriesdota_file_word_count.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7FB4CCD694EF6FFFC4F0C34 /* 1-2022-02-11-twitch-memoriesdota_file_word_count.cpp */; };
+		D6B1523C1EEE3292ACF47B95 /* 9-2022-11-15-twitch@nicopelullo-inorder__preorder_and_post_order.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 563F00D99EB26A4F0237444D /* 9-2022-11-15-twitch@nicopelullo-inorder__preorder_and_post_order.cpp */; };
+		B695E3725F3BB5FE4750F6DC /* 6-2022-10-05-twitch-octaelliptical_count_miscellaneous_characters.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E85CC165237407A0C4687A5E /* 6-2022-10-05-twitch-octaelliptical_count_miscellaneous_characters.cpp */; };
+		CAF174CD148FF801898EB0A6 /* 5-2022-10-04-twitch-octaelliptical_iterative_fibonacci.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98F6F9BEF8327927EBB2EBFE /* 5-2022-10-04-twitch-octaelliptical_iterative_fibonacci.cpp */; };
+		FB4C52AC0AAAC9774C14F33D /* 2-2022-07-11-twitch-korishama_polymorphism.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB4B4EADE900E0CCD9B64515 /* 2-2022-07-11-twitch-korishama_polymorphism.cpp */; };
+		308CC0596374B4C6100A84D8 /* 7-2022-10-06-twitch-octaelliptical_list_prime_numbers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADEADFE6339819BCDF1F0D47 /* 7-2022-10-06-twitch-octaelliptical_list_prime_numbers.cpp */; };
+		1A5587239FB9ABD4F4C2D132 /* 3-2022-09-30-twitch-octaelliptical_star.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEFDB18E66E1A7C756839294 /* 3-2022-09-30-twitch-octaelliptical_star.cpp */; };
+		A2D04FF9285239D1AF51A278 /* 4-2022-10-01-twitch-octaelliptical_star_only_odd_line_count.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4EBD2CE2D9516BE56C5DC260 /* 4-2022-10-01-twitch-octaelliptical_star_only_odd_line_count.cpp */; };
+		08EEBD2A546C1A0E9914BADC /* 8-2022-11-14-twitch@nicopelullo-binary_tree_to_stack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8800405BE2FDCA938EA0B947 /* 8-2022-11-14-twitch@nicopelullo-binary_tree_to_stack.cpp */; };
+		D5BC5BB128510FE78DA8A282 /* twitch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B94E7DAB6A675EC0BD109465 /* twitch.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9A22671D27CE8B460042BAC2 /* PBXContainerItemProxy */ = {
+		508E8C47732A51FC5B907ECC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9A22671927CE8B460042BAC2 /* acme_macos.xcodeproj */;
+			containerPortal = 70EB6CC07128332FD95DF1E1 /* acme_macos.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 9A0C165F264A290E00B5CC33;
+			remoteGlobalIDString = A40CCFCA65C9C09ABDEA8348;
 			remoteInfo = acme_macos;
 		};
-		9A22671F27CE8B530042BAC2 /* PBXContainerItemProxy */ = {
+		0C1B6699235DD9885E139BBE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9A22671927CE8B460042BAC2 /* acme_macos.xcodeproj */;
+			containerPortal = 70EB6CC07128332FD95DF1E1 /* acme_macos.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 9A0C165E264A290E00B5CC33;
+			remoteGlobalIDString = B4E9219CED2FE697049BA3FB;
 			remoteInfo = acme_macos;
 		};
-		9A4387BC299E4AB000D2EE15 /* PBXContainerItemProxy */ = {
+		6963E7C94D1B36AE8AE54FD7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9A22671927CE8B460042BAC2 /* acme_macos.xcodeproj */;
+			containerPortal = 70EB6CC07128332FD95DF1E1 /* acme_macos.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 9AC14D56297B3488006D9BD3;
+			remoteGlobalIDString = 32AEB821486B3BF7251B3927;
 			remoteInfo = _acme_macos;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		9A46D23E26783F74000B22D0 /* Embed Libraries */ = {
+		9402CF99ACDC3F0C53BACE91 /* Embed Libraries */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
@@ -62,13 +62,13 @@
 			name = "Embed Libraries";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9A5848812B54B05A001FFF2B /* Embed Libraries */ = {
+		1717DE9B75CA2FC8FDD21D80 /* Embed Libraries */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9A5848802B54B059001FFF2B /* libarchive.dylib in Embed Libraries */,
+				8878B14A958BEB90F760CE9D /* libarchive.dylib in Embed Libraries */,
 			);
 			name = "Embed Libraries";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -76,113 +76,113 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		9A1862812A27023D0054515F /* _____release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "_____release.xcconfig"; sourceTree = "<group>"; };
-		9A1862832A27023E0054515F /* _____debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "_____debug.xcconfig"; sourceTree = "<group>"; };
-		9A22671127CE8B140042BAC2 /* libacme_posix.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libacme_posix.dylib; path = "../../../../../Library/Developer/Xcode/DerivedData/mac-__hello-ferbzpmqoopfvnbsljzanjlsduhf/Build/Products/Debug/libacme_posix.dylib"; sourceTree = "<group>"; };
-		9A22671227CE8B140042BAC2 /* libidn.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libidn.dylib; path = "../../../../../Library/Developer/Xcode/DerivedData/mac-__hello-ferbzpmqoopfvnbsljzanjlsduhf/Build/Products/Debug/libidn.dylib"; sourceTree = "<group>"; };
-		9A22671327CE8B140042BAC2 /* libacme_apple.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libacme_apple.dylib; path = "../../../../../Library/Developer/Xcode/DerivedData/mac-__hello-ferbzpmqoopfvnbsljzanjlsduhf/Build/Products/Debug/libacme_apple.dylib"; sourceTree = "<group>"; };
-		9A22671427CE8B140042BAC2 /* libacme.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libacme.dylib; path = "../../../../../Library/Developer/Xcode/DerivedData/mac-__hello-ferbzpmqoopfvnbsljzanjlsduhf/Build/Products/Debug/libacme.dylib"; sourceTree = "<group>"; };
-		9A22671927CE8B460042BAC2 /* acme_macos.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = acme_macos.xcodeproj; path = "../../../operating_system/operating_system-macos/acme_macos/acme_macos.xcodeproj"; sourceTree = SOURCE_ROOT; };
-		9A4387BE299E4AD800D2EE15 /* a-2023-02-02-twitch@ca2software.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "a-2023-02-02-twitch@ca2software.cpp"; sourceTree = "<group>"; };
-		9A58487E2B54B059001FFF2B /* libarchive.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libarchive.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A5EE4912650D105009F25F0 /* helloearth */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = helloearth; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A6FB9C92EBCD080003BBE61 /* _____debug_application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "_____debug_application.xcconfig"; sourceTree = "<group>"; };
-		9A6FB9CA2EBCD080003BBE61 /* _____release_application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "_____release_application.xcconfig"; sourceTree = "<group>"; };
-		9AE6DE6929629C5F008A1335 /* application.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = application.cpp; sourceTree = "<group>"; };
-		9AE6DE6C29629CBC008A1335 /* 1-2022-02-11-twitch-memoriesdota_file_word_count.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "1-2022-02-11-twitch-memoriesdota_file_word_count.cpp"; sourceTree = "<group>"; };
-		9AE6DE6D29629CBC008A1335 /* 9-2022-11-15-twitch@nicopelullo-inorder__preorder_and_post_order.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "9-2022-11-15-twitch@nicopelullo-inorder__preorder_and_post_order.cpp"; sourceTree = "<group>"; };
-		9AE6DE6E29629CBC008A1335 /* 6-2022-10-05-twitch-octaelliptical_count_miscellaneous_characters.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "6-2022-10-05-twitch-octaelliptical_count_miscellaneous_characters.cpp"; sourceTree = "<group>"; };
-		9AE6DE6F29629CBC008A1335 /* 5-2022-10-04-twitch-octaelliptical_iterative_fibonacci.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "5-2022-10-04-twitch-octaelliptical_iterative_fibonacci.cpp"; sourceTree = "<group>"; };
-		9AE6DE7029629CBC008A1335 /* 2-2022-07-11-twitch-korishama_polymorphism.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "2-2022-07-11-twitch-korishama_polymorphism.cpp"; sourceTree = "<group>"; };
-		9AE6DE7129629CBC008A1335 /* 7-2022-10-06-twitch-octaelliptical_list_prime_numbers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "7-2022-10-06-twitch-octaelliptical_list_prime_numbers.cpp"; sourceTree = "<group>"; };
-		9AE6DE7229629CBC008A1335 /* 3-2022-09-30-twitch-octaelliptical_star.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "3-2022-09-30-twitch-octaelliptical_star.cpp"; sourceTree = "<group>"; };
-		9AE6DE7329629CBC008A1335 /* 4-2022-10-01-twitch-octaelliptical_star_only_odd_line_count.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "4-2022-10-01-twitch-octaelliptical_star_only_odd_line_count.cpp"; sourceTree = "<group>"; };
-		9AE6DE7429629CBC008A1335 /* 8-2022-11-14-twitch@nicopelullo-binary_tree_to_stack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "8-2022-11-14-twitch@nicopelullo-binary_tree_to_stack.cpp"; sourceTree = "<group>"; };
-		9AE6DE7E29629D3F008A1335 /* twitch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = twitch.cpp; sourceTree = "<group>"; };
+		99026AC521A8A07869503917 /* _____release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "_____release.xcconfig"; sourceTree = "<group>"; };
+		06FEA7DC3A2C2238D81DFC77 /* _____debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "_____debug.xcconfig"; sourceTree = "<group>"; };
+		4706C1CF34B7696D51F4BC16 /* libacme_posix.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libacme_posix.dylib; path = "../../../../../Library/Developer/Xcode/DerivedData/mac-__hello-ferbzpmqoopfvnbsljzanjlsduhf/Build/Products/Debug/libacme_posix.dylib"; sourceTree = "<group>"; };
+		451591A37783D4ADC892417B /* libidn.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libidn.dylib; path = "../../../../../Library/Developer/Xcode/DerivedData/mac-__hello-ferbzpmqoopfvnbsljzanjlsduhf/Build/Products/Debug/libidn.dylib"; sourceTree = "<group>"; };
+		8A4AA9A78690D1E824BC6128 /* libacme_apple.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libacme_apple.dylib; path = "../../../../../Library/Developer/Xcode/DerivedData/mac-__hello-ferbzpmqoopfvnbsljzanjlsduhf/Build/Products/Debug/libacme_apple.dylib"; sourceTree = "<group>"; };
+		8C6B28DEAE55F9B81DAAC1E8 /* libacme.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libacme.dylib; path = "../../../../../Library/Developer/Xcode/DerivedData/mac-__hello-ferbzpmqoopfvnbsljzanjlsduhf/Build/Products/Debug/libacme.dylib"; sourceTree = "<group>"; };
+		70EB6CC07128332FD95DF1E1 /* acme_macos.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = acme_macos.xcodeproj; path = "../../../operating_system/operating_system-macos/acme_macos/acme_macos.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		5EAB68A47AF93F71EAF7802B /* a-2023-02-02-twitch@ca2software.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "a-2023-02-02-twitch@ca2software.cpp"; sourceTree = "<group>"; };
+		2371F5FB74C97AD163675809 /* libarchive.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libarchive.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		C939CFD8B9EE6A4FD575E1A2 /* helloearth */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = helloearth; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BD28597EEE6F1CF139DB60E /* _____debug_application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "_____debug_application.xcconfig"; sourceTree = "<group>"; };
+		96995B270C43F08E879EA75C /* _____release_application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "_____release_application.xcconfig"; sourceTree = "<group>"; };
+		B379CBDA6C6CA4CCF261B787 /* application.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = application.cpp; sourceTree = "<group>"; };
+		E7FB4CCD694EF6FFFC4F0C34 /* 1-2022-02-11-twitch-memoriesdota_file_word_count.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "1-2022-02-11-twitch-memoriesdota_file_word_count.cpp"; sourceTree = "<group>"; };
+		563F00D99EB26A4F0237444D /* 9-2022-11-15-twitch@nicopelullo-inorder__preorder_and_post_order.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "9-2022-11-15-twitch@nicopelullo-inorder__preorder_and_post_order.cpp"; sourceTree = "<group>"; };
+		E85CC165237407A0C4687A5E /* 6-2022-10-05-twitch-octaelliptical_count_miscellaneous_characters.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "6-2022-10-05-twitch-octaelliptical_count_miscellaneous_characters.cpp"; sourceTree = "<group>"; };
+		98F6F9BEF8327927EBB2EBFE /* 5-2022-10-04-twitch-octaelliptical_iterative_fibonacci.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "5-2022-10-04-twitch-octaelliptical_iterative_fibonacci.cpp"; sourceTree = "<group>"; };
+		FB4B4EADE900E0CCD9B64515 /* 2-2022-07-11-twitch-korishama_polymorphism.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "2-2022-07-11-twitch-korishama_polymorphism.cpp"; sourceTree = "<group>"; };
+		ADEADFE6339819BCDF1F0D47 /* 7-2022-10-06-twitch-octaelliptical_list_prime_numbers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "7-2022-10-06-twitch-octaelliptical_list_prime_numbers.cpp"; sourceTree = "<group>"; };
+		DEFDB18E66E1A7C756839294 /* 3-2022-09-30-twitch-octaelliptical_star.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "3-2022-09-30-twitch-octaelliptical_star.cpp"; sourceTree = "<group>"; };
+		4EBD2CE2D9516BE56C5DC260 /* 4-2022-10-01-twitch-octaelliptical_star_only_odd_line_count.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "4-2022-10-01-twitch-octaelliptical_star_only_odd_line_count.cpp"; sourceTree = "<group>"; };
+		8800405BE2FDCA938EA0B947 /* 8-2022-11-14-twitch@nicopelullo-binary_tree_to_stack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "8-2022-11-14-twitch@nicopelullo-binary_tree_to_stack.cpp"; sourceTree = "<group>"; };
+		B94E7DAB6A675EC0BD109465 /* twitch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = twitch.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9A5EE48E2650D105009F25F0 /* Frameworks */ = {
+		C3E9B82DDB5E02C0702F6A8A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A22671827CE8B140042BAC2 /* libacme.dylib in Frameworks */,
-				9A22671727CE8B140042BAC2 /* libacme_apple.dylib in Frameworks */,
-				9A58487F2B54B059001FFF2B /* libarchive.dylib in Frameworks */,
-				9A22671627CE8B140042BAC2 /* libidn.dylib in Frameworks */,
-				9A22671527CE8B140042BAC2 /* libacme_posix.dylib in Frameworks */,
+				A0BD463863A3A00C33AA015F /* libacme.dylib in Frameworks */,
+				19E660A16B05A1BA7FDE67D5 /* libacme_apple.dylib in Frameworks */,
+				31E41F5902D42B421D28D4DC /* libarchive.dylib in Frameworks */,
+				0ADD5137F313C57DE0CD4340 /* libidn.dylib in Frameworks */,
+				822A5A1B80544BD866A9CF3C /* libacme_posix.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9A22671A27CE8B460042BAC2 /* Products */ = {
+		B0E37430210F785E4149E482 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9A22671E27CE8B460042BAC2 /* libacme_macos.dylib */,
-				9A4387BD299E4AB000D2EE15 /* libstatic_acme_macos.a */,
+				387CDB24A03C3C15B0C08993 /* libacme_macos.dylib */,
+				1B9B77F73BC32055EEF44595 /* libstatic_acme_macos.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9A5EE4882650D105009F25F0 = {
+		3885ED2095E41E7F49D4AD3B = {
 			isa = PBXGroup;
 			children = (
-				9A22671927CE8B460042BAC2 /* acme_macos.xcodeproj */,
-				9A5EE49B2650D168009F25F0 /* helloearth */,
-				9A5EE4922650D105009F25F0 /* Products */,
-				9A5EE4E22650D260009F25F0 /* Frameworks */,
+				70EB6CC07128332FD95DF1E1 /* acme_macos.xcodeproj */,
+				5B892BA0907D0EAE6459DF7E /* helloearth */,
+				83AE5AE91015DEEE67303C81 /* Products */,
+				6C1082178EC17316F42E3828 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		9A5EE4922650D105009F25F0 /* Products */ = {
+		83AE5AE91015DEEE67303C81 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9A5EE4912650D105009F25F0 /* helloearth */,
+				C939CFD8B9EE6A4FD575E1A2 /* helloearth */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9A5EE49B2650D168009F25F0 /* helloearth */ = {
+		5B892BA0907D0EAE6459DF7E /* helloearth */ = {
 			isa = PBXGroup;
 			children = (
-				9A6FB9C92EBCD080003BBE61 /* _____debug_application.xcconfig */,
-				9A6FB9CA2EBCD080003BBE61 /* _____release_application.xcconfig */,
-				9A1862832A27023E0054515F /* _____debug.xcconfig */,
-				9A1862812A27023D0054515F /* _____release.xcconfig */,
-				9AE6DE7E29629D3F008A1335 /* twitch.cpp */,
-				9AE6DE6B29629CBC008A1335 /* programs */,
-				9AE6DE6929629C5F008A1335 /* application.cpp */,
+				6BD28597EEE6F1CF139DB60E /* _____debug_application.xcconfig */,
+				96995B270C43F08E879EA75C /* _____release_application.xcconfig */,
+				06FEA7DC3A2C2238D81DFC77 /* _____debug.xcconfig */,
+				99026AC521A8A07869503917 /* _____release.xcconfig */,
+				B94E7DAB6A675EC0BD109465 /* twitch.cpp */,
+				F5B5CF9D07112BE9940AC1F0 /* programs */,
+				B379CBDA6C6CA4CCF261B787 /* application.cpp */,
 			);
 			name = helloearth;
 			sourceTree = "<group>";
 		};
-		9A5EE4E22650D260009F25F0 /* Frameworks */ = {
+		6C1082178EC17316F42E3828 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9A58487E2B54B059001FFF2B /* libarchive.dylib */,
-				9A22671227CE8B140042BAC2 /* libidn.dylib */,
-				9A22671427CE8B140042BAC2 /* libacme.dylib */,
-				9A22671327CE8B140042BAC2 /* libacme_apple.dylib */,
-				9A22671127CE8B140042BAC2 /* libacme_posix.dylib */,
+				2371F5FB74C97AD163675809 /* libarchive.dylib */,
+				451591A37783D4ADC892417B /* libidn.dylib */,
+				8C6B28DEAE55F9B81DAAC1E8 /* libacme.dylib */,
+				8A4AA9A78690D1E824BC6128 /* libacme_apple.dylib */,
+				4706C1CF34B7696D51F4BC16 /* libacme_posix.dylib */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9AE6DE6B29629CBC008A1335 /* programs */ = {
+		F5B5CF9D07112BE9940AC1F0 /* programs */ = {
 			isa = PBXGroup;
 			children = (
-				9AE6DE6C29629CBC008A1335 /* 1-2022-02-11-twitch-memoriesdota_file_word_count.cpp */,
-				9AE6DE7029629CBC008A1335 /* 2-2022-07-11-twitch-korishama_polymorphism.cpp */,
-				9AE6DE7229629CBC008A1335 /* 3-2022-09-30-twitch-octaelliptical_star.cpp */,
-				9AE6DE7329629CBC008A1335 /* 4-2022-10-01-twitch-octaelliptical_star_only_odd_line_count.cpp */,
-				9AE6DE6F29629CBC008A1335 /* 5-2022-10-04-twitch-octaelliptical_iterative_fibonacci.cpp */,
-				9AE6DE6E29629CBC008A1335 /* 6-2022-10-05-twitch-octaelliptical_count_miscellaneous_characters.cpp */,
-				9AE6DE7129629CBC008A1335 /* 7-2022-10-06-twitch-octaelliptical_list_prime_numbers.cpp */,
-				9AE6DE7429629CBC008A1335 /* 8-2022-11-14-twitch@nicopelullo-binary_tree_to_stack.cpp */,
-				9AE6DE6D29629CBC008A1335 /* 9-2022-11-15-twitch@nicopelullo-inorder__preorder_and_post_order.cpp */,
-				9A4387BE299E4AD800D2EE15 /* a-2023-02-02-twitch@ca2software.cpp */,
+				E7FB4CCD694EF6FFFC4F0C34 /* 1-2022-02-11-twitch-memoriesdota_file_word_count.cpp */,
+				FB4B4EADE900E0CCD9B64515 /* 2-2022-07-11-twitch-korishama_polymorphism.cpp */,
+				DEFDB18E66E1A7C756839294 /* 3-2022-09-30-twitch-octaelliptical_star.cpp */,
+				4EBD2CE2D9516BE56C5DC260 /* 4-2022-10-01-twitch-octaelliptical_star_only_odd_line_count.cpp */,
+				98F6F9BEF8327927EBB2EBFE /* 5-2022-10-04-twitch-octaelliptical_iterative_fibonacci.cpp */,
+				E85CC165237407A0C4687A5E /* 6-2022-10-05-twitch-octaelliptical_count_miscellaneous_characters.cpp */,
+				ADEADFE6339819BCDF1F0D47 /* 7-2022-10-06-twitch-octaelliptical_list_prime_numbers.cpp */,
+				8800405BE2FDCA938EA0B947 /* 8-2022-11-14-twitch@nicopelullo-binary_tree_to_stack.cpp */,
+				563F00D99EB26A4F0237444D /* 9-2022-11-15-twitch@nicopelullo-inorder__preorder_and_post_order.cpp */,
+				5EAB68A47AF93F71EAF7802B /* a-2023-02-02-twitch@ca2software.cpp */,
 			);
 			path = programs;
 			sourceTree = "<group>";
@@ -190,7 +190,7 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		9AEA19A627601C07006437A3 /* Headers */ = {
+		5EC1D57BB1A90C573B842A4D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -200,41 +200,41 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		9A5EE4902650D105009F25F0 /* helloearth */ = {
+		F643C277B467BB2019481DA8 /* helloearth */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9A5EE4982650D105009F25F0 /* Build configuration list for PBXNativeTarget "helloearth" */;
+			buildConfigurationList = A589491E831D8BB1E18C4CA5 /* Build configuration list for PBXNativeTarget "helloearth" */;
 			buildPhases = (
-				9AEA19A627601C07006437A3 /* Headers */,
-				9A5EE48D2650D105009F25F0 /* Sources */,
-				9A5EE48E2650D105009F25F0 /* Frameworks */,
-				9A46D23E26783F74000B22D0 /* Embed Libraries */,
-				9A5848812B54B05A001FFF2B /* Embed Libraries */,
+				5EC1D57BB1A90C573B842A4D /* Headers */,
+				6240282AF8B490A62B14A0D5 /* Sources */,
+				C3E9B82DDB5E02C0702F6A8A /* Frameworks */,
+				9402CF99ACDC3F0C53BACE91 /* Embed Libraries */,
+				1717DE9B75CA2FC8FDD21D80 /* Embed Libraries */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9A22672027CE8B530042BAC2 /* PBXTargetDependency */,
+				9EE681C915A9526E5C8E5F0E /* PBXTargetDependency */,
 			);
 			name = helloearth;
 			productName = helloearth;
-			productReference = 9A5EE4912650D105009F25F0 /* helloearth */;
+			productReference = C939CFD8B9EE6A4FD575E1A2 /* helloearth */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		9A5EE4892650D105009F25F0 /* Project object */ = {
+		006052A630A4150452000997 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
-					9A5EE4902650D105009F25F0 = {
+					F643C277B467BB2019481DA8 = {
 						CreatedOnToolsVersion = 12.5;
 					};
 				};
 			};
-			buildConfigurationList = 9A5EE48C2650D105009F25F0 /* Build configuration list for PBXProject "helloearth" */;
+			buildConfigurationList = E8918396A0B36B3F4D74E138 /* Build configuration list for PBXProject "helloearth" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -242,73 +242,73 @@
 				en,
 				Base,
 			);
-			mainGroup = 9A5EE4882650D105009F25F0;
-			productRefGroup = 9A5EE4922650D105009F25F0 /* Products */;
+			mainGroup = 3885ED2095E41E7F49D4AD3B;
+			productRefGroup = 83AE5AE91015DEEE67303C81 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 9A22671A27CE8B460042BAC2 /* Products */;
-					ProjectRef = 9A22671927CE8B460042BAC2 /* acme_macos.xcodeproj */;
+					ProductGroup = B0E37430210F785E4149E482 /* Products */;
+					ProjectRef = 70EB6CC07128332FD95DF1E1 /* acme_macos.xcodeproj */;
 				},
 			);
 			projectRoot = "";
 			targets = (
-				9A5EE4902650D105009F25F0 /* helloearth */,
+				F643C277B467BB2019481DA8 /* helloearth */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		9A22671E27CE8B460042BAC2 /* libacme_macos.dylib */ = {
+		387CDB24A03C3C15B0C08993 /* libacme_macos.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
 			path = libacme_macos.dylib;
-			remoteRef = 9A22671D27CE8B460042BAC2 /* PBXContainerItemProxy */;
+			remoteRef = 508E8C47732A51FC5B907ECC /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9A4387BD299E4AB000D2EE15 /* libstatic_acme_macos.a */ = {
+		1B9B77F73BC32055EEF44595 /* libstatic_acme_macos.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
 			path = libstatic_acme_macos.a;
-			remoteRef = 9A4387BC299E4AB000D2EE15 /* PBXContainerItemProxy */;
+			remoteRef = 6963E7C94D1B36AE8AE54FD7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9A5EE48D2650D105009F25F0 /* Sources */ = {
+		6240282AF8B490A62B14A0D5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A4387BF299E4AD900D2EE15 /* a-2023-02-02-twitch@ca2software.cpp in Sources */,
-				9AE6DE7A29629CBC008A1335 /* 7-2022-10-06-twitch-octaelliptical_list_prime_numbers.cpp in Sources */,
-				9AE6DE7F29629D3F008A1335 /* twitch.cpp in Sources */,
-				9AE6DE7B29629CBC008A1335 /* 3-2022-09-30-twitch-octaelliptical_star.cpp in Sources */,
-				9AE6DE7D29629CBC008A1335 /* 8-2022-11-14-twitch@nicopelullo-binary_tree_to_stack.cpp in Sources */,
-				9AE6DE7C29629CBC008A1335 /* 4-2022-10-01-twitch-octaelliptical_star_only_odd_line_count.cpp in Sources */,
-				9AE6DE7929629CBC008A1335 /* 2-2022-07-11-twitch-korishama_polymorphism.cpp in Sources */,
-				9AE6DE7829629CBC008A1335 /* 5-2022-10-04-twitch-octaelliptical_iterative_fibonacci.cpp in Sources */,
-				9AE6DE7529629CBC008A1335 /* 1-2022-02-11-twitch-memoriesdota_file_word_count.cpp in Sources */,
-				9AE6DE7729629CBC008A1335 /* 6-2022-10-05-twitch-octaelliptical_count_miscellaneous_characters.cpp in Sources */,
-				9AE6DE6A29629C5F008A1335 /* application.cpp in Sources */,
-				9AE6DE7629629CBC008A1335 /* 9-2022-11-15-twitch@nicopelullo-inorder__preorder_and_post_order.cpp in Sources */,
+				B3306FB56035E6FB3D379E44 /* a-2023-02-02-twitch@ca2software.cpp in Sources */,
+				308CC0596374B4C6100A84D8 /* 7-2022-10-06-twitch-octaelliptical_list_prime_numbers.cpp in Sources */,
+				D5BC5BB128510FE78DA8A282 /* twitch.cpp in Sources */,
+				1A5587239FB9ABD4F4C2D132 /* 3-2022-09-30-twitch-octaelliptical_star.cpp in Sources */,
+				08EEBD2A546C1A0E9914BADC /* 8-2022-11-14-twitch@nicopelullo-binary_tree_to_stack.cpp in Sources */,
+				A2D04FF9285239D1AF51A278 /* 4-2022-10-01-twitch-octaelliptical_star_only_odd_line_count.cpp in Sources */,
+				FB4C52AC0AAAC9774C14F33D /* 2-2022-07-11-twitch-korishama_polymorphism.cpp in Sources */,
+				CAF174CD148FF801898EB0A6 /* 5-2022-10-04-twitch-octaelliptical_iterative_fibonacci.cpp in Sources */,
+				BAC51A6BDC56D7089909BB3A /* 1-2022-02-11-twitch-memoriesdota_file_word_count.cpp in Sources */,
+				B695E3725F3BB5FE4750F6DC /* 6-2022-10-05-twitch-octaelliptical_count_miscellaneous_characters.cpp in Sources */,
+				B1D6E1A7AB6A5734034436D8 /* application.cpp in Sources */,
+				D6B1523C1EEE3292ACF47B95 /* 9-2022-11-15-twitch@nicopelullo-inorder__preorder_and_post_order.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9A22672027CE8B530042BAC2 /* PBXTargetDependency */ = {
+		9EE681C915A9526E5C8E5F0E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = acme_macos;
-			targetProxy = 9A22671F27CE8B530042BAC2 /* PBXContainerItemProxy */;
+			targetProxy = 0C1B6699235DD9885E139BBE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		9A5EE4962650D105009F25F0 /* Debug */ = {
+		865D3D5EEF4B8C328AA6E72B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A1862832A27023E0054515F /* _____debug.xcconfig */;
+			baseConfigurationReference = 06FEA7DC3A2C2238D81DFC77 /* _____debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -395,9 +395,9 @@
 			};
 			name = Debug;
 		};
-		9A5EE4972650D105009F25F0 /* Release */ = {
+		41218EA5299BC55BA2210ED1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A1862812A27023D0054515F /* _____release.xcconfig */;
+			baseConfigurationReference = 99026AC521A8A07869503917 /* _____release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -479,9 +479,9 @@
 			};
 			name = Release;
 		};
-		9A5EE4992650D105009F25F0 /* Debug */ = {
+		E5A3AECDA22458208AF13AE7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A6FB9C92EBCD080003BBE61 /* _____debug_application.xcconfig */;
+			baseConfigurationReference = 6BD28597EEE6F1CF139DB60E /* _____debug_application.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				PLATFORM_MODIFIER = macos;
@@ -490,9 +490,9 @@
 			};
 			name = Debug;
 		};
-		9A5EE49A2650D105009F25F0 /* Release */ = {
+		F36A9584153DEA440DB4D83E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A6FB9CA2EBCD080003BBE61 /* _____release_application.xcconfig */;
+			baseConfigurationReference = 96995B270C43F08E879EA75C /* _____release_application.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				PLATFORM_MODIFIER = macos;
@@ -504,25 +504,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9A5EE48C2650D105009F25F0 /* Build configuration list for PBXProject "helloearth" */ = {
+		E8918396A0B36B3F4D74E138 /* Build configuration list for PBXProject "helloearth" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9A5EE4962650D105009F25F0 /* Debug */,
-				9A5EE4972650D105009F25F0 /* Release */,
+				865D3D5EEF4B8C328AA6E72B /* Debug */,
+				41218EA5299BC55BA2210ED1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9A5EE4982650D105009F25F0 /* Build configuration list for PBXNativeTarget "helloearth" */ = {
+		A589491E831D8BB1E18C4CA5 /* Build configuration list for PBXNativeTarget "helloearth" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9A5EE4992650D105009F25F0 /* Debug */,
-				9A5EE49A2650D105009F25F0 /* Release */,
+				E5A3AECDA22458208AF13AE7 /* Debug */,
+				F36A9584153DEA440DB4D83E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 9A5EE4892650D105009F25F0 /* Project object */;
+	rootObject = 006052A630A4150452000997 /* Project object */;
 }

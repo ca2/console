@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "078C352E1921758500354453"
+               BlueprintIdentifier = "4B850F78DEE2BB6B88A2F000"
                BuildableName = "Hello Multiverse!!.app"
                BlueprintName = "ios_app_core_hellomultiverse"
                ReferencedContainer = "container:ios_app_core_hellomultiverse.xcodeproj">
@@ -30,7 +30,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "078C352E1921758500354453"
+            BlueprintIdentifier = "4B850F78DEE2BB6B88A2F000"
             BuildableName = "Hello Multiverse!!.app"
             BlueprintName = "ios_app_core_hellomultiverse"
             ReferencedContainer = "container:ios_app_core_hellomultiverse.xcodeproj">
@@ -53,7 +53,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "078C352E1921758500354453"
+            BlueprintIdentifier = "4B850F78DEE2BB6B88A2F000"
             BuildableName = "Hello Multiverse!!.app"
             BlueprintName = "ios_app_core_hellomultiverse"
             ReferencedContainer = "container:ios_app_core_hellomultiverse.xcodeproj">
@@ -70,7 +70,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "078C352E1921758500354453"
+            BlueprintIdentifier = "4B850F78DEE2BB6B88A2F000"
             BuildableName = "Hello Multiverse!!.app"
             BlueprintName = "ios_app_core_hellomultiverse"
             ReferencedContainer = "container:ios_app_core_hellomultiverse.xcodeproj">
