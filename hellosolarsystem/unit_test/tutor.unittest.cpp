@@ -1,7 +1,7 @@
 
 // Attendee
 // 2020-04-29 CJsteel@Twitch.tv Present
-#include "framework.h"
+#include "platform.h"
 
 
 __begin(somecode)

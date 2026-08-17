@@ -1,5 +1,5 @@
 // Created by camilo on 2023-11-07 00:08 <3ThomasBorregaardSorensen!!
-#include "framework.h"
+#include "platform.h"
 #include "application.h"
 #define FACTORY console_readlines
 #define APPLICATION_NAMESPACE console_readlines
@@ -8,7 +8,7 @@
 #include "acme/console.h"
 
 
-// #include "framework.h"
+// #include "platform.h"
 // #include "application.h"
 // #include "aqua/console.h"
 //

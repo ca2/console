@@ -18,7 +18,7 @@
     <ClCompile Include="twitch.cpp">
       <Filter>Files</Filter>
     </ClCompile>
-    <ClCompile Include="framework.cpp">
+    <ClCompile Include="platform.cpp">
       <Filter>Files</Filter>
     </ClCompile>
     <ClCompile Include="programs\7-2022-10-06-twitch-octaelliptical_list_prime_numbers.cpp">
@@ -56,7 +56,7 @@
     <ClInclude Include="_twitch.h">
       <Filter>Files</Filter>
     </ClInclude>
-    <ClInclude Include="framework.h">
+    <ClInclude Include="platform.h">
       <Filter>Files</Filter>
     </ClInclude>
     <ClInclude Include="_.h">

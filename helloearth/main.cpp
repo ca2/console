@@ -1,4 +1,4 @@
-#include "framework.h"
+#include "platform.h"
 #include "application.h"
 #define FACTORY console_helloearth
 #define APPLICATION_NAMESPACE console_helloearth

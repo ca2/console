@@ -1,4 +1,4 @@
-#include "framework.h"
+#include "platform.h"
 #include "acme/platform/system.h"
 #include "acme/exception/exit.h"
 #include "acme/exception/interface_only.h"
