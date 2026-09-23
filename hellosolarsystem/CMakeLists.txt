@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 3.16)
 project(_console_hellosolarsystem CXX)
 
 
+message("PROJECT_NAME = ${PROJECT_NAME}")
+
+
 list(APPEND executable_source
         unit_test/_unit_test.h
         unit_test/item.cpp

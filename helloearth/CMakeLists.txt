@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 3.16)
 project(_console_helloearth CXX)
 
 
+message("PROJECT_NAME = ${PROJECT_NAME}")
+
+
 list(APPEND executable_source
         programs/1-2022-02-11-twitch-memoriesdota_file_word_count.cpp
         programs/2-2022-07-11-twitch-korishama_polymorphism.cpp

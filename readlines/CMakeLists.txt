@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 project(_console_readlines CXX)
 
 
+message("PROJECT_NAME = ${PROJECT_NAME}")
 
 
 add_executable(${PROJECT_NAME} application.cpp main.cpp)
