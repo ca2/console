@@ -21,7 +21,7 @@ IMPLEMENT_APPLICATION_FACTORY();
       m_ptemplateHelloMultiverseImpact = nullptr;
 
       m_strAppId = "app-core/build";
-      m_strAppName = "app-core/build";
+      m_strAppName = "build";
       m_strBaseSupportId = "app-core/build";
       m_bLicense = false;
 
