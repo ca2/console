@@ -47,7 +47,7 @@ namespace console_readlines
       if (path.is_empty())
       {
 
-         path = "dropbox-app://readlines.txt";
+         path = "cloud-app://readlines.txt";
 
       }
 
